@@ -37,6 +37,9 @@ class KenyaLocations {
 
   /// Returns the county with the given administrative code.
   ///
+  /// County codes are represented as three-digit strings, for example `047`
+  /// for Nairobi County.
+  ///
   /// Returns `null` if no county matches the [code].
   static County? getCountyByCode(String code) =>
       _counties.where((c) => c.code == code).firstOrNull;
