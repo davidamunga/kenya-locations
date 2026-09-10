@@ -3,11 +3,7 @@
 /// Associates an area with its name, parent locality, and parent county.
 class Area {
   /// Creates an [Area] with the given name, locality, and county.
-  const Area({
-    required this.name,
-    required this.locality,
-    required this.county,
-  });
+  const new({required this.name, required this.locality, required this.county});
 
   /// Creates an [Area] from a map containing area data.
   ///
@@ -15,7 +11,7 @@ class Area {
   /// - `name`
   /// - `locality`
   /// - `county`
-  factory Area.fromMap(Map<String, dynamic> map) => Area(
+  factory fromMap(Map<String, dynamic> map) => Area(
     name: map['name'] as String,
     locality: map['locality'] as String,
     county: map['county'] as String,
