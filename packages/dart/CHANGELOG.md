@@ -1,4 +1,4 @@
-## 0.1.5
+## 0.1.1
 
 - Initial release.
 - Typed access to Kenya's counties, sub-counties, constituencies, wards,
