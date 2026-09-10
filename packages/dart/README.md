@@ -19,7 +19,7 @@ all sourced from the same underlying dataset.
 
 ```yaml
 dependencies:
-  kenya_locations: ^0.1.0
+  kenya_locations: ^0.1.0+1
 ```
 
 ```bash
