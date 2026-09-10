@@ -1,5 +1,5 @@
 name: kenya_locations_example
-description: Flutter example for kenya-locations. Loads the shared JSON in data/.
+description: Flutter example for kenya-locations. Loads the data from the dart package.
 publish_to: "none"
 version: 0.9.0+1
 
@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+  kenya_locations:
+    path: ../../packages/dart
 
 dev_dependencies:
   flutter_test:
