@@ -1,0 +1,12 @@
+name: kenya_locations
+description: A Very Good Project created by Very Good CLI.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.13.0
+
+dev_dependencies:
+  mocktail: ^1.0.5
+  test: ^1.32.0
+  very_good_analysis: ^11.0.0
