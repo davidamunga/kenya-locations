@@ -1,5 +1,5 @@
 name: kenya_locations
-description: A Very Good Project created by Very Good CLI.
+description: Kenyan administrative divisions - counties, constituencies, wards, localities and areas.
 version: 0.1.0+1
 publish_to: none
 
