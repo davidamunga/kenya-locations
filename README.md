@@ -84,7 +84,7 @@ flutter pub add kenya_locations
 
 ```yaml
 dependencies:
-  kenya_locations: ^0.1.0
+  kenya_locations: ^0.1.1
 ```
 
 Works in any Dart or Flutter project. No initialisation required — data is compiled into the package as Dart constants and available immediately.
