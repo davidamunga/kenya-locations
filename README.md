@@ -3,10 +3,11 @@
 [![npm version](https://img.shields.io/npm/v/kenya-locations.svg)](https://www.npmjs.com/package/kenya-locations)
 [![npm version](https://img.shields.io/npm/v/kenya-locations-react.svg?label=kenya-locations-react)](https://www.npmjs.com/package/kenya-locations-react)
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.davidamunga/kenya-locations.svg)](https://central.sonatype.com/artifact/io.github.davidamunga/kenya-locations)
+[![pub.dev](https://img.shields.io/pub/v/kenya_locations.svg)](https://pub.dev/packages/kenya_locations)
 [![CI](https://github.com/DavidAmunga/kenya-locations/actions/workflows/ci.yml/badge.svg)](https://github.com/DavidAmunga/kenya-locations/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, and Swift.
+Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, Swift, and Dart/Flutter.
 
 **47** counties · **307** sub-counties · **290** constituencies · **1,448** wards · **916** localities · **1,829** areas
 
@@ -20,6 +21,7 @@ Kenyan administrative divisions — counties, sub-counties, constituencies, ward
 | **React** | [`kenya-locations-react`](https://www.npmjs.com/package/kenya-locations-react) | `npm install kenya-locations-react` |
 | **Kotlin / JVM** (Android, Spring Boot, etc.) | [`io.github.davidamunga:kenya-locations`](https://central.sonatype.com/artifact/io.github.davidamunga/kenya-locations) | See below |
 | **Swift** (iOS, macOS, tvOS, watchOS) | [`KenyaLocations`](https://swiftpackageindex.com/davidamunga/kenya-locations) | See below |
+| **Dart / Flutter** | [`kenya_locations`](https://pub.dev/packages/kenya_locations) | See below |
 
 All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, which versions independently).
 
@@ -73,12 +75,26 @@ targets: [
 
 Requires Swift 5.9+ / iOS 13+ / macOS 10.15+. Data loads lazily from the app bundle on first access.
 
+### Dart / Flutter
+
+```bash
+flutter pub add kenya_locations
+# dart pub add kenya_locations
+```
+
+```yaml
+dependencies:
+  kenya_locations: ^0.1.0
+```
+
+Works in any Dart or Flutter project. No initialisation required — data is compiled into the package as Dart constants and available immediately.
+
 ### Example apps
 
 | App | Path | Uses |
 | --- | --- | --- |
 | Android (Compose) | [`examples/android`](examples/android) | Kotlin library (`packages/kotlin`) |
-| Flutter | [`examples/flutter`](examples/flutter) | Shared JSON in `data/` — Dart cannot import the Maven JAR |
+| Flutter | [`examples/flutter`](examples/flutter) | Dart library (`packages/dart`) |
 
 ---
 
@@ -170,6 +186,24 @@ let localities = kl.getLocalitiesInCounty("Nairobi")
 
 // Fuzzy search — tolerates typos, sorted by relevance
 let results = kl.search("Nairob", limit: 10) // matches "Nairobi"
+```
+
+### Dart / Flutter
+
+```dart
+import 'package:kenya_locations/kenya_locations.dart';
+
+final counties = KenyaLocations.getCounties();
+final nairobi = KenyaLocations.getCountyByName('Nairobi');
+
+print(nairobi?.capital);          // Nairobi
+print(nairobi?.population2019);   // 4397073
+
+final wards = KenyaLocations.getWardsInConstituency('Westlands');
+final localities = KenyaLocations.getLocalitiesInCounty('Nairobi');
+
+// Fuzzy search — tolerates typos, sorted by relevance
+final results = KenyaLocations.search('Nairob', limit: 10); // matches "Nairobi"
 ```
 
 ---
@@ -544,6 +578,78 @@ public enum CountyRegion: String, Codable, CaseIterable {
 
 ---
 
+## Dart API
+
+### Getters
+
+```dart
+KenyaLocations.getCounties();                          // List<County>
+KenyaLocations.getCountyByCode('047');                  // County?
+KenyaLocations.getCountyByName('Nairobi');               // County?
+KenyaLocations.getSubCounties();                        // List<SubCounty>
+KenyaLocations.getConstituencies();                     // List<Constituency>
+KenyaLocations.getWards();                              // List<Ward>
+KenyaLocations.getLocalities();                         // List<Locality>
+KenyaLocations.getAreas();                              // List<Area>
+```
+
+### Relational queries
+
+```dart
+KenyaLocations.getSubCountiesInCounty('Nairobi');
+KenyaLocations.getConstituenciesInCounty('Nairobi');
+KenyaLocations.getWardsInConstituency('Westlands');
+KenyaLocations.getLocalitiesInCounty('Nairobi');
+KenyaLocations.getAreasInLocality('Karen');
+KenyaLocations.getConstituencyOfWard('Mountain View'); // Constituency?
+```
+
+### Search
+
+Search is **fuzzy and typo-tolerant** — a query like `'Nairob'` matches `'Nairobi'`, using the same Levenshtein sliding-window approach as the Kotlin and Swift libraries. Results are sorted by relevance (best match first).
+
+```dart
+final results = KenyaLocations.search('karen', limit: 20); // List<SearchResult<dynamic>>
+
+for (final result in results) {
+  switch (result.type) {
+    case SearchType.county:
+      print((result.item as County).capital);
+    case SearchType.ward:
+      print((result.item as Ward).constituency);
+    case SearchType.area:
+      print((result.item as Area).locality);
+    default:
+      break;
+  }
+}
+```
+
+### Classes
+
+```dart
+class County {
+  final String code;
+  final String name;
+  final String capital;
+  final double areaKm2;
+  final int population2019;
+  final String region;
+  final String postalCode;
+}
+
+class SubCounty    { final String code, name, county; }
+class Constituency { final String code, name, county; }
+class Ward         { final String code, name, constituency; }
+class Locality     { final String name, county; }
+class Area         { final String name, locality, county; }
+
+enum SearchType { county, subCounty, constituency, ward, locality, area }
+class SearchResult<T> { final SearchType type; final T item; }
+```
+
+---
+
 ## Contributing
 
 Contributions are very welcome — especially data additions (new localities, areas, corrections).
@@ -584,16 +690,17 @@ kenya-locations/
 ├── data/                    ← shared JSON source of truth (all libraries read from here)
 ├── packages/
 │   ├── js/                  ← TypeScript library → npm: kenya-locations
-│   ├── react/               ← React hooks library → npm: kenya-locations-react
-│   ├── kotlin/              ← Kotlin/JVM library → Maven: io.github.davidamunga:kenya-locations
-│   └── swift/               ← Swift library → Swift Package Index: KenyaLocations
+│   ├── react/                ← React hooks library → npm: kenya-locations-react
+│   ├── kotlin/               ← Kotlin/JVM library → Maven: io.github.davidamunga:kenya-locations
+│   ├── swift/                ← Swift library → Swift Package Index: KenyaLocations
+│   └── dart/                 ← Dart/Flutter library → pub.dev: kenya_locations
 ├── apps/
-│   └── web/                 ← interactive demo (kenya-locations.web.app)
+│   └── web/                  ← interactive demo (kenya-locations.web.app)
 ├── examples/
-│   ├── android/             ← Compose app using the Kotlin library
-│   └── flutter/             ← Flutter app reading the shared JSON
+│   ├── android/               ← Compose app using the Kotlin library
+│   └── flutter/                ← Flutter app using the Dart library (packages/dart)
 └── scripts/
-    └── validate-data.js     ← data integrity checks (runs on commit + CI)
+    └── validate-data.js      ← data integrity checks (runs on commit + CI)
 ```
 
 ---
