@@ -14,6 +14,10 @@ Dart libraries in the same
 [kenya-locations](https://github.com/davidamunga/kenya-locations) project,
 all sourced from the same underlying dataset.
 
+Development happens in the monorepo (`packages/php`). Packagist is served
+from the split repo
+[kenya-locations-php](https://github.com/davidamunga/kenya-locations-php).
+
 ## Installation
 
 ```bash

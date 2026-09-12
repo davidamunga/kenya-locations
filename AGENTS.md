@@ -11,7 +11,7 @@ Shared Kenyan administrative divisions (counties → wards / localities → area
 | `packages/kotlin` | Maven `io.github.davidamunga:kenya-locations` | Copies JSON at build (`copyLocationData`) |
 | `packages/swift` | Swift Package Index `KenyaLocations` | CI copies `data/*.json` into Resources |
 | `packages/dart` | pub.dev `kenya_locations` | Versions independently; codegen into consts |
-| `packages/php` | Packagist `davidamunga/kenya-locations` | Versions independently; loads shared JSON |
+| `packages/php` | Packagist `davidamunga/kenya-locations` | Versions independently; split to `kenya-locations-php` |
 | `apps/web` | kenya-locations.web.app | Demo |
 | `examples/android`, `examples/flutter` | — | Consume Kotlin / Dart packages |
 

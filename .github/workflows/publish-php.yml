@@ -6,8 +6,10 @@ on:
 
 jobs:
   publish:
-    name: Validate PHP package for Packagist
+    name: Validate and split PHP package
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     defaults:
       run:
         working-directory: packages/php
@@ -50,14 +52,38 @@ jobs:
       - name: Run tests
         run: composer test
 
+      - name: Split packages/php to kenya-locations-php
+        working-directory: ${{ github.workspace }}
+        env:
+          PHP_SPLIT_TOKEN: ${{ secrets.PHP_SPLIT_TOKEN }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          set -euo pipefail
+          if [ -z "${PHP_SPLIT_TOKEN:-}" ]; then
+            echo "PHP_SPLIT_TOKEN is not set; skipping split push."
+            echo "Add a PAT with contents:write on davidamunga/kenya-locations-php as the PHP_SPLIT_TOKEN secret."
+            exit 0
+          fi
+          git subtree split --prefix=packages/php -b php-dist
+          git remote add php-dist "https://x-access-token:${PHP_SPLIT_TOKEN}@github.com/davidamunga/kenya-locations-php.git"
+          git push php-dist php-dist:main
+          if git ls-remote --tags php-dist "refs/tags/v${VERSION}" | grep -q .; then
+            echo "Tag v${VERSION} already exists on kenya-locations-php"
+          else
+            git push php-dist "php-dist:refs/tags/v${VERSION}"
+            echo "Pushed tag v${VERSION}"
+          fi
+
       - name: Summary
         run: |
           {
             echo "## kenya-locations PHP ${{ steps.version.outputs.version }}"
             echo ""
-            echo "Package validated. First Packagist publish: submit"
-            echo "\`davidamunga/kenya-locations\` on [packagist.org](https://packagist.org) and point it at this GitHub repo"
-            echo "(or a subtree that has \`packages/php/composer.json\` at the root)."
+            echo "Validated \`packages/php\` and (when \`PHP_SPLIT_TOKEN\` is set) pushed"
+            echo "the subtree to [kenya-locations-php](https://github.com/davidamunga/kenya-locations-php)."
+            echo ""
+            echo "First Packagist submit: [packagist.org/packages/submit](https://packagist.org/packages/submit)"
+            echo "with \`https://github.com/davidamunga/kenya-locations-php\`."
             echo ""
             echo "\`\`\`bash"
             echo "composer require davidamunga/kenya-locations"

@@ -44,7 +44,17 @@ Do not use a leftover **Publish All Packages** button — that workflow is now c
 
 First `kenya_locations` publish on pub.dev must succeed once (package + trusted publisher). After that, **Publish Dart to pub.dev** can use OIDC.
 
-First Packagist submit of `davidamunga/kenya-locations` must succeed once. After that, **Publish PHP to Packagist** validates the package; Packagist picks up tagged commits via the GitHub webhook.
+PHP is published from the subtree repo
+[`davidamunga/kenya-locations-php`](https://github.com/davidamunga/kenya-locations-php)
+(not this monorepo — Packagist needs `composer.json` at the repo root).
+
+**Publish PHP to Packagist** validates `packages/php`, then `git subtree split`s
+that prefix and pushes `main` plus `v{php}` to the subtree repo. Add a
+`PHP_SPLIT_TOKEN` secret (PAT with `contents:write` on `kenya-locations-php`).
+
+First Packagist submit: [packagist.org/packages/submit](https://packagist.org/packages/submit)
+with `https://github.com/davidamunga/kenya-locations-php`. After that, Packagist
+follows tags on the subtree repo via the GitHub webhook.
 
 React, Dart, and PHP do not undraft the core `v*` release.
 

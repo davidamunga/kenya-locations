@@ -98,7 +98,8 @@ jobs:
             fi
             if [ "${{ steps.bumped.outputs.php_changed }}" = "true" ]; then
               echo "- Actions → **Publish PHP to Packagist** (davidamunga/kenya-locations@${{ steps.bumped.outputs.php }})"
-              echo "- First Packagist submit must succeed once; later updates can use the GitHub webhook."
+              echo "- Pushes \`packages/php\` to [kenya-locations-php](https://github.com/davidamunga/kenya-locations-php) and tags \`v${{ steps.bumped.outputs.php }}\`."
+              echo "- First Packagist submit must point at that repo; later tags update via webhook."
             fi
           } >> $GITHUB_STEP_SUMMARY
         env:
