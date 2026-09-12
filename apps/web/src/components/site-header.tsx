@@ -16,6 +16,7 @@ const PLATFORM_LINKS = [
   { href: "#react", id: "react", label: "React" },
   { href: "#kotlin", id: "kotlin", label: "Kotlin" },
   { href: "#swift", id: "swift", label: "Swift" },
+  { href: "#php", id: "php", label: "PHP" },
 ] as const;
 
 const SECTION_IDS = [
@@ -26,6 +27,7 @@ const SECTION_IDS = [
   "react",
   "kotlin",
   "swift",
+  "php",
   "contribute",
 ] as const;
 

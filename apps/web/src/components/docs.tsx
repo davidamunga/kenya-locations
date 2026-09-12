@@ -27,8 +27,8 @@ export function Docs() {
           Install
         </h2>
         <p className="mt-3 max-w-prose text-muted-foreground text-sm">
-          JavaScript, React, Kotlin, and Swift read the same JSON in{" "}
-          <code>data/</code>. Version {DATA_VERSION} on every platform.
+          JavaScript, React, Kotlin, Swift, and PHP read the same JSON in{" "}
+          <code>data/</code>. Version {DATA_VERSION} on the lockstep platforms.
         </p>
         <Tabs className="mt-6" defaultValue="js">
           <TabsList className="flex flex-wrap">
@@ -36,6 +36,7 @@ export function Docs() {
             <TabsTab value="react">React</TabsTab>
             <TabsTab value="kotlin">Kotlin</TabsTab>
             <TabsTab value="swift">Swift</TabsTab>
+            <TabsTab value="php">PHP</TabsTab>
           </TabsList>
           <TabsPanel className="mt-3 space-y-3" value="js">
             <CodeBlock filename="terminal">npm install kenya-locations</CodeBlock>
@@ -60,6 +61,23 @@ export function Docs() {
             <CodeBlock filename="Package.swift" language="swift">
               {`.package(url: "https://github.com/DavidAmunga/kenya-locations", from: "${DATA_VERSION}")`}
             </CodeBlock>
+          </TabsPanel>
+          <TabsPanel className="mt-3 space-y-3" value="php">
+            <CodeBlock filename="terminal">
+              composer require davidamunga/kenya-locations
+            </CodeBlock>
+            <p className="text-muted-foreground text-xs">
+              PHP 8.2+. Versions independently of the JS / Kotlin / Swift trio.
+              Packagist:{" "}
+              <a
+                className="underline underline-offset-4"
+                href="https://packagist.org/packages/davidamunga/kenya-locations"
+                rel="noreferrer"
+                target="_blank"
+              >
+                davidamunga/kenya-locations
+              </a>
+            </p>
           </TabsPanel>
         </Tabs>
       </section>
@@ -339,6 +357,59 @@ print(nairobi?.population_2019 ?? 0)`}
     case .area(let area):           print(area.locality)
     case .subCounty(let subCounty): print(subCounty.county)
     }
+}`}
+          />
+        </div>
+      </section>
+
+      <Separator />
+
+      <section className="scroll-mt-24" id="php">
+        <h2 className="font-heading font-semibold text-2xl tracking-tight">
+          PHP
+        </h2>
+        <p className="mt-3 max-w-prose text-muted-foreground text-sm">
+          PHP 8.2+. No init — JSON loads on first access. Published on
+          Packagist as{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://packagist.org/packages/davidamunga/kenya-locations"
+            rel="noreferrer"
+            target="_blank"
+          >
+            davidamunga/kenya-locations
+          </a>
+          .
+        </p>
+        <div className="mt-6 space-y-8">
+          <Example
+            filename="CountyPicker.php"
+            language="php"
+            title="County picker"
+            body="Same drill-down: county, constituency, wards. Name-or-code on scoped queries."
+            code={`use KenyaLocations\\KenyaLocations;
+
+$counties = KenyaLocations::getCounties();
+$nairobi = KenyaLocations::getCountyByName('Nairobi');
+$constituencies = KenyaLocations::getConstituenciesInCounty('Nairobi');
+$wards = KenyaLocations::getWardsInConstituency('Westlands');
+
+echo $nairobi?->capital;
+echo $nairobi?->population2019;`}
+          />
+          <Example
+            filename="Search.php"
+            language="php"
+            title="Search"
+            body="Typo-tolerant. Filter by SearchType when you only want one kind."
+            code={`use KenyaLocations\\KenyaLocations;
+use KenyaLocations\\SearchType;
+
+$results = KenyaLocations::search('Westlands', limit: 20);
+$wardsOnly = KenyaLocations::searchByType('West', SearchType::Ward);
+
+foreach ($results as $result) {
+    echo $result->type->value . ': ' . $result->name();
 }`}
           />
         </div>

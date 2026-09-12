@@ -15,10 +15,10 @@ export const Route = createRootRoute({
       ...seo({
         title: "kenya-locations",
         description:
-          "Kenyan administrative divisions as a typed library for JavaScript, React, Kotlin, and Swift.",
+          "Kenyan administrative divisions as a typed library for JavaScript, React, Kotlin, Swift, and PHP.",
         image: "https://kenya-locations.web.app/ogimage.jpg",
         keywords:
-          "kenya, locations, counties, constituencies, wards, localities, kotlin, swift, react",
+          "kenya, locations, counties, constituencies, wards, localities, kotlin, swift, react, php, composer",
       }),
     ],
     links: [
