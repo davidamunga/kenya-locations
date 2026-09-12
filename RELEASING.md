@@ -1,0 +1,55 @@
+# Releasing
+
+Two phases: Changesets versions packages, then a human publishes to each registry.
+
+## Version graph
+
+| Group | Packages | How they bump |
+|---|---|---|
+| Core trio | JS, Kotlin, Swift | Same number. A changeset for any one bumps all three. |
+| React | `kenya-locations-react` | Own number. Add a changeset only when hooks need a release. |
+| Dart | `kenya_locations` | Own number. Add a changeset only when the Dart package should ship. |
+
+`apps/web` is ignored. Do not bump versions by hand except in an emergency.
+
+```
+pnpm changeset                 # pick packages + bump type
+# merge the feature PR
+# merge the "chore: version packages" PR
+```
+
+`pnpm changeset:version` (used by CI) also syncs:
+
+- Kotlin stub → `packages/kotlin/gradle.properties`
+- Dart stub → `packages/dart/pubspec.yaml`
+
+Swift stays on the stub version. **Create Release** owns the `vX.Y.Z` git tag.
+
+## After the Version PR
+
+If the core trio changed, CI tags `v{js}` , pushes `release/v{js}`, and opens a **draft** GitHub release.
+
+Then run workflows from that release branch (or `main` if you prefer):
+
+| Workflow | When |
+|---|---|
+| **Publish Core Packages** | JS → npm, Kotlin → Maven Central, Swift verifies `v*` exists |
+| **Publish React to npm** | React-only or when React was in the Version PR |
+| **Publish Dart to pub.dev** | Dart-only or when Dart was in the Version PR |
+
+Do not use a leftover **Publish All Packages** button — that workflow is now core-only.
+
+First `kenya_locations` publish on pub.dev must succeed once (package + trusted publisher). After that, **Publish Dart to pub.dev** can use OIDC.
+
+React and Dart do not undraft the core `v*` release.
+
+## Changesets on feature PRs
+
+Required when you change shared `data/*.json` or published package source. Not required for docs, tests, examples, or CI.
+
+```bash
+pnpm changeset
+pnpm changeset:check --base origin/main
+```
+
+Version Check fails the PR if product files changed without a new `.changeset/*.md` file.

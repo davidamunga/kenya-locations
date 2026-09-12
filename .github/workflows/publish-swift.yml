@@ -6,10 +6,10 @@ on:
 
 jobs:
   publish:
-    name: Build, Test & Tag Swift Release
+    name: Build & Test Swift Package
     runs-on: macos-latest
     permissions:
-      contents: write
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +24,16 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Publishing version: $VERSION"
 
+      - name: Require Create Release tag
+        run: |
+          git fetch --tags --force
+          TAG="v${{ steps.version.outputs.version }}"
+          if ! git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Missing $TAG. Merge the Version PR and wait for Create Release to tag the core trio."
+            exit 1
+          fi
+          echo "Found $TAG"
+
       - name: Validate shared data
         run: node scripts/validate-data.js
 
@@ -37,16 +47,9 @@ jobs:
         run: swift test
         working-directory: packages/swift
 
-      - name: Create and push git tag
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag "v${{ steps.version.outputs.version }}" || echo "Tag already exists"
-          git push origin "v${{ steps.version.outputs.version }}" || echo "Tag already pushed"
-
       - name: Summary
         run: |
-          echo "## Published KenyaLocations ${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "## KenyaLocations ${{ steps.version.outputs.version }} is tagged" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Swift Package Manager — add via Xcode or \`Package.swift\`:" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

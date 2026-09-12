@@ -1,4 +1,6 @@
-name: Publish All Packages
+# Ships the lockstep core trio (JS, Kotlin, Swift) at vX.Y.Z.
+# React and Dart version independently — use their own workflows.
+name: Publish Core Packages
 
 on:
   workflow_dispatch:
@@ -6,7 +8,6 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  # npm: kenya-locations
   publish-js:
     name: JS → npm
     uses: ./.github/workflows/publish-js.yml
@@ -15,16 +16,6 @@ jobs:
       contents: write
       id-token: write
 
-  # npm: kenya-locations-react
-  publish-react:
-    name: React → npm
-    uses: ./.github/workflows/publish-react.yml
-    secrets: inherit
-    permissions:
-      contents: write
-      id-token: write
-
-  # Maven Central: io.github.davidamunga:kenya-locations
   publish-kotlin:
     name: Kotlin → Maven Central
     uses: ./.github/workflows/publish-kotlin.yml
@@ -32,19 +23,9 @@ jobs:
     permissions:
       contents: write
 
-  # Swift Package Index: tag-based release
   publish-swift:
-    name: Swift → GitHub tag
+    name: Swift → verify tag
     uses: ./.github/workflows/publish-swift.yml
     secrets: inherit
     permissions:
-      contents: write
-
-  # pub.dev: kenya_locations
-  publish-dart:
-    name: Dart → pub.dev
-    uses: ./.github/workflows/publish-dart.yml
-    secrets: inherit
-    permissions:
       contents: read
-      id-token: write

@@ -312,6 +312,8 @@ make a commit, the following will happen automatically:
 - **Commit Message**: [commitlint](https://commitlint.js.org/) checks Conventional Commits (plus a
   `data` type). Rules are in [`commitlint.config.js`](../../commitlint.config.js); agent-facing
   summary is in [`AGENTS.md`](../../AGENTS.md).
+- **Changeset**: Data and package-source PRs need `pnpm changeset`. See
+  [`RELEASING.md`](../../RELEASING.md).
 
 **Example commit messages:**
 
@@ -379,13 +381,15 @@ git checkout -b add-new-locations
 
 ### 3. Commit Guidelines
 
-Use clear, descriptive commit messages:
+Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (plus `data` for JSON):
 
 ```bash
-git commit -m "Add new localities and areas for Kiambu County"
-git commit -m "Update ward data for Westlands Constituency"
-git commit -m "Add missing sub-counties for Nakuru County"
+git commit -m "data(kiambu): add localities and areas"
+git commit -m "data(nairobi): update Westlands ward entries"
+git commit -m "data(nakuru): add missing sub-counties"
 ```
+
+Then `pnpm changeset` and pick the core packages (JS / Kotlin / Swift bump together).
 
 ### 4. Pull Request
 
