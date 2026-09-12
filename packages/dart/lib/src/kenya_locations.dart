@@ -87,18 +87,33 @@ class KenyaLocations {
 
   /// Returns the constituency containing the given ward.
   ///
-  /// The comparison of the ward name is case-insensitive. Returns `null` if
-  /// the ward or its parent constituency cannot be found.
-  static Constituency? getConstituencyOfWard(String wardName) {
-    final ward = _wards
-        .where((w) => w.name.toLowerCase() == wardName.toLowerCase())
-        .firstOrNull;
-    if (ward == null) return null;
+  /// [wardNameOrCode] may be a ward administrative code (exact match) or a
+  /// ward name (case-insensitive). Codes are unique and win when both a code
+  /// and a name could match.
+  ///
+  /// Returns `null` if the ward cannot be found, the name is used by more
+  /// than one ward (for example `Township`), or the parent constituency
+  /// cannot be found.
+  static Constituency? getConstituencyOfWard(String wardNameOrCode) {
+    final key = wardNameOrCode.trim();
+    if (key.isEmpty) return null;
 
-    return _constituencies
-        .where((c) => c.name == ward.constituency)
-        .firstOrNull;
+    final byCode = _wards.where((w) => w.code == key).toList();
+    if (byCode.length == 1) {
+      return _constituencyOf(byCode.first);
+    }
+
+    final byName = _wards
+        .where((w) => w.name.toLowerCase() == key.toLowerCase())
+        .toList();
+    if (byName.length != 1) return null;
+
+    return _constituencyOf(byName.first);
   }
+
+  static Constituency? _constituencyOf(Ward ward) => _constituencies
+      .where((c) => c.name.toLowerCase() == ward.constituency.toLowerCase())
+      .firstOrNull;
 
   /// Returns all localities in Kenya.
   static List<Locality> getLocalities() => _localities;
@@ -120,7 +135,8 @@ class KenyaLocations {
       .where((a) => a.locality.toLowerCase() == localityName.toLowerCase())
       .toList();
 
-  /// Searches across counties, wards, localities, and areas.
+  /// Searches across counties, sub-counties, constituencies, wards,
+  /// localities, and areas.
   ///
   /// The search is case-insensitive and supports typo-tolerant matching.
   /// Exact substring matches are ranked first, followed by fuzzy matches
@@ -133,12 +149,18 @@ class KenyaLocations {
   /// Queries shorter than two characters return no results.
   ///
   /// Results are ordered from the closest match to the least similar match
-  /// and limited to [limit] results.
-  static List<SearchResult<dynamic>> search(String query, {int limit = 10}) {
+  /// and limited to [limit] results. Pass [types] to restrict which entity
+  /// kinds are searched.
+  static List<SearchResult<dynamic>> search(
+    String query, {
+    int limit = 20,
+    List<SearchType>? types,
+  }) {
     final q = query.trim();
 
     if (q.length < 2 || limit <= 0) return [];
 
+    final allowed = types?.toSet();
     final scored = <({double score, SearchResult<dynamic> result})>[];
 
     void collect<T>(
@@ -146,6 +168,8 @@ class KenyaLocations {
       SearchType type,
       String Function(T item) nameOf,
     ) {
+      if (allowed != null && !allowed.contains(type)) return;
+
       for (final item in items) {
         final score = _fuzzyScore(q, nameOf(item));
 
@@ -159,6 +183,8 @@ class KenyaLocations {
     }
 
     collect(_counties, SearchType.county, (item) => item.name);
+    collect(_subCounties, SearchType.subCounty, (item) => item.name);
+    collect(_constituencies, SearchType.constituency, (item) => item.name);
     collect(_wards, SearchType.ward, (item) => item.name);
     collect(_localities, SearchType.locality, (item) => item.name);
     collect(_areas, SearchType.area, (item) => item.name);
@@ -167,6 +193,13 @@ class KenyaLocations {
 
     return scored.take(limit).map((entry) => entry.result).toList();
   }
+
+  /// Searches a single location type. See [search].
+  static List<SearchResult<dynamic>> searchByType(
+    String query,
+    SearchType type, {
+    int limit = 20,
+  }) => search(query, limit: limit, types: [type]);
 }
 
 /// Calculates a fuzzy match score between [pattern] and [text].

@@ -19,7 +19,7 @@ all sourced from the same underlying dataset.
 
 ```yaml
 dependencies:
-  kenya_locations: ^0.1.0
+  kenya_locations: ^0.1.1
 ```
 
 ```bash
@@ -57,32 +57,25 @@ final areas = KenyaLocations.getAreasInLocality('Karen');
 ### Resolving upward
 
 ```dart
-final constituency = KenyaLocations.getConstituencyOfWard('Mountain View');
+final constituency = KenyaLocations.getConstituencyOfWard('Mountain view');
 print(constituency?.name); // Westlands
+
+// Prefer a ward code when the name is reused (e.g. Township)
+final byCode = KenyaLocations.getConstituencyOfWard('1370');
 ```
 
 ### Search
 
 Search is case-insensitive and typo-tolerant, matching common misspellings
-and character substitutions via Levenshtein distance.
+and character substitutions via Levenshtein distance. It covers counties,
+sub-counties, constituencies, wards, localities, and areas.
 
 ```dart
-final results = KenyaLocations.search('Nairob', limit: 10);
+final results = KenyaLocations.search('Nairob', limit: 20);
+final wardsOnly = KenyaLocations.searchByType('West', SearchType.ward);
 
 for (final result in results) {
-switch (result.type) {
-case SearchType.county:
-final county = result.item as County;
-print(county.capital);
-case SearchType.ward:
-final ward = result.item as Ward;
-print(ward.constituency);
-case SearchType.area:
-final area = result.item as Area;
-print(area.locality);
-default:
-break;
-}
+  print('${result.type.name}: ${result.name}');
 }
 ```
 
@@ -118,14 +111,15 @@ County (47)
 | `getSubCountiesInCounty(countyName)`              | `List<SubCounty>`      |
 | `getConstituencies()`                             | `List<Constituency>`   |
 | `getConstituenciesInCounty(countyName)`           | `List<Constituency>`   |
-| `getConstituencyOfWard(wardName)`                 | `Constituency?`        |
+| `getConstituencyOfWard(wardNameOrCode)`           | `Constituency?`        |
 | `getWards()`                                      | `List<Ward>`           |
 | `getWardsInConstituency(constituencyName)`        | `List<Ward>`           |
 | `getLocalities()`                                 | `List<Locality>`       |
 | `getLocalitiesInCounty(countyName)`               | `List<Locality>`       |
 | `getAreas()`                                      | `List<Area>`           |
 | `getAreasInLocality(localityName)`                | `List<Area>`           |
-| `search(query, {limit = 10})`                     | `List<SearchResult>`   |
+| `search(query, {limit = 20, types})`              | `List<SearchResult>`   |
+| `searchByType(query, type, {limit = 20})`         | `List<SearchResult>`   |
 
 All county/constituency/ward/locality-name lookups are case-insensitive.
 
@@ -133,7 +127,7 @@ All county/constituency/ward/locality-name lookups are case-insensitive.
 
 A full Flutter example — a county → constituency → ward picker plus a
 fuzzy-search screen — lives in
-[`example/`](https://github.com/davidamunga/kenya-locations/tree/main/examples/flutter).
+[`examples/flutter`](https://github.com/davidamunga/kenya-locations/tree/main/examples/flutter).
 
 ## Contributing
 
@@ -144,6 +138,13 @@ this package is generated from that data, so edits there flow through to
 every language binding. See the main repo's
 [CONTRIBUTING](https://github.com/davidamunga/kenya-locations/blob/main/packages/js/CONTRIBUTING.md)
 guide.
+
+After changing `data/*.json`, regenerate the Dart constants from the
+monorepo root:
+
+```bash
+dart run packages/dart/scripts/generate_data.dart
+```
 
 ## License
 

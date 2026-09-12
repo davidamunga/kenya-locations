@@ -23,7 +23,7 @@ Kenyan administrative divisions — counties, sub-counties, constituencies, ward
 | **Swift** (iOS, macOS, tvOS, watchOS) | [`KenyaLocations`](https://swiftpackageindex.com/davidamunga/kenya-locations) | See below |
 | **Dart / Flutter** | [`kenya_locations`](https://pub.dev/packages/kenya_locations) | See below |
 
-All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, which versions independently).
+All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react` and `kenya_locations`, which version independently).
 
 ---
 
@@ -203,7 +203,7 @@ final wards = KenyaLocations.getWardsInConstituency('Westlands');
 final localities = KenyaLocations.getLocalitiesInCounty('Nairobi');
 
 // Fuzzy search — tolerates typos, sorted by relevance
-final results = KenyaLocations.search('Nairob', limit: 10); // matches "Nairobi"
+final results = KenyaLocations.search('Nairob', limit: 20); // matches "Nairobi"
 ```
 
 ---
@@ -601,7 +601,8 @@ KenyaLocations.getConstituenciesInCounty('Nairobi');
 KenyaLocations.getWardsInConstituency('Westlands');
 KenyaLocations.getLocalitiesInCounty('Nairobi');
 KenyaLocations.getAreasInLocality('Karen');
-KenyaLocations.getConstituencyOfWard('Mountain View'); // Constituency?
+KenyaLocations.getConstituencyOfWard('Mountain view'); // Constituency?
+KenyaLocations.getConstituencyOfWard('1370');          // same ward, by code
 ```
 
 ### Search
@@ -610,6 +611,7 @@ Search is **fuzzy and typo-tolerant** — a query like `'Nairob'` matches `'Nair
 
 ```dart
 final results = KenyaLocations.search('karen', limit: 20); // List<SearchResult<dynamic>>
+final wardsOnly = KenyaLocations.searchByType('West', SearchType.ward);
 
 for (final result in results) {
   switch (result.type) {
@@ -645,7 +647,7 @@ class Locality     { final String name, county; }
 class Area         { final String name, locality, county; }
 
 enum SearchType { county, subCounty, constituency, ward, locality, area }
-class SearchResult<T> { final SearchType type; final T item; }
+class SearchResult<T> { final SearchType type; final T item; String get name; }
 ```
 
 ---
@@ -667,6 +669,8 @@ data/
 ```
 
 See [packages/js/CONTRIBUTING.md](packages/js/CONTRIBUTING.md) for data structure, validation rules, and submission guidelines. Submit new areas via the [web app](https://kenya-locations.web.app/) or directly via a PR.
+
+After editing `data/*.json`, regenerate the Dart constants from the repo root with `dart run packages/dart/scripts/generate_data.dart`.
 
 ---
 

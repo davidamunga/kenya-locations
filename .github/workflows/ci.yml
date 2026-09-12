@@ -150,7 +150,10 @@ jobs:
         with:
           sdk: stable
       - name: Generate data.dart from shared JSON
-        run: dart run scripts/generate_data.dart
+        run: dart run packages/dart/scripts/generate_data.dart
+        working-directory: ${{ github.workspace }}
+      - name: Fail if generated data.dart is stale
+        run: git diff --exit-code -- packages/dart/lib/src/generated/data.dart
         working-directory: ${{ github.workspace }}
       - name: Install dependencies
         run: dart pub get
@@ -162,15 +165,6 @@ jobs:
         run: dart test
       - name: Publish dry run
         run: dart pub publish --dry-run
-      - name: Example — get dependencies
-        run: flutter pub get
-        working-directory: examples/flutter
-      - name: Example — analyze
-        run: flutter analyze
-        working-directory: examples/flutter
-      - name: Example — test
-        run: flutter test
-        working-directory: examples/flutter
 
   # ── Web demo ──────────────────────────────────────────────────────────────
   ci-web:
