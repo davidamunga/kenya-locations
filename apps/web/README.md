@@ -13,11 +13,4 @@ pnpm start
 
 The app is served at http://localhost:3000 and uses the local `kenya-locations` workspace package.
 
-Area submissions need Notion credentials on the **server** (Notion blocks browser calls). Copy `env.example` to `.env` and fill in the values:
-
-```bash
-cp apps/web/env.example apps/web/.env
-```
-
-Restart `pnpm start` after changing `.env`. The form posts to `/api/submit-area`; Vite forwards that to Notion.
-
+Area submissions open a prefilled [GitHub issue](https://github.com/davidamunga/kenya-locations/issues/new?template=data_contribution.md). No `.env` or backend is required.

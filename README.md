@@ -668,7 +668,7 @@ data/
 └── area.json
 ```
 
-See [packages/js/CONTRIBUTING.md](packages/js/CONTRIBUTING.md) for data structure, validation rules, and submission guidelines. Submit new areas via the [web app](https://kenya-locations.web.app/) or directly via a PR.
+See [packages/js/CONTRIBUTING.md](packages/js/CONTRIBUTING.md) for data structure, validation rules, and submission guidelines. Submit new areas via the [web app](https://kenya-locations.web.app/) (opens a GitHub issue) or a pull request.
 
 After editing `data/*.json`, regenerate the Dart constants from the repo root with `dart run packages/dart/scripts/generate_data.dart`.
 
@@ -687,7 +687,7 @@ pnpm install
 pnpm start          # http://localhost:3000
 ```
 
-It uses the local `kenya-locations` workspace package, so library changes show up immediately. Area submissions need Notion credentials in `apps/web/.env` — copy `apps/web/env.example`.
+It uses the local `kenya-locations` workspace package, so library changes show up immediately. Area submissions open a prefilled GitHub issue — no `.env` needed.
 
 ---
 

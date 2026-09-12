@@ -18,7 +18,6 @@
     "@fontsource-variable/inter": "^5.3.0",
     "@geist-ui/core": "^2.3.8",
     "@geist-ui/icons": "^1.0.2",
-    "@notionhq/client": "^5.0.0",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-popover": "^1.1.14",

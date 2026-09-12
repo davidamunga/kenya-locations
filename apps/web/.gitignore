@@ -4,5 +4,3 @@ dist
 dist-ssr
 *.local
 .env
-functions/node_modules
-functions/.env

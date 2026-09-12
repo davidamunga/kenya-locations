@@ -351,8 +351,8 @@ print(nairobi?.population_2019 ?? 0)`}
           Contribute
         </h2>
         <p className="mt-3 mb-6 max-w-prose text-muted-foreground text-sm">
-          Missing an estate? Submit it here, or add it in{" "}
-          <code>data/</code> and open a pull request. The pre-commit hook
+          Missing an estate? Submit it here to open a GitHub issue, or add it
+          in <code>data/</code> and open a pull request. The pre-commit hook
           validates JSON on every commit.
         </p>
         <AreaSubmissionForm />
