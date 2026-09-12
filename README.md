@@ -672,6 +672,8 @@ See [packages/js/CONTRIBUTING.md](packages/js/CONTRIBUTING.md) for data structur
 
 After editing `data/*.json`, regenerate the Dart constants from the repo root with `dart run packages/dart/scripts/generate_data.dart`.
 
+Commits and PR titles use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (plus a `data` type for JSON updates). See [AGENTS.md](AGENTS.md).
+
 ---
 
 ## Website
