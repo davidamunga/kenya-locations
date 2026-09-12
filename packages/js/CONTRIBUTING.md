@@ -309,10 +309,9 @@ make a commit, the following will happen automatically:
 - **Code Formatting**: ESLint and Prettier will check and fix your code
 - **Data Validation**: If you've changed data files, they'll be validated automatically
 - **Tests**: The test suite will run to ensure nothing is broken
-- **Commit Message**: Your commit message will be checked for conventional format
-
-📋 **Learn More**: See [Pre-commit Hooks Documentation](docs/PRE_COMMIT_HOOKS.md) for detailed
-information.
+- **Commit Message**: [commitlint](https://commitlint.js.org/) checks Conventional Commits (plus a
+  `data` type). Rules are in [`commitlint.config.js`](../../commitlint.config.js); agent-facing
+  summary is in [`AGENTS.md`](../../AGENTS.md).
 
 **Example commit messages:**
 
