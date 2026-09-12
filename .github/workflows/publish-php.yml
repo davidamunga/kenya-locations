@@ -1,0 +1,65 @@
+name: Publish PHP to Packagist
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  publish:
+    name: Validate PHP package for Packagist
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/php
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version from composer.json
+        id: version
+        run: |
+          VERSION=$(node -e "console.log(require('./composer.json').version)")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Publishing version: $VERSION"
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, json
+          coverage: none
+
+      - name: Validate shared data
+        run: node scripts/validate-data.js
+        working-directory: ${{ github.workspace }}
+
+      - name: Copy shared JSON into the package
+        run: php scripts/copy-data.php
+
+      - name: Fail if copied data is stale
+        run: git diff --exit-code -- packages/php/data
+        working-directory: ${{ github.workspace }}
+
+      - name: Validate composer.json
+        run: composer validate --strict --no-check-version
+
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction
+
+      - name: Run tests
+        run: composer test
+
+      - name: Summary
+        run: |
+          {
+            echo "## kenya-locations PHP ${{ steps.version.outputs.version }}"
+            echo ""
+            echo "Package validated. First Packagist publish: submit"
+            echo "\`davidamunga/kenya-locations\` on [packagist.org](https://packagist.org) and point it at this GitHub repo"
+            echo "(or a subtree that has \`packages/php/composer.json\` at the root)."
+            echo ""
+            echo "\`\`\`bash"
+            echo "composer require davidamunga/kenya-locations"
+            echo "\`\`\`"
+          } >> $GITHUB_STEP_SUMMARY

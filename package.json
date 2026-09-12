@@ -2,7 +2,7 @@
   "name": "kenya-locations-monorepo",
   "private": true,
   "type": "module",
-  "description": "Monorepo for kenya-locations — shared data, JS and Kotlin platform libraries",
+  "description": "Monorepo for kenya-locations — shared data and platform libraries",
   "scripts": {
     "dev": "pnpm --filter kenya-locations-web dev",
     "start": "pnpm --filter kenya-locations-web start",
@@ -17,7 +17,7 @@
     "commitlint:last": "commitlint --last --verbose",
     "prepare": "husky",
     "changeset": "changeset",
-    "changeset:version": "changeset version && node scripts/sync-kotlin-version.js && node scripts/sync-swift-version.js && node scripts/sync-dart-version.js",
+    "changeset:version": "changeset version && node scripts/sync-kotlin-version.js && node scripts/sync-swift-version.js && node scripts/sync-dart-version.js && node scripts/sync-php-version.js",
     "changeset:check": "node scripts/check-changeset.js",
     "changeset:check:test": "node --test scripts/check-changeset.test.js",
     "changeset:publish:js": "pnpm --filter kenya-locations changeset:publish"

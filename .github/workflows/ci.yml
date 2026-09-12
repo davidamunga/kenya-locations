@@ -38,6 +38,7 @@ jobs:
       kotlin: ${{ steps.filter.outputs.kotlin }}
       swift: ${{ steps.filter.outputs.swift }}
       dart: ${{ steps.filter.outputs.dart }}
+      php: ${{ steps.filter.outputs.php }}
       web: ${{ steps.filter.outputs.web }}
     steps:
       - uses: actions/checkout@v4
@@ -62,6 +63,9 @@ jobs:
             dart:
               - 'packages/dart/**'
               - 'examples/flutter/**'
+              - 'data/**'
+            php:
+              - 'packages/php/**'
               - 'data/**'
             web:
               - 'apps/web/**'
@@ -185,6 +189,34 @@ jobs:
         run: dart test
       - name: Publish dry run
         run: dart pub publish --dry-run
+
+  # ── PHP package ───────────────────────────────────────────────────────────
+  ci-php:
+    name: PHP — Validate & Test
+    needs: changes
+    if: needs.changes.outputs.php == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/php
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, json
+          coverage: none
+      - name: Copy shared JSON into the package
+        run: php scripts/copy-data.php
+      - name: Fail if copied data is stale
+        run: git diff --exit-code -- packages/php/data
+        working-directory: ${{ github.workspace }}
+      - name: Validate composer.json
+        run: composer validate --strict --no-check-version
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction
+      - name: Run tests
+        run: composer test
 
   # ── Web demo ──────────────────────────────────────────────────────────────
   ci-web:

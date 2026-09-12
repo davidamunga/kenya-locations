@@ -9,6 +9,7 @@ Two phases: Changesets versions packages, then a human publishes to each registr
 | Core trio | JS, Kotlin, Swift | Same number. A changeset for any one bumps all three. |
 | React | `kenya-locations-react` | Own number. Add a changeset only when hooks need a release. |
 | Dart | `kenya_locations` | Own number. Add a changeset only when the Dart package should ship. |
+| PHP | `davidamunga/kenya-locations` | Own number. Add a changeset only when the PHP package should ship. |
 
 `apps/web` is ignored. Do not bump versions by hand except in an emergency.
 
@@ -22,6 +23,7 @@ pnpm changeset                 # pick packages + bump type
 
 - Kotlin stub → `packages/kotlin/gradle.properties`
 - Dart stub → `packages/dart/pubspec.yaml`
+- PHP stub → `packages/php/composer.json`
 
 Swift stays on the stub version. **Create Release** owns the `vX.Y.Z` git tag.
 
@@ -36,12 +38,15 @@ Then run workflows from that release branch (or `main` if you prefer):
 | **Publish Core Packages** | JS → npm, Kotlin → Maven Central, Swift verifies `v*` exists |
 | **Publish React to npm** | React-only or when React was in the Version PR |
 | **Publish Dart to pub.dev** | Dart-only or when Dart was in the Version PR |
+| **Publish PHP to Packagist** | PHP-only or when PHP was in the Version PR |
 
 Do not use a leftover **Publish All Packages** button — that workflow is now core-only.
 
 First `kenya_locations` publish on pub.dev must succeed once (package + trusted publisher). After that, **Publish Dart to pub.dev** can use OIDC.
 
-React and Dart do not undraft the core `v*` release.
+First Packagist submit of `davidamunga/kenya-locations` must succeed once. After that, **Publish PHP to Packagist** validates the package; Packagist picks up tagged commits via the GitHub webhook.
+
+React, Dart, and PHP do not undraft the core `v*` release.
 
 ## Changesets on feature PRs
 

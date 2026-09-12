@@ -9,6 +9,7 @@ test("treats shared JSON and package source as product files", () => {
   assert.equal(isProductPath("packages/kotlin/src/main/kotlin/ke/locations/KenyaLocations.kt"), true);
   assert.equal(isProductPath("packages/swift/Sources/KenyaLocations/Search.swift"), true);
   assert.equal(isProductPath("packages/dart/lib/kenya_locations.dart"), true);
+  assert.equal(isProductPath("packages/php/src/KenyaLocations.php"), true);
 });
 
 test("skips docs, tests, generated Dart, and copied native JSON", () => {
@@ -17,6 +18,8 @@ test("skips docs, tests, generated Dart, and copied native JSON", () => {
   assert.equal(isProductPath("packages/dart/lib/src/generated/data.dart"), false);
   assert.equal(isProductPath("packages/kotlin/src/main/resources/counties.json"), false);
   assert.equal(isProductPath("packages/swift/Sources/KenyaLocations/Resources/wards.json"), false);
+  assert.equal(isProductPath("packages/php/data/counties.json"), false);
+  assert.equal(isProductPath("packages/php/tests/KenyaLocationsTest.php"), false);
   assert.equal(isProductPath(".github/workflows/ci.yml"), false);
 });
 

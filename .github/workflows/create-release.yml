@@ -32,13 +32,17 @@ jobs:
           REACT_OLD=$(read_version HEAD~1:packages/react/package.json)
           DART_NOW=$(read_version HEAD:packages/dart/package.json)
           DART_OLD=$(read_version HEAD~1:packages/dart/package.json)
+          PHP_NOW=$(read_version HEAD:packages/php/package.json)
+          PHP_OLD=$(read_version HEAD~1:packages/php/package.json)
 
           echo "js=$JS_NOW" >> $GITHUB_OUTPUT
           echo "react=$REACT_NOW" >> $GITHUB_OUTPUT
           echo "dart=$DART_NOW" >> $GITHUB_OUTPUT
+          echo "php=$PHP_NOW" >> $GITHUB_OUTPUT
           echo "js_changed=$([ -n "$JS_NOW" ] && [ "$JS_NOW" != "$JS_OLD" ] && echo true || echo false)" >> $GITHUB_OUTPUT
           echo "react_changed=$([ -n "$REACT_NOW" ] && [ "$REACT_NOW" != "$REACT_OLD" ] && echo true || echo false)" >> $GITHUB_OUTPUT
           echo "dart_changed=$([ -n "$DART_NOW" ] && [ "$DART_NOW" != "$DART_OLD" ] && echo true || echo false)" >> $GITHUB_OUTPUT
+          echo "php_changed=$([ -n "$PHP_NOW" ] && [ "$PHP_NOW" != "$PHP_OLD" ] && echo true || echo false)" >> $GITHUB_OUTPUT
 
       - name: Create git tag
         if: steps.bumped.outputs.js_changed == 'true'
@@ -91,6 +95,10 @@ jobs:
             if [ "${{ steps.bumped.outputs.dart_changed }}" = "true" ]; then
               echo "- Actions → **Publish Dart to pub.dev** (kenya_locations@${{ steps.bumped.outputs.dart }})"
               echo "- First pub.dev publish must succeed once before OIDC can take over."
+            fi
+            if [ "${{ steps.bumped.outputs.php_changed }}" = "true" ]; then
+              echo "- Actions → **Publish PHP to Packagist** (davidamunga/kenya-locations@${{ steps.bumped.outputs.php }})"
+              echo "- First Packagist submit must succeed once; later updates can use the GitHub webhook."
             fi
           } >> $GITHUB_STEP_SUMMARY
         env:

@@ -1,0 +1,425 @@
+[
+  {
+    "code": "030",
+    "name": "Baringo",
+    "capital": "Kabarnet",
+    "area_km2": 11075.3,
+    "population_2019": 666763,
+    "region": "Rift Valley",
+    "postal_code": "30400"
+  },
+  {
+    "code": "036",
+    "name": "Bomet",
+    "capital": "Bomet",
+    "area_km2": 1997.9,
+    "population_2019": 875689,
+    "region": "Rift Valley",
+    "postal_code": "20400"
+  },
+  {
+    "code": "039",
+    "name": "Bungoma",
+    "capital": "Bungoma",
+    "area_km2": 2206.9,
+    "population_2019": 1670570,
+    "region": "Western",
+    "postal_code": "50200"
+  },
+  {
+    "code": "040",
+    "name": "Busia",
+    "capital": "Busia",
+    "area_km2": 1628.4,
+    "population_2019": 893681,
+    "region": "Western",
+    "postal_code": "50400"
+  },
+  {
+    "code": "028",
+    "name": "Elgeyo-Marakwet",
+    "capital": "Iten",
+    "area_km2": 3049.7,
+    "population_2019": 454480,
+    "region": "Rift Valley",
+    "postal_code": "30700"
+  },
+  {
+    "code": "014",
+    "name": "Embu",
+    "capital": "Embu",
+    "area_km2": 2555.9,
+    "population_2019": 608599,
+    "region": "Eastern",
+    "postal_code": "60100"
+  },
+  {
+    "code": "007",
+    "name": "Garissa",
+    "capital": "Garissa",
+    "area_km2": 45720.2,
+    "population_2019": 841353,
+    "region": "North Eastern",
+    "postal_code": "70100"
+  },
+  {
+    "code": "043",
+    "name": "Homa Bay",
+    "capital": "Homa Bay",
+    "area_km2": 3154.7,
+    "population_2019": 1131950,
+    "region": "Nyanza",
+    "postal_code": "40300"
+  },
+  {
+    "code": "011",
+    "name": "Isiolo",
+    "capital": "Isiolo",
+    "area_km2": 25336.1,
+    "population_2019": 268002,
+    "region": "Eastern",
+    "postal_code": "60300"
+  },
+  {
+    "code": "034",
+    "name": "Kajiado",
+    "capital": "Kajiado",
+    "area_km2": 21292.7,
+    "population_2019": 1117840,
+    "region": "Rift Valley",
+    "postal_code": "01100"
+  },
+  {
+    "code": "037",
+    "name": "Kakamega",
+    "capital": "Kakamega",
+    "area_km2": 3033.8,
+    "population_2019": 1867579,
+    "region": "Western",
+    "postal_code": "50100"
+  },
+  {
+    "code": "035",
+    "name": "Kericho",
+    "capital": "Kericho",
+    "area_km2": 2454.5,
+    "population_2019": 901777,
+    "region": "Rift Valley",
+    "postal_code": "20200"
+  },
+  {
+    "code": "022",
+    "name": "Kiambu",
+    "capital": "Kiambu",
+    "area_km2": 2449.2,
+    "population_2019": 2417735,
+    "region": "Central",
+    "postal_code": "00900"
+  },
+  {
+    "code": "003",
+    "name": "Kilifi",
+    "capital": "Kilifi",
+    "area_km2": 12245.9,
+    "population_2019": 1453787,
+    "region": "Coast",
+    "postal_code": "80108"
+  },
+  {
+    "code": "020",
+    "name": "Kirinyaga",
+    "capital": "Kerugoya",
+    "area_km2": 1205.4,
+    "population_2019": 610411,
+    "region": "Central",
+    "postal_code": "10304"
+  },
+  {
+    "code": "045",
+    "name": "Kisii",
+    "capital": "Kisii",
+    "area_km2": 1317.9,
+    "population_2019": 1266860,
+    "region": "Nyanza",
+    "postal_code": "40200"
+  },
+  {
+    "code": "042",
+    "name": "Kisumu",
+    "capital": "Kisumu",
+    "area_km2": 2009.5,
+    "population_2019": 1155574,
+    "region": "Nyanza",
+    "postal_code": "40100"
+  },
+  {
+    "code": "015",
+    "name": "Kitui",
+    "capital": "Kitui",
+    "area_km2": 24385.1,
+    "population_2019": 1136187,
+    "region": "Eastern",
+    "postal_code": "90200"
+  },
+  {
+    "code": "002",
+    "name": "Kwale",
+    "capital": "Kwale",
+    "area_km2": 8270.3,
+    "population_2019": 866820,
+    "region": "Coast",
+    "postal_code": "80403"
+  },
+  {
+    "code": "031",
+    "name": "Laikipia",
+    "capital": "Rumuruti",
+    "area_km2": 8696.1,
+    "population_2019": 518560,
+    "region": "Rift Valley",
+    "postal_code": "20321"
+  },
+  {
+    "code": "005",
+    "name": "Lamu",
+    "capital": "Lamu",
+    "area_km2": 6497.7,
+    "population_2019": 143920,
+    "region": "Coast",
+    "postal_code": "80500"
+  },
+  {
+    "code": "016",
+    "name": "Machakos",
+    "capital": "Machakos",
+    "area_km2": 5952.9,
+    "population_2019": 1421932,
+    "region": "Eastern",
+    "postal_code": "90100"
+  },
+  {
+    "code": "017",
+    "name": "Makueni",
+    "capital": "Wote",
+    "area_km2": 8008.9,
+    "population_2019": 987653,
+    "region": "Eastern",
+    "postal_code": "90300"
+  },
+  {
+    "code": "009",
+    "name": "Mandera",
+    "capital": "Mandera",
+    "area_km2": 25797.7,
+    "population_2019": 867457,
+    "region": "North Eastern",
+    "postal_code": "70300"
+  },
+  {
+    "code": "010",
+    "name": "Marsabit",
+    "capital": "Marsabit",
+    "area_km2": 66923.1,
+    "population_2019": 459785,
+    "region": "Eastern",
+    "postal_code": "60500"
+  },
+  {
+    "code": "012",
+    "name": "Meru",
+    "capital": "Meru",
+    "area_km2": 7003.1,
+    "population_2019": 1545714,
+    "region": "Eastern",
+    "postal_code": "60200"
+  },
+  {
+    "code": "044",
+    "name": "Migori",
+    "capital": "Migori",
+    "area_km2": 2586.4,
+    "population_2019": 1116436,
+    "region": "Nyanza",
+    "postal_code": "40400"
+  },
+  {
+    "code": "001",
+    "name": "Mombasa",
+    "capital": "Mombasa",
+    "area_km2": 212.5,
+    "population_2019": 1208333,
+    "region": "Coast",
+    "postal_code": "80100"
+  },
+  {
+    "code": "021",
+    "name": "Murang'a",
+    "capital": "Murang'a",
+    "area_km2": 2325.8,
+    "population_2019": 1056640,
+    "region": "Central",
+    "postal_code": "10200"
+  },
+  {
+    "code": "047",
+    "name": "Nairobi",
+    "capital": "Nairobi",
+    "area_km2": 694.9,
+    "population_2019": 4397073,
+    "region": "Nairobi",
+    "postal_code": "00100"
+  },
+  {
+    "code": "032",
+    "name": "Nakuru",
+    "capital": "Nakuru",
+    "area_km2": 7509.5,
+    "population_2019": 2162202,
+    "region": "Rift Valley",
+    "postal_code": "20100"
+  },
+  {
+    "code": "029",
+    "name": "Nandi",
+    "capital": "Kapsabet",
+    "area_km2": 2884.5,
+    "population_2019": 885711,
+    "region": "Rift Valley",
+    "postal_code": "30300"
+  },
+  {
+    "code": "033",
+    "name": "Narok",
+    "capital": "Narok",
+    "area_km2": 17921.2,
+    "population_2019": 1157873,
+    "region": "Rift Valley",
+    "postal_code": "20500"
+  },
+  {
+    "code": "046",
+    "name": "Nyamira",
+    "capital": "Nyamira",
+    "area_km2": 912.5,
+    "population_2019": 605576,
+    "region": "Nyanza",
+    "postal_code": "40500"
+  },
+  {
+    "code": "018",
+    "name": "Nyandarua",
+    "capital": "Ol Kalou",
+    "area_km2": 3107.7,
+    "population_2019": 638289,
+    "region": "Central",
+    "postal_code": "20301"
+  },
+  {
+    "code": "019",
+    "name": "Nyeri",
+    "capital": "Nyeri",
+    "area_km2": 2361.0,
+    "population_2019": 759164,
+    "region": "Central",
+    "postal_code": "10100"
+  },
+  {
+    "code": "025",
+    "name": "Samburu",
+    "capital": "Maralal",
+    "area_km2": 20182.5,
+    "population_2019": 310327,
+    "region": "Rift Valley",
+    "postal_code": "20600"
+  },
+  {
+    "code": "041",
+    "name": "Siaya",
+    "capital": "Siaya",
+    "area_km2": 2496.1,
+    "population_2019": 993183,
+    "region": "Nyanza",
+    "postal_code": "40600"
+  },
+  {
+    "code": "006",
+    "name": "Taita-Taveta",
+    "capital": "Mwatate",
+    "area_km2": 17083.9,
+    "population_2019": 340671,
+    "region": "Coast",
+    "postal_code": "80305"
+  },
+  {
+    "code": "004",
+    "name": "Tana River",
+    "capital": "Hola",
+    "area_km2": 35375.8,
+    "population_2019": 315943,
+    "region": "Coast",
+    "postal_code": "70101"
+  },
+  {
+    "code": "013",
+    "name": "Tharaka-Nithi",
+    "capital": "Kathwana",
+    "area_km2": 2609.5,
+    "population_2019": 393177,
+    "region": "Eastern",
+    "postal_code": "60215"
+  },
+  {
+    "code": "026",
+    "name": "Trans Nzoia",
+    "capital": "Kitale",
+    "area_km2": 2469.9,
+    "population_2019": 990341,
+    "region": "Rift Valley",
+    "postal_code": "30200"
+  },
+  {
+    "code": "023",
+    "name": "Turkana",
+    "capital": "Lodwar",
+    "area_km2": 98597.8,
+    "population_2019": 1504976,
+    "region": "Rift Valley",
+    "postal_code": "30500"
+  },
+  {
+    "code": "027",
+    "name": "Uasin Gishu",
+    "capital": "Eldoret",
+    "area_km2": 2955.3,
+    "population_2019": 1163186,
+    "region": "Rift Valley",
+    "postal_code": "30100"
+  },
+  {
+    "code": "038",
+    "name": "Vihiga",
+    "capital": "Mbale",
+    "area_km2": 531.3,
+    "population_2019": 590013,
+    "region": "Western",
+    "postal_code": "50300"
+  },
+  {
+    "code": "008",
+    "name": "Wajir",
+    "capital": "Wajir",
+    "area_km2": 55840.6,
+    "population_2019": 781263,
+    "region": "North Eastern",
+    "postal_code": "70200"
+  },
+  {
+    "code": "024",
+    "name": "West Pokot",
+    "capital": "Kapenguria",
+    "area_km2": 8418.2,
+    "population_2019": 621241,
+    "region": "Rift Valley",
+    "postal_code": "30600"
+  }
+]

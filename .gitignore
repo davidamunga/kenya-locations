@@ -47,6 +47,10 @@ apps/web/.firebase
 .build/
 packages/swift/.build/
 
+# PHP
+packages/php/vendor/
+packages/php/.phpunit.cache/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
