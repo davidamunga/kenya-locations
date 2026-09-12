@@ -157,48 +157,99 @@ void main() {
     });
 
     test('searches across supported location types', () {
-      final county = KenyaLocations.getCounties().first;
-      final ward = KenyaLocations.getWards().first;
-      final locality = KenyaLocations.getLocalities().first;
-      final area = KenyaLocations.getAreas().first;
-
       expect(
         KenyaLocations.search(
-          county.name,
+          'Nairobi',
           limit: 1000,
         ).any((result) => result.type == SearchType.county),
         isTrue,
       );
-
       expect(
         KenyaLocations.search(
-          ward.name,
+          'Alego Usonga',
+          limit: 1000,
+        ).any((result) => result.type == SearchType.constituency),
+        isTrue,
+      );
+      expect(
+        KenyaLocations.search(
+          'Bomet Central',
+          limit: 1000,
+        ).any((result) => result.type == SearchType.subCounty),
+        isTrue,
+      );
+      expect(
+        KenyaLocations.search(
+          KenyaLocations.getWards().first.name,
           limit: 1000,
         ).any((result) => result.type == SearchType.ward),
         isTrue,
       );
-
       expect(
         KenyaLocations.search(
-          locality.name,
+          KenyaLocations.getLocalities().first.name,
           limit: 1000,
         ).any((result) => result.type == SearchType.locality),
         isTrue,
       );
-
       expect(
         KenyaLocations.search(
-          area.name,
+          KenyaLocations.getAreas().first.name,
           limit: 1000,
         ).any((result) => result.type == SearchType.area),
         isTrue,
       );
     });
 
-    test('search respects the result limit', () {
-      final results = KenyaLocations.search('a', limit: 5);
+    test('searchByType restricts results to one type', () {
+      final results = KenyaLocations.searchByType('Nairobi', SearchType.county);
 
-      expect(results.length, lessThanOrEqualTo(5));
+      expect(results, isNotEmpty);
+      expect(
+        results.every((result) => result.type == SearchType.county),
+        isTrue,
+      );
+    });
+
+    test('search result exposes a display name', () {
+      final results = KenyaLocations.search('Nairobi');
+
+      expect(results, isNotEmpty);
+      expect(results.first.name, 'Nairobi');
+    });
+
+    test('search respects the result limit', () {
+      final results = KenyaLocations.search('West', limit: 5);
+
+      expect(results.length, 5);
+    });
+
+    test('resolves a unique ward name to its constituency', () {
+      final constituency = KenyaLocations.getConstituencyOfWard(
+        'Mountain view',
+      );
+
+      expect(constituency?.name, 'Westlands');
+    });
+
+    test('resolves a ward by administrative code', () {
+      final constituency = KenyaLocations.getConstituencyOfWard('1370');
+
+      expect(constituency?.name, 'Westlands');
+    });
+
+    test('returns null when a ward name is used more than once', () {
+      expect(KenyaLocations.getConstituencyOfWard('Township'), isNull);
+    });
+
+    test('resolves a colliding ward name via its code', () {
+      final constituency = KenyaLocations.getConstituencyOfWard('0133');
+
+      expect(constituency?.name, 'Garissa Township');
+    });
+
+    test('returns null for an unknown ward', () {
+      expect(KenyaLocations.getConstituencyOfWard('Unknown Ward'), isNull);
     });
 
     test(

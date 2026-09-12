@@ -36,7 +36,11 @@ jobs:
         working-directory: ${{ github.workspace }}
 
       - name: Generate data.dart from shared JSON
-        run: dart run scripts/generate_data.dart
+        run: dart run packages/dart/scripts/generate_data.dart
+        working-directory: ${{ github.workspace }}
+
+      - name: Fail if generated data.dart is stale
+        run: git diff --exit-code -- packages/dart/lib/src/generated/data.dart
         working-directory: ${{ github.workspace }}
 
       - name: Install dependencies

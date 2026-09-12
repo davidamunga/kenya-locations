@@ -6,9 +6,12 @@ library;
 import 'dart:convert';
 import 'dart:io';
 
-/// Entry point. Reads the county, sub-county, constituency, ward, locality,
-/// and area JSON files from the `data` directory and writes them out as
-/// Dart constants to the generated data file.
+/// Entry point. Must be run from the monorepo root:
+/// `dart run packages/dart/scripts/generate_data.dart`
+///
+/// Reads the county, sub-county, constituency, ward, locality, and area
+/// JSON files from the `data` directory and writes them out as Dart
+/// constants to the generated data file.
 Future<void> main() async {
   final dataDir = Directory('data');
   final outFile = File('packages/dart/lib/src/generated/data.dart');

@@ -148,16 +148,6 @@ class SearchPane extends StatefulWidget {
 class _SearchPaneState extends State<SearchPane> {
   String query = '';
 
-  String _nameOf(Object item) => switch (item) {
-    County(:final name) => name,
-    SubCounty(:final name) => name,
-    Constituency(:final name) => name,
-    Ward(:final name) => name,
-    Locality(:final name) => name,
-    Area(:final name) => name,
-    _ => item.toString(),
-  };
-
   @override
   Widget build(BuildContext context) {
     final results = query.length < 2
@@ -183,7 +173,7 @@ class _SearchPaneState extends State<SearchPane> {
             itemBuilder: (context, index) {
               final result = results[index];
               return ListTile(
-                title: Text(_nameOf(result.item)),
+                title: Text(result.name),
                 subtitle: Text(result.type.name),
               );
             },
