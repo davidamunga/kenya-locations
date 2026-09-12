@@ -17,6 +17,7 @@ jobs:
       react: ${{ steps.filter.outputs.react }}
       kotlin: ${{ steps.filter.outputs.kotlin }}
       swift: ${{ steps.filter.outputs.swift }}
+      dart: ${{ steps.filter.outputs.dart }}
       web: ${{ steps.filter.outputs.web }}
     steps:
       - uses: actions/checkout@v4
@@ -37,6 +38,10 @@ jobs:
               - 'data/**'
             swift:
               - 'packages/swift/**'
+              - 'data/**'
+            dart:
+              - 'packages/dart/**'
+              - 'examples/flutter/**'
               - 'data/**'
             web:
               - 'apps/web/**'
@@ -129,6 +134,43 @@ jobs:
         run: ./gradlew build
       - name: Test
         run: ./gradlew test
+
+  # ── Dart package ──────────────────────────────────────────────────────────
+  ci-dart:
+    name: Dart — Analyze, Format & Test
+    needs: changes
+    if: needs.changes.outputs.dart == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/dart
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+      - name: Generate data.dart from shared JSON
+        run: dart run scripts/generate_data.dart
+        working-directory: ${{ github.workspace }}
+      - name: Install dependencies
+        run: dart pub get
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
+      - name: Analyze
+        run: dart analyze --fatal-infos
+      - name: Run tests
+        run: dart test
+      - name: Publish dry run
+        run: dart pub publish --dry-run
+      - name: Example — get dependencies
+        run: flutter pub get
+        working-directory: examples/flutter
+      - name: Example — analyze
+        run: flutter analyze
+        working-directory: examples/flutter
+      - name: Example — test
+        run: flutter test
+        working-directory: examples/flutter
 
   # ── Web demo ──────────────────────────────────────────────────────────────
   ci-web:

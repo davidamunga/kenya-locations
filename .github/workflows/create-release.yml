@@ -52,7 +52,7 @@ jobs:
             --draft
           echo "## Draft release created: v$VERSION" >> $GITHUB_STEP_SUMMARY
           echo "Publish when ready:" >> $GITHUB_STEP_SUMMARY
-          echo "- Actions → **Publish All Packages** → Run workflow _(publishes JS, React, Kotlin, Swift in one go)_" >> $GITHUB_STEP_SUMMARY
+          echo "- Actions → **Publish All Packages** → Run workflow _(publishes JS, React, Kotlin, Swift, Dart in one go)_" >> $GITHUB_STEP_SUMMARY
           echo "  - Or individually: **Publish JS to npm**, **Publish React to npm**, **Publish Kotlin to Maven Central**, **Publish Swift Package**" >> $GITHUB_STEP_SUMMARY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

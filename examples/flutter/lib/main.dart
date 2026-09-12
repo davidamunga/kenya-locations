@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'kenya_locations.dart';
+import 'package:kenya_locations/kenya_locations.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
   runApp(const ExampleApp());
 }
 
@@ -23,58 +21,31 @@ class ExampleApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  late final Future<KenyaLocations> _load = KenyaLocations.load();
-
-  @override
   Widget build(BuildContext context) {
-    return FutureBuilder<KenyaLocations>(
-      future: _load,
-      builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          return Scaffold(body: Center(child: Text('${snapshot.error}')));
-        }
-        if (!snapshot.hasData) {
-          return const Scaffold(
-            body: Center(child: CircularProgressIndicator()),
-          );
-        }
-        return DefaultTabController(
-          length: 2,
-          child: Scaffold(
-            appBar: AppBar(
-              title: const Text('kenya-locations'),
-              bottom: const TabBar(
-                tabs: [
-                  Tab(text: 'Explore'),
-                  Tab(text: 'Search'),
-                ],
-              ),
-            ),
-            body: TabBarView(
-              children: [
-                ExplorePane(locations: snapshot.data!),
-                SearchPane(locations: snapshot.data!),
-              ],
-            ),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('kenya-locations'),
+          bottom: const TabBar(
+            tabs: [
+              Tab(text: 'Explore'),
+              Tab(text: 'Search'),
+            ],
           ),
-        );
-      },
+        ),
+        body: const TabBarView(children: [ExplorePane(), SearchPane()]),
+      ),
     );
   }
 }
 
 class ExplorePane extends StatefulWidget {
-  const ExplorePane({super.key, required this.locations});
-
-  final KenyaLocations locations;
+  const ExplorePane({super.key});
 
   @override
   State<ExplorePane> createState() => _ExplorePaneState();
@@ -87,22 +58,21 @@ class _ExplorePaneState extends State<ExplorePane> {
 
   @override
   Widget build(BuildContext context) {
-    final counties = widget.locations.getCounties();
+    final counties = KenyaLocations.getCounties();
     final constituencies = county == null
         ? const <Constituency>[]
-        : widget.locations.getConstituenciesInCounty(county!.name);
+        : KenyaLocations.getConstituenciesInCounty(county!.name);
     final wards = constituency == null
         ? const <Ward>[]
-        : widget.locations.getWardsInConstituency(constituency!.name);
+        : KenyaLocations.getWardsInConstituency(constituency!.name);
 
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
         Text(
-          'County → constituency → ward. This example reads the same JSON as the JS, Kotlin, and Swift libraries.',
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-              ),
+          'County → constituency → ward. This example uses the kenya_locations Dart package.',
+          style: Theme.of(context).textTheme.bodyMedium
+              ?.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
         ),
         const SizedBox(height: 16),
         DropdownButtonFormField<County>(
@@ -169,9 +139,7 @@ class _ExplorePaneState extends State<ExplorePane> {
 }
 
 class SearchPane extends StatefulWidget {
-  const SearchPane({super.key, required this.locations});
-
-  final KenyaLocations locations;
+  const SearchPane({super.key});
 
   @override
   State<SearchPane> createState() => _SearchPaneState();
@@ -180,11 +148,21 @@ class SearchPane extends StatefulWidget {
 class _SearchPaneState extends State<SearchPane> {
   String query = '';
 
+  String _nameOf(Object item) => switch (item) {
+    County(:final name) => name,
+    SubCounty(:final name) => name,
+    Constituency(:final name) => name,
+    Ward(:final name) => name,
+    Locality(:final name) => name,
+    Area(:final name) => name,
+    _ => item.toString(),
+  };
+
   @override
   Widget build(BuildContext context) {
     final results = query.length < 2
-        ? const <SearchResult>[]
-        : widget.locations.search(query, limit: 16);
+        ? const <SearchResult<dynamic>>[]
+        : KenyaLocations.search(query, limit: 16);
 
     return Column(
       children: [
@@ -205,7 +183,7 @@ class _SearchPaneState extends State<SearchPane> {
             itemBuilder: (context, index) {
               final result = results[index];
               return ListTile(
-                title: Text(result.name),
+                title: Text(_nameOf(result.item)),
                 subtitle: Text(result.type.name),
               );
             },

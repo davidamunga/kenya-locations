@@ -1,0 +1,20 @@
+name: kenya_locations
+description: >-
+  Kenyan administrative divisions — counties, sub-counties, constituencies,
+  wards, localities, and areas — as a fast, typed Dart library.
+version: 0.1.1
+repository: https://github.com/davidamunga/kenya-locations
+homepage: https://github.com/davidamunga/kenya-locations/tree/main/packages/dart
+issue_tracker: https://github.com/davidamunga/kenya-locations/issues
+topics:
+  - kenya
+  - locations
+  - counties
+
+environment:
+  sdk: ^3.13.0
+
+dev_dependencies:
+  mocktail: ^1.0.5
+  test: ^1.32.0
+  very_good_analysis: ^11.0.0

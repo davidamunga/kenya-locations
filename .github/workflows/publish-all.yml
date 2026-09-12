@@ -39,3 +39,12 @@ jobs:
     secrets: inherit
     permissions:
       contents: write
+
+  # pub.dev: kenya_locations
+  publish-dart:
+    name: Dart → pub.dev
+    uses: ./.github/workflows/publish-dart.yml
+    secrets: inherit
+    permissions:
+      contents: read
+      id-token: write

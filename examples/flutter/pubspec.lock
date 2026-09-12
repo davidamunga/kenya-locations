@@ -75,6 +75,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  kenya_locations:
+    dependency: "direct main"
+    description:
+      path: "../../packages/dart"
+      relative: true
+    source: path
+    version: "0.1.0+1"
   leak_tracker:
     dependency: transitive
     description:
