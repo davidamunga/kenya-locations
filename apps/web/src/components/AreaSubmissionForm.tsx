@@ -1,8 +1,7 @@
 import { getCounties } from "kenya-locations";
 import { PlusIcon } from "lucide-react";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
-import { RecaptchaCheckbox } from "@/components/recaptcha-checkbox";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -22,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { buildAreaIssueUrl } from "@/lib/github-issue";
 
 type AreaSubmissionFormProps = {
   onSubmit?: (data: { county: string; locality: string; area: string }) => void;
@@ -29,69 +29,32 @@ type AreaSubmissionFormProps = {
 
 export function AreaSubmissionForm({ onSubmit }: AreaSubmissionFormProps) {
   const [open, setOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     county: "",
     locality: "",
     area: "",
   });
 
-  const [captchaToken, setCaptchaToken] = useState("");
-  const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY as string | undefined;
-  const onCaptchaToken = useCallback((token: string) => {
-    setCaptchaToken(token);
-  }, []);
-
   const counties = getCounties();
 
-  async function handleSubmit(event: React.FormEvent) {
+  function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    if (!formData.county || !formData.locality || !formData.area) {
+    if (!formData.county || !formData.locality.trim() || !formData.area.trim()) {
       toast.error("Fill in county, locality, and area.");
       return;
     }
 
-    if (!siteKey) {
-      toast.error("Captcha is not configured.");
-      return;
-    }
-    if (!captchaToken) {
-      toast.error("Complete the captcha.");
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const { submitAreaToNotion } = await import("@/lib/notion");
-      await submitAreaToNotion({
-        area: formData.area,
-        locality: formData.locality,
-        county: formData.county,
-        captchaToken,
-      });
-      toast.success("Area submitted.");
-      setFormData({ county: "", locality: "", area: "" });
-      setCaptchaToken("");
-      setOpen(false);
-      onSubmit?.(formData);
-    } catch (error) {
-      console.error("Error submitting area:", error);
-      toast.error("Could not submit. Try again, or open a pull request.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    const url = buildAreaIssueUrl(formData);
+    window.open(url, "_blank", "noopener,noreferrer");
+    toast.success("Finish the issue on GitHub.");
+    setFormData({ county: "", locality: "", area: "" });
+    setOpen(false);
+    onSubmit?.(formData);
   }
 
   return (
-    <Dialog
-      onOpenChange={(next) => {
-        setOpen(next);
-        if (!next) setCaptchaToken("");
-      }}
-      open={open}
-    >
+    <Dialog onOpenChange={setOpen} open={open}>
       <DialogTrigger render={<Button variant="outline" />}>
         <PlusIcon />
         Submit an area
@@ -100,8 +63,8 @@ export function AreaSubmissionForm({ onSubmit }: AreaSubmissionFormProps) {
         <DialogHeader>
           <DialogTitle>Submit an area</DialogTitle>
           <DialogDescription>
-            Missing estate or neighbourhood? Send it through and we will review
-            it against the dataset.
+            Missing estate or neighbourhood? We will open a GitHub issue with
+            these details. You need to be signed in to submit.
           </DialogDescription>
         </DialogHeader>
         <form className="flex flex-col gap-4 px-6 pb-2" onSubmit={handleSubmit}>
@@ -155,34 +118,15 @@ export function AreaSubmissionForm({ onSubmit }: AreaSubmissionFormProps) {
               value={formData.area}
             />
           </Field>
-          {open && siteKey ? (
-            <Field>
-              <FieldLabel>Captcha</FieldLabel>
-              <RecaptchaCheckbox
-                key={open ? "open" : "closed"}
-                onTokenChange={onCaptchaToken}
-                siteKey={siteKey}
-              />
-            </Field>
-          ) : null}
-          {!siteKey ? (
-            <p className="text-muted-foreground text-sm">
-              Captcha is not configured, so submissions are disabled.
-            </p>
-          ) : null}
           <DialogFooter className="-mx-6 mt-2" variant="bare">
             <Button
-              onClick={() =>
-                setFormData({ county: "", locality: "", area: "" })
-              }
+              onClick={() => setFormData({ county: "", locality: "", area: "" })}
               type="button"
               variant="ghost"
             >
               Reset
             </Button>
-            <Button loading={isSubmitting} type="submit" disabled={!siteKey}>
-              Submit
-            </Button>
+            <Button type="submit">Open GitHub issue</Button>
           </DialogFooter>
         </form>
       </DialogPopup>
