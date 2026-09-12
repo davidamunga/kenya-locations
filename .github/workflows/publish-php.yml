@@ -18,6 +18,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Read version from composer.json
         id: version
@@ -65,6 +66,7 @@ jobs:
             exit 0
           fi
           git subtree split --prefix=packages/php -b php-dist
+          git config --local --unset-all http.https://github.com/.extraheader || true
           git remote add php-dist "https://x-access-token:${PHP_SPLIT_TOKEN}@github.com/davidamunga/kenya-locations-php.git"
           git push php-dist php-dist:main
           if git ls-remote --tags php-dist "refs/tags/v${VERSION}" | grep -q .; then
