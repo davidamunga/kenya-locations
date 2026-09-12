@@ -160,6 +160,8 @@ importers:
         specifier: ^4.2.4
         version: 4.2.4
 
+  packages/dart: {}
+
   packages/js:
     dependencies:
       fuse.js:

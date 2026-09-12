@@ -7,14 +7,10 @@
     }
   ],
   "commit": false,
-  "fixed": [["kenya-locations", "kenya-locations-react"]],
+  "fixed": [["kenya-locations", "kenya-locations-kotlin", "kenya-locations-swift"]],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": [
-    "kenya-locations-kotlin",
-    "kenya-locations-swift",
-    "kenya-locations-web"
-  ]
+  "ignore": ["kenya-locations-web"]
 }

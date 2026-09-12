@@ -50,6 +50,8 @@ If this PR adds or updates data, please confirm:
 
 ## Changeset
 
+Required for `data/*.json` or published package source. Not required for docs, tests, or CI.
+
 - [ ] I have created a changeset (`pnpm changeset`) describing this change
 - [ ] No changeset needed (documentation, tests, or infrastructure only)
 

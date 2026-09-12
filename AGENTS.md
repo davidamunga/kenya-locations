@@ -14,7 +14,9 @@ Shared Kenyan administrative divisions (counties → wards / localities → area
 | `apps/web` | kenya-locations.web.app | Demo |
 | `examples/android`, `examples/flutter` | — | Consume Kotlin / Dart packages |
 
-JS, Kotlin, and Swift share one version number. React and Dart do not.
+JS, Kotlin, and Swift share one version number (`fixed` in `.changeset/config.json`). React and Dart do not.
+
+Release process: [RELEASING.md](RELEASING.md).
 
 ## Commands
 
@@ -22,6 +24,8 @@ JS, Kotlin, and Swift share one version number. React and Dart do not.
 pnpm validate                                      # data/*.json integrity
 pnpm --filter kenya-locations test                 # JS tests
 pnpm --filter kenya-locations lint
+pnpm changeset                                     # describe a releasable change
+pnpm changeset:check                               # fail if product files lack a changeset
 dart run packages/dart/scripts/generate_data.dart  # from repo root, after data edits
 ```
 
@@ -66,3 +70,14 @@ docs: document dart data regeneration
 Breaking API changes: `feat(js)!:` or a `BREAKING CHANGE:` footer. One logical change per commit.
 
 `pnpm exec commitlint --last --verbose` checks HEAD. Squash-merge PR titles must also match this format. Rules live in `commitlint.config.js` — edit that file, not this list, when types change.
+
+## Releases
+
+Do not bump package versions on feature PRs. Add a changeset instead.
+
+- Data or JS / Kotlin / Swift API: one changeset; the core trio bumps together.
+- React-only: changeset that lists `kenya-locations-react`.
+- Dart-only: changeset that lists `kenya-locations-dart`.
+- Docs / CI / examples: no changeset.
+
+After merge, Changesets opens `chore: version packages`. Merging that PR tags `v{js}` when the core trio moved. Publish is manual: **Publish Core Packages**, **Publish React to npm**, **Publish Dart to pub.dev**. Details in [RELEASING.md](RELEASING.md).

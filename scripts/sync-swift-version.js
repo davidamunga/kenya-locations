@@ -1,25 +1,15 @@
 #!/usr/bin/env node
 
 /**
- * sync-swift-version.js
- *
- * After `changeset version` bumps packages/swift/package.json,
- * this script is a no-op for now because Swift Package Manager uses
- * git tags for versioning — no separate version file to update.
- *
- * The version in packages/swift/package.json serves as the canonical
- * reference for changesets so all packages stay in lock-step.
- *
- * Run automatically via: pnpm changeset:version (see root package.json)
+ * Swift Package Manager versions from the Create Release git tag (vX.Y.Z).
+ * The stub package.json is in the core `fixed` group so it stays on the JS number.
  */
 
 import { readFileSync } from "fs";
-import { join, dirname } from "path";
+import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const { version } = JSON.parse(readFileSync(join(root, "packages/swift/package.json"), "utf8"));
 
-const swiftPkgPath = join(__dirname, "../packages/swift/package.json");
-const { version } = JSON.parse(readFileSync(swiftPkgPath, "utf8"));
-
-console.log(`✅ Swift package version: ${version} (published via git tag — no extra file to sync)`);
+console.log(`Swift package version: ${version} (published via git tag v${version})`);

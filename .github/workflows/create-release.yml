@@ -8,7 +8,6 @@ jobs:
   tag-and-release:
     name: Tag and create draft release
     runs-on: ubuntu-latest
-    # Only run when the Version Packages PR is merged (changesets commit message)
     if: "contains(github.event.head_commit.message, 'chore: version packages')"
     permissions:
       contents: write
@@ -18,28 +17,48 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Read version from package.json
-        id: version
+      - name: Detect version bumps
+        id: bumped
         run: |
-          VERSION=$(node -p "require('./packages/js/package.json').version")
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          read_version() {
+            local spec="$1"
+            git cat-file -e "$spec" 2>/dev/null || { echo ""; return; }
+            git show "$spec" | node -e "let s='';process.stdin.on('data',d=>s+=d);process.stdin.on('end',()=>console.log(JSON.parse(s).version))"
+          }
+
+          JS_NOW=$(read_version HEAD:packages/js/package.json)
+          JS_OLD=$(read_version HEAD~1:packages/js/package.json)
+          REACT_NOW=$(read_version HEAD:packages/react/package.json)
+          REACT_OLD=$(read_version HEAD~1:packages/react/package.json)
+          DART_NOW=$(read_version HEAD:packages/dart/package.json)
+          DART_OLD=$(read_version HEAD~1:packages/dart/package.json)
+
+          echo "js=$JS_NOW" >> $GITHUB_OUTPUT
+          echo "react=$REACT_NOW" >> $GITHUB_OUTPUT
+          echo "dart=$DART_NOW" >> $GITHUB_OUTPUT
+          echo "js_changed=$([ -n "$JS_NOW" ] && [ "$JS_NOW" != "$JS_OLD" ] && echo true || echo false)" >> $GITHUB_OUTPUT
+          echo "react_changed=$([ -n "$REACT_NOW" ] && [ "$REACT_NOW" != "$REACT_OLD" ] && echo true || echo false)" >> $GITHUB_OUTPUT
+          echo "dart_changed=$([ -n "$DART_NOW" ] && [ "$DART_NOW" != "$DART_OLD" ] && echo true || echo false)" >> $GITHUB_OUTPUT
 
       - name: Create git tag
+        if: steps.bumped.outputs.js_changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag "v${{ steps.version.outputs.version }}" \
-            -m "v${{ steps.version.outputs.version }}"
-          git push origin "v${{ steps.version.outputs.version }}"
+          git tag "v${{ steps.bumped.outputs.js }}" \
+            -m "v${{ steps.bumped.outputs.js }}"
+          git push origin "v${{ steps.bumped.outputs.js }}"
 
       - name: Create release branch
+        if: steps.bumped.outputs.js_changed == 'true'
         run: |
-          git checkout -b "release/v${{ steps.version.outputs.version }}"
-          git push origin "release/v${{ steps.version.outputs.version }}"
+          git checkout -b "release/v${{ steps.bumped.outputs.js }}"
+          git push origin "release/v${{ steps.bumped.outputs.js }}"
 
       - name: Create GitHub draft release
+        if: steps.bumped.outputs.js_changed == 'true'
         run: |
-          VERSION="${{ steps.version.outputs.version }}"
+          VERSION="${{ steps.bumped.outputs.js }}"
           CHANGELOG=$(awk -v ver="$VERSION" \
             '/^## /{if(found) exit; if(index($0,ver)) found=1; next} found{print}' \
             packages/js/CHANGELOG.md)
@@ -50,9 +69,29 @@ jobs:
             --title "v$VERSION" \
             --notes "$CHANGELOG" \
             --draft
-          echo "## Draft release created: v$VERSION" >> $GITHUB_STEP_SUMMARY
-          echo "Publish when ready:" >> $GITHUB_STEP_SUMMARY
-          echo "- Actions → **Publish All Packages** → Run workflow _(publishes JS, React, Kotlin, Swift, Dart in one go)_" >> $GITHUB_STEP_SUMMARY
-          echo "  - Or individually: **Publish JS to npm**, **Publish React to npm**, **Publish Kotlin to Maven Central**, **Publish Swift Package**, **Publish Dart to pub.dev**" >> $GITHUB_STEP_SUMMARY
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Summary
+        run: |
+          {
+            echo "## Version PR merged"
+            echo ""
+            if [ "${{ steps.bumped.outputs.js_changed }}" = "true" ]; then
+              echo "Core trio is **v${{ steps.bumped.outputs.js }}** (JS, Kotlin, Swift)."
+              echo ""
+              echo "Publish when ready:"
+              echo "- Actions → **Publish Core Packages** → Run workflow on \`release/v${{ steps.bumped.outputs.js }}\`"
+            else
+              echo "Core trio version unchanged — no \`v*\` tag created."
+            fi
+            if [ "${{ steps.bumped.outputs.react_changed }}" = "true" ]; then
+              echo "- Actions → **Publish React to npm** (kenya-locations-react@${{ steps.bumped.outputs.react }})"
+            fi
+            if [ "${{ steps.bumped.outputs.dart_changed }}" = "true" ]; then
+              echo "- Actions → **Publish Dart to pub.dev** (kenya_locations@${{ steps.bumped.outputs.dart }})"
+              echo "- First pub.dev publish must succeed once before OIDC can take over."
+            fi
+          } >> $GITHUB_STEP_SUMMARY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

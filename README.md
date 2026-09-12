@@ -674,6 +674,8 @@ After editing `data/*.json`, regenerate the Dart constants from the repo root wi
 
 Commits and PR titles use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (plus a `data` type for JSON updates). See [AGENTS.md](AGENTS.md).
 
+Releasable changes (data or package source) need a changeset (`pnpm changeset`). Versioning and publish steps are in [RELEASING.md](RELEASING.md).
+
 ---
 
 ## Website

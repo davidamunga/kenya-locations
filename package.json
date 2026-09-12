@@ -17,7 +17,9 @@
     "commitlint:last": "commitlint --last --verbose",
     "prepare": "husky",
     "changeset": "changeset",
-    "changeset:version": "changeset version && node scripts/sync-kotlin-version.js && node scripts/sync-swift-version.js",
+    "changeset:version": "changeset version && node scripts/sync-kotlin-version.js && node scripts/sync-swift-version.js && node scripts/sync-dart-version.js",
+    "changeset:check": "node scripts/check-changeset.js",
+    "changeset:check:test": "node --test scripts/check-changeset.test.js",
     "changeset:publish:js": "pnpm --filter kenya-locations changeset:publish"
   },
   "devDependencies": {
