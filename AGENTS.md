@@ -11,10 +11,11 @@ Shared Kenyan administrative divisions (counties → wards / localities → area
 | `packages/kotlin` | Maven `io.github.davidamunga:kenya-locations` | Copies JSON at build (`copyLocationData`) |
 | `packages/swift` | Swift Package Index `KenyaLocations` | CI copies `data/*.json` into Resources |
 | `packages/dart` | pub.dev `kenya_locations` | Versions independently; codegen into consts |
+| `packages/php` | Packagist `davidamunga/kenya-locations` | Versions independently; loads shared JSON |
 | `apps/web` | kenya-locations.web.app | Demo |
 | `examples/android`, `examples/flutter` | — | Consume Kotlin / Dart packages |
 
-JS, Kotlin, and Swift share one version number (`fixed` in `.changeset/config.json`). React and Dart do not.
+JS, Kotlin, and Swift share one version number (`fixed` in `.changeset/config.json`). React, Dart, and PHP do not.
 
 Release process: [RELEASING.md](RELEASING.md).
 
@@ -24,9 +25,11 @@ Release process: [RELEASING.md](RELEASING.md).
 pnpm validate                                      # data/*.json integrity
 pnpm --filter kenya-locations test                 # JS tests
 pnpm --filter kenya-locations lint
+composer --working-dir=packages/php test           # PHP tests
 pnpm changeset                                     # describe a releasable change
 pnpm changeset:check                               # fail if product files lack a changeset
 dart run packages/dart/scripts/generate_data.dart  # from repo root, after data edits
+php packages/php/scripts/copy-data.php             # refresh PHP package JSON copies
 ```
 
 Data shape and validation rules: `packages/js/CONTRIBUTING.md`.
@@ -57,7 +60,7 @@ Types: `feat` · `fix` · `docs` · `style` · `refactor` · `perf` · `test` ·
 
 Description: imperative, lowercase, no trailing period, ≤ 100 chars.
 
-Scopes are optional. Prefer a package or concern: `js` · `react` · `kotlin` · `swift` · `dart` · `web` · `examples` · `ci` · `search` · `validation` · a county name for data (`nairobi`).
+Scopes are optional. Prefer a package or concern: `js` · `react` · `kotlin` · `swift` · `dart` · `php` · `web` · `examples` · `ci` · `search` · `validation` · a county name for data (`nairobi`).
 
 ```
 data(nairobi): add localities in Westlands
@@ -78,6 +81,7 @@ Do not bump package versions on feature PRs. Add a changeset instead.
 - Data or JS / Kotlin / Swift API: one changeset; the core trio bumps together.
 - React-only: changeset that lists `kenya-locations-react`.
 - Dart-only: changeset that lists `kenya-locations-dart`.
+- PHP-only: changeset that lists `kenya-locations-php`.
 - Docs / CI / examples: no changeset.
 
-After merge, Changesets opens `chore: version packages`. Merging that PR tags `v{js}` when the core trio moved. Publish is manual: **Publish Core Packages**, **Publish React to npm**, **Publish Dart to pub.dev**. Details in [RELEASING.md](RELEASING.md).
+After merge, Changesets opens `chore: version packages`. Merging that PR tags `v{js}` when the core trio moved. Publish is manual: **Publish Core Packages**, **Publish React to npm**, **Publish Dart to pub.dev**, **Publish PHP to Packagist**. Details in [RELEASING.md](RELEASING.md).

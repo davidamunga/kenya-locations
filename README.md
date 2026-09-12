@@ -4,10 +4,11 @@
 [![npm version](https://img.shields.io/npm/v/kenya-locations-react.svg?label=kenya-locations-react)](https://www.npmjs.com/package/kenya-locations-react)
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.davidamunga/kenya-locations.svg)](https://central.sonatype.com/artifact/io.github.davidamunga/kenya-locations)
 [![pub.dev](https://img.shields.io/pub/v/kenya_locations.svg)](https://pub.dev/packages/kenya_locations)
+[![Packagist](https://img.shields.io/packagist/v/davidamunga/kenya-locations.svg)](https://packagist.org/packages/davidamunga/kenya-locations)
 [![CI](https://github.com/DavidAmunga/kenya-locations/actions/workflows/ci.yml/badge.svg)](https://github.com/DavidAmunga/kenya-locations/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, Swift, and Dart/Flutter.
+Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, Swift, Dart/Flutter, and PHP.
 
 **47** counties · **307** sub-counties · **290** constituencies · **1,448** wards · **916** localities · **1,829** areas
 
@@ -22,8 +23,9 @@ Kenyan administrative divisions — counties, sub-counties, constituencies, ward
 | **Kotlin / JVM** (Android, Spring Boot, etc.) | [`io.github.davidamunga:kenya-locations`](https://central.sonatype.com/artifact/io.github.davidamunga/kenya-locations) | See below |
 | **Swift** (iOS, macOS, tvOS, watchOS) | [`KenyaLocations`](https://swiftpackageindex.com/davidamunga/kenya-locations) | See below |
 | **Dart / Flutter** | [`kenya_locations`](https://pub.dev/packages/kenya_locations) | See below |
+| **PHP** | [`davidamunga/kenya-locations`](https://packagist.org/packages/davidamunga/kenya-locations) | See below |
 
-All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react` and `kenya_locations`, which version independently).
+All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, `kenya_locations`, and `davidamunga/kenya-locations`, which version independently).
 
 ---
 
@@ -88,6 +90,14 @@ dependencies:
 ```
 
 Works in any Dart or Flutter project. No initialisation required — data is compiled into the package as Dart constants and available immediately.
+
+### PHP
+
+```bash
+composer require davidamunga/kenya-locations
+```
+
+Works in any PHP 8.2+ project. No initialisation required — JSON loads lazily from the package on first access.
 
 ### Example apps
 
@@ -204,6 +214,24 @@ final localities = KenyaLocations.getLocalitiesInCounty('Nairobi');
 
 // Fuzzy search — tolerates typos, sorted by relevance
 final results = KenyaLocations.search('Nairob', limit: 20); // matches "Nairobi"
+```
+
+### PHP
+
+```php
+use KenyaLocations\KenyaLocations;
+
+$counties = KenyaLocations::getCounties();
+$nairobi = KenyaLocations::getCountyByName('Nairobi');
+
+echo $nairobi?->capital;          // Nairobi
+echo $nairobi?->population2019;   // 4397073
+
+$wards = KenyaLocations::getWardsInConstituency('Westlands');
+$localities = KenyaLocations::getLocalitiesInCounty('Nairobi');
+
+// Fuzzy search — tolerates typos, sorted by relevance
+$results = KenyaLocations::search('Nairob', limit: 20); // matches "Nairobi"
 ```
 
 ---
@@ -652,6 +680,78 @@ class SearchResult<T> { final SearchType type; final T item; String get name; }
 
 ---
 
+## PHP API
+
+### Getters
+
+```php
+KenyaLocations::getCounties();                          // list<County>
+KenyaLocations::getCountyByCode('047');                 // ?County
+KenyaLocations::getCountyByName('Nairobi');             // ?County
+KenyaLocations::getSubCounties();                       // list<SubCounty>
+KenyaLocations::getConstituencies();                    // list<Constituency>
+KenyaLocations::getWards();                             // list<Ward>
+KenyaLocations::getLocalities();                        // list<Locality>
+KenyaLocations::getAreas();                             // list<Area>
+```
+
+### Relational queries
+
+```php
+KenyaLocations::getSubCountiesInCounty('Nairobi');
+KenyaLocations::getConstituenciesInCounty('047');       // name or code
+KenyaLocations::getWardsInConstituency('Westlands');
+KenyaLocations::getWardsInConstituency('274');
+KenyaLocations::getWardsInCounty('Nairobi');
+KenyaLocations::getWardsInSubCounty('Ainabkoi');
+KenyaLocations::getLocalitiesInCounty('Nairobi');
+KenyaLocations::getAreasInLocality('Karen');
+KenyaLocations::getConstituencyOfWard('Mountain view'); // ?Constituency
+KenyaLocations::getConstituencyOfWard('1370');          // same ward, by code
+KenyaLocations::getCountyOfWard('1370');
+KenyaLocations::getLocality('Westlands', 'Nairobi');
+KenyaLocations::getLocalitiesByName('Westlands');
+KenyaLocations::getLocalityOfArea('Gigiri');
+```
+
+### Search
+
+Search is **fuzzy and typo-tolerant** — a query like `'Nairob'` matches `'Nairobi'`, using the same Levenshtein sliding-window approach as the Kotlin, Swift, and Dart libraries. Results are sorted by relevance (best match first).
+
+```php
+$results = KenyaLocations::search('karen', limit: 20);
+$wardsOnly = KenyaLocations::searchByType('West', SearchType::Ward);
+
+foreach ($results as $result) {
+    echo $result->type->value . ': ' . $result->name() . PHP_EOL;
+}
+```
+
+### Classes
+
+```php
+final readonly class County {
+    public string $code;
+    public string $name;
+    public string $capital;
+    public float $areaKm2;
+    public int $population2019;
+    public string $region;
+    public string $postalCode;
+}
+
+final readonly class SubCounty    { public string $code, $name, $county; }
+final readonly class Constituency { public string $code, $name, $county; }
+final readonly class Ward         { public string $code, $name, $constituency; }
+final readonly class Locality     { public string $name, $county; }
+final readonly class Area         { public string $name, $locality, $county; }
+
+enum SearchType: string { case County; case SubCounty; case Constituency; case Ward; case Locality; case Area; }
+final readonly class SearchResult { public SearchType $type; public object $item; public function name(): string; }
+```
+
+---
+
 ## Contributing
 
 Contributions are very welcome — especially data additions (new localities, areas, corrections).
@@ -670,7 +770,7 @@ data/
 
 See [packages/js/CONTRIBUTING.md](packages/js/CONTRIBUTING.md) for data structure, validation rules, and submission guidelines. Submit new areas via the [web app](https://kenya-locations.web.app/) (opens a GitHub issue) or a pull request.
 
-After editing `data/*.json`, regenerate the Dart constants from the repo root with `dart run packages/dart/scripts/generate_data.dart`.
+After editing `data/*.json`, regenerate the Dart constants from the repo root with `dart run packages/dart/scripts/generate_data.dart`, and refresh the PHP copy with `php packages/php/scripts/copy-data.php`.
 
 Commits and PR titles use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (plus a `data` type for JSON updates). See [AGENTS.md](AGENTS.md).
 
@@ -701,7 +801,8 @@ kenya-locations/
 │   ├── react/                ← React hooks library → npm: kenya-locations-react
 │   ├── kotlin/               ← Kotlin/JVM library → Maven: io.github.davidamunga:kenya-locations
 │   ├── swift/                ← Swift library → Swift Package Index: KenyaLocations
-│   └── dart/                 ← Dart/Flutter library → pub.dev: kenya_locations
+│   ├── dart/                 ← Dart/Flutter library → pub.dev: kenya_locations
+│   └── php/                  ← PHP library → Packagist: davidamunga/kenya-locations
 ├── apps/
 │   └── web/                  ← interactive demo (kenya-locations.web.app)
 ├── examples/

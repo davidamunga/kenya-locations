@@ -13,6 +13,7 @@ import { pathToFileURL } from "url";
 const SKIP_PREFIXES = [
   "packages/dart/lib/src/generated/",
   "packages/kotlin/src/main/resources/",
+  "packages/php/data/",
 ];
 
 const PRODUCT_PREFIXES = [
@@ -22,6 +23,7 @@ const PRODUCT_PREFIXES = [
   "packages/kotlin/src/main/kotlin/",
   "packages/swift/Sources/",
   "packages/dart/lib/",
+  "packages/php/src/",
 ];
 
 export function isChangesetFile(file) {

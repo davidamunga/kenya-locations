@@ -1,0 +1,61 @@
+{
+  "name": "davidamunga/kenya-locations",
+  "description": "Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas.",
+  "type": "library",
+  "license": "MIT",
+  "version": "0.0.0",
+  "keywords": [
+    "kenya",
+    "counties",
+    "constituencies",
+    "wards",
+    "administrative",
+    "divisions",
+    "locations"
+  ],
+  "homepage": "https://kenya-locations.web.app",
+  "authors": [
+    {
+      "name": "David Amunga",
+      "homepage": "https://davidamunga.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/davidamunga/kenya-locations/issues",
+    "source": "https://github.com/davidamunga/kenya-locations/tree/main/packages/php"
+  },
+  "require": {
+    "php": "^8.2",
+    "ext-json": "*",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "KenyaLocations\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "KenyaLocations\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "copy-data": "php scripts/copy-data.php"
+  },
+  "archive": {
+    "exclude": [
+      "/tests",
+      "/vendor",
+      "/.phpunit.cache",
+      "/phpunit.xml.dist",
+      "/scripts"
+    ]
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
