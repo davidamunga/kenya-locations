@@ -27,8 +27,9 @@ export function Docs() {
           Install
         </h2>
         <p className="mt-3 max-w-prose text-muted-foreground text-sm">
-          JavaScript, React, Kotlin, Swift, and PHP read the same JSON in{" "}
-          <code>data/</code>. Version {DATA_VERSION} on the lockstep platforms.
+          JavaScript, React, Kotlin, Swift, PHP, and WordPress read the same
+          JSON in <code>data/</code>. Version {DATA_VERSION} on the lockstep
+          platforms.
         </p>
         <Tabs className="mt-6" defaultValue="js">
           <TabsList className="flex flex-wrap">
@@ -37,6 +38,7 @@ export function Docs() {
             <TabsTab value="kotlin">Kotlin</TabsTab>
             <TabsTab value="swift">Swift</TabsTab>
             <TabsTab value="php">PHP</TabsTab>
+            <TabsTab value="wordpress">WordPress</TabsTab>
           </TabsList>
           <TabsPanel className="mt-3 space-y-3" value="js">
             <CodeBlock filename="terminal">npm install kenya-locations</CodeBlock>
@@ -79,6 +81,24 @@ export function Docs() {
               </a>
             </p>
           </TabsPanel>
+          <TabsPanel className="mt-3 space-y-3" value="wordpress">
+            <CodeBlock filename="terminal">
+              {`# Download kenya-locations-wordpress-*.zip from the GitHub release
+# WordPress → Plugins → Add New → Upload Plugin`}
+            </CodeBlock>
+            <p className="text-muted-foreground text-xs">
+              PHP 8.2+. Zip already includes{" "}
+              <code>davidamunga/kenya-locations</code>. Releases:{" "}
+              <a
+                className="underline underline-offset-4"
+                href="https://github.com/DavidAmunga/kenya-locations/releases"
+                rel="noreferrer"
+                target="_blank"
+              >
+                github.com/DavidAmunga/kenya-locations/releases
+              </a>
+            </p>
+          </TabsPanel>
         </Tabs>
       </section>
 
@@ -116,6 +136,15 @@ export function Docs() {
                 </TableCell>
                 <TableCell className="text-muted-foreground text-xs">
                   Shared JSON in <code>data/</code> — Dart cannot load the JAR
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>WordPress</TableCell>
+                <TableCell>
+                  <RepoLink path="examples/wordpress" />
+                </TableCell>
+                <TableCell className="text-muted-foreground text-xs">
+                  PHP library — zip on each <code>v*</code> GitHub release
                 </TableCell>
               </TableRow>
               <TableRow>
@@ -411,6 +440,50 @@ $wardsOnly = KenyaLocations::searchByType('West', SearchType::Ward);
 foreach ($results as $result) {
     echo $result->type->value . ': ' . $result->name();
 }`}
+          />
+        </div>
+      </section>
+
+      <Separator />
+
+      <section className="scroll-mt-24" id="wordpress">
+        <h2 className="font-heading font-semibold text-2xl tracking-tight">
+          WordPress
+        </h2>
+        <p className="mt-3 max-w-prose text-muted-foreground text-sm">
+          PHP 8.2+. Install the zip from the{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://github.com/DavidAmunga/kenya-locations/releases"
+            rel="noreferrer"
+            target="_blank"
+          >
+            GitHub release
+          </a>
+          . Not on WordPress.org. County → Locality → Area on WooCommerce store
+          address and classic checkout. Source:{" "}
+          <RepoLink path="examples/wordpress" />.
+        </p>
+        <div className="mt-6 space-y-8">
+          <Example
+            filename="install.txt"
+            title="Install the zip"
+            body="Upload the release asset, then activate Kenya Locations. Composer is not required on the server."
+            code={`1. Download kenya-locations-wordpress-*.zip from the GitHub release
+2. WordPress → Plugins → Add New → Upload Plugin
+3. Activate Kenya Locations
+4. WooCommerce → Settings → General → set Locality and Area`}
+          />
+          <Example
+            filename="theme.php"
+            language="php"
+            title="Use the library in a theme"
+            body="Bedrock and other Composer sites can require the PHP package directly. You do not need the zip for that."
+            code={`use KenyaLocations\\KenyaLocations;
+
+$nairobi = KenyaLocations::getCountyByName('Nairobi');
+$localities = KenyaLocations::getLocalitiesInCounty('Nairobi');
+$areas = KenyaLocations::getAreasInLocality('Karen');`}
           />
         </div>
       </section>

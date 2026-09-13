@@ -1,0 +1,39 @@
+.kenya-locations {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.kenya-locations[hidden] {
+  display: none;
+}
+
+.kenya-locations__field {
+  margin: 0;
+}
+
+.kenya-locations__field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.kenya-locations__field select {
+  width: 100%;
+  max-width: 28rem;
+}
+
+.kenya-locations-checkout {
+  margin: 1rem 0 1.5rem;
+}
+
+#side-sortables .kenya-locations__field select {
+  max-width: none;
+}
+
+.woocommerce_page_wc-settings .kenya-locations-store-setting select {
+  max-width: 400px;
+}
+
+.woocommerce_page_wc-settings .kenya-locations-store-setting[hidden] {
+  display: none;
+}

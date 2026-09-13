@@ -69,10 +69,40 @@ jobs:
           if [ -z "$CHANGELOG" ]; then
             CHANGELOG="Release v$VERSION"
           fi
+          NOTES="${CHANGELOG}
+
+          ## WordPress plugin
+
+          Download \`kenya-locations-wordpress-*.zip\` from the assets below.
+
+          1. WordPress → Plugins → Add New → Upload Plugin
+          2. Install and activate **Kenya Locations**
+          3. Requires PHP 8.2+. Installation details are in \`readme.txt\` inside the zip."
           gh release create "v$VERSION" \
             --title "v$VERSION" \
-            --notes "$CHANGELOG" \
+            --notes "$NOTES" \
             --draft
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: shivammathur/setup-php@v2
+        if: steps.bumped.outputs.js_changed == 'true'
+        with:
+          php-version: "8.2"
+          extensions: mbstring, json, zip
+          coverage: none
+
+      - name: Build WordPress plugin zip
+        if: steps.bumped.outputs.js_changed == 'true'
+        run: composer --working-dir=examples/wordpress zip
+
+      - name: Attach WordPress zip to the draft release
+        if: steps.bumped.outputs.js_changed == 'true'
+        run: |
+          gh release upload "v${{ steps.bumped.outputs.js }}" \
+            examples/wordpress/dist/kenya-locations-wordpress.zip \
+            examples/wordpress/dist/kenya-locations-wordpress-*.zip \
+            --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -86,6 +116,7 @@ jobs:
               echo ""
               echo "Publish when ready:"
               echo "- Actions → **Publish Core Packages** → Run workflow on \`release/v${{ steps.bumped.outputs.js }}\`"
+              echo "- WordPress plugin zip is attached to the draft \`v${{ steps.bumped.outputs.js }}\` release."
             else
               echo "Core trio version unchanged — no \`v*\` tag created."
             fi

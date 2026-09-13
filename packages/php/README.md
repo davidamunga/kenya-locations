@@ -24,6 +24,23 @@ from the split repo
 composer require davidamunga/kenya-locations
 ```
 
+Works in any PHP 8.2+ project — including WordPress themes and plugins.
+
+There is no published WordPress plugin. In a Bedrock site, mu-plugin, or
+project-root Composer install:
+
+```php
+use KenyaLocations\KenyaLocations;
+
+$nairobi = KenyaLocations::getCountyByName('Nairobi');
+$wards = KenyaLocations::getWardsInConstituency('Westlands');
+```
+
+A drop-in plugin (REST drill-down, County → Locality → Area fields,
+WooCommerce store address and checkout) lives in the monorepo at
+[`examples/wordpress`](https://github.com/davidamunga/kenya-locations/tree/main/examples/wordpress).
+GitHub `v*` releases attach a zip with this library already vendored.
+
 ## Usage
 
 ```php

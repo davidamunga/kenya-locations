@@ -9,7 +9,7 @@ jobs:
     name: Validate and split PHP package
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
     defaults:
       run:
         working-directory: packages/php
@@ -30,7 +30,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: "8.2"
-          extensions: mbstring, json
+          extensions: mbstring, json, zip
           coverage: none
 
       - name: Validate shared data
@@ -76,6 +76,28 @@ jobs:
             echo "Pushed tag v${VERSION}"
           fi
 
+      - name: Build WordPress plugin zip
+        working-directory: ${{ github.workspace }}
+        run: composer --working-dir=examples/wordpress zip
+
+      - name: Attach WordPress zip to the latest v* GitHub release
+        working-directory: ${{ github.workspace }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          TAG=$(gh release list --limit 30 --json tagName \
+            --jq '.[] | select(.tagName | test("^v[0-9]")) | .tagName' | head -n 1)
+          if [ -z "${TAG:-}" ]; then
+            echo "No v* GitHub release yet; zip is in examples/wordpress/dist/."
+            exit 0
+          fi
+          gh release upload "$TAG" \
+            examples/wordpress/dist/kenya-locations-wordpress.zip \
+            examples/wordpress/dist/kenya-locations-wordpress-*.zip \
+            --clobber
+          echo "Uploaded WordPress zip to $TAG"
+
       - name: Summary
         run: |
           {
@@ -86,6 +108,9 @@ jobs:
             echo ""
             echo "First Packagist submit: [packagist.org/packages/submit](https://packagist.org/packages/submit)"
             echo "with \`https://github.com/davidamunga/kenya-locations-php\`."
+            echo ""
+            echo "WordPress plugin zip was built and, when a \`v*\` GitHub release exists,"
+            echo "uploaded as \`kenya-locations-wordpress-*.zip\`."
             echo ""
             echo "\`\`\`bash"
             echo "composer require davidamunga/kenya-locations"

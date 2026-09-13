@@ -50,6 +50,9 @@ packages/swift/.build/
 # PHP
 packages/php/vendor/
 packages/php/.phpunit.cache/
+examples/wordpress/vendor/
+examples/wordpress/dist/
+examples/wordpress/.phpunit.cache/
 
 # Editor directories and files
 .vscode/*

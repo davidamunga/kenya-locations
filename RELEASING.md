@@ -39,6 +39,7 @@ Then run workflows from that release branch (or `main` if you prefer):
 | **Publish React to npm** | React-only or when React was in the Version PR |
 | **Publish Dart to pub.dev** | Dart-only or when Dart was in the Version PR |
 | **Publish PHP to Packagist** | PHP-only or when PHP was in the Version PR |
+| **Publish WordPress plugin zip** | Rebuild / attach the plugin zip to an existing `v*` release |
 
 Do not use a leftover **Publish All Packages** button — that workflow is now core-only.
 
@@ -57,6 +58,16 @@ with `https://github.com/davidamunga/kenya-locations-php`. After that, Packagist
 follows tags on the subtree repo via the GitHub webhook.
 
 React, Dart, and PHP do not undraft the core `v*` release.
+
+The WordPress plugin is not a Changesets package. A self-contained zip (PHP library copied into `vendor/`, install steps in `readme.txt`) is built from `examples/wordpress` and attached to the core `v*` GitHub release:
+
+```bash
+composer --working-dir=examples/wordpress zip
+```
+
+**Create Release** uploads `kenya-locations-wordpress-{plugin}.zip` when it opens the draft `v{js}` release. **Publish PHP to Packagist** rebuilds that zip and `--clobber`s it onto the latest `v*` release so a PHP/data bump can refresh the plugin without a core trio tag. **Publish WordPress plugin zip** does the same on demand.
+
+WordPress.org SVN is not part of this process.
 
 ## Changesets on feature PRs
 

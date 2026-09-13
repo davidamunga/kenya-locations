@@ -1,0 +1,36 @@
+{
+  "name": "davidamunga/kenya-locations-wordpress-example",
+  "description": "WordPress example plugin that consumes davidamunga/kenya-locations.",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "davidamunga/kenya-locations": "@dev"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.5"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../../packages/php"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "KenyaLocationsExample\\": "includes/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "KenyaLocationsExample\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "zip": "php scripts/build-zip.php"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
