@@ -13,7 +13,7 @@ Shared Kenyan administrative divisions (counties → wards / localities → area
 | `packages/dart` | pub.dev `kenya_locations` | Versions independently; codegen into consts |
 | `packages/php` | Packagist `davidamunga/kenya-locations` | Versions independently; split to `kenya-locations-php` |
 | `apps/web` | kenya-locations.web.app | Demo |
-| `examples/android`, `examples/flutter` | — | Consume Kotlin / Dart packages |
+| `examples/android`, `examples/flutter`, `examples/wordpress` | — | Consume Kotlin / Dart / PHP packages |
 
 JS, Kotlin, and Swift share one version number (`fixed` in `.changeset/config.json`). React, Dart, and PHP do not.
 
@@ -26,6 +26,8 @@ pnpm validate                                      # data/*.json integrity
 pnpm --filter kenya-locations test                 # JS tests
 pnpm --filter kenya-locations lint
 composer --working-dir=packages/php test           # PHP tests
+composer --working-dir=examples/wordpress test     # WordPress example tests
+composer --working-dir=examples/wordpress zip      # WordPress release zip (vendor copied in)
 pnpm changeset                                     # describe a releasable change
 pnpm changeset:check                               # fail if product files lack a changeset
 dart run packages/dart/scripts/generate_data.dart  # from repo root, after data edits
@@ -82,6 +84,6 @@ Do not bump package versions on feature PRs. Add a changeset instead.
 - React-only: changeset that lists `kenya-locations-react`.
 - Dart-only: changeset that lists `kenya-locations-dart`.
 - PHP-only: changeset that lists `kenya-locations-php`.
-- Docs / CI / examples: no changeset.
+- Docs / CI / examples (including the WordPress zip): no changeset.
 
 After merge, Changesets opens `chore: version packages`. Merging that PR tags `v{js}` when the core trio moved. Publish is manual: **Publish Core Packages**, **Publish React to npm**, **Publish Dart to pub.dev**, **Publish PHP to Packagist**. Details in [RELEASING.md](RELEASING.md).

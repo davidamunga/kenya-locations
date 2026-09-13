@@ -97,7 +97,7 @@ Works in any Dart or Flutter project. No initialisation required — data is com
 composer require davidamunga/kenya-locations
 ```
 
-Works in any PHP 8.2+ project. No initialisation required — JSON loads lazily from the package on first access.
+Works in any PHP 8.2+ project, including WordPress themes and plugins. No initialisation required — JSON loads lazily from the package on first access. A drop-in example plugin is in [`examples/wordpress`](examples/wordpress).
 
 ### Example apps
 
@@ -105,6 +105,7 @@ Works in any PHP 8.2+ project. No initialisation required — JSON loads lazily 
 | --- | --- | --- |
 | Android (Compose) | [`examples/android`](examples/android) | Kotlin library (`packages/kotlin`) |
 | Flutter | [`examples/flutter`](examples/flutter) | Dart library (`packages/dart`) |
+| WordPress | [`examples/wordpress`](examples/wordpress) | PHP library (`packages/php`); zip on each `v*` GitHub release |
 
 ---
 
@@ -807,7 +808,8 @@ kenya-locations/
 │   └── web/                  ← interactive demo (kenya-locations.web.app)
 ├── examples/
 │   ├── android/               ← Compose app using the Kotlin library
-│   └── flutter/                ← Flutter app using the Dart library (packages/dart)
+│   ├── flutter/                ← Flutter app using the Dart library (packages/dart)
+│   └── wordpress/              ← WordPress plugin using the PHP library (packages/php)
 └── scripts/
     └── validate-data.js      ← data integrity checks (runs on commit + CI)
 ```

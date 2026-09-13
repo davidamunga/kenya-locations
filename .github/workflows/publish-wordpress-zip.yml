@@ -1,0 +1,43 @@
+name: Publish WordPress plugin zip
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "GitHub release tag to attach the zip to (for example v0.9.0). Leave empty to skip upload."
+        required: false
+        type: string
+
+jobs:
+  zip:
+    name: Build and upload WordPress zip
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, json, zip
+          coverage: none
+
+      - name: Build zip
+        run: composer --working-dir=examples/wordpress zip
+
+      - name: Upload zip to release
+        if: inputs.tag != ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload "${{ inputs.tag }}" \
+            examples/wordpress/dist/kenya-locations-wordpress.zip \
+            examples/wordpress/dist/kenya-locations-wordpress-*.zip \
+            --clobber
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kenya-locations-wordpress
+          path: examples/wordpress/dist/kenya-locations-wordpress*.zip
+          retention-days: 14
