@@ -13,9 +13,9 @@ This is **not** on WordPress.org. GitHub releases attach a self-contained zip (`
 - Shortcode `[kenya_location]`
 - Metabox on posts and pages (county code + locality / area names)
 - WooCommerce **Store Address** (Settings → General): locality + area under Country / State
-- WooCommerce classic checkout: locality + area after the Kenya state field
+- WooCommerce checkout: County → Location → Area when the country is Kenya (WooCommerce State is hidden)
 
-The Checkout Block is out of scope. Electoral constituency/ward fields are not used here.
+The Checkout block is replaced with `[woocommerce_checkout]` on the storefront so Locality / Area appear without editing the page. Filter `kenya_locations_replace_checkout_block` to disable that. Electoral constituency/ward fields are not used here.
 
 WooCommerce stores Kenya counties as `KE01`…`KE47`, which are **not** IEBC codes. The script reads the state **label** (the county name) when loading localities.
 
