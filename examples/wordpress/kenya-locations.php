@@ -3,7 +3,7 @@
  * Plugin Name: Kenya Locations
  * Plugin URI: https://github.com/davidamunga/kenya-locations/releases
  * Description: Cascading County → Locality → Area fields backed by davidamunga/kenya-locations. Install from the GitHub release zip.
- * Version: 0.1.2
+ * Version: 0.1.7
  * Requires at least: 6.4
  * Requires PHP: 8.2
  * Author: David Amunga

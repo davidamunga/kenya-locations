@@ -42,6 +42,29 @@
     select.disabled = !items || items.length === 0;
   }
 
+  function selectedLabel(select) {
+    if (!select || !select.value || select.selectedIndex < 0) {
+      return "";
+    }
+    var option = select.options[select.selectedIndex];
+    return option ? String(option.textContent || "").trim() : "";
+  }
+
+  function updatePath(root) {
+    var path = root.querySelector("[data-kenya-path]");
+    if (!path) {
+      return;
+    }
+    var parts = ["county", "locality", "area"]
+      .map(function (field) {
+        return selectedLabel(root.querySelector("[data-kenya-field=" + field + "]"));
+      })
+      .filter(Boolean);
+    path.textContent = parts.length
+      ? parts.join(" · ")
+      : path.getAttribute("data-empty") || "";
+  }
+
   function consumeSelected(select) {
     if (!select) {
       return "";
@@ -85,6 +108,41 @@
     return value === "KE" || String(value).indexOf("KE:") === 0;
   }
 
+  function countryStateField(countrySelector) {
+    if (!countrySelector) {
+      return null;
+    }
+    return document.querySelector(
+      countrySelector.replace(/_country$/, "_state_field"),
+    );
+  }
+
+  function syncCountyToWooState(root) {
+    var county = root.querySelector("[data-kenya-field=county]");
+    var selector = root.getAttribute("data-kenya-sync-state");
+    if (!county || !selector) {
+      return;
+    }
+    var state = document.querySelector(selector);
+    if (!state || !state.options) {
+      return;
+    }
+    var selected = county.selectedIndex >= 0 ? county.options[county.selectedIndex] : null;
+    var name = countyFromLabel(selected ? selected.textContent : "");
+    if (!name) {
+      return;
+    }
+    for (var i = 0; i < state.options.length; i++) {
+      if (countyFromLabel(state.options[i].textContent) === name) {
+        if (state.value !== state.options[i].value) {
+          state.value = state.options[i].value;
+          state.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+        return;
+      }
+    }
+  }
+
   function syncCountry(root) {
     var selector = root.getAttribute("data-kenya-country-from");
     if (!selector) {
@@ -96,6 +154,11 @@
     }
     var value = String(country.value || "");
     var hide = value !== "" && !isKenyaValue(value);
+    var stateField = countryStateField(selector);
+
+    if (stateField && value !== "") {
+      stateField.hidden = isKenyaValue(value);
+    }
 
     if (root.matches("table")) {
       root.querySelectorAll(".kenya-locations-store-setting").forEach(function (row) {
@@ -112,6 +175,7 @@
     var key = locality ? locality.value : "";
     if (!key) {
       fill(area, [], "");
+      updatePath(root);
       return;
     }
     var selected = consumeSelected(area);
@@ -122,6 +186,7 @@
     }
     fetchJson(root, path).then(function (items) {
       fill(area, items, selected);
+      updatePath(root);
     });
   }
 
@@ -132,6 +197,7 @@
     fill(area, [], "");
     if (!key) {
       fill(locality, [], "");
+      updatePath(root);
       return;
     }
     var selected = consumeSelected(locality);
@@ -140,6 +206,7 @@
       "/counties/" + encodeURIComponent(key) + "/localities",
     ).then(function (items) {
       fill(locality, items, selected);
+      updatePath(root);
       if (locality && locality.value) {
         loadAreas(root);
       }
@@ -151,6 +218,8 @@
     if (countyKey(root)) {
       loadLocalities(root);
     }
+    syncCountyToWooState(root);
+    updatePath(root);
   }
 
   function promoteStoreAddressTable() {
@@ -181,10 +250,17 @@
     var root = target.closest("[data-kenya-locations]");
     if (root && target.matches("[data-kenya-field=county]")) {
       loadLocalities(root);
+      syncCountyToWooState(root);
+      updatePath(root);
       return;
     }
     if (root && target.matches("[data-kenya-field=locality]")) {
       loadAreas(root);
+      updatePath(root);
+      return;
+    }
+    if (root && target.matches("[data-kenya-field=area]")) {
+      updatePath(root);
       return;
     }
 

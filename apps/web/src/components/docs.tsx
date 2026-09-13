@@ -460,8 +460,10 @@ foreach ($results as $result) {
           >
             GitHub release
           </a>
-          . Not on WordPress.org. County → Locality → Area on WooCommerce store
-          address and classic checkout. Source:{" "}
+          . Not on WordPress.org. County → Location → Area on WooCommerce
+          checkout (the Checkout block is handled automatically). Store address
+          still uses locality / area under Country / State.
+          Source:{" "}
           <RepoLink path="examples/wordpress" />.
         </p>
         <div className="mt-6 space-y-8">
@@ -472,7 +474,8 @@ foreach ($results as $result) {
             code={`1. Download kenya-locations-wordpress-*.zip from the GitHub release
 2. WordPress → Plugins → Add New → Upload Plugin
 3. Activate Kenya Locations
-4. WooCommerce → Settings → General → set Locality and Area`}
+4. WooCommerce → Settings → General → set Locality and Area
+5. Checkout shows County, Location, and Area when the country is Kenya`}
           />
           <Example
             filename="theme.php"

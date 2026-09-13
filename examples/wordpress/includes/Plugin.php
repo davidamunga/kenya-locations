@@ -12,7 +12,7 @@ use KenyaLocationsExample\WooCommerce\StoreAddress;
 
 final class Plugin
 {
-    public const VERSION = '0.1.2';
+    public const VERSION = '0.1.7';
     public const TEXT_DOMAIN = 'kenya-locations';
     public const SCRIPT = 'kenya-locations-cascading';
     public const STYLE = 'kenya-locations-cascading';
