@@ -523,18 +523,26 @@ KenyaLocations.searchByType("west", SearchType.WARD) // List<SearchResult<*>>
 ```kotlin
 data class County(
     val code: String,
+    val iso_code: String,     // ISO 3166-2:KE, e.g. "KE-30" (differs from code)
     val name: String,
     val capital: String,
     val area_km2: Double,
     val population_2019: Long,
     val region: String,       // former province, e.g. "Nairobi", "Central"
     val postal_code: String,
+    val aliases: List<String>, // other names, e.g. ["Nairobi City"]; matched by name lookups
 )
-data class SubCounty(val code: String, val name: String, val county: String)
-data class Constituency(val code: String, val name: String, val county: String)
-data class Ward(val code: String, val name: String, val constituency: String)
-data class Locality(val name: String, val county: String)
-data class Area(val name: String, val locality: String, val county: String)
+data class SubCounty(val code: String, val name: String, val county: String, val county_code: String)
+data class Constituency(val code: String, val name: String, val county: String, val county_code: String)
+data class Ward(
+    val code: String,
+    val name: String,
+    val constituency: String,
+    val constituency_code: String,
+    val county_code: String,
+)
+data class Locality(val name: String, val county: String, val county_code: String)
+data class Area(val name: String, val locality: String, val county: String, val county_code: String)
 
 enum class SearchType { COUNTY, SUB_COUNTY, CONSTITUENCY, WARD, LOCALITY, AREA }
 data class SearchResult<T>(val type: SearchType, val item: T)

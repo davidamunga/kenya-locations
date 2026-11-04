@@ -45,22 +45,19 @@ object KenyaLocations {
 
     // Fast lookup indexes — also lazy. Matching rules live in Lookups.kt.
     private val countiesByCode: Map<String, County> by lazy { _counties.associateBy { it.code } }
-    private val countyNames by lazy { NameIndex(_counties) { it.name } }
+    private val countyNames by lazy { NameIndex(_counties, aliases = { it.aliases }) { it.name } }
     private val constituenciesByCode: Map<String, Constituency> by lazy { _constituencies.associateBy { it.code } }
     private val constituencyNames by lazy { NameIndex(_constituencies) { it.name } }
     private val localityNames by lazy { NameIndex(_localities) { it.name } }
 
-    private val subCountiesByCounty by lazy { _subCounties.groupBy { lowerName(it.county) } }
-    private val constituenciesByCounty by lazy { _constituencies.groupBy { lowerName(it.county) } }
-    private val wardsByConstituency by lazy { _wards.groupBy { lowerName(it.constituency) } }
-    private val wardsByCountyCode by lazy {
-        _wards.groupBy { ward ->
-            constituencyNames.unique(ward.constituency)?.let { resolveCounty(it.county)?.code }
-        }
-    }
-    private val localitiesByCounty by lazy { _localities.groupBy { lowerName(it.county) } }
-    private val areasByCounty by lazy { _areas.groupBy { lowerName(it.county) } }
-    private val areasByLocality by lazy { _areas.groupBy { localityKey(it.county, it.locality) } }
+    // Relationships are joined by code.
+    private val subCountiesByCountyCode by lazy { _subCounties.groupBy { it.county_code } }
+    private val constituenciesByCountyCode by lazy { _constituencies.groupBy { it.county_code } }
+    private val wardsByConstituencyCode by lazy { _wards.groupBy { it.constituency_code } }
+    private val wardsByCountyCode by lazy { _wards.groupBy { it.county_code } }
+    private val localitiesByCountyCode by lazy { _localities.groupBy { it.county_code } }
+    private val areasByCountyCode by lazy { _areas.groupBy { it.county_code } }
+    private val areasByLocality by lazy { _areas.groupBy { localityKey(it.county_code, it.locality) } }
 
     // ─── Getters ──────────────────────────────────────────────────────────────
 
@@ -76,8 +73,8 @@ object KenyaLocations {
         countiesByCode[normalizeCode(code, COUNTY_CODE_WIDTH)]
 
     /**
-     * Find a county by name, ignoring case. Falls back to ignoring spaces,
-     * punctuation and accents ("Muranga" finds "Murang'a").
+     * Find a county by name or alias ("Nairobi City"), ignoring case. Falls back
+     * to ignoring spaces, punctuation and accents ("Muranga" finds "Murang'a").
      */
     fun getCountyByName(name: String): County? = countyNames.unique(name)
 
@@ -89,22 +86,22 @@ object KenyaLocations {
     fun getConstituencyByName(name: String): Constituency? = constituencyNames.unique(name)
 
     // Every `countyName` / `constituencyName` argument below accepts a name in
-    // any case or a code. An unknown county or constituency returns an empty list.
+    // any case, a county alias, or a code. An unknown county or constituency returns an empty list.
 
     fun getSubCountiesInCounty(countyName: String): List<SubCounty> =
-        resolveCounty(countyName)?.let { subCountiesByCounty[lowerName(it.name)] }.orEmpty()
+        resolveCounty(countyName)?.let { subCountiesByCountyCode[it.code] }.orEmpty()
 
     fun getConstituenciesInCounty(countyName: String): List<Constituency> =
-        resolveCounty(countyName)?.let { constituenciesByCounty[lowerName(it.name)] }.orEmpty()
+        resolveCounty(countyName)?.let { constituenciesByCountyCode[it.code] }.orEmpty()
 
     fun getWardsInConstituency(constituencyName: String): List<Ward> =
-        resolveConstituency(constituencyName)?.let { wardsByConstituency[lowerName(it.name)] }.orEmpty()
+        resolveConstituency(constituencyName)?.let { wardsByConstituencyCode[it.code] }.orEmpty()
 
     fun getWardsInCounty(countyName: String): List<Ward> =
         resolveCounty(countyName)?.let { wardsByCountyCode[it.code] }.orEmpty()
 
     fun getLocalitiesInCounty(countyName: String): List<Locality> =
-        resolveCounty(countyName)?.let { localitiesByCounty[lowerName(it.name)] }.orEmpty()
+        resolveCounty(countyName)?.let { localitiesByCountyCode[it.code] }.orEmpty()
 
     /**
      * Areas of one locality. The same locality name exists in several counties
@@ -113,10 +110,10 @@ object KenyaLocations {
      * empty list.
      */
     fun getAreasInLocality(localityName: String, county: String? = null): List<Area> =
-        resolveLocality(localityName, county)?.let { areasByLocality[localityKey(it.county, it.name)] }.orEmpty()
+        resolveLocality(localityName, county)?.let { areasByLocality[localityKey(it.county_code, it.name)] }.orEmpty()
 
     fun getAreasInCounty(countyName: String): List<Area> =
-        resolveCounty(countyName)?.let { areasByCounty[lowerName(it.name)] }.orEmpty()
+        resolveCounty(countyName)?.let { areasByCountyCode[it.code] }.orEmpty()
 
     // ─── Resolvers ────────────────────────────────────────────────────────────
 
@@ -130,12 +127,12 @@ object KenyaLocations {
         if (countyNameOrCode == null) return localityNames.unique(name)
         val county = resolveCounty(countyNameOrCode) ?: return null
         return localityNames.all(name)
-            .filter { lowerName(it.county) == lowerName(county.name) }
+            .filter { it.county_code == county.code }
             .singleOrNull()
     }
 
-    private fun localityKey(countyName: String, localityName: String): String =
-        "${lowerName(countyName)}|${lowerName(localityName)}"
+    private fun localityKey(countyCode: String, localityName: String): String =
+        "$countyCode|${lowerName(localityName)}"
 
     // ─── Search ───────────────────────────────────────────────────────────────
 
