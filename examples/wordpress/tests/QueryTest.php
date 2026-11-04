@@ -98,4 +98,11 @@ final class QueryTest extends TestCase
         $this->assertSame('Karen', $this->query->locality('Karen', 'Nairobi')?->name);
         $this->assertSame('Hardy', $this->query->area('Hardy', 'Karen', '047')?->name);
     }
+
+    public function testAreasInALocalityNameReusedAcrossCounties(): void
+    {
+        $this->assertCount(3, $this->query->areasInLocality('Bura', 'Garissa'));
+        $this->assertCount(2, $this->query->areasInLocality('Bura', 'Tana River'));
+        $this->assertSame([], $this->query->areasInLocality('Bura'));
+    }
 }
