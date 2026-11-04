@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:kenya_locations/src/lookup.dart';
 import 'package:kenya_locations/src/src.dart';
 
 /// Provides access to Kenya's administrative and geographical location data.
@@ -31,109 +32,184 @@ class KenyaLocations {
 
   static final List<Area> _areas = rawAreas.map(Area.fromMap).toList();
 
+  static const _countyCodeWidth = 3;
+  static const _constituencyCodeWidth = 3;
+  static const _wardCodeWidth = 4;
+
+  static final Map<String, County> _countyByCode = {
+    for (final c in _counties) c.code: c,
+  };
+  static final _countyNames = NameIndex<County>(_counties, (c) => c.name);
+
+  static final Map<String, Constituency> _constituencyByCode = {
+    for (final c in _constituencies) c.code: c,
+  };
+  static final _constituencyNames = NameIndex<Constituency>(
+    _constituencies,
+    (c) => c.name,
+  );
+
+  static final Map<String, Ward> _wardByCode = {
+    for (final w in _wards) w.code: w,
+  };
+  static final _wardNames = NameIndex<Ward>(_wards, (w) => w.name);
+
+  static final Map<String, List<SubCounty>> _subCountiesByCounty = groupBy(
+    _subCounties,
+    (s) => lowerName(s.county),
+  );
+  static final Map<String, List<Constituency>> _constituenciesByCounty =
+      groupBy(_constituencies, (c) => lowerName(c.county));
+  static final Map<String, List<Ward>> _wardsByConstituency = groupBy(
+    _wards,
+    (w) => lowerName(w.constituency),
+  );
+  static final Map<String, List<Locality>> _localitiesByCounty = groupBy(
+    _localities,
+    (l) => lowerName(l.county),
+  );
+  static final _localityNames = NameIndex<Locality>(_localities, (l) => l.name);
+  static final Map<String, List<Area>> _areasByLocality = groupBy(
+    _areas,
+    (a) => _localityKey(a.county, a.locality),
+  );
+
+  static String _localityKey(String county, String locality) =>
+      '${lowerName(county)}|${lowerName(locality)}';
+
+  /// Resolves a county from its name or code.
+  static County? _resolveCounty(String nameOrCode) =>
+      getCountyByCode(nameOrCode) ?? _countyNames.unique(nameOrCode);
+
+  /// Resolves a constituency from its name or code.
+  static Constituency? _resolveConstituency(String nameOrCode) =>
+      _constituencyByCode[normalizeCode(nameOrCode, _constituencyCodeWidth)] ??
+      _constituencyNames.unique(nameOrCode);
+
+  /// Returns the records grouped under the county's name, or an empty list if
+  /// [countyNameOrCode] does not resolve to a county.
+  static List<T> _inCounty<T>(
+    Map<String, List<T>> byCounty,
+    String countyNameOrCode,
+  ) {
+    final county = _resolveCounty(countyNameOrCode);
+    if (county == null) return [];
+    return List.of(byCounty[lowerName(county.name)] ?? const []);
+  }
+
   /// Returns all counties in Kenya.
   static List<County> getCounties() => _counties;
 
   /// Returns the county with the given administrative code.
   ///
-  /// County codes are represented as three-digit strings, for example `047`
-  /// for Nairobi County.
+  /// County codes are three-digit strings, for example `047` for Nairobi
+  /// County. All-digit input is zero-padded, so `47` also finds Nairobi.
   ///
   /// Returns `null` if no county matches the [code].
   static County? getCountyByCode(String code) =>
-      _counties.where((c) => c.code == code).firstOrNull;
+      _countyByCode[normalizeCode(code, _countyCodeWidth)];
 
   /// Returns the county with the given name.
   ///
-  /// The comparison is case-insensitive. Returns `null` if no county matches
-  /// the [name].
-  static County? getCountyByName(String name) => _counties
-      .where((c) => c.name.toLowerCase() == name.toLowerCase())
-      .firstOrNull;
+  /// The comparison is case-insensitive. If nothing matches exactly, accents,
+  /// spaces and punctuation are ignored, so `Muranga` finds `Murang'a`.
+  /// Returns `null` if no county matches the [name].
+  static County? getCountyByName(String name) => _countyNames.unique(name);
 
   /// Returns all sub-counties in Kenya.
   static List<SubCounty> getSubCounties() => _subCounties;
 
   /// Returns all sub-counties belonging to the given county.
   ///
-  /// The comparison is case-insensitive.
+  /// [countyName] may be a county name (matched as in [getCountyByName]) or
+  /// a county code (as in [getCountyByCode]).
   static List<SubCounty> getSubCountiesInCounty(String countyName) =>
-      _subCounties
-          .where((s) => s.county.toLowerCase() == countyName.toLowerCase())
-          .toList();
+      _inCounty(_subCountiesByCounty, countyName);
 
   /// Returns all constituencies in Kenya.
   static List<Constituency> getConstituencies() => _constituencies;
 
   /// Returns all constituencies belonging to the given county.
   ///
-  /// The comparison is case-insensitive.
+  /// [countyName] may be a county name (matched as in [getCountyByName]) or
+  /// a county code (as in [getCountyByCode]).
   static List<Constituency> getConstituenciesInCounty(String countyName) =>
-      _constituencies
-          .where((c) => c.county.toLowerCase() == countyName.toLowerCase())
-          .toList();
+      _inCounty(_constituenciesByCounty, countyName);
 
   /// Returns all wards in Kenya.
   static List<Ward> getWards() => _wards;
 
   /// Returns all wards belonging to the given constituency.
   ///
-  /// The comparison is case-insensitive.
-  static List<Ward> getWardsInConstituency(String constituencyName) => _wards
-      .where(
-        (w) => w.constituency.toLowerCase() == constituencyName.toLowerCase(),
-      )
-      .toList();
+  /// [constituencyName] may be a constituency name (case-insensitive, with
+  /// the same loose fallback as [getCountyByName]) or a constituency code.
+  /// Returns an empty list if the constituency cannot be found.
+  static List<Ward> getWardsInConstituency(String constituencyName) {
+    final constituency = _resolveConstituency(constituencyName);
+    if (constituency == null) return [];
+    return List.of(
+      _wardsByConstituency[lowerName(constituency.name)] ?? const [],
+    );
+  }
 
   /// Returns the constituency containing the given ward.
   ///
-  /// [wardNameOrCode] may be a ward administrative code (exact match) or a
-  /// ward name (case-insensitive). Codes are unique and win when both a code
-  /// and a name could match.
+  /// [wardNameOrCode] may be a ward administrative code (all-digit input is
+  /// zero-padded to four digits) or a ward name (matched as in
+  /// [getCountyByName]). Codes win when both a code and a name could match.
   ///
   /// Returns `null` if the ward cannot be found, the name is used by more
   /// than one ward (for example `Township`), or the parent constituency
   /// cannot be found.
   static Constituency? getConstituencyOfWard(String wardNameOrCode) {
-    final key = wardNameOrCode.trim();
-    if (key.isEmpty) return null;
+    if (wardNameOrCode.trim().isEmpty) return null;
 
-    final byCode = _wards.where((w) => w.code == key).toList();
-    if (byCode.length == 1) {
-      return _constituencyOf(byCode.first);
-    }
+    final ward =
+        _wardByCode[normalizeCode(wardNameOrCode, _wardCodeWidth)] ??
+        _wardNames.unique(wardNameOrCode);
+    if (ward == null) return null;
 
-    final byName = _wards
-        .where((w) => w.name.toLowerCase() == key.toLowerCase())
-        .toList();
-    if (byName.length != 1) return null;
-
-    return _constituencyOf(byName.first);
+    return _constituencyNames.unique(ward.constituency);
   }
-
-  static Constituency? _constituencyOf(Ward ward) => _constituencies
-      .where((c) => c.name.toLowerCase() == ward.constituency.toLowerCase())
-      .firstOrNull;
 
   /// Returns all localities in Kenya.
   static List<Locality> getLocalities() => _localities;
 
   /// Returns all localities belonging to the given county.
   ///
-  /// The comparison is case-insensitive.
-  static List<Locality> getLocalitiesInCounty(String countyName) => _localities
-      .where((l) => l.county.toLowerCase() == countyName.toLowerCase())
-      .toList();
+  /// [countyName] may be a county name (matched as in [getCountyByName]) or
+  /// a county code (as in [getCountyByCode]).
+  static List<Locality> getLocalitiesInCounty(String countyName) =>
+      _inCounty(_localitiesByCounty, countyName);
 
   /// Returns all areas in Kenya.
   static List<Area> getAreas() => _areas;
 
   /// Returns all areas belonging to the given locality.
   ///
-  /// The comparison is case-insensitive.
-  static List<Area> getAreasInLocality(String localityName) => _areas
-      .where((a) => a.locality.toLowerCase() == localityName.toLowerCase())
-      .toList();
+  /// The same locality name can exist in more than one county (for example
+  /// `Bura`), so pass [county] (a name or code) to pick one. Without
+  /// [county] the locality name must be unique across Kenya; an ambiguous
+  /// name returns an empty list.
+  ///
+  /// Locality names are matched as in [getCountyByName].
+  static List<Area> getAreasInLocality(String localityName, {String? county}) {
+    var matches = _localityNames.all(localityName);
+    if (county != null) {
+      final resolved = _resolveCounty(county);
+      if (resolved == null) return [];
+      matches = matches
+          .where((l) => lowerName(l.county) == lowerName(resolved.name))
+          .toList();
+    }
+    if (matches.length != 1) return [];
+
+    final locality = matches.single;
+    return List.of(
+      _areasByLocality[_localityKey(locality.county, locality.name)] ??
+          const [],
+    );
+  }
 
   /// Searches across counties, sub-counties, constituencies, wards,
   /// localities, and areas.
