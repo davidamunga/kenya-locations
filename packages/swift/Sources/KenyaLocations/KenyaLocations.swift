@@ -46,6 +46,7 @@ public final class KenyaLocations: @unchecked Sendable {
     /// Accepts padded or unpadded codes: "47" and "047" both find Nairobi.
     public func getCountyByCode(_ code: String) -> County? { countyIndex.byCode(code) }
     /// Case-insensitive; falls back to ignoring spaces, punctuation and accents ("Muranga").
+    /// Aliases count as names: "Nairobi City" finds Nairobi.
     public func getCountyByName(_ name: String) -> County? { countyIndex.names.unique(name) }
 
     /// Accepts padded or unpadded codes: "1" and "001" both find constituency 001.
@@ -56,31 +57,31 @@ public final class KenyaLocations: @unchecked Sendable {
     /// - Parameter countyName: County name (any case) or code.
     public func getSubCountiesInCounty(_ countyName: String) -> [SubCounty] {
         guard let county = countyIndex.resolve(countyName) else { return [] }
-        return subCounties.filter { sameName($0.county, county.name) }
+        return subCounties.filter { $0.county_code == county.code }
     }
 
     /// - Parameter countyName: County name (any case) or code.
     public func getConstituenciesInCounty(_ countyName: String) -> [Constituency] {
         guard let county = countyIndex.resolve(countyName) else { return [] }
-        return constituencies.filter { sameName($0.county, county.name) }
+        return constituencies.filter { $0.county_code == county.code }
     }
 
     /// - Parameter constituencyName: Constituency name (any case) or code.
     public func getWardsInConstituency(_ constituencyName: String) -> [Ward] {
         guard let constituency = constituencyIndex.resolve(constituencyName) else { return [] }
-        return wards.filter { sameName($0.constituency, constituency.name) }
+        return wards.filter { $0.constituency_code == constituency.code }
     }
 
     /// - Parameter countyName: County name (any case) or code.
     public func getWardsInCounty(_ countyName: String) -> [Ward] {
-        let constituencyNames = Set(getConstituenciesInCounty(countyName).map { lowerName($0.name) })
-        return wards.filter { constituencyNames.contains(lowerName($0.constituency)) }
+        guard let county = countyIndex.resolve(countyName) else { return [] }
+        return wards.filter { $0.county_code == county.code }
     }
 
     /// - Parameter countyName: County name (any case) or code.
     public func getLocalitiesInCounty(_ countyName: String) -> [Locality] {
         guard let county = countyIndex.resolve(countyName) else { return [] }
-        return localities.filter { sameName($0.county, county.name) }
+        return localities.filter { $0.county_code == county.code }
     }
 
     /// Areas of one locality. Locality names repeat across counties ("Bura" is in
@@ -92,20 +93,20 @@ public final class KenyaLocations: @unchecked Sendable {
     ///   - county: Optional county name (any case) or code.
     public func getAreasInLocality(_ localityName: String, county: String? = nil) -> [Area] {
         guard let locality = resolveLocality(localityName, county: county) else { return [] }
-        return areas.filter { sameName($0.county, locality.county) && sameName($0.locality, locality.name) }
+        return areas.filter { $0.county_code == locality.county_code && sameName($0.locality, locality.name) }
     }
 
     /// - Parameter countyName: County name (any case) or code.
     public func getAreasInCounty(_ countyName: String) -> [Area] {
         guard let county = countyIndex.resolve(countyName) else { return [] }
-        return areas.filter { sameName($0.county, county.name) }
+        return areas.filter { $0.county_code == county.code }
     }
 
     /// The single locality with this name (within `county`, if given), or nil.
     private func resolveLocality(_ name: String, county countyNameOrCode: String?) -> Locality? {
         guard let countyNameOrCode else { return localityIndex.unique(name) }
         guard let county = countyIndex.resolve(countyNameOrCode) else { return nil }
-        let matches = localityIndex.all(name).filter { sameName($0.county, county.name) }
+        let matches = localityIndex.all(name).filter { $0.county_code == county.code }
         return matches.count == 1 ? matches[0] : nil
     }
 

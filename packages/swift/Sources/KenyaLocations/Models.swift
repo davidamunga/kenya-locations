@@ -13,6 +13,8 @@ public enum CountyRegion: String, Codable, Equatable, Hashable, CaseIterable, Se
 
 public struct County: Codable, Equatable, Hashable, Sendable {
     public let code: String
+    /// ISO 3166-2 code, e.g. "KE-30" for Nairobi (numbered alphabetically, unlike `code`)
+    public let iso_code: String
     public let name: String
     /// County headquarters / capital town
     public let capital: String
@@ -24,35 +26,43 @@ public struct County: Codable, Equatable, Hashable, Sendable {
     public let region: CountyRegion
     /// Kenya Post primary postal code for the county capital
     public let postal_code: String
+    /// Other names the county goes by, e.g. "Nairobi City" (may be empty)
+    public let aliases: [String]
 }
 
 public struct SubCounty: Codable, Equatable, Hashable, Sendable {
     public let code: String
     public let name: String
     public let county: String
+    public let county_code: String
 }
 
 public struct Constituency: Codable, Equatable, Hashable, Sendable {
     public let code: String
     public let name: String
     public let county: String
+    public let county_code: String
 }
 
 public struct Ward: Codable, Equatable, Hashable, Sendable {
     public let code: String
     public let name: String
     public let constituency: String
+    public let constituency_code: String
+    public let county_code: String
 }
 
 public struct Locality: Codable, Equatable, Hashable, Sendable {
     public let name: String
     public let county: String
+    public let county_code: String
 }
 
 public struct Area: Codable, Equatable, Hashable, Sendable {
     public let name: String
     public let locality: String
     public let county: String
+    public let county_code: String
 }
 
 public enum SearchType: String, CaseIterable, Sendable {

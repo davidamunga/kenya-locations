@@ -61,6 +61,21 @@ let areas = shared.getAreasInLocality("Bura", county: "Garissa")
 let results = shared.search("karen", limit: 10)
 ```
 
+## Models
+
+All models are `Codable`, `Hashable` and `Sendable`, with properties named after the JSON keys.
+
+| Type | Fields |
+|---|---|
+| `County` | `code`, `iso_code`, `name`, `capital`, `area_km2`, `population_2019`, `region`, `postal_code`, `aliases` |
+| `Constituency` | `code`, `name`, `county`, `county_code` |
+| `SubCounty` | `code`, `name`, `county`, `county_code` |
+| `Ward` | `code`, `name`, `constituency`, `constituency_code`, `county_code` |
+| `Locality` | `name`, `county`, `county_code` |
+| `Area` | `name`, `locality`, `county`, `county_code` |
+
+`iso_code` is the ISO 3166-2 code (Nairobi is `KE-30`; its IEBC `code` is `047`). Relational queries join on the `*_code` fields, and county aliases count as names: `getCountyByName("Nairobi City")` finds Nairobi.
+
 ## Local Development
 
 The JSON in `Sources/KenyaLocations/Resources/` is a committed copy of `../../data/`. Swift Package Manager installs straight from the git tag, so it must be in the repo. After editing `data/*.json`, refresh it:
