@@ -26,11 +26,10 @@ public final class KenyaLocations: @unchecked Sendable {
     private var _localities: [Locality]?
     private var _areas: [Area]?
 
-    // Fast lookup maps
-    private var _countiesByCode: [String: County]?
-    private var _countiesByName: [String: County]?
-    private var _constituenciesByCode: [String: Constituency]?
-    private var _constituenciesByName: [String: Constituency]?
+    // Lookup indexes (see Lookups.swift)
+    private var _countyIndex: CodedIndex<County>?
+    private var _constituencyIndex: CodedIndex<Constituency>?
+    private var _localityIndex: NameIndex<Locality>?
 
     /// Internal so tests can create a fresh, unloaded instance.
     init() {}
@@ -44,39 +43,70 @@ public final class KenyaLocations: @unchecked Sendable {
     public func getLocalities() -> [Locality] { localities }
     public func getAreas() -> [Area] { areas }
 
-    public func getCountyByCode(_ code: String) -> County? { countiesByCode[code] }
-    public func getCountyByName(_ name: String) -> County? { countiesByName[name] }
+    /// Accepts padded or unpadded codes: "47" and "047" both find Nairobi.
+    public func getCountyByCode(_ code: String) -> County? { countyIndex.byCode(code) }
+    /// Case-insensitive; falls back to ignoring spaces, punctuation and accents ("Muranga").
+    public func getCountyByName(_ name: String) -> County? { countyIndex.names.unique(name) }
 
-    public func getConstituencyByCode(_ code: String) -> Constituency? { constituenciesByCode[code] }
-    public func getConstituencyByName(_ name: String) -> Constituency? { constituenciesByName[name] }
+    /// Accepts padded or unpadded codes: "1" and "001" both find constituency 001.
+    public func getConstituencyByCode(_ code: String) -> Constituency? { constituencyIndex.byCode(code) }
+    /// Case-insensitive; falls back to ignoring spaces, punctuation and accents.
+    public func getConstituencyByName(_ name: String) -> Constituency? { constituencyIndex.names.unique(name) }
 
+    /// - Parameter countyName: County name (any case) or code.
     public func getSubCountiesInCounty(_ countyName: String) -> [SubCounty] {
-        subCounties.filter { $0.county == countyName }
+        guard let county = countyIndex.resolve(countyName) else { return [] }
+        return subCounties.filter { sameName($0.county, county.name) }
     }
 
+    /// - Parameter countyName: County name (any case) or code.
     public func getConstituenciesInCounty(_ countyName: String) -> [Constituency] {
-        constituencies.filter { $0.county == countyName }
+        guard let county = countyIndex.resolve(countyName) else { return [] }
+        return constituencies.filter { sameName($0.county, county.name) }
     }
 
+    /// - Parameter constituencyName: Constituency name (any case) or code.
     public func getWardsInConstituency(_ constituencyName: String) -> [Ward] {
-        wards.filter { $0.constituency == constituencyName }
+        guard let constituency = constituencyIndex.resolve(constituencyName) else { return [] }
+        return wards.filter { sameName($0.constituency, constituency.name) }
     }
 
+    /// - Parameter countyName: County name (any case) or code.
     public func getWardsInCounty(_ countyName: String) -> [Ward] {
-        let constituencyNames = Set(getConstituenciesInCounty(countyName).map { $0.name })
-        return wards.filter { constituencyNames.contains($0.constituency) }
+        let constituencyNames = Set(getConstituenciesInCounty(countyName).map { lowerName($0.name) })
+        return wards.filter { constituencyNames.contains(lowerName($0.constituency)) }
     }
 
+    /// - Parameter countyName: County name (any case) or code.
     public func getLocalitiesInCounty(_ countyName: String) -> [Locality] {
-        localities.filter { $0.county == countyName }
+        guard let county = countyIndex.resolve(countyName) else { return [] }
+        return localities.filter { sameName($0.county, county.name) }
     }
 
-    public func getAreasInLocality(_ localityName: String) -> [Area] {
-        areas.filter { $0.locality == localityName }
+    /// Areas of one locality. Locality names repeat across counties ("Bura" is in
+    /// Garissa, Taita-Taveta and Tana River), so pass `county` to pick one.
+    /// Without a county the locality name must be unique; an ambiguous name returns `[]`.
+    ///
+    /// - Parameters:
+    ///   - localityName: Locality name (any case).
+    ///   - county: Optional county name (any case) or code.
+    public func getAreasInLocality(_ localityName: String, county: String? = nil) -> [Area] {
+        guard let locality = resolveLocality(localityName, county: county) else { return [] }
+        return areas.filter { sameName($0.county, locality.county) && sameName($0.locality, locality.name) }
     }
 
+    /// - Parameter countyName: County name (any case) or code.
     public func getAreasInCounty(_ countyName: String) -> [Area] {
-        areas.filter { $0.county == countyName }
+        guard let county = countyIndex.resolve(countyName) else { return [] }
+        return areas.filter { sameName($0.county, county.name) }
+    }
+
+    /// The single locality with this name (within `county`, if given), or nil.
+    private func resolveLocality(_ name: String, county countyNameOrCode: String?) -> Locality? {
+        guard let countyNameOrCode else { return localityIndex.unique(name) }
+        guard let county = countyIndex.resolve(countyNameOrCode) else { return nil }
+        let matches = localityIndex.all(name).filter { sameName($0.county, county.name) }
+        return matches.count == 1 ? matches[0] : nil
     }
 
     // ─── Search ───────────────────────────────────────────────────────────────
@@ -214,44 +244,31 @@ public final class KenyaLocations: @unchecked Sendable {
         _areas = v; return v
     }
 
-    private var countiesByCode: [String: County] {
-        // Load the source list first (it takes the lock itself, and NSLock
-        // is not reentrant) so the map is never built from unloaded data.
+    // Each index loads its source list first (it takes the lock itself, and
+    // NSLock is not reentrant) so the index is never built from unloaded data.
+
+    private var countyIndex: CodedIndex<County> {
         let source = counties
         lock.lock(); defer { lock.unlock() }
-        if let v = _countiesByCode { return v }
-        let v = Dictionary(uniqueKeysWithValues: source.map { ($0.code, $0) })
-        _countiesByCode = v; return v
+        if let v = _countyIndex { return v }
+        let v = CodedIndex(source, codeWidth: CodeWidth.county)
+        _countyIndex = v; return v
     }
 
-    private var countiesByName: [String: County] {
-        // Load the source list first (it takes the lock itself, and NSLock
-        // is not reentrant) so the map is never built from unloaded data.
-        let source = counties
-        lock.lock(); defer { lock.unlock() }
-        if let v = _countiesByName { return v }
-        let v = Dictionary(uniqueKeysWithValues: source.map { ($0.name, $0) })
-        _countiesByName = v; return v
-    }
-
-    private var constituenciesByCode: [String: Constituency] {
-        // Load the source list first (it takes the lock itself, and NSLock
-        // is not reentrant) so the map is never built from unloaded data.
+    private var constituencyIndex: CodedIndex<Constituency> {
         let source = constituencies
         lock.lock(); defer { lock.unlock() }
-        if let v = _constituenciesByCode { return v }
-        let v = Dictionary(uniqueKeysWithValues: source.map { ($0.code, $0) })
-        _constituenciesByCode = v; return v
+        if let v = _constituencyIndex { return v }
+        let v = CodedIndex(source, codeWidth: CodeWidth.constituency)
+        _constituencyIndex = v; return v
     }
 
-    private var constituenciesByName: [String: Constituency] {
-        // Load the source list first (it takes the lock itself, and NSLock
-        // is not reentrant) so the map is never built from unloaded data.
-        let source = constituencies
+    private var localityIndex: NameIndex<Locality> {
+        let source = localities
         lock.lock(); defer { lock.unlock() }
-        if let v = _constituenciesByName { return v }
-        let v = Dictionary(uniqueKeysWithValues: source.map { ($0.name, $0) })
-        _constituenciesByName = v; return v
+        if let v = _localityIndex { return v }
+        let v = NameIndex(source)
+        _localityIndex = v; return v
     }
 
     // ─── Internal ─────────────────────────────────────────────────────────────
