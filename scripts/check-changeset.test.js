@@ -78,3 +78,8 @@ test("fails when product files change without a changeset", () => {
   const result = changesetCheck(["packages/js/lib/search.ts"]);
   assert.equal(result.ok, false);
 });
+
+test("the unshipped KNBS hierarchy in data/admin/ needs no changeset yet", () => {
+  assert.equal(changesetCheck(["data/admin/locations.json", "scripts/admin/build-knbs.js"]).ok, true);
+  assert.equal(isProductPath("data/admin/sub-locations.json"), false);
+});

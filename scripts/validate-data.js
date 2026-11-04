@@ -407,6 +407,68 @@ function validateDatasetFiles() {
   return true;
 }
 
+/**
+ * KNBS administrative hierarchy in data/admin/ (County → Sub-county →
+ * Division → Location → Sub-location). Codes extend the parent's code by two
+ * digits; every unit's population equals the sum of its children's.
+ */
+const ADMIN_LEVELS = [
+  { file: "admin/sub-counties.json", key: "sub_county", plural: "sub-counties", digits: 5, parentKey: "county", parentCode: "county_code" },
+  { file: "admin/divisions.json", key: "division", plural: "divisions", digits: 7, parentKey: "sub_county", parentCode: "sub_county_code" },
+  { file: "admin/locations.json", key: "location", plural: "locations", digits: 9, parentKey: "division", parentCode: "division_code" },
+  { file: "admin/sub-locations.json", key: "sub_location", plural: "sub-locations", digits: 11, parentKey: "location", parentCode: "location_code" },
+];
+
+function validateAdminHierarchy(counties) {
+  let levels;
+  try {
+    levels = ADMIN_LEVELS.map((level) => ({ ...level, records: readJson(level.file) }));
+  } catch {
+    log("ℹ️  No data/admin hierarchy; skipping", "yellow");
+    return true;
+  }
+  const problems = [];
+  let parents = new Map(counties.map((c) => [c.code, { ...c, childPopulation: 0 }]));
+  let parentLabel = "county";
+
+  for (const level of levels) {
+    const seen = new Map();
+    for (const record of level.records) {
+      const where = `${level.key} ${record.code} ${record.name}`;
+      if (!new RegExp(`^\\d{${level.digits}}$`).test(record.code ?? "")) problems.push(`${where}: code must be ${level.digits} digits`);
+      if (seen.has(record.code)) problems.push(`${where}: duplicate code`);
+      seen.set(record.code, { ...record, childPopulation: 0 });
+      const parent = parents.get(record[level.parentCode]);
+      if (!parent) {
+        problems.push(`${where}: ${level.parentCode} ${record[level.parentCode]} not found`);
+        continue;
+      }
+      if (!record.code.startsWith(parent.code)) problems.push(`${where}: code doesn't extend its ${parentLabel}'s code ${parent.code}`);
+      if (record[level.parentKey] !== parent.name) problems.push(`${where}: ${level.parentKey} is "${record[level.parentKey]}", but ${parent.code} is "${parent.name}"`);
+      if (record.county_code !== record.code.slice(0, 3)) problems.push(`${where}: county_code doesn't match its code`);
+      if (!Number.isInteger(record.population_2019) || record.population_2019 < 0) problems.push(`${where}: population_2019 must be a whole number`);
+      if (typeof record.name !== "string" || record.name !== record.name.trim() || /\s{2,}/.test(record.name) || /[_]/.test(record.name)) problems.push(`${where}: badly formed name`);
+      parent.childPopulation += record.population_2019;
+    }
+    for (const parent of parents.values()) {
+      if (parent.childPopulation !== parent.population_2019) {
+        problems.push(`${parentLabel} ${parent.code} ${parent.name}: population ${parent.population_2019}, but its ${level.plural} add up to ${parent.childPopulation}`);
+      }
+    }
+    parents = seen;
+    parentLabel = level.key.replace("_", "-");
+  }
+
+  if (problems.length) {
+    log("❌ KNBS admin hierarchy problems:", "red");
+    problems.slice(0, 25).forEach((p) => log(`   - ${p}`, "red"));
+    if (problems.length > 25) log(`   - …and ${problems.length - 25} more`, "red");
+    return false;
+  }
+  log(`✅ KNBS admin hierarchy: ${levels.map((l) => `${l.records.length.toLocaleString("en-US")} ${l.plural}`).join(", ")}; codes nest and populations add up`, "green");
+  return true;
+}
+
 const VALID_REGIONS = new Set([
   "Nairobi",
   "Central",
@@ -520,6 +582,7 @@ function validateDataIntegrity() {
     resolveName: (w) => constituencyByName.get(w.constituency)?.county,
   });
   allValid &= validateCountyIsoAndAliases(data.counties);
+  allValid &= validateAdminHierarchy(data.counties);
   allValid &= validateDatasetFiles();
   log("", "reset");
 

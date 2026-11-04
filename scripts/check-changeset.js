@@ -16,6 +16,9 @@ import { pathToFileURL } from "url";
 import { dataPackages } from "./release/manifest.js";
 
 const SKIP_PREFIXES = [
+  // The KNBS admin hierarchy isn't shipped by any package yet; remove these
+  // once one does.
+  "data/admin/",
   "packages/dart/lib/src/generated/",
   "packages/kotlin/src/main/resources/",
   "packages/php/data/",
@@ -61,7 +64,8 @@ export function changesetCheck(changedFiles, readChangeset = () => "") {
   if (changesets.length === 0) {
     return { ok: false, productFiles, changesets, reason: "product files changed without a changeset" };
   }
-  if (changedFiles.some((file) => file.startsWith("data/"))) {
+  // Only the shared top-level files are shipped by every data package.
+  if (changedFiles.some((file) => /^data\/[^/]+\.json$/.test(file))) {
     const listed = new Set(changesets.flatMap((file) => changesetPackages(readChangeset(file))));
     const missingDataPackages = dataPackages().filter((name) => !listed.has(name));
     if (missingDataPackages.length > 0) {
