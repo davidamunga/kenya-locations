@@ -89,7 +89,7 @@ function HomePage() {
           Open data · IEBC + KNBS · v{DATA_VERSION}
         </p>
         <h1 className="font-heading font-semibold text-4xl tracking-tight text-balance sm:text-5xl">
-          Every county, ward and neighbourhood in Kenya
+          Kenyan location data, from county to neighbourhood
         </h1>
         <p className="max-w-2xl text-lg text-muted-foreground">
           Electoral and administrative divisions, plus the estates and neighbourhoods people use in
