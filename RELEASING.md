@@ -19,11 +19,27 @@ pnpm changeset                 # pick packages + bump type
 # merge the "chore: version packages" PR
 ```
 
-`pnpm changeset:version` (used by CI) also syncs:
+`pnpm changeset:version` (used by CI) runs `changeset version`, then `pnpm release:sync`.
 
-- Kotlin stub → `packages/kotlin/gradle.properties`
-- Dart stub → `packages/dart/pubspec.yaml`
-- PHP stub → `packages/php/composer.json`
+## Release manifest
+
+[`scripts/release/manifest.js`](scripts/release/manifest.js) lists every product, where its version is recorded, and its copies of `data/*.json`. Changesets owns the version in each `package.json`; everything else is derived:
+
+| Package | Also records the version in | Ships a copy of `data/` |
+|---|---|---|
+| JS | — | bundled at build |
+| Kotlin | `gradle.properties` (`VERSION_NAME`) | `src/main/resources/` |
+| Swift | — (git tag) | `Sources/KenyaLocations/Resources/` |
+| Dart | `pubspec.yaml` | `lib/src/generated/data.dart` (generated) |
+| PHP | `composer.json` + `composer.lock` content-hash | `data/` |
+
+| Command | What it does |
+|---|---|
+| `pnpm release:sync` | Writes each `package.json` version into the files above and refreshes `composer.lock` |
+| `pnpm release:verify` | Fails if any recorded version, lock file or data copy is out of date |
+| `pnpm data:sync` | Copies `data/*.json` into every package; regenerates Dart if `dart` is installed |
+
+To add a product or another place a version lives, edit the manifest; sync, verify and the changeset check all read it.
 
 Swift stays on the stub version. **Create Release** owns the `vX.Y.Z` git tag.
 
@@ -79,3 +95,20 @@ pnpm changeset:check --base origin/main
 ```
 
 Version Check fails the PR if product files changed without a new `.changeset/*.md` file.
+
+### Data changes
+
+Don't write data changesets by hand:
+
+```bash
+# edit data/*.json
+pnpm validate
+pnpm data:sync            # refresh the Kotlin, Swift and PHP copies (and Dart, if installed)
+pnpm changeset:data       # write .changeset/data-*.md from the diff against origin/main
+```
+
+`changeset:data` lists every added, removed, renamed and changed record by code, and bumps every product that ships the data (core, Dart and PHP). Version Check fails a data PR whose changesets skip one of them. Edit the generated summary if a change needs more context.
+
+### Changelog format
+
+`.changeset/changelog.cjs` writes each entry as the change followed by its PR link. There are no author credits or commit hashes.

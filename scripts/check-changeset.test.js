@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { changesetCheck, isChangesetFile, isProductPath } from "./check-changeset.js";
+import { changesetCheck, changesetPackages, isChangesetFile, isProductPath } from "./check-changeset.js";
 
 test("treats shared JSON and package source as product files", () => {
   assert.equal(isProductPath("data/counties.json"), true);
@@ -34,8 +34,44 @@ test("passes when only docs or CI changed", () => {
 });
 
 test("passes when product files ship with a changeset", () => {
-  const result = changesetCheck(["data/area.json", ".changeset/add-areas.md"]);
+  const result = changesetCheck(["packages/js/lib/search.ts", ".changeset/fix-search.md"]);
   assert.equal(result.ok, true);
+});
+
+const dataChangeset = `---
+"kenya-locations": patch
+"kenya-locations-dart": patch
+"kenya-locations-php": patch
+---
+
+Data update:
+`;
+
+test("passes when a data change bumps every package that ships the data", () => {
+  const result = changesetCheck(["data/area.json", ".changeset/add-areas.md"], () => dataChangeset);
+  assert.equal(result.ok, true);
+});
+
+test("fails when a data change skips a package that ships the data", () => {
+  const coreOnly = `---\n"kenya-locations": patch\n---\n\nAdd areas.\n`;
+  const result = changesetCheck(["data/area.json", ".changeset/add-areas.md"], () => coreOnly);
+  assert.equal(result.ok, false);
+  assert.deepEqual(result.missingDataPackages, ["kenya-locations-dart", "kenya-locations-php"]);
+});
+
+test("data packages can be spread across several changesets", () => {
+  const files = { ".changeset/a.md": `---\n"kenya-locations": patch\n---\n\nA\n`, ".changeset/b.md": `---\nkenya-locations-dart: patch\n'kenya-locations-php': minor\n---\n\nB\n` };
+  const result = changesetCheck(["data/wards.json", ".changeset/a.md", ".changeset/b.md"], (f) => files[f]);
+  assert.equal(result.ok, true);
+});
+
+test("reads package names from changeset frontmatter", () => {
+  assert.deepEqual(changesetPackages(dataChangeset), [
+    "kenya-locations",
+    "kenya-locations-dart",
+    "kenya-locations-php",
+  ]);
+  assert.deepEqual(changesetPackages("no frontmatter"), []);
 });
 
 test("fails when product files change without a changeset", () => {
