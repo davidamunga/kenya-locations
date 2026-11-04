@@ -71,3 +71,22 @@ jobs:
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- [pub.dev](https://pub.dev/packages/kenya_locations/versions/${{ steps.version.outputs.version }})" >> $GITHUB_STEP_SUMMARY
+  github-release:
+    name: Publish GitHub draft release
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish the dart-v* release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="dart-v$(grep '^version:' packages/dart/pubspec.yaml | cut -d' ' -f2)"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --draft=false
+            echo "Published the $TAG GitHub release"
+          else
+            echo "No GitHub release for $TAG (not created by the Release workflow); nothing to publish."
+          fi

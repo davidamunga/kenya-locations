@@ -163,3 +163,32 @@ test("long lists are truncated", () => {
   const text = renderChangeset([diffEntity(wards, [], after)], ["kenya-locations"]);
   assert.match(text, /…and 5 more/);
 });
+
+test("releases when the tag is missing and the version changed in this push", async () => {
+  const { shouldRelease } = await import("./plan.js");
+  assert.equal(shouldRelease({ version: "0.2.0", versionBefore: "0.1.1", tagExists: false, hasEarlierTags: false }), true);
+});
+
+test("does not release when the tag already exists", async () => {
+  const { shouldRelease } = await import("./plan.js");
+  assert.equal(shouldRelease({ version: "0.10.0", versionBefore: "0.9.0", tagExists: true, hasEarlierTags: true }), false);
+});
+
+test("retries a missed release when earlier tags exist, even with no version change", async () => {
+  const { shouldRelease } = await import("./plan.js");
+  assert.equal(shouldRelease({ version: "0.10.0", versionBefore: "0.10.0", tagExists: false, hasEarlierTags: true }), true);
+});
+
+test("does not tag an untagged product whose version did not change", async () => {
+  const { shouldRelease } = await import("./plan.js");
+  assert.equal(shouldRelease({ version: "0.10.0", versionBefore: "0.10.0", tagExists: false, hasEarlierTags: false }), false);
+  assert.equal(shouldRelease({ version: "0.10.0", versionBefore: undefined, tagExists: false, hasEarlierTags: false }), false);
+});
+
+test("extracts one version's section from a changelog", async () => {
+  const { changelogSection } = await import("./plan.js");
+  const changelog = "# Changelog\n\n## 0.2.0\n\n### Minor Changes\n\n- New thing\n\n## 0.1.0\n\n- Old thing\n";
+  assert.equal(changelogSection(changelog, "0.2.0"), "### Minor Changes\n\n- New thing");
+  assert.equal(changelogSection(changelog, "0.1.0"), "- Old thing");
+  assert.equal(changelogSection(changelog, "9.9.9"), "");
+});

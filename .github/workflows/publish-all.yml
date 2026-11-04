@@ -1,5 +1,6 @@
 # Ships the lockstep core trio (JS, Kotlin, Swift) at vX.Y.Z.
-# React and Dart version independently — use their own workflows.
+# The Release workflow dispatches this on the v* tag after approval; it can
+# also be run by hand. React, Dart and PHP have their own workflows.
 name: Publish Core Packages
 
 on:
@@ -29,3 +30,23 @@ jobs:
     secrets: inherit
     permissions:
       contents: read
+
+  github-release:
+    name: Publish GitHub draft release
+    needs: [publish-js, publish-kotlin, publish-swift]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish the v* release once JS, Kotlin and Swift succeeded
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="v$(node -p "require('./packages/js/package.json').version")"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --draft=false
+            echo "Published the $TAG GitHub release"
+          else
+            echo "No GitHub release for $TAG (not created by the Release workflow); nothing to publish."
+          fi

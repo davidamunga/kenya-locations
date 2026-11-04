@@ -4,9 +4,14 @@ on:
   push:
     branches:
       - main
+    # Rebuild the Version PR when changesets or the tooling that renders
+    # them change, so fixes to release scripts reach the open Version PR.
     paths:
-      - ".changeset/*.md"
+      - ".changeset/**"
       - "!.changeset/README.md"
+      - "scripts/release/**"
+      - "package.json"
+      - "packages/*/package.json"
   workflow_dispatch:
     inputs:
       reason:

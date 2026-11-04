@@ -56,18 +56,30 @@ jobs:
       - name: Split packages/php to kenya-locations-php
         working-directory: ${{ github.workspace }}
         env:
-          PHP_SPLIT_TOKEN: ${{ secrets.PHP_SPLIT_TOKEN }}
+          # Private half of a write-enabled deploy key on
+          # davidamunga/kenya-locations-php. It can push only to that repo.
+          PHP_SPLIT_DEPLOY_KEY: ${{ secrets.PHP_SPLIT_DEPLOY_KEY }}
           VERSION: ${{ steps.version.outputs.version }}
         run: |
           set -euo pipefail
-          if [ -z "${PHP_SPLIT_TOKEN:-}" ]; then
-            echo "PHP_SPLIT_TOKEN is not set; skipping split push."
-            echo "Add a PAT with contents:write on davidamunga/kenya-locations-php as the PHP_SPLIT_TOKEN secret."
-            exit 0
+          if [ -z "${PHP_SPLIT_DEPLOY_KEY:-}" ]; then
+            echo "::error::PHP_SPLIT_DEPLOY_KEY is not set, so nothing can be pushed to kenya-locations-php."
+            echo "Add a write-enabled deploy key to davidamunga/kenya-locations-php and store its private key as the PHP_SPLIT_DEPLOY_KEY secret."
+            exit 1
           fi
+
+          SSH_DIR="$RUNNER_TEMP/php-split-ssh"
+          mkdir -m 700 "$SSH_DIR"
+          trap 'rm -rf "$SSH_DIR"' EXIT
+          printf '%s\n' "$PHP_SPLIT_DEPLOY_KEY" > "$SSH_DIR/id"
+          chmod 600 "$SSH_DIR/id"
+          # GitHub's published host key (https://api.github.com/meta), pinned
+          # so the push can't be redirected to another host.
+          echo "github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl" > "$SSH_DIR/known_hosts"
+          export GIT_SSH_COMMAND="ssh -i $SSH_DIR/id -o IdentitiesOnly=yes -o UserKnownHostsFile=$SSH_DIR/known_hosts -o StrictHostKeyChecking=yes"
+
           git subtree split --prefix=packages/php -b php-dist
-          git config --local --unset-all http.https://github.com/.extraheader || true
-          git remote add php-dist "https://x-access-token:${PHP_SPLIT_TOKEN}@github.com/davidamunga/kenya-locations-php.git"
+          git remote add php-dist git@github.com:davidamunga/kenya-locations-php.git
           git push php-dist php-dist:main
           if git ls-remote --tags php-dist "refs/tags/v${VERSION}" | grep -q .; then
             echo "Tag v${VERSION} already exists on kenya-locations-php"
@@ -86,8 +98,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
+          # Pick the newest v* release inside jq: piping into `head -n 1` under
+          # pipefail fails with SIGPIPE (exit 141) when gh writes more lines.
           TAG=$(gh release list --limit 30 --json tagName \
-            --jq '.[] | select(.tagName | test("^v[0-9]")) | .tagName' | head -n 1)
+            --jq '[.[] | select(.tagName | test("^v[0-9]"))][0].tagName // ""')
           if [ -z "${TAG:-}" ]; then
             echo "No v* GitHub release yet; zip is in examples/wordpress/dist/."
             exit 0
@@ -98,12 +112,25 @@ jobs:
             --clobber
           echo "Uploaded WordPress zip to $TAG"
 
+      - name: Publish GitHub draft release
+        working-directory: ${{ github.workspace }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="php-v${{ steps.version.outputs.version }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --draft=false
+            echo "Published the $TAG GitHub release"
+          else
+            echo "No GitHub release for $TAG (not created by the Release workflow); nothing to publish."
+          fi
+
       - name: Summary
         run: |
           {
             echo "## kenya-locations PHP ${{ steps.version.outputs.version }}"
             echo ""
-            echo "Validated \`packages/php\` and (when \`PHP_SPLIT_TOKEN\` is set) pushed"
+            echo "Validated \`packages/php\` and pushed"
             echo "the subtree to [kenya-locations-php](https://github.com/davidamunga/kenya-locations-php)."
             echo ""
             echo "First Packagist submit: [packagist.org/packages/submit](https://packagist.org/packages/submit)"

@@ -51,9 +51,15 @@ jobs:
 
       - name: Publish GitHub draft release
         run: |
-          gh release edit "kenya-locations-react@${{ steps.version.outputs.version }}" --draft=false || true
+          TAG="react-v${{ steps.version.outputs.version }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --draft=false
+            echo "Published the $TAG GitHub release"
+          else
+            echo "No GitHub release for $TAG (not created by the Release workflow); nothing to publish."
+          fi
           echo "## Published kenya-locations-react@${{ steps.version.outputs.version }} to npm" >> $GITHUB_STEP_SUMMARY
           echo "- [npm](https://www.npmjs.com/package/kenya-locations-react)" >> $GITHUB_STEP_SUMMARY
-          echo "- [GitHub Release](https://github.com/${{ github.repository }}/releases/tag/kenya-locations-react@${{ steps.version.outputs.version }})" >> $GITHUB_STEP_SUMMARY
+          echo "- [GitHub Release](https://github.com/${{ github.repository }}/releases/tag/$TAG)" >> $GITHUB_STEP_SUMMARY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
