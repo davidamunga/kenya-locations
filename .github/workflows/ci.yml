@@ -90,7 +90,7 @@ jobs:
         with:
           node-version: "22"
       - name: Test release scripts
-        run: node --test scripts/
+        run: node --test "scripts/**/*.test.js"
       - name: Versions, composer.lock and data copies are consistent
         run: node scripts/release/verify.js
 

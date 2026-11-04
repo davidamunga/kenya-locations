@@ -20,7 +20,7 @@
     "changeset:version": "changeset version && node scripts/release/sync.js",
     "changeset:data": "node scripts/release/changeset-data.js",
     "changeset:check": "node scripts/check-changeset.js",
-    "changeset:check:test": "node --test scripts/",
+    "changeset:check:test": "node --test \"scripts/**/*.test.js\"",
     "release:sync": "node scripts/release/sync.js",
     "release:verify": "node scripts/release/verify.js",
     "data:sync": "node scripts/release/data-sync.js",
