@@ -73,11 +73,32 @@ function formatValue(value) {
   return typeof value === "string" ? `"${value}"` : String(value);
 }
 
+/** Fields present on every record of `records` and on none of `others`. */
+function fieldsOnlyIn(records, others) {
+  if (records.length === 0) return [];
+  const inOthers = new Set(others.flatMap((r) => Object.keys(r)));
+  return Object.keys(records[0]).filter(
+    (field) => !inOthers.has(field) && records.every((r) => field in r)
+  );
+}
+
 /** Compare two lists of records of one kind. */
 export function diffEntity(entity, before, after) {
   const beforeByKey = new Map(before.map((r) => [entity.key(r), r]));
   const afterByKey = new Map(after.map((r) => [entity.key(r), r]));
   const lines = [];
+
+  // A field added to (or removed from) every record is one line, not one per record.
+  const addedFields = before.length ? fieldsOnlyIn(after, before) : [];
+  const removedFields = after.length ? fieldsOnlyIn(before, after) : [];
+  const count = after.length.toLocaleString("en-US");
+  for (const field of addedFields) {
+    lines.push(`Added \`${field}\` to all ${count} ${entity.plural.toLowerCase()}`);
+  }
+  for (const field of removedFields) {
+    lines.push(`Removed \`${field}\` from all ${entity.plural.toLowerCase()}`);
+  }
+  const skip = new Set([...addedFields, ...removedFields]);
 
   for (const [key, record] of afterByKey) {
     const old = beforeByKey.get(key);
@@ -85,7 +106,9 @@ export function diffEntity(entity, before, after) {
       lines.push(`Added ${entity.singular} ${entity.label(record)}`);
       continue;
     }
-    const fields = [...new Set([...Object.keys(old), ...Object.keys(record)])];
+    const fields = [...new Set([...Object.keys(old), ...Object.keys(record)])].filter(
+      (f) => !skip.has(f)
+    );
     const changed = fields.filter((f) => JSON.stringify(old[f]) !== JSON.stringify(record[f]));
     if (changed.length === 0) continue;
     if (changed.length === 1 && changed[0] === "name") {

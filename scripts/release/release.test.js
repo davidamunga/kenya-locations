@@ -192,3 +192,18 @@ test("extracts one version's section from a changelog", async () => {
   assert.equal(changelogSection(changelog, "0.1.0"), "- Old thing");
   assert.equal(changelogSection(changelog, "9.9.9"), "");
 });
+
+test("a field added to every record is one line, not one per record", () => {
+  const before = [
+    { code: "0001", name: "A", constituency: "X" },
+    { code: "0002", name: "B", constituency: "X" },
+  ];
+  const after = [
+    { code: "0001", name: "A", constituency: "X", county_code: "047" },
+    { code: "0002", name: "B renamed", constituency: "X", county_code: "047" },
+  ];
+  assert.deepEqual(diffEntity(wards, before, after).lines, [
+    "Added `county_code` to all 2 wards",
+    'Renamed ward `0002` from "B" to "B renamed"',
+  ]);
+});
