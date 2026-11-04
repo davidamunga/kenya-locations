@@ -5,7 +5,12 @@
 class SubCounty {
   /// Creates a [SubCounty] with the given administrative code, name, and
   /// parent county.
-  const new({required this.code, required this.name, required this.county});
+  const new({
+    required this.code,
+    required this.name,
+    required this.county,
+    required this.countyCode,
+  });
 
   /// Creates a [SubCounty] from a map containing sub-county data.
   ///
@@ -13,10 +18,12 @@ class SubCounty {
   /// - `code`
   /// - `name`
   /// - `county`
+  /// - `county_code`
   factory fromMap(Map<String, dynamic> map) => SubCounty(
     code: map['code'] as String,
     name: map['name'] as String,
     county: map['county'] as String,
+    countyCode: map['county_code'] as String,
   );
 
   /// The unique administrative code of the sub-county.
@@ -27,4 +34,7 @@ class SubCounty {
 
   /// The name of the county that contains the sub-county.
   final String county;
+
+  /// The administrative code of the county that contains the sub-county.
+  final String countyCode;
 }

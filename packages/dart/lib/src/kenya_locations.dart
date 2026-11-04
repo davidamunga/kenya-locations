@@ -39,7 +39,11 @@ class KenyaLocations {
   static final Map<String, County> _countyByCode = {
     for (final c in _counties) c.code: c,
   };
-  static final _countyNames = NameIndex<County>(_counties, (c) => c.name);
+  static final _countyNames = NameIndex<County>(
+    _counties,
+    (c) => c.name,
+    aliasesOf: (c) => c.aliases,
+  );
 
   static final Map<String, Constituency> _constituencyByCode = {
     for (final c in _constituencies) c.code: c,
@@ -56,26 +60,26 @@ class KenyaLocations {
 
   static final Map<String, List<SubCounty>> _subCountiesByCounty = groupBy(
     _subCounties,
-    (s) => lowerName(s.county),
+    (s) => s.countyCode,
   );
   static final Map<String, List<Constituency>> _constituenciesByCounty =
-      groupBy(_constituencies, (c) => lowerName(c.county));
+      groupBy(_constituencies, (c) => c.countyCode);
   static final Map<String, List<Ward>> _wardsByConstituency = groupBy(
     _wards,
-    (w) => lowerName(w.constituency),
+    (w) => w.constituencyCode,
   );
   static final Map<String, List<Locality>> _localitiesByCounty = groupBy(
     _localities,
-    (l) => lowerName(l.county),
+    (l) => l.countyCode,
   );
   static final _localityNames = NameIndex<Locality>(_localities, (l) => l.name);
   static final Map<String, List<Area>> _areasByLocality = groupBy(
     _areas,
-    (a) => _localityKey(a.county, a.locality),
+    (a) => _localityKey(a.countyCode, a.locality),
   );
 
-  static String _localityKey(String county, String locality) =>
-      '${lowerName(county)}|${lowerName(locality)}';
+  static String _localityKey(String countyCode, String locality) =>
+      '$countyCode|${lowerName(locality)}';
 
   /// Resolves a county from its name or code.
   static County? _resolveCounty(String nameOrCode) =>
@@ -86,7 +90,7 @@ class KenyaLocations {
       _constituencyByCode[normalizeCode(nameOrCode, _constituencyCodeWidth)] ??
       _constituencyNames.unique(nameOrCode);
 
-  /// Returns the records grouped under the county's name, or an empty list if
+  /// Returns the records grouped under the county's code, or an empty list if
   /// [countyNameOrCode] does not resolve to a county.
   static List<T> _inCounty<T>(
     Map<String, List<T>> byCounty,
@@ -94,7 +98,7 @@ class KenyaLocations {
   ) {
     final county = _resolveCounty(countyNameOrCode);
     if (county == null) return [];
-    return List.of(byCounty[lowerName(county.name)] ?? const []);
+    return List.of(byCounty[county.code] ?? const []);
   }
 
   /// Returns all counties in Kenya.
@@ -147,9 +151,7 @@ class KenyaLocations {
   static List<Ward> getWardsInConstituency(String constituencyName) {
     final constituency = _resolveConstituency(constituencyName);
     if (constituency == null) return [];
-    return List.of(
-      _wardsByConstituency[lowerName(constituency.name)] ?? const [],
-    );
+    return List.of(_wardsByConstituency[constituency.code] ?? const []);
   }
 
   /// Returns the constituency containing the given ward.
@@ -169,7 +171,7 @@ class KenyaLocations {
         _wardNames.unique(wardNameOrCode);
     if (ward == null) return null;
 
-    return _constituencyNames.unique(ward.constituency);
+    return _constituencyByCode[ward.constituencyCode];
   }
 
   /// Returns all localities in Kenya.
@@ -198,15 +200,13 @@ class KenyaLocations {
     if (county != null) {
       final resolved = _resolveCounty(county);
       if (resolved == null) return [];
-      matches = matches
-          .where((l) => lowerName(l.county) == lowerName(resolved.name))
-          .toList();
+      matches = matches.where((l) => l.countyCode == resolved.code).toList();
     }
     if (matches.length != 1) return [];
 
     final locality = matches.single;
     return List.of(
-      _areasByLocality[_localityKey(locality.county, locality.name)] ??
+      _areasByLocality[_localityKey(locality.countyCode, locality.name)] ??
           const [],
     );
   }
