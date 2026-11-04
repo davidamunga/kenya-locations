@@ -1,5 +1,15 @@
 # kenya-locations-swift
 
+## 0.11.0
+
+### Minor Changes
+
+- Models expose the new data fields: `County.iso_code` and `County.aliases`, `county_code` on
+  constituencies, sub-counties, localities and areas, and `constituency_code` and `county_code` on
+  wards. Relational queries now join by these codes instead of by name, and county aliases count as
+  names, so `getCountyByName("Nairobi City")` finds Nairobi.
+  ([#61](https://github.com/DavidAmunga/kenya-locations/pull/61))
+
 ## 0.10.0
 
 ### Minor Changes
