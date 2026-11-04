@@ -43,11 +43,24 @@ object KenyaLocations {
         loadList("area.json", ListSerializer(Area.serializer()))
     }
 
-    // Fast lookup maps — also lazy
+    // Fast lookup indexes — also lazy. Matching rules live in Lookups.kt.
     private val countiesByCode: Map<String, County> by lazy { _counties.associateBy { it.code } }
-    private val countiesByName: Map<String, County> by lazy { _counties.associateBy { it.name } }
+    private val countyNames by lazy { NameIndex(_counties) { it.name } }
     private val constituenciesByCode: Map<String, Constituency> by lazy { _constituencies.associateBy { it.code } }
-    private val constituenciesByName: Map<String, Constituency> by lazy { _constituencies.associateBy { it.name } }
+    private val constituencyNames by lazy { NameIndex(_constituencies) { it.name } }
+    private val localityNames by lazy { NameIndex(_localities) { it.name } }
+
+    private val subCountiesByCounty by lazy { _subCounties.groupBy { lowerName(it.county) } }
+    private val constituenciesByCounty by lazy { _constituencies.groupBy { lowerName(it.county) } }
+    private val wardsByConstituency by lazy { _wards.groupBy { lowerName(it.constituency) } }
+    private val wardsByCountyCode by lazy {
+        _wards.groupBy { ward ->
+            constituencyNames.unique(ward.constituency)?.let { resolveCounty(it.county)?.code }
+        }
+    }
+    private val localitiesByCounty by lazy { _localities.groupBy { lowerName(it.county) } }
+    private val areasByCounty by lazy { _areas.groupBy { lowerName(it.county) } }
+    private val areasByLocality by lazy { _areas.groupBy { localityKey(it.county, it.locality) } }
 
     // ─── Getters ──────────────────────────────────────────────────────────────
 
@@ -58,34 +71,71 @@ object KenyaLocations {
     fun getLocalities(): List<Locality> = _localities
     fun getAreas(): List<Area> = _areas
 
-    fun getCountyByCode(code: String): County? = countiesByCode[code]
-    fun getCountyByName(name: String): County? = countiesByName[name]
+    /** Find a county by code. Numeric codes are zero-padded, so "47" finds "047". */
+    fun getCountyByCode(code: String): County? =
+        countiesByCode[normalizeCode(code, COUNTY_CODE_WIDTH)]
 
-    fun getConstituencyByCode(code: String): Constituency? = constituenciesByCode[code]
-    fun getConstituencyByName(name: String): Constituency? = constituenciesByName[name]
+    /**
+     * Find a county by name, ignoring case. Falls back to ignoring spaces,
+     * punctuation and accents ("Muranga" finds "Murang'a").
+     */
+    fun getCountyByName(name: String): County? = countyNames.unique(name)
+
+    /** Find a constituency by code. Numeric codes are zero-padded, so "1" finds "001". */
+    fun getConstituencyByCode(code: String): Constituency? =
+        constituenciesByCode[normalizeCode(code, CONSTITUENCY_CODE_WIDTH)]
+
+    /** Find a constituency by name, ignoring case (see [getCountyByName]). */
+    fun getConstituencyByName(name: String): Constituency? = constituencyNames.unique(name)
+
+    // Every `countyName` / `constituencyName` argument below accepts a name in
+    // any case or a code. An unknown county or constituency returns an empty list.
 
     fun getSubCountiesInCounty(countyName: String): List<SubCounty> =
-        _subCounties.filter { it.county == countyName }
+        resolveCounty(countyName)?.let { subCountiesByCounty[lowerName(it.name)] }.orEmpty()
 
     fun getConstituenciesInCounty(countyName: String): List<Constituency> =
-        _constituencies.filter { it.county == countyName }
+        resolveCounty(countyName)?.let { constituenciesByCounty[lowerName(it.name)] }.orEmpty()
 
     fun getWardsInConstituency(constituencyName: String): List<Ward> =
-        _wards.filter { it.constituency == constituencyName }
+        resolveConstituency(constituencyName)?.let { wardsByConstituency[lowerName(it.name)] }.orEmpty()
 
-    fun getWardsInCounty(countyName: String): List<Ward> {
-        val constituencyNames = getConstituenciesInCounty(countyName).map { it.name }.toSet()
-        return _wards.filter { it.constituency in constituencyNames }
-    }
+    fun getWardsInCounty(countyName: String): List<Ward> =
+        resolveCounty(countyName)?.let { wardsByCountyCode[it.code] }.orEmpty()
 
     fun getLocalitiesInCounty(countyName: String): List<Locality> =
-        _localities.filter { it.county == countyName }
+        resolveCounty(countyName)?.let { localitiesByCounty[lowerName(it.name)] }.orEmpty()
 
-    fun getAreasInLocality(localityName: String): List<Area> =
-        _areas.filter { it.locality == localityName }
+    /**
+     * Areas of one locality. The same locality name exists in several counties
+     * (e.g. "Bura"), so pass [county] (name or code) to pick one. Without a
+     * county the locality name must be unique; an ambiguous name returns an
+     * empty list.
+     */
+    fun getAreasInLocality(localityName: String, county: String? = null): List<Area> =
+        resolveLocality(localityName, county)?.let { areasByLocality[localityKey(it.county, it.name)] }.orEmpty()
 
     fun getAreasInCounty(countyName: String): List<Area> =
-        _areas.filter { it.county == countyName }
+        resolveCounty(countyName)?.let { areasByCounty[lowerName(it.name)] }.orEmpty()
+
+    // ─── Resolvers ────────────────────────────────────────────────────────────
+
+    private fun resolveCounty(nameOrCode: String): County? =
+        getCountyByCode(nameOrCode) ?: countyNames.unique(nameOrCode)
+
+    private fun resolveConstituency(nameOrCode: String): Constituency? =
+        getConstituencyByCode(nameOrCode) ?: constituencyNames.unique(nameOrCode)
+
+    private fun resolveLocality(name: String, countyNameOrCode: String?): Locality? {
+        if (countyNameOrCode == null) return localityNames.unique(name)
+        val county = resolveCounty(countyNameOrCode) ?: return null
+        return localityNames.all(name)
+            .filter { lowerName(it.county) == lowerName(county.name) }
+            .singleOrNull()
+    }
+
+    private fun localityKey(countyName: String, localityName: String): String =
+        "${lowerName(countyName)}|${lowerName(localityName)}"
 
     // ─── Search ───────────────────────────────────────────────────────────────
 
