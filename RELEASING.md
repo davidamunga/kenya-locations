@@ -67,13 +67,13 @@ You can still run any publish workflow by hand (Actions → Run workflow) to ret
 
 - **`release` environment:** Settings → Environments → `release` → add yourself under **Required reviewers**. Do this before the first release that uses this workflow: without reviewers, GitHub creates the environment unprotected and publishing starts without asking.
 - **pub.dev:** in the package's admin page → Automated publishing, allow GitHub Actions for this repository with tag pattern `dart-v{{version}}`, and allow `workflow_dispatch` events. The Release workflow dispatches **Publish Dart to pub.dev** on the `dart-v*` tag.
-- **`PHP_SPLIT_TOKEN`:** a PAT with `contents:write` on [`davidamunga/kenya-locations-php`](https://github.com/davidamunga/kenya-locations-php). **Publish PHP to Packagist** now fails if it is missing, so a missing token can no longer look like a successful publish.
+- **`PHP_SPLIT_DEPLOY_KEY`:** the private half of a write-enabled deploy key on [`davidamunga/kenya-locations-php`](https://github.com/davidamunga/kenya-locations-php) (that repo → Settings → Deploy keys). It can push only to that repo and doesn't expire. **Publish PHP to Packagist** fails if it is missing. To rotate it: `ssh-keygen -t ed25519 -N "" -f key`, add `key.pub` as a deploy key with write access, `gh secret set PHP_SPLIT_DEPLOY_KEY < key`, then delete the old deploy key and both local files.
 
 ### PHP and WordPress
 
 PHP is published from the subtree repo
 [`davidamunga/kenya-locations-php`](https://github.com/davidamunga/kenya-locations-php)
-(Packagist needs `composer.json` at the repo root). **Publish PHP to Packagist** validates `packages/php`, then `git subtree split`s that prefix and pushes `main` plus `v{php}` to the subtree repo. Packagist follows tags there via its GitHub webhook. First submit: [packagist.org/packages/submit](https://packagist.org/packages/submit) with `https://github.com/davidamunga/kenya-locations-php`.
+(Packagist needs `composer.json` at the repo root). **Publish PHP to Packagist** validates `packages/php`, then `git subtree split`s that prefix and pushes `main` plus `v{php}` to the subtree repo over SSH with the deploy key. Packagist follows tags there via its GitHub webhook. First submit: [packagist.org/packages/submit](https://packagist.org/packages/submit) with `https://github.com/davidamunga/kenya-locations-php`.
 
 The WordPress plugin is not a Changesets package. A self-contained zip (PHP library copied into `vendor/`, install steps in `readme.txt`) is built from `examples/wordpress`:
 
