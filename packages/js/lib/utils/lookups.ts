@@ -13,6 +13,8 @@
  *   pass a county to disambiguate.
  * - Localities are identified by county + name, because the same locality
  *   name exists in more than one county.
+ * - Relationships are joined by code (county_code, constituency_code), never
+ *   by name.
  */
 
 import type {
@@ -51,14 +53,34 @@ export function normalizeCode(value: string, width: number): string {
   return /^\d+$/.test(trimmed) ? trimmed.padStart(width, "0") : trimmed;
 }
 
-/** Name index: exact (case-insensitive) matches first, folded matches as a fallback. */
-class NameIndex<T extends { name: string }> {
+/** Add `item` to `map` under each distinct key. */
+function groupByKeys<T>(
+  items: readonly T[],
+  keysOf: (item: T) => string[]
+): Map<string, T[]> {
+  const map = new Map<string, T[]>();
+  for (const item of items) {
+    for (const key of new Set(keysOf(item))) {
+      const group = map.get(key);
+      if (group) group.push(item);
+      else map.set(key, [item]);
+    }
+  }
+  return map;
+}
+
+/**
+ * Name index: exact (case-insensitive) matches first, folded matches as a
+ * fallback. A record's aliases (e.g. "Nairobi City") count as names.
+ */
+class NameIndex<T extends { name: string; aliases?: string[] }> {
   private readonly exact: Map<string, T[]>;
   private readonly folded: Map<string, T[]>;
 
   constructor(items: readonly T[]) {
-    this.exact = buildGroupMap(items, (item) => lower(item.name));
-    this.folded = buildGroupMap(items, (item) => foldName(item.name));
+    const names = (item: T) => [item.name, ...(item.aliases ?? [])];
+    this.exact = groupByKeys(items, (item) => names(item).map(lower));
+    this.folded = groupByKeys(items, (item) => names(item).map(foldName));
   }
 
   /** Every record with this name. */
@@ -98,8 +120,9 @@ export function resolveCounty(nameOrCode: string): County | undefined {
 // --- Constituencies ---
 const constituencyByCode = buildLookupMap(constituencies, (c) => c.code);
 const constituencyNames = new NameIndex(constituencies);
-const constituenciesByCountyName = buildGroupMap(constituencies, (c) =>
-  lower(c.county)
+const constituenciesByCountyCode = buildGroupMap(
+  constituencies,
+  (c) => c.county_code
 );
 
 export function getConstituencyByCodeValue(
@@ -125,14 +148,15 @@ export function resolveConstituency(
 }
 
 export function constituenciesInCounty(county: County): Constituency[] {
-  return constituenciesByCountyName.get(lower(county.name)) ?? [];
+  return constituenciesByCountyCode.get(county.code) ?? [];
 }
 
 // --- Sub-counties ---
 const subCountyByCode = buildLookupMap(subCounties, (sc) => sc.code);
 const subCountyNames = new NameIndex(subCounties);
-const subCountiesByCountyName = buildGroupMap(subCounties, (sc) =>
-  lower(sc.county)
+const subCountiesByCountyCode = buildGroupMap(
+  subCounties,
+  (sc) => sc.county_code
 );
 
 export function getSubCountyByCodeValue(code: string): SubCounty | undefined {
@@ -151,19 +175,17 @@ export function resolveSubCounty(nameOrCode: string): SubCounty | undefined {
 }
 
 export function subCountiesInCounty(county: County): SubCounty[] {
-  return subCountiesByCountyName.get(lower(county.name)) ?? [];
+  return subCountiesByCountyCode.get(county.code) ?? [];
 }
 
 // --- Wards ---
 const wardByCode = buildLookupMap(wards, (w) => w.code);
 const wardNames = new NameIndex(wards);
-const wardsByConstituencyName = buildGroupMap(wards, (w) =>
-  lower(w.constituency)
+const wardsByConstituencyCode = buildGroupMap(
+  wards,
+  (w) => w.constituency_code
 );
-const wardsByCountyCode = buildGroupMap(wards, (w) => {
-  const constituency = constituencyNames.unique(w.constituency);
-  return constituency ? resolveCounty(constituency.county)?.code : undefined;
-});
+const wardsByCountyCode = buildGroupMap(wards, (w) => w.county_code);
 
 export function getWardByCodeValue(code: string): Ward | undefined {
   return wardByCode.get(normalizeCode(code, WARD_CODE_WIDTH));
@@ -183,7 +205,7 @@ export function resolveWard(nameOrCode: string): Ward | undefined {
 }
 
 export function wardsInConstituency(constituency: Constituency): Ward[] {
-  return wardsByConstituencyName.get(lower(constituency.name)) ?? [];
+  return wardsByConstituencyCode.get(constituency.code) ?? [];
 }
 
 export function wardsInCounty(county: County): Ward[] {
@@ -191,19 +213,16 @@ export function wardsInCounty(county: County): Ward[] {
 }
 
 export function constituencyOfWard(ward: Ward): Constituency | undefined {
-  return constituencyNames.unique(ward.constituency);
+  return constituencyByCode.get(ward.constituency_code);
 }
 
 export function countyOfWard(ward: Ward): County | undefined {
-  const constituency = constituencyOfWard(ward);
-  return constituency ? resolveCounty(constituency.county) : undefined;
+  return countyByCode.get(ward.county_code);
 }
 
 // --- Localities ---
 const localityNames = new NameIndex(localities);
-const localitiesByCountyName = buildGroupMap(localities, (l) =>
-  lower(l.county)
-);
+const localitiesByCountyCode = buildGroupMap(localities, (l) => l.county_code);
 
 export function getLocalitiesByNameValue(name: string): Locality[] {
   return localityNames.all(name);
@@ -222,23 +241,23 @@ export function resolveLocality(
   if (!county) return undefined;
   const matches = localityNames
     .all(name)
-    .filter((l) => lower(l.county) === lower(county.name));
+    .filter((l) => l.county_code === county.code);
   return matches.length === 1 ? matches[0] : undefined;
 }
 
 export function localitiesInCounty(county: County): Locality[] {
-  return localitiesByCountyName.get(lower(county.name)) ?? [];
+  return localitiesByCountyCode.get(county.code) ?? [];
 }
 
 // --- Areas ---
 const areaNames = new NameIndex(areas);
-const areasByCountyName = buildGroupMap(areas, (a) => lower(a.county));
+const areasByCountyCode = buildGroupMap(areas, (a) => a.county_code);
 const areasByLocalityKey = buildGroupMap(areas, (a) =>
-  localityKey(a.county, a.locality)
+  localityKey(a.county_code, a.locality)
 );
 
-function localityKey(countyName: string, localityName: string): string {
-  return `${lower(countyName)}|${lower(localityName)}`;
+function localityKey(countyCode: string, localityName: string): string {
+  return `${countyCode}|${lower(localityName)}`;
 }
 
 export function getAreaByNameValue(name: string): Area | undefined {
@@ -252,18 +271,21 @@ export function getAreasByNameValue(name: string): Area[] {
 /** Areas of one specific locality (matched on county + locality name). */
 export function areasInLocality(locality: Locality): Area[] {
   return (
-    areasByLocalityKey.get(localityKey(locality.county, locality.name)) ?? []
+    areasByLocalityKey.get(localityKey(locality.county_code, locality.name)) ??
+    []
   );
 }
 
 export function areasInCounty(county: County): Area[] {
-  return areasByCountyName.get(lower(county.name)) ?? [];
+  return areasByCountyCode.get(county.code) ?? [];
 }
 
 export function localityOfArea(area: Area): Locality | undefined {
-  return resolveLocality(area.locality, area.county);
+  return resolveLocality(area.locality, area.county_code);
 }
 
-export function countyOfNamed(record: { county: string }): County | undefined {
-  return resolveCounty(record.county);
+export function countyOfNamed(record: {
+  county_code: string;
+}): County | undefined {
+  return countyByCode.get(record.county_code);
 }

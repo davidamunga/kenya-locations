@@ -1,0 +1,30 @@
+[
+  {
+    "date": "2026-11-04",
+    "release": "0.10.0",
+    "type": "ward",
+    "code": "0737",
+    "change": "added",
+    "name": "Cherang'any/Chebororwa",
+    "note": "Missing IEBC ward (Marakwet West)"
+  },
+  {
+    "date": "2026-11-04",
+    "release": "0.10.0",
+    "type": "ward",
+    "code": "1344",
+    "change": "added",
+    "name": "Kitutu Central",
+    "note": "Missing IEBC ward (Kitutu Chache South)"
+  },
+  {
+    "date": "2026-11-04",
+    "release": "0.10.0",
+    "type": "ward",
+    "code": "0319",
+    "change": "renamed",
+    "from": "Central  ward",
+    "to": "Central ward",
+    "note": "Removed a double space"
+  }
+]

@@ -36,7 +36,7 @@ pnpm release:verify                                # versions, composer.lock and
 dart run packages/dart/scripts/generate_data.dart  # from repo root, after data edits (data:sync runs it if dart is installed)
 ```
 
-Data shape and validation rules: `packages/js/CONTRIBUTING.md`.
+Data shape, codes and validation rules: [`data/README.md`](data/README.md).
 
 ## Branches
 

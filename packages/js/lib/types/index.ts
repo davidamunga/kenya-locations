@@ -15,7 +15,10 @@ export type CountyRegion =
  * Interface for County data
  */
 export interface County {
+  /** IEBC county code, "001"–"047" */
   code: string;
+  /** ISO 3166-2 code, e.g. "KE-30" for Nairobi. Numbered alphabetically, so it differs from `code`. */
+  iso_code: string;
   name: string;
   /** County headquarters / capital town */
   capital: string;
@@ -27,6 +30,8 @@ export interface County {
   region: CountyRegion;
   /** Kenya Post primary postal code for the county capital */
   postal_code: string;
+  /** Other names the county is known by, e.g. "Nairobi City" */
+  aliases: string[];
 }
 
 /**
@@ -36,6 +41,8 @@ export interface SubCounty {
   code: string;
   name: string;
   county: string;
+  /** Code of the county it belongs to */
+  county_code: string;
 }
 
 /**
@@ -45,6 +52,8 @@ export interface Constituency {
   code: string;
   name: string;
   county: string;
+  /** Code of the county it belongs to */
+  county_code: string;
 }
 
 /**
@@ -54,6 +63,10 @@ export interface Ward {
   code: string;
   name: string;
   constituency: string;
+  /** Code of the constituency it belongs to */
+  constituency_code: string;
+  /** Code of the county it belongs to */
+  county_code: string;
 }
 
 /**
@@ -62,6 +75,8 @@ export interface Ward {
 export interface Locality {
   name: string;
   county: string;
+  /** Code of the county it belongs to */
+  county_code: string;
 }
 
 /**
@@ -71,6 +86,8 @@ export interface Area {
   name: string;
   locality: string;
   county: string;
+  /** Code of the county it belongs to */
+  county_code: string;
 }
 
 /**

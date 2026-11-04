@@ -1,0 +1,46 @@
+{
+  "dataset": "kenya-locations",
+  "description": "Kenyan administrative and electoral divisions: counties, constituencies, wards, sub-counties, localities and areas.",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "kenya-locations (https://github.com/DavidAmunga/kenya-locations), with data from the Independent Electoral and Boundaries Commission (IEBC) and the Kenya National Bureau of Statistics (KNBS).",
+  "boundary_set": "IEBC 2012",
+  "files": {
+    "counties.json": {
+      "key": "code",
+      "sources": [
+        "IEBC county codes 001–047",
+        "KNBS 2019 Kenya Population and Housing Census (capital, area_km2, population_2019)",
+        "ISO 3166-2:KE, codes added 2014-10-30 (iso_code)"
+      ]
+    },
+    "constituencies.json": {
+      "key": "code",
+      "parents": { "county_code": "counties.json" },
+      "sources": ["IEBC constituency codes 001–290 (2012 delimitation)"]
+    },
+    "wards.json": {
+      "key": "code",
+      "parents": { "constituency_code": "constituencies.json", "county_code": "counties.json" },
+      "sources": ["IEBC county assembly ward codes 0001–1450 (2012 delimitation)"]
+    },
+    "sub-counties.json": {
+      "key": "code",
+      "parents": { "county_code": "counties.json" },
+      "sources": [],
+      "notes": "Many records are constituency names, not KNBS sub-counties. Scheduled to be rebuilt from the KNBS list in 1.0, with new 5-digit codes."
+    },
+    "locality.json": {
+      "key": ["county_code", "name"],
+      "parents": { "county_code": "counties.json" },
+      "sources": [],
+      "notes": "Provenance not yet documented. Stable IDs and ward links are planned for 0.12."
+    },
+    "area.json": {
+      "key": ["county_code", "locality", "name"],
+      "parents": { "county_code": "counties.json" },
+      "sources": [],
+      "notes": "Provenance not yet documented. Stable IDs are planned for 0.12."
+    }
+  }
+}

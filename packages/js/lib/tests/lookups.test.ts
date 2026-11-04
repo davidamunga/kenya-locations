@@ -55,6 +55,7 @@ describe.each(apis)("lookups (%s)", (_label, api) => {
       expect(api.getLocalityOfArea("Kaloleni")).toEqual({
         name: "Kaloleni",
         county: "Kilifi",
+        county_code: "003",
       });
     });
   });
@@ -124,6 +125,33 @@ describe.each(apis)("lookups (%s)", (_label, api) => {
       expect(api.getSubCountiesInCounty("47")).toEqual(
         api.getSubCountiesInCounty("nairobi")
       );
+    });
+  });
+
+  describe("records carry their parents' codes", () => {
+    it("wards, constituencies, localities and areas link to their county by code", () => {
+      const ward = api.getWardByCode("0737")!;
+      expect(ward.constituency_code).toBe(
+        api.getConstituencyByName("Marakwet West")!.code
+      );
+      expect(ward.county_code).toBe("028");
+      expect(api.getCountyOfWard("0737")?.code).toBe(ward.county_code);
+      expect(api.locality("Bura", "Garissa")?.data.county_code).toBe("007");
+      expect(
+        api.getAreasInCounty("Nairobi").every((a) => a.county_code === "047")
+      ).toBe(true);
+    });
+
+    it("counties carry ISO 3166-2 codes, which are numbered alphabetically", () => {
+      expect(api.getCountyByCode("047")?.iso_code).toBe("KE-30");
+      expect(api.getCountyByCode("030")?.iso_code).toBe("KE-01");
+      expect(new Set(api.getCounties().map((c) => c.iso_code)).size).toBe(47);
+    });
+
+    it("county aliases work as names", () => {
+      expect(api.getCountyByName("Nairobi City")?.code).toBe("047");
+      expect(api.county("nairobi city")?.code).toBe("047");
+      expect(api.getLocalitiesInCounty("Nairobi City")).toHaveLength(77);
     });
   });
 
