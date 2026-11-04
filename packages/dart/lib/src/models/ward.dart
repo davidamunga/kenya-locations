@@ -9,6 +9,8 @@ class Ward {
     required this.code,
     required this.name,
     required this.constituency,
+    required this.constituencyCode,
+    required this.countyCode,
   });
 
   /// Creates a [Ward] from a map containing ward data.
@@ -17,10 +19,14 @@ class Ward {
   /// - `code`
   /// - `name`
   /// - `constituency`
+  /// - `constituency_code`
+  /// - `county_code`
   factory fromMap(Map<String, dynamic> map) => Ward(
     code: map['code'] as String,
     name: map['name'] as String,
     constituency: map['constituency'] as String,
+    constituencyCode: map['constituency_code'] as String,
+    countyCode: map['county_code'] as String,
   );
 
   /// The unique administrative code of the ward.
@@ -31,4 +37,10 @@ class Ward {
 
   /// The name of the constituency that contains the ward.
   final String constituency;
+
+  /// The administrative code of the constituency that contains the ward.
+  final String constituencyCode;
+
+  /// The administrative code of the county that contains the ward.
+  final String countyCode;
 }

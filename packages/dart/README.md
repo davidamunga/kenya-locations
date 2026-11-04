@@ -86,7 +86,8 @@ for (final result in results) {
 
 ```
 County (47)
-├── code, name, capital, areaKm2, population2019, region, postalCode
+├── code, isoCode, name, capital, areaKm2, population2019, region,
+│   postalCode, aliases
 ├── Locality → Area          (informal addressing: estates, neighbourhoods)
 │   917 localities · 1,827 areas
 └── Constituency → Ward      (electoral / administrative)
@@ -94,14 +95,20 @@ County (47)
     └── SubCounty (307)
 ```
 
-| Type          | Fields                                                             |
-| ------------- | ------------------------------------------------------------------ |
-| `County`      | `code`, `name`, `capital`, `areaKm2`, `population2019`, `region`, `postalCode` |
-| `SubCounty`   | `code`, `name`, `county`                                            |
-| `Constituency`| `code`, `name`, `county`                                            |
-| `Ward`        | `code`, `name`, `constituency`                                      |
-| `Locality`    | `name`, `county`                                                    |
-| `Area`        | `name`, `locality`, `county`                                        |
+| Type           | Fields                                                                                     |
+| -------------- | ------------------------------------------------------------------------------------------ |
+| `County`       | `code`, `isoCode`, `name`, `capital`, `areaKm2`, `population2019`, `region`, `postalCode`, `aliases` |
+| `SubCounty`    | `code`, `name`, `county`, `countyCode`                                                     |
+| `Constituency` | `code`, `name`, `county`, `countyCode`                                                     |
+| `Ward`         | `code`, `name`, `constituency`, `constituencyCode`, `countyCode`                           |
+| `Locality`     | `name`, `county`, `countyCode`                                                             |
+| `Area`         | `name`, `locality`, `county`, `countyCode`                                                 |
+
+`code` is the IEBC county code (`047` for Nairobi); `isoCode` is the ISO
+3166-2 code (`KE-30`), which numbers counties alphabetically. `countyCode`
+and `constituencyCode` are the parent's code, and every relationship lookup
+joins on them rather than on names. `aliases` lists other names for a county
+(`Nairobi City`) and may be empty.
 
 ## API reference
 
@@ -126,7 +133,8 @@ County (47)
 
 All county/constituency/ward/locality-name lookups are case-insensitive. If
 nothing matches exactly, accents, spaces and punctuation are ignored
-(`Muranga` finds `Murang'a`). County and constituency arguments also accept a
+(`Muranga` finds `Murang'a`). County names also match a county's aliases
+(`Nairobi City` finds Nairobi). County and constituency arguments also accept a
 code, and numeric codes are zero-padded (`47` finds Nairobi). A name shared by
 several records (for example the ward `Township`) resolves to `null`, or an
 empty list for `getAreasInLocality` without a `county`.

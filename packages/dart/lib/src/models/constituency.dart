@@ -5,7 +5,12 @@
 class Constituency {
   /// Creates a [Constituency] with the given administrative code, name, and
   /// parent county.
-  const new({required this.code, required this.name, required this.county});
+  const new({
+    required this.code,
+    required this.name,
+    required this.county,
+    required this.countyCode,
+  });
 
   /// Creates a [Constituency] from a map containing constituency data.
   ///
@@ -13,10 +18,12 @@ class Constituency {
   /// - `code`
   /// - `name`
   /// - `county`
+  /// - `county_code`
   factory fromMap(Map<String, dynamic> map) => Constituency(
     code: map['code'] as String,
     name: map['name'] as String,
     county: map['county'] as String,
+    countyCode: map['county_code'] as String,
   );
 
   /// The unique administrative code of the constituency.
@@ -27,4 +34,7 @@ class Constituency {
 
   /// The name of the county that contains the constituency.
   final String county;
+
+  /// The administrative code of the county that contains the constituency.
+  final String countyCode;
 }

@@ -163,4 +163,82 @@ void main() {
       expect(KenyaLocations.getAreasInLocality('westlands'), isNotEmpty);
     });
   });
+
+  group('parent codes', () {
+    test('ward 0737 carries its constituency and county codes', () {
+      final ward = KenyaLocations.getWards().singleWhere(
+        (w) => w.code == '0737',
+      );
+      final marakwetWest = KenyaLocations.getConstituencies().singleWhere(
+        (c) => c.name == 'Marakwet West',
+      );
+
+      expect(ward.constituencyCode, marakwetWest.code);
+      expect(ward.countyCode, '028');
+      expect(KenyaLocations.getConstituencyOfWard('0737')?.code, '148');
+    });
+
+    test("every ward's county code matches its constituency's", () {
+      final constituencies = {
+        for (final c in KenyaLocations.getConstituencies()) c.code: c,
+      };
+
+      for (final ward in KenyaLocations.getWards()) {
+        expect(
+          ward.countyCode,
+          constituencies[ward.constituencyCode]?.countyCode,
+          reason: ward.code,
+        );
+      }
+    });
+
+    test('every record has a county code that resolves to a county', () {
+      final codes = <String>[
+        ...KenyaLocations.getSubCounties().map((s) => s.countyCode),
+        ...KenyaLocations.getConstituencies().map((c) => c.countyCode),
+        ...KenyaLocations.getLocalities().map((l) => l.countyCode),
+        ...KenyaLocations.getAreas().map((a) => a.countyCode),
+      ];
+
+      for (final code in codes) {
+        expect(KenyaLocations.getCountyByCode(code), isNotNull, reason: code);
+      }
+    });
+  });
+
+  group('ISO codes', () {
+    test('counties carry their ISO 3166-2 code', () {
+      expect(KenyaLocations.getCountyByCode('047')?.isoCode, 'KE-30');
+      expect(KenyaLocations.getCountyByCode('030')?.isoCode, 'KE-01');
+    });
+
+    test('the 47 ISO codes are unique', () {
+      final isoCodes = KenyaLocations.getCounties().map((c) => c.isoCode);
+
+      expect(isoCodes.toSet().length, 47);
+    });
+  });
+
+  group('county aliases', () {
+    test('Nairobi City resolves to county 047 by name', () {
+      expect(KenyaLocations.getCountyByName('Nairobi City')?.code, '047');
+      expect(KenyaLocations.getCountyByName('nairobi city')?.code, '047');
+      expect(KenyaLocations.getCountyByName('NairobiCity')?.code, '047');
+      expect(KenyaLocations.getCountyByCode('047')?.aliases, <String>[
+        'Nairobi City',
+      ]);
+    });
+
+    test('an alias works as a county argument', () {
+      expect(KenyaLocations.getLocalitiesInCounty('Nairobi City').length, 77);
+      expect(
+        KenyaLocations.getConstituenciesInCounty('Nairobi City').length,
+        KenyaLocations.getConstituenciesInCounty('047').length,
+      );
+      expect(
+        KenyaLocations.getAreasInLocality('Karen', county: 'Nairobi City'),
+        isNotEmpty,
+      );
+    });
+  });
 }
