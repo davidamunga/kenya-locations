@@ -9,7 +9,9 @@ import Foundation
 //   ("Muranga" finds "Murang'a").
 // - A singular lookup whose name matches more than one record returns nil
 //   instead of an arbitrary record.
-// - Localities are identified by county + name.
+// - County aliases ("Nairobi City") count as names.
+// - Records are joined by their parents' codes, never by name.
+// - Localities are identified by county code + name.
 
 enum CodeWidth {
     static let county = 3
@@ -46,7 +48,15 @@ func normalizeCode(_ value: String, width: Int) -> String {
     return String(repeating: "0", count: max(0, width - trimmed.count)) + trimmed
 }
 
-protocol NamedRecord { var name: String { get } }
+protocol NamedRecord {
+    var name: String { get }
+    /// Alternative names that match like `name`.
+    var aliases: [String] { get }
+}
+
+extension NamedRecord {
+    var aliases: [String] { [] }
+}
 protocol CodedRecord { var code: String { get } }
 
 extension County: NamedRecord, CodedRecord {}
@@ -56,14 +66,27 @@ extension Ward: NamedRecord, CodedRecord {}
 extension Locality: NamedRecord {}
 extension Area: NamedRecord {}
 
+/// Group items under every key they produce; an item appears once per key.
+private func group<T>(_ items: [T], keys: (T) -> [String]) -> [String: [T]] {
+    var map: [String: [T]] = [:]
+    for item in items {
+        var seen = Set<String>()
+        for key in keys(item) where seen.insert(key).inserted {
+            map[key, default: []].append(item)
+        }
+    }
+    return map
+}
+
 /// Name index: exact (case-insensitive) matches first, folded matches as a fallback.
+/// A record's aliases count as names.
 struct NameIndex<T: NamedRecord> {
     private let exact: [String: [T]]
     private let folded: [String: [T]]
 
     init(_ items: [T]) {
-        exact = Dictionary(grouping: items) { lowerName($0.name) }
-        folded = Dictionary(grouping: items) { foldName($0.name) }
+        exact = group(items) { ([$0.name] + $0.aliases).map(lowerName) }
+        folded = group(items) { ([$0.name] + $0.aliases).map(foldName) }
     }
 
     /// Every record with this name.
