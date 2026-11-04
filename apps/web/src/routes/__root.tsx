@@ -1,6 +1,7 @@
 import { HeadContent, Outlet, createRootRoute } from "@tanstack/react-router";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "sonner";
+import { SearchCommand } from "@/components/search-command";
 import { SiteHeader } from "@/components/site-header";
 import { seo } from "@/lib/seo";
 
@@ -37,6 +38,7 @@ export const Route = createRootRoute({
       <HeadContent />
       <SiteHeader />
       <Outlet />
+      <SearchCommand />
       <Toaster position="bottom-right" />
     </ThemeProvider>
   ),

@@ -1,5 +1,7 @@
+import { useRouterState } from "@tanstack/react-router";
 import { ChevronDownIcon, GithubIcon, MenuIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { SearchTrigger } from "@/components/search-command";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
@@ -70,20 +72,25 @@ function navClass(isActive: boolean) {
 
 export function SiteHeader() {
   const active = useActiveSection();
-  const docsActive = PLATFORM_LINKS.some((link) => link.id === active);
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  // Section links point at the home page when you're on a place page.
+  const onHome = pathname === "/";
+  const at = (hash: string) => (onHome ? hash : `/${hash}`);
+  const docsActive = onHome && PLATFORM_LINKS.some((link) => link.id === active);
+  const isActive = (id: string) => onHome && active === id;
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background">
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-2 px-4 sm:gap-3 sm:px-6">
         <a
           className="font-heading shrink-0 font-semibold tracking-tight"
-          href="#top"
+          href={onHome ? "#top" : "/"}
         >
           kenya-locations
         </a>
 
         <nav aria-label="Documentation" className="hidden min-w-0 flex-1 items-center gap-1 md:flex">
-          <a className={navClass(active === "explore")} href="#explore">
+          <a className={navClass(isActive("explore"))} href={at("#explore")}>
             Explore
           </a>
           <Menu>
@@ -96,18 +103,19 @@ export function SiteHeader() {
             </MenuTrigger>
             <MenuPopup align="start">
               {PLATFORM_LINKS.map((link) => (
-                <MenuLinkItem href={link.href} key={link.href}>
+                <MenuLinkItem href={at(link.href)} key={link.href}>
                   {link.label}
                 </MenuLinkItem>
               ))}
             </MenuPopup>
           </Menu>
-          <a className={navClass(active === "contribute")} href="#contribute">
+          <a className={navClass(isActive("contribute"))} href={at("#contribute")}>
             Contribute
           </a>
         </nav>
 
         <div className="ml-auto flex items-center gap-1">
+          <SearchTrigger />
           <div className="md:hidden">
             <Menu>
               <MenuTrigger
@@ -117,15 +125,15 @@ export function SiteHeader() {
                 <MenuIcon />
               </MenuTrigger>
               <MenuPopup align="end">
-                <MenuLinkItem href="#explore">Explore</MenuLinkItem>
+                <MenuLinkItem href={at("#explore")}>Explore</MenuLinkItem>
                 <MenuSeparator />
                 {PLATFORM_LINKS.map((link) => (
-                  <MenuLinkItem href={link.href} key={link.href}>
+                  <MenuLinkItem href={at(link.href)} key={link.href}>
                     {link.label}
                   </MenuLinkItem>
                 ))}
                 <MenuSeparator />
-                <MenuLinkItem href="#contribute">Contribute</MenuLinkItem>
+                <MenuLinkItem href={at("#contribute")}>Contribute</MenuLinkItem>
               </MenuPopup>
             </Menu>
           </div>

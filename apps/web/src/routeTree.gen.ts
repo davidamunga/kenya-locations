@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ConstituencyCodeRouteImport } from './routes/constituency.$code'
+import { Route as CountyCodeRouteImport } from './routes/county.$code'
+import { Route as SubCountyCodeRouteImport } from './routes/sub-county.$code'
+import { Route as WardCodeRouteImport } from './routes/ward.$code'
+import { Route as LocalityCountyNameRouteImport } from './routes/locality.$county.$name'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConstituencyCodeRoute = ConstituencyCodeRouteImport.update({
+  id: '/constituency/$code',
+  path: '/constituency/$code',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CountyCodeRoute = CountyCodeRouteImport.update({
+  id: '/county/$code',
+  path: '/county/$code',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SubCountyCodeRoute = SubCountyCodeRouteImport.update({
+  id: '/sub-county/$code',
+  path: '/sub-county/$code',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WardCodeRoute = WardCodeRouteImport.update({
+  id: '/ward/$code',
+  path: '/ward/$code',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocalityCountyNameRoute = LocalityCountyNameRouteImport.update({
+  id: '/locality/$county/$name',
+  path: '/locality/$county/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/constituency/$code': typeof ConstituencyCodeRoute
+  '/county/$code': typeof CountyCodeRoute
+  '/sub-county/$code': typeof SubCountyCodeRoute
+  '/ward/$code': typeof WardCodeRoute
+  '/locality/$county/$name': typeof LocalityCountyNameRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/constituency/$code': typeof ConstituencyCodeRoute
+  '/county/$code': typeof CountyCodeRoute
+  '/sub-county/$code': typeof SubCountyCodeRoute
+  '/ward/$code': typeof WardCodeRoute
+  '/locality/$county/$name': typeof LocalityCountyNameRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/constituency/$code': typeof ConstituencyCodeRoute
+  '/county/$code': typeof CountyCodeRoute
+  '/sub-county/$code': typeof SubCountyCodeRoute
+  '/ward/$code': typeof WardCodeRoute
+  '/locality/$county/$name': typeof LocalityCountyNameRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/constituency/$code'
+    | '/county/$code'
+    | '/sub-county/$code'
+    | '/ward/$code'
+    | '/locality/$county/$name'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/constituency/$code'
+    | '/county/$code'
+    | '/sub-county/$code'
+    | '/ward/$code'
+    | '/locality/$county/$name'
+  id:
+    | '__root__'
+    | '/'
+    | '/constituency/$code'
+    | '/county/$code'
+    | '/sub-county/$code'
+    | '/ward/$code'
+    | '/locality/$county/$name'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ConstituencyCodeRoute: typeof ConstituencyCodeRoute
+  CountyCodeRoute: typeof CountyCodeRoute
+  SubCountyCodeRoute: typeof SubCountyCodeRoute
+  WardCodeRoute: typeof WardCodeRoute
+  LocalityCountyNameRoute: typeof LocalityCountyNameRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/constituency/$code': {
+      id: '/constituency/$code'
+      path: '/constituency/$code'
+      fullPath: '/constituency/$code'
+      preLoaderRoute: typeof ConstituencyCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/county/$code': {
+      id: '/county/$code'
+      path: '/county/$code'
+      fullPath: '/county/$code'
+      preLoaderRoute: typeof CountyCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sub-county/$code': {
+      id: '/sub-county/$code'
+      path: '/sub-county/$code'
+      fullPath: '/sub-county/$code'
+      preLoaderRoute: typeof SubCountyCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ward/$code': {
+      id: '/ward/$code'
+      path: '/ward/$code'
+      fullPath: '/ward/$code'
+      preLoaderRoute: typeof WardCodeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/locality/$county/$name': {
+      id: '/locality/$county/$name'
+      path: '/locality/$county/$name'
+      fullPath: '/locality/$county/$name'
+      preLoaderRoute: typeof LocalityCountyNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ConstituencyCodeRoute: ConstituencyCodeRoute,
+  CountyCodeRoute: CountyCodeRoute,
+  SubCountyCodeRoute: SubCountyCodeRoute,
+  WardCodeRoute: WardCodeRoute,
+  LocalityCountyNameRoute: LocalityCountyNameRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
