@@ -98,8 +98,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
+          # Pick the newest v* release inside jq: piping into `head -n 1` under
+          # pipefail fails with SIGPIPE (exit 141) when gh writes more lines.
           TAG=$(gh release list --limit 30 --json tagName \
-            --jq '.[] | select(.tagName | test("^v[0-9]")) | .tagName' | head -n 1)
+            --jq '[.[] | select(.tagName | test("^v[0-9]"))][0].tagName // ""')
           if [ -z "${TAG:-}" ]; then
             echo "No v* GitHub release yet; zip is in examples/wordpress/dist/."
             exit 0
