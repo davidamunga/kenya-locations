@@ -8,9 +8,44 @@ namespace KenyaLocations;
  * Kenyan administrative divisions loaded from the shared JSON dataset.
  *
  * No initialisation is required — call the static methods directly.
+ *
+ * Every lookup handles names and codes the same way:
+ *
+ * - Codes are zero-padded, so "47" finds county "047".
+ * - Names are case-insensitive. If nothing matches exactly, a looser match
+ *   that ignores spaces, hyphens, apostrophes and accents is tried
+ *   ("Muranga" finds "Murang'a").
+ * - A name that matches more than one record resolves to null instead of an
+ *   arbitrary record. Use the plural `...ByName` methods or pass a county to
+ *   disambiguate.
+ * - Localities are identified by county + name, because the same locality
+ *   name exists in more than one county.
  */
 final class KenyaLocations
 {
+    private const COUNTY_CODE_WIDTH = 3;
+    private const CONSTITUENCY_CODE_WIDTH = 3;
+    private const SUB_COUNTY_CODE_WIDTH = 3;
+    private const WARD_CODE_WIDTH = 4;
+
+    /** @var NameIndex<County>|null */
+    private static ?NameIndex $countyNames = null;
+
+    /** @var NameIndex<SubCounty>|null */
+    private static ?NameIndex $subCountyNames = null;
+
+    /** @var NameIndex<Constituency>|null */
+    private static ?NameIndex $constituencyNames = null;
+
+    /** @var NameIndex<Ward>|null */
+    private static ?NameIndex $wardNames = null;
+
+    /** @var NameIndex<Locality>|null */
+    private static ?NameIndex $localityNames = null;
+
+    /** @var NameIndex<Area>|null */
+    private static ?NameIndex $areaNames = null;
+
     private function __construct()
     {
     }
@@ -21,10 +56,13 @@ final class KenyaLocations
         return Dataset::counties();
     }
 
+    /** County by code; "47" and "047" both find Nairobi. */
     public static function getCountyByCode(string $code): ?County
     {
+        $key = NameIndex::normaliseCode($code, self::COUNTY_CODE_WIDTH);
+
         foreach (Dataset::counties() as $county) {
-            if ($county->code === $code) {
+            if ($county->code === $key) {
                 return $county;
             }
         }
@@ -34,15 +72,7 @@ final class KenyaLocations
 
     public static function getCountyByName(string $name): ?County
     {
-        $needle = self::normalise($name);
-
-        foreach (Dataset::counties() as $county) {
-            if (self::normalise($county->name) === $needle) {
-                return $county;
-            }
-        }
-
-        return null;
+        return self::countyNames()->unique($name);
     }
 
     /** @return list<SubCounty> */
@@ -53,8 +83,10 @@ final class KenyaLocations
 
     public static function getSubCountyByCode(string $code): ?SubCounty
     {
+        $key = NameIndex::normaliseCode($code, self::SUB_COUNTY_CODE_WIDTH);
+
         foreach (Dataset::subCounties() as $subCounty) {
-            if ($subCounty->code === $code) {
+            if ($subCounty->code === $key) {
                 return $subCounty;
             }
         }
@@ -62,33 +94,18 @@ final class KenyaLocations
         return null;
     }
 
+    /** Sub-county by name, or null when the name is missing or reused. */
     public static function getSubCountyByName(string $name): ?SubCounty
     {
-        $needle = self::normalise($name);
-
-        foreach (Dataset::subCounties() as $subCounty) {
-            if (self::normalise($subCounty->name) === $needle) {
-                return $subCounty;
-            }
-        }
-
-        return null;
+        return self::subCountyNames()->unique($name);
     }
 
     /** @return list<SubCounty> */
     public static function getSubCountiesInCounty(string $nameOrCode): array
     {
         $county = self::resolveCounty($nameOrCode);
-        if ($county === null) {
-            return [];
-        }
 
-        $needle = self::normalise($county->name);
-
-        return array_values(array_filter(
-            Dataset::subCounties(),
-            static fn (SubCounty $item): bool => self::normalise($item->county) === $needle,
-        ));
+        return $county === null ? [] : self::filterByCounty(Dataset::subCounties(), $county);
     }
 
     public static function getCountyOfSubCounty(string $nameOrCode): ?County
@@ -106,8 +123,10 @@ final class KenyaLocations
 
     public static function getConstituencyByCode(string $code): ?Constituency
     {
+        $key = NameIndex::normaliseCode($code, self::CONSTITUENCY_CODE_WIDTH);
+
         foreach (Dataset::constituencies() as $constituency) {
-            if ($constituency->code === $code) {
+            if ($constituency->code === $key) {
                 return $constituency;
             }
         }
@@ -117,31 +136,15 @@ final class KenyaLocations
 
     public static function getConstituencyByName(string $name): ?Constituency
     {
-        $needle = self::normalise($name);
-
-        foreach (Dataset::constituencies() as $constituency) {
-            if (self::normalise($constituency->name) === $needle) {
-                return $constituency;
-            }
-        }
-
-        return null;
+        return self::constituencyNames()->unique($name);
     }
 
     /** @return list<Constituency> */
     public static function getConstituenciesInCounty(string $nameOrCode): array
     {
         $county = self::resolveCounty($nameOrCode);
-        if ($county === null) {
-            return [];
-        }
 
-        $needle = self::normalise($county->name);
-
-        return array_values(array_filter(
-            Dataset::constituencies(),
-            static fn (Constituency $item): bool => self::normalise($item->county) === $needle,
-        ));
+        return $county === null ? [] : self::filterByCounty(Dataset::constituencies(), $county);
     }
 
     public static function getCountyOfConstituency(string $nameOrCode): ?County
@@ -157,10 +160,13 @@ final class KenyaLocations
         return Dataset::wards();
     }
 
+    /** Ward by code; "133" and "0133" find the same ward. */
     public static function getWardByCode(string $code): ?Ward
     {
+        $key = NameIndex::normaliseCode($code, self::WARD_CODE_WIDTH);
+
         foreach (Dataset::wards() as $ward) {
-            if ($ward->code === $code) {
+            if ($ward->code === $key) {
                 return $ward;
             }
         }
@@ -168,46 +174,44 @@ final class KenyaLocations
         return null;
     }
 
+    /**
+     * Ward by name, or null when the name is missing or reused (for example
+     * Township). Use {@see getWardsByName()} or a ward code to disambiguate.
+     */
     public static function getWardByName(string $name): ?Ward
     {
-        $needle = self::normalise($name);
+        return self::wardNames()->unique($name);
+    }
 
-        foreach (Dataset::wards() as $ward) {
-            if (self::normalise($ward->name) === $needle) {
-                return $ward;
-            }
-        }
-
-        return null;
+    /**
+     * All wards matching a name across constituencies.
+     *
+     * @return list<Ward>
+     */
+    public static function getWardsByName(string $name): array
+    {
+        return self::wardNames()->all($name);
     }
 
     /** @return list<Ward> */
     public static function getWardsInConstituency(string $nameOrCode): array
     {
         $constituency = self::resolveConstituency($nameOrCode);
-        if ($constituency === null) {
-            return [];
-        }
 
-        $needle = self::normalise($constituency->name);
-
-        return array_values(array_filter(
-            Dataset::wards(),
-            static fn (Ward $item): bool => self::normalise($item->constituency) === $needle,
-        ));
+        return $constituency === null ? [] : self::wardsInConstituency($constituency);
     }
 
     /** @return list<Ward> */
     public static function getWardsInCounty(string $nameOrCode): array
     {
-        $names = [];
-        foreach (self::getConstituenciesInCounty($nameOrCode) as $constituency) {
-            $names[self::normalise($constituency->name)] = true;
+        $county = self::resolveCounty($nameOrCode);
+        if ($county === null) {
+            return [];
         }
 
         return array_values(array_filter(
             Dataset::wards(),
-            static fn (Ward $item): bool => isset($names[self::normalise($item->constituency)]),
+            static fn (Ward $item): bool => self::countyOfWardRecord($item)?->code === $county->code,
         ));
     }
 
@@ -225,46 +229,38 @@ final class KenyaLocations
             return [];
         }
 
-        $needle = self::normalise($subCounty->name);
+        $constituency = self::constituencyNames()->unique($subCounty->name);
 
-        return array_values(array_filter(
-            Dataset::wards(),
-            static fn (Ward $item): bool => self::normalise($item->constituency) === $needle,
-        ));
+        return $constituency === null ? [] : self::wardsInConstituency($constituency);
     }
 
     public static function getCountyOfWard(string $wardNameOrCode): ?County
     {
-        $ward = self::findUniqueWard($wardNameOrCode);
-        if ($ward === null) {
-            return null;
-        }
+        $ward = self::resolveWard($wardNameOrCode);
 
-        $constituency = self::constituencyOf($ward);
-
-        return $constituency === null ? null : self::resolveCounty($constituency->county);
+        return $ward === null ? null : self::countyOfWardRecord($ward);
     }
 
     public static function getSubCountyOfWard(string $wardNameOrCode): ?SubCounty
     {
-        $ward = self::findUniqueWard($wardNameOrCode);
+        $ward = self::resolveWard($wardNameOrCode);
 
-        return $ward === null ? null : self::resolveSubCounty($ward->constituency);
+        return $ward === null ? null : self::subCountyNames()->unique($ward->constituency);
     }
 
     /**
      * Parent constituency of a ward.
      *
-     * `$wardNameOrCode` may be an administrative code (exact) or a ward name
-     * (case-insensitive). Codes win when both could match. Returns null when
-     * the ward is missing, the name is reused (for example Township), or the
-     * parent constituency cannot be found.
+     * `$wardNameOrCode` may be an administrative code or a ward name. Codes
+     * win when both could match. Returns null when the ward is missing, the
+     * name is reused (for example Township), or the parent constituency
+     * cannot be found.
      */
     public static function getConstituencyOfWard(string $wardNameOrCode): ?Constituency
     {
-        $ward = self::findUniqueWard($wardNameOrCode);
+        $ward = self::resolveWard($wardNameOrCode);
 
-        return $ward === null ? null : self::constituencyOf($ward);
+        return $ward === null ? null : self::constituencyOfWardRecord($ward);
     }
 
     /** @return list<Locality> */
@@ -273,35 +269,34 @@ final class KenyaLocations
         return Dataset::localities();
     }
 
+    /**
+     * Locality by name, or null when the name is missing or used in more than
+     * one county (for example Makadara). Pass a county to {@see getLocality()}
+     * to disambiguate.
+     */
     public static function getLocalityByName(string $name): ?Locality
     {
         return self::getLocality($name);
     }
 
     /**
-     * Locality by name, optionally scoped to a county when the name is reused.
+     * Locality by name, optionally scoped to a county (name or code). Without
+     * a county the name must be unique across Kenya.
      */
     public static function getLocality(string $name, ?string $countyName = null): ?Locality
     {
-        $needle = self::normalise($name);
+        if ($countyName === null) {
+            return self::localityNames()->unique($name);
+        }
 
-        if ($countyName !== null) {
-            foreach (self::getLocalitiesInCounty($countyName) as $locality) {
-                if (self::normalise($locality->name) === $needle) {
-                    return $locality;
-                }
-            }
-
+        $county = self::resolveCounty($countyName);
+        if ($county === null) {
             return null;
         }
 
-        foreach (Dataset::localities() as $locality) {
-            if (self::normalise($locality->name) === $needle) {
-                return $locality;
-            }
-        }
+        $matches = self::filterByCounty(self::localityNames()->all($name), $county);
 
-        return null;
+        return count($matches) === 1 ? $matches[0] : null;
     }
 
     /**
@@ -311,33 +306,21 @@ final class KenyaLocations
      */
     public static function getLocalitiesByName(string $name): array
     {
-        $needle = self::normalise($name);
-
-        return array_values(array_filter(
-            Dataset::localities(),
-            static fn (Locality $item): bool => self::normalise($item->name) === $needle,
-        ));
+        return self::localityNames()->all($name);
     }
 
     /** @return list<Locality> */
     public static function getLocalitiesInCounty(string $nameOrCode): array
     {
         $county = self::resolveCounty($nameOrCode);
-        if ($county === null) {
-            return [];
-        }
 
-        $needle = self::normalise($county->name);
-
-        return array_values(array_filter(
-            Dataset::localities(),
-            static fn (Locality $item): bool => self::normalise($item->county) === $needle,
-        ));
+        return $county === null ? [] : self::filterByCounty(Dataset::localities(), $county);
     }
 
+    /** County of a locality, or null when the locality name is reused. */
     public static function getCountyOfLocality(string $localityName): ?County
     {
-        $locality = self::getLocalityByName($localityName);
+        $locality = self::getLocality($localityName);
 
         return $locality === null ? null : self::resolveCounty($locality->county);
     }
@@ -348,11 +331,13 @@ final class KenyaLocations
         return Dataset::areas();
     }
 
+    /**
+     * Area by name, or null when the name is missing or reused. Use
+     * {@see getAreasByName()} to get every match.
+     */
     public static function getAreaByName(string $name): ?Area
     {
-        $matches = self::getAreasByName($name);
-
-        return $matches[0] ?? null;
+        return self::areaNames()->unique($name);
     }
 
     /**
@@ -362,41 +347,34 @@ final class KenyaLocations
      */
     public static function getAreasByName(string $name): array
     {
-        $needle = self::normalise($name);
-
-        return array_values(array_filter(
-            Dataset::areas(),
-            static fn (Area $item): bool => self::normalise($item->name) === $needle,
-        ));
+        return self::areaNames()->all($name);
     }
 
-    /** @return list<Area> */
-    public static function getAreasInLocality(string $localityName): array
+    /**
+     * Areas of one locality, matched on both locality name and county.
+     *
+     * Pass a county (name or code) when the locality name exists in more than
+     * one county (for example Bura). Without a county the locality name must
+     * be unique; a reused name returns an empty list.
+     *
+     * @return list<Area>
+     */
+    public static function getAreasInLocality(string $localityName, ?string $countyNameOrCode = null): array
     {
-        $needle = self::normalise($localityName);
+        $locality = self::getLocality($localityName, $countyNameOrCode);
 
-        return array_values(array_filter(
-            Dataset::areas(),
-            static fn (Area $item): bool => self::normalise($item->locality) === $needle,
-        ));
+        return $locality === null ? [] : self::areasOfLocality($locality);
     }
 
     /** @return list<Area> */
     public static function getAreasInCounty(string $nameOrCode): array
     {
         $county = self::resolveCounty($nameOrCode);
-        if ($county === null) {
-            return [];
-        }
 
-        $needle = self::normalise($county->name);
-
-        return array_values(array_filter(
-            Dataset::areas(),
-            static fn (Area $item): bool => self::normalise($item->county) === $needle,
-        ));
+        return $county === null ? [] : self::filterByCounty(Dataset::areas(), $county);
     }
 
+    /** County of an area, or null when the area name is reused. */
     public static function getCountyOfArea(string $areaName): ?County
     {
         $area = self::getAreaByName($areaName);
@@ -404,14 +382,12 @@ final class KenyaLocations
         return $area === null ? null : self::resolveCounty($area->county);
     }
 
+    /** Locality of an area (in the area's own county), or null when the area name is reused. */
     public static function getLocalityOfArea(string $areaName): ?Locality
     {
         $area = self::getAreaByName($areaName);
-        if ($area === null) {
-            return null;
-        }
 
-        return self::getLocality($area->locality, $area->county);
+        return $area === null ? null : self::getLocality($area->locality, $area->county);
     }
 
     /**
@@ -479,106 +455,117 @@ final class KenyaLocations
         return self::search($query, $limit, [$type]);
     }
 
-    private static function constituencyOf(Ward $ward): ?Constituency
-    {
-        return self::resolveConstituency($ward->constituency);
-    }
-
+    /** County from its code (zero-padded) or its name. */
     private static function resolveCounty(string $nameOrCode): ?County
     {
-        $key = trim($nameOrCode);
-        if ($key === '') {
-            return null;
-        }
-
-        foreach (Dataset::counties() as $county) {
-            if ($county->code === $key) {
-                return $county;
-            }
-        }
-
-        $needle = self::normalise($key);
-        foreach (Dataset::counties() as $county) {
-            if (self::normalise($county->name) === $needle) {
-                return $county;
-            }
-        }
-
-        return null;
+        return self::getCountyByCode($nameOrCode) ?? self::countyNames()->unique($nameOrCode);
     }
 
+    /** Constituency from its code (zero-padded) or its name. */
     private static function resolveConstituency(string $nameOrCode): ?Constituency
     {
-        $key = trim($nameOrCode);
-        if ($key === '') {
-            return null;
-        }
-
-        foreach (Dataset::constituencies() as $constituency) {
-            if ($constituency->code === $key) {
-                return $constituency;
-            }
-        }
-
-        $needle = self::normalise($key);
-        foreach (Dataset::constituencies() as $constituency) {
-            if (self::normalise($constituency->name) === $needle) {
-                return $constituency;
-            }
-        }
-
-        return null;
+        return self::getConstituencyByCode($nameOrCode) ?? self::constituencyNames()->unique($nameOrCode);
     }
 
+    /** Sub-county from its code (zero-padded) or its name. */
     private static function resolveSubCounty(string $nameOrCode): ?SubCounty
     {
-        $key = trim($nameOrCode);
-        if ($key === '') {
-            return null;
-        }
+        return self::getSubCountyByCode($nameOrCode) ?? self::subCountyNames()->unique($nameOrCode);
+    }
 
-        foreach (Dataset::subCounties() as $subCounty) {
-            if ($subCounty->code === $key) {
-                return $subCounty;
-            }
-        }
+    /** Ward from its code (zero-padded), or from its name when that name is unique. */
+    private static function resolveWard(string $nameOrCode): ?Ward
+    {
+        return self::getWardByCode($nameOrCode) ?? self::wardNames()->unique($nameOrCode);
+    }
 
-        $needle = self::normalise($key);
-        foreach (Dataset::subCounties() as $subCounty) {
-            if (self::normalise($subCounty->name) === $needle) {
-                return $subCounty;
-            }
-        }
+    private static function constituencyOfWardRecord(Ward $ward): ?Constituency
+    {
+        return self::constituencyNames()->unique($ward->constituency);
+    }
 
-        return null;
+    private static function countyOfWardRecord(Ward $ward): ?County
+    {
+        $constituency = self::constituencyOfWardRecord($ward);
+
+        return $constituency === null ? null : self::resolveCounty($constituency->county);
+    }
+
+    /** @return list<Ward> */
+    private static function wardsInConstituency(Constituency $constituency): array
+    {
+        $needle = NameIndex::lower($constituency->name);
+
+        return array_values(array_filter(
+            Dataset::wards(),
+            static fn (Ward $item): bool => NameIndex::lower($item->constituency) === $needle,
+        ));
+    }
+
+    /** @return list<Area> */
+    private static function areasOfLocality(Locality $locality): array
+    {
+        $county = NameIndex::lower($locality->county);
+        $name = NameIndex::lower($locality->name);
+
+        return array_values(array_filter(
+            Dataset::areas(),
+            static fn (Area $item): bool => NameIndex::lower($item->county) === $county
+                && NameIndex::lower($item->locality) === $name,
+        ));
     }
 
     /**
-     * Unique ward by administrative code (exact) or name (case-insensitive).
-     * Codes win. Returns null when the name is reused or nothing matches.
+     * Records whose `county` field names this county.
+     *
+     * @template T of SubCounty|Constituency|Locality|Area
+     * @param list<T> $items
+     * @return list<T>
      */
-    private static function findUniqueWard(string $wardNameOrCode): ?Ward
+    private static function filterByCounty(array $items, County $county): array
     {
-        $key = trim($wardNameOrCode);
-        if ($key === '') {
-            return null;
-        }
+        $needle = NameIndex::lower($county->name);
 
-        $byCode = array_values(array_filter(
-            Dataset::wards(),
-            static fn (Ward $ward): bool => $ward->code === $key,
+        return array_values(array_filter(
+            $items,
+            static fn (object $item): bool => NameIndex::lower($item->county) === $needle,
         ));
-        if (count($byCode) === 1) {
-            return $byCode[0];
-        }
+    }
 
-        $needle = self::normalise($key);
-        $byName = array_values(array_filter(
-            Dataset::wards(),
-            static fn (Ward $ward): bool => self::normalise($ward->name) === $needle,
-        ));
+    /** @return NameIndex<County> */
+    private static function countyNames(): NameIndex
+    {
+        return self::$countyNames ??= new NameIndex(Dataset::counties());
+    }
 
-        return count($byName) === 1 ? $byName[0] : null;
+    /** @return NameIndex<SubCounty> */
+    private static function subCountyNames(): NameIndex
+    {
+        return self::$subCountyNames ??= new NameIndex(Dataset::subCounties());
+    }
+
+    /** @return NameIndex<Constituency> */
+    private static function constituencyNames(): NameIndex
+    {
+        return self::$constituencyNames ??= new NameIndex(Dataset::constituencies());
+    }
+
+    /** @return NameIndex<Ward> */
+    private static function wardNames(): NameIndex
+    {
+        return self::$wardNames ??= new NameIndex(Dataset::wards());
+    }
+
+    /** @return NameIndex<Locality> */
+    private static function localityNames(): NameIndex
+    {
+        return self::$localityNames ??= new NameIndex(Dataset::localities());
+    }
+
+    /** @return NameIndex<Area> */
+    private static function areaNames(): NameIndex
+    {
+        return self::$areaNames ??= new NameIndex(Dataset::areas());
     }
 
     /**
@@ -661,10 +648,5 @@ final class KenyaLocations
     private static function characters(string $value): array
     {
         return preg_split('//u', $value, -1, PREG_SPLIT_NO_EMPTY) ?: [];
-    }
-
-    private static function normalise(string $value): string
-    {
-        return mb_strtolower(trim($value));
     }
 }
