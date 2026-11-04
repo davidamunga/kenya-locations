@@ -12,7 +12,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 666763,
     'region': 'Rift Valley',
     'postal_code': '30400',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '036',
@@ -23,7 +23,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 875689,
     'region': 'Rift Valley',
     'postal_code': '20400',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '039',
@@ -34,7 +34,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1670570,
     'region': 'Western',
     'postal_code': '50200',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '040',
@@ -45,7 +45,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 893681,
     'region': 'Western',
     'postal_code': '50400',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '028',
@@ -56,7 +56,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 454480,
     'region': 'Rift Valley',
     'postal_code': '30700',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '014',
@@ -67,7 +67,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 608599,
     'region': 'Eastern',
     'postal_code': '60100',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '007',
@@ -78,7 +78,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 841353,
     'region': 'North Eastern',
     'postal_code': '70100',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '043',
@@ -89,7 +89,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1131950,
     'region': 'Nyanza',
     'postal_code': '40300',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '011',
@@ -100,7 +100,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 268002,
     'region': 'Eastern',
     'postal_code': '60300',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '034',
@@ -111,7 +111,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1117840,
     'region': 'Rift Valley',
     'postal_code': '01100',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '037',
@@ -122,7 +122,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1867579,
     'region': 'Western',
     'postal_code': '50100',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '035',
@@ -133,7 +133,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 901777,
     'region': 'Rift Valley',
     'postal_code': '20200',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '022',
@@ -144,7 +144,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 2417735,
     'region': 'Central',
     'postal_code': '00900',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '003',
@@ -155,7 +155,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1453787,
     'region': 'Coast',
     'postal_code': '80108',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '020',
@@ -166,7 +166,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 610411,
     'region': 'Central',
     'postal_code': '10304',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '045',
@@ -177,7 +177,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1266860,
     'region': 'Nyanza',
     'postal_code': '40200',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '042',
@@ -188,7 +188,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1155574,
     'region': 'Nyanza',
     'postal_code': '40100',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '015',
@@ -199,7 +199,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1136187,
     'region': 'Eastern',
     'postal_code': '90200',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '002',
@@ -210,7 +210,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 866820,
     'region': 'Coast',
     'postal_code': '80403',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '031',
@@ -221,7 +221,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 518560,
     'region': 'Rift Valley',
     'postal_code': '20321',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '005',
@@ -232,7 +232,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 143920,
     'region': 'Coast',
     'postal_code': '80500',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '016',
@@ -243,7 +243,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1421932,
     'region': 'Eastern',
     'postal_code': '90100',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '017',
@@ -254,7 +254,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 987653,
     'region': 'Eastern',
     'postal_code': '90300',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '009',
@@ -265,7 +265,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 867457,
     'region': 'North Eastern',
     'postal_code': '70300',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '010',
@@ -276,7 +276,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 459785,
     'region': 'Eastern',
     'postal_code': '60500',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '012',
@@ -287,7 +287,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1545714,
     'region': 'Eastern',
     'postal_code': '60200',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '044',
@@ -298,7 +298,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1116436,
     'region': 'Nyanza',
     'postal_code': '40400',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '001',
@@ -309,7 +309,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1208333,
     'region': 'Coast',
     'postal_code': '80100',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '021',
@@ -320,7 +320,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1056640,
     'region': 'Central',
     'postal_code': '10200',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '047',
@@ -331,7 +331,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 4397073,
     'region': 'Nairobi',
     'postal_code': '00100',
-    'aliases': ['Nairobi City'],
+    'aliases': <String>['Nairobi City'],
   },
   {
     'code': '032',
@@ -342,7 +342,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 2162202,
     'region': 'Rift Valley',
     'postal_code': '20100',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '029',
@@ -353,7 +353,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 885711,
     'region': 'Rift Valley',
     'postal_code': '30300',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '033',
@@ -364,7 +364,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1157873,
     'region': 'Rift Valley',
     'postal_code': '20500',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '046',
@@ -375,7 +375,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 605576,
     'region': 'Nyanza',
     'postal_code': '40500',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '018',
@@ -386,7 +386,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 638289,
     'region': 'Central',
     'postal_code': '20301',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '019',
@@ -397,7 +397,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 759164,
     'region': 'Central',
     'postal_code': '10100',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '025',
@@ -408,7 +408,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 310327,
     'region': 'Rift Valley',
     'postal_code': '20600',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '041',
@@ -419,7 +419,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 993183,
     'region': 'Nyanza',
     'postal_code': '40600',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '006',
@@ -430,7 +430,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 340671,
     'region': 'Coast',
     'postal_code': '80305',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '004',
@@ -441,7 +441,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 315943,
     'region': 'Coast',
     'postal_code': '70101',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '013',
@@ -452,7 +452,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 393177,
     'region': 'Eastern',
     'postal_code': '60215',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '026',
@@ -463,7 +463,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 990341,
     'region': 'Rift Valley',
     'postal_code': '30200',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '023',
@@ -474,7 +474,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1504976,
     'region': 'Rift Valley',
     'postal_code': '30500',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '027',
@@ -485,7 +485,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 1163186,
     'region': 'Rift Valley',
     'postal_code': '30100',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '038',
@@ -496,7 +496,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 590013,
     'region': 'Western',
     'postal_code': '50300',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '008',
@@ -507,7 +507,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 781263,
     'region': 'North Eastern',
     'postal_code': '70200',
-    'aliases': [],
+    'aliases': <String>[],
   },
   {
     'code': '024',
@@ -518,7 +518,7 @@ const List<Map<String, dynamic>> rawCounties = [
     'population_2019': 621241,
     'region': 'Rift Valley',
     'postal_code': '30600',
-    'aliases': [],
+    'aliases': <String>[],
   },
 ];
 

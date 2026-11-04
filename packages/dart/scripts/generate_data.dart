@@ -80,8 +80,11 @@ String _toDartLiteral(dynamic value) {
     return '{${entries.join(', ')}}';
   }
   if (value is List) {
-    final items = value.map(_toDartLiteral);
-    return '[${items.join(', ')}]';
+    final items = value.map(_toDartLiteral).join(', ');
+    // String lists get an explicit type so empty ones (`aliases: []`) still
+    // infer; lists of records take the type of the declaration they're in.
+    final strings = value.every((item) => item is String);
+    return strings ? '<String>[$items]' : '[$items]';
   }
   if (value is String) return _quote(value);
   return '$value';
