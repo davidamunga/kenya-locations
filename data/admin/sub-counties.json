@@ -1,0 +1,2794 @@
+[
+  {
+    "code": "00101",
+    "name": "Changamwe",
+    "county": "Mombasa",
+    "county_code": "001",
+    "population_2019": 131882,
+    "area_km2": 17.7
+  },
+  {
+    "code": "00102",
+    "name": "Jomvu",
+    "county": "Mombasa",
+    "county_code": "001",
+    "population_2019": 163415,
+    "area_km2": 36.9
+  },
+  {
+    "code": "00103",
+    "name": "Kisauni",
+    "county": "Mombasa",
+    "county_code": "001",
+    "population_2019": 291930,
+    "area_km2": 87.7
+  },
+  {
+    "code": "00104",
+    "name": "Likoni",
+    "county": "Mombasa",
+    "county_code": "001",
+    "population_2019": 250358,
+    "area_km2": 40.5
+  },
+  {
+    "code": "00105",
+    "name": "Mvita",
+    "county": "Mombasa",
+    "county_code": "001",
+    "population_2019": 154171,
+    "area_km2": 14.6
+  },
+  {
+    "code": "00106",
+    "name": "Nyali",
+    "county": "Mombasa",
+    "county_code": "001",
+    "population_2019": 216577,
+    "area_km2": 22.5
+  },
+  {
+    "code": "00201",
+    "name": "Kinango",
+    "county": "Kwale",
+    "county_code": "002",
+    "population_2019": 94220,
+    "area_km2": 1612.2
+  },
+  {
+    "code": "00202",
+    "name": "Lunga Lunga",
+    "county": "Kwale",
+    "county_code": "002",
+    "population_2019": 198423,
+    "area_km2": 2765.2
+  },
+  {
+    "code": "00203",
+    "name": "Matuga",
+    "county": "Kwale",
+    "county_code": "002",
+    "population_2019": 194252,
+    "area_km2": 1034.2
+  },
+  {
+    "code": "00204",
+    "name": "Msambweni",
+    "county": "Kwale",
+    "county_code": "002",
+    "population_2019": 177690,
+    "area_km2": 411.7
+  },
+  {
+    "code": "00205",
+    "name": "Samburu",
+    "county": "Kwale",
+    "county_code": "002",
+    "population_2019": 202235,
+    "area_km2": 2430.3
+  },
+  {
+    "code": "00301",
+    "name": "Chonyi",
+    "county": "Kilifi",
+    "county_code": "003",
+    "population_2019": 62335,
+    "area_km2": 192.6
+  },
+  {
+    "code": "00302",
+    "name": "Ganze",
+    "county": "Kilifi",
+    "county_code": "003",
+    "population_2019": 143906,
+    "area_km2": 3217.9
+  },
+  {
+    "code": "00303",
+    "name": "Kaloleni",
+    "county": "Kilifi",
+    "county_code": "003",
+    "population_2019": 193682,
+    "area_km2": 706.1
+  },
+  {
+    "code": "00304",
+    "name": "Kauma",
+    "county": "Kilifi",
+    "county_code": "003",
+    "population_2019": 22638,
+    "area_km2": 181.4
+  },
+  {
+    "code": "00305",
+    "name": "Kilifi North",
+    "county": "Kilifi",
+    "county_code": "003",
+    "population_2019": 178824,
+    "area_km2": 264.4
+  },
+  {
+    "code": "00306",
+    "name": "Kilifi South",
+    "county": "Kilifi",
+    "county_code": "003",
+    "population_2019": 206753,
+    "area_km2": 290.5
+  },
+  {
+    "code": "00307",
+    "name": "Magarini",
+    "county": "Kilifi",
+    "county_code": "003",
+    "population_2019": 191610,
+    "area_km2": 5229.4
+  },
+  {
+    "code": "00308",
+    "name": "Malindi",
+    "county": "Kilifi",
+    "county_code": "003",
+    "population_2019": 333226,
+    "area_km2": 2263.3
+  },
+  {
+    "code": "00309",
+    "name": "Rabai",
+    "county": "Kilifi",
+    "county_code": "003",
+    "population_2019": 120813,
+    "area_km2": 207.8
+  },
+  {
+    "code": "00401",
+    "name": "Tana Delta",
+    "county": "Tana River",
+    "county_code": "004",
+    "population_2019": 110640,
+    "area_km2": 15431.8
+  },
+  {
+    "code": "00402",
+    "name": "Tana North",
+    "county": "Tana River",
+    "county_code": "004",
+    "population_2019": 116757,
+    "area_km2": 13304.7
+  },
+  {
+    "code": "00403",
+    "name": "Tana River",
+    "county": "Tana River",
+    "county_code": "004",
+    "population_2019": 88546,
+    "area_km2": 9167.1
+  },
+  {
+    "code": "00501",
+    "name": "Lamu East",
+    "county": "Lamu",
+    "county_code": "005",
+    "population_2019": 22258,
+    "area_km2": 2338.5
+  },
+  {
+    "code": "00502",
+    "name": "Lamu West",
+    "county": "Lamu",
+    "county_code": "005",
+    "population_2019": 121662,
+    "area_km2": 3944.6
+  },
+  {
+    "code": "00601",
+    "name": "Mwatate",
+    "county": "Taita-Taveta",
+    "county_code": "006",
+    "population_2019": 81659,
+    "area_km2": 2722.6
+  },
+  {
+    "code": "00602",
+    "name": "Taita",
+    "county": "Taita-Taveta",
+    "county_code": "006",
+    "population_2019": 55959,
+    "area_km2": 477.9
+  },
+  {
+    "code": "00603",
+    "name": "Taveta",
+    "county": "Taita-Taveta",
+    "county_code": "006",
+    "population_2019": 91222,
+    "area_km2": 6398.7
+  },
+  {
+    "code": "00604",
+    "name": "Voi",
+    "county": "Taita-Taveta",
+    "county_code": "006",
+    "population_2019": 111831,
+    "area_km2": 7552.8
+  },
+  {
+    "code": "00701",
+    "name": "Balambala",
+    "county": "Garissa",
+    "county_code": "007",
+    "population_2019": 32257,
+    "area_km2": 3684.1
+  },
+  {
+    "code": "00702",
+    "name": "Dadaab",
+    "county": "Garissa",
+    "county_code": "007",
+    "population_2019": 185252,
+    "area_km2": 6415.3
+  },
+  {
+    "code": "00703",
+    "name": "Fafi",
+    "county": "Garissa",
+    "county_code": "007",
+    "population_2019": 134040,
+    "area_km2": 15050.3
+  },
+  {
+    "code": "00704",
+    "name": "Garissa",
+    "county": "Garissa",
+    "county_code": "007",
+    "population_2019": 163914,
+    "area_km2": 3317.8
+  },
+  {
+    "code": "00705",
+    "name": "Hulugho",
+    "county": "Garissa",
+    "county_code": "007",
+    "population_2019": 133984,
+    "area_km2": 7736.6
+  },
+  {
+    "code": "00706",
+    "name": "Ijara",
+    "county": "Garissa",
+    "county_code": "007",
+    "population_2019": 141591,
+    "area_km2": 2452.8
+  },
+  {
+    "code": "00707",
+    "name": "Lagdera",
+    "county": "Garissa",
+    "county_code": "007",
+    "population_2019": 50315,
+    "area_km2": 6096.2
+  },
+  {
+    "code": "00801",
+    "name": "Buna",
+    "county": "Wajir",
+    "county_code": "008",
+    "population_2019": 49886,
+    "area_km2": 3887.5
+  },
+  {
+    "code": "00802",
+    "name": "Eldas",
+    "county": "Wajir",
+    "county_code": "008",
+    "population_2019": 89104,
+    "area_km2": 4491.9
+  },
+  {
+    "code": "00803",
+    "name": "Habaswein",
+    "county": "Wajir",
+    "county_code": "008",
+    "population_2019": 174134,
+    "area_km2": 10912.5
+  },
+  {
+    "code": "00804",
+    "name": "Tarbaj",
+    "county": "Wajir",
+    "county_code": "008",
+    "population_2019": 56637,
+    "area_km2": 9608.4
+  },
+  {
+    "code": "00805",
+    "name": "Wajir East",
+    "county": "Wajir",
+    "county_code": "008",
+    "population_2019": 110654,
+    "area_km2": 4053.3
+  },
+  {
+    "code": "00806",
+    "name": "Wajir North",
+    "county": "Wajir",
+    "county_code": "008",
+    "population_2019": 62206,
+    "area_km2": 4041.8
+  },
+  {
+    "code": "00807",
+    "name": "Wajir South",
+    "county": "Wajir",
+    "county_code": "008",
+    "population_2019": 116814,
+    "area_km2": 10734.4
+  },
+  {
+    "code": "00808",
+    "name": "Wajir West",
+    "county": "Wajir",
+    "county_code": "008",
+    "population_2019": 121828,
+    "area_km2": 9044
+  },
+  {
+    "code": "00901",
+    "name": "Mandera West",
+    "county": "Mandera",
+    "county_code": "009",
+    "population_2019": 98300,
+    "area_km2": 4018.1
+  },
+  {
+    "code": "00902",
+    "name": "Banisa",
+    "county": "Mandera",
+    "county_code": "009",
+    "population_2019": 152598,
+    "area_km2": 3943.8
+  },
+  {
+    "code": "00903",
+    "name": "Kotulo",
+    "county": "Mandera",
+    "county_code": "009",
+    "population_2019": 72394,
+    "area_km2": 2509.3
+  },
+  {
+    "code": "00904",
+    "name": "Lafey",
+    "county": "Mandera",
+    "county_code": "009",
+    "population_2019": 83457,
+    "area_km2": 3795.4
+  },
+  {
+    "code": "00905",
+    "name": "Mandera Central",
+    "county": "Mandera",
+    "county_code": "009",
+    "population_2019": 157220,
+    "area_km2": 4031.6
+  },
+  {
+    "code": "00906",
+    "name": "Mandera East",
+    "county": "Mandera",
+    "county_code": "009",
+    "population_2019": 159638,
+    "area_km2": 2505.7
+  },
+  {
+    "code": "00907",
+    "name": "Mandera North",
+    "county": "Mandera",
+    "county_code": "009",
+    "population_2019": 143850,
+    "area_km2": 5138.2
+  },
+  {
+    "code": "01001",
+    "name": "Loiyangalani",
+    "county": "Marsabit",
+    "county_code": "010",
+    "population_2019": 35713,
+    "area_km2": 11789.2
+  },
+  {
+    "code": "01002",
+    "name": "Marsabit Central",
+    "county": "Marsabit",
+    "county_code": "010",
+    "population_2019": 79181,
+    "area_km2": 2142.8
+  },
+  {
+    "code": "01003",
+    "name": "Marsabit North",
+    "county": "Marsabit",
+    "county_code": "010",
+    "population_2019": 54297,
+    "area_km2": 19836.9
+  },
+  {
+    "code": "01004",
+    "name": "Marsabit South",
+    "county": "Marsabit",
+    "county_code": "010",
+    "population_2019": 65376,
+    "area_km2": 8447.4
+  },
+  {
+    "code": "01005",
+    "name": "Moyale",
+    "county": "Marsabit",
+    "county_code": "010",
+    "population_2019": 108949,
+    "area_km2": 3327.2
+  },
+  {
+    "code": "01006",
+    "name": "North Horr",
+    "county": "Marsabit",
+    "county_code": "010",
+    "population_2019": 71447,
+    "area_km2": 19336.7
+  },
+  {
+    "code": "01007",
+    "name": "Sololo",
+    "county": "Marsabit",
+    "county_code": "010",
+    "population_2019": 44822,
+    "area_km2": 6063.9
+  },
+  {
+    "code": "01101",
+    "name": "Garbatulla",
+    "county": "Isiolo",
+    "county_code": "011",
+    "population_2019": 99730,
+    "area_km2": 9902.2
+  },
+  {
+    "code": "01102",
+    "name": "Isiolo",
+    "county": "Isiolo",
+    "county_code": "011",
+    "population_2019": 121066,
+    "area_km2": 2691
+  },
+  {
+    "code": "01103",
+    "name": "Merti",
+    "county": "Isiolo",
+    "county_code": "011",
+    "population_2019": 47206,
+    "area_km2": 12756
+  },
+  {
+    "code": "01201",
+    "name": "Buuri East",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 76598,
+    "area_km2": 332.9
+  },
+  {
+    "code": "01202",
+    "name": "Buuri West",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 80762,
+    "area_km2": 638.7
+  },
+  {
+    "code": "01203",
+    "name": "Igembe Central",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 221412,
+    "area_km2": 603.3
+  },
+  {
+    "code": "01204",
+    "name": "Igembe North",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 169317,
+    "area_km2": 1112.9
+  },
+  {
+    "code": "01205",
+    "name": "Igembe South",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 161646,
+    "area_km2": 255.4
+  },
+  {
+    "code": "01206",
+    "name": "Imenti North",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 177567,
+    "area_km2": 231.6
+  },
+  {
+    "code": "01207",
+    "name": "Imenti South",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 206506,
+    "area_km2": 417.8
+  },
+  {
+    "code": "01208",
+    "name": "Merucentral",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 133818,
+    "area_km2": 377.1
+  },
+  {
+    "code": "01209",
+    "name": "Tigania Central",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 104730,
+    "area_km2": 237.4
+  },
+  {
+    "code": "01210",
+    "name": "Tigania East",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 72549,
+    "area_km2": 510.5
+  },
+  {
+    "code": "01211",
+    "name": "Tigania West",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 139961,
+    "area_km2": 398.6
+  },
+  {
+    "code": "01212",
+    "name": "Meru National Park",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 385,
+    "area_km2": 837.8
+  },
+  {
+    "code": "01213",
+    "name": "Mt. Kenya Forest",
+    "county": "Meru",
+    "county_code": "012",
+    "population_2019": 463,
+    "area_km2": 1059.9
+  },
+  {
+    "code": "01301",
+    "name": "Igambang'ombe",
+    "county": "Tharaka-Nithi",
+    "county_code": "013",
+    "population_2019": 53210,
+    "area_km2": 323.3
+  },
+  {
+    "code": "01302",
+    "name": "Maara",
+    "county": "Tharaka-Nithi",
+    "county_code": "013",
+    "population_2019": 114894,
+    "area_km2": 266.4
+  },
+  {
+    "code": "01303",
+    "name": "Meru South",
+    "county": "Tharaka-Nithi",
+    "county_code": "013",
+    "population_2019": 91080,
+    "area_km2": 138.8
+  },
+  {
+    "code": "01304",
+    "name": "Tharaka North",
+    "county": "Tharaka-Nithi",
+    "county_code": "013",
+    "population_2019": 58345,
+    "area_km2": 838.7
+  },
+  {
+    "code": "01305",
+    "name": "Tharaka South",
+    "county": "Tharaka-Nithi",
+    "county_code": "013",
+    "population_2019": 75250,
+    "area_km2": 637
+  },
+  {
+    "code": "01306",
+    "name": "Mt. Kenya Forest",
+    "county": "Tharaka-Nithi",
+    "county_code": "013",
+    "population_2019": 398,
+    "area_km2": 360.1
+  },
+  {
+    "code": "01401",
+    "name": "Embu East",
+    "county": "Embu",
+    "county_code": "014",
+    "population_2019": 129564,
+    "area_km2": 253.3
+  },
+  {
+    "code": "01402",
+    "name": "Embu North",
+    "county": "Embu",
+    "county_code": "014",
+    "population_2019": 79556,
+    "area_km2": 110.6
+  },
+  {
+    "code": "01403",
+    "name": "Embu West",
+    "county": "Embu",
+    "county_code": "014",
+    "population_2019": 127100,
+    "area_km2": 158.1
+  },
+  {
+    "code": "01404",
+    "name": "Mbeeresouth",
+    "county": "Embu",
+    "county_code": "014",
+    "population_2019": 163476,
+    "area_km2": 1312.1
+  },
+  {
+    "code": "01405",
+    "name": "Mbeere North",
+    "county": "Embu",
+    "county_code": "014",
+    "population_2019": 108881,
+    "area_km2": 783.6
+  },
+  {
+    "code": "01406",
+    "name": "Mt. Kenya Forest",
+    "county": "Embu",
+    "county_code": "014",
+    "population_2019": 22,
+    "area_km2": 203
+  },
+  {
+    "code": "01501",
+    "name": "Ikutha",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 82964,
+    "area_km2": 9033.1
+  },
+  {
+    "code": "01502",
+    "name": "Katulani",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 47108,
+    "area_km2": 323.7
+  },
+  {
+    "code": "01503",
+    "name": "Kisasi",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 46142,
+    "area_km2": 294.6
+  },
+  {
+    "code": "01504",
+    "name": "Kitui Central",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 105991,
+    "area_km2": 421.8
+  },
+  {
+    "code": "01505",
+    "name": "Kitui West",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 70871,
+    "area_km2": 416.4
+  },
+  {
+    "code": "01506",
+    "name": "Kyuso",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 76867,
+    "area_km2": 2524.5
+  },
+  {
+    "code": "01507",
+    "name": "Lower Yatta",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 63329,
+    "area_km2": 1191.1
+  },
+  {
+    "code": "01508",
+    "name": "Matinyani",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 47811,
+    "area_km2": 264.2
+  },
+  {
+    "code": "01509",
+    "name": "Migwani",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 79255,
+    "area_km2": 634.5
+  },
+  {
+    "code": "01510",
+    "name": "Mumoni",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 29344,
+    "area_km2": 611.4
+  },
+  {
+    "code": "01511",
+    "name": "Mutitu",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 55287,
+    "area_km2": 4709.8
+  },
+  {
+    "code": "01512",
+    "name": "Mutitu North",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 21215,
+    "area_km2": 548.3
+  },
+  {
+    "code": "01513",
+    "name": "Mutomo",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 113356,
+    "area_km2": 2852.9
+  },
+  {
+    "code": "01514",
+    "name": "Mwingi Central",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 108713,
+    "area_km2": 1146.4
+  },
+  {
+    "code": "01515",
+    "name": "Mwingi East",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 85139,
+    "area_km2": 3418.5
+  },
+  {
+    "code": "01516",
+    "name": "Nzambani",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 46788,
+    "area_km2": 319.7
+  },
+  {
+    "code": "01517",
+    "name": "Thagicu",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 15136,
+    "area_km2": 362.7
+  },
+  {
+    "code": "01518",
+    "name": "Tseikuru",
+    "county": "Kitui",
+    "county_code": "015",
+    "population_2019": 40871,
+    "area_km2": 1356
+  },
+  {
+    "code": "01601",
+    "name": "Athi River",
+    "county": "Machakos",
+    "county_code": "016",
+    "population_2019": 322499,
+    "area_km2": 834.9
+  },
+  {
+    "code": "01602",
+    "name": "Kalama",
+    "county": "Machakos",
+    "county_code": "016",
+    "population_2019": 54462,
+    "area_km2": 480.4
+  },
+  {
+    "code": "01603",
+    "name": "Kangundo",
+    "county": "Machakos",
+    "county_code": "016",
+    "population_2019": 97917,
+    "area_km2": 173.4
+  },
+  {
+    "code": "01604",
+    "name": "Kathiani",
+    "county": "Machakos",
+    "county_code": "016",
+    "population_2019": 111890,
+    "area_km2": 204.1
+  },
+  {
+    "code": "01605",
+    "name": "Machakos",
+    "county": "Machakos",
+    "county_code": "016",
+    "population_2019": 170606,
+    "area_km2": 280.1
+  },
+  {
+    "code": "01606",
+    "name": "Masinga",
+    "county": "Machakos",
+    "county_code": "016",
+    "population_2019": 148522,
+    "area_km2": 1407.2
+  },
+  {
+    "code": "01607",
+    "name": "Matungulu",
+    "county": "Machakos",
+    "county_code": "016",
+    "population_2019": 161557,
+    "area_km2": 581.4
+  },
+  {
+    "code": "01608",
+    "name": "Mwala",
+    "county": "Machakos",
+    "county_code": "016",
+    "population_2019": 181896,
+    "area_km2": 1013.4
+  },
+  {
+    "code": "01609",
+    "name": "Yatta",
+    "county": "Machakos",
+    "county_code": "016",
+    "population_2019": 172583,
+    "area_km2": 1062.4
+  },
+  {
+    "code": "01701",
+    "name": "Kathonzweni",
+    "county": "Makueni",
+    "county_code": "017",
+    "population_2019": 79780,
+    "area_km2": 880.7
+  },
+  {
+    "code": "01702",
+    "name": "Kibwezi",
+    "county": "Makueni",
+    "county_code": "017",
+    "population_2019": 197000,
+    "area_km2": 3137.4
+  },
+  {
+    "code": "01703",
+    "name": "Kilungu",
+    "county": "Makueni",
+    "county_code": "017",
+    "population_2019": 60952,
+    "area_km2": 154.3
+  },
+  {
+    "code": "01704",
+    "name": "Makindu",
+    "county": "Makueni",
+    "county_code": "017",
+    "population_2019": 84946,
+    "area_km2": 852.1
+  },
+  {
+    "code": "01705",
+    "name": "Makueni",
+    "county": "Makueni",
+    "county_code": "017",
+    "population_2019": 130375,
+    "area_km2": 609.3
+  },
+  {
+    "code": "01706",
+    "name": "Mbooni East",
+    "county": "Makueni",
+    "county_code": "017",
+    "population_2019": 97756,
+    "area_km2": 693.3
+  },
+  {
+    "code": "01707",
+    "name": "Mbooni West",
+    "county": "Makueni",
+    "county_code": "017",
+    "population_2019": 102594,
+    "area_km2": 270.7
+  },
+  {
+    "code": "01708",
+    "name": "Mukaa",
+    "county": "Makueni",
+    "county_code": "017",
+    "population_2019": 107549,
+    "area_km2": 803.7
+  },
+  {
+    "code": "01709",
+    "name": "Nzaui",
+    "county": "Makueni",
+    "county_code": "017",
+    "population_2019": 126701,
+    "area_km2": 775.2
+  },
+  {
+    "code": "01801",
+    "name": "Kinangop",
+    "county": "Nyandarua",
+    "county_code": "018",
+    "population_2019": 111410,
+    "area_km2": 293.6
+  },
+  {
+    "code": "01802",
+    "name": "Nyandarua South",
+    "county": "Nyandarua",
+    "county_code": "018",
+    "population_2019": 93870,
+    "area_km2": 313.6
+  },
+  {
+    "code": "01803",
+    "name": "Mirangine",
+    "county": "Nyandarua",
+    "county_code": "018",
+    "population_2019": 67214,
+    "area_km2": 245.6
+  },
+  {
+    "code": "01804",
+    "name": "Kipipiri",
+    "county": "Nyandarua",
+    "county_code": "018",
+    "population_2019": 93855,
+    "area_km2": 456.3
+  },
+  {
+    "code": "01805",
+    "name": "Nyandarua Central",
+    "county": "Nyandarua",
+    "county_code": "018",
+    "population_2019": 75262,
+    "area_km2": 346.6
+  },
+  {
+    "code": "01806",
+    "name": "Nyandarua West",
+    "county": "Nyandarua",
+    "county_code": "018",
+    "population_2019": 97965,
+    "area_km2": 384.9
+  },
+  {
+    "code": "01807",
+    "name": "Nyandarua North",
+    "county": "Nyandarua",
+    "county_code": "018",
+    "population_2019": 98698,
+    "area_km2": 528.4
+  },
+  {
+    "code": "01808",
+    "name": "Aberdare National Park",
+    "county": "Nyandarua",
+    "county_code": "018",
+    "population_2019": 15,
+    "area_km2": 716.7
+  },
+  {
+    "code": "01901",
+    "name": "Tetu",
+    "county": "Nyeri",
+    "county_code": "019",
+    "population_2019": 80453,
+    "area_km2": 216.5
+  },
+  {
+    "code": "01902",
+    "name": "Kieni East",
+    "county": "Nyeri",
+    "county_code": "019",
+    "population_2019": 110376,
+    "area_km2": 448.7
+  },
+  {
+    "code": "01903",
+    "name": "Kieni West",
+    "county": "Nyeri",
+    "county_code": "019",
+    "population_2019": 88525,
+    "area_km2": 517.8
+  },
+  {
+    "code": "01904",
+    "name": "Mathira East",
+    "county": "Nyeri",
+    "county_code": "019",
+    "population_2019": 99065,
+    "area_km2": 130.4
+  },
+  {
+    "code": "01905",
+    "name": "Mathira West",
+    "county": "Nyeri",
+    "county_code": "019",
+    "population_2019": 59895,
+    "area_km2": 162.3
+  },
+  {
+    "code": "01906",
+    "name": "Nyeri South",
+    "county": "Nyeri",
+    "county_code": "019",
+    "population_2019": 91081,
+    "area_km2": 169.2
+  },
+  {
+    "code": "01907",
+    "name": "Mukurwe-Ini",
+    "county": "Nyeri",
+    "county_code": "019",
+    "population_2019": 89137,
+    "area_km2": 179.1
+  },
+  {
+    "code": "01908",
+    "name": "Nyeri Central",
+    "county": "Nyeri",
+    "county_code": "019",
+    "population_2019": 140338,
+    "area_km2": 167.6
+  },
+  {
+    "code": "01909",
+    "name": "Mt. Kenya Forest",
+    "county": "Nyeri",
+    "county_code": "019",
+    "population_2019": 188,
+    "area_km2": 611.4
+  },
+  {
+    "code": "01910",
+    "name": "Aberdare Forest",
+    "county": "Nyeri",
+    "county_code": "019",
+    "population_2019": 106,
+    "area_km2": 722
+  },
+  {
+    "code": "02001",
+    "name": "Kirinyaga Central",
+    "county": "Kirinyaga",
+    "county_code": "020",
+    "population_2019": 122740,
+    "area_km2": 153.3
+  },
+  {
+    "code": "02002",
+    "name": "Kirinyaga East",
+    "county": "Kirinyaga",
+    "county_code": "020",
+    "population_2019": 135559,
+    "area_km2": 231.8
+  },
+  {
+    "code": "02003",
+    "name": "Kirinyaga West",
+    "county": "Kirinyaga",
+    "county_code": "020",
+    "population_2019": 114660,
+    "area_km2": 207.8
+  },
+  {
+    "code": "02004",
+    "name": "Mwea East",
+    "county": "Kirinyaga",
+    "county_code": "020",
+    "population_2019": 132554,
+    "area_km2": 303
+  },
+  {
+    "code": "02005",
+    "name": "Mwea West",
+    "county": "Kirinyaga",
+    "county_code": "020",
+    "population_2019": 104828,
+    "area_km2": 239.4
+  },
+  {
+    "code": "02006",
+    "name": "Mt. Kenya Forest",
+    "county": "Kirinyaga",
+    "county_code": "020",
+    "population_2019": 70,
+    "area_km2": 343
+  },
+  {
+    "code": "02101",
+    "name": "Murang'a East",
+    "county": "Murang'a",
+    "county_code": "021",
+    "population_2019": 110311,
+    "area_km2": 240.8
+  },
+  {
+    "code": "02102",
+    "name": "Kangema",
+    "county": "Murang'a",
+    "county_code": "021",
+    "population_2019": 80447,
+    "area_km2": 173.7
+  },
+  {
+    "code": "02103",
+    "name": "Mathioya",
+    "county": "Murang'a",
+    "county_code": "021",
+    "population_2019": 92814,
+    "area_km2": 177.5
+  },
+  {
+    "code": "02104",
+    "name": "Kahuro",
+    "county": "Murang'a",
+    "county_code": "021",
+    "population_2019": 88193,
+    "area_km2": 169.4
+  },
+  {
+    "code": "02105",
+    "name": "Muranga South",
+    "county": "Murang'a",
+    "county_code": "021",
+    "population_2019": 184824,
+    "area_km2": 456.9
+  },
+  {
+    "code": "02106",
+    "name": "Gatanga",
+    "county": "Murang'a",
+    "county_code": "021",
+    "population_2019": 187989,
+    "area_km2": 530.9
+  },
+  {
+    "code": "02107",
+    "name": "Kigumo",
+    "county": "Murang'a",
+    "county_code": "021",
+    "population_2019": 136921,
+    "area_km2": 244.2
+  },
+  {
+    "code": "02108",
+    "name": "Kandara",
+    "county": "Murang'a",
+    "county_code": "021",
+    "population_2019": 175098,
+    "area_km2": 234.6
+  },
+  {
+    "code": "02109",
+    "name": "Aberdare Forest",
+    "county": "Murang'a",
+    "county_code": "021",
+    "population_2019": 43,
+    "area_km2": 294.7
+  },
+  {
+    "code": "02201",
+    "name": "Gatundu North",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 109870,
+    "area_km2": 285.9
+  },
+  {
+    "code": "02202",
+    "name": "Gatundu South",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 122103,
+    "area_km2": 193.6
+  },
+  {
+    "code": "02203",
+    "name": "Githunguri",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 165232,
+    "area_km2": 174.4
+  },
+  {
+    "code": "02204",
+    "name": "Juja",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 300948,
+    "area_km2": 342
+  },
+  {
+    "code": "02205",
+    "name": "Kabete",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 199653,
+    "area_km2": 60.7
+  },
+  {
+    "code": "02206",
+    "name": "Kiambaa",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 236400,
+    "area_km2": 91.1
+  },
+  {
+    "code": "02207",
+    "name": "Kiambu",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 145903,
+    "area_km2": 98.4
+  },
+  {
+    "code": "02208",
+    "name": "Kikuyu",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 187122,
+    "area_km2": 172.9
+  },
+  {
+    "code": "02209",
+    "name": "Lari",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 135303,
+    "area_km2": 432.3
+  },
+  {
+    "code": "02210",
+    "name": "Limuru",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 159314,
+    "area_km2": 285.1
+  },
+  {
+    "code": "02211",
+    "name": "Ruiru",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 371111,
+    "area_km2": 201.1
+  },
+  {
+    "code": "02212",
+    "name": "Thika East",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 38956,
+    "area_km2": 109.9
+  },
+  {
+    "code": "02213",
+    "name": "Thika West",
+    "county": "Kiambu",
+    "county_code": "022",
+    "population_2019": 245820,
+    "area_km2": 91.4
+  },
+  {
+    "code": "02301",
+    "name": "Kibish",
+    "county": "Turkana",
+    "county_code": "023",
+    "population_2019": 36769,
+    "area_km2": 10466.1
+  },
+  {
+    "code": "02302",
+    "name": "Loima",
+    "county": "Turkana",
+    "county_code": "023",
+    "population_2019": 107795,
+    "area_km2": 9119.7
+  },
+  {
+    "code": "02303",
+    "name": "Turkana Central",
+    "county": "Turkana",
+    "county_code": "023",
+    "population_2019": 185305,
+    "area_km2": 6415.2
+  },
+  {
+    "code": "02304",
+    "name": "Turkana East",
+    "county": "Turkana",
+    "county_code": "023",
+    "population_2019": 138526,
+    "area_km2": 11395.7
+  },
+  {
+    "code": "02305",
+    "name": "Turkana North",
+    "county": "Turkana",
+    "county_code": "023",
+    "population_2019": 65218,
+    "area_km2": 7012.2
+  },
+  {
+    "code": "02306",
+    "name": "Turkana South",
+    "county": "Turkana",
+    "county_code": "023",
+    "population_2019": 153736,
+    "area_km2": 7045.2
+  },
+  {
+    "code": "02307",
+    "name": "Turkana West",
+    "county": "Turkana",
+    "county_code": "023",
+    "population_2019": 239627,
+    "area_km2": 16779
+  },
+  {
+    "code": "02401",
+    "name": "Kipkomo",
+    "county": "West Pokot",
+    "county_code": "024",
+    "population_2019": 102633,
+    "area_km2": 765.6
+  },
+  {
+    "code": "02402",
+    "name": "Pokot Central",
+    "county": "West Pokot",
+    "county_code": "024",
+    "population_2019": 119016,
+    "area_km2": 2055.2
+  },
+  {
+    "code": "02403",
+    "name": "Pokot North",
+    "county": "West Pokot",
+    "county_code": "024",
+    "population_2019": 134485,
+    "area_km2": 3910.9
+  },
+  {
+    "code": "02404",
+    "name": "Pokot South",
+    "county": "West Pokot",
+    "county_code": "024",
+    "population_2019": 80661,
+    "area_km2": 536.7
+  },
+  {
+    "code": "02405",
+    "name": "West Pokot",
+    "county": "West Pokot",
+    "county_code": "024",
+    "population_2019": 184446,
+    "area_km2": 1854.8
+  },
+  {
+    "code": "02501",
+    "name": "Samburu Central",
+    "county": "Samburu",
+    "county_code": "025",
+    "population_2019": 164942,
+    "area_km2": 3699
+  },
+  {
+    "code": "02502",
+    "name": "Samburu East",
+    "county": "Samburu",
+    "county_code": "025",
+    "population_2019": 77994,
+    "area_km2": 10015.5
+  },
+  {
+    "code": "02503",
+    "name": "Samburu North",
+    "county": "Samburu",
+    "county_code": "025",
+    "population_2019": 67391,
+    "area_km2": 7375.2
+  },
+  {
+    "code": "02601",
+    "name": "Trans Nzoia West",
+    "county": "Trans Nzoia",
+    "county_code": "026",
+    "population_2019": 202377,
+    "area_km2": 355.4
+  },
+  {
+    "code": "02602",
+    "name": "Trans Nzoia East",
+    "county": "Trans Nzoia",
+    "county_code": "026",
+    "population_2019": 229538,
+    "area_km2": 629.1
+  },
+  {
+    "code": "02603",
+    "name": "Kwanza",
+    "county": "Trans Nzoia",
+    "county_code": "026",
+    "population_2019": 203821,
+    "area_km2": 465.3
+  },
+  {
+    "code": "02604",
+    "name": "Endebess",
+    "county": "Trans Nzoia",
+    "county_code": "026",
+    "population_2019": 111782,
+    "area_km2": 678.4
+  },
+  {
+    "code": "02605",
+    "name": "Kiminini",
+    "county": "Trans Nzoia",
+    "county_code": "026",
+    "population_2019": 242823,
+    "area_km2": 366.9
+  },
+  {
+    "code": "02701",
+    "name": "Ainabkoi",
+    "county": "Uasin Gishu",
+    "county_code": "027",
+    "population_2019": 138184,
+    "area_km2": 482.7
+  },
+  {
+    "code": "02702",
+    "name": "Kapseret",
+    "county": "Uasin Gishu",
+    "county_code": "027",
+    "population_2019": 198499,
+    "area_km2": 299.3
+  },
+  {
+    "code": "02703",
+    "name": "Kesses",
+    "county": "Uasin Gishu",
+    "county_code": "027",
+    "population_2019": 148798,
+    "area_km2": 747.7
+  },
+  {
+    "code": "02704",
+    "name": "Moiben",
+    "county": "Uasin Gishu",
+    "county_code": "027",
+    "population_2019": 181338,
+    "area_km2": 769.8
+  },
+  {
+    "code": "02705",
+    "name": "Soy",
+    "county": "Uasin Gishu",
+    "county_code": "027",
+    "population_2019": 229094,
+    "area_km2": 667.6
+  },
+  {
+    "code": "02706",
+    "name": "Turbo",
+    "county": "Uasin Gishu",
+    "county_code": "027",
+    "population_2019": 267273,
+    "area_km2": 431.4
+  },
+  {
+    "code": "02801",
+    "name": "Keiyo North",
+    "county": "Elgeyo-Marakwet",
+    "county_code": "028",
+    "population_2019": 99176,
+    "area_km2": 543.2
+  },
+  {
+    "code": "02802",
+    "name": "Keiyo South",
+    "county": "Elgeyo-Marakwet",
+    "county_code": "028",
+    "population_2019": 120750,
+    "area_km2": 897.8
+  },
+  {
+    "code": "02803",
+    "name": "Marakwet East",
+    "county": "Elgeyo-Marakwet",
+    "county_code": "028",
+    "population_2019": 97041,
+    "area_km2": 853.2
+  },
+  {
+    "code": "02804",
+    "name": "Marakwet West",
+    "county": "Elgeyo-Marakwet",
+    "county_code": "028",
+    "population_2019": 137513,
+    "area_km2": 737.9
+  },
+  {
+    "code": "02901",
+    "name": "Chesumei",
+    "county": "Nandi",
+    "county_code": "029",
+    "population_2019": 164133,
+    "area_km2": 474.6
+  },
+  {
+    "code": "02902",
+    "name": "Nandi Central",
+    "county": "Nandi",
+    "county_code": "029",
+    "population_2019": 147553,
+    "area_km2": 362.4
+  },
+  {
+    "code": "02903",
+    "name": "Nandi East",
+    "county": "Nandi",
+    "county_code": "029",
+    "population_2019": 119173,
+    "area_km2": 391.6
+  },
+  {
+    "code": "02904",
+    "name": "Nandi North",
+    "county": "Nandi",
+    "county_code": "029",
+    "population_2019": 166171,
+    "area_km2": 606.3
+  },
+  {
+    "code": "02905",
+    "name": "Nandi South",
+    "county": "Nandi",
+    "county_code": "029",
+    "population_2019": 172750,
+    "area_km2": 457.4
+  },
+  {
+    "code": "02906",
+    "name": "Tinderet",
+    "county": "Nandi",
+    "county_code": "029",
+    "population_2019": 115931,
+    "area_km2": 557.1
+  },
+  {
+    "code": "03001",
+    "name": "Baringo Central",
+    "county": "Baringo",
+    "county_code": "030",
+    "population_2019": 96951,
+    "area_km2": 786.5
+  },
+  {
+    "code": "03002",
+    "name": "Baringo North",
+    "county": "Baringo",
+    "county_code": "030",
+    "population_2019": 104871,
+    "area_km2": 1629.3
+  },
+  {
+    "code": "03003",
+    "name": "East Pokot",
+    "county": "Baringo",
+    "county_code": "030",
+    "population_2019": 79923,
+    "area_km2": 2500.4
+  },
+  {
+    "code": "03004",
+    "name": "Koibatek",
+    "county": "Baringo",
+    "county_code": "030",
+    "population_2019": 129535,
+    "area_km2": 938.6
+  },
+  {
+    "code": "03005",
+    "name": "Marigat",
+    "county": "Baringo",
+    "county_code": "030",
+    "population_2019": 90958,
+    "area_km2": 1405.1
+  },
+  {
+    "code": "03006",
+    "name": "Mogotio",
+    "county": "Baringo",
+    "county_code": "030",
+    "population_2019": 91104,
+    "area_km2": 1375.3
+  },
+  {
+    "code": "03007",
+    "name": "Tiaty East",
+    "county": "Baringo",
+    "county_code": "030",
+    "population_2019": 73421,
+    "area_km2": 2163
+  },
+  {
+    "code": "03008",
+    "name": "Lake Baringo",
+    "county": "Baringo",
+    "county_code": "030",
+    "population_2019": 0,
+    "area_km2": 186.4
+  },
+  {
+    "code": "03101",
+    "name": "Laikipia Central",
+    "county": "Laikipia",
+    "county_code": "031",
+    "population_2019": 95594,
+    "area_km2": 1232.6
+  },
+  {
+    "code": "03102",
+    "name": "Laikipia East",
+    "county": "Laikipia",
+    "county_code": "031",
+    "population_2019": 102815,
+    "area_km2": 1539
+  },
+  {
+    "code": "03103",
+    "name": "Laikipia North",
+    "county": "Laikipia",
+    "county_code": "031",
+    "population_2019": 36184,
+    "area_km2": 2550.5
+  },
+  {
+    "code": "03104",
+    "name": "Laikipia West",
+    "county": "Laikipia",
+    "county_code": "031",
+    "population_2019": 129263,
+    "area_km2": 3372.2
+  },
+  {
+    "code": "03105",
+    "name": "Nyahururu",
+    "county": "Laikipia",
+    "county_code": "031",
+    "population_2019": 154704,
+    "area_km2": 813.4
+  },
+  {
+    "code": "03201",
+    "name": "Gilgil",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 185209,
+    "area_km2": 1075.4
+  },
+  {
+    "code": "03202",
+    "name": "Kuresoi North",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 175074,
+    "area_km2": 618.1
+  },
+  {
+    "code": "03203",
+    "name": "Kuresoi South",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 155324,
+    "area_km2": 590.7
+  },
+  {
+    "code": "03204",
+    "name": "Molo",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 156732,
+    "area_km2": 483.2
+  },
+  {
+    "code": "03205",
+    "name": "Naivasha",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 355383,
+    "area_km2": 1958.4
+  },
+  {
+    "code": "03206",
+    "name": "Nakuru East",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 193926,
+    "area_km2": 230.9
+  },
+  {
+    "code": "03207",
+    "name": "Nakuru North",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 218050,
+    "area_km2": 387.3
+  },
+  {
+    "code": "03208",
+    "name": "Nakuru West",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 198661,
+    "area_km2": 71.9
+  },
+  {
+    "code": "03209",
+    "name": "Njoro",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 238773,
+    "area_km2": 699.5
+  },
+  {
+    "code": "03210",
+    "name": "Rongai",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 199906,
+    "area_km2": 988.1
+  },
+  {
+    "code": "03211",
+    "name": "Subukia",
+    "county": "Nakuru",
+    "county_code": "032",
+    "population_2019": 85164,
+    "area_km2": 401.5
+  },
+  {
+    "code": "03301",
+    "name": "Narok East",
+    "county": "Narok",
+    "county_code": "033",
+    "population_2019": 115323,
+    "area_km2": 2042
+  },
+  {
+    "code": "03302",
+    "name": "Narok North",
+    "county": "Narok",
+    "county_code": "033",
+    "population_2019": 251862,
+    "area_km2": 2159.4
+  },
+  {
+    "code": "03303",
+    "name": "Narok South",
+    "county": "Narok",
+    "county_code": "033",
+    "population_2019": 238472,
+    "area_km2": 4577.5
+  },
+  {
+    "code": "03304",
+    "name": "Narok West",
+    "county": "Narok",
+    "county_code": "033",
+    "population_2019": 195287,
+    "area_km2": 5563
+  },
+  {
+    "code": "03305",
+    "name": "Trans Mara East",
+    "county": "Narok",
+    "county_code": "033",
+    "population_2019": 111183,
+    "area_km2": 309.8
+  },
+  {
+    "code": "03306",
+    "name": "Trans Mara West",
+    "county": "Narok",
+    "county_code": "033",
+    "population_2019": 245714,
+    "area_km2": 2545.9
+  },
+  {
+    "code": "03307",
+    "name": "Mau Forest",
+    "county": "Narok",
+    "county_code": "033",
+    "population_2019": 32,
+    "area_km2": 734.2
+  },
+  {
+    "code": "03401",
+    "name": "Isinya",
+    "county": "Kajiado",
+    "county_code": "034",
+    "population_2019": 210473,
+    "area_km2": 1071.6
+  },
+  {
+    "code": "03402",
+    "name": "Kajiado Central",
+    "county": "Kajiado",
+    "county_code": "034",
+    "population_2019": 161862,
+    "area_km2": 4239.5
+  },
+  {
+    "code": "03403",
+    "name": "Kajiado North",
+    "county": "Kajiado",
+    "county_code": "034",
+    "population_2019": 306596,
+    "area_km2": 110.6
+  },
+  {
+    "code": "03404",
+    "name": "Kajiado West",
+    "county": "Kajiado",
+    "county_code": "034",
+    "population_2019": 182849,
+    "area_km2": 7862.1
+  },
+  {
+    "code": "03405",
+    "name": "Loitokitok",
+    "county": "Kajiado",
+    "county_code": "034",
+    "population_2019": 191846,
+    "area_km2": 6336.7
+  },
+  {
+    "code": "03406",
+    "name": "Mashuuru",
+    "county": "Kajiado",
+    "county_code": "034",
+    "population_2019": 64214,
+    "area_km2": 2250.7
+  },
+  {
+    "code": "03501",
+    "name": "Belgut",
+    "county": "Kericho",
+    "county_code": "035",
+    "population_2019": 145072,
+    "area_km2": 264.3
+  },
+  {
+    "code": "03502",
+    "name": "Bureti",
+    "county": "Kericho",
+    "county_code": "035",
+    "population_2019": 199470,
+    "area_km2": 320.6
+  },
+  {
+    "code": "03503",
+    "name": "Kericho East",
+    "county": "Kericho",
+    "county_code": "035",
+    "population_2019": 170625,
+    "area_km2": 240.6
+  },
+  {
+    "code": "03504",
+    "name": "Kipkelion",
+    "county": "Kericho",
+    "county_code": "035",
+    "population_2019": 122530,
+    "area_km2": 349.9
+  },
+  {
+    "code": "03505",
+    "name": "Londiani",
+    "county": "Kericho",
+    "county_code": "035",
+    "population_2019": 137580,
+    "area_km2": 399.6
+  },
+  {
+    "code": "03506",
+    "name": "Soin Sigowet",
+    "county": "Kericho",
+    "county_code": "035",
+    "population_2019": 126500,
+    "area_km2": 466.2
+  },
+  {
+    "code": "03507",
+    "name": "Mau Forest",
+    "county": "Kericho",
+    "county_code": "035",
+    "population_2019": 0,
+    "area_km2": 201.2
+  },
+  {
+    "code": "03508",
+    "name": "Tinderet Forest",
+    "county": "Kericho",
+    "county_code": "035",
+    "population_2019": 0,
+    "area_km2": 193.7
+  },
+  {
+    "code": "03601",
+    "name": "Bomet East",
+    "county": "Bomet",
+    "county_code": "036",
+    "population_2019": 144275,
+    "area_km2": 305
+  },
+  {
+    "code": "03602",
+    "name": "Chepalungu",
+    "county": "Bomet",
+    "county_code": "036",
+    "population_2019": 164837,
+    "area_km2": 460.5
+  },
+  {
+    "code": "03603",
+    "name": "Konoin",
+    "county": "Bomet",
+    "county_code": "036",
+    "population_2019": 163507,
+    "area_km2": 392.5
+  },
+  {
+    "code": "03604",
+    "name": "Sotik",
+    "county": "Bomet",
+    "county_code": "036",
+    "population_2019": 227855,
+    "area_km2": 544.3
+  },
+  {
+    "code": "03605",
+    "name": "Bomet Central",
+    "county": "Bomet",
+    "county_code": "036",
+    "population_2019": 175215,
+    "area_km2": 286.1
+  },
+  {
+    "code": "03606",
+    "name": "Mau Forest",
+    "county": "Bomet",
+    "county_code": "036",
+    "population_2019": 0,
+    "area_km2": 518.6
+  },
+  {
+    "code": "03701",
+    "name": "Butere",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 154100,
+    "area_km2": 210.1
+  },
+  {
+    "code": "03702",
+    "name": "Kakamega Central",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 188212,
+    "area_km2": 155.2
+  },
+  {
+    "code": "03703",
+    "name": "Kakamega East",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 167641,
+    "area_km2": 417.2
+  },
+  {
+    "code": "03704",
+    "name": "Kakamega North",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 238330,
+    "area_km2": 420.8
+  },
+  {
+    "code": "03705",
+    "name": "Kakamega South",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 111743,
+    "area_km2": 146.2
+  },
+  {
+    "code": "03706",
+    "name": "Khwisero",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 113476,
+    "area_km2": 145.6
+  },
+  {
+    "code": "03707",
+    "name": "Likuyani",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 152055,
+    "area_km2": 316.1
+  },
+  {
+    "code": "03708",
+    "name": "Lugari",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 122728,
+    "area_km2": 254.3
+  },
+  {
+    "code": "03709",
+    "name": "Matete",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 66172,
+    "area_km2": 102.7
+  },
+  {
+    "code": "03710",
+    "name": "Matungu",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 166940,
+    "area_km2": 275.6
+  },
+  {
+    "code": "03711",
+    "name": "Mumias East",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 116851,
+    "area_km2": 150.2
+  },
+  {
+    "code": "03712",
+    "name": "Mumias West",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 115354,
+    "area_km2": 163.3
+  },
+  {
+    "code": "03713",
+    "name": "Navakholo",
+    "county": "Kakamega",
+    "county_code": "037",
+    "population_2019": 153977,
+    "area_km2": 259.3
+  },
+  {
+    "code": "03801",
+    "name": "Emuhaya",
+    "county": "Vihiga",
+    "county_code": "038",
+    "population_2019": 97141,
+    "area_km2": 89
+  },
+  {
+    "code": "03802",
+    "name": "Vihiga",
+    "county": "Vihiga",
+    "county_code": "038",
+    "population_2019": 95292,
+    "area_km2": 90.1
+  },
+  {
+    "code": "03803",
+    "name": "Sabatia",
+    "county": "Vihiga",
+    "county_code": "038",
+    "population_2019": 131628,
+    "area_km2": 111.4
+  },
+  {
+    "code": "03804",
+    "name": "Luanda",
+    "county": "Vihiga",
+    "county_code": "038",
+    "population_2019": 106694,
+    "area_km2": 84.3
+  },
+  {
+    "code": "03805",
+    "name": "Hamisi",
+    "county": "Vihiga",
+    "county_code": "038",
+    "population_2019": 159241,
+    "area_km2": 157.2
+  },
+  {
+    "code": "03806",
+    "name": "Kakamega Forest",
+    "county": "Vihiga",
+    "county_code": "038",
+    "population_2019": 17,
+    "area_km2": 31.7
+  },
+  {
+    "code": "03901",
+    "name": "Bumula",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 215892,
+    "area_km2": 345.2
+  },
+  {
+    "code": "03902",
+    "name": "Bungoma Central",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 177748,
+    "area_km2": 232.7
+  },
+  {
+    "code": "03903",
+    "name": "Bungoma East",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 114548,
+    "area_km2": 163.3
+  },
+  {
+    "code": "03904",
+    "name": "Bungoma North",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 121317,
+    "area_km2": 191.5
+  },
+  {
+    "code": "03905",
+    "name": "Bungoma South",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 287765,
+    "area_km2": 321.1
+  },
+  {
+    "code": "03906",
+    "name": "Cheptais",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 136035,
+    "area_km2": 222.9
+  },
+  {
+    "code": "03907",
+    "name": "Kimilili",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 162038,
+    "area_km2": 179.6
+  },
+  {
+    "code": "03908",
+    "name": "Mount Elgon",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 78873,
+    "area_km2": 126.5
+  },
+  {
+    "code": "03909",
+    "name": "Bungoma West",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 119875,
+    "area_km2": 211
+  },
+  {
+    "code": "03910",
+    "name": "Tongaren",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 100343,
+    "area_km2": 185.3
+  },
+  {
+    "code": "03911",
+    "name": "Webuye West",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 152515,
+    "area_km2": 238.9
+  },
+  {
+    "code": "03912",
+    "name": "Mt. Elgon Forest",
+    "county": "Bungoma",
+    "county_code": "039",
+    "population_2019": 3621,
+    "area_km2": 605.8
+  },
+  {
+    "code": "04001",
+    "name": "Bunyala",
+    "county": "Busia",
+    "county_code": "040",
+    "population_2019": 85977,
+    "area_km2": 192.2
+  },
+  {
+    "code": "04002",
+    "name": "Busia",
+    "county": "Busia",
+    "county_code": "040",
+    "population_2019": 142408,
+    "area_km2": 196
+  },
+  {
+    "code": "04003",
+    "name": "Butula",
+    "county": "Busia",
+    "county_code": "040",
+    "population_2019": 140334,
+    "area_km2": 247.1
+  },
+  {
+    "code": "04004",
+    "name": "Nambale",
+    "county": "Busia",
+    "county_code": "040",
+    "population_2019": 111636,
+    "area_km2": 238.1
+  },
+  {
+    "code": "04005",
+    "name": "Samia",
+    "county": "Busia",
+    "county_code": "040",
+    "population_2019": 107176,
+    "area_km2": 262.4
+  },
+  {
+    "code": "04006",
+    "name": "Teso North",
+    "county": "Busia",
+    "county_code": "040",
+    "population_2019": 138034,
+    "area_km2": 261
+  },
+  {
+    "code": "04007",
+    "name": "Teso South",
+    "county": "Busia",
+    "county_code": "040",
+    "population_2019": 168116,
+    "area_km2": 302.9
+  },
+  {
+    "code": "04101",
+    "name": "Siaya",
+    "county": "Siaya",
+    "county_code": "041",
+    "population_2019": 224343,
+    "area_km2": 598.9
+  },
+  {
+    "code": "04102",
+    "name": "Gem",
+    "county": "Siaya",
+    "county_code": "041",
+    "population_2019": 179792,
+    "area_km2": 405.2
+  },
+  {
+    "code": "04103",
+    "name": "Ugenya",
+    "county": "Siaya",
+    "county_code": "041",
+    "population_2019": 134354,
+    "area_km2": 323.5
+  },
+  {
+    "code": "04104",
+    "name": "Ugunja",
+    "county": "Siaya",
+    "county_code": "041",
+    "population_2019": 104241,
+    "area_km2": 201
+  },
+  {
+    "code": "04105",
+    "name": "Bondo",
+    "county": "Siaya",
+    "county_code": "041",
+    "population_2019": 197883,
+    "area_km2": 598.8
+  },
+  {
+    "code": "04106",
+    "name": "Rarieda",
+    "county": "Siaya",
+    "county_code": "041",
+    "population_2019": 152570,
+    "area_km2": 402.4
+  },
+  {
+    "code": "04201",
+    "name": "Kisumu East",
+    "county": "Kisumu",
+    "county_code": "042",
+    "population_2019": 220997,
+    "area_km2": 141.6
+  },
+  {
+    "code": "04202",
+    "name": "Kisumu Central",
+    "county": "Kisumu",
+    "county_code": "042",
+    "population_2019": 174145,
+    "area_km2": 36.8
+  },
+  {
+    "code": "04203",
+    "name": "Kisumu West",
+    "county": "Kisumu",
+    "county_code": "042",
+    "population_2019": 172821,
+    "area_km2": 209
+  },
+  {
+    "code": "04204",
+    "name": "Seme",
+    "county": "Kisumu",
+    "county_code": "042",
+    "population_2019": 121667,
+    "area_km2": 267.7
+  },
+  {
+    "code": "04205",
+    "name": "Muhoroni",
+    "county": "Kisumu",
+    "county_code": "042",
+    "population_2019": 154116,
+    "area_km2": 657.5
+  },
+  {
+    "code": "04206",
+    "name": "Nyando",
+    "county": "Kisumu",
+    "county_code": "042",
+    "population_2019": 161508,
+    "area_km2": 446.1
+  },
+  {
+    "code": "04207",
+    "name": "Nyakach",
+    "county": "Kisumu",
+    "county_code": "042",
+    "population_2019": 150320,
+    "area_km2": 326.7
+  },
+  {
+    "code": "04301",
+    "name": "Homa Bay",
+    "county": "Homa Bay",
+    "county_code": "043",
+    "population_2019": 117439,
+    "area_km2": 182
+  },
+  {
+    "code": "04302",
+    "name": "Ndhiwa",
+    "county": "Homa Bay",
+    "county_code": "043",
+    "population_2019": 218136,
+    "area_km2": 713.5
+  },
+  {
+    "code": "04303",
+    "name": "Rachuonyo North",
+    "county": "Homa Bay",
+    "county_code": "043",
+    "population_2019": 178686,
+    "area_km2": 435.4
+  },
+  {
+    "code": "04304",
+    "name": "Rachuonyo East",
+    "county": "Homa Bay",
+    "county_code": "043",
+    "population_2019": 121822,
+    "area_km2": 250.9
+  },
+  {
+    "code": "04305",
+    "name": "Rachuonyo South",
+    "county": "Homa Bay",
+    "county_code": "043",
+    "population_2019": 130814,
+    "area_km2": 256.1
+  },
+  {
+    "code": "04306",
+    "name": "Rangwe",
+    "county": "Homa Bay",
+    "county_code": "043",
+    "population_2019": 117732,
+    "area_km2": 274.1
+  },
+  {
+    "code": "04307",
+    "name": "Suba North",
+    "county": "Homa Bay",
+    "county_code": "043",
+    "population_2019": 124938,
+    "area_km2": 406.3
+  },
+  {
+    "code": "04308",
+    "name": "Suba South",
+    "county": "Homa Bay",
+    "county_code": "043",
+    "population_2019": 122383,
+    "area_km2": 634.1
+  },
+  {
+    "code": "04401",
+    "name": "Awendo",
+    "county": "Migori",
+    "county_code": "044",
+    "population_2019": 117290,
+    "area_km2": 255.3
+  },
+  {
+    "code": "04402",
+    "name": "Kuria East",
+    "county": "Migori",
+    "county_code": "044",
+    "population_2019": 96872,
+    "area_km2": 187.6
+  },
+  {
+    "code": "04403",
+    "name": "Kuria West",
+    "county": "Migori",
+    "county_code": "044",
+    "population_2019": 208513,
+    "area_km2": 395.7
+  },
+  {
+    "code": "04404",
+    "name": "Nyatike",
+    "county": "Migori",
+    "county_code": "044",
+    "population_2019": 176162,
+    "area_km2": 676.9
+  },
+  {
+    "code": "04405",
+    "name": "Rongo",
+    "county": "Migori",
+    "county_code": "044",
+    "population_2019": 124587,
+    "area_km2": 213.4
+  },
+  {
+    "code": "04406",
+    "name": "Suna East",
+    "county": "Migori",
+    "county_code": "044",
+    "population_2019": 122674,
+    "area_km2": 205.1
+  },
+  {
+    "code": "04407",
+    "name": "Suna West",
+    "county": "Migori",
+    "county_code": "044",
+    "population_2019": 128890,
+    "area_km2": 287.5
+  },
+  {
+    "code": "04408",
+    "name": "Uriri",
+    "county": "Migori",
+    "county_code": "044",
+    "population_2019": 141448,
+    "area_km2": 392.1
+  },
+  {
+    "code": "04501",
+    "name": "Etago",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 83787,
+    "area_km2": 108.4
+  },
+  {
+    "code": "04502",
+    "name": "Gucha",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 83740,
+    "area_km2": 82.1
+  },
+  {
+    "code": "04503",
+    "name": "Gucha South",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 83623,
+    "area_km2": 95.2
+  },
+  {
+    "code": "04504",
+    "name": "Kenyenya",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 131740,
+    "area_km2": 141.7
+  },
+  {
+    "code": "04505",
+    "name": "Kisii Central",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 166906,
+    "area_km2": 135.8
+  },
+  {
+    "code": "04506",
+    "name": "Kisii South",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 135134,
+    "area_km2": 128.3
+  },
+  {
+    "code": "04507",
+    "name": "Kitutu Central",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 154175,
+    "area_km2": 100.3
+  },
+  {
+    "code": "04508",
+    "name": "Marani",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 107464,
+    "area_km2": 128.4
+  },
+  {
+    "code": "04509",
+    "name": "Masaba South",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 122396,
+    "area_km2": 161.2
+  },
+  {
+    "code": "04510",
+    "name": "Nyamache",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 130898,
+    "area_km2": 162.7
+  },
+  {
+    "code": "04511",
+    "name": "Sameta",
+    "county": "Kisii",
+    "county_code": "045",
+    "population_2019": 66997,
+    "area_km2": 79.1
+  },
+  {
+    "code": "04601",
+    "name": "Borabu",
+    "county": "Nyamira",
+    "county_code": "046",
+    "population_2019": 73167,
+    "area_km2": 246.9
+  },
+  {
+    "code": "04602",
+    "name": "Manga",
+    "county": "Nyamira",
+    "county_code": "046",
+    "population_2019": 94209,
+    "area_km2": 111.5
+  },
+  {
+    "code": "04603",
+    "name": "Masaba North",
+    "county": "Nyamira",
+    "county_code": "046",
+    "population_2019": 111860,
+    "area_km2": 141.7
+  },
+  {
+    "code": "04604",
+    "name": "Nyamira North",
+    "county": "Nyamira",
+    "county_code": "046",
+    "population_2019": 167267,
+    "area_km2": 215.7
+  },
+  {
+    "code": "04605",
+    "name": "Nyamira South",
+    "county": "Nyamira",
+    "county_code": "046",
+    "population_2019": 159073,
+    "area_km2": 181.5
+  },
+  {
+    "code": "04701",
+    "name": "Dagoretti",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 434208,
+    "area_km2": 29.1
+  },
+  {
+    "code": "04702",
+    "name": "Embakasi",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 988808,
+    "area_km2": 86.3
+  },
+  {
+    "code": "04703",
+    "name": "Kamukunji",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 268276,
+    "area_km2": 10.5
+  },
+  {
+    "code": "04704",
+    "name": "Kasarani",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 780656,
+    "area_km2": 86.1
+  },
+  {
+    "code": "04705",
+    "name": "Kibra",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 185777,
+    "area_km2": 12.1
+  },
+  {
+    "code": "04706",
+    "name": "Lang'ata",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 197489,
+    "area_km2": 216.8
+  },
+  {
+    "code": "04707",
+    "name": "Makadara",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 189536,
+    "area_km2": 11.7
+  },
+  {
+    "code": "04708",
+    "name": "Mathare",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 206564,
+    "area_km2": 3
+  },
+  {
+    "code": "04709",
+    "name": "Njiru",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 626482,
+    "area_km2": 129.9
+  },
+  {
+    "code": "04710",
+    "name": "Starehe",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 210423,
+    "area_km2": 20.6
+  },
+  {
+    "code": "04711",
+    "name": "Westlands",
+    "county": "Nairobi",
+    "county_code": "047",
+    "population_2019": 308854,
+    "area_km2": 97.5
+  }
+]

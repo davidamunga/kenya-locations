@@ -1,0 +1,31 @@
+{
+  "dataset": "kenya-locations / KNBS administrative hierarchy",
+  "description": "County → Sub-county → Division → Location → Sub-location, the national government administrative units, with 2019 population and land area.",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "kenya-locations (https://github.com/DavidAmunga/kenya-locations), with data from the Kenya National Bureau of Statistics (KNBS), 2019 Kenya Population and Housing Census, Volume II.",
+  "source": {
+    "title": "2019 Kenya Population and Housing Census, Volume II: Distribution of Population by Administrative Units",
+    "publisher": "Kenya National Bureau of Statistics",
+    "url": "https://open.africa/dataset/2019-kenya-population-and-housing-census",
+    "retrieved": "2026-11-04",
+    "files": [
+      "sources/knbs-2019/population-by-sex-and-sub-location.csv",
+      "sources/knbs-2019/land-area-by-sub-location.csv"
+    ]
+  },
+  "build": "node scripts/admin/build-knbs.js",
+  "notes": [
+    "A 2019 snapshot: units created by later gazette notices are missing.",
+    "Codes are assigned by this project in KNBS order, two digits per level after the IEBC county code. They are not official KNBS codes.",
+    "26 national parks and forests are listed with a population of 0.",
+    "Names can repeat within a parent; use codes.",
+    "Five names garbled in the scanned source are corrected in scripts/admin/build-knbs.js (NAME_FIXES)."
+  ],
+  "files": {
+    "sub-counties.json": { "key": "code", "digits": 5, "parents": { "county_code": "../counties.json" } },
+    "divisions.json": { "key": "code", "digits": 7, "parents": { "sub_county_code": "sub-counties.json", "county_code": "../counties.json" } },
+    "locations.json": { "key": "code", "digits": 9, "parents": { "division_code": "divisions.json", "sub_county_code": "sub-counties.json", "county_code": "../counties.json" } },
+    "sub-locations.json": { "key": "code", "digits": 11, "parents": { "location_code": "locations.json", "division_code": "divisions.json", "sub_county_code": "sub-counties.json", "county_code": "../counties.json" } }
+  }
+}

@@ -50,6 +50,35 @@ All codes are zero-padded strings. Field names are `snake_case`.
 
 `name`, `locality`, `county`, `county_code`.
 
+### `admin/` — KNBS administrative hierarchy
+
+A separate hierarchy from the electoral one, from the KNBS 2019 census (Volume II):
+
+```
+County ── Sub-county ── Division ── Location ── Sub-location
+   47         349          999         3,837        8,934
+```
+
+These are the national government's units (sub-county administrators, chiefs and assistant chiefs). They don't line up with constituencies and wards.
+
+| File | Key | Parents |
+|---|---|---|
+| `admin/sub-counties.json` | `code` (5 digits) | `county_code` |
+| `admin/divisions.json` | `code` (7) | `sub_county_code`, `county_code` |
+| `admin/locations.json` | `code` (9) | `division_code`, `sub_county_code`, `county_code` |
+| `admin/sub-locations.json` | `code` (11) | `location_code`, `division_code`, `sub_county_code`, `county_code` |
+
+Each record also has its immediate parent's name, `population_2019` and `area_km2`.
+
+- **Codes** extend the parent's code by two digits in KNBS order: sub-county `00101`, division `0010101`, location `001010101`, sub-location `00101010101`. They're assigned by this project, not by KNBS.
+- **It's a 2019 snapshot.** Units created by later gazette notices are missing.
+- **Zero-population units:** 26 national parks and forests are listed with a population of 0.
+- **Duplicate names:** names can repeat within a parent (Nyamira division has two locations named Bonyamatuta), so always use codes.
+- **Sources and caveats** are in `admin/meta.json`.
+- **Don't hand-edit these files.** They're generated from `sources/knbs-2019/` by `node scripts/admin/build-knbs.js`, which fixes five names garbled in the scanned source (e.g. "GATONGrgOORA" → Gatong'oora). `pnpm validate` checks that codes nest and that every unit's population equals the sum of its children's, down to the county totals in `counties.json`.
+
+`data/sub-counties.json` (the older 307-record list, mostly constituency names) is unchanged for now; v1.0 replaces it with this hierarchy.
+
 ### `meta.json`
 
 License, attribution, boundary set, and the sources, key and parents of each file.
