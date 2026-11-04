@@ -43,7 +43,7 @@ npm install kenya-locations
 
 ```bash
 npm install kenya-locations-react
-# peer deps: react >=18, kenya-locations
+# requires react >=18; kenya-locations is installed automatically
 ```
 
 ### Kotlin / JVM
@@ -426,7 +426,7 @@ Memoised hooks for every level of the hierarchy. All hooks return stable array r
 
 ```bash
 npm install kenya-locations-react
-# peer deps: react >=18, kenya-locations
+# requires react >=18; kenya-locations is installed automatically
 ```
 
 ### Hooks
