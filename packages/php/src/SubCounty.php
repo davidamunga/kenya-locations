@@ -15,6 +15,7 @@ final readonly class SubCounty
             code: (string) $data['code'],
             name: (string) $data['name'],
             county: (string) $data['county'],
+            countyCode: (string) $data['county_code'],
         );
     }
 
@@ -22,6 +23,8 @@ final readonly class SubCounty
         public string $code,
         public string $name,
         public string $county,
+        /** Code of the parent county, e.g. "047". */
+        public string $countyCode,
     ) {
     }
 }

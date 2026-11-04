@@ -15,6 +15,8 @@ final readonly class Ward
             code: (string) $data['code'],
             name: (string) $data['name'],
             constituency: (string) $data['constituency'],
+            constituencyCode: (string) $data['constituency_code'],
+            countyCode: (string) $data['county_code'],
         );
     }
 
@@ -22,6 +24,10 @@ final readonly class Ward
         public string $code,
         public string $name,
         public string $constituency,
+        /** Code of the parent constituency. */
+        public string $constituencyCode,
+        /** Code of the parent county, e.g. "047". */
+        public string $countyCode,
     ) {
     }
 }

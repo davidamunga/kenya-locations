@@ -13,7 +13,8 @@ use Normalizer;
  *
  * Case-insensitive exact matches win. Only when there are none is a looser
  * "folded" match tried, which ignores accents, spaces and punctuation
- * ("Muranga" finds "Murang'a").
+ * ("Muranga" finds "Murang'a"). A record's aliases (for example a county's
+ * "Nairobi City") count as names.
  *
  * @template T of object{name: string}
  */
@@ -31,8 +32,14 @@ final class NameIndex
     public function __construct(array $items)
     {
         foreach ($items as $item) {
-            $this->exact[self::lower($item->name)][] = $item;
-            $this->folded[self::fold($item->name)][] = $item;
+            $names = [$item->name, ...(property_exists($item, 'aliases') ? $item->aliases : [])];
+
+            foreach (array_unique(array_map(self::lower(...), $names)) as $key) {
+                $this->exact[$key][] = $item;
+            }
+            foreach (array_unique(array_map(self::fold(...), $names)) as $key) {
+                $this->folded[$key][] = $item;
+            }
         }
     }
 

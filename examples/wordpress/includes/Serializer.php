@@ -25,7 +25,9 @@ final class Serializer
      *     area_km2: float,
      *     population_2019: int,
      *     region: string,
-     *     postal_code: string
+     *     postal_code: string,
+     *     iso_code: string,
+     *     aliases: list<string>
      * }
      */
     public static function county(County $county): array
@@ -38,11 +40,13 @@ final class Serializer
             'population_2019' => $county->population2019,
             'region' => $county->region,
             'postal_code' => $county->postalCode,
+            'iso_code' => $county->isoCode,
+            'aliases' => $county->aliases,
         ];
     }
 
     /**
-     * @return array{code: string, name: string, county: string}
+     * @return array{code: string, name: string, county: string, county_code: string}
      */
     public static function constituency(Constituency $constituency): array
     {
@@ -50,11 +54,18 @@ final class Serializer
             'code' => $constituency->code,
             'name' => $constituency->name,
             'county' => $constituency->county,
+            'county_code' => $constituency->countyCode,
         ];
     }
 
     /**
-     * @return array{code: string, name: string, constituency: string}
+     * @return array{
+     *     code: string,
+     *     name: string,
+     *     constituency: string,
+     *     constituency_code: string,
+     *     county_code: string
+     * }
      */
     public static function ward(Ward $ward): array
     {
@@ -62,11 +73,13 @@ final class Serializer
             'code' => $ward->code,
             'name' => $ward->name,
             'constituency' => $ward->constituency,
+            'constituency_code' => $ward->constituencyCode,
+            'county_code' => $ward->countyCode,
         ];
     }
 
     /**
-     * @return array{code: string, name: string, county: string}
+     * @return array{code: string, name: string, county: string, county_code: string}
      */
     public static function subCounty(SubCounty $subCounty): array
     {
@@ -74,22 +87,24 @@ final class Serializer
             'code' => $subCounty->code,
             'name' => $subCounty->name,
             'county' => $subCounty->county,
+            'county_code' => $subCounty->countyCode,
         ];
     }
 
     /**
-     * @return array{name: string, county: string}
+     * @return array{name: string, county: string, county_code: string}
      */
     public static function locality(Locality $locality): array
     {
         return [
             'name' => $locality->name,
             'county' => $locality->county,
+            'county_code' => $locality->countyCode,
         ];
     }
 
     /**
-     * @return array{name: string, locality: string, county: string}
+     * @return array{name: string, locality: string, county: string, county_code: string}
      */
     public static function area(Area $area): array
     {
@@ -97,6 +112,7 @@ final class Serializer
             'name' => $area->name,
             'locality' => $area->locality,
             'county' => $area->county,
+            'county_code' => $area->countyCode,
         ];
     }
 

@@ -117,16 +117,16 @@ final class Query
             return null;
         }
 
-        $countyName = null;
+        $countyCode = null;
         if ($county !== null && $county !== '') {
-            $countyName = $this->county($county)?->name;
+            $countyCode = $this->county($county)?->code;
         }
 
         foreach (KenyaLocations::getAreasByName($key) as $area) {
             if ($locality !== null && $locality !== '' && strcasecmp($area->locality, $locality) !== 0) {
                 continue;
             }
-            if ($countyName !== null && strcasecmp($area->county, $countyName) !== 0) {
+            if ($countyCode !== null && $area->countyCode !== $countyCode) {
                 continue;
             }
 

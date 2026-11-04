@@ -22,9 +22,15 @@ final readonly class County
             population2019: (int) $data['population_2019'],
             region: (string) $data['region'],
             postalCode: (string) $data['postal_code'],
+            isoCode: (string) $data['iso_code'],
+            aliases: array_values(array_map('strval', (array) $data['aliases'])),
         );
     }
 
+    /**
+     * @param string $isoCode ISO 3166-2:KE subdivision code, e.g. "KE-30" for Nairobi.
+     * @param list<string> $aliases Other names that resolve to this county, e.g. "Nairobi City".
+     */
     public function __construct(
         public string $code,
         public string $name,
@@ -33,6 +39,8 @@ final readonly class County
         public int $population2019,
         public string $region,
         public string $postalCode,
+        public string $isoCode,
+        public array $aliases,
     ) {
     }
 }
