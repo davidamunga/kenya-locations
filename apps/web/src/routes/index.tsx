@@ -22,8 +22,8 @@ const EXAMPLES = [
 
 /**
  * Kenya is described three ways in the data. Electoral and administrative
- * units come from IEBC and KNBS; localities and areas are the estates,
- * neighbourhoods and towns people use in everyday addresses.
+ * units come from IEBC and KNBS; localities and areas are smaller named
+ * places inside a county, such as estates and towns.
  */
 const HIERARCHIES = [
   {
@@ -52,7 +52,7 @@ const HIERARCHIES = [
   {
     title: "Everyday places",
     source: "Open to contributions",
-    description: "Estates, neighbourhoods and towns: the names people put in an address.",
+    description: "Localities and the smaller areas within them, such as estates and towns.",
     path: ["County", "Locality", "Area"],
     counts: [
       { label: "localities", value: DATASET.localities },
@@ -89,12 +89,15 @@ function HomePage() {
           Open data · IEBC + KNBS · v{DATA_VERSION}
         </p>
         <h1 className="font-heading font-semibold text-4xl tracking-tight text-balance sm:text-5xl">
+          <span aria-hidden className="mr-2">
+            🇰🇪📍
+          </span>
           Kenyan location data, from county to neighbourhood
         </h1>
         <p className="max-w-2xl text-lg text-muted-foreground">
-          Electoral and administrative divisions, plus the estates and neighbourhoods people use in
-          addresses. Look up any place, see its codes and where it sits, and use the same data in
-          JavaScript, React, Kotlin, Swift, Dart, PHP or WordPress.
+          Counties, constituencies, wards and sub-counties from IEBC and KNBS, with the localities
+          and areas inside them. Look up any place, see its codes and where it sits, and use the
+          same data in JavaScript, React, Kotlin, Swift, Dart, PHP or WordPress.
         </p>
 
         <button
