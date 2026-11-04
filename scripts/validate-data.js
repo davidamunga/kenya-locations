@@ -132,11 +132,12 @@ function validateConstituencyReferences(constituencies, counties) {
 }
 
 function validateLocalityAreaReferences(areas, localities) {
-  const localityNames = new Set(localities.map((l) => l.name));
+  // Locality names repeat across counties, so match on county + name.
+  const localityKeys = new Set(localities.map((l) => `${l.county}:${l.name}`));
   const invalidRefs = [];
 
   areas.forEach((area, index) => {
-    if (!localityNames.has(area.locality)) {
+    if (!localityKeys.has(`${area.county}:${area.locality}`)) {
       invalidRefs.push({ area: area.name, locality: area.locality, index });
     }
   });
@@ -145,7 +146,7 @@ function validateLocalityAreaReferences(areas, localities) {
     log("❌ Invalid locality references found in areas:", "red");
     invalidRefs.forEach(({ area, locality, index }) => {
       log(
-        `   - Area "${area}" references locality "${locality}" (index ${index}) - not found`,
+        `   - Area "${area}" references locality "${locality}" (index ${index}) - not found in the same county`,
         "red"
       );
     });
@@ -247,6 +248,81 @@ function validateRequiredFields(data, type, fields) {
   }
 }
 
+// Folds case, spaces and punctuation so "Shimo La Tewa" matches "Shimo la Tewa".
+function normalizeName(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+function validateNoNearDuplicates(data, type, scopeOf) {
+  const seen = new Map();
+  const duplicates = [];
+
+  data.forEach((item, index) => {
+    const key = `${scopeOf(item)}:${normalizeName(item.name)}`;
+    if (seen.has(key)) {
+      duplicates.push({ first: seen.get(key), second: { index, name: item.name }, scope: scopeOf(item) });
+    } else {
+      seen.set(key, { index, name: item.name });
+    }
+  });
+
+  if (duplicates.length > 0) {
+    log(`❌ Near-duplicate ${type} names (differ only in case, spacing or punctuation):`, "red");
+    duplicates.forEach(({ first, second, scope }) => {
+      log(`   - "${first.name}" (index ${first.index}) vs "${second.name}" (index ${second.index}) in ${scope}`, "red");
+    });
+    return false;
+  }
+  log(`✅ No near-duplicate ${type} names`, "green");
+  return true;
+}
+
+function validateNameWhitespace(data, type, fields) {
+  const bad = [];
+
+  data.forEach((item, index) => {
+    fields.forEach((field) => {
+      const value = item[field];
+      if (typeof value === "string" && (value !== value.trim() || /\s{2,}/.test(value))) {
+        bad.push({ field, value, index });
+      }
+    });
+  });
+
+  if (bad.length > 0) {
+    log(`❌ Leading, trailing or repeated spaces in ${type}:`, "red");
+    bad.forEach(({ field, value, index }) => {
+      log(`   - ${field} ${JSON.stringify(value)} (index ${index})`, "red");
+    });
+    return false;
+  }
+  log(`✅ No stray whitespace in ${type}`, "green");
+  return true;
+}
+
+// Codes must run 1..expected with no gaps, zero-padded to `width` digits.
+function validateCodeSequence(data, type, expected, width) {
+  const codes = new Set(data.map((item) => item.code));
+  const missing = [];
+  for (let i = 1; i <= expected; i++) {
+    const code = String(i).padStart(width, "0");
+    if (!codes.has(code)) missing.push(code);
+  }
+  const malformed = data
+    .map((item) => item.code)
+    .filter((code) => !new RegExp(`^\\d{${width}}$`).test(code) || Number(code) < 1 || Number(code) > expected);
+
+  const ok = data.length === expected && missing.length === 0 && malformed.length === 0;
+  if (!ok) {
+    log(`❌ ${type}: expected ${expected} records coded ${"1".padStart(width, "0")}–${String(expected).padStart(width, "0")}, found ${data.length}`, "red");
+    if (missing.length) log(`   - missing codes: ${missing.join(", ")}`, "red");
+    if (malformed.length) log(`   - unexpected codes: ${malformed.join(", ")}`, "red");
+    return false;
+  }
+  log(`✅ ${type} codes run ${"1".padStart(width, "0")}–${String(expected).padStart(width, "0")} with no gaps`, "green");
+  return true;
+}
+
 const VALID_REGIONS = new Set([
   "Nairobi",
   "Central",
@@ -326,6 +402,27 @@ function validateDataIntegrity() {
   allValid &= validateUniqueIds(data.constituencies, "constituencies", "code");
   allValid &= validateUniqueIds(data.wards, "wards", "code");
   allValid &= validateUniqueIds(data.subCounties, "sub-counties", "code");
+  log("", "reset");
+
+  // Official IEBC totals: 47 counties, 290 constituencies, 1,450 wards
+  log("📋 Checking code sequences against official totals...", "yellow");
+  allValid &= validateCodeSequence(data.counties, "counties", 47, 3);
+  allValid &= validateCodeSequence(data.constituencies, "constituencies", 290, 3);
+  allValid &= validateCodeSequence(data.wards, "wards", 1450, 4);
+  log("", "reset");
+
+  log("📋 Checking names for stray whitespace...", "yellow");
+  allValid &= validateNameWhitespace(data.counties, "counties", ["name"]);
+  allValid &= validateNameWhitespace(data.constituencies, "constituencies", ["name", "county"]);
+  allValid &= validateNameWhitespace(data.wards, "wards", ["name", "constituency"]);
+  allValid &= validateNameWhitespace(data.subCounties, "sub-counties", ["name", "county"]);
+  allValid &= validateNameWhitespace(data.localities, "localities", ["name", "county"]);
+  allValid &= validateNameWhitespace(data.areas, "areas", ["name", "locality", "county"]);
+  log("", "reset");
+
+  log("📋 Checking for near-duplicate names...", "yellow");
+  allValid &= validateNoNearDuplicates(data.localities, "locality", (l) => l.county);
+  allValid &= validateNoNearDuplicates(data.areas, "area", (a) => `${a.county}/${a.locality}`);
   log("", "reset");
 
   // Validate locality uniqueness within counties
