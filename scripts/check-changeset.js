@@ -4,11 +4,16 @@
  * Fail when product source or shared data changed without a new changeset.
  * Docs, tests, generated Dart, and copied Kotlin/Swift JSON do not require one.
  *
+ * A change to data/*.json must also bump every product that ships the data
+ * (see scripts/release/manifest.js); `pnpm changeset:data` writes one.
+ *
  *   node scripts/check-changeset.js [--base origin/main]
  */
 
 import { execSync } from "child_process";
+import { existsSync, readFileSync } from "fs";
 import { pathToFileURL } from "url";
+import { dataPackages } from "./release/manifest.js";
 
 const SKIP_PREFIXES = [
   "packages/dart/lib/src/generated/",
@@ -39,17 +44,37 @@ export function isProductPath(file) {
   return PRODUCT_PREFIXES.some((prefix) => file.startsWith(prefix));
 }
 
-export function changesetCheck(changedFiles) {
+/** Package names listed in a changeset's frontmatter. */
+export function changesetPackages(text) {
+  const match = text.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) return [];
+  return [...match[1].matchAll(/^\s*["']?([^"':]+)["']?\s*:/gm)].map((m) => m[1].trim());
+}
+
+export function changesetCheck(changedFiles, readChangeset = () => "") {
   const productFiles = changedFiles.filter(isProductPath);
   const changesets = changedFiles.filter(isChangesetFile);
 
   if (productFiles.length === 0) {
     return { ok: true, productFiles, changesets, reason: "no product files changed" };
   }
-  if (changesets.length > 0) {
-    return { ok: true, productFiles, changesets, reason: "changeset present" };
+  if (changesets.length === 0) {
+    return { ok: false, productFiles, changesets, reason: "product files changed without a changeset" };
   }
-  return { ok: false, productFiles, changesets, reason: "product files changed without a changeset" };
+  if (changedFiles.some((file) => file.startsWith("data/"))) {
+    const listed = new Set(changesets.flatMap((file) => changesetPackages(readChangeset(file))));
+    const missingDataPackages = dataPackages().filter((name) => !listed.has(name));
+    if (missingDataPackages.length > 0) {
+      return {
+        ok: false,
+        productFiles,
+        changesets,
+        missingDataPackages,
+        reason: "data changed but not every package that ships it is bumped",
+      };
+    }
+  }
+  return { ok: true, productFiles, changesets, reason: "changeset present" };
 }
 
 function changedFilesSince(base) {
@@ -65,7 +90,9 @@ function parseBase(argv) {
 
 function main(argv = process.argv.slice(2)) {
   const base = parseBase(argv);
-  const result = changesetCheck(changedFilesSince(base));
+  const result = changesetCheck(changedFilesSince(base), (file) =>
+    existsSync(file) ? readFileSync(file, "utf8") : ""
+  );
 
   if (result.ok) {
     console.log(`Changeset check passed (${result.reason}).`);
@@ -73,6 +100,13 @@ function main(argv = process.argv.slice(2)) {
       console.log(`Changesets: ${result.changesets.join(", ")}`);
     }
     return 0;
+  }
+
+  if (result.missingDataPackages) {
+    console.error("data/*.json changed, but these packages also ship the data and are not bumped:");
+    for (const name of result.missingDataPackages) console.error(`  - ${name}`);
+    console.error("\nRun `pnpm changeset:data` to write a changeset for the data change.");
+    return 1;
   }
 
   console.error("Product source or data changed without a changeset.");

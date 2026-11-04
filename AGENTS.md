@@ -29,10 +29,11 @@ composer --working-dir=packages/php test           # PHP tests
 composer --working-dir=examples/wordpress test     # WordPress example tests
 composer --working-dir=examples/wordpress zip      # WordPress release zip (vendor copied in)
 pnpm changeset                                     # describe a releasable change
+pnpm changeset:data                                # write the changeset for a data/*.json change
 pnpm changeset:check                               # fail if product files lack a changeset
-dart run packages/dart/scripts/generate_data.dart  # from repo root, after data edits
-php packages/php/scripts/copy-data.php             # refresh PHP package JSON copies
-cp data/*.json packages/swift/Sources/KenyaLocations/Resources/  # refresh Swift package JSON copies
+pnpm data:sync                                     # copy data/*.json into every package (after data edits)
+pnpm release:verify                                # versions, composer.lock and data copies are consistent
+dart run packages/dart/scripts/generate_data.dart  # from repo root, after data edits (data:sync runs it if dart is installed)
 ```
 
 Data shape and validation rules: `packages/js/CONTRIBUTING.md`.
@@ -81,7 +82,8 @@ Breaking API changes: `feat(js)!:` or a `BREAKING CHANGE:` footer. One logical c
 
 Do not bump package versions on feature PRs. Add a changeset instead.
 
-- Data or JS / Kotlin / Swift API: one changeset; the core trio bumps together.
+- Data: `pnpm changeset:data` (bumps core, Dart and PHP; Version Check enforces it).
+- JS / Kotlin / Swift API: one changeset; the core trio bumps together.
 - React-only: changeset that lists `kenya-locations-react`.
 - Dart-only: changeset that lists `kenya-locations-dart`.
 - PHP-only: changeset that lists `kenya-locations-php`.

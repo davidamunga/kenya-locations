@@ -16,18 +16,14 @@
 
 ### Patch Changes
 
-- [#44](https://github.com/davidamunga/kenya-locations/pull/44)
-  [`2564d00`](https://github.com/davidamunga/kenya-locations/commit/2564d00b14192fa3e866da55c25fca4c855bb308)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - Add a README to the npm package with
+- [#44](https://github.com/davidamunga/kenya-locations/pull/44) Add a README to the npm package with
   install steps, usage examples and the hooks reference.
 
 ## 0.9.1
 
 ### Patch Changes
 
-- [#42](https://github.com/davidamunga/kenya-locations/pull/42)
-  [`f1f3a00`](https://github.com/davidamunga/kenya-locations/commit/f1f3a00b165849c7a01279feb7b9d3c985787cef)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - Fix install failure
+- [#42](https://github.com/davidamunga/kenya-locations/pull/42) Fix install failure
   (`EUNSUPPORTEDPROTOCOL: workspace:*`) by publishing with pnpm so the `kenya-locations` dependency
   is rewritten to a real version range.
 
@@ -35,8 +31,7 @@
 
 ### Minor Changes
 
-- [`c9910ea`](https://github.com/davidamunga/kenya-locations/commit/c9910eab1e9e30e30b12f02f8272a7f4ecb2dd91)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - ### kenya-locations
+- ### kenya-locations
 
   - **County metadata** — every `County` now carries `capital`, `area_km2`, `population_2019`,
     `region` (former province), and `postal_code` sourced from KNBS
@@ -77,8 +72,7 @@
 
 ### Minor Changes
 
-- [`80f5b2f`](https://github.com/davidamunga/kenya-locations/commit/80f5b2f02e7e940f482c57c23677ee876c12cc08)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - **kenya-locations v0.7.0**
+- **kenya-locations v0.7.0**
 
   - Enriched `County` type with `capital`, `area_km2`, `population_2019`, `region`, and
     `postal_code` fields across all 47 counties
@@ -116,9 +110,7 @@
 
 ### Minor Changes
 
-- [#24](https://github.com/davidamunga/kenya-locations/pull/24)
-  [`41cf80b`](https://github.com/davidamunga/kenya-locations/commit/41cf80bafc334ddb52daa5c85d570735955e11f1)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - ## Initial release of
+- [#24](https://github.com/davidamunga/kenya-locations/pull/24) ## Initial release of
   `kenya-locations-react`
 
   New companion package providing memoised React hooks for every level of Kenya's administrative

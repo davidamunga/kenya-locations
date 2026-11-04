@@ -17,9 +17,13 @@
     "commitlint:last": "commitlint --last --verbose",
     "prepare": "husky",
     "changeset": "changeset",
-    "changeset:version": "changeset version && node scripts/sync-kotlin-version.js && node scripts/sync-swift-version.js && node scripts/sync-dart-version.js && node scripts/sync-php-version.js",
+    "changeset:version": "changeset version && node scripts/release/sync.js",
+    "changeset:data": "node scripts/release/changeset-data.js",
     "changeset:check": "node scripts/check-changeset.js",
-    "changeset:check:test": "node --test scripts/check-changeset.test.js",
+    "changeset:check:test": "node --test scripts/",
+    "release:sync": "node scripts/release/sync.js",
+    "release:verify": "node scripts/release/verify.js",
+    "data:sync": "node scripts/release/data-sync.js",
     "changeset:publish:js": "pnpm --filter kenya-locations changeset:publish"
   },
   "devDependencies": {
@@ -33,7 +37,8 @@
   "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39",
   "lint-staged": {
     "data/*.json": [
-      "node scripts/validate-staged.js"
+      "node scripts/validate-staged.js",
+      "node scripts/release/verify.js"
     ]
   }
 }

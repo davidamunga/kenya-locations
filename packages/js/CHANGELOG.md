@@ -43,8 +43,7 @@
 
 ### Minor Changes
 
-- [`c9910ea`](https://github.com/davidamunga/kenya-locations/commit/c9910eab1e9e30e30b12f02f8272a7f4ecb2dd91)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - ### kenya-locations
+- ### kenya-locations
 
   - **County metadata** — every `County` now carries `capital`, `area_km2`, `population_2019`,
     `region` (former province), and `postal_code` sourced from KNBS
@@ -79,8 +78,7 @@
 
 ### Minor Changes
 
-- [`80f5b2f`](https://github.com/davidamunga/kenya-locations/commit/80f5b2f02e7e940f482c57c23677ee876c12cc08)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - **kenya-locations v0.7.0**
+- **kenya-locations v0.7.0**
 
   - Enriched `County` type with `capital`, `area_km2`, `population_2019`, `region`, and
     `postal_code` fields across all 47 counties
@@ -112,9 +110,7 @@
 
 ### Minor Changes
 
-- [#24](https://github.com/davidamunga/kenya-locations/pull/24)
-  [`41cf80b`](https://github.com/davidamunga/kenya-locations/commit/41cf80bafc334ddb52daa5c85d570735955e11f1)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - ## County metadata enrichment
+- [#24](https://github.com/davidamunga/kenya-locations/pull/24) ## County metadata enrichment
 
   Every county object now ships five additional fields sourced from KNBS:
 
@@ -197,38 +193,32 @@
 
 ### Patch Changes
 
-- [`9373a12`](https://github.com/davidamunga/kenya-locations/commit/9373a12887a7ac04ac7b7d3869621de08387afe8)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - fix: releases workflow
+- fix: releases workflow
 
 ## 0.5.3
 
 ### Patch Changes
 
-- [`77c15ac`](https://github.com/davidamunga/kenya-locations/commit/77c15ac093db8f40c00468c29bc289a531d8d45a)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - fix: release workflow
+- fix: release workflow
 
 ## 0.5.2
 
 ### Patch Changes
 
-- [`7c8399c`](https://github.com/davidamunga/kenya-locations/commit/7c8399c6011c95680ab8e5a2a8f220b727654ad1)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - chore: fix release workflow
+- chore: fix release workflow
 
 ## 0.5.1
 
 ### Patch Changes
 
-- [`723ded7`](https://github.com/davidamunga/kenya-locations/commit/723ded75c9f6c35889375675c215337bc74bc7c5)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - feat: unify platform releases
+- feat: unify platform releases
 
 ## 0.5.0
 
 ### Minor Changes
 
-- [#18](https://github.com/davidamunga/kenya-locations/pull/18)
-  [`9763e06`](https://github.com/davidamunga/kenya-locations/commit/9763e0691e172208215d9a0ea1a8fdd3ce9270f1)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - Wire `kenya-locations/version` subpath
-  export, auto-derive `DATA_VERSION`, deprecate `KenyaLocations` class.
+- [#18](https://github.com/davidamunga/kenya-locations/pull/18) Wire `kenya-locations/version`
+  subpath export, auto-derive `DATA_VERSION`, deprecate `KenyaLocations` class.
 
   **New subpath export**
 
@@ -258,9 +248,7 @@
 
 ### Minor Changes
 
-- [#16](https://github.com/davidamunga/kenya-locations/pull/16)
-  [`5592bcd`](https://github.com/davidamunga/kenya-locations/commit/5592bcddbbfde1f6daa4920cf6cdbb41376ee976)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - Fix `getWardsInSubCounty`, add
+- [#16](https://github.com/davidamunga/kenya-locations/pull/16) Fix `getWardsInSubCounty`, add
   `getLocalitiesByName`, expand `CountyWrapper` API, expose `DATA_VERSION`, and migrate data to
   JSON.
 
@@ -315,11 +303,9 @@
 
 ### Minor Changes
 
-- [#15](https://github.com/davidamunga/kenya-locations/pull/15)
-  [`196a243`](https://github.com/davidamunga/kenya-locations/commit/196a243b7cba6200e2ac88f6d6e9fcda238b8f94)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - Refactor internal map construction to use
-  shared declarative utilities, unify the error hierarchy, and export the full error class tree from
-  the main package entry point.
+- [#15](https://github.com/davidamunga/kenya-locations/pull/15) Refactor internal map construction
+  to use shared declarative utilities, unify the error hierarchy, and export the full error class
+  tree from the main package entry point.
 
   **New exports** — all error classes are now importable from `"kenya-locations"`:
 
@@ -349,8 +335,7 @@
 
 ### Patch Changes
 
-- [`2cfaa94`](https://github.com/davidamunga/kenya-locations/commit/2cfaa943d0649386b36f24b71e9c5ca4cca76cc5)
-  Thanks [@davidamunga](https://github.com/davidamunga)! - chore: improve release workflow
+- chore: improve release workflow
 
 ## 0.2.0
 

@@ -5,7 +5,7 @@ import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import { composerContentHash, withContentHash } from "./composer-content-hash.js";
 
-const php = join(dirname(fileURLToPath(import.meta.url)), "../packages/php");
+const php = join(dirname(fileURLToPath(import.meta.url)), "../../packages/php");
 
 test("matches the content-hash Composer wrote to the committed lock", () => {
   const composer = JSON.parse(readFileSync(join(php, "composer.json"), "utf8"));
