@@ -1,5 +1,15 @@
 # kenya-locations-react
 
+## 0.9.1
+
+### Patch Changes
+
+- [#42](https://github.com/davidamunga/kenya-locations/pull/42)
+  [`f1f3a00`](https://github.com/davidamunga/kenya-locations/commit/f1f3a00b165849c7a01279feb7b9d3c985787cef)
+  Thanks [@davidamunga](https://github.com/davidamunga)! - Fix install failure
+  (`EUNSUPPORTEDPROTOCOL: workspace:*`) by publishing with pnpm so the `kenya-locations` dependency
+  is rewritten to a real version range.
+
 ## 0.9.0
 
 ### Minor Changes
