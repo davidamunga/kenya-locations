@@ -179,6 +179,14 @@ describe("useAreasInLocality", () => {
     const { result } = renderHook(() => useAreasInLocality("Westlands"));
     expect(result.current.length).toBeGreaterThan(0);
   });
+
+  it("only returns areas from the given county", () => {
+    const { result } = renderHook(() =>
+      useAreasInLocality("Bura", "Tana River")
+    );
+    expect(result.current).toHaveLength(2);
+    expect(result.current.every((a) => a.county === "Tana River")).toBe(true);
+  });
 });
 
 describe("useAreasInCounty", () => {

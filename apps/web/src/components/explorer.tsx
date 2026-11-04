@@ -103,7 +103,9 @@ export function Explorer() {
     : [];
   const wards = constituency ? getWardsInConstituency(constituency) : [];
   const localities = countyLocality ? getLocalitiesInCounty(countyLocality) : [];
-  const areas = locality ? getAreasInLocality(locality) : [];
+  const areas = locality
+    ? getAreasInLocality(locality, countyLocality || undefined)
+    : [];
   const subCounties = countySub ? getSubCountiesInCounty(countySub) : [];
   const subCountyWards = subCounty ? getWardsInSubCounty(subCounty) : [];
 

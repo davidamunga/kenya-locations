@@ -102,7 +102,7 @@ export function LocationSearch() {
 | `useLocalitiesInCounty(countyName)` | `Locality[]` | Localities in a county |
 | `useLocality(name, countyName?)` | `LocalityWrapper \| undefined` | A single locality; pass the county to disambiguate duplicate names |
 | `useAreas()` | `Area[]` | All 1,827 areas |
-| `useAreasInLocality(localityName)` | `Area[]` | Areas in a locality |
+| `useAreasInLocality(localityName, county?)` | `Area[]` | Areas in a locality; pass the county for names used in more than one county |
 | `useAreasInCounty(countyName)` | `Area[]` | Areas in a county |
 | `useSearch(query, options?)` | `{ results, isPending }` | Debounced fuzzy search |
 

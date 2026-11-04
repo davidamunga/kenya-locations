@@ -4,22 +4,15 @@
 
 import type { Constituency, Ward, County } from "./types";
 import { constituencies } from "./data/constituencies";
-import { wards } from "./data/wards";
-import { counties } from "./data/counties";
 import { LocationError } from "./errors/LocationErrors";
-import { buildLookupMap, buildGroupMap } from "./utils/maps";
-
-// --- Lookup Maps ---
-const constituencyCodeMap = buildLookupMap(constituencies, (c) => c.code);
-const constituencyNameMap = buildLookupMap(constituencies, (c) =>
-  c.name.toLowerCase()
-);
-const countyNameMap = buildLookupMap(counties, (c) => c.name.toLowerCase());
-const wardNameMap = buildLookupMap(wards, (w) => w.name.toLowerCase());
-const wardCodeMap = buildLookupMap(wards, (w) => w.code);
-
-// --- Relationship Maps ---
-const constituencyToWardsMap = buildGroupMap(wards, (w) => w.constituency);
+import {
+  countyOfNamed,
+  getConstituencyByCodeValue,
+  getConstituencyByNameValue,
+  getWardByCodeValue,
+  resolveConstituency,
+  wardsInConstituency,
+} from "./utils/lookups";
 
 /**
  * Constituency wrapper class with methods to access related data
@@ -55,23 +48,18 @@ export class ConstituencyWrapper {
    * Get all wards in this constituency
    */
   wards(): Ward[] {
-    return constituencyToWardsMap.get(this._data.name) ?? [];
+    return wardsInConstituency(this._data);
   }
 
   /**
    * Get a ward in this constituency by name or code
    */
   ward(nameOrCode: string): Ward {
-    const byCode = wardCodeMap.get(nameOrCode);
+    const byCode = getWardByCodeValue(nameOrCode);
     if (byCode?.constituency === this._data.name) return byCode;
 
-    const byName = wardNameMap.get(nameOrCode.toLowerCase());
-    if (byName?.constituency === this._data.name) return byName;
-
-    const matches = wards.filter(
-      (w) =>
-        w.constituency === this._data.name &&
-        w.name.toLowerCase() === nameOrCode.toLowerCase()
+    const matches = this.wards().filter(
+      (w) => w.name.toLowerCase() === nameOrCode.trim().toLowerCase()
     );
 
     if (matches.length === 0) {
@@ -91,7 +79,7 @@ export class ConstituencyWrapper {
    * Get the county this constituency belongs to
    */
   getCounty(): County | undefined {
-    return countyNameMap.get(this._data.county.toLowerCase());
+    return countyOfNamed(this._data);
   }
 }
 
@@ -121,7 +109,7 @@ export function getConstituencies(): Constituency[] {
 export function getConstituencyByCode(
   code: string
 ): ConstituencyWrapper | undefined {
-  const found = constituencyCodeMap.get(code);
+  const found = getConstituencyByCodeValue(code);
   return found ? new ConstituencyWrapper(found) : undefined;
 }
 
@@ -138,7 +126,7 @@ export function getConstituencyByCode(
 export function getConstituencyByName(
   name: string
 ): ConstituencyWrapper | undefined {
-  const found = constituencyNameMap.get(name.toLowerCase());
+  const found = getConstituencyByNameValue(name);
   return found ? new ConstituencyWrapper(found) : undefined;
 }
 
@@ -153,11 +141,8 @@ export function getConstituencyByName(
  * ```
  */
 export function getWardsInConstituency(constituencyNameOrCode: string): Ward[] {
-  const byName = constituencyToWardsMap.get(constituencyNameOrCode);
-  if (byName) return byName;
-
-  const byCode = constituencyCodeMap.get(constituencyNameOrCode);
-  return byCode ? (constituencyToWardsMap.get(byCode.name) ?? []) : [];
+  const constituency = resolveConstituency(constituencyNameOrCode);
+  return constituency ? wardsInConstituency(constituency) : [];
 }
 
 /**
@@ -173,11 +158,8 @@ export function getWardsInConstituency(constituencyNameOrCode: string): Ward[] {
 export function getCountyOfConstituency(
   constituencyNameOrCode: string
 ): County | undefined {
-  const byName = constituencyNameMap.get(constituencyNameOrCode.toLowerCase());
-  if (byName) return countyNameMap.get(byName.county.toLowerCase());
-
-  const byCode = constituencyCodeMap.get(constituencyNameOrCode);
-  return byCode ? countyNameMap.get(byCode.county.toLowerCase()) : undefined;
+  const constituency = resolveConstituency(constituencyNameOrCode);
+  return constituency ? countyOfNamed(constituency) : undefined;
 }
 
 // Export types

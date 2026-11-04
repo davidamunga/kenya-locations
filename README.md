@@ -261,7 +261,7 @@ Import only what you need for optimal tree-shaking:
 |---|---|
 | `kenya-locations/counties` | `getCounties`, `getCountyByCode`, `getCountyByName`, `county` |
 | `kenya-locations/constituencies` | `getConstituencies`, `getConstituencyByCode`, `getConstituencyByName`, `getConstituenciesInCounty` |
-| `kenya-locations/wards` | `getWards`, `getWardByCode`, `getWardByName`, `getWardsInCounty`, `getWardsInConstituency`, `getConstituencyOfWard`, `getSubCountyOfWard` |
+| `kenya-locations/wards` | `getWards`, `getWardByCode`, `getWardByName`, `getWardsByName`, `getWardsInCounty`, `getWardsInConstituency`, `getConstituencyOfWard`, `getSubCountyOfWard` |
 | `kenya-locations/sub-counties` | `getSubCounties`, `getSubCountiesInCounty`, `getSubCountyByCode`, `getSubCountyByName`, `getWardsInSubCounty` |
 | `kenya-locations/localities` | `getLocalities`, `getLocalityByName`, `getLocalitiesByName`, `getLocalitiesInCounty`, `locality` |
 | `kenya-locations/areas` | `getAreas`, `getAreaByName`, `getAreasByName`, `getAreasInLocality`, `getAreasInCounty` |
@@ -272,6 +272,19 @@ Or import everything from the root entry point:
 
 ```typescript
 import { getCounties, getConstituenciesInCounty, search, county, DATA_VERSION } from "kenya-locations";
+```
+
+### How names and codes are matched
+
+- **Codes** are zero-padded: `getCountyByCode("47")` finds Nairobi (`"047"`).
+- **Names** are case-insensitive. When nothing matches exactly, spaces, hyphens and apostrophes are ignored: `getCountyByName("Muranga")` finds Murang'a.
+- **County and constituency arguments** accept a name or a code: `getLocalitiesInCounty("047")`.
+- **Ambiguous names return `undefined`.** 31 ward names (e.g. "Township"), 7 locality names and 62 area names appear more than once. `getWardByName("Township")` returns `undefined`; use `getWardsByName`, a ward code, or pass a county:
+
+```typescript
+getWardsByName("Township");                 // all 9 wards
+locality("Makadara", "Nairobi")?.areas();  // only Nairobi's Makadara
+getAreasInLocality("Bura", "Tana River");  // only Tana River's Bura
 ```
 
 ### County Metadata
@@ -449,7 +462,7 @@ npm install kenya-locations-react
 | `useLocalitiesInCounty(countyName)` | `Locality[]` | Localities in a county |
 | `useLocality(name, countyName?)` | `LocalityWrapper \| undefined` | Single locality (county-scoped) |
 | `useAreas()` | `Area[]` | All 1,827 areas |
-| `useAreasInLocality(localityName)` | `Area[]` | Areas in a locality |
+| `useAreasInLocality(localityName, county?)` | `Area[]` | Areas in a locality; pass the county for names used in more than one county |
 | `useAreasInCounty(countyName)` | `Area[]` | Areas in a county |
 | `useSearch(query, options?)` | `{ results: SearchResult[], isPending: boolean }` | Debounced fuzzy search |
 
