@@ -10,7 +10,7 @@
 
 Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, Swift, Dart/Flutter, and PHP.
 
-**47** counties · **307** sub-counties · **290** constituencies · **1,448** wards · **916** localities · **1,829** areas
+**47** counties · **307** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,827** areas
 
 ---
 
@@ -243,9 +243,9 @@ $results = KenyaLocations::search('Nairob', limit: 20); // matches "Nairobi"
 County (47)
 ├── Metadata: capital, area_km2, population_2019, region, postal_code
 ├── Locality → Area          (informal addressing: estates, neighbourhoods)
-│   916 localities · 1,829 areas
+│   917 localities · 1,827 areas
 └── Constituency → Ward      (electoral / administrative)
-    290 constituencies · 1,448 wards
+    290 constituencies · 1,450 wards
     └── Sub-County (307)
 ```
 
@@ -438,17 +438,17 @@ npm install kenya-locations-react
 | `useConstituencies()` | `Constituency[]` | All 290 constituencies |
 | `useConstituency(codeOrName)` | `ConstituencyWrapper \| undefined` | Single constituency |
 | `useConstituenciesInCounty(nameOrCode)` | `ConstituencyWrapper[]` | Constituencies in a county |
-| `useWards()` | `Ward[]` | All 1,448 wards |
+| `useWards()` | `Ward[]` | All 1,450 wards |
 | `useWardsInCounty(nameOrCode)` | `Ward[]` | Wards in a county |
 | `useWardsInConstituency(nameOrCode)` | `Ward[]` | Wards in a constituency |
 | `useConstituencyOfWard(nameOrCode)` | `ConstituencyWrapper \| undefined` | Parent constituency of a ward |
 | `useSubCountyOfWard(nameOrCode)` | `SubCounty \| undefined` | Parent sub-county of a ward |
 | `useSubCounties()` | `SubCounty[]` | All 307 sub-counties |
 | `useSubCountiesInCounty(nameOrCode)` | `SubCounty[]` | Sub-counties in a county |
-| `useLocalities()` | `Locality[]` | All 916 localities |
+| `useLocalities()` | `Locality[]` | All 917 localities |
 | `useLocalitiesInCounty(countyName)` | `Locality[]` | Localities in a county |
 | `useLocality(name, countyName?)` | `LocalityWrapper \| undefined` | Single locality (county-scoped) |
-| `useAreas()` | `Area[]` | All 1,829 areas |
+| `useAreas()` | `Area[]` | All 1,827 areas |
 | `useAreasInLocality(localityName)` | `Area[]` | Areas in a locality |
 | `useAreasInCounty(countyName)` | `Area[]` | Areas in a county |
 | `useSearch(query, options?)` | `{ results: SearchResult[], isPending: boolean }` | Debounced fuzzy search |

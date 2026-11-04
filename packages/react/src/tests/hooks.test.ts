@@ -81,9 +81,9 @@ describe("useConstituenciesInCounty", () => {
 });
 
 describe("useWards", () => {
-  it("returns all 1448 wards", () => {
+  it("returns all 1450 wards", () => {
     const { result } = renderHook(() => useWards());
-    expect(result.current).toHaveLength(1448);
+    expect(result.current).toHaveLength(1450);
   });
 });
 
@@ -141,9 +141,9 @@ describe("useSubCountiesInCounty", () => {
 });
 
 describe("useLocalities", () => {
-  it("returns all 916 localities", () => {
+  it("returns all 917 localities", () => {
     const { result } = renderHook(() => useLocalities());
-    expect(result.current).toHaveLength(916);
+    expect(result.current).toHaveLength(917);
   });
 });
 
@@ -168,9 +168,9 @@ describe("useLocality", () => {
 });
 
 describe("useAreas", () => {
-  it("returns all 1829 areas", () => {
+  it("returns all 1827 areas", () => {
     const { result } = renderHook(() => useAreas());
-    expect(result.current).toHaveLength(1829);
+    expect(result.current).toHaveLength(1827);
   });
 });
 

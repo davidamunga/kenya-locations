@@ -12,9 +12,9 @@ import { ConstituencyWrapper } from "../constituencies";
 
 describe("Wards Module", () => {
   describe("getWards", () => {
-    it("returns all 1448 wards", () => {
+    it("returns all 1450 wards", () => {
       const result = getWards();
-      expect(result).toHaveLength(1448);
+      expect(result).toHaveLength(1450);
       expect(result[0]).toHaveProperty("code");
       expect(result[0]).toHaveProperty("name");
       expect(result[0]).toHaveProperty("constituency");

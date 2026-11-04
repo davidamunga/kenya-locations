@@ -11,7 +11,7 @@ import {
 } from "kenya-locations";
 
 /**
- * Returns all 1,448 wards. Stable reference.
+ * Returns all 1,450 wards. Stable reference.
  */
 export function useWards(): Ward[] {
   return useMemo(() => getWards(), []);

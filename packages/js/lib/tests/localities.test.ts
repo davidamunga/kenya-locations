@@ -12,9 +12,9 @@ import { LocationNotFoundError } from "../errors/LocationErrors";
 
 describe("Localities Module", () => {
   describe("getLocalities", () => {
-    it("returns all 916 localities", () => {
+    it("returns all 917 localities", () => {
       const result = getLocalities();
-      expect(result).toHaveLength(916);
+      expect(result).toHaveLength(917);
       expect(result[0]).toHaveProperty("name");
       expect(result[0]).toHaveProperty("county");
     });
