@@ -1,5 +1,15 @@
 # kenya-locations-kotlin
 
+## 0.11.0
+
+### Minor Changes
+
+- The Kotlin models now include the parent codes, ISO codes and aliases in the data:
+  `County.iso_code` and `County.aliases`, `county_code` on every constituency, sub-county, ward,
+  locality and area, and `Ward.constituency_code`. Lookups join on these codes instead of names, and
+  county name arguments also match aliases, so `getCountyByName("Nairobi City")` finds Nairobi.
+  ([#60](https://github.com/DavidAmunga/kenya-locations/pull/60))
+
 ## 0.10.0
 
 ### Minor Changes
