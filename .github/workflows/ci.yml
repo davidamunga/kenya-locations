@@ -79,6 +79,21 @@ jobs:
               - 'data/**'
 
   # ── Validate shared data ───────────────────────────────────────────────────
+  release-check:
+    name: Release tooling & consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Test release scripts
+        run: node --test scripts/
+      - name: Versions, composer.lock and data copies are consistent
+        run: node scripts/release/verify.js
+
   validate-data:
     name: Validate shared JSON data
     needs: changes
