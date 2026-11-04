@@ -1,4 +1,6 @@
 import { DATA_VERSION } from "kenya-locations";
+import dartPackage from "../../../../packages/dart/package.json";
+import phpPackage from "../../../../packages/php/package.json";
 import { AreaSubmissionForm } from "@/components/AreaSubmissionForm";
 import { CodeBlock } from "@/components/ui/code-block";
 import { Separator } from "@/components/ui/separator";
@@ -27,79 +29,12 @@ export function Docs() {
           Install
         </h2>
         <p className="mt-3 max-w-prose text-muted-foreground text-sm">
-          JavaScript, React, Kotlin, Swift, PHP, and WordPress read the same
-          JSON in <code>data/</code>. Version {DATA_VERSION} on the lockstep
-          platforms.
+          JavaScript, React, Kotlin, Swift, Dart, PHP, and WordPress read the
+          same JSON in <code>data/</code>. JavaScript, Kotlin and Swift share
+          version {DATA_VERSION}; Dart is {dartPackage.version} and PHP{" "}
+          {phpPackage.version}.
         </p>
-        <Tabs className="mt-6" defaultValue="js">
-          <TabsList className="flex flex-wrap">
-            <TabsTab value="js">JavaScript</TabsTab>
-            <TabsTab value="react">React</TabsTab>
-            <TabsTab value="kotlin">Kotlin</TabsTab>
-            <TabsTab value="swift">Swift</TabsTab>
-            <TabsTab value="php">PHP</TabsTab>
-            <TabsTab value="wordpress">WordPress</TabsTab>
-          </TabsList>
-          <TabsPanel className="mt-3 space-y-3" value="js">
-            <CodeBlock filename="terminal">npm install kenya-locations</CodeBlock>
-            <p className="text-muted-foreground text-xs">
-              Also: <code>pnpm add kenya-locations</code> ·{" "}
-              <code>yarn add kenya-locations</code>
-            </p>
-          </TabsPanel>
-          <TabsPanel className="mt-3" value="react">
-            <CodeBlock filename="terminal">
-              npm install kenya-locations-react
-            </CodeBlock>
-          </TabsPanel>
-          <TabsPanel className="mt-3" value="kotlin">
-            <CodeBlock filename="build.gradle.kts" language="kotlin">
-              {`dependencies {
-    implementation("io.github.davidamunga:kenya-locations:${DATA_VERSION}")
-}`}
-            </CodeBlock>
-          </TabsPanel>
-          <TabsPanel className="mt-3" value="swift">
-            <CodeBlock filename="Package.swift" language="swift">
-              {`.package(url: "https://github.com/DavidAmunga/kenya-locations", from: "${DATA_VERSION}")`}
-            </CodeBlock>
-          </TabsPanel>
-          <TabsPanel className="mt-3 space-y-3" value="php">
-            <CodeBlock filename="terminal">
-              composer require davidamunga/kenya-locations
-            </CodeBlock>
-            <p className="text-muted-foreground text-xs">
-              PHP 8.2+. Versions independently of the JS / Kotlin / Swift trio.
-              Packagist:{" "}
-              <a
-                className="underline underline-offset-4"
-                href="https://packagist.org/packages/davidamunga/kenya-locations"
-                rel="noreferrer"
-                target="_blank"
-              >
-                davidamunga/kenya-locations
-              </a>
-            </p>
-          </TabsPanel>
-          <TabsPanel className="mt-3 space-y-3" value="wordpress">
-            <CodeBlock filename="terminal">
-              {`# Download kenya-locations-wordpress-*.zip from the GitHub release
-# WordPress → Plugins → Add New → Upload Plugin`}
-            </CodeBlock>
-            <p className="text-muted-foreground text-xs">
-              PHP 8.2+. Zip already includes{" "}
-              <code>davidamunga/kenya-locations</code>. Releases:{" "}
-              <a
-                className="underline underline-offset-4"
-                href="https://github.com/DavidAmunga/kenya-locations/releases"
-                rel="noreferrer"
-                target="_blank"
-              >
-                github.com/DavidAmunga/kenya-locations/releases
-              </a>
-            </p>
-          </TabsPanel>
-        </Tabs>
+        <InstallTabs className="mt-6" />
       </section>
 
       <section className="scroll-mt-24" id="examples">
@@ -393,6 +328,49 @@ print(nairobi?.population_2019 ?? 0)`}
 
       <Separator />
 
+      <section className="scroll-mt-24" id="dart">
+        <h2 className="font-heading font-semibold text-2xl tracking-tight">
+          Dart / Flutter
+        </h2>
+        <p className="mt-3 max-w-prose text-muted-foreground text-sm">
+          Static methods on <code>KenyaLocations</code>; the data is compiled
+          in, so there's nothing to load. Codes or names work as arguments.
+        </p>
+        <div className="mt-6 space-y-8">
+          <Example
+            filename="county_picker.dart"
+            language="dart"
+            title="County picker"
+            body="Same drill-down: county, constituency, wards."
+            code={`import 'package:kenya_locations/kenya_locations.dart';
+
+final counties = KenyaLocations.getCounties();
+final nairobi = KenyaLocations.getCountyByCode('047');
+final constituencies = KenyaLocations.getConstituenciesInCounty('047');
+final wards = KenyaLocations.getWardsInConstituency('Westlands');
+
+print(nairobi?.capital);
+print(nairobi?.isoCode); // KE-30`}
+          />
+          <Example
+            filename="search.dart"
+            language="dart"
+            title="Search"
+            body="Results carry their type; filter to the kinds you need."
+            code={`final results = KenyaLocations.search(
+  'Westlands',
+  types: [SearchType.constituency, SearchType.ward],
+);
+
+for (final result in results) {
+  print('\${result.type.name}: \${result.item}');
+}`}
+          />
+        </div>
+      </section>
+
+      <Separator />
+
       <section className="scroll-mt-24" id="php">
         <h2 className="font-heading font-semibold text-2xl tracking-tight">
           PHP
@@ -546,5 +524,97 @@ function Example({
         {code}
       </CodeBlock>
     </div>
+  );
+}
+
+/** Install command for every library, in tabs. */
+export function InstallTabs({ className }: { className?: string }) {
+  return (
+    <Tabs className={className} defaultValue="js">
+      <TabsList className="flex flex-wrap">
+        <TabsTab value="js">JavaScript</TabsTab>
+        <TabsTab value="react">React</TabsTab>
+        <TabsTab value="kotlin">Kotlin</TabsTab>
+        <TabsTab value="swift">Swift</TabsTab>
+        <TabsTab value="dart">Dart</TabsTab>
+        <TabsTab value="php">PHP</TabsTab>
+        <TabsTab value="wordpress">WordPress</TabsTab>
+      </TabsList>
+      <TabsPanel className="mt-3 space-y-3" value="js">
+        <CodeBlock filename="terminal">npm install kenya-locations</CodeBlock>
+        <p className="text-muted-foreground text-xs">
+          Also: <code>pnpm add kenya-locations</code> ·{" "}
+          <code>yarn add kenya-locations</code>
+        </p>
+      </TabsPanel>
+      <TabsPanel className="mt-3" value="react">
+        <CodeBlock filename="terminal">
+          npm install kenya-locations-react
+        </CodeBlock>
+      </TabsPanel>
+      <TabsPanel className="mt-3" value="kotlin">
+        <CodeBlock filename="build.gradle.kts" language="kotlin">
+          {`dependencies {
+implementation("io.github.davidamunga:kenya-locations:${DATA_VERSION}")
+}`}
+        </CodeBlock>
+      </TabsPanel>
+      <TabsPanel className="mt-3" value="swift">
+        <CodeBlock filename="Package.swift" language="swift">
+          {`.package(url: "https://github.com/DavidAmunga/kenya-locations", from: "${DATA_VERSION}")`}
+        </CodeBlock>
+      </TabsPanel>
+      <TabsPanel className="mt-3 space-y-3" value="dart">
+        <CodeBlock filename="terminal">
+          {"dart pub add kenya_locations\n# Flutter: flutter pub add kenya_locations"}
+        </CodeBlock>
+        <p className="text-muted-foreground text-xs">
+          Dart 3.13+. pub.dev:{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://pub.dev/packages/kenya_locations"
+            rel="noreferrer"
+            target="_blank"
+          >
+            kenya_locations
+          </a>
+        </p>
+      </TabsPanel>
+      <TabsPanel className="mt-3 space-y-3" value="php">
+        <CodeBlock filename="terminal">
+          composer require davidamunga/kenya-locations
+        </CodeBlock>
+        <p className="text-muted-foreground text-xs">
+          PHP 8.2+. Versions independently of the JS / Kotlin / Swift trio.
+          Packagist:{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://packagist.org/packages/davidamunga/kenya-locations"
+            rel="noreferrer"
+            target="_blank"
+          >
+            davidamunga/kenya-locations
+          </a>
+        </p>
+      </TabsPanel>
+      <TabsPanel className="mt-3 space-y-3" value="wordpress">
+        <CodeBlock filename="terminal">
+          {`# Download kenya-locations-wordpress-*.zip from the GitHub release
+# WordPress → Plugins → Add New → Upload Plugin`}
+        </CodeBlock>
+        <p className="text-muted-foreground text-xs">
+          PHP 8.2+. Zip already includes{" "}
+          <code>davidamunga/kenya-locations</code>. Releases:{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://github.com/DavidAmunga/kenya-locations/releases"
+            rel="noreferrer"
+            target="_blank"
+          >
+            github.com/DavidAmunga/kenya-locations/releases
+          </a>
+        </p>
+      </TabsPanel>
+    </Tabs>
   );
 }

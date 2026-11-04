@@ -18,11 +18,13 @@ const PLATFORM_LINKS = [
   { href: "#react", id: "react", label: "React" },
   { href: "#kotlin", id: "kotlin", label: "Kotlin" },
   { href: "#swift", id: "swift", label: "Swift" },
+  { href: "#dart", id: "dart", label: "Dart / Flutter" },
   { href: "#php", id: "php", label: "PHP" },
   { href: "#wordpress", id: "wordpress", label: "WordPress" },
 ] as const;
 
 const SECTION_IDS = [
+  "counties",
   "explore",
   "install",
   "examples",
@@ -30,15 +32,18 @@ const SECTION_IDS = [
   "react",
   "kotlin",
   "swift",
+  "dart",
   "php",
   "wordpress",
   "contribute",
 ] as const;
 
-function useActiveSection() {
-  const [active, setActive] = useState("explore");
+function useActiveSection(pathname: string) {
+  const [active, setActive] = useState("");
 
+  // Re-scan on every page change: each page has different sections.
   useEffect(() => {
+    setActive("");
     const elements = SECTION_IDS.map((id) => document.getElementById(id)).filter(
       (el): el is HTMLElement => el !== null,
     );
@@ -56,7 +61,7 @@ function useActiveSection() {
 
     for (const el of elements) observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return active;
 }
@@ -71,13 +76,15 @@ function navClass(isActive: boolean) {
 }
 
 export function SiteHeader() {
-  const active = useActiveSection();
   const pathname = useRouterState({ select: (state) => state.location.pathname });
-  // Section links point at the home page when you're on a place page.
+  const active = useActiveSection(pathname);
   const onHome = pathname === "/";
-  const at = (hash: string) => (onHome ? hash : `/${hash}`);
-  const docsActive = onHome && PLATFORM_LINKS.some((link) => link.id === active);
-  const isActive = (id: string) => onHome && active === id;
+  const onDocs = pathname.startsWith("/docs");
+  // Home sections, and doc sections, linked from wherever you are.
+  const home = (hash: string) => (onHome ? hash : `/${hash}`);
+  const docs = (hash: string) => (onDocs ? hash : `/docs${hash}`);
+  const docsActive = onDocs && active !== "contribute";
+  const isHomeSection = (id: string) => onHome && active === id;
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background">
@@ -89,8 +96,11 @@ export function SiteHeader() {
           kenya-locations
         </a>
 
-        <nav aria-label="Documentation" className="hidden min-w-0 flex-1 items-center gap-1 md:flex">
-          <a className={navClass(isActive("explore"))} href={at("#explore")}>
+        <nav aria-label="Main" className="hidden min-w-0 flex-1 items-center gap-1 lg:flex">
+          <a className={navClass(isHomeSection("counties"))} href={home("#counties")}>
+            Counties
+          </a>
+          <a className={navClass(isHomeSection("explore"))} href={home("#explore")}>
             Explore
           </a>
           <Menu>
@@ -102,21 +112,26 @@ export function SiteHeader() {
               <ChevronDownIcon className="size-3.5 opacity-70" />
             </MenuTrigger>
             <MenuPopup align="start">
+              <MenuLinkItem href="/docs">Overview &amp; install</MenuLinkItem>
+              <MenuSeparator />
               {PLATFORM_LINKS.map((link) => (
-                <MenuLinkItem href={at(link.href)} key={link.href}>
+                <MenuLinkItem href={docs(link.href)} key={link.href}>
                   {link.label}
                 </MenuLinkItem>
               ))}
             </MenuPopup>
           </Menu>
-          <a className={navClass(isActive("contribute"))} href={at("#contribute")}>
+          <a className={navClass(pathname.startsWith("/data"))} href="/data">
+            Data
+          </a>
+          <a className={navClass(onDocs && active === "contribute")} href={docs("#contribute")}>
             Contribute
           </a>
         </nav>
 
         <div className="ml-auto flex items-center gap-1">
           <SearchTrigger />
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Menu>
               <MenuTrigger
                 aria-label="Open menu"
@@ -125,15 +140,18 @@ export function SiteHeader() {
                 <MenuIcon />
               </MenuTrigger>
               <MenuPopup align="end">
-                <MenuLinkItem href={at("#explore")}>Explore</MenuLinkItem>
+                <MenuLinkItem href={home("#counties")}>Counties</MenuLinkItem>
+                <MenuLinkItem href={home("#explore")}>Explore</MenuLinkItem>
+                <MenuLinkItem href="/data">Data</MenuLinkItem>
                 <MenuSeparator />
+                <MenuLinkItem href="/docs">Docs</MenuLinkItem>
                 {PLATFORM_LINKS.map((link) => (
-                  <MenuLinkItem href={at(link.href)} key={link.href}>
+                  <MenuLinkItem href={docs(link.href)} key={link.href}>
                     {link.label}
                   </MenuLinkItem>
                 ))}
                 <MenuSeparator />
-                <MenuLinkItem href={at("#contribute")}>Contribute</MenuLinkItem>
+                <MenuLinkItem href={docs("#contribute")}>Contribute</MenuLinkItem>
               </MenuPopup>
             </Menu>
           </div>
@@ -149,7 +167,7 @@ export function SiteHeader() {
             variant="ghost"
           >
             <GithubIcon />
-            <span className="hidden sm:inline">GitHub</span>
+            <span className="hidden xl:inline">GitHub</span>
           </Button>
           <ThemeToggle />
         </div>

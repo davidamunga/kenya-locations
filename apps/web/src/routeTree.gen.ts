@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DataRouteImport } from './routes/data'
+import { Route as DocsRouteImport } from './routes/docs'
 import { Route as ConstituencyCodeRouteImport } from './routes/constituency.$code'
 import { Route as CountyCodeRouteImport } from './routes/county.$code'
 import { Route as SubCountyCodeRouteImport } from './routes/sub-county.$code'
@@ -19,6 +21,16 @@ import { Route as LocalityCountyNameRouteImport } from './routes/locality.$count
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DataRoute = DataRouteImport.update({
+  id: '/data',
+  path: '/data',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsRoute = DocsRouteImport.update({
+  id: '/docs',
+  path: '/docs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConstituencyCodeRoute = ConstituencyCodeRouteImport.update({
@@ -49,6 +61,8 @@ const LocalityCountyNameRoute = LocalityCountyNameRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/data': typeof DataRoute
+  '/docs': typeof DocsRoute
   '/constituency/$code': typeof ConstituencyCodeRoute
   '/county/$code': typeof CountyCodeRoute
   '/sub-county/$code': typeof SubCountyCodeRoute
@@ -57,6 +71,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/data': typeof DataRoute
+  '/docs': typeof DocsRoute
   '/constituency/$code': typeof ConstituencyCodeRoute
   '/county/$code': typeof CountyCodeRoute
   '/sub-county/$code': typeof SubCountyCodeRoute
@@ -66,6 +82,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/data': typeof DataRoute
+  '/docs': typeof DocsRoute
   '/constituency/$code': typeof ConstituencyCodeRoute
   '/county/$code': typeof CountyCodeRoute
   '/sub-county/$code': typeof SubCountyCodeRoute
@@ -76,6 +94,8 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/data'
+    | '/docs'
     | '/constituency/$code'
     | '/county/$code'
     | '/sub-county/$code'
@@ -84,6 +104,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/data'
+    | '/docs'
     | '/constituency/$code'
     | '/county/$code'
     | '/sub-county/$code'
@@ -92,6 +114,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/data'
+    | '/docs'
     | '/constituency/$code'
     | '/county/$code'
     | '/sub-county/$code'
@@ -101,6 +125,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DataRoute: typeof DataRoute
+  DocsRoute: typeof DocsRoute
   ConstituencyCodeRoute: typeof ConstituencyCodeRoute
   CountyCodeRoute: typeof CountyCodeRoute
   SubCountyCodeRoute: typeof SubCountyCodeRoute
@@ -115,6 +141,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/data': {
+      id: '/data'
+      path: '/data'
+      fullPath: '/data'
+      preLoaderRoute: typeof DataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs': {
+      id: '/docs'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof DocsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/constituency/$code': {
@@ -157,6 +197,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DataRoute: DataRoute,
+  DocsRoute: DocsRoute,
   ConstituencyCodeRoute: ConstituencyCodeRoute,
   CountyCodeRoute: CountyCodeRoute,
   SubCountyCodeRoute: SubCountyCodeRoute,
