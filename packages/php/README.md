@@ -65,6 +65,9 @@ $wards = KenyaLocations::getWardsInConstituency('Westlands');
 $localities = KenyaLocations::getLocalitiesInCounty('Nairobi');
 
 $areas = KenyaLocations::getAreasInLocality('Karen');
+
+// Bura exists in three counties, so pass the county
+$bura = KenyaLocations::getAreasInLocality('Bura', 'Garissa');
 ```
 
 ### Resolving upward
@@ -142,6 +145,7 @@ County (47)
 | `getWards()`                                     | `list<Ward>`         |
 | `getWardByCode(code)`                            | `?Ward`              |
 | `getWardByName(name)`                            | `?Ward`              |
+| `getWardsByName(name)`                           | `list<Ward>`         |
 | `getWardsInConstituency(nameOrCode)`             | `list<Ward>`         |
 | `getWardsInCounty(nameOrCode)`                   | `list<Ward>`         |
 | `getWardsInSubCounty(nameOrCode)`                | `list<Ward>`         |
@@ -156,17 +160,23 @@ County (47)
 | `getAreas()`                                     | `list<Area>`         |
 | `getAreaByName(name)`                            | `?Area`              |
 | `getAreasByName(name)`                           | `list<Area>`         |
-| `getAreasInLocality(localityName)`               | `list<Area>`         |
+| `getAreasInLocality(localityName, county?)`      | `list<Area>`         |
 | `getAreasInCounty(nameOrCode)`                   | `list<Area>`         |
 | `getCountyOfArea(name)`                          | `?County`            |
 | `getLocalityOfArea(name)`                        | `?Locality`          |
 | `search(query, limit: 20, types: null)`          | `list<SearchResult>` |
 | `searchByType(query, type, limit: 20)`           | `list<SearchResult>` |
 
-Name lookups are case-insensitive. County, constituency, and sub-county
-scoped queries accept a name or an administrative code. Ward upward lookups
-return `null` when a name is reused (for example `Township`); use the ward
-code in that case.
+Name lookups are case-insensitive. When nothing matches exactly, a looser
+match that ignores spaces, hyphens, apostrophes and accents is tried
+(`Muranga` finds `Murang'a`). Codes are zero-padded, so `'47'` finds county
+`047`. County, constituency, and sub-county arguments accept a name or an
+administrative code.
+
+Singular by-name lookups return `null` when a name is reused (for example the
+`Township` ward or the `Makadara` locality) instead of an arbitrary record.
+Use the plural `...ByName` methods, a ward code, or pass a county to
+`getLocality()` / `getAreasInLocality()` in that case.
 
 ## Local development
 

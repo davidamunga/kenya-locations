@@ -147,22 +147,10 @@ final class Query
      */
     public function areasInLocality(string $localityName, ?string $county = null): array
     {
-        $areas = KenyaLocations::getAreasInLocality($localityName);
-        if ($county === null || $county === '') {
-            return $areas;
-        }
-
-        $resolved = $this->county($county);
-        if ($resolved === null) {
-            return [];
-        }
-
-        $needle = strtolower($resolved->name);
-
-        return array_values(array_filter(
-            $areas,
-            static fn (Area $area): bool => strtolower($area->county) === $needle,
-        ));
+        return KenyaLocations::getAreasInLocality(
+            $localityName,
+            $county !== null && $county !== '' ? $county : null,
+        );
     }
 
     /**

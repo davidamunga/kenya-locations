@@ -395,6 +395,116 @@ final class KenyaLocationsTest extends TestCase
         $this->assertSame('Westlands', KenyaLocations::getLocality('Westlands')?->name);
     }
 
+    public function testZeroPadsNumericCodes(): void
+    {
+        $this->assertSame('Nairobi', KenyaLocations::getCountyByCode('47')?->name);
+        $this->assertSame('Nairobi', KenyaLocations::getCountyByCode(' 047 ')?->name);
+        $this->assertSame('Changamwe', KenyaLocations::getConstituencyByCode('1')?->name);
+        $this->assertSame('Changamwe', KenyaLocations::getSubCountyByCode('1')?->name);
+        $this->assertSame('0133', KenyaLocations::getWardByCode('133')?->code);
+        $this->assertSame('Garissa Township', KenyaLocations::getConstituencyOfWard('133')?->name);
+        $this->assertSame('Nairobi', KenyaLocations::getCountyOfConstituency('274')?->name);
+    }
+
+    public function testFallsBackToAFoldedNameMatch(): void
+    {
+        $this->assertSame('Murang\'a', KenyaLocations::getCountyByName('Muranga')?->name);
+        $this->assertSame('Elgeyo-Marakwet', KenyaLocations::getCountyByName('Elgeyo Marakwet')?->name);
+        $this->assertSame('Homa Bay', KenyaLocations::getCountyByName('homabay')?->name);
+        $this->assertNotEmpty(KenyaLocations::getConstituenciesInCounty('Muranga'));
+    }
+
+    public function testExactWardNamesWinOverFoldedMatches(): void
+    {
+        $this->assertSame('Mathira', KenyaLocations::getWardByName('Iriaini')?->constituency);
+        $this->assertSame('Othaya', KenyaLocations::getWardByName('Iria-ini')?->constituency);
+        $this->assertSame('Mathira', KenyaLocations::getConstituencyOfWard('iriaini')?->name);
+        $this->assertSame('Othaya', KenyaLocations::getConstituencyOfWard('Iria-ini')?->name);
+        $this->assertCount(1, KenyaLocations::getWardsByName('Iriaini'));
+    }
+
+    public function testAmbiguousWardNamesResolveToNull(): void
+    {
+        $this->assertNull(KenyaLocations::getWardByName('Township'));
+        $this->assertCount(9, KenyaLocations::getWardsByName('Township'));
+        $this->assertCount(9, KenyaLocations::getWardsByName('township'));
+        $this->assertSame([], KenyaLocations::getWardsByName('Nowhere'));
+    }
+
+    public function testAmbiguousLocalityNamesResolveToNull(): void
+    {
+        $this->assertNull(KenyaLocations::getLocalityByName('Makadara'));
+        $this->assertNull(KenyaLocations::getLocality('Makadara'));
+        $this->assertNull(KenyaLocations::getCountyOfLocality('Makadara'));
+        $this->assertNull(KenyaLocations::getLocalityByName('Bura'));
+        $this->assertCount(2, KenyaLocations::getLocalitiesByName('Makadara'));
+        $this->assertCount(3, KenyaLocations::getLocalitiesByName('Bura'));
+        $this->assertSame('Mombasa', KenyaLocations::getLocality('Makadara', 'Mombasa')?->county);
+        $this->assertSame('Nairobi', KenyaLocations::getLocality('Makadara', '47')?->county);
+    }
+
+    public function testAmbiguousAreaNamesResolveToNull(): void
+    {
+        $this->assertCount(3, KenyaLocations::getAreasByName('Shauri Yako'));
+        $this->assertNull(KenyaLocations::getAreaByName('Shauri Yako'));
+        $this->assertNull(KenyaLocations::getCountyOfArea('Shauri Yako'));
+        $this->assertNull(KenyaLocations::getLocalityOfArea('Shauri Yako'));
+    }
+
+    public function testCountyArgumentsAcceptAnyNameOrCodeForm(): void
+    {
+        foreach (['nairobi', 'Nairobi', '047', '47'] as $county) {
+            $this->assertCount(77, KenyaLocations::getLocalitiesInCounty($county), $county);
+        }
+        $this->assertCount(151, KenyaLocations::getAreasInCounty('Nairobi'));
+        $this->assertSame(
+            KenyaLocations::getWardsInCounty('Nairobi'),
+            KenyaLocations::getWardsInCounty('47'),
+        );
+        $this->assertSame(
+            KenyaLocations::getSubCountiesInCounty('Muranga'),
+            KenyaLocations::getSubCountiesInCounty('Murang\'a'),
+        );
+    }
+
+    public function testConstituencyArgumentsAcceptAnyNameOrCodeForm(): void
+    {
+        $this->assertCount(5, KenyaLocations::getWardsInConstituency('westlands'));
+        $this->assertCount(5, KenyaLocations::getWardsInConstituency('Westlands'));
+        $this->assertCount(5, KenyaLocations::getWardsInConstituency('274'));
+    }
+
+    public function testScopesAreasInALocalityToItsCounty(): void
+    {
+        $garissa = KenyaLocations::getAreasInLocality('Bura', 'Garissa');
+        $this->assertCount(3, $garissa);
+        foreach ($garissa as $area) {
+            $this->assertSame('Garissa', $area->county);
+        }
+
+        $this->assertCount(3, KenyaLocations::getAreasInLocality('Bura', '7'));
+        $this->assertCount(2, KenyaLocations::getAreasInLocality('Bura', 'Tana River'));
+        $this->assertSame([], KenyaLocations::getAreasInLocality('Bura'));
+        $this->assertSame([], KenyaLocations::getAreasInLocality('Bura', 'Nowhere'));
+        $this->assertCount(2, KenyaLocations::getAreasInLocality('Kaloleni', 'Kisumu'));
+        $this->assertNotEmpty(KenyaLocations::getAreasInLocality('Westlands'));
+    }
+
+    public function testFindsTheLocalityOfAnAreaInTheAreasCounty(): void
+    {
+        $locality = KenyaLocations::getLocalityOfArea('Kaloleni');
+
+        $this->assertSame('Kaloleni', $locality?->name);
+        $this->assertSame('Kilifi', $locality?->county);
+    }
+
+    public function testFindsTheCountyOfAWardViaItsConstituency(): void
+    {
+        $this->assertSame('Nyeri', KenyaLocations::getCountyOfWard('Iria-ini')?->name);
+        $this->assertSame('Nyeri', KenyaLocations::getCountyOfWard('Iriaini')?->name);
+        $this->assertSame('Othaya', KenyaLocations::getSubCountyOfWard('Iria-ini')?->name);
+    }
+
     /**
      * @param list<\KenyaLocations\SearchResult> $results
      */
