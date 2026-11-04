@@ -8,7 +8,7 @@ import {
 } from "kenya-locations";
 
 /**
- * Returns all 916 localities. Stable reference.
+ * Returns all 917 localities. Stable reference.
  */
 export function useLocalities(): Locality[] {
   return useMemo(() => getLocalities(), []);
