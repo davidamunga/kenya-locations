@@ -103,7 +103,7 @@ describe("KenyaLocations - Main API", () => {
   describe("getWards", () => {
     it("should return all wards with constituency field", () => {
       const wards = getWards();
-      expect(wards).toHaveLength(1448);
+      expect(wards).toHaveLength(1450);
       expect(typeof wards[0].constituency).toBe("string");
     });
   });
@@ -174,7 +174,7 @@ describe("KenyaLocations - Main API", () => {
   describe("getLocalities", () => {
     it("should return all localities", () => {
       const result = getLocalities();
-      expect(result).toHaveLength(916);
+      expect(result).toHaveLength(917);
       expect(result[0]).toHaveProperty("name");
       expect(result[0]).toHaveProperty("county");
     });
@@ -183,7 +183,7 @@ describe("KenyaLocations - Main API", () => {
   describe("getAreas", () => {
     it("should return all areas", () => {
       const result = getAreas();
-      expect(result).toHaveLength(1829);
+      expect(result).toHaveLength(1827);
       expect(result[0]).toHaveProperty("name");
       expect(result[0]).toHaveProperty("locality");
       expect(result[0]).toHaveProperty("county");

@@ -3190,6 +3190,11 @@
     "constituency": "Kitutu Chache South"
   },
   {
+    "code": "1344",
+    "name": "Kitutu Central",
+    "constituency": "Kitutu Chache South"
+  },
+  {
     "code": "1343",
     "name": "Nyakoe",
     "constituency": "Kitutu Chache South"
@@ -4217,6 +4222,11 @@
   {
     "code": "0740",
     "name": "Arror",
+    "constituency": "Marakwet West"
+  },
+  {
+    "code": "0737",
+    "name": "Cherang'any/Chebororwa",
     "constituency": "Marakwet West"
   },
   {
@@ -5921,7 +5931,7 @@
   },
   {
     "code": "0319",
-    "name": "Central  ward",
+    "name": "Central ward",
     "constituency": "Runyenjes"
   },
   {
