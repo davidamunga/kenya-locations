@@ -9,7 +9,7 @@ Shared Kenyan administrative divisions (counties → wards / localities → area
 | `packages/js` | npm `kenya-locations` | Canonical API; changesets |
 | `packages/react` | npm `kenya-locations-react` | Versions independently |
 | `packages/kotlin` | Maven `io.github.davidamunga:kenya-locations` | Copies JSON at build (`copyLocationData`) |
-| `packages/swift` | Swift Package Index `KenyaLocations` | CI copies `data/*.json` into Resources |
+| `packages/swift` | Swift Package Index `KenyaLocations` | Commits a copy of `data/*.json` in `Sources/KenyaLocations/Resources` |
 | `packages/dart` | pub.dev `kenya_locations` | Versions independently; codegen into consts |
 | `packages/php` | Packagist `davidamunga/kenya-locations` | Versions independently; split to `kenya-locations-php` |
 | `apps/web` | kenya-locations.web.app | Demo |
@@ -32,6 +32,7 @@ pnpm changeset                                     # describe a releasable chang
 pnpm changeset:check                               # fail if product files lack a changeset
 dart run packages/dart/scripts/generate_data.dart  # from repo root, after data edits
 php packages/php/scripts/copy-data.php             # refresh PHP package JSON copies
+cp data/*.json packages/swift/Sources/KenyaLocations/Resources/  # refresh Swift package JSON copies
 ```
 
 Data shape and validation rules: `packages/js/CONTRIBUTING.md`.

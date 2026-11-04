@@ -56,15 +56,14 @@ let results = shared.search("karen", limit: 10)
 
 ## Local Development
 
-JSON data is not committed inside this package — it is copied from `../../data/` before build:
+The JSON in `Sources/KenyaLocations/Resources/` is a committed copy of `../../data/`. Swift Package Manager installs straight from the git tag, so it must be in the repo. After editing `data/*.json`, refresh it:
 
 ```bash
 # From packages/swift/
 cp ../../data/*.json Sources/KenyaLocations/Resources/
 
-# Then build and test normally
 swift build
 swift test
 ```
 
-In CI this copy step runs automatically before `swift build`.
+CI fails if the copy is out of date.

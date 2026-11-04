@@ -37,8 +37,13 @@ jobs:
       - name: Validate shared data
         run: node scripts/validate-data.js
 
-      - name: Copy data files into Resources
-        run: mkdir -p packages/swift/Sources/KenyaLocations/Resources && cp data/*.json packages/swift/Sources/KenyaLocations/Resources/
+      # Swift Package Manager installs straight from the git tag, so the
+      # committed Resources must already match data/.
+      - name: Fail if bundled Swift data is stale
+        run: |
+          cp data/*.json packages/swift/Sources/KenyaLocations/Resources/
+          git add -N packages/swift/Sources/KenyaLocations/Resources
+          git diff --exit-code -- packages/swift/Sources/KenyaLocations/Resources || { echo "::error::Swift Resources are out of date. Run: cp data/*.json packages/swift/Sources/KenyaLocations/Resources/"; exit 1; }
 
       - name: Build (root Package.swift)
         run: swift build -c release

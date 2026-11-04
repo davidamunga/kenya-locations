@@ -148,4 +148,31 @@ final class KenyaLocationsTests: XCTestCase {
         XCTAssertTrue(results.allSatisfy { $0.type == .county },
                       "searchByType(.county) should only return county results")
     }
+
+    // ─── Bundled resources & lookup maps ──────────────────────────────────────
+
+    func testBundledResourcesMatchSharedData() throws {
+        for name in ["counties", "sub-counties", "constituencies", "wards", "locality", "area"] {
+            let bundled = try XCTUnwrap(
+                Bundle.module.url(forResource: name, withExtension: "json"),
+                "\(name).json missing from the package bundle"
+            )
+            let shared = dataDir.appendingPathComponent("\(name).json")
+            XCTAssertEqual(try Data(contentsOf: bundled), try Data(contentsOf: shared),
+                           "\(name).json in Resources is stale; copy data/*.json again")
+        }
+    }
+
+    func testCodeLookupWorksBeforeListIsLoaded() {
+        let fresh = KenyaLocations()
+        XCTAssertEqual(fresh.getCountyByCode("047")?.name, "Nairobi")
+        XCTAssertEqual(fresh.getCounties().count, 47)
+    }
+
+    func testNameLookupsWorkBeforeListsAreLoaded() {
+        let fresh = KenyaLocations()
+        XCTAssertEqual(fresh.getCountyByName("Nairobi")?.code, "047")
+        XCTAssertNotNil(fresh.getConstituencyByName("Westlands"))
+        XCTAssertNotNil(fresh.getConstituencyByCode("001"))
+    }
 }

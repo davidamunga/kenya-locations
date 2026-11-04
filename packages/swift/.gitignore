@@ -1,2 +1,2 @@
-# JSON data files are copied from ../../data/ at build time — not committed here
-Sources/KenyaLocations/Resources/*.json
+.build/
+.swiftpm/

@@ -32,7 +32,8 @@ public final class KenyaLocations: @unchecked Sendable {
     private var _constituenciesByCode: [String: Constituency]?
     private var _constituenciesByName: [String: Constituency]?
 
-    private init() {}
+    /// Internal so tests can create a fresh, unloaded instance.
+    init() {}
 
     // ─── Getters ──────────────────────────────────────────────────────────────
 
@@ -214,30 +215,42 @@ public final class KenyaLocations: @unchecked Sendable {
     }
 
     private var countiesByCode: [String: County] {
+        // Load the source list first (it takes the lock itself, and NSLock
+        // is not reentrant) so the map is never built from unloaded data.
+        let source = counties
         lock.lock(); defer { lock.unlock() }
         if let v = _countiesByCode { return v }
-        let v = Dictionary(uniqueKeysWithValues: (_counties ?? []).map { ($0.code, $0) })
+        let v = Dictionary(uniqueKeysWithValues: source.map { ($0.code, $0) })
         _countiesByCode = v; return v
     }
 
     private var countiesByName: [String: County] {
+        // Load the source list first (it takes the lock itself, and NSLock
+        // is not reentrant) so the map is never built from unloaded data.
+        let source = counties
         lock.lock(); defer { lock.unlock() }
         if let v = _countiesByName { return v }
-        let v = Dictionary(uniqueKeysWithValues: (_counties ?? []).map { ($0.name, $0) })
+        let v = Dictionary(uniqueKeysWithValues: source.map { ($0.name, $0) })
         _countiesByName = v; return v
     }
 
     private var constituenciesByCode: [String: Constituency] {
+        // Load the source list first (it takes the lock itself, and NSLock
+        // is not reentrant) so the map is never built from unloaded data.
+        let source = constituencies
         lock.lock(); defer { lock.unlock() }
         if let v = _constituenciesByCode { return v }
-        let v = Dictionary(uniqueKeysWithValues: (_constituencies ?? []).map { ($0.code, $0) })
+        let v = Dictionary(uniqueKeysWithValues: source.map { ($0.code, $0) })
         _constituenciesByCode = v; return v
     }
 
     private var constituenciesByName: [String: Constituency] {
+        // Load the source list first (it takes the lock itself, and NSLock
+        // is not reentrant) so the map is never built from unloaded data.
+        let source = constituencies
         lock.lock(); defer { lock.unlock() }
         if let v = _constituenciesByName { return v }
-        let v = Dictionary(uniqueKeysWithValues: (_constituencies ?? []).map { ($0.name, $0) })
+        let v = Dictionary(uniqueKeysWithValues: source.map { ($0.name, $0) })
         _constituenciesByName = v; return v
     }
 
