@@ -122,7 +122,11 @@ describe("Localities Module", () => {
 
     it("exposes data getter as a plain object copy", () => {
       const westlands = getLocalityByName("Westlands")!;
-      expect(westlands.data).toEqual({ name: "Westlands", county: "Nairobi" });
+      expect(westlands.data).toEqual({
+        name: "Westlands",
+        county: "Nairobi",
+        county_code: "047",
+      });
     });
   });
 });

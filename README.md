@@ -833,4 +833,4 @@ kenya-locations/
 
 MIT © [David Amunga](https://davidamunga.com)
 
-Data sourced from the Independent Electoral and Boundaries Commission (IEBC) and Kenya National Bureau of Statistics (KNBS).
+Data sourced from the Independent Electoral and Boundaries Commission (IEBC) and Kenya National Bureau of Statistics (KNBS), licensed [CC BY 4.0](data/LICENSE.md). See [`data/README.md`](data/README.md) for the format and per-file sources.

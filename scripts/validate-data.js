@@ -323,6 +323,90 @@ function validateCodeSequence(data, type, expected, width) {
   return true;
 }
 
+/**
+ * Each record's parent code must exist and agree with its parent name, e.g.
+ * a ward's constituency_code is the code of the constituency it names.
+ */
+function validateParentCodes(records, type, { codeField, nameField, parents, resolveName }) {
+  const byCode = new Map(parents.map((p) => [p.code, p]));
+  const problems = [];
+  records.forEach((record, index) => {
+    const code = record[codeField];
+    const parent = byCode.get(code);
+    const label = record.code ?? record.name;
+    if (!parent) {
+      problems.push(`${label} (index ${index}): ${codeField} "${code}" not found`);
+      return;
+    }
+    const expectedName = resolveName ? resolveName(record) : record[nameField];
+    if (parent.name !== expectedName) {
+      problems.push(`${label} (index ${index}): ${codeField} "${code}" is ${parent.name}, but the record says ${expectedName}`);
+    }
+  });
+  if (problems.length) {
+    log(`❌ ${type}.${codeField} problems:`, "red");
+    problems.slice(0, 20).forEach((p) => log(`   - ${p}`, "red"));
+    if (problems.length > 20) log(`   - …and ${problems.length - 20} more`, "red");
+    return false;
+  }
+  log(`✅ All ${type} ${codeField} values match their parent`, "green");
+  return true;
+}
+
+function validateCountyIsoAndAliases(counties) {
+  const problems = [];
+  const iso = new Set();
+  for (const c of counties) {
+    if (!/^KE-\d{2}$/.test(c.iso_code ?? "")) problems.push(`${c.name}: iso_code "${c.iso_code}" is not KE-NN`);
+    else if (iso.has(c.iso_code)) problems.push(`${c.name}: duplicate iso_code ${c.iso_code}`);
+    iso.add(c.iso_code);
+    if (!Array.isArray(c.aliases)) {
+      problems.push(`${c.name}: aliases must be an array`);
+      continue;
+    }
+    for (const alias of c.aliases) {
+      if (typeof alias !== "string" || alias.trim() !== alias || alias === "") problems.push(`${c.name}: bad alias ${JSON.stringify(alias)}`);
+      else if (alias.toLowerCase() === c.name.toLowerCase()) problems.push(`${c.name}: alias repeats the name`);
+    }
+  }
+  if (problems.length) {
+    log("❌ County iso_code / aliases problems:", "red");
+    problems.forEach((p) => log(`   - ${p}`, "red"));
+    return false;
+  }
+  log("✅ County iso_code values are unique and aliases are well-formed", "green");
+  return true;
+}
+
+function validateDatasetFiles() {
+  const problems = [];
+  const meta = readJson("meta.json");
+  for (const file of Object.keys(meta.files ?? {})) {
+    try {
+      readFileSync(join(__dirname, "../data", file));
+    } catch {
+      problems.push(`meta.json lists ${file}, which does not exist`);
+    }
+  }
+  if (!meta.license) problems.push("meta.json has no license");
+  const history = readJson("history.json");
+  if (!Array.isArray(history)) problems.push("history.json must be an array");
+  else
+    history.forEach((entry, i) => {
+      for (const field of ["date", "type", "change"]) {
+        if (!entry[field]) problems.push(`history.json entry ${i} is missing "${field}"`);
+      }
+      if (entry.date && !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)) problems.push(`history.json entry ${i}: date must be YYYY-MM-DD`);
+    });
+  if (problems.length) {
+    log("❌ meta.json / history.json problems:", "red");
+    problems.forEach((p) => log(`   - ${p}`, "red"));
+    return false;
+  }
+  log("✅ meta.json and history.json are valid", "green");
+  return true;
+}
+
 const VALID_REGIONS = new Set([
   "Nairobi",
   "Central",
@@ -364,30 +448,37 @@ function validateDataIntegrity() {
     "population_2019",
     "region",
     "postal_code",
+    "iso_code",
   ]);
   allValid &= validateRequiredFields(data.constituencies, "constituencies", [
     "code",
     "name",
     "county",
+    "county_code",
   ]);
   allValid &= validateRequiredFields(data.wards, "wards", [
     "code",
     "name",
     "constituency",
+    "constituency_code",
+    "county_code",
   ]);
   allValid &= validateRequiredFields(data.subCounties, "sub-counties", [
     "code",
     "name",
     "county",
+    "county_code",
   ]);
   allValid &= validateRequiredFields(data.localities, "localities", [
     "name",
     "county",
+    "county_code",
   ]);
   allValid &= validateRequiredFields(data.areas, "areas", [
     "name",
     "locality",
     "county",
+    "county_code",
   ]);
   log("", "reset");
 
@@ -409,6 +500,27 @@ function validateDataIntegrity() {
   allValid &= validateCodeSequence(data.counties, "counties", 47, 3);
   allValid &= validateCodeSequence(data.constituencies, "constituencies", 290, 3);
   allValid &= validateCodeSequence(data.wards, "wards", 1450, 4);
+  log("", "reset");
+
+  log("📋 Checking parent codes...", "yellow");
+  const constituencyByName = new Map(data.constituencies.map((c) => [c.name, c]));
+  const countyOf = { parents: data.counties, codeField: "county_code", nameField: "county" };
+  allValid &= validateParentCodes(data.constituencies, "constituencies", countyOf);
+  allValid &= validateParentCodes(data.subCounties, "sub-counties", countyOf);
+  allValid &= validateParentCodes(data.localities, "localities", countyOf);
+  allValid &= validateParentCodes(data.areas, "areas", countyOf);
+  allValid &= validateParentCodes(data.wards, "wards", {
+    parents: data.constituencies,
+    codeField: "constituency_code",
+    nameField: "constituency",
+  });
+  allValid &= validateParentCodes(data.wards, "wards", {
+    parents: data.counties,
+    codeField: "county_code",
+    resolveName: (w) => constituencyByName.get(w.constituency)?.county,
+  });
+  allValid &= validateCountyIsoAndAliases(data.counties);
+  allValid &= validateDatasetFiles();
   log("", "reset");
 
   log("📋 Checking names for stray whitespace...", "yellow");

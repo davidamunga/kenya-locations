@@ -27,206 +27,27 @@ County (47 counties)
 │   └── Area
 ```
 
-All data is stored in TypeScript files in the `lib/data/` directory and follows strict typing and
-formatting conventions.
+All data is stored in the shared `data/*.json` files at the repository root and is used by every
+package (JS, React, Kotlin, Swift, Dart, PHP).
 
 ## 📊 Data Structure
 
-### Counties (`lib/data/counties.ts`)
-
-Counties are the top-level administrative divisions. Each county has:
-
-```typescript
-interface County {
-  code: string; // Official county code (e.g., "047")
-  name: string; // Official county name (e.g., "Nairobi")
-}
-```
-
-**Example:**
-
-```typescript
-{ code: "047", name: "Nairobi" }
-```
-
-### Sub-Counties (`lib/data/sub-counties.ts`)
-
-Sub-counties are administrative divisions within counties:
-
-```typescript
-interface SubCounty {
-  code: string; // Unique sub-county code
-  name: string; // Official sub-county name
-  county: string; // County name (must match exactly)
-}
-```
-
-**Example:**
-
-```typescript
-{ code: "04701", name: "Westlands", county: "Nairobi" }
-```
-
-### Constituencies (`lib/data/constituencies.ts`)
-
-Constituencies are electoral divisions within counties:
-
-```typescript
-interface Constituency {
-  code: string; // Official constituency code
-  name: string; // Official constituency name
-  county: County; // Reference to county object
-}
-```
-
-**Example:**
-
-```typescript
-{ code: "290", name: "Westlands", county: counties[29] } // counties[29] is Nairobi
-```
-
-### Wards (`lib/data/wards.ts`)
-
-Wards are the smallest electoral units within constituencies:
-
-```typescript
-interface Ward {
-  code: string; // Official ward code
-  name: string; // Official ward name
-  constituency: string; // Constituency name (must match exactly)
-}
-```
-
-**Example:**
-
-```typescript
-{ code: "1437", name: "Mountain View", constituency: "Westlands" }
-```
-
-### Localities (`lib/data/locality.ts`)
-
-Localities are geographic/administrative areas within counties:
-
-```typescript
-interface Locality {
-  name: string; // Locality name
-  county: string; // County name (must match exactly)
-}
-```
-
-**Example:**
-
-```typescript
-{ name: "Westlands", county: "Nairobi" }
-```
-
-### Areas (`lib/data/area.ts`)
-
-Areas are specific neighborhoods or zones within localities:
-
-```typescript
-interface Area {
-  name: string; // Area name
-  locality: string; // Locality name (must match exactly)
-  county: string; // County name (must match exactly)
-}
-```
-
-**Example:**
-
-```typescript
-{ name: "Gigiri", locality: "Westlands", county: "Nairobi" }
-```
+The data lives in the shared `data/*.json` files at the repository root, not in this package. The
+format, codes, parent links and validation rules are documented in
+[`data/README.md`](../../data/README.md).
 
 ## ➕ Adding New Data
 
-> 📋 **Quick Reference**: Check out our [Data Template](templates/data-template.md) for copy-paste
-> examples and common mistakes to avoid.
+Edit the JSON in `data/` and follow [Changing the data](../../data/README.md#changing-the-data):
 
-### 1. Counties
-
-To add a new county (rare, as Kenya has 47 fixed counties):
-
-1. Open `lib/data/counties.ts`
-2. Add the county to the array with the correct code and name
-3. Ensure the code follows the official format
-4. Update any dependent data files
-
-### 2. Sub-Counties
-
-To add a new sub-county:
-
-1. Open `lib/data/sub-counties.ts`
-2. Add the sub-county with:
-   - Unique code
-   - Official name
-   - Exact county name (must match `counties.ts`)
-
-```typescript
-{ code: "04702", name: "Dagoretti", county: "Nairobi" }
+```bash
+pnpm validate          # schema, codes, parent links
+pnpm data:sync         # refresh every package's copy
+pnpm changeset:data    # write the changeset from the diff
 ```
 
-### 3. Constituencies
-
-To add a new constituency:
-
-1. Open `lib/data/constituencies.ts`
-2. Import counties: `import { counties } from "./counties";`
-3. Add the constituency with:
-   - Official constituency code
-   - Official name
-   - Reference to the correct county object
-
-```typescript
-{ code: "291", name: "Dagoretti North", county: counties[29] } // counties[29] = Nairobi
-```
-
-**Finding the correct county index:**
-
-- Counties are in alphabetical order in the array
-- Nairobi is at index 29 (0-based)
-- Check the existing file for the correct index
-
-### 4. Wards
-
-To add a new ward:
-
-1. Open `lib/data/wards.ts`
-2. Add the ward with:
-   - Official ward code
-   - Official name
-   - Exact constituency name (must match `constituencies.ts`)
-
-```typescript
-{ code: "1438", name: "Kilimani", constituency: "Westlands" }
-```
-
-### 5. Localities
-
-To add a new locality:
-
-1. Open `lib/data/locality.ts`
-2. Add the locality with:
-   - Descriptive name
-   - Exact county name (must match `counties.ts`)
-
-```typescript
-{ name: "Kilimani", county: "Nairobi" }
-```
-
-### 6. Areas
-
-To add a new area:
-
-1. Open `lib/data/area.ts`
-2. Add the area with:
-   - Specific area name
-   - Exact locality name (must match `locality.ts`)
-   - Exact county name (must match `counties.ts`)
-
-```typescript
-{ name: "Yaya Centre", locality: "Kilimani", county: "Nairobi" }
-```
+Every new record needs its parent codes (`county_code`, and `constituency_code` for wards). If you
+rename, merge or remove an existing code, add an entry to `data/history.json`.
 
 ## ✅ Data Validation
 
