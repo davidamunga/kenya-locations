@@ -1,5 +1,14 @@
 # kenya-locations-react
 
+## 0.9.2
+
+### Patch Changes
+
+- [#44](https://github.com/davidamunga/kenya-locations/pull/44)
+  [`2564d00`](https://github.com/davidamunga/kenya-locations/commit/2564d00b14192fa3e866da55c25fca4c855bb308)
+  Thanks [@davidamunga](https://github.com/davidamunga)! - Add a README to the npm package with
+  install steps, usage examples and the hooks reference.
+
 ## 0.9.1
 
 ### Patch Changes
