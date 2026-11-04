@@ -154,4 +154,37 @@ class LookupsTest {
     fun `getAreasInLocality works for a unique locality name`() {
         assertTrue(KenyaLocations.getAreasInLocality("Westlands").isNotEmpty())
     }
+
+    // ─── Parent codes, ISO codes and aliases ────────────────────────────────
+
+    @Test
+    fun `wards carry their constituency and county codes`() {
+        val ward = KenyaLocations.getWards().single { it.code == "0737" }
+        val marakwetWest = KenyaLocations.getConstituencyByName("Marakwet West")!!
+        assertEquals(marakwetWest.code, ward.constituency_code)
+        assertEquals("028", ward.county_code)
+    }
+
+    @Test
+    fun `counties carry unique ISO codes`() {
+        assertEquals("KE-30", KenyaLocations.getCountyByCode("047")?.iso_code)
+        assertEquals("KE-01", KenyaLocations.getCountyByCode("030")?.iso_code)
+        val isoCodes = KenyaLocations.getCounties().map { it.iso_code }
+        assertEquals(47, isoCodes.toSet().size)
+    }
+
+    @Test
+    fun `county aliases resolve as names`() {
+        assertEquals("047", KenyaLocations.getCountyByName("Nairobi City")?.code)
+        assertEquals("047", KenyaLocations.getCountyByName("nairobi city")?.code)
+        assertEquals(77, KenyaLocations.getLocalitiesInCounty("Nairobi City").size)
+    }
+
+    @Test
+    fun `every ward is in its constituency's county`() {
+        val constituencies = KenyaLocations.getConstituencies().associateBy { it.code }
+        KenyaLocations.getWards().forEach { ward ->
+            assertEquals(constituencies.getValue(ward.constituency_code).county_code, ward.county_code, ward.code)
+        }
+    }
 }

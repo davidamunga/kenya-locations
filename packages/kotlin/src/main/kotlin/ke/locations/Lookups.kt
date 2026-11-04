@@ -11,6 +11,8 @@ import java.text.Normalizer
  *   ("Muranga" finds "Murang'a").
  * - A name that matches more than one record resolves to null instead of an
  *   arbitrary record.
+ * - County aliases ("Nairobi City") count as names.
+ * - Relationships are joined by code (county_code, constituency_code), never by name.
  */
 
 internal const val COUNTY_CODE_WIDTH = 3
@@ -35,10 +37,17 @@ internal fun normalizeCode(value: String, width: Int): String {
     return if (trimmed.isNotEmpty() && trimmed.all { it in '0'..'9' }) trimmed.padStart(width, '0') else trimmed
 }
 
-/** Name index: exact (case-insensitive) matches first, folded matches as a fallback. */
-internal class NameIndex<T>(items: List<T>, name: (T) -> String) {
-    private val exact: Map<String, List<T>> = items.groupBy { lowerName(name(it)) }
-    private val folded: Map<String, List<T>> = items.groupBy { foldName(name(it)) }
+/**
+ * Name index: exact (case-insensitive) matches first, folded matches as a fallback.
+ * [aliases] are extra names for a record (e.g. a county's "Nairobi City").
+ */
+internal class NameIndex<T>(
+    items: List<T>,
+    aliases: (T) -> List<String> = { emptyList() },
+    name: (T) -> String,
+) {
+    private val exact: Map<String, List<T>> = groupByKeys(items) { (listOf(name(it)) + aliases(it)).map(::lowerName) }
+    private val folded: Map<String, List<T>> = groupByKeys(items) { (listOf(name(it)) + aliases(it)).map(::foldName) }
 
     /** Every record with this name. */
     fun all(name: String): List<T> =
@@ -46,4 +55,13 @@ internal class NameIndex<T>(items: List<T>, name: (T) -> String) {
 
     /** The record with this name, or null if there are none or several. */
     fun unique(name: String): T? = all(name).singleOrNull()
+}
+
+/** Group [items] under each distinct key, so a record appears at most once per key. */
+private fun <T> groupByKeys(items: List<T>, keys: (T) -> List<String>): Map<String, List<T>> {
+    val map = LinkedHashMap<String, MutableList<T>>()
+    for (item in items) {
+        for (key in keys(item).toSet()) map.getOrPut(key) { ArrayList() }.add(item)
+    }
+    return map
 }
