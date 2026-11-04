@@ -156,7 +156,7 @@ export function SearchTrigger() {
   return (
     <Button
       aria-label="Search places"
-      className="w-9 justify-center gap-2 text-muted-foreground sm:w-56 sm:justify-start"
+      className="w-9 justify-center gap-2 text-muted-foreground sm:w-52 sm:justify-start"
       onClick={openSearch}
       size="sm"
       variant="outline"
