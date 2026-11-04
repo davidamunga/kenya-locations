@@ -4,44 +4,18 @@
 
 import type { Ward, County, SubCounty } from "./types";
 import { wards } from "./data/wards";
-import { counties } from "./data/counties";
-import { constituencies } from "./data/constituencies";
-import { subCounties } from "./data/sub-counties";
-import { buildLookupMap, buildGroupMap } from "./utils/maps";
+import {
+  constituencyOfWard,
+  countyOfWard,
+  getSubCountyByNameValue,
+  getWardByCodeValue,
+  getWardByNameValue,
+  getWardsByNameValue,
+  resolveCounty,
+  resolveWard,
+  wardsInCounty,
+} from "./utils/lookups";
 import { ConstituencyWrapper } from "./constituencies";
-
-// --- Lookup Maps ---
-const wardCodeMap = buildLookupMap(wards, (w) => w.code);
-const wardNameMap = buildLookupMap(wards, (w) => w.name.toLowerCase());
-const countyCodeMap = buildLookupMap(counties, (c) => c.code);
-const countyNameMap = buildLookupMap(counties, (c) => c.name.toLowerCase());
-const constituencyNameMap = buildLookupMap(constituencies, (c) =>
-  c.name.toLowerCase()
-);
-const subCountyNameMap = buildLookupMap(subCounties, (sc) =>
-  sc.name.toLowerCase()
-);
-
-// --- Relationship Maps ---
-// constituency code/name → county code (both keyed for fast lookup)
-const constituencyToCountyCodeMap: Map<string, string> = new Map(
-  constituencies.flatMap((c) => {
-    const countyCode = countyNameMap.get(c.county.toLowerCase())?.code;
-    return countyCode
-      ? [
-          [c.code, countyCode] as [string, string],
-          [c.name, countyCode] as [string, string],
-        ]
-      : [];
-  })
-);
-
-const countyToWardsMap = buildGroupMap(wards, (w) => {
-  const constituency = constituencyNameMap.get(w.constituency.toLowerCase());
-  return constituency
-    ? countyNameMap.get(constituency.county.toLowerCase())?.code
-    : undefined;
-});
 
 /**
  * Get all wards
@@ -57,7 +31,7 @@ export function getWards(): Ward[] {
 }
 
 /**
- * Get a ward by code
+ * Get a ward by code. Codes are zero-padded, so "1" finds "0001".
  * @param code Ward code
  * @returns Ward object or undefined if not found
  * @example
@@ -67,12 +41,13 @@ export function getWards(): Ward[] {
  * ```
  */
 export function getWardByCode(code: string): Ward | undefined {
-  return wardCodeMap.get(code);
+  return getWardByCodeValue(code);
 }
 
 /**
- * Get a ward by name (case-insensitive)
- * Note: Multiple wards may have the same name in different constituencies
+ * Get a ward by name (case-insensitive).
+ * Returns undefined when several wards share the name (e.g. "Township");
+ * use {@link getWardsByName} or a ward code instead.
  * @param name Ward name
  * @returns Ward object or undefined if not found
  * @example
@@ -82,7 +57,21 @@ export function getWardByCode(code: string): Ward | undefined {
  * ```
  */
 export function getWardByName(name: string): Ward | undefined {
-  return wardNameMap.get(name.toLowerCase());
+  return getWardByNameValue(name);
+}
+
+/**
+ * Get all wards matching a name across all constituencies.
+ * @param name Ward name (case-insensitive)
+ * @returns Array of wards
+ * @example
+ * ```ts
+ * import { getWardsByName } from 'kenya-locations/wards';
+ * const townships = getWardsByName('Township');
+ * ```
+ */
+export function getWardsByName(name: string): Ward[] {
+  return getWardsByNameValue(name);
 }
 
 /**
@@ -96,16 +85,13 @@ export function getWardByName(name: string): Ward | undefined {
  * ```
  */
 export function getWardsInCounty(countyNameOrCode: string): Ward[] {
-  if (countyToWardsMap.has(countyNameOrCode)) {
-    return countyToWardsMap.get(countyNameOrCode) ?? [];
-  }
-  const county = countyNameMap.get(countyNameOrCode.toLowerCase());
-  return county ? (countyToWardsMap.get(county.code) ?? []) : [];
+  const county = resolveCounty(countyNameOrCode);
+  return county ? wardsInCounty(county) : [];
 }
 
 /**
- * Get the county that a ward belongs to by ward name or code
- * @param wardNameOrCode Ward name or code
+ * Get the county that a ward belongs to
+ * @param wardNameOrCode Ward code, or a ward name that is unique in Kenya
  * @returns County object or undefined if not found
  * @example
  * ```ts
@@ -114,18 +100,13 @@ export function getWardsInCounty(countyNameOrCode: string): Ward[] {
  * ```
  */
 export function getCountyOfWard(wardNameOrCode: string): County | undefined {
-  const ward =
-    wardCodeMap.get(wardNameOrCode) ??
-    wardNameMap.get(wardNameOrCode.toLowerCase());
-  if (!ward) return undefined;
-
-  const countyCode = constituencyToCountyCodeMap.get(ward.constituency);
-  return countyCode ? countyCodeMap.get(countyCode) : undefined;
+  const ward = resolveWard(wardNameOrCode);
+  return ward ? countyOfWard(ward) : undefined;
 }
 
 /**
- * Get the constituency a ward belongs to by ward name or code
- * @param wardNameOrCode Ward name or code
+ * Get the constituency a ward belongs to
+ * @param wardNameOrCode Ward code, or a ward name that is unique in Kenya
  * @returns ConstituencyWrapper or undefined if not found
  * @example
  * ```ts
@@ -136,18 +117,15 @@ export function getCountyOfWard(wardNameOrCode: string): County | undefined {
 export function getConstituencyOfWard(
   wardNameOrCode: string
 ): ConstituencyWrapper | undefined {
-  const ward =
-    wardCodeMap.get(wardNameOrCode) ??
-    wardNameMap.get(wardNameOrCode.toLowerCase());
-  if (!ward) return undefined;
-  const found = constituencyNameMap.get(ward.constituency.toLowerCase());
+  const ward = resolveWard(wardNameOrCode);
+  const found = ward ? constituencyOfWard(ward) : undefined;
   return found ? new ConstituencyWrapper(found) : undefined;
 }
 
 /**
- * Get the sub-county a ward belongs to by ward name or code.
+ * Get the sub-county a ward belongs to.
  * Sub-county names correspond to constituency names in the ward dataset.
- * @param wardNameOrCode Ward name or code
+ * @param wardNameOrCode Ward code, or a ward name that is unique in Kenya
  * @returns SubCounty or undefined if not found
  * @example
  * ```ts
@@ -158,11 +136,8 @@ export function getConstituencyOfWard(
 export function getSubCountyOfWard(
   wardNameOrCode: string
 ): SubCounty | undefined {
-  const ward =
-    wardCodeMap.get(wardNameOrCode) ??
-    wardNameMap.get(wardNameOrCode.toLowerCase());
-  if (!ward) return undefined;
-  return subCountyNameMap.get(ward.constituency.toLowerCase());
+  const ward = resolveWard(wardNameOrCode);
+  return ward ? getSubCountyByNameValue(ward.constituency) : undefined;
 }
 
 // Export types

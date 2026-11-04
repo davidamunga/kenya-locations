@@ -4,18 +4,16 @@
 
 import type { Locality, Area, County } from "./types";
 import { localities } from "./data/locality";
-import { areas } from "./data/area";
-import { counties } from "./data/counties";
 import { LocationNotFoundError } from "./errors/LocationErrors";
-import { buildLookupMap, buildGroupMap } from "./utils/maps";
-
-// --- Lookup Maps ---
-const localityNameMap = buildLookupMap(localities, (l) => l.name.toLowerCase());
-const countyNameMap = buildLookupMap(counties, (c) => c.name.toLowerCase());
-
-// --- Relationship Maps ---
-const countyToLocalitiesMap = buildGroupMap(localities, (l) => l.county);
-const localityToAreasMap = buildGroupMap(areas, (a) => a.locality);
+import {
+  areasInLocality,
+  countyOfNamed,
+  foldName,
+  getLocalitiesByNameValue,
+  localitiesInCounty,
+  resolveCounty,
+  resolveLocality,
+} from "./utils/lookups";
 
 /**
  * Locality wrapper class with methods to access related data
@@ -43,10 +41,10 @@ export class LocalityWrapper {
   }
 
   /**
-   * Get all areas in this locality
+   * Get all areas in this locality (only areas in the same county)
    */
   areas(): Area[] {
-    return localityToAreasMap.get(this._data.name) ?? [];
+    return areasInLocality(this._data);
   }
 
   /**
@@ -55,10 +53,15 @@ export class LocalityWrapper {
    * @throws LocationNotFoundError if not found
    */
   area(name: string): Area {
-    const found = this.areas().find(
-      (a) => a.name.toLowerCase() === name.toLowerCase()
+    const areas = this.areas();
+    const exact = areas.filter(
+      (a) => a.name.toLowerCase() === name.trim().toLowerCase()
     );
-    if (found) return found;
+    const matches =
+      exact.length > 0
+        ? exact
+        : areas.filter((a) => foldName(a.name) === foldName(name));
+    if (matches.length === 1) return matches[0];
     throw new LocationNotFoundError("Area", name);
   }
 
@@ -66,7 +69,7 @@ export class LocalityWrapper {
    * Get the county this locality belongs to
    */
   getCounty(): County | undefined {
-    return countyNameMap.get(this._data.county.toLowerCase());
+    return countyOfNamed(this._data);
   }
 }
 
@@ -84,7 +87,9 @@ export function getLocalities(): Locality[] {
 }
 
 /**
- * Get a locality by its name
+ * Get a locality by its name.
+ * Returns undefined when the name exists in more than one county; use
+ * {@link getLocalitiesByName} or {@link locality} with a county instead.
  * @param name Locality name (case-insensitive)
  * @returns LocalityWrapper instance or undefined if not found
  * @example
@@ -94,13 +99,13 @@ export function getLocalities(): Locality[] {
  * ```
  */
 export function getLocalityByName(name: string): LocalityWrapper | undefined {
-  const found = localityNameMap.get(name.toLowerCase());
+  const found = resolveLocality(name);
   return found ? new LocalityWrapper(found) : undefined;
 }
 
 /**
  * Get all localities in a county
- * @param countyName County name
+ * @param countyNameOrCode County name or code
  * @returns Array of localities in the county
  * @example
  * ```ts
@@ -108,12 +113,14 @@ export function getLocalityByName(name: string): LocalityWrapper | undefined {
  * const nairobiLocalities = getLocalitiesInCounty('Nairobi');
  * ```
  */
-export function getLocalitiesInCounty(countyName: string): Locality[] {
-  return countyToLocalitiesMap.get(countyName) ?? [];
+export function getLocalitiesInCounty(countyNameOrCode: string): Locality[] {
+  const county = resolveCounty(countyNameOrCode);
+  return county ? localitiesInCounty(county) : [];
 }
 
 /**
- * Get the county of a locality
+ * Get the county of a locality.
+ * Returns undefined when the locality name exists in more than one county.
  * @param localityName The name of the locality
  * @returns County object or undefined if not found
  * @example
@@ -123,22 +130,10 @@ export function getLocalitiesInCounty(countyName: string): Locality[] {
  * ```
  */
 export function getCountyOfLocality(localityName: string): County | undefined {
-  const locality = localityNameMap.get(localityName.toLowerCase());
-  if (!locality) return undefined;
-  return countyNameMap.get(locality.county.toLowerCase());
+  const found = resolveLocality(localityName);
+  return found ? countyOfNamed(found) : undefined;
 }
 
-/**
- * Get a locality by name with optional county filter
- * @param name Locality name
- * @param countyName Optional county name to filter by
- * @returns LocalityWrapper instance or undefined if not found
- * @example
- * ```ts
- * import { locality } from 'kenya-locations/localities';
- * const westlands = locality('Westlands', 'Nairobi');
- * ```
- */
 /**
  * Get all localities matching a name across all counties.
  * Useful when the same locality name exists in more than one county.
@@ -147,26 +142,30 @@ export function getCountyOfLocality(localityName: string): County | undefined {
  * @example
  * ```ts
  * import { getLocalitiesByName } from 'kenya-locations/localities';
- * const allTown = getLocalitiesByName('Town');
+ * const allMakadara = getLocalitiesByName('Makadara');
  * ```
  */
 export function getLocalitiesByName(name: string): LocalityWrapper[] {
-  return localities
-    .filter((l) => l.name.toLowerCase() === name.toLowerCase())
-    .map((l) => new LocalityWrapper(l));
+  return getLocalitiesByNameValue(name).map((l) => new LocalityWrapper(l));
 }
 
+/**
+ * Get a locality by name, optionally within a county.
+ * Without a county, the name must be unique in Kenya.
+ * @param name Locality name
+ * @param countyNameOrCode Optional county name or code
+ * @returns LocalityWrapper instance or undefined if not found
+ * @example
+ * ```ts
+ * import { locality } from 'kenya-locations/localities';
+ * const westlands = locality('Westlands', 'Nairobi');
+ * ```
+ */
 export function locality(
   name: string,
-  countyName?: string
+  countyNameOrCode?: string
 ): LocalityWrapper | undefined {
-  if (countyName) {
-    const found = (countyToLocalitiesMap.get(countyName) ?? []).find(
-      (l) => l.name.toLowerCase() === name.toLowerCase()
-    );
-    return found ? new LocalityWrapper(found) : undefined;
-  }
-  const found = localityNameMap.get(name.toLowerCase());
+  const found = resolveLocality(name, countyNameOrCode);
   return found ? new LocalityWrapper(found) : undefined;
 }
 

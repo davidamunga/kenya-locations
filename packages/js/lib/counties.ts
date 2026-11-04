@@ -4,36 +4,21 @@
 
 import type { County, Area, Ward } from "./types";
 import { counties } from "./data/counties";
-import { constituencies } from "./data/constituencies";
-import { localities } from "./data/locality";
-import { areas } from "./data/area";
-import { wards } from "./data/wards";
-import { buildLookupMap, buildGroupMap } from "./utils/maps";
+import {
+  areasInCounty,
+  areasInLocality,
+  constituenciesInCounty,
+  getCountyByCodeValue,
+  getCountyByNameValue,
+  localitiesInCounty,
+  resolveConstituency,
+  resolveCounty,
+  resolveLocality,
+  wardsInCounty,
+} from "./utils/lookups";
 import { LocationNotFoundError } from "./errors/LocationErrors";
 import { ConstituencyWrapper } from "./constituencies";
 import { LocalityWrapper } from "./localities";
-
-// --- Lookup Maps ---
-const countyCodeMap = buildLookupMap(counties, (c) => c.code);
-const countyNameMap = buildLookupMap(counties, (c) => c.name.toLowerCase());
-const constituencyCodeMap = buildLookupMap(constituencies, (c) => c.code);
-const constituencyNameMap = buildLookupMap(constituencies, (c) =>
-  c.name.toLowerCase()
-);
-
-// --- Relationship Maps ---
-const countyToConstituenciesMap = buildGroupMap(
-  constituencies,
-  (c) => countyNameMap.get(c.county.toLowerCase())?.code
-);
-const countyToLocalitiesMap = buildGroupMap(localities, (l) => l.county);
-const countyToAreasMap = buildGroupMap(areas, (a) => a.county);
-const countyToWardsMap = buildGroupMap(wards, (w) => {
-  const constituency = constituencyNameMap.get(w.constituency.toLowerCase());
-  return constituency
-    ? countyNameMap.get(constituency.county.toLowerCase())?.code
-    : undefined;
-});
 
 /**
  * County wrapper class with methods to access related data
@@ -64,7 +49,7 @@ export class CountyWrapper {
    * Get all constituencies in this county
    */
   constituencies(): ConstituencyWrapper[] {
-    return (countyToConstituenciesMap.get(this._data.code) ?? []).map(
+    return constituenciesInCounty(this._data).map(
       (c) => new ConstituencyWrapper(c)
     );
   }
@@ -74,17 +59,10 @@ export class CountyWrapper {
    * @throws LocationNotFoundError if not found
    */
   constituency(nameOrCode: string): ConstituencyWrapper {
-    const inCounty = countyToConstituenciesMap.get(this._data.code) ?? [];
-
-    const byCode = constituencyCodeMap.get(nameOrCode);
-    if (byCode?.county === this._data.name)
-      return new ConstituencyWrapper(byCode);
-
-    const match = inCounty.find(
-      (c) => c.name.toLowerCase() === nameOrCode.toLowerCase()
-    );
-    if (match) return new ConstituencyWrapper(match);
-
+    const found = resolveConstituency(nameOrCode);
+    if (found && found.county.toLowerCase() === this._data.name.toLowerCase()) {
+      return new ConstituencyWrapper(found);
+    }
     throw new LocationNotFoundError("Constituency", nameOrCode);
   }
 
@@ -92,9 +70,7 @@ export class CountyWrapper {
    * Get all localities in this county
    */
   localities(): LocalityWrapper[] {
-    return (countyToLocalitiesMap.get(this._data.name) ?? []).map(
-      (l) => new LocalityWrapper(l)
-    );
+    return localitiesInCounty(this._data).map((l) => new LocalityWrapper(l));
   }
 
   /**
@@ -102,9 +78,7 @@ export class CountyWrapper {
    * @throws LocationNotFoundError if not found
    */
   locality(name: string): LocalityWrapper {
-    const found = (countyToLocalitiesMap.get(this._data.name) ?? []).find(
-      (l) => l.name.toLowerCase() === name.toLowerCase()
-    );
+    const found = resolveLocality(name, this._data.code);
     if (found) return new LocalityWrapper(found);
     throw new LocationNotFoundError("Locality", name);
   }
@@ -113,23 +87,22 @@ export class CountyWrapper {
    * Get all areas in this county
    */
   areas(): Area[] {
-    return countyToAreasMap.get(this._data.name) ?? [];
+    return areasInCounty(this._data);
   }
 
   /**
    * Get all wards in this county
    */
   wards(): Ward[] {
-    return countyToWardsMap.get(this._data.code) ?? [];
+    return wardsInCounty(this._data);
   }
 
   /**
    * Get areas by locality name
    */
   areasByLocality(localityName: string): Area[] {
-    return this.areas().filter(
-      (a) => a.locality.toLowerCase() === localityName.toLowerCase()
-    );
+    const found = resolveLocality(localityName, this._data.code);
+    return found ? areasInLocality(found) : [];
   }
 }
 
@@ -147,7 +120,7 @@ export function getCounties(): County[] {
 }
 
 /**
- * Get a county by its code
+ * Get a county by its code. Codes are zero-padded, so "47" finds "047".
  * @param code County code (e.g., '001', '047')
  * @returns County object or undefined if not found
  * @example
@@ -157,7 +130,7 @@ export function getCounties(): County[] {
  * ```
  */
 export function getCountyByCode(code: string): County | undefined {
-  return countyCodeMap.get(code);
+  return getCountyByCodeValue(code);
 }
 
 /**
@@ -171,7 +144,7 @@ export function getCountyByCode(code: string): County | undefined {
  * ```
  */
 export function getCountyByName(name: string): County | undefined {
-  return countyNameMap.get(name.toLowerCase());
+  return getCountyByNameValue(name);
 }
 
 /**
@@ -186,9 +159,7 @@ export function getCountyByName(name: string): County | undefined {
  * ```
  */
 export function county(nameOrCode: string): CountyWrapper | undefined {
-  const found =
-    countyCodeMap.get(nameOrCode) ??
-    countyNameMap.get(nameOrCode.toLowerCase());
+  const found = resolveCounty(nameOrCode);
   return found ? new CountyWrapper(found) : undefined;
 }
 

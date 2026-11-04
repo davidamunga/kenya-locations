@@ -4,19 +4,16 @@
 
 import type { Area, Locality, County } from "./types";
 import { areas } from "./data/area";
-import { localities } from "./data/locality";
-import { counties } from "./data/counties";
-import { buildLookupMap, buildGroupMap } from "./utils/maps";
-
-// --- Lookup Maps ---
-const areaNameMap = buildLookupMap(areas, (a) => a.name.toLowerCase());
-const areasByNameMap = buildGroupMap(areas, (a) => a.name.toLowerCase());
-const localityNameMap = buildLookupMap(localities, (l) => l.name.toLowerCase());
-const countyNameMap = buildLookupMap(counties, (c) => c.name.toLowerCase());
-
-// --- Relationship Maps ---
-const localityToAreasMap = buildGroupMap(areas, (a) => a.locality);
-const countyToAreasMap = buildGroupMap(areas, (a) => a.county);
+import {
+  areasInCounty,
+  areasInLocality,
+  countyOfNamed,
+  getAreaByNameValue,
+  getAreasByNameValue,
+  localityOfArea,
+  resolveCounty,
+  resolveLocality,
+} from "./utils/lookups";
 
 /**
  * Get all areas
@@ -32,7 +29,9 @@ export function getAreas(): Area[] {
 }
 
 /**
- * Get an area by its name
+ * Get an area by its name.
+ * Returns undefined when several areas share the name; use
+ * {@link getAreasByName} for all matches.
  * @param name Area name (case-insensitive)
  * @returns Area object or undefined if not found
  * @example
@@ -42,26 +41,33 @@ export function getAreas(): Area[] {
  * ```
  */
 export function getAreaByName(name: string): Area | undefined {
-  return areaNameMap.get(name.toLowerCase());
+  return getAreaByNameValue(name);
 }
 
 /**
- * Get all areas in a locality
+ * Get all areas in a locality.
+ * Pass the county when the locality name exists in more than one county;
+ * without it, an ambiguous name returns no areas.
  * @param localityName Locality name
+ * @param countyNameOrCode Optional county name or code
  * @returns Array of areas in the locality
  * @example
  * ```ts
  * import { getAreasInLocality } from 'kenya-locations/areas';
- * const westlandsAreas = getAreasInLocality('Westlands');
+ * const westlandsAreas = getAreasInLocality('Westlands', 'Nairobi');
  * ```
  */
-export function getAreasInLocality(localityName: string): Area[] {
-  return localityToAreasMap.get(localityName) ?? [];
+export function getAreasInLocality(
+  localityName: string,
+  countyNameOrCode?: string
+): Area[] {
+  const found = resolveLocality(localityName, countyNameOrCode);
+  return found ? areasInLocality(found) : [];
 }
 
 /**
  * Get all areas in a county
- * @param countyName County name
+ * @param countyNameOrCode County name or code
  * @returns Array of areas in the county
  * @example
  * ```ts
@@ -69,12 +75,14 @@ export function getAreasInLocality(localityName: string): Area[] {
  * const nairobiAreas = getAreasInCounty('Nairobi');
  * ```
  */
-export function getAreasInCounty(countyName: string): Area[] {
-  return countyToAreasMap.get(countyName) ?? [];
+export function getAreasInCounty(countyNameOrCode: string): Area[] {
+  const county = resolveCounty(countyNameOrCode);
+  return county ? areasInCounty(county) : [];
 }
 
 /**
- * Get the county of an area
+ * Get the county of an area.
+ * Returns undefined when several areas share the name.
  * @param areaName The name of the area
  * @returns County object or undefined if not found
  * @example
@@ -84,13 +92,13 @@ export function getAreasInCounty(countyName: string): Area[] {
  * ```
  */
 export function getCountyOfArea(areaName: string): County | undefined {
-  const area = areaNameMap.get(areaName.toLowerCase());
-  if (!area) return undefined;
-  return countyNameMap.get(area.county.toLowerCase());
+  const area = getAreaByNameValue(areaName);
+  return area ? countyOfNamed(area) : undefined;
 }
 
 /**
- * Get the locality of an area
+ * Get the locality of an area (in the area's own county).
+ * Returns undefined when several areas share the name.
  * @param areaName The name of the area
  * @returns Locality object or undefined if not found
  * @example
@@ -100,9 +108,8 @@ export function getCountyOfArea(areaName: string): County | undefined {
  * ```
  */
 export function getLocalityOfArea(areaName: string): Locality | undefined {
-  const area = areaNameMap.get(areaName.toLowerCase());
-  if (!area) return undefined;
-  return localityNameMap.get(area.locality.toLowerCase());
+  const area = getAreaByNameValue(areaName);
+  return area ? localityOfArea(area) : undefined;
 }
 
 /**
@@ -117,7 +124,7 @@ export function getLocalityOfArea(areaName: string): Locality | undefined {
  * ```
  */
 export function getAreasByName(name: string): Area[] {
-  return areasByNameMap.get(name.toLowerCase()) ?? [];
+  return getAreasByNameValue(name);
 }
 
 // Export types

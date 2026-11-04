@@ -4,24 +4,16 @@
 
 import type { SubCounty, County, Ward } from "./types";
 import { subCounties } from "./data/sub-counties";
-import { counties } from "./data/counties";
-import { wards } from "./data/wards";
-import { buildLookupMap, buildGroupMap } from "./utils/maps";
-
-// --- Lookup Maps ---
-const countyCodeMap = buildLookupMap(counties, (c) => c.code);
-const countyNameMap = buildLookupMap(counties, (c) => c.name.toLowerCase());
-const subCountyCodeMap = buildLookupMap(subCounties, (sc) => sc.code);
-const subCountyNameMap = buildLookupMap(subCounties, (sc) =>
-  sc.name.toLowerCase()
-);
-
-// --- Relationship Maps ---
-const countyToSubCountiesMap = buildGroupMap(subCounties, (sc) => {
-  return (
-    countyCodeMap.get(sc.county) ?? countyNameMap.get(sc.county.toLowerCase())
-  )?.code;
-});
+import {
+  countyOfNamed,
+  getConstituencyByNameValue,
+  getSubCountyByCodeValue,
+  getSubCountyByNameValue,
+  resolveCounty,
+  resolveSubCounty,
+  subCountiesInCounty,
+  wardsInConstituency,
+} from "./utils/lookups";
 
 /**
  * Get all sub-counties
@@ -47,7 +39,7 @@ export function getSubCounties(): SubCounty[] {
  * ```
  */
 export function getSubCountyByCode(code: string): SubCounty | undefined {
-  return subCountyCodeMap.get(code);
+  return getSubCountyByCodeValue(code);
 }
 
 /**
@@ -61,7 +53,7 @@ export function getSubCountyByCode(code: string): SubCounty | undefined {
  * ```
  */
 export function getSubCountyByName(name: string): SubCounty | undefined {
-  return subCountyNameMap.get(name.toLowerCase());
+  return getSubCountyByNameValue(name);
 }
 
 /**
@@ -75,11 +67,8 @@ export function getSubCountyByName(name: string): SubCounty | undefined {
  * ```
  */
 export function getSubCountiesInCounty(nameOrCode: string): SubCounty[] {
-  if (countyToSubCountiesMap.has(nameOrCode)) {
-    return countyToSubCountiesMap.get(nameOrCode) ?? [];
-  }
-  const county = countyNameMap.get(nameOrCode.toLowerCase());
-  return county ? (countyToSubCountiesMap.get(county.code) ?? []) : [];
+  const county = resolveCounty(nameOrCode);
+  return county ? subCountiesInCounty(county) : [];
 }
 
 /**
@@ -95,8 +84,8 @@ export function getSubCountiesInCounty(nameOrCode: string): SubCounty[] {
 export function getCountyOfSubCounty(
   subCountyName: string
 ): County | undefined {
-  const sc = subCountyNameMap.get(subCountyName.toLowerCase());
-  return sc ? countyNameMap.get(sc.county.toLowerCase()) : undefined;
+  const sc = resolveSubCounty(subCountyName);
+  return sc ? countyOfNamed(sc) : undefined;
 }
 
 /**
@@ -113,13 +102,10 @@ export function getCountyOfSubCounty(
  * ```
  */
 export function getWardsInSubCounty(nameOrCode: string): Ward[] {
-  const sc =
-    subCountyCodeMap.get(nameOrCode) ??
-    subCountyNameMap.get(nameOrCode.toLowerCase());
+  const sc = resolveSubCounty(nameOrCode);
   if (!sc) return [];
-  return wards.filter(
-    (w) => w.constituency.toLowerCase() === sc.name.toLowerCase()
-  );
+  const constituency = getConstituencyByNameValue(sc.name);
+  return constituency ? wardsInConstituency(constituency) : [];
 }
 
 // Export types

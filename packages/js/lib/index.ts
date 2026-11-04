@@ -18,6 +18,7 @@ export {
   getWards,
   getWardByCode,
   getWardByName,
+  getWardsByName,
   getWardsInCounty,
   getWardsInSubCounty,
   getCountyOfWard,
