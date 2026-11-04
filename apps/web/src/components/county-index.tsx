@@ -1,4 +1,9 @@
-import { getConstituenciesInCounty, getCounties, getWardsInCounty } from "kenya-locations";
+import {
+  getConstituenciesInCounty,
+  getCounties,
+  getLocalitiesInCounty,
+  getWardsInCounty,
+} from "kenya-locations";
 import type { County } from "kenya-locations";
 import { useMemo } from "react";
 import { AppLink } from "@/components/app-link";
@@ -20,6 +25,7 @@ interface CountyCard {
   county: County;
   constituencies: number;
   wards: number;
+  localities: number;
 }
 
 /** All 47 counties as links, grouped by former province. */
@@ -29,6 +35,7 @@ export function CountyIndex() {
       county,
       constituencies: getConstituenciesInCounty(county.code).length,
       wards: getWardsInCounty(county.code).length,
+      localities: getLocalitiesInCounty(county.code).length,
     }));
     return REGIONS.map((region) => ({
       region,
@@ -46,8 +53,8 @@ export function CountyIndex() {
             Counties
           </h2>
           <p className="mt-1 text-muted-foreground text-sm">
-            All 47, grouped by former province. Open one to see its constituencies, wards and
-            localities.
+            All 47, grouped by former province. Open one to see its constituencies and wards, its
+            sub-counties, and its localities and areas.
           </p>
         </div>
       </div>
@@ -62,7 +69,7 @@ export function CountyIndex() {
               </span>
             </h3>
             <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-              {group.cards.map(({ county, constituencies, wards }) => (
+              {group.cards.map(({ county, constituencies, wards, localities }) => (
                 <li key={county.code}>
                   <AppLink
                     className="flex h-full flex-col gap-0.5 rounded-xl border bg-background px-3 py-2.5 shadow-xs/5 outline-none transition-colors hover:border-foreground/20 hover:bg-accent/40 focus-visible:ring-2 focus-visible:ring-ring"
@@ -76,6 +83,9 @@ export function CountyIndex() {
                     </span>
                     <span className="truncate text-muted-foreground text-xs">
                       {constituencies} constituencies · {wards} wards
+                    </span>
+                    <span className="truncate text-muted-foreground text-xs">
+                      {localities > 0 ? `${localities} localities` : "No localities yet"}
                     </span>
                   </AppLink>
                 </li>

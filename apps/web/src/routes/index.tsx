@@ -1,14 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { DATA_VERSION } from "kenya-locations";
+import { DATA_VERSION, getCounties, getLocalitiesInCounty } from "kenya-locations";
 import { ArrowRightIcon, SearchIcon } from "lucide-react";
-import type * as React from "react";
 import { AppLink } from "@/components/app-link";
 import { CountyIndex } from "@/components/county-index";
 import { InstallTabs } from "@/components/docs";
 import { DATASET, Explorer } from "@/components/explorer";
 import { openSearch } from "@/components/search-command";
 import { Kbd } from "@/components/ui/kbd";
-import { constituencyHref, countyHref, localityHref, wardHref } from "@/lib/places";
+import { constituencyHref, countyHref, localityHref, subCountyHref, wardHref } from "@/lib/places";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -17,18 +16,62 @@ export const Route = createFileRoute("/")({
 const EXAMPLES = [
   { label: "Nairobi", href: countyHref("047") },
   { label: "Westlands", href: constituencyHref("274") },
+  { label: "Karen", href: localityHref("047", "Karen") },
   { label: "Cherang'any/Chebororwa", href: wardHref("0737") },
-  { label: "Bura, Garissa", href: localityHref("007", "Bura") },
 ];
 
-const STATS = [
-  { label: "Counties", value: DATASET.counties, href: "#counties" },
-  { label: "Constituencies", value: DATASET.constituencies, href: "/data" },
-  { label: "Wards", value: DATASET.wards, href: "/data" },
-  { label: "Sub-counties", value: DATASET.subCounties, href: "/data" },
-  { label: "Localities", value: DATASET.localities, href: "/data" },
-  { label: "Areas", value: DATASET.areas, href: "/data" },
+/**
+ * Kenya is described three ways in the data. Electoral and administrative
+ * units come from IEBC and KNBS; localities and areas are the estates,
+ * neighbourhoods and towns people use in everyday addresses.
+ */
+const HIERARCHIES = [
+  {
+    title: "Electoral",
+    source: "IEBC",
+    description: "The units you vote in: constituencies elect MPs, wards elect MCAs.",
+    path: ["County", "Constituency", "Ward"],
+    counts: [
+      { label: "counties", value: DATASET.counties },
+      { label: "constituencies", value: DATASET.constituencies },
+      { label: "wards", value: DATASET.wards },
+    ],
+    example: { label: "Westlands → its 5 wards", href: constituencyHref("274") },
+  },
+  {
+    title: "Administrative",
+    source: "KNBS",
+    description: "How national government services and statistics are organised.",
+    path: ["County", "Sub-county"],
+    counts: [
+      { label: "counties", value: DATASET.counties },
+      { label: "sub-counties", value: DATASET.subCounties },
+    ],
+    example: { label: "Changamwe, Mombasa", href: subCountyHref("001") },
+  },
+  {
+    title: "Everyday places",
+    source: "Open to contributions",
+    description: "Estates, neighbourhoods and towns: the names people put in an address.",
+    path: ["County", "Locality", "Area"],
+    counts: [
+      { label: "localities", value: DATASET.localities },
+      { label: "areas", value: DATASET.areas },
+    ],
+    example: { label: "Karen → Hardy, Karen C", href: localityHref("047", "Karen") },
+  },
 ];
+
+/** Counties with no localities yet, so the copy below stays true. */
+const countiesWithoutLocalities = getCounties()
+  .filter((county) => getLocalitiesInCounty(county.code).length === 0)
+  .map((county) => county.name);
+
+function listNames(names: string[]): string {
+  return names.length <= 1
+    ? (names[0] ?? "")
+    : `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+}
 
 const totalPlaces =
   DATASET.counties +
@@ -38,21 +81,6 @@ const totalPlaces =
   DATASET.localities +
   DATASET.areas;
 
-function StatLink({ href, children }: { href: string; children: React.ReactNode }) {
-  const className =
-    "flex flex-col gap-0.5 px-4 py-3 outline-none transition-colors hover:bg-accent/40 focus-visible:bg-accent/40";
-  // Same-page anchors stay plain links; other pages navigate in-app.
-  return href.startsWith("#") ? (
-    <a className={className} href={href}>
-      {children}
-    </a>
-  ) : (
-    <AppLink className={className} href={href}>
-      {children}
-    </AppLink>
-  );
-}
-
 function HomePage() {
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-14 px-4 pt-10 pb-16 sm:px-6 sm:pt-14">
@@ -61,10 +89,11 @@ function HomePage() {
           Open data · IEBC + KNBS · v{DATA_VERSION}
         </p>
         <h1 className="font-heading font-semibold text-4xl tracking-tight text-balance sm:text-5xl">
-          Every county, constituency and ward in Kenya
+          Every county, ward and neighbourhood in Kenya
         </h1>
         <p className="max-w-2xl text-lg text-muted-foreground">
-          Look up any place, see its codes and where it sits, and use the same data in
+          Electoral and administrative divisions, plus the estates and neighbourhoods people use in
+          addresses. Look up any place, see its codes and where it sits, and use the same data in
           JavaScript, React, Kotlin, Swift, Dart, PHP or WordPress.
         </p>
 
@@ -94,16 +123,58 @@ function HomePage() {
         </div>
       </section>
 
-      <section aria-label="What's in the data">
-        <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border bg-border shadow-xs/5 sm:grid-cols-3 lg:grid-cols-6">
-          {STATS.map((stat) => (
-            <li className="bg-background" key={stat.label}>
-              <StatLink href={stat.href}>
-                <span className="font-heading font-semibold text-2xl tabular-nums tracking-tight">
-                  {stat.value.toLocaleString()}
-                </span>
-                <span className="text-muted-foreground text-xs">{stat.label}</span>
-              </StatLink>
+      <section aria-labelledby="hierarchies-heading" className="flex flex-col gap-4">
+        <div>
+          <h2 className="font-heading font-semibold text-2xl tracking-tight" id="hierarchies-heading">
+            Three ways to describe a place
+          </h2>
+          <p className="mt-1 max-w-2xl text-muted-foreground text-sm">
+            They overlap but don't line up: a locality isn't a ward, and a sub-county isn't always a
+            constituency.{" "}
+            {countiesWithoutLocalities.length === 0
+              ? "Every county has all three."
+              : `Localities are still missing for ${listNames(countiesWithoutLocalities)}.`}
+          </p>
+        </div>
+        <ul className="grid grid-cols-1 gap-3 md:grid-cols-3">
+          {HIERARCHIES.map((hierarchy) => (
+            <li
+              className="flex flex-col gap-3 rounded-xl border bg-background p-4 shadow-xs/5"
+              key={hierarchy.title}
+            >
+              <div className="flex items-baseline justify-between gap-2">
+                <h3 className="font-medium">{hierarchy.title}</h3>
+                <span className="text-muted-foreground text-xs">{hierarchy.source}</span>
+              </div>
+              <p className="flex flex-wrap items-center gap-1.5 text-sm">
+                {hierarchy.path.map((step, index) => (
+                  <span className="contents" key={step}>
+                    {index > 0 && <ArrowRightIcon className="size-3.5 text-muted-foreground" />}
+                    <span className="rounded-md bg-muted px-1.5 py-0.5">{step}</span>
+                  </span>
+                ))}
+              </p>
+              <p className="text-muted-foreground text-sm">{hierarchy.description}</p>
+              <dl className="flex flex-wrap gap-x-4 gap-y-1">
+                {hierarchy.counts.map((count) => (
+                  <div className="flex items-baseline gap-1" key={count.label}>
+                    <dt className="sr-only">{count.label}</dt>
+                    <dd className="font-heading font-semibold text-lg tabular-nums">
+                      {count.value.toLocaleString()}
+                    </dd>
+                    <span aria-hidden className="text-muted-foreground text-xs">
+                      {count.label}
+                    </span>
+                  </div>
+                ))}
+              </dl>
+              <AppLink
+                className="mt-auto inline-flex items-center gap-1 text-sm underline-offset-4 hover:underline"
+                href={hierarchy.example.href}
+              >
+                {hierarchy.example.label}
+                <ArrowRightIcon className="size-3.5" />
+              </AppLink>
             </li>
           ))}
         </ul>

@@ -82,7 +82,7 @@ export function SearchCommand() {
         >
           <CommandInput
             aria-label="Search places"
-            placeholder="Search counties, constituencies, wards, places, or a code"
+            placeholder="Search counties, wards, estates, neighbourhoods, or a code"
           />
           <CommandPanel>
             {query.trim() === "" ? (

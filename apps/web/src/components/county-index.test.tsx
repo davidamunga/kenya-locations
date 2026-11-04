@@ -20,6 +20,9 @@ describe("CountyIndex", () => {
 
   it("shows each county's constituency and ward counts", () => {
     render(<CountyIndex />);
-    expect(screen.getByRole("link", { name: /Nairobi.*17 constituencies · 85 wards/ })).toBeTruthy();
+    expect(
+      screen.getByRole("link", { name: /Nairobi.*17 constituencies · 85 wards.*77 localities/ }),
+    ).toBeTruthy();
+    expect(screen.getByRole("link", { name: /Wajir.*No localities yet/ })).toBeTruthy();
   });
 });

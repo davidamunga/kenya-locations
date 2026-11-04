@@ -20,7 +20,7 @@ function DocsPage() {
         <h1 className="font-heading font-semibold text-3xl tracking-tight sm:text-4xl">Docs</h1>
         <p className="mt-3 text-muted-foreground">
           The same data and the same lookups in every library: pick a county, drill down to its
-          constituencies and wards, or search with typos.
+          constituencies and wards or its localities and areas, or search with typos.
         </p>
       </header>
       <Docs />
