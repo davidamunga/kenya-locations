@@ -48,11 +48,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Publish GitHub draft release
+      - name: Summary
         run: |
-          gh release edit "v${{ steps.version.outputs.version }}" --draft=false || true
           echo "## Published kenya-locations@${{ steps.version.outputs.version }} to npm" >> $GITHUB_STEP_SUMMARY
           echo "- [npm](https://www.npmjs.com/package/kenya-locations)" >> $GITHUB_STEP_SUMMARY
           echo "- [GitHub Release](https://github.com/${{ github.repository }}/releases/tag/v${{ steps.version.outputs.version }})" >> $GITHUB_STEP_SUMMARY
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

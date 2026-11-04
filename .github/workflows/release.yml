@@ -1,0 +1,147 @@
+# Tags every product whose version moved, drafts its GitHub release, then —
+# after one approval on the "release" environment — dispatches each product's
+# publish workflow on its tag.
+#
+# Which products to release comes from versions and existing tags
+# (scripts/release/plan.js), not from the merge commit's title, so a reworded
+# squash title can't skip a release and a failed release is retried on the
+# next push to main.
+name: Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    name: Plan release
+    runs-on: ubuntu-latest
+    outputs:
+      any: ${{ steps.plan.outputs.any }}
+      plan: ${{ steps.plan.outputs.plan }}
+      core: ${{ steps.plan.outputs.core }}
+      core_tag: ${{ steps.plan.outputs.core_tag }}
+      react: ${{ steps.plan.outputs.react }}
+      react_tag: ${{ steps.plan.outputs.react_tag }}
+      dart: ${{ steps.plan.outputs.dart }}
+      dart_tag: ${{ steps.plan.outputs.dart_tag }}
+      php: ${{ steps.plan.outputs.php }}
+      php_tag: ${{ steps.plan.outputs.php_tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check release consistency
+        run: node scripts/release/verify.js
+
+      - name: Decide what to release
+        id: plan
+        run: node scripts/release/plan.js --before "${{ github.event.before }}" >> "$GITHUB_OUTPUT"
+
+      - name: Summary
+        env:
+          PLAN: ${{ steps.plan.outputs.plan }}
+        run: |
+          {
+            echo "## Release plan"
+            echo ""
+            echo "| Product | Version | Tag | Release |"
+            echo "|---|---|---|---|"
+            echo "$PLAN" | jq -r '.[] | "| \(.package) | \(.version) | `\(.tag)` | \(if .release then "yes" else "—" end) |"'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  tag:
+    name: Tag and draft releases
+    needs: plan
+    if: needs.plan.outputs.any == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Create tags and draft releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PLAN: ${{ needs.plan.outputs.plan }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          while read -r row; do
+            id=$(echo "$row" | jq -r .id)
+            tag=$(echo "$row" | jq -r .tag)
+            node scripts/release/plan.js notes "$id" > "notes-$id.md"
+            if [ "$id" = core ]; then
+              printf '\n## WordPress plugin\n\nDownload `kenya-locations-wordpress-*.zip` from the assets below.\n\n1. WordPress → Plugins → Add New → Upload Plugin\n2. Install and activate **Kenya Locations**\n3. Requires PHP 8.2+. Installation details are in `readme.txt` inside the zip.\n' >> "notes-$id.md"
+            fi
+            git tag -a "$tag" -m "$tag"
+            git push origin "$tag"
+            gh release create "$tag" --draft --title "$tag" --notes-file "notes-$id.md"
+            echo "Tagged $tag and drafted its release"
+          done < <(echo "$PLAN" | jq -c '.[] | select(.release)')
+
+      - uses: shivammathur/setup-php@v2
+        if: needs.plan.outputs.core == 'true'
+        with:
+          php-version: "8.2"
+          extensions: mbstring, json, zip
+          coverage: none
+
+      - name: Attach WordPress zip to the core release
+        if: needs.plan.outputs.core == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          composer --working-dir=examples/wordpress zip
+          gh release upload "${{ needs.plan.outputs.core_tag }}" \
+            examples/wordpress/dist/kenya-locations-wordpress.zip \
+            examples/wordpress/dist/kenya-locations-wordpress-*.zip \
+            --clobber
+
+  publish:
+    name: Publish (needs approval)
+    needs: [plan, tag]
+    runs-on: ubuntu-latest
+    # Add required reviewers to this environment (Settings → Environments →
+    # release) so nothing is published until someone approves.
+    environment: release
+    permissions:
+      actions: write
+    steps:
+      - name: Dispatch publish workflows on their tags
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          dispatch() {
+            gh workflow run "$1" --ref "$2"
+            echo "- \`$1\` on \`$2\`" >> "$GITHUB_STEP_SUMMARY"
+          }
+          echo "## Dispatched" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ needs.plan.outputs.core }}" = true ]; then dispatch publish-all.yml "${{ needs.plan.outputs.core_tag }}"; fi
+          if [ "${{ needs.plan.outputs.react }}" = true ]; then dispatch publish-react.yml "${{ needs.plan.outputs.react_tag }}"; fi
+          if [ "${{ needs.plan.outputs.dart }}" = true ]; then dispatch publish-dart.yml "${{ needs.plan.outputs.dart_tag }}"; fi
+          if [ "${{ needs.plan.outputs.php }}" = true ]; then dispatch publish-php.yml "${{ needs.plan.outputs.php_tag }}"; fi
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Each publish workflow turns its draft release into a published one when it succeeds." >> "$GITHUB_STEP_SUMMARY"

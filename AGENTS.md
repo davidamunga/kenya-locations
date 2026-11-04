@@ -89,4 +89,4 @@ Do not bump package versions on feature PRs. Add a changeset instead.
 - PHP-only: changeset that lists `kenya-locations-php`.
 - Docs / CI / examples (including the WordPress zip): no changeset.
 
-After merge, Changesets opens `chore: version packages`. Merging that PR tags `v{js}` when the core trio moved. Publish is manual: **Publish Core Packages**, **Publish React to npm**, **Publish Dart to pub.dev**, **Publish PHP to Packagist**. Details in [RELEASING.md](RELEASING.md).
+After merge, Changesets opens `chore: version packages`. Merging it runs the **Release** workflow: it tags each product whose version moved (`v{core}`, `react-v{x}`, `dart-v{x}`, `php-v{x}`), drafts the GitHub releases, and after one approval on the `release` environment dispatches each publish workflow on its tag. Details in [RELEASING.md](RELEASING.md).

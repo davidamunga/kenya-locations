@@ -1,6 +1,6 @@
 # Releasing
 
-Two phases: Changesets versions packages, then a human publishes to each registry.
+Changesets versions packages; the **Release** workflow tags them and, after one approval, publishes each to its registry.
 
 ## Version graph
 
@@ -41,49 +41,47 @@ pnpm changeset                 # pick packages + bump type
 
 To add a product or another place a version lives, edit the manifest; sync, verify and the changeset check all read it.
 
-Swift stays on the stub version. **Create Release** owns the `vX.Y.Z` git tag.
+Swift stays on the stub version. The **Release** workflow owns the git tags.
 
 ## After the Version PR
 
-If the core trio changed, CI tags `v{js}` , pushes `release/v{js}`, and opens a **draft** GitHub release.
+Merging `chore: version packages` runs the **Release** workflow (`.github/workflows/release.yml`) on `main`:
 
-Then run workflows from that release branch (or `main` if you prefer):
+1. **Plan.** `scripts/release/plan.js` compares each product's version with its tags. A product is released when its tag doesn't exist yet. The workflow doesn't look at the commit title, so a reworded squash title can't skip a release, and a failed release is retried on the next push to `main`.
+2. **Tag and draft.** It creates one tag per released product and a draft GitHub release whose notes come from that product's changelog:
 
-| Workflow | When |
-|---|---|
-| **Publish Core Packages** | JS → npm, Kotlin → Maven Central, Swift verifies `v*` exists |
-| **Publish React to npm** | React-only or when React was in the Version PR |
-| **Publish Dart to pub.dev** | Dart-only or when Dart was in the Version PR |
-| **Publish PHP to Packagist** | PHP-only or when PHP was in the Version PR |
-| **Publish WordPress plugin zip** | Rebuild / attach the plugin zip to an existing `v*` release |
+   | Product | Tag |
+   |---|---|
+   | JS, Kotlin, Swift | `v{version}` |
+   | React | `react-v{version}` |
+   | Dart | `dart-v{version}` |
+   | PHP | `php-v{version}` |
 
-Do not use a leftover **Publish All Packages** button — that workflow is now core-only.
+   The WordPress plugin zip is attached to the core `v*` release.
+3. **Approve.** The publish job waits on the `release` environment. Approve it once in the Actions run.
+4. **Publish.** It dispatches each product's workflow on its tag: **Publish Core Packages** (JS → npm, Kotlin → Maven Central, Swift tag check), **Publish React to npm**, **Publish Dart to pub.dev**, **Publish PHP to Packagist**. Each one publishes its draft GitHub release only after its registry publish succeeds. A failure fails that run; nothing is hidden with `|| true`.
 
-First `kenya_locations` publish on pub.dev must succeed once (package + trusted publisher). After that, **Publish Dart to pub.dev** can use OIDC.
+You can still run any publish workflow by hand (Actions → Run workflow) to retry one product.
+
+### One-time setup
+
+- **`release` environment:** Settings → Environments → `release` → add yourself under **Required reviewers**. Do this before the first release that uses this workflow: without reviewers, GitHub creates the environment unprotected and publishing starts without asking.
+- **pub.dev:** in the package's admin page → Automated publishing, allow GitHub Actions for this repository with tag pattern `dart-v{{version}}`, and allow `workflow_dispatch` events. The Release workflow dispatches **Publish Dart to pub.dev** on the `dart-v*` tag.
+- **`PHP_SPLIT_TOKEN`:** a PAT with `contents:write` on [`davidamunga/kenya-locations-php`](https://github.com/davidamunga/kenya-locations-php). **Publish PHP to Packagist** now fails if it is missing, so a missing token can no longer look like a successful publish.
+
+### PHP and WordPress
 
 PHP is published from the subtree repo
 [`davidamunga/kenya-locations-php`](https://github.com/davidamunga/kenya-locations-php)
-(not this monorepo — Packagist needs `composer.json` at the repo root).
+(Packagist needs `composer.json` at the repo root). **Publish PHP to Packagist** validates `packages/php`, then `git subtree split`s that prefix and pushes `main` plus `v{php}` to the subtree repo. Packagist follows tags there via its GitHub webhook. First submit: [packagist.org/packages/submit](https://packagist.org/packages/submit) with `https://github.com/davidamunga/kenya-locations-php`.
 
-**Publish PHP to Packagist** validates `packages/php`, then `git subtree split`s
-that prefix and pushes `main` plus `v{php}` to the subtree repo. Add a
-`PHP_SPLIT_TOKEN` secret (PAT with `contents:write` on `kenya-locations-php`).
-
-First Packagist submit: [packagist.org/packages/submit](https://packagist.org/packages/submit)
-with `https://github.com/davidamunga/kenya-locations-php`. After that, Packagist
-follows tags on the subtree repo via the GitHub webhook.
-
-React, Dart, and PHP do not undraft the core `v*` release.
-
-The WordPress plugin is not a Changesets package. A self-contained zip (PHP library copied into `vendor/`, install steps in `readme.txt`) is built from `examples/wordpress` and attached to the core `v*` GitHub release:
+The WordPress plugin is not a Changesets package. A self-contained zip (PHP library copied into `vendor/`, install steps in `readme.txt`) is built from `examples/wordpress`:
 
 ```bash
 composer --working-dir=examples/wordpress zip
 ```
 
-**Create Release** uploads `kenya-locations-wordpress-{plugin}.zip` when it opens the draft `v{js}` release. **Publish PHP to Packagist** rebuilds that zip and `--clobber`s it onto the latest `v*` release so a PHP/data bump can refresh the plugin without a core trio tag. **Publish WordPress plugin zip** does the same on demand.
-
-WordPress.org SVN is not part of this process.
+The Release workflow attaches it to the core `v*` release. **Publish PHP to Packagist** rebuilds it and `--clobber`s it onto the latest `v*` release, so a PHP or data bump refreshes the plugin without a core tag. **Publish WordPress plugin zip** does the same on demand. WordPress.org SVN is not part of this process.
 
 ## Changesets on feature PRs
 

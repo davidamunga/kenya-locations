@@ -61,9 +61,9 @@ jobs:
         run: |
           set -euo pipefail
           if [ -z "${PHP_SPLIT_TOKEN:-}" ]; then
-            echo "PHP_SPLIT_TOKEN is not set; skipping split push."
+            echo "::error::PHP_SPLIT_TOKEN is not set, so nothing can be pushed to kenya-locations-php."
             echo "Add a PAT with contents:write on davidamunga/kenya-locations-php as the PHP_SPLIT_TOKEN secret."
-            exit 0
+            exit 1
           fi
           git subtree split --prefix=packages/php -b php-dist
           git config --local --unset-all http.https://github.com/.extraheader || true
@@ -98,12 +98,25 @@ jobs:
             --clobber
           echo "Uploaded WordPress zip to $TAG"
 
+      - name: Publish GitHub draft release
+        working-directory: ${{ github.workspace }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="php-v${{ steps.version.outputs.version }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --draft=false
+            echo "Published the $TAG GitHub release"
+          else
+            echo "No GitHub release for $TAG (not created by the Release workflow); nothing to publish."
+          fi
+
       - name: Summary
         run: |
           {
             echo "## kenya-locations PHP ${{ steps.version.outputs.version }}"
             echo ""
-            echo "Validated \`packages/php\` and (when \`PHP_SPLIT_TOKEN\` is set) pushed"
+            echo "Validated \`packages/php\` and pushed"
             echo "the subtree to [kenya-locations-php](https://github.com/davidamunga/kenya-locations-php)."
             echo ""
             echo "First Packagist submit: [packagist.org/packages/submit](https://packagist.org/packages/submit)"
