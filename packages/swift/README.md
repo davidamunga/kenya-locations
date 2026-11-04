@@ -45,10 +45,17 @@ let shared = KenyaLocations.shared
 // Get all counties
 let counties = shared.getCounties()
 
-// Relational queries
-let nairobi = shared.getCountyByName("Nairobi City")
-let localities = shared.getLocalitiesInCounty("Nairobi City")
-let wards = shared.getWardsInConstituency("Westlands")
+// Lookups: names ignore case (and punctuation as a fallback); codes can be unpadded
+let nairobi = shared.getCountyByName("nairobi")
+let muranga = shared.getCountyByName("Muranga")       // Murang'a
+let byCode = shared.getCountyByCode("47")             // Nairobi
+
+// Relational queries: county / constituency arguments take a name or a code
+let localities = shared.getLocalitiesInCounty("Nairobi")
+let wards = shared.getWardsInConstituency("westlands")
+
+// Locality names repeat across counties, so pass the county
+let areas = shared.getAreasInLocality("Bura", county: "Garissa")
 
 // Search across all entity types
 let results = shared.search("karen", limit: 10)
