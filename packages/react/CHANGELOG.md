@@ -1,5 +1,17 @@
 # kenya-locations-react
 
+## 0.10.0
+
+### Minor Changes
+
+- `useAreasInLocality` takes an optional county, for locality names that exist in more than one
+  county: `useAreasInLocality("Makadara", "Nairobi")`.
+  ([#49](https://github.com/DavidAmunga/kenya-locations/pull/49))
+
+### Patch Changes
+
+- Uses `kenya-locations` 0.10.0.
+
 ## 0.9.2
 
 ### Patch Changes
