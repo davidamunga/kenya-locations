@@ -1,0 +1,7242 @@
+[
+  {
+    "code": "0721",
+    "name": "Ainabkoi/Olare",
+    "constituency": "Ainabkoi"
+  },
+  {
+    "code": "0719",
+    "name": "Kapsoya",
+    "constituency": "Ainabkoi"
+  },
+  {
+    "code": "0720",
+    "name": "Kaptagat",
+    "constituency": "Ainabkoi"
+  },
+  {
+    "code": "0945",
+    "name": "Ainamoi",
+    "constituency": "Ainamoi"
+  },
+  {
+    "code": "0946",
+    "name": "Kapkugerwet",
+    "constituency": "Ainamoi"
+  },
+  {
+    "code": "0949",
+    "name": "Kapsaos",
+    "constituency": "Ainamoi"
+  },
+  {
+    "code": "0944",
+    "name": "Kapsoit",
+    "constituency": "Ainamoi"
+  },
+  {
+    "code": "0947",
+    "name": "Kipchebor",
+    "constituency": "Ainamoi"
+  },
+  {
+    "code": "0948",
+    "name": "Kipchimchim",
+    "constituency": "Ainamoi"
+  },
+  {
+    "code": "0755",
+    "name": "Kabwareng",
+    "constituency": "Aldai"
+  },
+  {
+    "code": "0759",
+    "name": "Kaptumo-kaboi",
+    "constituency": "Aldai"
+  },
+  {
+    "code": "0757",
+    "name": "Kemeloi-maraba",
+    "constituency": "Aldai"
+  },
+  {
+    "code": "0758",
+    "name": "Kobujoi",
+    "constituency": "Aldai"
+  },
+  {
+    "code": "0760",
+    "name": "Koyo-ndurio",
+    "constituency": "Aldai"
+  },
+  {
+    "code": "0756",
+    "name": "Terik",
+    "constituency": "Aldai"
+  },
+  {
+    "code": "1165",
+    "name": "Central alego",
+    "constituency": "Alego Usonga"
+  },
+  {
+    "code": "1167",
+    "name": "North alego",
+    "constituency": "Alego Usonga"
+  },
+  {
+    "code": "1166",
+    "name": "Siaya Township",
+    "constituency": "Alego Usonga"
+  },
+  {
+    "code": "1168",
+    "name": "South East alego",
+    "constituency": "Alego Usonga"
+  },
+  {
+    "code": "1163",
+    "name": "Usonga",
+    "constituency": "Alego Usonga"
+  },
+  {
+    "code": "1164",
+    "name": "West alego",
+    "constituency": "Alego Usonga"
+  },
+  {
+    "code": "1268",
+    "name": "Central sakwa",
+    "constituency": "Awendo"
+  },
+  {
+    "code": "1265",
+    "name": "North sakwa",
+    "constituency": "Awendo"
+  },
+  {
+    "code": "1266",
+    "name": "South sakwa",
+    "constituency": "Awendo"
+  },
+  {
+    "code": "1267",
+    "name": "West sakwa",
+    "constituency": "Awendo"
+  },
+  {
+    "code": "0869",
+    "name": "Bahati",
+    "constituency": "Bahati"
+  },
+  {
+    "code": "0865",
+    "name": "Dundori",
+    "constituency": "Bahati"
+  },
+  {
+    "code": "0866",
+    "name": "Kabatini",
+    "constituency": "Bahati"
+  },
+  {
+    "code": "0867",
+    "name": "Kiamaina",
+    "constituency": "Bahati"
+  },
+  {
+    "code": "0868",
+    "name": "Lanet/Umoja",
+    "constituency": "Bahati"
+  },
+  {
+    "code": "0135",
+    "name": "Balambala",
+    "constituency": "Balambala"
+  },
+  {
+    "code": "0136",
+    "name": "Danyere",
+    "constituency": "Balambala"
+  },
+  {
+    "code": "0137",
+    "name": "Jara jara",
+    "constituency": "Balambala"
+  },
+  {
+    "code": "0138",
+    "name": "Saka",
+    "constituency": "Balambala"
+  },
+  {
+    "code": "0139",
+    "name": "Sankuri",
+    "constituency": "Balambala"
+  },
+  {
+    "code": "0196",
+    "name": "Banissa",
+    "constituency": "Banissa"
+  },
+  {
+    "code": "0197",
+    "name": "Derkhale",
+    "constituency": "Banissa"
+  },
+  {
+    "code": "0198",
+    "name": "Guba",
+    "constituency": "Banissa"
+  },
+  {
+    "code": "0200",
+    "name": "Kiliwehiri",
+    "constituency": "Banissa"
+  },
+  {
+    "code": "0199",
+    "name": "Malkamari",
+    "constituency": "Banissa"
+  },
+  {
+    "code": "0792",
+    "name": "Bartabwa",
+    "constituency": "Baringo North"
+  },
+  {
+    "code": "0788",
+    "name": "Barwessa",
+    "constituency": "Baringo North"
+  },
+  {
+    "code": "0789",
+    "name": "Kabartonjo",
+    "constituency": "Baringo North"
+  },
+  {
+    "code": "0790",
+    "name": "Saimo/Kipsaraman",
+    "constituency": "Baringo North"
+  },
+  {
+    "code": "0791",
+    "name": "Saimo/Soi",
+    "constituency": "Baringo North"
+  },
+  {
+    "code": "0796",
+    "name": "Ewalel chapchap",
+    "constituency": "Baringo Central"
+  },
+  {
+    "code": "0793",
+    "name": "Kabarnet",
+    "constituency": "Baringo Central"
+  },
+  {
+    "code": "0797",
+    "name": "Kapropita",
+    "constituency": "Baringo Central"
+  },
+  {
+    "code": "0794",
+    "name": "Sacho",
+    "constituency": "Baringo Central"
+  },
+  {
+    "code": "0795",
+    "name": "Tenges",
+    "constituency": "Baringo Central"
+  },
+  {
+    "code": "0799",
+    "name": "Ilchamus",
+    "constituency": "Baringo South"
+  },
+  {
+    "code": "0798",
+    "name": "Marigat",
+    "constituency": "Baringo South"
+  },
+  {
+    "code": "0800",
+    "name": "Mochongoi",
+    "constituency": "Baringo South"
+  },
+  {
+    "code": "0801",
+    "name": "Mukutani",
+    "constituency": "Baringo South"
+  },
+  {
+    "code": "0960",
+    "name": "Chaik",
+    "constituency": "Belgut"
+  },
+  {
+    "code": "0959",
+    "name": "Cheptororiet/Seretut",
+    "constituency": "Belgut"
+  },
+  {
+    "code": "0958",
+    "name": "Kabianga",
+    "constituency": "Belgut"
+  },
+  {
+    "code": "0961",
+    "name": "Kapsuser",
+    "constituency": "Belgut"
+  },
+  {
+    "code": "0957",
+    "name": "Waldai",
+    "constituency": "Belgut"
+  },
+  {
+    "code": "1319",
+    "name": "Bobasi bogetaorio",
+    "constituency": "Bobasi"
+  },
+  {
+    "code": "1322",
+    "name": "Bobasi boitangare",
+    "constituency": "Bobasi"
+  },
+  {
+    "code": "1317",
+    "name": "Bobasi Central",
+    "constituency": "Bobasi"
+  },
+  {
+    "code": "1320",
+    "name": "Bobasi chache",
+    "constituency": "Bobasi"
+  },
+  {
+    "code": "1316",
+    "name": "Masige East",
+    "constituency": "Bobasi"
+  },
+  {
+    "code": "1315",
+    "name": "Masige West",
+    "constituency": "Bobasi"
+  },
+  {
+    "code": "1318",
+    "name": "Nyacheki",
+    "constituency": "Bobasi"
+  },
+  {
+    "code": "1321",
+    "name": "Sameta/Mokwerero",
+    "constituency": "Bobasi"
+  },
+  {
+    "code": "1313",
+    "name": "Bokimonge",
+    "constituency": "Bomachoge Borabu"
+  },
+  {
+    "code": "1311",
+    "name": "Bombaba borabu",
+    "constituency": "Bomachoge Borabu"
+  },
+  {
+    "code": "1312",
+    "name": "Boochi borabu",
+    "constituency": "Bomachoge Borabu"
+  },
+  {
+    "code": "1314",
+    "name": "Magenche",
+    "constituency": "Bomachoge Borabu"
+  },
+  {
+    "code": "1324",
+    "name": "Boochi/Tendere",
+    "constituency": "Bomachoge Chache"
+  },
+  {
+    "code": "1325",
+    "name": "Bosoti/Sengera",
+    "constituency": "Bomachoge Chache"
+  },
+  {
+    "code": "1323",
+    "name": "Majoge",
+    "constituency": "Bomachoge Chache"
+  },
+  {
+    "code": "0984",
+    "name": "Chesoen",
+    "constituency": "Bomet Central"
+  },
+  {
+    "code": "0985",
+    "name": "Mutarakwa",
+    "constituency": "Bomet Central"
+  },
+  {
+    "code": "0982",
+    "name": "Ndaraweta",
+    "constituency": "Bomet Central"
+  },
+  {
+    "code": "0981",
+    "name": "Silibwet Township",
+    "constituency": "Bomet Central"
+  },
+  {
+    "code": "0983",
+    "name": "Singorwet",
+    "constituency": "Bomet Central"
+  },
+  {
+    "code": "0980",
+    "name": "Chemaner",
+    "constituency": "Bomet East"
+  },
+  {
+    "code": "0977",
+    "name": "Kembu",
+    "constituency": "Bomet East"
+  },
+  {
+    "code": "0979",
+    "name": "Kipreres",
+    "constituency": "Bomet East"
+  },
+  {
+    "code": "0978",
+    "name": "Longisa",
+    "constituency": "Bomet East"
+  },
+  {
+    "code": "0976",
+    "name": "Merigi",
+    "constituency": "Bomet East"
+  },
+  {
+    "code": "1302",
+    "name": "Bogiakumu",
+    "constituency": "Bonchari"
+  },
+  {
+    "code": "1301",
+    "name": "Bomariba",
+    "constituency": "Bonchari"
+  },
+  {
+    "code": "1303",
+    "name": "Bomorenda",
+    "constituency": "Bonchari"
+  },
+  {
+    "code": "1304",
+    "name": "Riana",
+    "constituency": "Bonchari"
+  },
+  {
+    "code": "1176",
+    "name": "Central sakwa",
+    "constituency": "Bondo"
+  },
+  {
+    "code": "1180",
+    "name": "North sakwa",
+    "constituency": "Bondo"
+  },
+  {
+    "code": "1177",
+    "name": "South sakwa",
+    "constituency": "Bondo"
+  },
+  {
+    "code": "1179",
+    "name": "West sakwa",
+    "constituency": "Bondo"
+  },
+  {
+    "code": "1175",
+    "name": "West yimbo",
+    "constituency": "Bondo"
+  },
+  {
+    "code": "1178",
+    "name": "Yimbo East",
+    "constituency": "Bondo"
+  },
+  {
+    "code": "1365",
+    "name": "Esise",
+    "constituency": "Borabu"
+  },
+  {
+    "code": "1363",
+    "name": "Kiabonyoru",
+    "constituency": "Borabu"
+  },
+  {
+    "code": "1362",
+    "name": "Mekenene",
+    "constituency": "Borabu"
+  },
+  {
+    "code": "1364",
+    "name": "Nyansiongo",
+    "constituency": "Borabu"
+  },
+  {
+    "code": "1152",
+    "name": "Bunyala Central",
+    "constituency": "Budalangi"
+  },
+  {
+    "code": "1153",
+    "name": "Bunyala North",
+    "constituency": "Budalangi"
+  },
+  {
+    "code": "1155",
+    "name": "Bunyala South",
+    "constituency": "Budalangi"
+  },
+  {
+    "code": "1154",
+    "name": "Bunyala West",
+    "constituency": "Budalangi"
+  },
+  {
+    "code": "1090",
+    "name": "Bumula",
+    "constituency": "Bumula"
+  },
+  {
+    "code": "1092",
+    "name": "Kabula",
+    "constituency": "Bumula"
+  },
+  {
+    "code": "1091",
+    "name": "Khasoko",
+    "constituency": "Bumula"
+  },
+  {
+    "code": "1093",
+    "name": "Kimaeti",
+    "constituency": "Bumula"
+  },
+  {
+    "code": "1095",
+    "name": "Siboti",
+    "constituency": "Bumula"
+  },
+  {
+    "code": "1089",
+    "name": "South bukusu",
+    "constituency": "Bumula"
+  },
+  {
+    "code": "1094",
+    "name": "West bukusu",
+    "constituency": "Bumula"
+  },
+  {
+    "code": "0098",
+    "name": "Bangale",
+    "constituency": "Bura"
+  },
+  {
+    "code": "0097",
+    "name": "Bura",
+    "constituency": "Bura"
+  },
+  {
+    "code": "0096",
+    "name": "Chewele",
+    "constituency": "Bura"
+  },
+  {
+    "code": "0100",
+    "name": "Madogo",
+    "constituency": "Bura"
+  },
+  {
+    "code": "0099",
+    "name": "Sala",
+    "constituency": "Bura"
+  },
+  {
+    "code": "0952",
+    "name": "Cheboin",
+    "constituency": "Bureti"
+  },
+  {
+    "code": "0953",
+    "name": "Chemosot",
+    "constituency": "Bureti"
+  },
+  {
+    "code": "0955",
+    "name": "Cheplanget",
+    "constituency": "Bureti"
+  },
+  {
+    "code": "0956",
+    "name": "Kapkatet",
+    "constituency": "Bureti"
+  },
+  {
+    "code": "0950",
+    "name": "Kisiara",
+    "constituency": "Bureti"
+  },
+  {
+    "code": "0954",
+    "name": "Litein",
+    "constituency": "Bureti"
+  },
+  {
+    "code": "0951",
+    "name": "Tebesonik",
+    "constituency": "Bureti"
+  },
+  {
+    "code": "1033",
+    "name": "Marama Central",
+    "constituency": "Butere"
+  },
+  {
+    "code": "1035",
+    "name": "Marama North",
+    "constituency": "Butere"
+  },
+  {
+    "code": "1036",
+    "name": "Marama South",
+    "constituency": "Butere"
+  },
+  {
+    "code": "1032",
+    "name": "Marama West",
+    "constituency": "Butere"
+  },
+  {
+    "code": "1034",
+    "name": "Marenyo - shianda",
+    "constituency": "Butere"
+  },
+  {
+    "code": "1147",
+    "name": "Elugulu",
+    "constituency": "Butula"
+  },
+  {
+    "code": "1143",
+    "name": "Kingandole",
+    "constituency": "Butula"
+  },
+  {
+    "code": "1144",
+    "name": "Marachi Central",
+    "constituency": "Butula"
+  },
+  {
+    "code": "1145",
+    "name": "Marachi East",
+    "constituency": "Butula"
+  },
+  {
+    "code": "1146",
+    "name": "Marachi North",
+    "constituency": "Butula"
+  },
+  {
+    "code": "1142",
+    "name": "Marachi West",
+    "constituency": "Butula"
+  },
+  {
+    "code": "0285",
+    "name": "Kibirichia",
+    "constituency": "Buuri"
+  },
+  {
+    "code": "0283",
+    "name": "Kiirua/Naari",
+    "constituency": "Buuri"
+  },
+  {
+    "code": "0282",
+    "name": "Kisima",
+    "constituency": "Buuri"
+  },
+  {
+    "code": "0284",
+    "name": "Ruiri/Rwarera",
+    "constituency": "Buuri"
+  },
+  {
+    "code": "0281",
+    "name": "Timau",
+    "constituency": "Buuri"
+  },
+  {
+    "code": "0287",
+    "name": "Abothuguchi Central",
+    "constituency": "Central Imenti"
+  },
+  {
+    "code": "0288",
+    "name": "Abothuguchi West",
+    "constituency": "Central Imenti"
+  },
+  {
+    "code": "0289",
+    "name": "Kiagu",
+    "constituency": "Central Imenti"
+  },
+  {
+    "code": "0286",
+    "name": "Mwanganthia",
+    "constituency": "Central Imenti"
+  },
+  {
+    "code": "0003",
+    "name": "Airport",
+    "constituency": "Changamwe"
+  },
+  {
+    "code": "0005",
+    "name": "Chaani",
+    "constituency": "Changamwe"
+  },
+  {
+    "code": "0004",
+    "name": "Changamwe",
+    "constituency": "Changamwe"
+  },
+  {
+    "code": "0002",
+    "name": "Kipevu",
+    "constituency": "Changamwe"
+  },
+  {
+    "code": "0001",
+    "name": "Port reitz",
+    "constituency": "Changamwe"
+  },
+  {
+    "code": "0974",
+    "name": "Chebunyo",
+    "constituency": "Chepalungu"
+  },
+  {
+    "code": "0971",
+    "name": "Kong'asis",
+    "constituency": "Chepalungu"
+  },
+  {
+    "code": "0972",
+    "name": "Nyangores",
+    "constituency": "Chepalungu"
+  },
+  {
+    "code": "0973",
+    "name": "Sigor",
+    "constituency": "Chepalungu"
+  },
+  {
+    "code": "0975",
+    "name": "Siongiroi",
+    "constituency": "Chepalungu"
+  },
+  {
+    "code": "0699",
+    "name": "Chepsiro/Kiptoror",
+    "constituency": "Cherangany"
+  },
+  {
+    "code": "0698",
+    "name": "Cherangany/Suwerwa",
+    "constituency": "Cherangany"
+  },
+  {
+    "code": "0696",
+    "name": "Kaplamai",
+    "constituency": "Cherangany"
+  },
+  {
+    "code": "0695",
+    "name": "Makutano",
+    "constituency": "Cherangany"
+  },
+  {
+    "code": "0697",
+    "name": "Motosiet",
+    "constituency": "Cherangany"
+  },
+  {
+    "code": "0694",
+    "name": "Sinyerere",
+    "constituency": "Cherangany"
+  },
+  {
+    "code": "0700",
+    "name": "Sitatunga",
+    "constituency": "Cherangany"
+  },
+  {
+    "code": "0765",
+    "name": "Chemundu/Kapng'etuny",
+    "constituency": "Chesumei"
+  },
+  {
+    "code": "0768",
+    "name": "Kaptel/Kamoiywo",
+    "constituency": "Chesumei"
+  },
+  {
+    "code": "0769",
+    "name": "Kiptuya",
+    "constituency": "Chesumei"
+  },
+  {
+    "code": "0766",
+    "name": "Kosirai",
+    "constituency": "Chesumei"
+  },
+  {
+    "code": "0767",
+    "name": "Lelmokwo/Ngechek",
+    "constituency": "Chesumei"
+  },
+  {
+    "code": "0305",
+    "name": "Igambang'ombe",
+    "constituency": "Chuka/Igambang'ombe"
+  },
+  {
+    "code": "0302",
+    "name": "Karingani",
+    "constituency": "Chuka/Igambang'ombe"
+  },
+  {
+    "code": "0303",
+    "name": "Magumoni",
+    "constituency": "Chuka/Igambang'ombe"
+  },
+  {
+    "code": "0301",
+    "name": "Mariani",
+    "constituency": "Chuka/Igambang'ombe"
+  },
+  {
+    "code": "0304",
+    "name": "Mugwe",
+    "constituency": "Chuka/Igambang'ombe"
+  },
+  {
+    "code": "0151",
+    "name": "Abakaile",
+    "constituency": "Dadaab"
+  },
+  {
+    "code": "0147",
+    "name": "Dadaab",
+    "constituency": "Dadaab"
+  },
+  {
+    "code": "0149",
+    "name": "Damajale",
+    "constituency": "Dadaab"
+  },
+  {
+    "code": "0146",
+    "name": "Dertu",
+    "constituency": "Dadaab"
+  },
+  {
+    "code": "0148",
+    "name": "Labasigale",
+    "constituency": "Dadaab"
+  },
+  {
+    "code": "0150",
+    "name": "Liboi",
+    "constituency": "Dadaab"
+  },
+  {
+    "code": "1373",
+    "name": "Gatina",
+    "constituency": "Dagoretti North"
+  },
+  {
+    "code": "1375",
+    "name": "Kabiro",
+    "constituency": "Dagoretti North"
+  },
+  {
+    "code": "1372",
+    "name": "Kawangware",
+    "constituency": "Dagoretti North"
+  },
+  {
+    "code": "1374",
+    "name": "Kileleshwa",
+    "constituency": "Dagoretti North"
+  },
+  {
+    "code": "1371",
+    "name": "Kilimani",
+    "constituency": "Dagoretti North"
+  },
+  {
+    "code": "1376",
+    "name": "Mutuini",
+    "constituency": "Dagoretti South"
+  },
+  {
+    "code": "1377",
+    "name": "Ngando",
+    "constituency": "Dagoretti South"
+  },
+  {
+    "code": "1378",
+    "name": "Riruta",
+    "constituency": "Dagoretti South"
+  },
+  {
+    "code": "1379",
+    "name": "Uthiru/Ruthimitu",
+    "constituency": "Dagoretti South"
+  },
+  {
+    "code": "1380",
+    "name": "Waithaka",
+    "constituency": "Dagoretti South"
+  },
+  {
+    "code": "0810",
+    "name": "Koibatek",
+    "constituency": "Eldama Ravine"
+  },
+  {
+    "code": "0805",
+    "name": "Lembus",
+    "constituency": "Eldama Ravine"
+  },
+  {
+    "code": "0806",
+    "name": "Lembus kwen",
+    "constituency": "Eldama Ravine"
+  },
+  {
+    "code": "0809",
+    "name": "Lembus/Perkerra",
+    "constituency": "Eldama Ravine"
+  },
+  {
+    "code": "0808",
+    "name": "Mumberes/Maji mazuri",
+    "constituency": "Eldama Ravine"
+  },
+  {
+    "code": "0807",
+    "name": "Ravine",
+    "constituency": "Eldama Ravine"
+  },
+  {
+    "code": "0181",
+    "name": "Della",
+    "constituency": "Eldas"
+  },
+  {
+    "code": "0180",
+    "name": "Eldas",
+    "constituency": "Eldas"
+  },
+  {
+    "code": "0183",
+    "name": "Elnur/Tula tula",
+    "constituency": "Eldas"
+  },
+  {
+    "code": "0182",
+    "name": "Lakoley south/Basir",
+    "constituency": "Eldas"
+  },
+  {
+    "code": "1417",
+    "name": "Kayole Central",
+    "constituency": "Embakasi Central"
+  },
+  {
+    "code": "1416",
+    "name": "Kayole North",
+    "constituency": "Embakasi Central"
+  },
+  {
+    "code": "1418",
+    "name": "Kayole South",
+    "constituency": "Embakasi Central"
+  },
+  {
+    "code": "1419",
+    "name": "Komarock",
+    "constituency": "Embakasi Central"
+  },
+  {
+    "code": "1420",
+    "name": "Matopeni",
+    "constituency": "Embakasi Central"
+  },
+  {
+    "code": "1423",
+    "name": "Embakasi",
+    "constituency": "Embakasi East"
+  },
+  {
+    "code": "1422",
+    "name": "Lower savannah",
+    "constituency": "Embakasi East"
+  },
+  {
+    "code": "1425",
+    "name": "Mihango",
+    "constituency": "Embakasi East"
+  },
+  {
+    "code": "1421",
+    "name": "Upper savannah",
+    "constituency": "Embakasi East"
+  },
+  {
+    "code": "1424",
+    "name": "Utawala",
+    "constituency": "Embakasi East"
+  },
+  {
+    "code": "1412",
+    "name": "Dandora Area I",
+    "constituency": "Embakasi North"
+  },
+  {
+    "code": "1413",
+    "name": "Dandora Area II",
+    "constituency": "Embakasi North"
+  },
+  {
+    "code": "1414",
+    "name": "Dandora Area III",
+    "constituency": "Embakasi North"
+  },
+  {
+    "code": "1415",
+    "name": "Dandora Area IV",
+    "constituency": "Embakasi North"
+  },
+  {
+    "code": "1411",
+    "name": "Kariobangi North",
+    "constituency": "Embakasi North"
+  },
+  {
+    "code": "1406",
+    "name": "Imara daima",
+    "constituency": "Embakasi South"
+  },
+  {
+    "code": "1407",
+    "name": "Kwa njenga",
+    "constituency": "Embakasi South"
+  },
+  {
+    "code": "1408",
+    "name": "Kwa reuben",
+    "constituency": "Embakasi South"
+  },
+  {
+    "code": "1410",
+    "name": "Kware",
+    "constituency": "Embakasi South"
+  },
+  {
+    "code": "1409",
+    "name": "Pipeline",
+    "constituency": "Embakasi South"
+  },
+  {
+    "code": "1429",
+    "name": "Kariobangi South",
+    "constituency": "Embakasi West"
+  },
+  {
+    "code": "1428",
+    "name": "Mowlem",
+    "constituency": "Embakasi West"
+  },
+  {
+    "code": "1426",
+    "name": "Umoja I",
+    "constituency": "Embakasi West"
+  },
+  {
+    "code": "1427",
+    "name": "Umoja II",
+    "constituency": "Embakasi West"
+  },
+  {
+    "code": "0770",
+    "name": "Chepkumia",
+    "constituency": "Emgwen"
+  },
+  {
+    "code": "0771",
+    "name": "Kapkangani",
+    "constituency": "Emgwen"
+  },
+  {
+    "code": "0772",
+    "name": "Kapsabet",
+    "constituency": "Emgwen"
+  },
+  {
+    "code": "0773",
+    "name": "Kilibwoni",
+    "constituency": "Emgwen"
+  },
+  {
+    "code": "1074",
+    "name": "Central bunyore",
+    "constituency": "Emuhaya"
+  },
+  {
+    "code": "1073",
+    "name": "North East bunyore",
+    "constituency": "Emuhaya"
+  },
+  {
+    "code": "1075",
+    "name": "West bunyore",
+    "constituency": "Emuhaya"
+  },
+  {
+    "code": "0887",
+    "name": "Ilkerin",
+    "constituency": "Emurua Dikirr"
+  },
+  {
+    "code": "0890",
+    "name": "Kapsasian",
+    "constituency": "Emurua Dikirr"
+  },
+  {
+    "code": "0889",
+    "name": "Mogondo",
+    "constituency": "Emurua Dikirr"
+  },
+  {
+    "code": "0888",
+    "name": "Ololmasani",
+    "constituency": "Emurua Dikirr"
+  },
+  {
+    "code": "0680",
+    "name": "Chepchoina",
+    "constituency": "Endebess"
+  },
+  {
+    "code": "0681",
+    "name": "Endebess",
+    "constituency": "Endebess"
+  },
+  {
+    "code": "0682",
+    "name": "Matumbei",
+    "constituency": "Endebess"
+  },
+  {
+    "code": "0152",
+    "name": "Bura",
+    "constituency": "Fafi"
+  },
+  {
+    "code": "0153",
+    "name": "Dekaharia",
+    "constituency": "Fafi"
+  },
+  {
+    "code": "0155",
+    "name": "Fafi",
+    "constituency": "Fafi"
+  },
+  {
+    "code": "0154",
+    "name": "Jarajila",
+    "constituency": "Fafi"
+  },
+  {
+    "code": "0156",
+    "name": "Nanighi",
+    "constituency": "Fafi"
+  },
+  {
+    "code": "1150",
+    "name": "Ageng'a nanguba",
+    "constituency": "Funyula"
+  },
+  {
+    "code": "1151",
+    "name": "Bwiri",
+    "constituency": "Funyula"
+  },
+  {
+    "code": "1148",
+    "name": "Namboboto nambuku",
+    "constituency": "Funyula"
+  },
+  {
+    "code": "1149",
+    "name": "Nangina",
+    "constituency": "Funyula"
+  },
+  {
+    "code": "0094",
+    "name": "Chewani",
+    "constituency": "Galole"
+  },
+  {
+    "code": "0092",
+    "name": "Kinakomba",
+    "constituency": "Galole"
+  },
+  {
+    "code": "0093",
+    "name": "Mikinduni",
+    "constituency": "Galole"
+  },
+  {
+    "code": "0095",
+    "name": "Wayu",
+    "constituency": "Galole"
+  },
+  {
+    "code": "0072",
+    "name": "Bamba",
+    "constituency": "Ganze"
+  },
+  {
+    "code": "0071",
+    "name": "Ganze",
+    "constituency": "Ganze"
+  },
+  {
+    "code": "0073",
+    "name": "Jaribuni",
+    "constituency": "Ganze"
+  },
+  {
+    "code": "0074",
+    "name": "Sokoke",
+    "constituency": "Ganze"
+  },
+  {
+    "code": "0132",
+    "name": "Galbet",
+    "constituency": "Garissa Township"
+  },
+  {
+    "code": "0134",
+    "name": "Iftin",
+    "constituency": "Garissa Township"
+  },
+  {
+    "code": "0133",
+    "name": "Township",
+    "constituency": "Garissa Township"
+  },
+  {
+    "code": "0131",
+    "name": "Waberi",
+    "constituency": "Garissa Township"
+  },
+  {
+    "code": "0089",
+    "name": "Garsen Central",
+    "constituency": "Garsen"
+  },
+  {
+    "code": "0091",
+    "name": "Garsen North",
+    "constituency": "Garsen"
+  },
+  {
+    "code": "0087",
+    "name": "Garsen South",
+    "constituency": "Garsen"
+  },
+  {
+    "code": "0090",
+    "name": "Garsen West",
+    "constituency": "Garsen"
+  },
+  {
+    "code": "0086",
+    "name": "Kipini East",
+    "constituency": "Garsen"
+  },
+  {
+    "code": "0088",
+    "name": "Kipini West",
+    "constituency": "Garsen"
+  },
+  {
+    "code": "0549",
+    "name": "Gatanga",
+    "constituency": "Gatanga"
+  },
+  {
+    "code": "0545",
+    "name": "Ithanga",
+    "constituency": "Gatanga"
+  },
+  {
+    "code": "0546",
+    "name": "Kakuzi/Mitubiri",
+    "constituency": "Gatanga"
+  },
+  {
+    "code": "0550",
+    "name": "Kariara",
+    "constituency": "Gatanga"
+  },
+  {
+    "code": "0548",
+    "name": "Kihumbu-ini",
+    "constituency": "Gatanga"
+  },
+  {
+    "code": "0547",
+    "name": "Mugumo-ini",
+    "constituency": "Gatanga"
+  },
+  {
+    "code": "0557",
+    "name": "Chania",
+    "constituency": "Gatundu North"
+  },
+  {
+    "code": "0556",
+    "name": "Githobokoni",
+    "constituency": "Gatundu North"
+  },
+  {
+    "code": "0555",
+    "name": "Gituamba",
+    "constituency": "Gatundu North"
+  },
+  {
+    "code": "0558",
+    "name": "Mang'u",
+    "constituency": "Gatundu North"
+  },
+  {
+    "code": "0551",
+    "name": "Kiamwangi",
+    "constituency": "Gatundu South"
+  },
+  {
+    "code": "0552",
+    "name": "Kiganjo",
+    "constituency": "Gatundu South"
+  },
+  {
+    "code": "0553",
+    "name": "Ndarugu",
+    "constituency": "Gatundu South"
+  },
+  {
+    "code": "0554",
+    "name": "Ngenda",
+    "constituency": "Gatundu South"
+  },
+  {
+    "code": "1171",
+    "name": "Central gem",
+    "constituency": "Gem"
+  },
+  {
+    "code": "1173",
+    "name": "East gem",
+    "constituency": "Gem"
+  },
+  {
+    "code": "1169",
+    "name": "North gem",
+    "constituency": "Gem"
+  },
+  {
+    "code": "1174",
+    "name": "South gem",
+    "constituency": "Gem"
+  },
+  {
+    "code": "1170",
+    "name": "West gem",
+    "constituency": "Gem"
+  },
+  {
+    "code": "1172",
+    "name": "Yala Township",
+    "constituency": "Gem"
+  },
+  {
+    "code": "0505",
+    "name": "Baragwi",
+    "constituency": "Gichugu"
+  },
+  {
+    "code": "0504",
+    "name": "Kabare",
+    "constituency": "Gichugu"
+  },
+  {
+    "code": "0508",
+    "name": "Karumandi",
+    "constituency": "Gichugu"
+  },
+  {
+    "code": "0507",
+    "name": "Ngariama",
+    "constituency": "Gichugu"
+  },
+  {
+    "code": "0506",
+    "name": "Njukiini",
+    "constituency": "Gichugu"
+  },
+  {
+    "code": "0845",
+    "name": "Elementaita",
+    "constituency": "Gilgil"
+  },
+  {
+    "code": "0844",
+    "name": "Gilgil",
+    "constituency": "Gilgil"
+  },
+  {
+    "code": "0847",
+    "name": "Malewa West",
+    "constituency": "Gilgil"
+  },
+  {
+    "code": "0846",
+    "name": "Mbaruk/Eburu",
+    "constituency": "Gilgil"
+  },
+  {
+    "code": "0848",
+    "name": "Murindati",
+    "constituency": "Gilgil"
+  },
+  {
+    "code": "0578",
+    "name": "Githiga",
+    "constituency": "Githunguri"
+  },
+  {
+    "code": "0577",
+    "name": "Githunguri",
+    "constituency": "Githunguri"
+  },
+  {
+    "code": "0579",
+    "name": "Ikinu",
+    "constituency": "Githunguri"
+  },
+  {
+    "code": "0581",
+    "name": "Komothai",
+    "constituency": "Githunguri"
+  },
+  {
+    "code": "0580",
+    "name": "Ngewa",
+    "constituency": "Githunguri"
+  },
+  {
+    "code": "1065",
+    "name": "Banja",
+    "constituency": "Hamisi"
+  },
+  {
+    "code": "1064",
+    "name": "Gisambai",
+    "constituency": "Hamisi"
+  },
+  {
+    "code": "1067",
+    "name": "Jepkoyai",
+    "constituency": "Hamisi"
+  },
+  {
+    "code": "1062",
+    "name": "Muhudu",
+    "constituency": "Hamisi"
+  },
+  {
+    "code": "1063",
+    "name": "Shamakhokho",
+    "constituency": "Hamisi"
+  },
+  {
+    "code": "1061",
+    "name": "Shiru",
+    "constituency": "Hamisi"
+  },
+  {
+    "code": "1066",
+    "name": "Tambua",
+    "constituency": "Hamisi"
+  },
+  {
+    "code": "1242",
+    "name": "Homa Bay arujo",
+    "constituency": "Homa Bay Town"
+  },
+  {
+    "code": "1241",
+    "name": "Homa Bay Central",
+    "constituency": "Homa Bay Town"
+  },
+  {
+    "code": "1244",
+    "name": "Homa Bay East",
+    "constituency": "Homa Bay Town"
+  },
+  {
+    "code": "1243",
+    "name": "Homa Bay West",
+    "constituency": "Homa Bay Town"
+  },
+  {
+    "code": "0256",
+    "name": "Akirang'ondu",
+    "constituency": "Igembe Central"
+  },
+  {
+    "code": "0257",
+    "name": "Athiru ruujine",
+    "constituency": "Igembe Central"
+  },
+  {
+    "code": "0258",
+    "name": "Igembe East",
+    "constituency": "Igembe Central"
+  },
+  {
+    "code": "0260",
+    "name": "Kangeta",
+    "constituency": "Igembe Central"
+  },
+  {
+    "code": "0259",
+    "name": "Njia",
+    "constituency": "Igembe Central"
+  },
+  {
+    "code": "0265",
+    "name": "Amwathi",
+    "constituency": "Igembe North"
+  },
+  {
+    "code": "0261",
+    "name": "Antuambui",
+    "constituency": "Igembe North"
+  },
+  {
+    "code": "0263",
+    "name": "Antubetwe kiongo",
+    "constituency": "Igembe North"
+  },
+  {
+    "code": "0264",
+    "name": "Naathu",
+    "constituency": "Igembe North"
+  },
+  {
+    "code": "0262",
+    "name": "Ntunene",
+    "constituency": "Igembe North"
+  },
+  {
+    "code": "0254",
+    "name": "Akachiu",
+    "constituency": "Igembe South"
+  },
+  {
+    "code": "0253",
+    "name": "Athiru gaiti",
+    "constituency": "Igembe South"
+  },
+  {
+    "code": "0255",
+    "name": "Kanuni",
+    "constituency": "Igembe South"
+  },
+  {
+    "code": "0252",
+    "name": "Kiegoi/Antubochiu",
+    "constituency": "Igembe South"
+  },
+  {
+    "code": "0251",
+    "name": "Maua",
+    "constituency": "Igembe South"
+  },
+  {
+    "code": "0157",
+    "name": "Hulugho",
+    "constituency": "Ijara"
+  },
+  {
+    "code": "0159",
+    "name": "Ijara",
+    "constituency": "Ijara"
+  },
+  {
+    "code": "0160",
+    "name": "Masalani",
+    "constituency": "Ijara"
+  },
+  {
+    "code": "0158",
+    "name": "Sangailu",
+    "constituency": "Ijara"
+  },
+  {
+    "code": "1050",
+    "name": "Idakho Central",
+    "constituency": "Ikolomani"
+  },
+  {
+    "code": "1048",
+    "name": "Idakho East",
+    "constituency": "Ikolomani"
+  },
+  {
+    "code": "1049",
+    "name": "Idakho North",
+    "constituency": "Ikolomani"
+  },
+  {
+    "code": "1047",
+    "name": "Idakho South",
+    "constituency": "Ikolomani"
+  },
+  {
+    "code": "0242",
+    "name": "Bulla pesa",
+    "constituency": "Isiolo North"
+  },
+  {
+    "code": "0246",
+    "name": "Burat",
+    "constituency": "Isiolo North"
+  },
+  {
+    "code": "0243",
+    "name": "Chari",
+    "constituency": "Isiolo North"
+  },
+  {
+    "code": "0244",
+    "name": "Cherab",
+    "constituency": "Isiolo North"
+  },
+  {
+    "code": "0245",
+    "name": "Ngare mara",
+    "constituency": "Isiolo North"
+  },
+  {
+    "code": "0247",
+    "name": "Oldonyiro",
+    "constituency": "Isiolo North"
+  },
+  {
+    "code": "0241",
+    "name": "Wabera",
+    "constituency": "Isiolo North"
+  },
+  {
+    "code": "0248",
+    "name": "Garbatulla",
+    "constituency": "Isiolo South"
+  },
+  {
+    "code": "0249",
+    "name": "Kinna",
+    "constituency": "Isiolo South"
+  },
+  {
+    "code": "0250",
+    "name": "Sericho",
+    "constituency": "Isiolo South"
+  },
+  {
+    "code": "0006",
+    "name": "Jomvu kuu",
+    "constituency": "Jomvu"
+  },
+  {
+    "code": "0008",
+    "name": "Mikindani",
+    "constituency": "Jomvu"
+  },
+  {
+    "code": "0007",
+    "name": "Miritini",
+    "constituency": "Jomvu"
+  },
+  {
+    "code": "0561",
+    "name": "Juja",
+    "constituency": "Juja"
+  },
+  {
+    "code": "0563",
+    "name": "Kalimoni",
+    "constituency": "Juja"
+  },
+  {
+    "code": "0559",
+    "name": "Murera",
+    "constituency": "Juja"
+  },
+  {
+    "code": "0560",
+    "name": "Theta",
+    "constituency": "Juja"
+  },
+  {
+    "code": "0562",
+    "name": "Witeithie",
+    "constituency": "Juja"
+  },
+  {
+    "code": "0591",
+    "name": "Gitaru",
+    "constituency": "Kabete"
+  },
+  {
+    "code": "0594",
+    "name": "Kabete",
+    "constituency": "Kabete"
+  },
+  {
+    "code": "0592",
+    "name": "Muguga",
+    "constituency": "Kabete"
+  },
+  {
+    "code": "0593",
+    "name": "Nyadhuna",
+    "constituency": "Kabete"
+  },
+  {
+    "code": "0595",
+    "name": "Uthiru",
+    "constituency": "Kabete"
+  },
+  {
+    "code": "1226",
+    "name": "Kabondo East",
+    "constituency": "Kabondo Kasipul"
+  },
+  {
+    "code": "1227",
+    "name": "Kabondo West",
+    "constituency": "Kabondo Kasipul"
+  },
+  {
+    "code": "1229",
+    "name": "Kojwach",
+    "constituency": "Kabondo Kasipul"
+  },
+  {
+    "code": "1228",
+    "name": "Kokwanyo/Kakelo",
+    "constituency": "Kabondo Kasipul"
+  },
+  {
+    "code": "1087",
+    "name": "Bwake/Luuya",
+    "constituency": "Kabuchai"
+  },
+  {
+    "code": "1085",
+    "name": "Kabuchai/Chwele",
+    "constituency": "Kabuchai"
+  },
+  {
+    "code": "1088",
+    "name": "Mukuyuni",
+    "constituency": "Kabuchai"
+  },
+  {
+    "code": "1086",
+    "name": "West nalondo",
+    "constituency": "Kabuchai"
+  },
+  {
+    "code": "0656",
+    "name": "Alale",
+    "constituency": "Kacheliba"
+  },
+  {
+    "code": "0653",
+    "name": "Kapckok",
+    "constituency": "Kacheliba"
+  },
+  {
+    "code": "0654",
+    "name": "Kasei",
+    "constituency": "Kacheliba"
+  },
+  {
+    "code": "0655",
+    "name": "Kiwawa",
+    "constituency": "Kacheliba"
+  },
+  {
+    "code": "0652",
+    "name": "Kodich",
+    "constituency": "Kacheliba"
+  },
+  {
+    "code": "0651",
+    "name": "Suam",
+    "constituency": "Kacheliba"
+  },
+  {
+    "code": "0423",
+    "name": "Ilima",
+    "constituency": "Kaiti"
+  },
+  {
+    "code": "0421",
+    "name": "Kee",
+    "constituency": "Kaiti"
+  },
+  {
+    "code": "0422",
+    "name": "Kilungu",
+    "constituency": "Kaiti"
+  },
+  {
+    "code": "0420",
+    "name": "Ukia",
+    "constituency": "Kaiti"
+  },
+  {
+    "code": "0918",
+    "name": "Dalalekutuk",
+    "constituency": "Kajiado Central"
+  },
+  {
+    "code": "0917",
+    "name": "Ildamat",
+    "constituency": "Kajiado Central"
+  },
+  {
+    "code": "0919",
+    "name": "Matapato North",
+    "constituency": "Kajiado Central"
+  },
+  {
+    "code": "0920",
+    "name": "Matapato South",
+    "constituency": "Kajiado Central"
+  },
+  {
+    "code": "0916",
+    "name": "Purko",
+    "constituency": "Kajiado Central"
+  },
+  {
+    "code": "0925",
+    "name": "Imaroro",
+    "constituency": "Kajiado East"
+  },
+  {
+    "code": "0921",
+    "name": "Kaputiei North",
+    "constituency": "Kajiado East"
+  },
+  {
+    "code": "0924",
+    "name": "Kenyawa-poka",
+    "constituency": "Kajiado East"
+  },
+  {
+    "code": "0922",
+    "name": "Kitengela",
+    "constituency": "Kajiado East"
+  },
+  {
+    "code": "0923",
+    "name": "Oloosirkon/Sholinke",
+    "constituency": "Kajiado East"
+  },
+  {
+    "code": "0915",
+    "name": "Ngong",
+    "constituency": "Kajiado North"
+  },
+  {
+    "code": "0913",
+    "name": "Nkaimurunya",
+    "constituency": "Kajiado North"
+  },
+  {
+    "code": "0911",
+    "name": "Olkeri",
+    "constituency": "Kajiado North"
+  },
+  {
+    "code": "0914",
+    "name": "Oloolua",
+    "constituency": "Kajiado North"
+  },
+  {
+    "code": "0912",
+    "name": "Ongata rongai",
+    "constituency": "Kajiado North"
+  },
+  {
+    "code": "0931",
+    "name": "Entonet/Lenkisim",
+    "constituency": "Kajiado South"
+  },
+  {
+    "code": "0935",
+    "name": "Kimana",
+    "constituency": "Kajiado South"
+  },
+  {
+    "code": "0933",
+    "name": "Kuku",
+    "constituency": "Kajiado South"
+  },
+  {
+    "code": "0932",
+    "name": "Mbirikani/Eselenkei",
+    "constituency": "Kajiado South"
+  },
+  {
+    "code": "0934",
+    "name": "Rombo",
+    "constituency": "Kajiado South"
+  },
+  {
+    "code": "0929",
+    "name": "Ewuaso oonkidong'i",
+    "constituency": "Kajiado West"
+  },
+  {
+    "code": "0927",
+    "name": "Iloodokilani",
+    "constituency": "Kajiado West"
+  },
+  {
+    "code": "0926",
+    "name": "Keekonyokie",
+    "constituency": "Kajiado West"
+  },
+  {
+    "code": "0928",
+    "name": "Magadi",
+    "constituency": "Kajiado West"
+  },
+  {
+    "code": "0930",
+    "name": "Mosiro",
+    "constituency": "Kajiado West"
+  },
+  {
+    "code": "0065",
+    "name": "Kaloleni",
+    "constituency": "Kaloleni"
+  },
+  {
+    "code": "0064",
+    "name": "Kayafungo",
+    "constituency": "Kaloleni"
+  },
+  {
+    "code": "0063",
+    "name": "Mariakani",
+    "constituency": "Kaloleni"
+  },
+  {
+    "code": "0066",
+    "name": "Mwanamwinga",
+    "constituency": "Kaloleni"
+  },
+  {
+    "code": "1437",
+    "name": "Airbase",
+    "constituency": "Kamukunji"
+  },
+  {
+    "code": "1438",
+    "name": "California",
+    "constituency": "Kamukunji"
+  },
+  {
+    "code": "1435",
+    "name": "Eastleigh North",
+    "constituency": "Kamukunji"
+  },
+  {
+    "code": "1436",
+    "name": "Eastleigh South",
+    "constituency": "Kamukunji"
+  },
+  {
+    "code": "1434",
+    "name": "Pumwani",
+    "constituency": "Kamukunji"
+  },
+  {
+    "code": "0542",
+    "name": "Gaichanjiru",
+    "constituency": "Kandara"
+  },
+  {
+    "code": "0543",
+    "name": "Ithiru",
+    "constituency": "Kandara"
+  },
+  {
+    "code": "0541",
+    "name": "Kagundu-ini",
+    "constituency": "Kandara"
+  },
+  {
+    "code": "0540",
+    "name": "Muruka",
+    "constituency": "Kandara"
+  },
+  {
+    "code": "0539",
+    "name": "Ng'araria",
+    "constituency": "Kandara"
+  },
+  {
+    "code": "0544",
+    "name": "Ruchu",
+    "constituency": "Kandara"
+  },
+  {
+    "code": "1097",
+    "name": "Bukembe East",
+    "constituency": "Kanduyi"
+  },
+  {
+    "code": "1096",
+    "name": "Bukembe West",
+    "constituency": "Kanduyi"
+  },
+  {
+    "code": "1101",
+    "name": "East sang'alo",
+    "constituency": "Kanduyi"
+  },
+  {
+    "code": "1099",
+    "name": "Khalaba",
+    "constituency": "Kanduyi"
+  },
+  {
+    "code": "1102",
+    "name": "Marakaru/Tuuti",
+    "constituency": "Kanduyi"
+  },
+  {
+    "code": "1100",
+    "name": "Musikoma",
+    "constituency": "Kanduyi"
+  },
+  {
+    "code": "1103",
+    "name": "Sang'alo West",
+    "constituency": "Kanduyi"
+  },
+  {
+    "code": "1098",
+    "name": "Township",
+    "constituency": "Kanduyi"
+  },
+  {
+    "code": "0516",
+    "name": "Kanyenyaini",
+    "constituency": "Kangema"
+  },
+  {
+    "code": "0517",
+    "name": "Muguru",
+    "constituency": "Kangema"
+  },
+  {
+    "code": "0518",
+    "name": "Rwathia",
+    "constituency": "Kangema"
+  },
+  {
+    "code": "0382",
+    "name": "Kangundo Central",
+    "constituency": "Kangundo"
+  },
+  {
+    "code": "0383",
+    "name": "Kangundo East",
+    "constituency": "Kangundo"
+  },
+  {
+    "code": "0381",
+    "name": "Kangundo North",
+    "constituency": "Kangundo"
+  },
+  {
+    "code": "0384",
+    "name": "Kangundo West",
+    "constituency": "Kangundo"
+  },
+  {
+    "code": "0645",
+    "name": "Endugh",
+    "constituency": "Kapenguria"
+  },
+  {
+    "code": "0642",
+    "name": "Kapenguria",
+    "constituency": "Kapenguria"
+  },
+  {
+    "code": "0643",
+    "name": "Mnagei",
+    "constituency": "Kapenguria"
+  },
+  {
+    "code": "0641",
+    "name": "Riwo",
+    "constituency": "Kapenguria"
+  },
+  {
+    "code": "0644",
+    "name": "Siyoi",
+    "constituency": "Kapenguria"
+  },
+  {
+    "code": "0646",
+    "name": "Sook",
+    "constituency": "Kapenguria"
+  },
+  {
+    "code": "0723",
+    "name": "Kipkenyo",
+    "constituency": "Kapseret"
+  },
+  {
+    "code": "0726",
+    "name": "Langas",
+    "constituency": "Kapseret"
+  },
+  {
+    "code": "0725",
+    "name": "Megun",
+    "constituency": "Kapseret"
+  },
+  {
+    "code": "0724",
+    "name": "Ngeria",
+    "constituency": "Kapseret"
+  },
+  {
+    "code": "0722",
+    "name": "Simat/Kapseret",
+    "constituency": "Kapseret"
+  },
+  {
+    "code": "1232",
+    "name": "Central",
+    "constituency": "Karachuonyo"
+  },
+  {
+    "code": "1233",
+    "name": "Kanyaluo",
+    "constituency": "Karachuonyo"
+  },
+  {
+    "code": "1236",
+    "name": "Kendu Bay Town",
+    "constituency": "Karachuonyo"
+  },
+  {
+    "code": "1234",
+    "name": "Kibiri",
+    "constituency": "Karachuonyo"
+  },
+  {
+    "code": "1231",
+    "name": "North karachuonyo",
+    "constituency": "Karachuonyo"
+  },
+  {
+    "code": "1235",
+    "name": "Wangchieng",
+    "constituency": "Karachuonyo"
+  },
+  {
+    "code": "1230",
+    "name": "West karachuonyo",
+    "constituency": "Karachuonyo"
+  },
+  {
+    "code": "1396",
+    "name": "Claycity",
+    "constituency": "Kasarani"
+  },
+  {
+    "code": "1398",
+    "name": "Kasarani",
+    "constituency": "Kasarani"
+  },
+  {
+    "code": "1397",
+    "name": "Mwiki",
+    "constituency": "Kasarani"
+  },
+  {
+    "code": "1399",
+    "name": "Njiru",
+    "constituency": "Kasarani"
+  },
+  {
+    "code": "1400",
+    "name": "Ruai",
+    "constituency": "Kasarani"
+  },
+  {
+    "code": "1223",
+    "name": "Central kasipul",
+    "constituency": "Kasipul"
+  },
+  {
+    "code": "1224",
+    "name": "East kamagak",
+    "constituency": "Kasipul"
+  },
+  {
+    "code": "1222",
+    "name": "South kasipul",
+    "constituency": "Kasipul"
+  },
+  {
+    "code": "1225",
+    "name": "West kamagak",
+    "constituency": "Kasipul"
+  },
+  {
+    "code": "1221",
+    "name": "West kasipul",
+    "constituency": "Kasipul"
+  },
+  {
+    "code": "0391",
+    "name": "Kathiani Central",
+    "constituency": "Kathiani"
+  },
+  {
+    "code": "0393",
+    "name": "Lower kaewa/Kaani",
+    "constituency": "Kathiani"
+  },
+  {
+    "code": "0390",
+    "name": "Mitaboni",
+    "constituency": "Kathiani"
+  },
+  {
+    "code": "0392",
+    "name": "Upper kaewa/Iveti",
+    "constituency": "Kathiani"
+  },
+  {
+    "code": "0741",
+    "name": "Emsoo",
+    "constituency": "Keiyo North"
+  },
+  {
+    "code": "0742",
+    "name": "Kamariny",
+    "constituency": "Keiyo North"
+  },
+  {
+    "code": "0743",
+    "name": "Kapchemutwa",
+    "constituency": "Keiyo North"
+  },
+  {
+    "code": "0744",
+    "name": "Tambach",
+    "constituency": "Keiyo North"
+  },
+  {
+    "code": "0746",
+    "name": "Chepkorio",
+    "constituency": "Keiyo South"
+  },
+  {
+    "code": "0749",
+    "name": "Kabiemit",
+    "constituency": "Keiyo South"
+  },
+  {
+    "code": "0745",
+    "name": "Kaptarakwa",
+    "constituency": "Keiyo South"
+  },
+  {
+    "code": "0750",
+    "name": "Metkei",
+    "constituency": "Keiyo South"
+  },
+  {
+    "code": "0747",
+    "name": "Soy North",
+    "constituency": "Keiyo South"
+  },
+  {
+    "code": "0748",
+    "name": "Soy South",
+    "constituency": "Keiyo South"
+  },
+  {
+    "code": "0728",
+    "name": "Cheptiret/Kipchamo",
+    "constituency": "Kesses"
+  },
+  {
+    "code": "0727",
+    "name": "Racecourse",
+    "constituency": "Kesses"
+  },
+  {
+    "code": "0730",
+    "name": "Tarakwa",
+    "constituency": "Kesses"
+  },
+  {
+    "code": "0729",
+    "name": "Tulwet/Chuiyat",
+    "constituency": "Kesses"
+  },
+  {
+    "code": "1040",
+    "name": "Kisa Central",
+    "constituency": "Khwisero"
+  },
+  {
+    "code": "1038",
+    "name": "Kisa East",
+    "constituency": "Khwisero"
+  },
+  {
+    "code": "1037",
+    "name": "Kisa North",
+    "constituency": "Khwisero"
+  },
+  {
+    "code": "1039",
+    "name": "Kisa West",
+    "constituency": "Khwisero"
+  },
+  {
+    "code": "0586",
+    "name": "Cianda",
+    "constituency": "Kiambaa"
+  },
+  {
+    "code": "0587",
+    "name": "Karuri",
+    "constituency": "Kiambaa"
+  },
+  {
+    "code": "0590",
+    "name": "Kihara",
+    "constituency": "Kiambaa"
+  },
+  {
+    "code": "0589",
+    "name": "Muchatha",
+    "constituency": "Kiambaa"
+  },
+  {
+    "code": "0588",
+    "name": "Ndenderu",
+    "constituency": "Kiambaa"
+  },
+  {
+    "code": "0583",
+    "name": "Ndumberi",
+    "constituency": "Kiambu"
+  },
+  {
+    "code": "0584",
+    "name": "Riabai",
+    "constituency": "Kiambu"
+  },
+  {
+    "code": "0582",
+    "name": "Ting'ang'a",
+    "constituency": "Kiambu"
+  },
+  {
+    "code": "0585",
+    "name": "Township",
+    "constituency": "Kiambu"
+  },
+  {
+    "code": "1386",
+    "name": "Laini saba",
+    "constituency": "Kibra"
+  },
+  {
+    "code": "1387",
+    "name": "Lindi",
+    "constituency": "Kibra"
+  },
+  {
+    "code": "1388",
+    "name": "Makina",
+    "constituency": "Kibra"
+  },
+  {
+    "code": "1390",
+    "name": "Sarangombe",
+    "constituency": "Kibra"
+  },
+  {
+    "code": "1389",
+    "name": "Woodley/Kenyatta golf",
+    "constituency": "Kibra"
+  },
+  {
+    "code": "0440",
+    "name": "Ivingoni/Nzambani",
+    "constituency": "Kibwezi East"
+  },
+  {
+    "code": "0437",
+    "name": "Masongaleni",
+    "constituency": "Kibwezi East"
+  },
+  {
+    "code": "0438",
+    "name": "Mtito andei",
+    "constituency": "Kibwezi East"
+  },
+  {
+    "code": "0439",
+    "name": "Thange",
+    "constituency": "Kibwezi East"
+  },
+  {
+    "code": "0436",
+    "name": "Emali/Mulala",
+    "constituency": "Kibwezi West"
+  },
+  {
+    "code": "0433",
+    "name": "Kikumbulyu North",
+    "constituency": "Kibwezi West"
+  },
+  {
+    "code": "0434",
+    "name": "Kikumbulyu South",
+    "constituency": "Kibwezi West"
+  },
+  {
+    "code": "0431",
+    "name": "Makindu",
+    "constituency": "Kibwezi West"
+  },
+  {
+    "code": "0435",
+    "name": "Nguu/Masumba",
+    "constituency": "Kibwezi West"
+  },
+  {
+    "code": "0432",
+    "name": "Nguumo",
+    "constituency": "Kibwezi West"
+  },
+  {
+    "code": "0476",
+    "name": "Gakawa",
+    "constituency": "Kieni"
+  },
+  {
+    "code": "0473",
+    "name": "Gatarakwa",
+    "constituency": "Kieni"
+  },
+  {
+    "code": "0475",
+    "name": "Kabaru",
+    "constituency": "Kieni"
+  },
+  {
+    "code": "0472",
+    "name": "Mugunda",
+    "constituency": "Kieni"
+  },
+  {
+    "code": "0469",
+    "name": "Mweiga",
+    "constituency": "Kieni"
+  },
+  {
+    "code": "0471",
+    "name": "Mwiyogo/Endarasha",
+    "constituency": "Kieni"
+  },
+  {
+    "code": "0470",
+    "name": "Naromoru kiamathaga",
+    "constituency": "Kieni"
+  },
+  {
+    "code": "0474",
+    "name": "Thegu River",
+    "constituency": "Kieni"
+  },
+  {
+    "code": "0528",
+    "name": "Kahumbu",
+    "constituency": "Kigumo"
+  },
+  {
+    "code": "0531",
+    "name": "Kangari",
+    "constituency": "Kigumo"
+  },
+  {
+    "code": "0530",
+    "name": "Kigumo",
+    "constituency": "Kigumo"
+  },
+  {
+    "code": "0532",
+    "name": "Kinyona",
+    "constituency": "Kigumo"
+  },
+  {
+    "code": "0529",
+    "name": "Muthithi",
+    "constituency": "Kigumo"
+  },
+  {
+    "code": "0527",
+    "name": "Gaturi",
+    "constituency": "Kiharu"
+  },
+  {
+    "code": "0524",
+    "name": "Mbiri",
+    "constituency": "Kiharu"
+  },
+  {
+    "code": "0523",
+    "name": "Mugoiri",
+    "constituency": "Kiharu"
+  },
+  {
+    "code": "0526",
+    "name": "Murarandia",
+    "constituency": "Kiharu"
+  },
+  {
+    "code": "0525",
+    "name": "Township",
+    "constituency": "Kiharu"
+  },
+  {
+    "code": "0522",
+    "name": "Wangu",
+    "constituency": "Kiharu"
+  },
+  {
+    "code": "0596",
+    "name": "Karai",
+    "constituency": "Kikuyu"
+  },
+  {
+    "code": "0599",
+    "name": "Kikuyu",
+    "constituency": "Kikuyu"
+  },
+  {
+    "code": "0600",
+    "name": "Kinoo",
+    "constituency": "Kikuyu"
+  },
+  {
+    "code": "0597",
+    "name": "Nachu",
+    "constituency": "Kikuyu"
+  },
+  {
+    "code": "0598",
+    "name": "Sigona",
+    "constituency": "Kikuyu"
+  },
+  {
+    "code": "0883",
+    "name": "Angata barikoi",
+    "constituency": "Kilgoris"
+  },
+  {
+    "code": "0882",
+    "name": "Keyian",
+    "constituency": "Kilgoris"
+  },
+  {
+    "code": "0881",
+    "name": "Kilgoris Central",
+    "constituency": "Kilgoris"
+  },
+  {
+    "code": "0885",
+    "name": "Kimintet",
+    "constituency": "Kilgoris"
+  },
+  {
+    "code": "0886",
+    "name": "Lolgorian",
+    "constituency": "Kilgoris"
+  },
+  {
+    "code": "0884",
+    "name": "Shankoe",
+    "constituency": "Kilgoris"
+  },
+  {
+    "code": "0054",
+    "name": "Dabaso",
+    "constituency": "Kilifi North"
+  },
+  {
+    "code": "0053",
+    "name": "Kibarani",
+    "constituency": "Kilifi North"
+  },
+  {
+    "code": "0055",
+    "name": "Matsangoni",
+    "constituency": "Kilifi North"
+  },
+  {
+    "code": "0057",
+    "name": "Mnarani",
+    "constituency": "Kilifi North"
+  },
+  {
+    "code": "0052",
+    "name": "Sokoni",
+    "constituency": "Kilifi North"
+  },
+  {
+    "code": "0051",
+    "name": "Tezo",
+    "constituency": "Kilifi North"
+  },
+  {
+    "code": "0056",
+    "name": "Watamu",
+    "constituency": "Kilifi North"
+  },
+  {
+    "code": "0061",
+    "name": "Chasimba",
+    "constituency": "Kilifi South"
+  },
+  {
+    "code": "0058",
+    "name": "Junju",
+    "constituency": "Kilifi South"
+  },
+  {
+    "code": "0062",
+    "name": "Mtepeni",
+    "constituency": "Kilifi South"
+  },
+  {
+    "code": "0059",
+    "name": "Mwarakaya",
+    "constituency": "Kilifi South"
+  },
+  {
+    "code": "0060",
+    "name": "Shimo la tewa",
+    "constituency": "Kilifi South"
+  },
+  {
+    "code": "0417",
+    "name": "Kasikeu",
+    "constituency": "Kilome"
+  },
+  {
+    "code": "0419",
+    "name": "Kiima kiu/Kalanzoni",
+    "constituency": "Kilome"
+  },
+  {
+    "code": "0418",
+    "name": "Mukaa",
+    "constituency": "Kilome"
+  },
+  {
+    "code": "1114",
+    "name": "Kamukuywa",
+    "constituency": "Kimilili"
+  },
+  {
+    "code": "1112",
+    "name": "Kibingei",
+    "constituency": "Kimilili"
+  },
+  {
+    "code": "1111",
+    "name": "Kimilili",
+    "constituency": "Kimilili"
+  },
+  {
+    "code": "1113",
+    "name": "Maeni",
+    "constituency": "Kimilili"
+  },
+  {
+    "code": "0691",
+    "name": "Hospital",
+    "constituency": "Kiminini"
+  },
+  {
+    "code": "0688",
+    "name": "Kiminini",
+    "constituency": "Kiminini"
+  },
+  {
+    "code": "0693",
+    "name": "Nabiswa",
+    "constituency": "Kiminini"
+  },
+  {
+    "code": "0692",
+    "name": "Sikhendu",
+    "constituency": "Kiminini"
+  },
+  {
+    "code": "0690",
+    "name": "Sirende",
+    "constituency": "Kiminini"
+  },
+  {
+    "code": "0689",
+    "name": "Waitaluk",
+    "constituency": "Kiminini"
+  },
+  {
+    "code": "0048",
+    "name": "Chengoni/Samburu",
+    "constituency": "Kinango"
+  },
+  {
+    "code": "0050",
+    "name": "Kasemeni",
+    "constituency": "Kinango"
+  },
+  {
+    "code": "0046",
+    "name": "Kinango",
+    "constituency": "Kinango"
+  },
+  {
+    "code": "0047",
+    "name": "Mackinnon-road",
+    "constituency": "Kinango"
+  },
+  {
+    "code": "0049",
+    "name": "Mwavumbo",
+    "constituency": "Kinango"
+  },
+  {
+    "code": "0044",
+    "name": "Nadavaya",
+    "constituency": "Kinango"
+  },
+  {
+    "code": "0045",
+    "name": "Puma",
+    "constituency": "Kinango"
+  },
+  {
+    "code": "0441",
+    "name": "Engineer",
+    "constituency": "Kinangop"
+  },
+  {
+    "code": "0442",
+    "name": "Gathara",
+    "constituency": "Kinangop"
+  },
+  {
+    "code": "0447",
+    "name": "Githabai",
+    "constituency": "Kinangop"
+  },
+  {
+    "code": "0448",
+    "name": "Magumu",
+    "constituency": "Kinangop"
+  },
+  {
+    "code": "0444",
+    "name": "Murungaru",
+    "constituency": "Kinangop"
+  },
+  {
+    "code": "0445",
+    "name": "Njabini/kiburu",
+    "constituency": "Kinangop"
+  },
+  {
+    "code": "0443",
+    "name": "North kinangop",
+    "constituency": "Kinangop"
+  },
+  {
+    "code": "0446",
+    "name": "Nyakio",
+    "constituency": "Kinangop"
+  },
+  {
+    "code": "0451",
+    "name": "Geta",
+    "constituency": "Kipipiri"
+  },
+  {
+    "code": "0452",
+    "name": "Githioro",
+    "constituency": "Kipipiri"
+  },
+  {
+    "code": "0450",
+    "name": "Kipipiri",
+    "constituency": "Kipipiri"
+  },
+  {
+    "code": "0449",
+    "name": "Wanjohi",
+    "constituency": "Kipipiri"
+  },
+  {
+    "code": "0938",
+    "name": "Chepseon",
+    "constituency": "Kipkelion East"
+  },
+  {
+    "code": "0937",
+    "name": "Kedowa/Kimugul",
+    "constituency": "Kipkelion East"
+  },
+  {
+    "code": "0936",
+    "name": "Londiani",
+    "constituency": "Kipkelion East"
+  },
+  {
+    "code": "0939",
+    "name": "Tendeno/Sorget",
+    "constituency": "Kipkelion East"
+  },
+  {
+    "code": "0943",
+    "name": "Chilchila",
+    "constituency": "Kipkelion West"
+  },
+  {
+    "code": "0941",
+    "name": "Kamasian",
+    "constituency": "Kipkelion West"
+  },
+  {
+    "code": "0942",
+    "name": "Kipkelion",
+    "constituency": "Kipkelion West"
+  },
+  {
+    "code": "0940",
+    "name": "Kunyak",
+    "constituency": "Kipkelion West"
+  },
+  {
+    "code": "0515",
+    "name": "Inoi",
+    "constituency": "Kirinyaga Central"
+  },
+  {
+    "code": "0513",
+    "name": "Kanyeki-ini",
+    "constituency": "Kirinyaga Central"
+  },
+  {
+    "code": "0514",
+    "name": "Kerugoya",
+    "constituency": "Kirinyaga Central"
+  },
+  {
+    "code": "0512",
+    "name": "Mutira",
+    "constituency": "Kirinyaga Central"
+  },
+  {
+    "code": "0011",
+    "name": "Bamburi",
+    "constituency": "Kisauni"
+  },
+  {
+    "code": "0010",
+    "name": "Junda",
+    "constituency": "Kisauni"
+  },
+  {
+    "code": "0014",
+    "name": "Magogoni",
+    "constituency": "Kisauni"
+  },
+  {
+    "code": "0009",
+    "name": "Mjambere",
+    "constituency": "Kisauni"
+  },
+  {
+    "code": "0013",
+    "name": "Mtopanga",
+    "constituency": "Kisauni"
+  },
+  {
+    "code": "0012",
+    "name": "Mwakirunge",
+    "constituency": "Kisauni"
+  },
+  {
+    "code": "0015",
+    "name": "Shanzu",
+    "constituency": "Kisauni"
+  },
+  {
+    "code": "1200",
+    "name": "Kondele",
+    "constituency": "Kisumu Central"
+  },
+  {
+    "code": "1199",
+    "name": "Market milimani",
+    "constituency": "Kisumu Central"
+  },
+  {
+    "code": "1197",
+    "name": "Migosi",
+    "constituency": "Kisumu Central"
+  },
+  {
+    "code": "1201",
+    "name": "Nyalenda B",
+    "constituency": "Kisumu Central"
+  },
+  {
+    "code": "1196",
+    "name": "Railways",
+    "constituency": "Kisumu Central"
+  },
+  {
+    "code": "1198",
+    "name": "Shaurimoyo kaloleni",
+    "constituency": "Kisumu Central"
+  },
+  {
+    "code": "1186",
+    "name": "Kajulu",
+    "constituency": "Kisumu East"
+  },
+  {
+    "code": "1190",
+    "name": "Kolwa Central",
+    "constituency": "Kisumu East"
+  },
+  {
+    "code": "1187",
+    "name": "Kolwa East",
+    "constituency": "Kisumu East"
+  },
+  {
+    "code": "1188",
+    "name": "Manyatta 'b'",
+    "constituency": "Kisumu East"
+  },
+  {
+    "code": "1189",
+    "name": "Nyalenda 'a'",
+    "constituency": "Kisumu East"
+  },
+  {
+    "code": "1192",
+    "name": "Central kisumu",
+    "constituency": "Kisumu West"
+  },
+  {
+    "code": "1193",
+    "name": "Kisumu North",
+    "constituency": "Kisumu West"
+  },
+  {
+    "code": "1195",
+    "name": "North West kisumu",
+    "constituency": "Kisumu West"
+  },
+  {
+    "code": "1191",
+    "name": "South West kisumu",
+    "constituency": "Kisumu West"
+  },
+  {
+    "code": "1194",
+    "name": "West kisumu",
+    "constituency": "Kisumu West"
+  },
+  {
+    "code": "0358",
+    "name": "Kyangwithya East",
+    "constituency": "Kitui Central"
+  },
+  {
+    "code": "0356",
+    "name": "Kyangwithya West",
+    "constituency": "Kitui Central"
+  },
+  {
+    "code": "0354",
+    "name": "Miambani",
+    "constituency": "Kitui Central"
+  },
+  {
+    "code": "0357",
+    "name": "Mulango",
+    "constituency": "Kitui Central"
+  },
+  {
+    "code": "0355",
+    "name": "Township",
+    "constituency": "Kitui Central"
+  },
+  {
+    "code": "0360",
+    "name": "Chuluni",
+    "constituency": "Kitui East"
+  },
+  {
+    "code": "0363",
+    "name": "Endau/Malalani",
+    "constituency": "Kitui East"
+  },
+  {
+    "code": "0364",
+    "name": "Mutito/Kaliku",
+    "constituency": "Kitui East"
+  },
+  {
+    "code": "0361",
+    "name": "Nzambani",
+    "constituency": "Kitui East"
+  },
+  {
+    "code": "0362",
+    "name": "Voo/Kyamatu",
+    "constituency": "Kitui East"
+  },
+  {
+    "code": "0359",
+    "name": "Zombe/Mwitika",
+    "constituency": "Kitui East"
+  },
+  {
+    "code": "0353",
+    "name": "Kanyangi",
+    "constituency": "Kitui Rural"
+  },
+  {
+    "code": "0350",
+    "name": "Kisasi",
+    "constituency": "Kitui Rural"
+  },
+  {
+    "code": "0352",
+    "name": "Kwavonza/Yatta",
+    "constituency": "Kitui Rural"
+  },
+  {
+    "code": "0351",
+    "name": "Mbitini",
+    "constituency": "Kitui Rural"
+  },
+  {
+    "code": "0370",
+    "name": "Athi",
+    "constituency": "Kitui South"
+  },
+  {
+    "code": "0365",
+    "name": "Ikanga/Kyatune",
+    "constituency": "Kitui South"
+  },
+  {
+    "code": "0368",
+    "name": "Ikutha",
+    "constituency": "Kitui South"
+  },
+  {
+    "code": "0369",
+    "name": "Kanziko",
+    "constituency": "Kitui South"
+  },
+  {
+    "code": "0367",
+    "name": "Mutha",
+    "constituency": "Kitui South"
+  },
+  {
+    "code": "0366",
+    "name": "Mutomo",
+    "constituency": "Kitui South"
+  },
+  {
+    "code": "0347",
+    "name": "Kauwi",
+    "constituency": "Kitui West"
+  },
+  {
+    "code": "0349",
+    "name": "Kwa mutonga/Kithumula",
+    "constituency": "Kitui West"
+  },
+  {
+    "code": "0348",
+    "name": "Matinyani",
+    "constituency": "Kitui West"
+  },
+  {
+    "code": "0346",
+    "name": "Mutonguni",
+    "constituency": "Kitui West"
+  },
+  {
+    "code": "1340",
+    "name": "Kegogi",
+    "constituency": "Kitutu Chache North"
+  },
+  {
+    "code": "1339",
+    "name": "Marani",
+    "constituency": "Kitutu Chache North"
+  },
+  {
+    "code": "1337",
+    "name": "Monyerero",
+    "constituency": "Kitutu Chache North"
+  },
+  {
+    "code": "1338",
+    "name": "Sensi",
+    "constituency": "Kitutu Chache North"
+  },
+  {
+    "code": "1342",
+    "name": "Bogeka",
+    "constituency": "Kitutu Chache South"
+  },
+  {
+    "code": "1341",
+    "name": "Bogusero",
+    "constituency": "Kitutu Chache South"
+  },
+  {
+    "code": "1343",
+    "name": "Nyakoe",
+    "constituency": "Kitutu Chache South"
+  },
+  {
+    "code": "1345",
+    "name": "Nyatieko",
+    "constituency": "Kitutu Chache South"
+  },
+  {
+    "code": "1347",
+    "name": "Gachuba",
+    "constituency": "Kitutu Masaba"
+  },
+  {
+    "code": "1351",
+    "name": "Gesima",
+    "constituency": "Kitutu Masaba"
+  },
+  {
+    "code": "1348",
+    "name": "Kemera",
+    "constituency": "Kitutu Masaba"
+  },
+  {
+    "code": "1349",
+    "name": "Magombo",
+    "constituency": "Kitutu Masaba"
+  },
+  {
+    "code": "1350",
+    "name": "Manga",
+    "constituency": "Kitutu Masaba"
+  },
+  {
+    "code": "1346",
+    "name": "Rigoma",
+    "constituency": "Kitutu Masaba"
+  },
+  {
+    "code": "0989",
+    "name": "Boito",
+    "constituency": "Konoin"
+  },
+  {
+    "code": "0986",
+    "name": "Chepchabas",
+    "constituency": "Konoin"
+  },
+  {
+    "code": "0990",
+    "name": "Embomos",
+    "constituency": "Konoin"
+  },
+  {
+    "code": "0987",
+    "name": "Kimulot",
+    "constituency": "Konoin"
+  },
+  {
+    "code": "0988",
+    "name": "Mogogosiek",
+    "constituency": "Konoin"
+  },
+  {
+    "code": "0856",
+    "name": "Kamara",
+    "constituency": "Kuresoi North"
+  },
+  {
+    "code": "0853",
+    "name": "Kiptororo",
+    "constituency": "Kuresoi North"
+  },
+  {
+    "code": "0854",
+    "name": "Nyota",
+    "constituency": "Kuresoi North"
+  },
+  {
+    "code": "0855",
+    "name": "Sirikwa",
+    "constituency": "Kuresoi North"
+  },
+  {
+    "code": "0849",
+    "name": "Amalo",
+    "constituency": "Kuresoi South"
+  },
+  {
+    "code": "0850",
+    "name": "Keringet",
+    "constituency": "Kuresoi South"
+  },
+  {
+    "code": "0851",
+    "name": "Kiptagich",
+    "constituency": "Kuresoi South"
+  },
+  {
+    "code": "0852",
+    "name": "Tinet",
+    "constituency": "Kuresoi South"
+  },
+  {
+    "code": "1296",
+    "name": "Gokeharaka/Getambwega",
+    "constituency": "Kuria East"
+  },
+  {
+    "code": "1298",
+    "name": "Ntimaru East",
+    "constituency": "Kuria East"
+  },
+  {
+    "code": "1297",
+    "name": "Ntimaru West",
+    "constituency": "Kuria East"
+  },
+  {
+    "code": "1299",
+    "name": "Nyabasi East",
+    "constituency": "Kuria East"
+  },
+  {
+    "code": "1300",
+    "name": "Nyabasi West",
+    "constituency": "Kuria East"
+  },
+  {
+    "code": "1290",
+    "name": "Bukira centrl/Ikerege",
+    "constituency": "Kuria West"
+  },
+  {
+    "code": "1289",
+    "name": "Bukira East",
+    "constituency": "Kuria West"
+  },
+  {
+    "code": "1291",
+    "name": "Isibania",
+    "constituency": "Kuria West"
+  },
+  {
+    "code": "1292",
+    "name": "Makerero",
+    "constituency": "Kuria West"
+  },
+  {
+    "code": "1293",
+    "name": "Masaba",
+    "constituency": "Kuria West"
+  },
+  {
+    "code": "1295",
+    "name": "Nyamosense/Komosoko",
+    "constituency": "Kuria West"
+  },
+  {
+    "code": "1294",
+    "name": "Tagare",
+    "constituency": "Kuria West"
+  },
+  {
+    "code": "0679",
+    "name": "Bidii",
+    "constituency": "Kwanza"
+  },
+  {
+    "code": "0676",
+    "name": "Kapomboi",
+    "constituency": "Kwanza"
+  },
+  {
+    "code": "0678",
+    "name": "Keiyo",
+    "constituency": "Kwanza"
+  },
+  {
+    "code": "0677",
+    "name": "Kwanza",
+    "constituency": "Kwanza"
+  },
+  {
+    "code": "0220",
+    "name": "Alungo gof",
+    "constituency": "Lafey"
+  },
+  {
+    "code": "0217",
+    "name": "Fino",
+    "constituency": "Lafey"
+  },
+  {
+    "code": "0218",
+    "name": "Lafey",
+    "constituency": "Lafey"
+  },
+  {
+    "code": "0216",
+    "name": "Libehia",
+    "constituency": "Lafey"
+  },
+  {
+    "code": "0219",
+    "name": "Warankara",
+    "constituency": "Lafey"
+  },
+  {
+    "code": "0145",
+    "name": "Baraki",
+    "constituency": "Lagdera"
+  },
+  {
+    "code": "0141",
+    "name": "Benane",
+    "constituency": "Lagdera"
+  },
+  {
+    "code": "0142",
+    "name": "Goreale",
+    "constituency": "Lagdera"
+  },
+  {
+    "code": "0143",
+    "name": "Maalimin",
+    "constituency": "Lagdera"
+  },
+  {
+    "code": "0140",
+    "name": "Modogashe",
+    "constituency": "Lagdera"
+  },
+  {
+    "code": "0144",
+    "name": "Sabena",
+    "constituency": "Lagdera"
+  },
+  {
+    "code": "0820",
+    "name": "Nanyuki",
+    "constituency": "Laikipia East"
+  },
+  {
+    "code": "0817",
+    "name": "Ngobit",
+    "constituency": "Laikipia East"
+  },
+  {
+    "code": "0819",
+    "name": "Thingithu",
+    "constituency": "Laikipia East"
+  },
+  {
+    "code": "0818",
+    "name": "Tigithi",
+    "constituency": "Laikipia East"
+  },
+  {
+    "code": "0821",
+    "name": "Umande",
+    "constituency": "Laikipia East"
+  },
+  {
+    "code": "0825",
+    "name": "Mukogondo East",
+    "constituency": "Laikipia North"
+  },
+  {
+    "code": "0824",
+    "name": "Mukogondo West",
+    "constituency": "Laikipia North"
+  },
+  {
+    "code": "0823",
+    "name": "Segera",
+    "constituency": "Laikipia North"
+  },
+  {
+    "code": "0822",
+    "name": "Sosian",
+    "constituency": "Laikipia North"
+  },
+  {
+    "code": "0815",
+    "name": "Igwamiti",
+    "constituency": "Laikipia West"
+  },
+  {
+    "code": "0813",
+    "name": "Kinamba",
+    "constituency": "Laikipia West"
+  },
+  {
+    "code": "0814",
+    "name": "Marmanet",
+    "constituency": "Laikipia West"
+  },
+  {
+    "code": "0811",
+    "name": "Olmoran",
+    "constituency": "Laikipia West"
+  },
+  {
+    "code": "0812",
+    "name": "Rumuruti Township",
+    "constituency": "Laikipia West"
+  },
+  {
+    "code": "0816",
+    "name": "Salama",
+    "constituency": "Laikipia West"
+  },
+  {
+    "code": "0237",
+    "name": "Kargi/South horr",
+    "constituency": "Laisamis"
+  },
+  {
+    "code": "0238",
+    "name": "Korr/Ngurunit",
+    "constituency": "Laisamis"
+  },
+  {
+    "code": "0240",
+    "name": "Laisamis",
+    "constituency": "Laisamis"
+  },
+  {
+    "code": "0239",
+    "name": "Log logo",
+    "constituency": "Laisamis"
+  },
+  {
+    "code": "0236",
+    "name": "Loiyangalani",
+    "constituency": "Laisamis"
+  },
+  {
+    "code": "0103",
+    "name": "Basuba",
+    "constituency": "Lamu East"
+  },
+  {
+    "code": "0101",
+    "name": "Faza",
+    "constituency": "Lamu East"
+  },
+  {
+    "code": "0102",
+    "name": "Kiunga",
+    "constituency": "Lamu East"
+  },
+  {
+    "code": "0110",
+    "name": "Bahari",
+    "constituency": "Lamu West"
+  },
+  {
+    "code": "0106",
+    "name": "Hindi",
+    "constituency": "Lamu West"
+  },
+  {
+    "code": "0108",
+    "name": "Hongwe",
+    "constituency": "Lamu West"
+  },
+  {
+    "code": "0105",
+    "name": "Mkomani",
+    "constituency": "Lamu West"
+  },
+  {
+    "code": "0107",
+    "name": "Mkunumbi",
+    "constituency": "Lamu West"
+  },
+  {
+    "code": "0104",
+    "name": "Shella",
+    "constituency": "Lamu West"
+  },
+  {
+    "code": "0109",
+    "name": "Witu",
+    "constituency": "Lamu West"
+  },
+  {
+    "code": "1381",
+    "name": "Karen",
+    "constituency": "Langata"
+  },
+  {
+    "code": "1383",
+    "name": "Mugumo-ini",
+    "constituency": "Langata"
+  },
+  {
+    "code": "1382",
+    "name": "Nairobi West",
+    "constituency": "Langata"
+  },
+  {
+    "code": "1385",
+    "name": "Nyayo Highrise",
+    "constituency": "Langata"
+  },
+  {
+    "code": "1384",
+    "name": "South-c",
+    "constituency": "Langata"
+  },
+  {
+    "code": "0609",
+    "name": "Kamburu",
+    "constituency": "Lari"
+  },
+  {
+    "code": "0607",
+    "name": "Kijabe",
+    "constituency": "Lari"
+  },
+  {
+    "code": "0606",
+    "name": "Kinale",
+    "constituency": "Lari"
+  },
+  {
+    "code": "0610",
+    "name": "Lari/Kirenga",
+    "constituency": "Lari"
+  },
+  {
+    "code": "0608",
+    "name": "Nyanduma",
+    "constituency": "Lari"
+  },
+  {
+    "code": "0023",
+    "name": "Bofu",
+    "constituency": "Likoni"
+  },
+  {
+    "code": "0024",
+    "name": "Likoni",
+    "constituency": "Likoni"
+  },
+  {
+    "code": "0021",
+    "name": "Mtongwe",
+    "constituency": "Likoni"
+  },
+  {
+    "code": "0022",
+    "name": "Shika adabu",
+    "constituency": "Likoni"
+  },
+  {
+    "code": "0025",
+    "name": "Timbwani",
+    "constituency": "Likoni"
+  },
+  {
+    "code": "0999",
+    "name": "Kongoni",
+    "constituency": "Likuyani"
+  },
+  {
+    "code": "0997",
+    "name": "Likuyani",
+    "constituency": "Likuyani"
+  },
+  {
+    "code": "1000",
+    "name": "Nzoia",
+    "constituency": "Likuyani"
+  },
+  {
+    "code": "0998",
+    "name": "Sango",
+    "constituency": "Likuyani"
+  },
+  {
+    "code": "1001",
+    "name": "Sinoko",
+    "constituency": "Likuyani"
+  },
+  {
+    "code": "0601",
+    "name": "Bibirioni",
+    "constituency": "Limuru"
+  },
+  {
+    "code": "0602",
+    "name": "Limuru Central",
+    "constituency": "Limuru"
+  },
+  {
+    "code": "0604",
+    "name": "Limuru East",
+    "constituency": "Limuru"
+  },
+  {
+    "code": "0603",
+    "name": "Ndeiya",
+    "constituency": "Limuru"
+  },
+  {
+    "code": "0605",
+    "name": "Ngecha tigoni",
+    "constituency": "Limuru"
+  },
+  {
+    "code": "0629",
+    "name": "Kotaruk/Lobei",
+    "constituency": "Loima"
+  },
+  {
+    "code": "0631",
+    "name": "Loima",
+    "constituency": "Loima"
+  },
+  {
+    "code": "0632",
+    "name": "Lokiriama/Lorengippi",
+    "constituency": "Loima"
+  },
+  {
+    "code": "0630",
+    "name": "Turkwel",
+    "constituency": "Loima"
+  },
+  {
+    "code": "1072",
+    "name": "Emabungo",
+    "constituency": "Luanda"
+  },
+  {
+    "code": "1071",
+    "name": "Luanda South",
+    "constituency": "Luanda"
+  },
+  {
+    "code": "1068",
+    "name": "Luanda Township",
+    "constituency": "Luanda"
+  },
+  {
+    "code": "1070",
+    "name": "Mwibona",
+    "constituency": "Luanda"
+  },
+  {
+    "code": "1069",
+    "name": "Wemilabi",
+    "constituency": "Luanda"
+  },
+  {
+    "code": "0994",
+    "name": "Chekalini",
+    "constituency": "Lugari"
+  },
+  {
+    "code": "0995",
+    "name": "Chevaywa",
+    "constituency": "Lugari"
+  },
+  {
+    "code": "0992",
+    "name": "Lugari",
+    "constituency": "Lugari"
+  },
+  {
+    "code": "0993",
+    "name": "Lumakanda",
+    "constituency": "Lugari"
+  },
+  {
+    "code": "0996",
+    "name": "Lwandeti",
+    "constituency": "Lugari"
+  },
+  {
+    "code": "0991",
+    "name": "Mautuma",
+    "constituency": "Lugari"
+  },
+  {
+    "code": "0036",
+    "name": "Dzombo",
+    "constituency": "Lungalunga"
+  },
+  {
+    "code": "0037",
+    "name": "Mwereni",
+    "constituency": "Lungalunga"
+  },
+  {
+    "code": "0035",
+    "name": "Pongwekikoneni",
+    "constituency": "Lungalunga"
+  },
+  {
+    "code": "0038",
+    "name": "Vanga",
+    "constituency": "Lungalunga"
+  },
+  {
+    "code": "1011",
+    "name": "Butsotso Central",
+    "constituency": "Lurambi"
+  },
+  {
+    "code": "1009",
+    "name": "Butsotso East",
+    "constituency": "Lurambi"
+  },
+  {
+    "code": "1010",
+    "name": "Butsotso South",
+    "constituency": "Lurambi"
+  },
+  {
+    "code": "1013",
+    "name": "Mahiakalo",
+    "constituency": "Lurambi"
+  },
+  {
+    "code": "1012",
+    "name": "Sheywe",
+    "constituency": "Lurambi"
+  },
+  {
+    "code": "1014",
+    "name": "Shirere",
+    "constituency": "Lurambi"
+  },
+  {
+    "code": "0300",
+    "name": "Chogoria",
+    "constituency": "Maara"
+  },
+  {
+    "code": "0299",
+    "name": "Ganga",
+    "constituency": "Maara"
+  },
+  {
+    "code": "0296",
+    "name": "Mitheru",
+    "constituency": "Maara"
+  },
+  {
+    "code": "0297",
+    "name": "Muthambi",
+    "constituency": "Maara"
+  },
+  {
+    "code": "0298",
+    "name": "Mwimbi",
+    "constituency": "Maara"
+  },
+  {
+    "code": "0398",
+    "name": "Kalama",
+    "constituency": "Machakos Town"
+  },
+  {
+    "code": "0404",
+    "name": "Kola",
+    "constituency": "Machakos Town"
+  },
+  {
+    "code": "0401",
+    "name": "Machakos Central",
+    "constituency": "Machakos Town"
+  },
+  {
+    "code": "0399",
+    "name": "Mua",
+    "constituency": "Machakos Town"
+  },
+  {
+    "code": "0402",
+    "name": "Mumbuni North",
+    "constituency": "Machakos Town"
+  },
+  {
+    "code": "0400",
+    "name": "Mutituni",
+    "constituency": "Machakos Town"
+  },
+  {
+    "code": "0403",
+    "name": "Muvuti/Kiima-kimwe",
+    "constituency": "Machakos Town"
+  },
+  {
+    "code": "0083",
+    "name": "Adu",
+    "constituency": "Magarini"
+  },
+  {
+    "code": "0084",
+    "name": "Garashi",
+    "constituency": "Magarini"
+  },
+  {
+    "code": "0082",
+    "name": "Gongoni",
+    "constituency": "Magarini"
+  },
+  {
+    "code": "0081",
+    "name": "Magarini",
+    "constituency": "Magarini"
+  },
+  {
+    "code": "0080",
+    "name": "Marafa",
+    "constituency": "Magarini"
+  },
+  {
+    "code": "0085",
+    "name": "Sabaki",
+    "constituency": "Magarini"
+  },
+  {
+    "code": "1432",
+    "name": "Harambee",
+    "constituency": "Makadara"
+  },
+  {
+    "code": "1430",
+    "name": "Makongeni",
+    "constituency": "Makadara"
+  },
+  {
+    "code": "1431",
+    "name": "Maringo/Hamza",
+    "constituency": "Makadara"
+  },
+  {
+    "code": "1433",
+    "name": "Viwandani",
+    "constituency": "Makadara"
+  },
+  {
+    "code": "0428",
+    "name": "Kathonzweni",
+    "constituency": "Makueni"
+  },
+  {
+    "code": "0427",
+    "name": "Kitise/Kithuki",
+    "constituency": "Makueni"
+  },
+  {
+    "code": "0426",
+    "name": "Mavindini",
+    "constituency": "Makueni"
+  },
+  {
+    "code": "0430",
+    "name": "Mbitini",
+    "constituency": "Makueni"
+  },
+  {
+    "code": "0425",
+    "name": "Muvau/Kikuumini",
+    "constituency": "Makueni"
+  },
+  {
+    "code": "0429",
+    "name": "Nzaui/Kilili/Kalamba",
+    "constituency": "Makueni"
+  },
+  {
+    "code": "0424",
+    "name": "Wote",
+    "constituency": "Makueni"
+  },
+  {
+    "code": "1005",
+    "name": "Butali/Chegulo",
+    "constituency": "Malava"
+  },
+  {
+    "code": "1003",
+    "name": "Chemuche",
+    "constituency": "Malava"
+  },
+  {
+    "code": "1004",
+    "name": "East kabras",
+    "constituency": "Malava"
+  },
+  {
+    "code": "1006",
+    "name": "Manda-shivanga",
+    "constituency": "Malava"
+  },
+  {
+    "code": "1007",
+    "name": "Shirugu-mugai",
+    "constituency": "Malava"
+  },
+  {
+    "code": "1008",
+    "name": "South kabras",
+    "constituency": "Malava"
+  },
+  {
+    "code": "1002",
+    "name": "West kabras",
+    "constituency": "Malava"
+  },
+  {
+    "code": "0077",
+    "name": "Ganda",
+    "constituency": "Malindi"
+  },
+  {
+    "code": "0075",
+    "name": "Jilore",
+    "constituency": "Malindi"
+  },
+  {
+    "code": "0076",
+    "name": "Kakuyuni",
+    "constituency": "Malindi"
+  },
+  {
+    "code": "0078",
+    "name": "Malindi Town",
+    "constituency": "Malindi"
+  },
+  {
+    "code": "0079",
+    "name": "Shella",
+    "constituency": "Malindi"
+  },
+  {
+    "code": "0211",
+    "name": "Arabia",
+    "constituency": "Mandera East"
+  },
+  {
+    "code": "0212",
+    "name": "Bulla mpya",
+    "constituency": "Mandera East"
+  },
+  {
+    "code": "0213",
+    "name": "Khalalio",
+    "constituency": "Mandera East"
+  },
+  {
+    "code": "0214",
+    "name": "Neboi",
+    "constituency": "Mandera East"
+  },
+  {
+    "code": "0215",
+    "name": "Township",
+    "constituency": "Mandera East"
+  },
+  {
+    "code": "0201",
+    "name": "Ashabito",
+    "constituency": "Mandera North"
+  },
+  {
+    "code": "0202",
+    "name": "Guticha",
+    "constituency": "Mandera North"
+  },
+  {
+    "code": "0203",
+    "name": "Morothile",
+    "constituency": "Mandera North"
+  },
+  {
+    "code": "0204",
+    "name": "Rhamu",
+    "constituency": "Mandera North"
+  },
+  {
+    "code": "0205",
+    "name": "Rhamu-dimtu",
+    "constituency": "Mandera North"
+  },
+  {
+    "code": "0209",
+    "name": "Elwak North",
+    "constituency": "Mandera South"
+  },
+  {
+    "code": "0208",
+    "name": "Elwak South",
+    "constituency": "Mandera South"
+  },
+  {
+    "code": "0207",
+    "name": "Kutulo",
+    "constituency": "Mandera South"
+  },
+  {
+    "code": "0210",
+    "name": "Shimbir fatuma",
+    "constituency": "Mandera South"
+  },
+  {
+    "code": "0206",
+    "name": "Wargudud",
+    "constituency": "Mandera South"
+  },
+  {
+    "code": "0194",
+    "name": "Dandu",
+    "constituency": "Mandera West"
+  },
+  {
+    "code": "0195",
+    "name": "Gither",
+    "constituency": "Mandera West"
+  },
+  {
+    "code": "0193",
+    "name": "Lag sure",
+    "constituency": "Mandera West"
+  },
+  {
+    "code": "0192",
+    "name": "Takaba",
+    "constituency": "Mandera West"
+  },
+  {
+    "code": "0191",
+    "name": "Takaba South",
+    "constituency": "Mandera West"
+  },
+  {
+    "code": "0316",
+    "name": "Gaturi South",
+    "constituency": "Manyatta"
+  },
+  {
+    "code": "0315",
+    "name": "Kirimari",
+    "constituency": "Manyatta"
+  },
+  {
+    "code": "0312",
+    "name": "Kithimu",
+    "constituency": "Manyatta"
+  },
+  {
+    "code": "0314",
+    "name": "Mbeti North",
+    "constituency": "Manyatta"
+  },
+  {
+    "code": "0313",
+    "name": "Nginda",
+    "constituency": "Manyatta"
+  },
+  {
+    "code": "0311",
+    "name": "Ruguru/Ngandori",
+    "constituency": "Manyatta"
+  },
+  {
+    "code": "0537",
+    "name": "Ichagaki",
+    "constituency": "Maragwa"
+  },
+  {
+    "code": "0536",
+    "name": "Kamahuha",
+    "constituency": "Maragwa"
+  },
+  {
+    "code": "0535",
+    "name": "Kambiti",
+    "constituency": "Maragwa"
+  },
+  {
+    "code": "0533",
+    "name": "Kimorori/Wempa",
+    "constituency": "Maragwa"
+  },
+  {
+    "code": "0534",
+    "name": "Makuyu",
+    "constituency": "Maragwa"
+  },
+  {
+    "code": "0538",
+    "name": "Nginda",
+    "constituency": "Maragwa"
+  },
+  {
+    "code": "0734",
+    "name": "Embobut/Embulot",
+    "constituency": "Marakwet East"
+  },
+  {
+    "code": "0733",
+    "name": "Endo",
+    "constituency": "Marakwet East"
+  },
+  {
+    "code": "0731",
+    "name": "Kapyego",
+    "constituency": "Marakwet East"
+  },
+  {
+    "code": "0732",
+    "name": "Sambirir",
+    "constituency": "Marakwet East"
+  },
+  {
+    "code": "0740",
+    "name": "Arror",
+    "constituency": "Marakwet West"
+  },
+  {
+    "code": "0739",
+    "name": "Kapsowar",
+    "constituency": "Marakwet West"
+  },
+  {
+    "code": "0735",
+    "name": "Lelan",
+    "constituency": "Marakwet West"
+  },
+  {
+    "code": "0738",
+    "name": "Moiben/Kuserwo",
+    "constituency": "Marakwet West"
+  },
+  {
+    "code": "0736",
+    "name": "Sengwer",
+    "constituency": "Marakwet West"
+  },
+  {
+    "code": "0373",
+    "name": "Ekalakala",
+    "constituency": "Masinga"
+  },
+  {
+    "code": "0371",
+    "name": "Kivaa",
+    "constituency": "Masinga"
+  },
+  {
+    "code": "0372",
+    "name": "Masinga Central",
+    "constituency": "Masinga"
+  },
+  {
+    "code": "0374",
+    "name": "Muthesya",
+    "constituency": "Masinga"
+  },
+  {
+    "code": "0375",
+    "name": "Ndithini",
+    "constituency": "Masinga"
+  },
+  {
+    "code": "1137",
+    "name": "Bukhayo West",
+    "constituency": "Matayos"
+  },
+  {
+    "code": "1141",
+    "name": "Burumba",
+    "constituency": "Matayos"
+  },
+  {
+    "code": "1140",
+    "name": "Busibwabo",
+    "constituency": "Matayos"
+  },
+  {
+    "code": "1139",
+    "name": "Matayos South",
+    "constituency": "Matayos"
+  },
+  {
+    "code": "1138",
+    "name": "Mayenje",
+    "constituency": "Matayos"
+  },
+  {
+    "code": "1445",
+    "name": "Hospital",
+    "constituency": "Mathare"
+  },
+  {
+    "code": "1447",
+    "name": "Huruma",
+    "constituency": "Mathare"
+  },
+  {
+    "code": "1450",
+    "name": "Kiamaiko",
+    "constituency": "Mathare"
+  },
+  {
+    "code": "1446",
+    "name": "Mabatini",
+    "constituency": "Mathare"
+  },
+  {
+    "code": "1449",
+    "name": "Mlango kubwa",
+    "constituency": "Mathare"
+  },
+  {
+    "code": "1448",
+    "name": "Ngei",
+    "constituency": "Mathare"
+  },
+  {
+    "code": "0519",
+    "name": "Gitugi",
+    "constituency": "Mathioya"
+  },
+  {
+    "code": "0521",
+    "name": "Kamacharia",
+    "constituency": "Mathioya"
+  },
+  {
+    "code": "0520",
+    "name": "Kiru",
+    "constituency": "Mathioya"
+  },
+  {
+    "code": "0479",
+    "name": "Iriaini",
+    "constituency": "Mathira"
+  },
+  {
+    "code": "0482",
+    "name": "Karatina Town",
+    "constituency": "Mathira"
+  },
+  {
+    "code": "0481",
+    "name": "Kirimukuyu",
+    "constituency": "Mathira"
+  },
+  {
+    "code": "0480",
+    "name": "Konyu",
+    "constituency": "Mathira"
+  },
+  {
+    "code": "0478",
+    "name": "Magutu",
+    "constituency": "Mathira"
+  },
+  {
+    "code": "0477",
+    "name": "Ruguru",
+    "constituency": "Mathira"
+  },
+  {
+    "code": "0042",
+    "name": "Kubo South",
+    "constituency": "Matuga"
+  },
+  {
+    "code": "0043",
+    "name": "Mkongani",
+    "constituency": "Matuga"
+  },
+  {
+    "code": "0041",
+    "name": "Tiwi",
+    "constituency": "Matuga"
+  },
+  {
+    "code": "0039",
+    "name": "Tsimba golini",
+    "constituency": "Matuga"
+  },
+  {
+    "code": "0040",
+    "name": "Waa",
+    "constituency": "Matuga"
+  },
+  {
+    "code": "1029",
+    "name": "Khalaba",
+    "constituency": "Matungu"
+  },
+  {
+    "code": "1028",
+    "name": "Kholera",
+    "constituency": "Matungu"
+  },
+  {
+    "code": "1027",
+    "name": "Koyonzo",
+    "constituency": "Matungu"
+  },
+  {
+    "code": "1030",
+    "name": "Mayoni",
+    "constituency": "Matungu"
+  },
+  {
+    "code": "1031",
+    "name": "Namamali",
+    "constituency": "Matungu"
+  },
+  {
+    "code": "0389",
+    "name": "Kyeleni",
+    "constituency": "Matungulu"
+  },
+  {
+    "code": "0387",
+    "name": "Matungulu East",
+    "constituency": "Matungulu"
+  },
+  {
+    "code": "0386",
+    "name": "Matungulu North",
+    "constituency": "Matungulu"
+  },
+  {
+    "code": "0388",
+    "name": "Matungulu West",
+    "constituency": "Matungulu"
+  },
+  {
+    "code": "0385",
+    "name": "Tala",
+    "constituency": "Matungulu"
+  },
+  {
+    "code": "0394",
+    "name": "Athi River",
+    "constituency": "Mavoko"
+  },
+  {
+    "code": "0395",
+    "name": "Kinanie",
+    "constituency": "Mavoko"
+  },
+  {
+    "code": "0396",
+    "name": "Muthwani",
+    "constituency": "Mavoko"
+  },
+  {
+    "code": "0397",
+    "name": "Syokimau/Mulolongo",
+    "constituency": "Mavoko"
+  },
+  {
+    "code": "0330",
+    "name": "Evurore",
+    "constituency": "Mbeere North"
+  },
+  {
+    "code": "0329",
+    "name": "Muminji",
+    "constituency": "Mbeere North"
+  },
+  {
+    "code": "0328",
+    "name": "Nthawa",
+    "constituency": "Mbeere North"
+  },
+  {
+    "code": "0327",
+    "name": "Kiambere",
+    "constituency": "Mbeere South"
+  },
+  {
+    "code": "0324",
+    "name": "Makima",
+    "constituency": "Mbeere South"
+  },
+  {
+    "code": "0326",
+    "name": "Mavuria",
+    "constituency": "Mbeere South"
+  },
+  {
+    "code": "0325",
+    "name": "Mbeti South",
+    "constituency": "Mbeere South"
+  },
+  {
+    "code": "0323",
+    "name": "Mwea",
+    "constituency": "Mbeere South"
+  },
+  {
+    "code": "1255",
+    "name": "Gembe",
+    "constituency": "Mbita"
+  },
+  {
+    "code": "1254",
+    "name": "Kasgunga",
+    "constituency": "Mbita"
+  },
+  {
+    "code": "1256",
+    "name": "Lambwe",
+    "constituency": "Mbita"
+  },
+  {
+    "code": "1252",
+    "name": "Mfangano Island",
+    "constituency": "Mbita"
+  },
+  {
+    "code": "1253",
+    "name": "Rusinga Island",
+    "constituency": "Mbita"
+  },
+  {
+    "code": "0416",
+    "name": "Kalawa",
+    "constituency": "Mbooni"
+  },
+  {
+    "code": "0414",
+    "name": "Kisau/Kiteta",
+    "constituency": "Mbooni"
+  },
+  {
+    "code": "0413",
+    "name": "Kithungo/Kitundu",
+    "constituency": "Mbooni"
+  },
+  {
+    "code": "0412",
+    "name": "Mbooni",
+    "constituency": "Mbooni"
+  },
+  {
+    "code": "0411",
+    "name": "Tulimani",
+    "constituency": "Mbooni"
+  },
+  {
+    "code": "0415",
+    "name": "Waia/Kako",
+    "constituency": "Mbooni"
+  },
+  {
+    "code": "0803",
+    "name": "Emining",
+    "constituency": "Mogotio"
+  },
+  {
+    "code": "0804",
+    "name": "Kisanana",
+    "constituency": "Mogotio"
+  },
+  {
+    "code": "0802",
+    "name": "Mogotio",
+    "constituency": "Mogotio"
+  },
+  {
+    "code": "0716",
+    "name": "Karuna/Meibeki",
+    "constituency": "Moiben"
+  },
+  {
+    "code": "0718",
+    "name": "Kimumu",
+    "constituency": "Moiben"
+  },
+  {
+    "code": "0717",
+    "name": "Moiben",
+    "constituency": "Moiben"
+  },
+  {
+    "code": "0715",
+    "name": "Sergoit",
+    "constituency": "Moiben"
+  },
+  {
+    "code": "0714",
+    "name": "Tembelio",
+    "constituency": "Moiben"
+  },
+  {
+    "code": "0827",
+    "name": "Elburgon",
+    "constituency": "Molo"
+  },
+  {
+    "code": "0826",
+    "name": "Mariashoni",
+    "constituency": "Molo"
+  },
+  {
+    "code": "0829",
+    "name": "Molo",
+    "constituency": "Molo"
+  },
+  {
+    "code": "0828",
+    "name": "Turi",
+    "constituency": "Molo"
+  },
+  {
+    "code": "0774",
+    "name": "Chepterwai",
+    "constituency": "Mosop"
+  },
+  {
+    "code": "0779",
+    "name": "Kabisaga",
+    "constituency": "Mosop"
+  },
+  {
+    "code": "0777",
+    "name": "Kabiyet",
+    "constituency": "Mosop"
+  },
+  {
+    "code": "0775",
+    "name": "Kipkaren",
+    "constituency": "Mosop"
+  },
+  {
+    "code": "0776",
+    "name": "Kurgung/Surungai",
+    "constituency": "Mosop"
+  },
+  {
+    "code": "0778",
+    "name": "Ndalat",
+    "constituency": "Mosop"
+  },
+  {
+    "code": "0780",
+    "name": "Sangalo/Kebulonik",
+    "constituency": "Mosop"
+  },
+  {
+    "code": "0221",
+    "name": "Butiye",
+    "constituency": "Moyale"
+  },
+  {
+    "code": "0224",
+    "name": "Golbo",
+    "constituency": "Moyale"
+  },
+  {
+    "code": "0223",
+    "name": "Heilu-manyatta",
+    "constituency": "Moyale"
+  },
+  {
+    "code": "0225",
+    "name": "Moyale Township",
+    "constituency": "Moyale"
+  },
+  {
+    "code": "0227",
+    "name": "Obbu",
+    "constituency": "Moyale"
+  },
+  {
+    "code": "0222",
+    "name": "Sololo",
+    "constituency": "Moyale"
+  },
+  {
+    "code": "0226",
+    "name": "Uran",
+    "constituency": "Moyale"
+  },
+  {
+    "code": "0031",
+    "name": "Gombatobongwe",
+    "constituency": "Msambweni"
+  },
+  {
+    "code": "0033",
+    "name": "Kinondo",
+    "constituency": "Msambweni"
+  },
+  {
+    "code": "0034",
+    "name": "Ramisi",
+    "constituency": "Msambweni"
+  },
+  {
+    "code": "0032",
+    "name": "Ukunda",
+    "constituency": "Msambweni"
+  },
+  {
+    "code": "1076",
+    "name": "Cheptais",
+    "constituency": "Mt. Elgon"
+  },
+  {
+    "code": "1078",
+    "name": "Chepyuk",
+    "constituency": "Mt. Elgon"
+  },
+  {
+    "code": "1077",
+    "name": "Chesikaki",
+    "constituency": "Mt. Elgon"
+  },
+  {
+    "code": "1081",
+    "name": "Elgon",
+    "constituency": "Mt. Elgon"
+  },
+  {
+    "code": "1079",
+    "name": "Kapkateny",
+    "constituency": "Mt. Elgon"
+  },
+  {
+    "code": "1080",
+    "name": "Kaptama",
+    "constituency": "Mt. Elgon"
+  },
+  {
+    "code": "1214",
+    "name": "Chemelil",
+    "constituency": "Muhoroni"
+  },
+  {
+    "code": "1213",
+    "name": "Masogo/Nyang'oma",
+    "constituency": "Muhoroni"
+  },
+  {
+    "code": "1211",
+    "name": "Miwani",
+    "constituency": "Muhoroni"
+  },
+  {
+    "code": "1215",
+    "name": "Muhoroni/Koru",
+    "constituency": "Muhoroni"
+  },
+  {
+    "code": "1212",
+    "name": "Ombeyi",
+    "constituency": "Muhoroni"
+  },
+  {
+    "code": "0487",
+    "name": "Gikondi",
+    "constituency": "Mukurweini"
+  },
+  {
+    "code": "0490",
+    "name": "Mukurwe-ini Central",
+    "constituency": "Mukurweini"
+  },
+  {
+    "code": "0489",
+    "name": "Mukurwe-ini West",
+    "constituency": "Mukurweini"
+  },
+  {
+    "code": "0488",
+    "name": "Rugi",
+    "constituency": "Mukurweini"
+  },
+  {
+    "code": "1026",
+    "name": "East wanga",
+    "constituency": "Mumias East"
+  },
+  {
+    "code": "1025",
+    "name": "Isongo/Makunga/Malaha",
+    "constituency": "Mumias East"
+  },
+  {
+    "code": "1024",
+    "name": "Lubinu/Lusheya",
+    "constituency": "Mumias East"
+  },
+  {
+    "code": "1022",
+    "name": "Etenje",
+    "constituency": "Mumias West"
+  },
+  {
+    "code": "1020",
+    "name": "Mumias Central",
+    "constituency": "Mumias West"
+  },
+  {
+    "code": "1021",
+    "name": "Mumias North",
+    "constituency": "Mumias West"
+  },
+  {
+    "code": "1023",
+    "name": "Musanda",
+    "constituency": "Mumias West"
+  },
+  {
+    "code": "0030",
+    "name": "Majengo",
+    "constituency": "Mvita"
+  },
+  {
+    "code": "0026",
+    "name": "Mji wa kale/Makadara",
+    "constituency": "Mvita"
+  },
+  {
+    "code": "0029",
+    "name": "Shimanzi/Ganjoni",
+    "constituency": "Mvita"
+  },
+  {
+    "code": "0028",
+    "name": "Tononoka",
+    "constituency": "Mvita"
+  },
+  {
+    "code": "0027",
+    "name": "Tudor",
+    "constituency": "Mvita"
+  },
+  {
+    "code": "0410",
+    "name": "Kibauni",
+    "constituency": "Mwala"
+  },
+  {
+    "code": "0406",
+    "name": "Makutano/Mwala",
+    "constituency": "Mwala"
+  },
+  {
+    "code": "0407",
+    "name": "Masii",
+    "constituency": "Mwala"
+  },
+  {
+    "code": "0405",
+    "name": "Mbiuni",
+    "constituency": "Mwala"
+  },
+  {
+    "code": "0408",
+    "name": "Muthetheni",
+    "constituency": "Mwala"
+  },
+  {
+    "code": "0409",
+    "name": "Wamunyu",
+    "constituency": "Mwala"
+  },
+  {
+    "code": "0122",
+    "name": "Bura",
+    "constituency": "Mwatate"
+  },
+  {
+    "code": "0123",
+    "name": "Chawia",
+    "constituency": "Mwatate"
+  },
+  {
+    "code": "0121",
+    "name": "Mwatate",
+    "constituency": "Mwatate"
+  },
+  {
+    "code": "0120",
+    "name": "Rong'e",
+    "constituency": "Mwatate"
+  },
+  {
+    "code": "0124",
+    "name": "Wusi/Kishamba",
+    "constituency": "Mwatate"
+  },
+  {
+    "code": "0502",
+    "name": "Gathigiriri",
+    "constituency": "Mwea"
+  },
+  {
+    "code": "0497",
+    "name": "Kangai",
+    "constituency": "Mwea"
+  },
+  {
+    "code": "0501",
+    "name": "Murinduko",
+    "constituency": "Mwea"
+  },
+  {
+    "code": "0496",
+    "name": "Mutithi",
+    "constituency": "Mwea"
+  },
+  {
+    "code": "0500",
+    "name": "Nyangati",
+    "constituency": "Mwea"
+  },
+  {
+    "code": "0503",
+    "name": "Tebere",
+    "constituency": "Mwea"
+  },
+  {
+    "code": "0498",
+    "name": "Thiba",
+    "constituency": "Mwea"
+  },
+  {
+    "code": "0499",
+    "name": "Wamumu",
+    "constituency": "Mwea"
+  },
+  {
+    "code": "0340",
+    "name": "Central",
+    "constituency": "Mwingi Central"
+  },
+  {
+    "code": "0341",
+    "name": "Kivou",
+    "constituency": "Mwingi Central"
+  },
+  {
+    "code": "0344",
+    "name": "Mui",
+    "constituency": "Mwingi Central"
+  },
+  {
+    "code": "0342",
+    "name": "Nguni",
+    "constituency": "Mwingi Central"
+  },
+  {
+    "code": "0343",
+    "name": "Nuu",
+    "constituency": "Mwingi Central"
+  },
+  {
+    "code": "0345",
+    "name": "Waita",
+    "constituency": "Mwingi Central"
+  },
+  {
+    "code": "0332",
+    "name": "Kyuso",
+    "constituency": "Mwingi North"
+  },
+  {
+    "code": "0333",
+    "name": "Mumoni",
+    "constituency": "Mwingi North"
+  },
+  {
+    "code": "0331",
+    "name": "Ngomeni",
+    "constituency": "Mwingi North"
+  },
+  {
+    "code": "0335",
+    "name": "Tharaka",
+    "constituency": "Mwingi North"
+  },
+  {
+    "code": "0334",
+    "name": "Tseikuru",
+    "constituency": "Mwingi North"
+  },
+  {
+    "code": "0339",
+    "name": "Kiomo/Kyethani",
+    "constituency": "Mwingi West"
+  },
+  {
+    "code": "0336",
+    "name": "Kyome/Thaana",
+    "constituency": "Mwingi West"
+  },
+  {
+    "code": "0338",
+    "name": "Migwani",
+    "constituency": "Mwingi West"
+  },
+  {
+    "code": "0337",
+    "name": "Nguutani",
+    "constituency": "Mwingi West"
+  },
+  {
+    "code": "0836",
+    "name": "Biashara",
+    "constituency": "Naivasha"
+  },
+  {
+    "code": "0837",
+    "name": "Hells gate",
+    "constituency": "Naivasha"
+  },
+  {
+    "code": "0838",
+    "name": "Lakeview",
+    "constituency": "Naivasha"
+  },
+  {
+    "code": "0839",
+    "name": "Maai-mahiu",
+    "constituency": "Naivasha"
+  },
+  {
+    "code": "0840",
+    "name": "Maiella",
+    "constituency": "Naivasha"
+  },
+  {
+    "code": "0842",
+    "name": "Naivasha East",
+    "constituency": "Naivasha"
+  },
+  {
+    "code": "0841",
+    "name": "Olkaria",
+    "constituency": "Naivasha"
+  },
+  {
+    "code": "0843",
+    "name": "Viwandani",
+    "constituency": "Naivasha"
+  },
+  {
+    "code": "0876",
+    "name": "Biashara",
+    "constituency": "Nakuru Town East"
+  },
+  {
+    "code": "0878",
+    "name": "Flamingo",
+    "constituency": "Nakuru Town East"
+  },
+  {
+    "code": "0877",
+    "name": "Kivumbini",
+    "constituency": "Nakuru Town East"
+  },
+  {
+    "code": "0879",
+    "name": "Menengai",
+    "constituency": "Nakuru Town East"
+  },
+  {
+    "code": "0880",
+    "name": "Nakuru East",
+    "constituency": "Nakuru Town East"
+  },
+  {
+    "code": "0870",
+    "name": "Barut",
+    "constituency": "Nakuru Town West"
+  },
+  {
+    "code": "0873",
+    "name": "Kapkures",
+    "constituency": "Nakuru Town West"
+  },
+  {
+    "code": "0872",
+    "name": "Kaptembwo",
+    "constituency": "Nakuru Town West"
+  },
+  {
+    "code": "0871",
+    "name": "London",
+    "constituency": "Nakuru Town West"
+  },
+  {
+    "code": "0874",
+    "name": "Rhoda",
+    "constituency": "Nakuru Town West"
+  },
+  {
+    "code": "0875",
+    "name": "Shaabab",
+    "constituency": "Nakuru Town West"
+  },
+  {
+    "code": "1136",
+    "name": "Bukhayo Central",
+    "constituency": "Nambale"
+  },
+  {
+    "code": "1135",
+    "name": "Bukhayo East",
+    "constituency": "Nambale"
+  },
+  {
+    "code": "1134",
+    "name": "Bukhayo north/Waltsi",
+    "constituency": "Nambale"
+  },
+  {
+    "code": "1133",
+    "name": "Nambale Township",
+    "constituency": "Nambale"
+  },
+  {
+    "code": "0762",
+    "name": "Chepkunyuk",
+    "constituency": "Nandi Hills"
+  },
+  {
+    "code": "0764",
+    "name": "Kapchorua",
+    "constituency": "Nandi Hills"
+  },
+  {
+    "code": "0761",
+    "name": "Nandi Hills",
+    "constituency": "Nandi Hills"
+  },
+  {
+    "code": "0763",
+    "name": "Ol'lessos",
+    "constituency": "Nandi Hills"
+  },
+  {
+    "code": "0898",
+    "name": "Ildamat",
+    "constituency": "Narok East"
+  },
+  {
+    "code": "0899",
+    "name": "Keekonyokie",
+    "constituency": "Narok East"
+  },
+  {
+    "code": "0897",
+    "name": "Mosiro",
+    "constituency": "Narok East"
+  },
+  {
+    "code": "0900",
+    "name": "Suswa",
+    "constituency": "Narok East"
+  },
+  {
+    "code": "0896",
+    "name": "Melili",
+    "constituency": "Narok North"
+  },
+  {
+    "code": "0893",
+    "name": "Narok Town",
+    "constituency": "Narok North"
+  },
+  {
+    "code": "0894",
+    "name": "Nkareta",
+    "constituency": "Narok North"
+  },
+  {
+    "code": "0892",
+    "name": "Olokurto",
+    "constituency": "Narok North"
+  },
+  {
+    "code": "0895",
+    "name": "Olorropil",
+    "constituency": "Narok North"
+  },
+  {
+    "code": "0891",
+    "name": "Olpusimoru",
+    "constituency": "Narok North"
+  },
+  {
+    "code": "0904",
+    "name": "Loita",
+    "constituency": "Narok South"
+  },
+  {
+    "code": "0901",
+    "name": "Majimoto/Naroosura",
+    "constituency": "Narok South"
+  },
+  {
+    "code": "0903",
+    "name": "Melelo",
+    "constituency": "Narok South"
+  },
+  {
+    "code": "0902",
+    "name": "Ololulung'a",
+    "constituency": "Narok South"
+  },
+  {
+    "code": "0906",
+    "name": "Sagamian",
+    "constituency": "Narok South"
+  },
+  {
+    "code": "0905",
+    "name": "Sogoo",
+    "constituency": "Narok South"
+  },
+  {
+    "code": "0907",
+    "name": "Ilmotiok",
+    "constituency": "Narok West"
+  },
+  {
+    "code": "0908",
+    "name": "Mara",
+    "constituency": "Narok West"
+  },
+  {
+    "code": "0910",
+    "name": "Naikarra",
+    "constituency": "Narok West"
+  },
+  {
+    "code": "0909",
+    "name": "Siana",
+    "constituency": "Narok West"
+  },
+  {
+    "code": "1019",
+    "name": "Bunyala Central",
+    "constituency": "Navakholo"
+  },
+  {
+    "code": "1018",
+    "name": "Bunyala East",
+    "constituency": "Navakholo"
+  },
+  {
+    "code": "1017",
+    "name": "Bunyala West",
+    "constituency": "Navakholo"
+  },
+  {
+    "code": "1015",
+    "name": "Ingostse-mathia",
+    "constituency": "Navakholo"
+  },
+  {
+    "code": "1016",
+    "name": "Shinoyi-shikomari-",
+    "constituency": "Navakholo"
+  },
+  {
+    "code": "0464",
+    "name": "Central",
+    "constituency": "Ndaragwa"
+  },
+  {
+    "code": "0463",
+    "name": "Kiriita",
+    "constituency": "Ndaragwa"
+  },
+  {
+    "code": "0462",
+    "name": "Leshau pondo",
+    "constituency": "Ndaragwa"
+  },
+  {
+    "code": "0465",
+    "name": "Shamata",
+    "constituency": "Ndaragwa"
+  },
+  {
+    "code": "1249",
+    "name": "Kabuoch south/Pala",
+    "constituency": "Ndhiwa"
+  },
+  {
+    "code": "1246",
+    "name": "Kanyadoto",
+    "constituency": "Ndhiwa"
+  },
+  {
+    "code": "1250",
+    "name": "Kanyamwa kologi",
+    "constituency": "Ndhiwa"
+  },
+  {
+    "code": "1251",
+    "name": "Kanyamwa kosewe",
+    "constituency": "Ndhiwa"
+  },
+  {
+    "code": "1247",
+    "name": "Kanyikela",
+    "constituency": "Ndhiwa"
+  },
+  {
+    "code": "1245",
+    "name": "Kwabwai",
+    "constituency": "Ndhiwa"
+  },
+  {
+    "code": "1248",
+    "name": "North kabuoch",
+    "constituency": "Ndhiwa"
+  },
+  {
+    "code": "0511",
+    "name": "Kariti",
+    "constituency": "Ndia"
+  },
+  {
+    "code": "0510",
+    "name": "Kiine",
+    "constituency": "Ndia"
+  },
+  {
+    "code": "0509",
+    "name": "Mukure",
+    "constituency": "Ndia"
+  },
+  {
+    "code": "0832",
+    "name": "Kihingo",
+    "constituency": "Njoro"
+  },
+  {
+    "code": "0834",
+    "name": "Lare",
+    "constituency": "Njoro"
+  },
+  {
+    "code": "0831",
+    "name": "Mauche",
+    "constituency": "Njoro"
+  },
+  {
+    "code": "0830",
+    "name": "Maunarok",
+    "constituency": "Njoro"
+  },
+  {
+    "code": "0833",
+    "name": "Nessuit",
+    "constituency": "Njoro"
+  },
+  {
+    "code": "0835",
+    "name": "Njoro",
+    "constituency": "Njoro"
+  },
+  {
+    "code": "0230",
+    "name": "Dukana",
+    "constituency": "North Horr"
+  },
+  {
+    "code": "0228",
+    "name": "Illeret",
+    "constituency": "North Horr"
+  },
+  {
+    "code": "0231",
+    "name": "Maikona",
+    "constituency": "North Horr"
+  },
+  {
+    "code": "0229",
+    "name": "North horr",
+    "constituency": "North Horr"
+  },
+  {
+    "code": "0232",
+    "name": "Turbi",
+    "constituency": "North Horr"
+  },
+  {
+    "code": "0276",
+    "name": "Municipality",
+    "constituency": "North Imenti"
+  },
+  {
+    "code": "0277",
+    "name": "Ntima East",
+    "constituency": "North Imenti"
+  },
+  {
+    "code": "0278",
+    "name": "Ntima West",
+    "constituency": "North Imenti"
+  },
+  {
+    "code": "0280",
+    "name": "Nyaki East",
+    "constituency": "North Imenti"
+  },
+  {
+    "code": "0279",
+    "name": "Nyaki West",
+    "constituency": "North Imenti"
+  },
+  {
+    "code": "1359",
+    "name": "Bokeira",
+    "constituency": "North Mugirango"
+  },
+  {
+    "code": "1358",
+    "name": "Bomwagamo",
+    "constituency": "North Mugirango"
+  },
+  {
+    "code": "1361",
+    "name": "Ekerenyo",
+    "constituency": "North Mugirango"
+  },
+  {
+    "code": "1357",
+    "name": "Itibo",
+    "constituency": "North Mugirango"
+  },
+  {
+    "code": "1360",
+    "name": "Magwagwa",
+    "constituency": "North Mugirango"
+  },
+  {
+    "code": "1218",
+    "name": "Central nyakach",
+    "constituency": "Nyakach"
+  },
+  {
+    "code": "1217",
+    "name": "North nyakach",
+    "constituency": "Nyakach"
+  },
+  {
+    "code": "1220",
+    "name": "South East nyakach",
+    "constituency": "Nyakach"
+  },
+  {
+    "code": "1216",
+    "name": "South West nyakach",
+    "constituency": "Nyakach"
+  },
+  {
+    "code": "1219",
+    "name": "West nyakach",
+    "constituency": "Nyakach"
+  },
+  {
+    "code": "0016",
+    "name": "Frere Town",
+    "constituency": "Nyali"
+  },
+  {
+    "code": "0020",
+    "name": "Kadzandani",
+    "constituency": "Nyali"
+  },
+  {
+    "code": "0019",
+    "name": "Kongowea",
+    "constituency": "Nyali"
+  },
+  {
+    "code": "0018",
+    "name": "Mkomani",
+    "constituency": "Nyali"
+  },
+  {
+    "code": "0017",
+    "name": "Ziwa la Ng'ombe",
+    "constituency": "Nyali"
+  },
+  {
+    "code": "1208",
+    "name": "Ahero",
+    "constituency": "Nyando"
+  },
+  {
+    "code": "1207",
+    "name": "Awasi/Onjiko",
+    "constituency": "Nyando"
+  },
+  {
+    "code": "1206",
+    "name": "East kano/Wawidhi",
+    "constituency": "Nyando"
+  },
+  {
+    "code": "1209",
+    "name": "Kabonyo/Kanyagwal",
+    "constituency": "Nyando"
+  },
+  {
+    "code": "1210",
+    "name": "Kobura",
+    "constituency": "Nyando"
+  },
+  {
+    "code": "1335",
+    "name": "Birongo",
+    "constituency": "Nyaribari Chache"
+  },
+  {
+    "code": "1331",
+    "name": "Bobaracho",
+    "constituency": "Nyaribari Chache"
+  },
+  {
+    "code": "1336",
+    "name": "Ibeno",
+    "constituency": "Nyaribari Chache"
+  },
+  {
+    "code": "1333",
+    "name": "Keumbu",
+    "constituency": "Nyaribari Chache"
+  },
+  {
+    "code": "1334",
+    "name": "Kiogoro",
+    "constituency": "Nyaribari Chache"
+  },
+  {
+    "code": "1332",
+    "name": "Kisii Central",
+    "constituency": "Nyaribari Chache"
+  },
+  {
+    "code": "1329",
+    "name": "Gesusu",
+    "constituency": "Nyaribari Masaba"
+  },
+  {
+    "code": "1326",
+    "name": "Ichuni",
+    "constituency": "Nyaribari Masaba"
+  },
+  {
+    "code": "1330",
+    "name": "Kiamokama",
+    "constituency": "Nyaribari Masaba"
+  },
+  {
+    "code": "1328",
+    "name": "Masimba",
+    "constituency": "Nyaribari Masaba"
+  },
+  {
+    "code": "1327",
+    "name": "Nyamasibi",
+    "constituency": "Nyaribari Masaba"
+  },
+  {
+    "code": "1287",
+    "name": "Got kachola",
+    "constituency": "Nyatike"
+  },
+  {
+    "code": "1282",
+    "name": "Kachien'g",
+    "constituency": "Nyatike"
+  },
+  {
+    "code": "1286",
+    "name": "Kaler",
+    "constituency": "Nyatike"
+  },
+  {
+    "code": "1283",
+    "name": "Kanyasa",
+    "constituency": "Nyatike"
+  },
+  {
+    "code": "1285",
+    "name": "Macalder/Kanyarwanda",
+    "constituency": "Nyatike"
+  },
+  {
+    "code": "1288",
+    "name": "Muhuru",
+    "constituency": "Nyatike"
+  },
+  {
+    "code": "1284",
+    "name": "North kadem",
+    "constituency": "Nyatike"
+  },
+  {
+    "code": "0493",
+    "name": "Gatitu/Muruguru",
+    "constituency": "Nyeri Town"
+  },
+  {
+    "code": "0495",
+    "name": "Kamakwa/Mukaro",
+    "constituency": "Nyeri Town"
+  },
+  {
+    "code": "0491",
+    "name": "Kiganjo/Mathari",
+    "constituency": "Nyeri Town"
+  },
+  {
+    "code": "0494",
+    "name": "Ruring'u",
+    "constituency": "Nyeri Town"
+  },
+  {
+    "code": "0492",
+    "name": "Rware",
+    "constituency": "Nyeri Town"
+  },
+  {
+    "code": "0461",
+    "name": "Charagita",
+    "constituency": "Ol Jorok"
+  },
+  {
+    "code": "0458",
+    "name": "Gathanji",
+    "constituency": "Ol Jorok"
+  },
+  {
+    "code": "0459",
+    "name": "Gatimu",
+    "constituency": "Ol Jorok"
+  },
+  {
+    "code": "0460",
+    "name": "Weru",
+    "constituency": "Ol Jorok"
+  },
+  {
+    "code": "0456",
+    "name": "Kaimbaga",
+    "constituency": "Ol Kalou"
+  },
+  {
+    "code": "0454",
+    "name": "Kanjuiri ridge",
+    "constituency": "Ol Kalou"
+  },
+  {
+    "code": "0453",
+    "name": "Karau",
+    "constituency": "Ol Kalou"
+  },
+  {
+    "code": "0455",
+    "name": "Mirangine",
+    "constituency": "Ol Kalou"
+  },
+  {
+    "code": "0457",
+    "name": "Rurii",
+    "constituency": "Ol Kalou"
+  },
+  {
+    "code": "0485",
+    "name": "Chinga",
+    "constituency": "Othaya"
+  },
+  {
+    "code": "0484",
+    "name": "Iria-ini",
+    "constituency": "Othaya"
+  },
+  {
+    "code": "0486",
+    "name": "Karima",
+    "constituency": "Othaya"
+  },
+  {
+    "code": "0483",
+    "name": "Mahiga",
+    "constituency": "Othaya"
+  },
+  {
+    "code": "0658",
+    "name": "Batei",
+    "constituency": "Pokot South"
+  },
+  {
+    "code": "0657",
+    "name": "Chepareria",
+    "constituency": "Pokot South"
+  },
+  {
+    "code": "0659",
+    "name": "Lelan",
+    "constituency": "Pokot South"
+  },
+  {
+    "code": "0660",
+    "name": "Tapach",
+    "constituency": "Pokot South"
+  },
+  {
+    "code": "0069",
+    "name": "Kambe/Ribe",
+    "constituency": "Rabai"
+  },
+  {
+    "code": "0067",
+    "name": "Mwawesa",
+    "constituency": "Rabai"
+  },
+  {
+    "code": "0070",
+    "name": "Rabai/Kisurutini",
+    "constituency": "Rabai"
+  },
+  {
+    "code": "0068",
+    "name": "Ruruma",
+    "constituency": "Rabai"
+  },
+  {
+    "code": "1238",
+    "name": "East gem",
+    "constituency": "Rangwe"
+  },
+  {
+    "code": "1239",
+    "name": "Kagan",
+    "constituency": "Rangwe"
+  },
+  {
+    "code": "1240",
+    "name": "Kochia",
+    "constituency": "Rangwe"
+  },
+  {
+    "code": "1237",
+    "name": "West gem",
+    "constituency": "Rangwe"
+  },
+  {
+    "code": "1181",
+    "name": "East asembo",
+    "constituency": "Rarieda"
+  },
+  {
+    "code": "1183",
+    "name": "North uyoma",
+    "constituency": "Rarieda"
+  },
+  {
+    "code": "1184",
+    "name": "South uyoma",
+    "constituency": "Rarieda"
+  },
+  {
+    "code": "1182",
+    "name": "West asembo",
+    "constituency": "Rarieda"
+  },
+  {
+    "code": "1185",
+    "name": "West uyoma",
+    "constituency": "Rarieda"
+  },
+  {
+    "code": "0860",
+    "name": "Menengai West",
+    "constituency": "Rongai"
+  },
+  {
+    "code": "0863",
+    "name": "Mosop",
+    "constituency": "Rongai"
+  },
+  {
+    "code": "0861",
+    "name": "Soin",
+    "constituency": "Rongai"
+  },
+  {
+    "code": "0864",
+    "name": "Solai",
+    "constituency": "Rongai"
+  },
+  {
+    "code": "0862",
+    "name": "Visoi",
+    "constituency": "Rongai"
+  },
+  {
+    "code": "1262",
+    "name": "Central kamagambo",
+    "constituency": "Rongo"
+  },
+  {
+    "code": "1263",
+    "name": "East kamagambo",
+    "constituency": "Rongo"
+  },
+  {
+    "code": "1261",
+    "name": "North kamagambo",
+    "constituency": "Rongo"
+  },
+  {
+    "code": "1264",
+    "name": "South kamagambo",
+    "constituency": "Rongo"
+  },
+  {
+    "code": "1391",
+    "name": "Githurai",
+    "constituency": "Roysambu"
+  },
+  {
+    "code": "1395",
+    "name": "Kahawa",
+    "constituency": "Roysambu"
+  },
+  {
+    "code": "1392",
+    "name": "Kahawa West",
+    "constituency": "Roysambu"
+  },
+  {
+    "code": "1394",
+    "name": "Roysambu",
+    "constituency": "Roysambu"
+  },
+  {
+    "code": "1393",
+    "name": "Zimmerman",
+    "constituency": "Roysambu"
+  },
+  {
+    "code": "1401",
+    "name": "Baba dogo",
+    "constituency": "Ruaraka"
+  },
+  {
+    "code": "1405",
+    "name": "Korogocho",
+    "constituency": "Ruaraka"
+  },
+  {
+    "code": "1404",
+    "name": "Lucky summer",
+    "constituency": "Ruaraka"
+  },
+  {
+    "code": "1403",
+    "name": "Mathare North",
+    "constituency": "Ruaraka"
+  },
+  {
+    "code": "1402",
+    "name": "Utalii",
+    "constituency": "Ruaraka"
+  },
+  {
+    "code": "0570",
+    "name": "Biashara",
+    "constituency": "Ruiru"
+  },
+  {
+    "code": "0571",
+    "name": "Gatongora",
+    "constituency": "Ruiru"
+  },
+  {
+    "code": "0569",
+    "name": "Gitothua",
+    "constituency": "Ruiru"
+  },
+  {
+    "code": "0572",
+    "name": "Kahawa sukari",
+    "constituency": "Ruiru"
+  },
+  {
+    "code": "0573",
+    "name": "Kahawa wendani",
+    "constituency": "Ruiru"
+  },
+  {
+    "code": "0574",
+    "name": "Kiuu",
+    "constituency": "Ruiru"
+  },
+  {
+    "code": "0576",
+    "name": "Mwihoko",
+    "constituency": "Ruiru"
+  },
+  {
+    "code": "0575",
+    "name": "Mwiki",
+    "constituency": "Ruiru"
+  },
+  {
+    "code": "0319",
+    "name": "Central  ward",
+    "constituency": "Runyenjes"
+  },
+  {
+    "code": "0317",
+    "name": "Gaturi North",
+    "constituency": "Runyenjes"
+  },
+  {
+    "code": "0320",
+    "name": "Kagaari North",
+    "constituency": "Runyenjes"
+  },
+  {
+    "code": "0318",
+    "name": "Kagaari South",
+    "constituency": "Runyenjes"
+  },
+  {
+    "code": "0321",
+    "name": "Kyeni North",
+    "constituency": "Runyenjes"
+  },
+  {
+    "code": "0322",
+    "name": "Kyeni South",
+    "constituency": "Runyenjes"
+  },
+  {
+    "code": "1060",
+    "name": "Busali",
+    "constituency": "Sabatia"
+  },
+  {
+    "code": "1057",
+    "name": "Chavakali",
+    "constituency": "Sabatia"
+  },
+  {
+    "code": "1055",
+    "name": "Lyaduywa/Izava",
+    "constituency": "Sabatia"
+  },
+  {
+    "code": "1058",
+    "name": "North maragoli",
+    "constituency": "Sabatia"
+  },
+  {
+    "code": "1056",
+    "name": "West sabatia",
+    "constituency": "Sabatia"
+  },
+  {
+    "code": "1059",
+    "name": "Wodanga",
+    "constituency": "Sabatia"
+  },
+  {
+    "code": "0683",
+    "name": "Kinyoro",
+    "constituency": "Saboti"
+  },
+  {
+    "code": "0687",
+    "name": "Machewa",
+    "constituency": "Saboti"
+  },
+  {
+    "code": "0684",
+    "name": "Matisi",
+    "constituency": "Saboti"
+  },
+  {
+    "code": "0686",
+    "name": "Saboti",
+    "constituency": "Saboti"
+  },
+  {
+    "code": "0685",
+    "name": "Tuwani",
+    "constituency": "Saboti"
+  },
+  {
+    "code": "0234",
+    "name": "Karare",
+    "constituency": "Saku"
+  },
+  {
+    "code": "0235",
+    "name": "Marsabit Central",
+    "constituency": "Saku"
+  },
+  {
+    "code": "0233",
+    "name": "Sagante/Jaldesa",
+    "constituency": "Saku"
+  },
+  {
+    "code": "0674",
+    "name": "Wamba East",
+    "constituency": "Samburu East"
+  },
+  {
+    "code": "0675",
+    "name": "Wamba North",
+    "constituency": "Samburu East"
+  },
+  {
+    "code": "0673",
+    "name": "Wamba West",
+    "constituency": "Samburu East"
+  },
+  {
+    "code": "0672",
+    "name": "Waso",
+    "constituency": "Samburu East"
+  },
+  {
+    "code": "0670",
+    "name": "Angata nanyokie",
+    "constituency": "Samburu North"
+  },
+  {
+    "code": "0671",
+    "name": "Baawa",
+    "constituency": "Samburu North"
+  },
+  {
+    "code": "0666",
+    "name": "El-barta",
+    "constituency": "Samburu North"
+  },
+  {
+    "code": "0667",
+    "name": "Nachola",
+    "constituency": "Samburu North"
+  },
+  {
+    "code": "0668",
+    "name": "Ndoto",
+    "constituency": "Samburu North"
+  },
+  {
+    "code": "0669",
+    "name": "Nyiro",
+    "constituency": "Samburu North"
+  },
+  {
+    "code": "0661",
+    "name": "Lodokejek",
+    "constituency": "Samburu West"
+  },
+  {
+    "code": "0664",
+    "name": "Loosuk",
+    "constituency": "Samburu West"
+  },
+  {
+    "code": "0663",
+    "name": "Maralal",
+    "constituency": "Samburu West"
+  },
+  {
+    "code": "0665",
+    "name": "Poro",
+    "constituency": "Samburu West"
+  },
+  {
+    "code": "0662",
+    "name": "Suguta marmar",
+    "constituency": "Samburu West"
+  },
+  {
+    "code": "1203",
+    "name": "Central seme",
+    "constituency": "Seme"
+  },
+  {
+    "code": "1204",
+    "name": "East seme",
+    "constituency": "Seme"
+  },
+  {
+    "code": "1205",
+    "name": "North seme",
+    "constituency": "Seme"
+  },
+  {
+    "code": "1202",
+    "name": "West seme",
+    "constituency": "Seme"
+  },
+  {
+    "code": "1043",
+    "name": "Isukha Central",
+    "constituency": "Shinyalu"
+  },
+  {
+    "code": "1045",
+    "name": "Isukha East",
+    "constituency": "Shinyalu"
+  },
+  {
+    "code": "1041",
+    "name": "Isukha North",
+    "constituency": "Shinyalu"
+  },
+  {
+    "code": "1044",
+    "name": "Isukha South",
+    "constituency": "Shinyalu"
+  },
+  {
+    "code": "1046",
+    "name": "Isukha West",
+    "constituency": "Shinyalu"
+  },
+  {
+    "code": "1042",
+    "name": "Murhanda",
+    "constituency": "Shinyalu"
+  },
+  {
+    "code": "0649",
+    "name": "Lomut",
+    "constituency": "Sigor"
+  },
+  {
+    "code": "0648",
+    "name": "Masool",
+    "constituency": "Sigor"
+  },
+  {
+    "code": "0647",
+    "name": "Sekerr",
+    "constituency": "Sigor"
+  },
+  {
+    "code": "0650",
+    "name": "Weiwei",
+    "constituency": "Sigor"
+  },
+  {
+    "code": "0963",
+    "name": "Kaplelartet",
+    "constituency": "Sigowet/Soin"
+  },
+  {
+    "code": "0962",
+    "name": "Sigowet",
+    "constituency": "Sigowet/Soin"
+  },
+  {
+    "code": "0965",
+    "name": "Soin",
+    "constituency": "Sigowet/Soin"
+  },
+  {
+    "code": "0964",
+    "name": "Soliat",
+    "constituency": "Sigowet/Soin"
+  },
+  {
+    "code": "1084",
+    "name": "Lwandanyi",
+    "constituency": "Sirisia"
+  },
+  {
+    "code": "1083",
+    "name": "Malakisi/South kulisiru",
+    "constituency": "Sirisia"
+  },
+  {
+    "code": "1082",
+    "name": "Namwela",
+    "constituency": "Sirisia"
+  },
+  {
+    "code": "0967",
+    "name": "Chemagel",
+    "constituency": "Sotik"
+  },
+  {
+    "code": "0969",
+    "name": "Kapletundo",
+    "constituency": "Sotik"
+  },
+  {
+    "code": "0968",
+    "name": "Kipsonoi",
+    "constituency": "Sotik"
+  },
+  {
+    "code": "0966",
+    "name": "Ndanai/Abosi",
+    "constituency": "Sotik"
+  },
+  {
+    "code": "0970",
+    "name": "Rongena/Manaret",
+    "constituency": "Sotik"
+  },
+  {
+    "code": "0293",
+    "name": "Abogeta East",
+    "constituency": "South Imenti"
+  },
+  {
+    "code": "0294",
+    "name": "Abogeta West",
+    "constituency": "South Imenti"
+  },
+  {
+    "code": "0291",
+    "name": "Igoji East",
+    "constituency": "South Imenti"
+  },
+  {
+    "code": "0292",
+    "name": "Igoji West",
+    "constituency": "South Imenti"
+  },
+  {
+    "code": "0290",
+    "name": "Mitunguu",
+    "constituency": "South Imenti"
+  },
+  {
+    "code": "0295",
+    "name": "Nkuene",
+    "constituency": "South Imenti"
+  },
+  {
+    "code": "1307",
+    "name": "Bogetenga",
+    "constituency": "South Mugirango"
+  },
+  {
+    "code": "1306",
+    "name": "Boikang'a",
+    "constituency": "South Mugirango"
+  },
+  {
+    "code": "1308",
+    "name": "Borabu/Chitago",
+    "constituency": "South Mugirango"
+  },
+  {
+    "code": "1310",
+    "name": "Getenga",
+    "constituency": "South Mugirango"
+  },
+  {
+    "code": "1309",
+    "name": "Moticho",
+    "constituency": "South Mugirango"
+  },
+  {
+    "code": "1305",
+    "name": "Tabaka",
+    "constituency": "South Mugirango"
+  },
+  {
+    "code": "0702",
+    "name": "Kapkures",
+    "constituency": "Soy"
+  },
+  {
+    "code": "0705",
+    "name": "Kipsomba",
+    "constituency": "Soy"
+  },
+  {
+    "code": "0707",
+    "name": "Kuinet/Kapsuswa",
+    "constituency": "Soy"
+  },
+  {
+    "code": "0701",
+    "name": "Moi's bridge",
+    "constituency": "Soy"
+  },
+  {
+    "code": "0704",
+    "name": "Segero/Barsombe",
+    "constituency": "Soy"
+  },
+  {
+    "code": "0706",
+    "name": "Soy",
+    "constituency": "Soy"
+  },
+  {
+    "code": "0703",
+    "name": "Ziwa",
+    "constituency": "Soy"
+  },
+  {
+    "code": "1443",
+    "name": "Landimawe",
+    "constituency": "Starehe"
+  },
+  {
+    "code": "1439",
+    "name": "Nairobi Central",
+    "constituency": "Starehe"
+  },
+  {
+    "code": "1444",
+    "name": "Nairobi South",
+    "constituency": "Starehe"
+  },
+  {
+    "code": "1440",
+    "name": "Ngara",
+    "constituency": "Starehe"
+  },
+  {
+    "code": "1442",
+    "name": "Pangani",
+    "constituency": "Starehe"
+  },
+  {
+    "code": "1441",
+    "name": "Ziwani/Kariokor",
+    "constituency": "Starehe"
+  },
+  {
+    "code": "1258",
+    "name": "Gwassi North",
+    "constituency": "Suba"
+  },
+  {
+    "code": "1257",
+    "name": "Gwassi South",
+    "constituency": "Suba"
+  },
+  {
+    "code": "1259",
+    "name": "Kaksingri West",
+    "constituency": "Suba"
+  },
+  {
+    "code": "1260",
+    "name": "Ruma kaksingri East",
+    "constituency": "Suba"
+  },
+  {
+    "code": "0859",
+    "name": "Kabazi",
+    "constituency": "Subukia"
+  },
+  {
+    "code": "0857",
+    "name": "Subukia",
+    "constituency": "Subukia"
+  },
+  {
+    "code": "0858",
+    "name": "Waseges",
+    "constituency": "Subukia"
+  },
+  {
+    "code": "1269",
+    "name": "God jope",
+    "constituency": "Suna East"
+  },
+  {
+    "code": "1271",
+    "name": "Kakrao",
+    "constituency": "Suna East"
+  },
+  {
+    "code": "1272",
+    "name": "Kwa",
+    "constituency": "Suna East"
+  },
+  {
+    "code": "1270",
+    "name": "Suna Central",
+    "constituency": "Suna East"
+  },
+  {
+    "code": "1275",
+    "name": "Ragana-oruba",
+    "constituency": "Suna West"
+  },
+  {
+    "code": "1276",
+    "name": "Wasimbete",
+    "constituency": "Suna West"
+  },
+  {
+    "code": "1274",
+    "name": "Wasweta II",
+    "constituency": "Suna West"
+  },
+  {
+    "code": "1273",
+    "name": "Wiga",
+    "constituency": "Suna West"
+  },
+  {
+    "code": "0172",
+    "name": "Elben",
+    "constituency": "Tarbaj"
+  },
+  {
+    "code": "0173",
+    "name": "Sarman",
+    "constituency": "Tarbaj"
+  },
+  {
+    "code": "0174",
+    "name": "Tarbaj",
+    "constituency": "Tarbaj"
+  },
+  {
+    "code": "0175",
+    "name": "Wargadud",
+    "constituency": "Tarbaj"
+  },
+  {
+    "code": "0113",
+    "name": "Bomeni",
+    "constituency": "Taveta"
+  },
+  {
+    "code": "0111",
+    "name": "Chala",
+    "constituency": "Taveta"
+  },
+  {
+    "code": "0112",
+    "name": "Mahoo",
+    "constituency": "Taveta"
+  },
+  {
+    "code": "0115",
+    "name": "Mata",
+    "constituency": "Taveta"
+  },
+  {
+    "code": "0114",
+    "name": "Mboghoni",
+    "constituency": "Taveta"
+  },
+  {
+    "code": "1125",
+    "name": "Ang'urai East",
+    "constituency": "Teso North"
+  },
+  {
+    "code": "1124",
+    "name": "Ang'urai North",
+    "constituency": "Teso North"
+  },
+  {
+    "code": "1123",
+    "name": "Ang'urai South",
+    "constituency": "Teso North"
+  },
+  {
+    "code": "1121",
+    "name": "Malaba Central",
+    "constituency": "Teso North"
+  },
+  {
+    "code": "1122",
+    "name": "Malaba North",
+    "constituency": "Teso North"
+  },
+  {
+    "code": "1126",
+    "name": "Malaba South",
+    "constituency": "Teso North"
+  },
+  {
+    "code": "1132",
+    "name": "Amukura Central",
+    "constituency": "Teso South"
+  },
+  {
+    "code": "1131",
+    "name": "Amukura East",
+    "constituency": "Teso South"
+  },
+  {
+    "code": "1130",
+    "name": "Amukura West",
+    "constituency": "Teso South"
+  },
+  {
+    "code": "1127",
+    "name": "Ang'orom",
+    "constituency": "Teso South"
+  },
+  {
+    "code": "1129",
+    "name": "Chakol North",
+    "constituency": "Teso South"
+  },
+  {
+    "code": "1128",
+    "name": "Chakol South",
+    "constituency": "Teso South"
+  },
+  {
+    "code": "0468",
+    "name": "Aguthi/Gaaki",
+    "constituency": "Tetu"
+  },
+  {
+    "code": "0466",
+    "name": "Dedan kimanthi",
+    "constituency": "Tetu"
+  },
+  {
+    "code": "0467",
+    "name": "Wamagana",
+    "constituency": "Tetu"
+  },
+  {
+    "code": "0309",
+    "name": "Chiakariga",
+    "constituency": "Tharaka"
+  },
+  {
+    "code": "0306",
+    "name": "Gatunga",
+    "constituency": "Tharaka"
+  },
+  {
+    "code": "0310",
+    "name": "Marimanti",
+    "constituency": "Tharaka"
+  },
+  {
+    "code": "0307",
+    "name": "Mukothima",
+    "constituency": "Tharaka"
+  },
+  {
+    "code": "0308",
+    "name": "Nkondi",
+    "constituency": "Tharaka"
+  },
+  {
+    "code": "0567",
+    "name": "Gatuanyaga",
+    "constituency": "Thika Town"
+  },
+  {
+    "code": "0566",
+    "name": "Hospital",
+    "constituency": "Thika Town"
+  },
+  {
+    "code": "0565",
+    "name": "Kamenu",
+    "constituency": "Thika Town"
+  },
+  {
+    "code": "0568",
+    "name": "Ngoliba",
+    "constituency": "Thika Town"
+  },
+  {
+    "code": "0564",
+    "name": "Township",
+    "constituency": "Thika Town"
+  },
+  {
+    "code": "0787",
+    "name": "Churo/Amaya",
+    "constituency": "Tiaty"
+  },
+  {
+    "code": "0782",
+    "name": "Kolowa",
+    "constituency": "Tiaty"
+  },
+  {
+    "code": "0785",
+    "name": "Loiyamorock",
+    "constituency": "Tiaty"
+  },
+  {
+    "code": "0783",
+    "name": "Ribkwo",
+    "constituency": "Tiaty"
+  },
+  {
+    "code": "0784",
+    "name": "Silale",
+    "constituency": "Tiaty"
+  },
+  {
+    "code": "0786",
+    "name": "Tangulbei/Korossi",
+    "constituency": "Tiaty"
+  },
+  {
+    "code": "0781",
+    "name": "Tirioko",
+    "constituency": "Tiaty"
+  },
+  {
+    "code": "0275",
+    "name": "Karama",
+    "constituency": "Tigania East"
+  },
+  {
+    "code": "0273",
+    "name": "Kiguchwa",
+    "constituency": "Tigania East"
+  },
+  {
+    "code": "0272",
+    "name": "Mikinduri",
+    "constituency": "Tigania East"
+  },
+  {
+    "code": "0274",
+    "name": "Muthara",
+    "constituency": "Tigania East"
+  },
+  {
+    "code": "0271",
+    "name": "Thangatha",
+    "constituency": "Tigania East"
+  },
+  {
+    "code": "0267",
+    "name": "Akithii",
+    "constituency": "Tigania West"
+  },
+  {
+    "code": "0266",
+    "name": "Athwana",
+    "constituency": "Tigania West"
+  },
+  {
+    "code": "0268",
+    "name": "Kianjai",
+    "constituency": "Tigania West"
+  },
+  {
+    "code": "0270",
+    "name": "Mbeu",
+    "constituency": "Tigania West"
+  },
+  {
+    "code": "0269",
+    "name": "Nkomo",
+    "constituency": "Tigania West"
+  },
+  {
+    "code": "0753",
+    "name": "Chemelil/Chemase",
+    "constituency": "Tinderet"
+  },
+  {
+    "code": "0754",
+    "name": "Kapsimotwo",
+    "constituency": "Tinderet"
+  },
+  {
+    "code": "0751",
+    "name": "Songhor/Soba",
+    "constituency": "Tinderet"
+  },
+  {
+    "code": "0752",
+    "name": "Tindiret",
+    "constituency": "Tinderet"
+  },
+  {
+    "code": "1115",
+    "name": "Mbakalo",
+    "constituency": "Tongaren"
+  },
+  {
+    "code": "1117",
+    "name": "Milima",
+    "constituency": "Tongaren"
+  },
+  {
+    "code": "1116",
+    "name": "Naitiri/Kabuyefwe",
+    "constituency": "Tongaren"
+  },
+  {
+    "code": "1118",
+    "name": "Ndalu/Tabani",
+    "constituency": "Tongaren"
+  },
+  {
+    "code": "1120",
+    "name": "Soysambu/Mitua",
+    "constituency": "Tongaren"
+  },
+  {
+    "code": "1119",
+    "name": "Tongaren",
+    "constituency": "Tongaren"
+  },
+  {
+    "code": "0713",
+    "name": "Huruma",
+    "constituency": "Turbo"
+  },
+  {
+    "code": "0710",
+    "name": "Kamagut",
+    "constituency": "Turbo"
+  },
+  {
+    "code": "0712",
+    "name": "Kapsaos",
+    "constituency": "Turbo"
+  },
+  {
+    "code": "0711",
+    "name": "Kiplombe",
+    "constituency": "Turbo"
+  },
+  {
+    "code": "0708",
+    "name": "Ngenyilel",
+    "constituency": "Turbo"
+  },
+  {
+    "code": "0709",
+    "name": "Tapsagoi",
+    "constituency": "Turbo"
+  },
+  {
+    "code": "0626",
+    "name": "Kalokol",
+    "constituency": "Turkana Central"
+  },
+  {
+    "code": "0628",
+    "name": "Kanamkemer",
+    "constituency": "Turkana Central"
+  },
+  {
+    "code": "0625",
+    "name": "Kang'atotha",
+    "constituency": "Turkana Central"
+  },
+  {
+    "code": "0624",
+    "name": "Kerio delta",
+    "constituency": "Turkana Central"
+  },
+  {
+    "code": "0627",
+    "name": "Lodwar Township",
+    "constituency": "Turkana Central"
+  },
+  {
+    "code": "0638",
+    "name": "Kapedo/Napeitom",
+    "constituency": "Turkana East"
+  },
+  {
+    "code": "0639",
+    "name": "Katilia",
+    "constituency": "Turkana East"
+  },
+  {
+    "code": "0640",
+    "name": "Lokori/Kochodin",
+    "constituency": "Turkana East"
+  },
+  {
+    "code": "0614",
+    "name": "Kaaleng/Kaikor",
+    "constituency": "Turkana North"
+  },
+  {
+    "code": "0611",
+    "name": "Kaeris",
+    "constituency": "Turkana North"
+  },
+  {
+    "code": "0615",
+    "name": "Kibish",
+    "constituency": "Turkana North"
+  },
+  {
+    "code": "0612",
+    "name": "Lake zone",
+    "constituency": "Turkana North"
+  },
+  {
+    "code": "0613",
+    "name": "Lapur",
+    "constituency": "Turkana North"
+  },
+  {
+    "code": "0616",
+    "name": "Nakalale",
+    "constituency": "Turkana North"
+  },
+  {
+    "code": "0636",
+    "name": "Kalapata",
+    "constituency": "Turkana South"
+  },
+  {
+    "code": "0633",
+    "name": "Kaputir",
+    "constituency": "Turkana South"
+  },
+  {
+    "code": "0634",
+    "name": "Katilu",
+    "constituency": "Turkana South"
+  },
+  {
+    "code": "0635",
+    "name": "Lobokat",
+    "constituency": "Turkana South"
+  },
+  {
+    "code": "0637",
+    "name": "Lokichar",
+    "constituency": "Turkana South"
+  },
+  {
+    "code": "0617",
+    "name": "Kakuma",
+    "constituency": "Turkana West"
+  },
+  {
+    "code": "0621",
+    "name": "Kalobeyei",
+    "constituency": "Turkana West"
+  },
+  {
+    "code": "0619",
+    "name": "Letea",
+    "constituency": "Turkana West"
+  },
+  {
+    "code": "0622",
+    "name": "Lokichoggio",
+    "constituency": "Turkana West"
+  },
+  {
+    "code": "0618",
+    "name": "Lopur",
+    "constituency": "Turkana West"
+  },
+  {
+    "code": "0623",
+    "name": "Nanaam",
+    "constituency": "Turkana West"
+  },
+  {
+    "code": "0620",
+    "name": "Songot",
+    "constituency": "Turkana West"
+  },
+  {
+    "code": "1159",
+    "name": "East ugenya",
+    "constituency": "Ugenya"
+  },
+  {
+    "code": "1158",
+    "name": "North ugenya",
+    "constituency": "Ugenya"
+  },
+  {
+    "code": "1157",
+    "name": "Ukwala",
+    "constituency": "Ugenya"
+  },
+  {
+    "code": "1156",
+    "name": "West ugenya",
+    "constituency": "Ugenya"
+  },
+  {
+    "code": "1160",
+    "name": "Sidindi",
+    "constituency": "Ugunja"
+  },
+  {
+    "code": "1161",
+    "name": "Sigomere",
+    "constituency": "Ugunja"
+  },
+  {
+    "code": "1162",
+    "name": "Ugunja",
+    "constituency": "Ugunja"
+  },
+  {
+    "code": "1279",
+    "name": "Central kanyamkago",
+    "constituency": "Uriri"
+  },
+  {
+    "code": "1281",
+    "name": "East kanyamkago",
+    "constituency": "Uriri"
+  },
+  {
+    "code": "1278",
+    "name": "North kanyamkago",
+    "constituency": "Uriri"
+  },
+  {
+    "code": "1280",
+    "name": "South kanyamkago",
+    "constituency": "Uriri"
+  },
+  {
+    "code": "1277",
+    "name": "West kanyamkago",
+    "constituency": "Uriri"
+  },
+  {
+    "code": "1053",
+    "name": "Central maragoli",
+    "constituency": "Vihiga"
+  },
+  {
+    "code": "1051",
+    "name": "Lugaga-wamuluma",
+    "constituency": "Vihiga"
+  },
+  {
+    "code": "1054",
+    "name": "Mungoma",
+    "constituency": "Vihiga"
+  },
+  {
+    "code": "1052",
+    "name": "South maragoli",
+    "constituency": "Vihiga"
+  },
+  {
+    "code": "0127",
+    "name": "Kaloleni",
+    "constituency": "Voi"
+  },
+  {
+    "code": "0129",
+    "name": "Kasigau",
+    "constituency": "Voi"
+  },
+  {
+    "code": "0128",
+    "name": "Marungu",
+    "constituency": "Voi"
+  },
+  {
+    "code": "0125",
+    "name": "Mbololo",
+    "constituency": "Voi"
+  },
+  {
+    "code": "0130",
+    "name": "Ngolia",
+    "constituency": "Voi"
+  },
+  {
+    "code": "0126",
+    "name": "Sagalla",
+    "constituency": "Voi"
+  },
+  {
+    "code": "0170",
+    "name": "Barwago",
+    "constituency": "Wajir East"
+  },
+  {
+    "code": "0171",
+    "name": "Khorof/Harar",
+    "constituency": "Wajir East"
+  },
+  {
+    "code": "0169",
+    "name": "Township",
+    "constituency": "Wajir East"
+  },
+  {
+    "code": "0168",
+    "name": "Wagberi",
+    "constituency": "Wajir East"
+  },
+  {
+    "code": "0165",
+    "name": "Batalu",
+    "constituency": "Wajir North"
+  },
+  {
+    "code": "0162",
+    "name": "Bute",
+    "constituency": "Wajir North"
+  },
+  {
+    "code": "0166",
+    "name": "Danaba",
+    "constituency": "Wajir North"
+  },
+  {
+    "code": "0167",
+    "name": "Godoma",
+    "constituency": "Wajir North"
+  },
+  {
+    "code": "0161",
+    "name": "Gurar",
+    "constituency": "Wajir North"
+  },
+  {
+    "code": "0163",
+    "name": "Korondile",
+    "constituency": "Wajir North"
+  },
+  {
+    "code": "0164",
+    "name": "Malkagufu",
+    "constituency": "Wajir North"
+  },
+  {
+    "code": "0184",
+    "name": "Benane",
+    "constituency": "Wajir South"
+  },
+  {
+    "code": "0185",
+    "name": "Burder",
+    "constituency": "Wajir South"
+  },
+  {
+    "code": "0186",
+    "name": "Dadaja bulla",
+    "constituency": "Wajir South"
+  },
+  {
+    "code": "0190",
+    "name": "Diif",
+    "constituency": "Wajir South"
+  },
+  {
+    "code": "0187",
+    "name": "Habasswein",
+    "constituency": "Wajir South"
+  },
+  {
+    "code": "0189",
+    "name": "Ibrahim ure",
+    "constituency": "Wajir South"
+  },
+  {
+    "code": "0188",
+    "name": "Lagboghol South",
+    "constituency": "Wajir South"
+  },
+  {
+    "code": "0178",
+    "name": "Ademasajide",
+    "constituency": "Wajir West"
+  },
+  {
+    "code": "0176",
+    "name": "Arbajahan",
+    "constituency": "Wajir West"
+  },
+  {
+    "code": "0177",
+    "name": "Hadado/Athibohol",
+    "constituency": "Wajir West"
+  },
+  {
+    "code": "0179",
+    "name": "Wagalla/Ganyure",
+    "constituency": "Wajir West"
+  },
+  {
+    "code": "1106",
+    "name": "Maraka",
+    "constituency": "Webuye East"
+  },
+  {
+    "code": "1104",
+    "name": "Mihuu",
+    "constituency": "Webuye East"
+  },
+  {
+    "code": "1105",
+    "name": "Ndivisi",
+    "constituency": "Webuye East"
+  },
+  {
+    "code": "1110",
+    "name": "Bokoli",
+    "constituency": "Webuye West"
+  },
+  {
+    "code": "1109",
+    "name": "Matulo",
+    "constituency": "Webuye West"
+  },
+  {
+    "code": "1107",
+    "name": "Misikhu",
+    "constituency": "Webuye West"
+  },
+  {
+    "code": "1108",
+    "name": "Sitikho",
+    "constituency": "Webuye West"
+  },
+  {
+    "code": "1353",
+    "name": "Bogichora",
+    "constituency": "West Mugirango"
+  },
+  {
+    "code": "1355",
+    "name": "Bonyamatuta",
+    "constituency": "West Mugirango"
+  },
+  {
+    "code": "1354",
+    "name": "Bosamaro",
+    "constituency": "West Mugirango"
+  },
+  {
+    "code": "1352",
+    "name": "Nyamaiya",
+    "constituency": "West Mugirango"
+  },
+  {
+    "code": "1356",
+    "name": "Township",
+    "constituency": "West Mugirango"
+  },
+  {
+    "code": "1369",
+    "name": "Kangemi",
+    "constituency": "Westlands"
+  },
+  {
+    "code": "1368",
+    "name": "Karura",
+    "constituency": "Westlands"
+  },
+  {
+    "code": "1366",
+    "name": "Kitisuru",
+    "constituency": "Westlands"
+  },
+  {
+    "code": "1370",
+    "name": "Mountain view",
+    "constituency": "Westlands"
+  },
+  {
+    "code": "1367",
+    "name": "Parklands/Highridge",
+    "constituency": "Westlands"
+  },
+  {
+    "code": "0119",
+    "name": "Mwanda/Mgange",
+    "constituency": "Wundanyi"
+  },
+  {
+    "code": "0117",
+    "name": "Werugha",
+    "constituency": "Wundanyi"
+  },
+  {
+    "code": "0118",
+    "name": "Wumingu/Kishushe",
+    "constituency": "Wundanyi"
+  },
+  {
+    "code": "0116",
+    "name": "Wundanyi/Mbale",
+    "constituency": "Wundanyi"
+  },
+  {
+    "code": "0379",
+    "name": "Ikombe",
+    "constituency": "Yatta"
+  },
+  {
+    "code": "0380",
+    "name": "Katangi",
+    "constituency": "Yatta"
+  },
+  {
+    "code": "0378",
+    "name": "Kithimani",
+    "constituency": "Yatta"
+  },
+  {
+    "code": "0377",
+    "name": "Matuu",
+    "constituency": "Yatta"
+  },
+  {
+    "code": "0376",
+    "name": "Ndalani",
+    "constituency": "Yatta"
+  }
+]

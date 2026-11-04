@@ -60,6 +60,7 @@ jobs:
               - 'data/**'
             swift:
               - 'packages/swift/**'
+              - 'Package.swift'
               - 'data/**'
             dart:
               - 'packages/dart/**'
@@ -284,8 +285,11 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Copy data files into Resources
-        run: mkdir -p packages/swift/Sources/KenyaLocations/Resources && cp data/*.json packages/swift/Sources/KenyaLocations/Resources/
+      - name: Fail if bundled Swift data is stale
+        run: |
+          cp data/*.json packages/swift/Sources/KenyaLocations/Resources/
+          git add -N packages/swift/Sources/KenyaLocations/Resources
+          git diff --exit-code -- packages/swift/Sources/KenyaLocations/Resources || { echo "::error::Swift Resources are out of date. Run: cp data/*.json packages/swift/Sources/KenyaLocations/Resources/"; exit 1; }
       - name: Build (root Package.swift — validates SPM install URL)
         run: swift build -c release
       - name: Test (packages/swift Package.swift)
