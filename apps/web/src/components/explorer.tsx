@@ -16,6 +16,7 @@ import {
 import type { County, SearchResult, SearchType } from "kenya-locations";
 import { ChevronDownIcon, SearchIcon } from "lucide-react";
 import { useMemo, useState } from "react";
+import { AppLink } from "@/components/app-link";
 import { AreaSubmissionForm } from "@/components/AreaSubmissionForm";
 import { LocationCombobox } from "@/components/location-combobox";
 import { Badge } from "@/components/ui/badge";
@@ -31,6 +32,15 @@ import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/in
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsList, TabsPanel, TabsTab } from "@/components/ui/tabs";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import {
+  constituencyHref,
+  countyHref,
+  hitFor,
+  localityHref,
+  subCountyHref,
+  typeLabel,
+  wardHref,
+} from "@/lib/places";
 
 const SEARCH_TYPES: SearchType[] = [
   "county",
@@ -113,6 +123,7 @@ export function Explorer() {
   const selectedLocalityCounty = counties.find(
     (item) => item.name === countyLocality,
   );
+  const selectedSubCounty = subCounties.find((item) => item.name === subCounty);
 
   const results =
     query.length > 1
@@ -130,7 +141,7 @@ export function Explorer() {
         <FrameHeader>
           <FrameTitle>Explore</FrameTitle>
           <FrameDescription>
-            Pick a county. These are the same getters the libraries expose.
+            Pick a county, or press <kbd className="font-mono">/</kbd> to search. Every place has its own page.
           </FrameDescription>
         </FrameHeader>
         <FramePanel className="relative z-10 p-0">
@@ -204,13 +215,19 @@ export function Explorer() {
                   <Meta label="Postal code" value={selectedCounty.postal_code} />
                 </dl>
               )}
-              {countyAdmin && (
+              {selectedCounty && (
                 <Path
                   parts={[
-                    countyAdmin,
-                    constituencies.find((item) => item.code === constituency)
-                      ?.name,
-                    wards.find((item) => item.code === ward)?.name,
+                    { label: selectedCounty.name, href: countyHref(selectedCounty.code) },
+                    constituency
+                      ? {
+                          label: constituencies.find((item) => item.code === constituency)?.name,
+                          href: constituencyHref(constituency),
+                        }
+                      : undefined,
+                    ward
+                      ? { label: wards.find((item) => item.code === ward)?.name, href: wardHref(ward) }
+                      : undefined,
                   ]}
                 />
               )}
@@ -265,8 +282,19 @@ export function Explorer() {
                   localities in {selectedLocalityCounty.name}.
                 </p>
               )}
-              {countyLocality && (
-                <Path parts={[countyLocality, locality, area]} />
+              {selectedLocalityCounty && (
+                <Path
+                  parts={[
+                    {
+                      label: selectedLocalityCounty.name,
+                      href: countyHref(selectedLocalityCounty.code),
+                    },
+                    locality
+                      ? { label: locality, href: localityHref(selectedLocalityCounty.code, locality) }
+                      : undefined,
+                    area ? { label: area } : undefined,
+                  ]}
+                />
               )}
               <AreaSubmissionForm />
             </TabsPanel>
@@ -298,6 +326,14 @@ export function Explorer() {
                   placeholder="Select a sub-county"
                   value={subCounty}
                 />
+                {selectedSubCounty && (
+                  <AppLink
+                    className="text-sm underline-offset-4 hover:underline sm:col-span-3"
+                    href={subCountyHref(selectedSubCounty.code)}
+                  >
+                    Open {selectedSubCounty.name} →
+                  </AppLink>
+                )}
                 <div className="flex min-h-0 flex-col gap-2">
                   <span className="font-medium text-sm">
                     Wards ({subCountyWards.length})
@@ -311,7 +347,14 @@ export function Explorer() {
                       ) : (
                         <ul className="space-y-1 text-sm">
                           {subCountyWards.map((item) => (
-                            <li key={item.code}>{item.name}</li>
+                            <li key={item.code}>
+                              <AppLink
+                                className="underline-offset-4 hover:underline"
+                                href={wardHref(item.code)}
+                              >
+                                {item.name}
+                              </AppLink>
+                            </li>
                           ))}
                         </ul>
                       )}
@@ -371,23 +414,26 @@ export function Explorer() {
                 </p>
               )}
               {results.length > 0 && (
-                <ul className="divide-y rounded-lg border">
-                  {results.map((result) => (
-                    <li
-                      className="flex items-start justify-between gap-3 px-3 py-2.5"
-                      key={`${result.type}-${result.item.name}`}
-                    >
-                      <div className="min-w-0">
-                        <p className="truncate font-medium text-sm">
-                          {result.item.name}
-                        </p>
-                        <p className="truncate text-muted-foreground text-xs">
-                          {resultMeta(result)}
-                        </p>
-                      </div>
-                      <Badge variant="outline">{result.type}</Badge>
-                    </li>
-                  ))}
+                <ul className="divide-y overflow-hidden rounded-lg border">
+                  {results.map((result) => {
+                    const hit = hitFor(result);
+                    return (
+                      <li key={hit.key}>
+                        <AppLink
+                          className="flex items-start justify-between gap-3 px-3 py-2.5 outline-none transition-colors hover:bg-accent focus-visible:bg-accent"
+                          href={hit.href}
+                        >
+                          <div className="min-w-0">
+                            <p className="truncate font-medium text-sm">{hit.label}</p>
+                            <p className="truncate text-muted-foreground text-xs">
+                              {resultMeta(result)}
+                            </p>
+                          </div>
+                          <Badge variant="outline">{typeLabel(hit.type)}</Badge>
+                        </AppLink>
+                      </li>
+                    );
+                  })}
                 </ul>
               )}
             </TabsPanel>
@@ -407,21 +453,30 @@ function Meta({ label, value }: { label: string; value: string }) {
   );
 }
 
-function Path({ parts }: { parts: Array<string | undefined> }) {
-  const visible = parts.filter(Boolean) as string[];
+type PathPart = { label: string | undefined; href?: string } | undefined;
+
+function Path({ parts }: { parts: PathPart[] }) {
+  const visible = parts.filter(
+    (part): part is { label: string; href?: string } => Boolean(part?.label),
+  );
   if (visible.length === 0) return null;
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <nav aria-label="Selected place" className="flex flex-wrap items-center gap-2">
       {visible.map((part, index) => (
-        <span className="contents" key={part}>
-          {index > 0 && (
-            <span className="text-muted-foreground text-xs">/</span>
+        <span className="contents" key={part.label}>
+          {index > 0 && <span className="text-muted-foreground text-xs">/</span>}
+          {part.href ? (
+            <Badge render={<AppLink href={part.href} />} variant="outline">
+              {part.label}
+            </Badge>
+          ) : (
+            <Badge variant="outline">{part.label}</Badge>
           )}
-          <Badge variant="outline">{part}</Badge>
         </span>
       ))}
-    </div>
+      <span className="text-muted-foreground text-xs">· open a place to see its page</span>
+    </nav>
   );
 }
 

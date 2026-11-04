@@ -31,3 +31,17 @@ export const seo = ({
 
   return tags;
 };
+
+/** Page title and description for a place page (or its not-found state). */
+export const placeSeo = (
+  place: { title: string; kindLabel: string; summary: string } | undefined,
+  kindLabel: string,
+) =>
+  seo({
+    title: place
+      ? `${place.title} · ${place.kindLabel} · kenya-locations`
+      : `${kindLabel} not found · kenya-locations`,
+    description: place
+      ? `${place.summary}. Codes, parent places, and how to look it up in JavaScript, Kotlin, Swift, Dart and PHP.`
+      : undefined,
+  });
