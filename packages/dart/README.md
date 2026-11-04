@@ -52,6 +52,9 @@ final wards = KenyaLocations.getWardsInConstituency('Westlands');
 final localities = KenyaLocations.getLocalitiesInCounty('Nairobi');
 
 final areas = KenyaLocations.getAreasInLocality('Karen');
+
+// Some locality names exist in more than one county; pass the county
+final bura = KenyaLocations.getAreasInLocality('Bura', county: 'Tana River');
 ```
 
 ### Resolving upward
@@ -117,11 +120,16 @@ County (47)
 | `getLocalities()`                                 | `List<Locality>`       |
 | `getLocalitiesInCounty(countyName)`               | `List<Locality>`       |
 | `getAreas()`                                      | `List<Area>`           |
-| `getAreasInLocality(localityName)`                | `List<Area>`           |
+| `getAreasInLocality(localityName, {county})`      | `List<Area>`           |
 | `search(query, {limit = 20, types})`              | `List<SearchResult>`   |
 | `searchByType(query, type, {limit = 20})`         | `List<SearchResult>`   |
 
-All county/constituency/ward/locality-name lookups are case-insensitive.
+All county/constituency/ward/locality-name lookups are case-insensitive. If
+nothing matches exactly, accents, spaces and punctuation are ignored
+(`Muranga` finds `Murang'a`). County and constituency arguments also accept a
+code, and numeric codes are zero-padded (`47` finds Nairobi). A name shared by
+several records (for example the ward `Township`) resolves to `null`, or an
+empty list for `getAreasInLocality` without a `county`.
 
 ## Example
 
