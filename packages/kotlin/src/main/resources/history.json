@@ -26,5 +26,16 @@
     "from": "Central  ward",
     "to": "Central ward",
     "note": "Removed a double space"
+  },
+  {
+    "date": "2026-11-04",
+    "release": "0.11.1",
+    "type": "county",
+    "code": "023",
+    "change": "corrected",
+    "field": "population_2019",
+    "from": 1504976,
+    "to": 926976,
+    "note": "Turkana's 2019 population now matches the KNBS census total (Volume II); the old value overstated the national total by 578,000"
   }
 ]
