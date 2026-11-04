@@ -140,6 +140,14 @@ jobs:
       - run: pnpm lint
       - run: pnpm build
       - run: pnpm test
+      - name: Fail if the packed manifest still has workspace protocol
+        run: |
+          pnpm pack --pack-destination "$RUNNER_TEMP"
+          tar -xOzf "$RUNNER_TEMP"/kenya-locations-react-*.tgz package/package.json > "$RUNNER_TEMP/packed.json"
+          if grep -q 'workspace:' "$RUNNER_TEMP/packed.json"; then
+            echo "::error::Packed package.json contains workspace: protocol"
+            exit 1
+          fi
 
   # ── Kotlin package ────────────────────────────────────────────────────────
   ci-kotlin:
