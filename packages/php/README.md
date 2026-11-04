@@ -107,7 +107,7 @@ foreach ($results as $result) {
 
 ```
 County (47)
-├── code, name, capital, areaKm2, population2019, region, postalCode
+├── code, name, capital, areaKm2, population2019, region, postalCode, isoCode, aliases
 ├── Locality → Area          (informal addressing: estates, neighbourhoods)
 │   917 localities · 1,827 areas
 └── Constituency → Ward      (electoral / administrative)
@@ -115,14 +115,19 @@ County (47)
     └── SubCounty (307)
 ```
 
-| Type           | Fields                                                                      |
-| -------------- | --------------------------------------------------------------------------- |
-| `County`       | `code`, `name`, `capital`, `areaKm2`, `population2019`, `region`, `postalCode` |
-| `SubCounty`    | `code`, `name`, `county`                                                    |
-| `Constituency` | `code`, `name`, `county`                                                    |
-| `Ward`         | `code`, `name`, `constituency`                                              |
-| `Locality`     | `name`, `county`                                                            |
-| `Area`         | `name`, `locality`, `county`                                                |
+| Type           | Fields                                                                                             |
+| -------------- | -------------------------------------------------------------------------------------------------- |
+| `County`       | `code`, `name`, `capital`, `areaKm2`, `population2019`, `region`, `postalCode`, `isoCode`, `aliases` |
+| `SubCounty`    | `code`, `name`, `county`, `countyCode`                                                             |
+| `Constituency` | `code`, `name`, `county`, `countyCode`                                                             |
+| `Ward`         | `code`, `name`, `constituency`, `constituencyCode`, `countyCode`                                   |
+| `Locality`     | `name`, `county`, `countyCode`                                                                     |
+| `Area`         | `name`, `locality`, `county`, `countyCode`                                                         |
+
+`isoCode` is the ISO 3166-2:KE code (`KE-30` for Nairobi). `aliases` are other
+names that resolve to the county, so `getCountyByName('Nairobi City')` and any
+county argument accept them. Relationships are joined on `countyCode` and
+`constituencyCode`, not on names.
 
 ## API reference
 

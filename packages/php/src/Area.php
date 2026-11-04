@@ -15,6 +15,7 @@ final readonly class Area
             name: (string) $data['name'],
             locality: (string) $data['locality'],
             county: (string) $data['county'],
+            countyCode: (string) $data['county_code'],
         );
     }
 
@@ -22,6 +23,8 @@ final readonly class Area
         public string $name,
         public string $locality,
         public string $county,
+        /** Code of the parent county, e.g. "047". */
+        public string $countyCode,
     ) {
     }
 }

@@ -20,6 +20,9 @@ namespace KenyaLocations;
  *   disambiguate.
  * - Localities are identified by county + name, because the same locality
  *   name exists in more than one county.
+ * - County names include aliases, so "Nairobi City" finds Nairobi.
+ * - Relationships are joined by code (`countyCode`, `constituencyCode`),
+ *   never by name.
  */
 final class KenyaLocations
 {
@@ -112,7 +115,7 @@ final class KenyaLocations
     {
         $subCounty = self::resolveSubCounty($nameOrCode);
 
-        return $subCounty === null ? null : self::resolveCounty($subCounty->county);
+        return $subCounty === null ? null : self::getCountyByCode($subCounty->countyCode);
     }
 
     /** @return list<Constituency> */
@@ -151,7 +154,7 @@ final class KenyaLocations
     {
         $constituency = self::resolveConstituency($nameOrCode);
 
-        return $constituency === null ? null : self::resolveCounty($constituency->county);
+        return $constituency === null ? null : self::getCountyByCode($constituency->countyCode);
     }
 
     /** @return list<Ward> */
@@ -211,7 +214,7 @@ final class KenyaLocations
 
         return array_values(array_filter(
             Dataset::wards(),
-            static fn (Ward $item): bool => self::countyOfWardRecord($item)?->code === $county->code,
+            static fn (Ward $item): bool => $item->countyCode === $county->code,
         ));
     }
 
@@ -322,7 +325,7 @@ final class KenyaLocations
     {
         $locality = self::getLocality($localityName);
 
-        return $locality === null ? null : self::resolveCounty($locality->county);
+        return $locality === null ? null : self::getCountyByCode($locality->countyCode);
     }
 
     /** @return list<Area> */
@@ -379,7 +382,7 @@ final class KenyaLocations
     {
         $area = self::getAreaByName($areaName);
 
-        return $area === null ? null : self::resolveCounty($area->county);
+        return $area === null ? null : self::getCountyByCode($area->countyCode);
     }
 
     /** Locality of an area (in the area's own county), or null when the area name is reused. */
@@ -387,7 +390,7 @@ final class KenyaLocations
     {
         $area = self::getAreaByName($areaName);
 
-        return $area === null ? null : self::getLocality($area->locality, $area->county);
+        return $area === null ? null : self::getLocality($area->locality, $area->countyCode);
     }
 
     /**
@@ -481,42 +484,37 @@ final class KenyaLocations
 
     private static function constituencyOfWardRecord(Ward $ward): ?Constituency
     {
-        return self::constituencyNames()->unique($ward->constituency);
+        return self::getConstituencyByCode($ward->constituencyCode);
     }
 
     private static function countyOfWardRecord(Ward $ward): ?County
     {
-        $constituency = self::constituencyOfWardRecord($ward);
-
-        return $constituency === null ? null : self::resolveCounty($constituency->county);
+        return self::getCountyByCode($ward->countyCode);
     }
 
     /** @return list<Ward> */
     private static function wardsInConstituency(Constituency $constituency): array
     {
-        $needle = NameIndex::lower($constituency->name);
-
         return array_values(array_filter(
             Dataset::wards(),
-            static fn (Ward $item): bool => NameIndex::lower($item->constituency) === $needle,
+            static fn (Ward $item): bool => $item->constituencyCode === $constituency->code,
         ));
     }
 
     /** @return list<Area> */
     private static function areasOfLocality(Locality $locality): array
     {
-        $county = NameIndex::lower($locality->county);
         $name = NameIndex::lower($locality->name);
 
         return array_values(array_filter(
             Dataset::areas(),
-            static fn (Area $item): bool => NameIndex::lower($item->county) === $county
+            static fn (Area $item): bool => $item->countyCode === $locality->countyCode
                 && NameIndex::lower($item->locality) === $name,
         ));
     }
 
     /**
-     * Records whose `county` field names this county.
+     * Records whose `countyCode` is this county's code.
      *
      * @template T of SubCounty|Constituency|Locality|Area
      * @param list<T> $items
@@ -524,11 +522,9 @@ final class KenyaLocations
      */
     private static function filterByCounty(array $items, County $county): array
     {
-        $needle = NameIndex::lower($county->name);
-
         return array_values(array_filter(
             $items,
-            static fn (object $item): bool => NameIndex::lower($item->county) === $needle,
+            static fn (object $item): bool => $item->countyCode === $county->code,
         ));
     }
 

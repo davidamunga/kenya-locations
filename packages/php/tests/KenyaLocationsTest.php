@@ -505,6 +505,50 @@ final class KenyaLocationsTest extends TestCase
         $this->assertSame('Othaya', KenyaLocations::getSubCountyOfWard('Iria-ini')?->name);
     }
 
+    public function testWardsCarryTheirParentCodes(): void
+    {
+        $ward = KenyaLocations::getWardByCode('0737');
+        $marakwetWest = KenyaLocations::getConstituencyByName('Marakwet West');
+
+        $this->assertNotNull($ward);
+        $this->assertNotNull($marakwetWest);
+        $this->assertSame($marakwetWest->code, $ward->constituencyCode);
+        $this->assertSame('028', $ward->countyCode);
+    }
+
+    public function testCountiesHaveUniqueIsoCodes(): void
+    {
+        $this->assertSame('KE-30', KenyaLocations::getCountyByCode('047')?->isoCode);
+        $this->assertSame('KE-01', KenyaLocations::getCountyByCode('030')?->isoCode);
+
+        $isoCodes = array_map(
+            static fn (County $county): string => $county->isoCode,
+            KenyaLocations::getCounties(),
+        );
+        $this->assertCount(47, array_unique($isoCodes));
+    }
+
+    public function testCountyAliasesResolveAsNames(): void
+    {
+        $this->assertSame('047', KenyaLocations::getCountyByName('Nairobi City')?->code);
+        $this->assertSame('047', KenyaLocations::getCountyByName('nairobicity')?->code);
+        $this->assertContains('Nairobi City', KenyaLocations::getCountyByCode('047')?->aliases ?? []);
+        $this->assertCount(77, KenyaLocations::getLocalitiesInCounty('Nairobi City'));
+        $this->assertSame(
+            count(KenyaLocations::getConstituenciesInCounty('Nairobi')),
+            count(KenyaLocations::getConstituenciesInCounty('Nairobi City')),
+        );
+    }
+
+    public function testEveryWardSharesItsConstituencysCounty(): void
+    {
+        foreach (KenyaLocations::getWards() as $ward) {
+            $constituency = KenyaLocations::getConstituencyByCode($ward->constituencyCode);
+            $this->assertNotNull($constituency, "ward {$ward->code}");
+            $this->assertSame($constituency->countyCode, $ward->countyCode, "ward {$ward->code}");
+        }
+    }
+
     /**
      * @param list<\KenyaLocations\SearchResult> $results
      */

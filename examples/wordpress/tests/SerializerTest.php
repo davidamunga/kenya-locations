@@ -24,6 +24,8 @@ final class SerializerTest extends TestCase
             'population_2019' => 4397073,
             'region' => 'Nairobi',
             'postal_code' => '00100',
+            'iso_code' => 'KE-30',
+            'aliases' => ['Nairobi City'],
         ], Serializer::county($nairobi));
     }
 
@@ -38,12 +40,15 @@ final class SerializerTest extends TestCase
             'code' => '274',
             'name' => 'Westlands',
             'county' => 'Nairobi',
+            'county_code' => '047',
         ], Serializer::constituency($constituency));
 
         $this->assertSame([
             'code' => '1370',
             'name' => 'Mountain view',
             'constituency' => 'Westlands',
+            'constituency_code' => '274',
+            'county_code' => '047',
         ], Serializer::ward($ward));
     }
 
