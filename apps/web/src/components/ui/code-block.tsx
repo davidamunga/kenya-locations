@@ -37,7 +37,7 @@ export function CodeBlock({
         : "Copy code";
 
   return (
-    <div className="relative overflow-hidden rounded-xl border bg-muted/40 text-foreground">
+    <div className="relative overflow-hidden rounded-xl border bg-background text-foreground shadow-xs/5">
       {(filename || language) && (
         <div className="flex items-center justify-between gap-3 border-b px-3 py-1.5">
           <span className="truncate font-mono text-muted-foreground text-xs">

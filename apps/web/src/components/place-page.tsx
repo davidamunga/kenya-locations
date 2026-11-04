@@ -73,7 +73,7 @@ export function PlacePage({ place }: { place: Place }) {
         </div>
 
         <aside className="flex min-w-0 flex-col gap-6 lg:sticky lg:top-20 lg:self-start">
-          <section aria-labelledby="facts-heading" className="rounded-xl border p-4">
+          <section aria-labelledby="facts-heading" className="rounded-xl border bg-background p-4 shadow-xs/5">
             <h2 className="font-medium text-sm" id="facts-heading">
               Details
             </h2>
