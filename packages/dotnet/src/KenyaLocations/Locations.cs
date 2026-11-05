@@ -160,15 +160,26 @@ namespace KenyaLocations
         /// </summary>
         /// <param name="query">Text to search for. Queries shorter than two characters return nothing.</param>
         /// <param name="limit">Maximum number of results.</param>
-        public static IReadOnlyList<SearchResult> Search(string query, int limit = 20)
+        public static IReadOnlyList<SearchResult> Search(string query, int limit = 20) =>
+            SearchCore(query, limit, null);
+
+        /// <summary>
+        /// Fuzzy search restricted to one record type. The type is applied before the limit, so
+        /// <paramref name="limit"/> results of that type are returned even when other types match better.
+        /// </summary>
+        public static IReadOnlyList<SearchResult> SearchByType(string query, SearchType type, int limit = 20) =>
+            SearchCore(query, limit, type);
+
+        private static IReadOnlyList<SearchResult> SearchCore(string query, int limit, SearchType? only)
         {
             var q = query.Trim();
-            if (q.Length < 2) return Array.Empty<SearchResult>();
+            if (q.Length < 2 || limit <= 0) return Array.Empty<SearchResult>();
 
             var scored = new List<(double Score, SearchResult Result)>();
 
             void Collect<T>(IReadOnlyList<T> items, SearchType type, Func<T, string> name) where T : class
             {
+                if (only is not null && only != type) return;
                 foreach (var item in items)
                 {
                     var score = Fuzzy.Score(q, name(item));
@@ -186,10 +197,6 @@ namespace KenyaLocations
             // OrderBy is stable, so equal scores keep data order, as in the other packages.
             return scored.OrderBy(s => s.Score).Take(limit).Select(s => s.Result).ToList();
         }
-
-        /// <summary>Fuzzy search restricted to one record type.</summary>
-        public static IReadOnlyList<SearchResult> SearchByType(string query, SearchType type, int limit = 20) =>
-            Search(query, limit * 6).Where(r => r.Type == type).Take(limit).ToList();
 
         // ─── Internal ──────────────────────────────────────────────────────────
 

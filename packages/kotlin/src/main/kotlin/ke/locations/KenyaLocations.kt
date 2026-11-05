@@ -143,13 +143,23 @@ object KenyaLocations {
      * Results are sorted by relevance score (best match first).
      * Returns up to [limit] results (default 20).
      */
-    fun search(query: String, limit: Int = 20): List<SearchResult<*>> {
+    fun search(query: String, limit: Int = 20): List<SearchResult<*>> = searchCore(query, limit, null)
+
+    /**
+     * Fuzzy search restricted to one entity type. The type is applied before [limit], so up to
+     * [limit] results of that type are returned even when other types match better.
+     */
+    fun searchByType(query: String, type: SearchType, limit: Int = 20): List<SearchResult<*>> =
+        searchCore(query, limit, type)
+
+    private fun searchCore(query: String, limit: Int, only: SearchType?): List<SearchResult<*>> {
         val q = query.trim()
-        if (q.length < 2) return emptyList()
+        if (q.length < 2 || limit <= 0) return emptyList()
 
         val scored = ArrayList<Pair<Double, SearchResult<*>>>()
 
         fun <T : Any> collect(items: List<T>, type: SearchType, name: (T) -> String) {
+            if (only != null && only != type) return
             for (item in items) {
                 val score = fuzzyScore(q, name(item)) ?: continue
                 scored.add(score to SearchResult(type, item))
@@ -165,9 +175,6 @@ object KenyaLocations {
 
         return scored.sortedBy { it.first }.take(limit).map { it.second }
     }
-
-    fun searchByType(query: String, type: SearchType, limit: Int = 20): List<SearchResult<*>> =
-        search(query, limit * 6).filter { it.type == type }.take(limit)
 
     // ─── Fuzzy matching ───────────────────────────────────────────────────────
 
