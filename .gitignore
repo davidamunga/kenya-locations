@@ -69,3 +69,6 @@ examples/wordpress/.phpunit.cache/
 packages/dotnet/**/bin/
 packages/dotnet/**/obj/
 packages/dotnet/artifacts/
+
+# The .NET package needs its solution file
+!packages/dotnet/*.sln
