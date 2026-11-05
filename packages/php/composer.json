@@ -3,7 +3,7 @@
   "description": "Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas.",
   "type": "library",
   "license": "MIT",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "keywords": [
     "kenya",
     "counties",
