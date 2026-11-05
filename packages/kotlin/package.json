@@ -1,6 +1,6 @@
 {
   "name": "kenya-locations-kotlin",
-  "version": "0.11.2",
+  "version": "0.12.0",
   "private": true,
   "description": "Version tracking stub for the Kotlin/JVM library — actual publish is via Gradle/Maven Central"
 }

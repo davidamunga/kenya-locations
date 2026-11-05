@@ -12,7 +12,7 @@
     <NoWarn>$(NoWarn);CS1591</NoWarn>
 
     <PackageId>KenyaLocations</PackageId>
-    <Version>0.1.1</Version>
+    <Version>0.2.0</Version>
     <Authors>David Amunga</Authors>
     <Description>Kenyan administrative divisions (counties, sub-counties, constituencies, wards, localities and areas) with fast lookups and fuzzy search. All data is embedded; no network calls.</Description>
     <PackageTags>kenya;counties;constituencies;wards;locations;administrative-divisions</PackageTags>
