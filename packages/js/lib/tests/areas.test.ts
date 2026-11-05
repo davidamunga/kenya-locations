@@ -11,9 +11,9 @@ import {
 
 describe("Areas Module", () => {
   describe("getAreas", () => {
-    it("returns all 1827 areas", () => {
+    it("returns all 1828 areas", () => {
       const result = getAreas();
-      expect(result).toHaveLength(1827);
+      expect(result).toHaveLength(1828);
       expect(result[0]).toHaveProperty("name");
       expect(result[0]).toHaveProperty("locality");
       expect(result[0]).toHaveProperty("county");

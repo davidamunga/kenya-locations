@@ -16131,6 +16131,12 @@ const List<Map<String, dynamic>> rawAreas = [
     'county_code': '022',
   },
   {
+    'name': 'Kwa Jose',
+    'locality': 'Juja',
+    'county': 'Kiambu',
+    'county_code': '022',
+  },
+  {
     'name': 'Murera',
     'locality': 'Juja',
     'county': 'Kiambu',
