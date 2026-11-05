@@ -1,5 +1,21 @@
 # kenya-locations-php
 
+## 0.3.1
+
+### Patch Changes
+
+- Data update:
+
+  - **Areas** (1,827 → 1,828)
+    - Added area Kwa Jose (Juja, Kiambu)
+      ([#68](https://github.com/DavidAmunga/kenya-locations/pull/68))
+
+- Data update:
+
+  - **Areas** (1,827 → 1,828)
+    - Added area Highpoint (Juja, Kiambu)
+      ([#69](https://github.com/DavidAmunga/kenya-locations/pull/69))
+
 ## 0.3.0
 
 ### Minor Changes
