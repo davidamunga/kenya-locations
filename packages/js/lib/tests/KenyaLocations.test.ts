@@ -183,7 +183,7 @@ describe("KenyaLocations - Main API", () => {
   describe("getAreas", () => {
     it("should return all areas", () => {
       const result = getAreas();
-      expect(result).toHaveLength(1828);
+      expect(result).toHaveLength(1829);
       expect(result[0]).toHaveProperty("name");
       expect(result[0]).toHaveProperty("locality");
       expect(result[0]).toHaveProperty("county");

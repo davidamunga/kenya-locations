@@ -10,7 +10,7 @@
 
 Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, Swift, Dart/Flutter, and PHP.
 
-**47** counties · **307** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,828** areas
+**47** counties · **307** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,829** areas
 
 ---
 
@@ -243,7 +243,7 @@ $results = KenyaLocations::search('Nairob', limit: 20); // matches "Nairobi"
 County (47)
 ├── Metadata: capital, area_km2, population_2019, region, postal_code
 ├── Locality → Area          (informal addressing: estates, neighbourhoods)
-│   917 localities · 1,828 areas
+│   917 localities · 1,829 areas
 └── Constituency → Ward      (electoral / administrative)
     290 constituencies · 1,450 wards
     └── Sub-County (307)
@@ -461,7 +461,7 @@ npm install kenya-locations-react
 | `useLocalities()` | `Locality[]` | All 917 localities |
 | `useLocalitiesInCounty(countyName)` | `Locality[]` | Localities in a county |
 | `useLocality(name, countyName?)` | `LocalityWrapper \| undefined` | Single locality (county-scoped) |
-| `useAreas()` | `Area[]` | All 1,828 areas |
+| `useAreas()` | `Area[]` | All 1,829 areas |
 | `useAreasInLocality(localityName, county?)` | `Area[]` | Areas in a locality; pass the county for names used in more than one county |
 | `useAreasInCounty(countyName)` | `Area[]` | Areas in a county |
 | `useSearch(query, options?)` | `{ results: SearchResult[], isPending: boolean }` | Debounced fuzzy search |

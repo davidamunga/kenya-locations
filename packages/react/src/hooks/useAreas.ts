@@ -7,7 +7,7 @@ import {
 } from "kenya-locations";
 
 /**
- * Returns all 1,828 areas. Stable reference.
+ * Returns all 1,829 areas. Stable reference.
  */
 export function useAreas(): Area[] {
   return useMemo(() => getAreas(), []);

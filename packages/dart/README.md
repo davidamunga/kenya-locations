@@ -4,7 +4,7 @@ Kenyan administrative divisions — counties, sub-counties, constituencies,
 wards, localities, and areas — as a fast, fully-typed Dart/Flutter library.
 
 **47** counties · **307** sub-counties · **290** constituencies ·
-**1,450** wards · **917** localities · **1,828** areas
+**1,450** wards · **917** localities · **1,829** areas
 
 Data is compiled directly into the package as Dart constants, so there's no
 asset loading, no `async` setup, and no bundling JSON in your app — just
@@ -89,7 +89,7 @@ County (47)
 ├── code, isoCode, name, capital, areaKm2, population2019, region,
 │   postalCode, aliases
 ├── Locality → Area          (informal addressing: estates, neighbourhoods)
-│   917 localities · 1,828 areas
+│   917 localities · 1,829 areas
 └── Constituency → Ward      (electoral / administrative)
     290 constituencies · 1,450 wards
     └── SubCounty (307)

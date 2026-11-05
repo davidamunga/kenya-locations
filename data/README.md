@@ -46,7 +46,7 @@ All codes are zero-padded strings. Field names are `snake_case`.
 
 `name`, `county`, `county_code`. The same locality name can exist in several counties ("Bura", "Makadara"). Stable IDs and ward links are planned for 0.12.
 
-### `area.json` — 1,828 records, key `county_code` + `locality` + `name`
+### `area.json` — 1,829 records, key `county_code` + `locality` + `name`
 
 `name`, `locality`, `county`, `county_code`.
 
