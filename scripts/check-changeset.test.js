@@ -59,6 +59,15 @@ test("fails when a data change skips a package that ships the data", () => {
   assert.deepEqual(result.missingDataPackages, ["kenya-locations-dart", "kenya-locations-php"]);
 });
 
+test("a data README edit with a package changeset does not require the data packages", () => {
+  const reactOnly = `---\n"kenya-locations-react": patch\n---\n\nDocs.\n`;
+  const result = changesetCheck(
+    ["data/README.md", "packages/react/src/hooks/useAreas.ts", ".changeset/docs.md"],
+    () => reactOnly
+  );
+  assert.equal(result.ok, true);
+});
+
 test("data packages can be spread across several changesets", () => {
   const files = { ".changeset/a.md": `---\n"kenya-locations": patch\n---\n\nA\n`, ".changeset/b.md": `---\nkenya-locations-dart: patch\n'kenya-locations-php': minor\n---\n\nB\n` };
   const result = changesetCheck(["data/wards.json", ".changeset/a.md", ".changeset/b.md"], (f) => files[f]);
