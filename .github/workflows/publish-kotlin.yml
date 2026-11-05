@@ -7,7 +7,7 @@ on:
 jobs:
   publish:
     name: Build & Publish to Maven Central
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     defaults:
@@ -15,7 +15,7 @@ jobs:
         working-directory: packages/kotlin
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -26,12 +26,12 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Publishing version: $VERSION"
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: "temurin"
           java-version: "17"
 
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v5
 
       - name: Validate shared data
         run: node scripts/validate-data.js

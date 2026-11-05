@@ -34,11 +34,11 @@ jobs:
   github-release:
     name: Publish GitHub draft release
     needs: [publish-js, publish-kotlin, publish-swift]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Publish the v* release once JS, Kotlin and Swift succeeded
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
