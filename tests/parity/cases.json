@@ -1,0 +1,63 @@
+{
+  "$comment": "Cross-language parity cases. Every language package runs these against its own implementation (JS is the reference), so a behaviour change in one package that the others don't share fails CI. Lookups and relations must match exactly. Search order differs between engines (Fuse.js in JS, Levenshtein ports elsewhere), so search cases only check that expected records appear in the top results. Types are: county, sub-county, constituency, ward, locality, area. Keep expectations to things that don't change with routine data additions.",
+  "lookups": [
+    { "call": "countyByCode", "arg": "47", "expect": "Nairobi" },
+    { "call": "countyByCode", "arg": "047", "expect": "Nairobi" },
+    { "call": "countyByCode", "arg": " 047 ", "expect": "Nairobi" },
+    { "call": "countyByCode", "arg": "999", "expect": null },
+    { "call": "countyByCode", "arg": "abc", "expect": null },
+    { "call": "countyByName", "arg": "nairobi", "expect": "047" },
+    { "call": "countyByName", "arg": " NAIROBI ", "expect": "047" },
+    { "call": "countyByName", "arg": "Nairobi City", "expect": "047" },
+    { "call": "countyByName", "arg": "Muranga", "expect": "021" },
+    { "call": "countyByName", "arg": "Elgeyo Marakwet", "expect": "028" },
+    { "call": "countyByName", "arg": "homabay", "expect": "043" },
+    { "call": "countyByName", "arg": "Atlantis", "expect": null },
+    { "call": "constituencyByCode", "arg": "1", "expect": "Changamwe" },
+    { "call": "constituencyByCode", "arg": "001", "expect": "Changamwe" },
+    { "call": "constituencyByCode", "arg": "9999", "expect": null },
+    { "call": "constituencyByName", "arg": "westlands", "expect": "274" },
+    { "call": "constituencyByName", "arg": "Kitui Central", "expect": "072" },
+    { "call": "constituencyByName", "arg": "Atlantis", "expect": null }
+  ],
+  "counts": [
+    { "call": "constituenciesInCounty", "arg": "Nairobi", "expect": 17 },
+    { "call": "constituenciesInCounty", "arg": "047", "expect": 17 },
+    { "call": "constituenciesInCounty", "arg": "47", "expect": 17 },
+    { "call": "constituenciesInCounty", "arg": "nairobi city", "expect": 17 },
+    { "call": "constituenciesInCounty", "arg": "Atlantis", "expect": 0 },
+    { "call": "wardsInCounty", "arg": "Nairobi", "expect": 85 },
+    { "call": "wardsInCounty", "arg": "47", "expect": 85 },
+    { "call": "wardsInCounty", "arg": "Atlantis", "expect": 0 },
+    { "call": "subCountiesInCounty", "arg": "Nairobi", "expect": 17 },
+    { "call": "wardsInConstituency", "arg": "Westlands", "expect": 5 },
+    { "call": "wardsInConstituency", "arg": "Kitui Central", "expect": 5 },
+    { "call": "wardsInConstituency", "arg": "Atlantis", "expect": 0 }
+  ],
+  "areasInLocality": [
+    { "locality": "Juja", "county": "Kiambu", "includes": ["Gachororo", "Gate B", "Murera", "Witethie"] },
+    { "locality": "Juja", "includes": ["Gachororo", "Murera"] },
+    { "locality": "Makadara", "expectCount": 0 },
+    { "locality": "Juja", "county": "Mombasa", "expectCount": 0 }
+  ],
+  "localitiesInCounty": [
+    { "county": "Kiambu", "includes": ["Juja", "Thika"] }
+  ],
+  "search": [
+    { "query": "Nairobi", "limit": 10, "includes": [{ "type": "county", "name": "Nairobi" }] },
+    { "query": "nairobi", "limit": 10, "includes": [{ "type": "county", "name": "Nairobi" }] },
+    { "query": "Westlands", "limit": 10, "includes": [{ "type": "constituency", "name": "Westlands" }, { "type": "locality", "name": "Westlands" }] },
+    { "query": "Kwa Jose", "limit": 5, "includes": [{ "type": "area", "name": "Kwa Jose" }] },
+    { "query": "Nairbi", "limit": 10, "includes": [{ "type": "county", "name": "Nairobi" }] },
+    { "query": "Mombassa", "limit": 10, "includes": [{ "type": "county", "name": "Mombasa" }] },
+    { "query": "Kisumo", "limit": 10, "includes": [{ "type": "county", "name": "Kisumu" }] },
+    { "query": "Kakamga", "limit": 10, "includes": [{ "type": "county", "name": "Kakamega" }] },
+    { "query": "a", "limit": 10, "empty": true },
+    { "query": "  ", "limit": 10, "empty": true }
+  ],
+  "searchByType": [
+    { "query": "Nairobi", "type": "county", "limit": 5, "includes": ["Nairobi"] },
+    { "query": "West", "type": "ward", "limit": 5, "nonEmpty": true },
+    { "query": "Kwa Jose", "type": "area", "limit": 5, "includes": ["Kwa Jose"] }
+  ]
+}

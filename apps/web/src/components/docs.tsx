@@ -1,5 +1,6 @@
 import { DATA_VERSION } from "kenya-locations";
 import dartPackage from "../../../../packages/dart/package.json";
+import dotnetPackage from "../../../../packages/dotnet/package.json";
 import phpPackage from "../../../../packages/php/package.json";
 import { AreaSubmissionForm } from "@/components/AreaSubmissionForm";
 import { CodeBlock } from "@/components/ui/code-block";
@@ -29,10 +30,10 @@ export function Docs() {
           Install
         </h2>
         <p className="mt-3 max-w-prose text-muted-foreground text-sm">
-          JavaScript, React, Kotlin, Swift, Dart, PHP, and WordPress read the
-          same JSON in <code>data/</code>. JavaScript, Kotlin and Swift share
-          version {DATA_VERSION}; Dart is {dartPackage.version} and PHP{" "}
-          {phpPackage.version}.
+          JavaScript, React, Kotlin, Swift, Dart, PHP, .NET, and WordPress read
+          the same JSON in <code>data/</code>. JavaScript, Kotlin and Swift
+          share version {DATA_VERSION}; Dart is {dartPackage.version}, PHP{" "}
+          {phpPackage.version} and .NET {dotnetPackage.version}.
         </p>
         <InstallTabs className="mt-6" />
       </section>
@@ -471,6 +472,78 @@ $areas = KenyaLocations::getAreasInLocality('Karen');`}
 
       <Separator />
 
+      <section className="scroll-mt-24" id="dotnet">
+        <h2 className="font-heading font-semibold text-2xl tracking-tight">
+          .NET
+        </h2>
+        <p className="mt-3 max-w-prose text-muted-foreground text-sm">
+          C#, F# and VB on net8.0 or netstandard2.0. The data is embedded in
+          the assembly and parsed on first use, so there is no setup and no
+          network call. Everything lives on the static <code>Locations</code>{" "}
+          class. Published on NuGet as{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://www.nuget.org/packages/KenyaLocations"
+            rel="noreferrer"
+            target="_blank"
+          >
+            KenyaLocations
+          </a>
+          . Source: <RepoLink path="packages/dotnet" />.
+        </p>
+        <div className="mt-6 space-y-8">
+          <Example
+            filename="CountyPicker.cs"
+            language="csharp"
+            title="County picker"
+            body="Same drill-down: county, constituency, wards. Scoped queries take a name, an alias or a code."
+            code={`using KenyaLocations;
+
+var counties = Locations.GetCounties();
+var nairobi = Locations.GetCountyByName("Nairobi");
+var constituencies = Locations.GetConstituenciesInCounty("Nairobi");
+var wards = Locations.GetWardsInConstituency("Westlands");
+
+Console.WriteLine(nairobi?.Capital);
+Console.WriteLine(nairobi?.Population2019);`}
+          />
+          <Example
+            filename="Search.cs"
+            language="csharp"
+            title="Search"
+            body="Typo-tolerant. Filter by SearchType when you only want one kind; result.Item is the matching record."
+            code={`using KenyaLocations;
+
+var results = Locations.Search("Westlands", limit: 20);
+var wardsOnly = Locations.SearchByType("West", SearchType.Ward);
+
+foreach (var result in results)
+{
+    Console.WriteLine($"{result.Type}: {result.Item}");
+}`}
+          />
+          <Example
+            filename="Program.cs"
+            language="csharp"
+            title="ASP.NET Core minimal API"
+            body="Back a county, constituency and ward picker with three endpoints. Lists are cached, so there is no per-request cost."
+            code={`using KenyaLocations;
+
+var app = WebApplication.CreateBuilder(args).Build();
+
+app.MapGet("/counties", () => Locations.GetCounties());
+app.MapGet("/counties/{county}/constituencies",
+    (string county) => Locations.GetConstituenciesInCounty(county));
+app.MapGet("/constituencies/{constituency}/wards",
+    (string constituency) => Locations.GetWardsInConstituency(constituency));
+
+app.Run();`}
+          />
+        </div>
+      </section>
+
+      <Separator />
+
       <section className="scroll-mt-24" id="contribute">
         <h2 className="font-heading font-semibold text-2xl tracking-tight">
           Contribute
@@ -538,6 +611,7 @@ export function InstallTabs({ className }: { className?: string }) {
         <TabsTab value="swift">Swift</TabsTab>
         <TabsTab value="dart">Dart</TabsTab>
         <TabsTab value="php">PHP</TabsTab>
+        <TabsTab value="dotnet">.NET</TabsTab>
         <TabsTab value="wordpress">WordPress</TabsTab>
       </TabsList>
       <TabsPanel className="mt-3 space-y-3" value="js">
@@ -594,6 +668,21 @@ implementation("io.github.davidamunga:kenya-locations:${DATA_VERSION}")
             target="_blank"
           >
             davidamunga/kenya-locations
+          </a>
+        </p>
+      </TabsPanel>
+      <TabsPanel className="mt-3 space-y-3" value="dotnet">
+        <CodeBlock filename="terminal">dotnet add package KenyaLocations</CodeBlock>
+        <p className="text-muted-foreground text-xs">
+          net8.0 and netstandard2.0 (.NET Framework 4.6.1+, Unity). Versions
+          independently of the JS / Kotlin / Swift trio. NuGet:{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://www.nuget.org/packages/KenyaLocations"
+            rel="noreferrer"
+            target="_blank"
+          >
+            KenyaLocations
           </a>
         </p>
       </TabsPanel>

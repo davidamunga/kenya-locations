@@ -118,30 +118,37 @@ public final class KenyaLocations: @unchecked Sendable {
     /// Results are sorted by relevance score (best match first).
     /// Returns up to `limit` results (default 20).
     public func search(_ query: String, limit: Int = 20) -> [SearchResult] {
+        searchCore(query, limit: limit, only: nil)
+    }
+
+    /// Fuzzy search restricted to one entity type. The type is applied before `limit`, so up to
+    /// `limit` results of that type are returned even when other types match better.
+    public func searchByType(_ query: String, type: SearchType, limit: Int = 20) -> [SearchResult] {
+        searchCore(query, limit: limit, only: type)
+    }
+
+    private func searchCore(_ query: String, limit: Int, only: SearchType?) -> [SearchResult] {
         let q = query.trimmingCharacters(in: .whitespaces)
-        guard q.count >= 2 else { return [] }
+        guard q.count >= 2, limit > 0 else { return [] }
 
         var scored: [(score: Double, result: SearchResult)] = []
 
-        func collect<T>(_ items: [T], make: (T) -> SearchResult, name: (T) -> String) {
+        func collect<T>(_ type: SearchType, _ items: [T], make: (T) -> SearchResult, name: (T) -> String) {
+            if let only, only != type { return }
             for item in items {
                 guard let score = fuzzyScore(pattern: q, text: name(item)) else { continue }
                 scored.append((score, make(item)))
             }
         }
 
-        collect(counties,       make: { .county($0) })       { $0.name }
-        collect(subCounties,    make: { .subCounty($0) })    { $0.name }
-        collect(constituencies, make: { .constituency($0) }) { $0.name }
-        collect(wards,          make: { .ward($0) })          { $0.name }
-        collect(localities,     make: { .locality($0) })     { $0.name }
-        collect(areas,          make: { .area($0) })          { $0.name }
+        collect(.county, counties,       make: { .county($0) })       { $0.name }
+        collect(.subCounty, subCounties,    make: { .subCounty($0) })    { $0.name }
+        collect(.constituency, constituencies, make: { .constituency($0) }) { $0.name }
+        collect(.ward, wards,          make: { .ward($0) })          { $0.name }
+        collect(.locality, localities,     make: { .locality($0) })     { $0.name }
+        collect(.area, areas,          make: { .area($0) })          { $0.name }
 
         return scored.sorted { $0.score < $1.score }.prefix(limit).map { $0.result }
-    }
-
-    public func searchByType(_ query: String, type: SearchType, limit: Int = 20) -> [SearchResult] {
-        search(query, limit: limit * 6).filter { $0.type == type }.prefix(limit).map { $0 }
     }
 
     // ─── Fuzzy matching ───────────────────────────────────────────────────────

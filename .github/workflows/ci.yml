@@ -53,16 +53,19 @@ jobs:
             js:
               - 'packages/js/**'
               - 'data/**'
+              - 'tests/parity/**'
             react:
               - 'packages/react/**'
               - 'packages/js/**'
             kotlin:
               - 'packages/kotlin/**'
               - 'data/**'
+              - 'tests/parity/**'
             swift:
               - 'packages/swift/**'
               - 'Package.swift'
               - 'data/**'
+              - 'tests/parity/**'
             dart:
               - 'packages/dart/**'
               - 'examples/flutter/**'
@@ -70,9 +73,11 @@ jobs:
             php:
               - 'packages/php/**'
               - 'data/**'
+              - 'tests/parity/**'
             dotnet:
               - 'packages/dotnet/**'
               - 'data/**'
+              - 'tests/parity/**'
             wordpress:
               - 'examples/wordpress/**'
               - 'packages/php/**'
