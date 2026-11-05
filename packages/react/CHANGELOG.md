@@ -1,5 +1,11 @@
 # kenya-locations-react
 
+## 0.10.3
+
+### Patch Changes
+
+- Uses `kenya-locations` 0.11.2.
+
 ## 0.10.2
 
 ### Patch Changes
