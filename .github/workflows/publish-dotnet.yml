@@ -1,0 +1,98 @@
+name: Publish .NET to NuGet
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  publish:
+    name: Build & Publish to NuGet
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    defaults:
+      run:
+        working-directory: packages/dotnet
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read version from package.json
+        id: version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Publishing version: $VERSION"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Validate shared data
+        run: node scripts/validate-data.js
+        working-directory: ${{ github.workspace }}
+
+      - name: Fail if copied data is stale
+        run: |
+          node scripts/release/data-sync.js
+          git diff --exit-code -- packages/dotnet/src/KenyaLocations/Data
+        working-directory: ${{ github.workspace }}
+
+      - run: dotnet restore
+      - run: dotnet build -c Release --no-restore
+      - run: dotnet test -c Release --no-build
+
+      - name: Pack
+        run: dotnet pack src/KenyaLocations -c Release --no-build -o artifacts
+
+      # NuGet trusted publishing: exchanges this job's OIDC token for a short-lived API key.
+      # Set the NUGET_USER repository variable to the nuget.org profile name that owns the package.
+      - name: Log in to NuGet
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ vars.NUGET_USER }}
+
+      - name: Push to NuGet
+        run: >
+          dotnet nuget push "artifacts/*.nupkg"
+          --api-key "${{ steps.login.outputs.NUGET_API_KEY }}"
+          --source https://api.nuget.org/v3/index.json
+          --skip-duplicate
+
+      - name: Summary
+        run: |
+          echo "## Published KenyaLocations ${{ steps.version.outputs.version }} to NuGet" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo '```bash' >> "$GITHUB_STEP_SUMMARY"
+          echo "dotnet add package KenyaLocations --version ${{ steps.version.outputs.version }}" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- [nuget.org](https://www.nuget.org/packages/KenyaLocations/${{ steps.version.outputs.version }})" >> "$GITHUB_STEP_SUMMARY"
+
+  github-release:
+    name: Publish GitHub draft release
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish the dotnet-v* release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="dotnet-v$(node -p "require('./packages/dotnet/package.json').version")"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --draft=false
+            echo "Published the $TAG GitHub release"
+          else
+            echo "No GitHub release for $TAG (not created by the Release workflow); nothing to publish."
+          fi

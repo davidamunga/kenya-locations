@@ -10,6 +10,7 @@ on:
       - "packages/kotlin/src/main/kotlin/**"
       - "packages/swift/Sources/**"
       - "packages/dart/lib/**"
+      - "packages/dotnet/src/**"
       - ".changeset/**"
       - "scripts/check-changeset.js"
       - ".github/workflows/version-check.yml"

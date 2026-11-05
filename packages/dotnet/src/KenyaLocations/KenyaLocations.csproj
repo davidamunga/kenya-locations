@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;netstandard2.0</TargetFrameworks>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>KenyaLocations</RootNamespace>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- Public members carry docs; generated JSON context code does not need them. -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+
+    <PackageId>KenyaLocations</PackageId>
+    <Version>0.0.0</Version>
+    <Authors>David Amunga</Authors>
+    <Description>Kenyan administrative divisions (counties, sub-counties, constituencies, wards, localities and areas) with fast lookups and fuzzy search. All data is embedded; no network calls.</Description>
+    <PackageTags>kenya;counties;constituencies;wards;locations;administrative-divisions</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://kenya-locations.web.app</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DavidAmunga/kenya-locations</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="KenyaLocations.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- data/*.json copy, refreshed by `pnpm data:sync`. Embedded by file name. -->
+    <EmbeddedResource Include="Data\counties.json;Data\sub-counties.json;Data\constituencies.json;Data\wards.json;Data\locality.json;Data\area.json" LogicalName="%(Filename)%(Extension)" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

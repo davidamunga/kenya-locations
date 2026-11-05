@@ -35,6 +35,8 @@ jobs:
       dart_tag: ${{ steps.plan.outputs.dart_tag }}
       php: ${{ steps.plan.outputs.php }}
       php_tag: ${{ steps.plan.outputs.php_tag }}
+      dotnet: ${{ steps.plan.outputs.dotnet }}
+      dotnet_tag: ${{ steps.plan.outputs.dotnet_tag }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -143,5 +145,6 @@ jobs:
           if [ "${{ needs.plan.outputs.react }}" = true ]; then dispatch publish-react.yml "${{ needs.plan.outputs.react_tag }}"; fi
           if [ "${{ needs.plan.outputs.dart }}" = true ]; then dispatch publish-dart.yml "${{ needs.plan.outputs.dart_tag }}"; fi
           if [ "${{ needs.plan.outputs.php }}" = true ]; then dispatch publish-php.yml "${{ needs.plan.outputs.php_tag }}"; fi
+          if [ "${{ needs.plan.outputs.dotnet }}" = true ]; then dispatch publish-dotnet.yml "${{ needs.plan.outputs.dotnet_tag }}"; fi
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Each publish workflow turns its draft release into a published one when it succeeds." >> "$GITHUB_STEP_SUMMARY"
