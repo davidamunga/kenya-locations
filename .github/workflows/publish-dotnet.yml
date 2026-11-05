@@ -11,6 +11,8 @@ jobs:
     permissions:
       contents: read
       id-token: write
+    env:
+      HAS_API_KEY: ${{ secrets.NUGET_API_KEY != '' }}
     defaults:
       run:
         working-directory: packages/dotnet
@@ -52,18 +54,23 @@ jobs:
       - name: Pack
         run: dotnet pack src/KenyaLocations -c Release --no-build -o artifacts
 
-      # NuGet trusted publishing: exchanges this job's OIDC token for a short-lived API key.
-      # Set the NUGET_USER repository variable to the nuget.org profile name that owns the package.
-      - name: Log in to NuGet
+      # Auth: a NUGET_API_KEY secret wins when it is set (needed for the first push of a new
+      # package ID). Without it, NuGet trusted publishing exchanges this job's OIDC token for a
+      # short-lived key; set the NUGET_USER repository variable to the nuget.org profile name.
+      # Once the package exists, delete the secret to switch to trusted publishing.
+      - name: Log in to NuGet (trusted publishing)
         id: login
+        if: ${{ env.HAS_API_KEY != 'true' }}
         uses: NuGet/login@v1
         with:
           user: ${{ vars.NUGET_USER }}
 
       - name: Push to NuGet
+        env:
+          NUGET_KEY: ${{ secrets.NUGET_API_KEY || steps.login.outputs.NUGET_API_KEY }}
         run: >
           dotnet nuget push "artifacts/*.nupkg"
-          --api-key "${{ steps.login.outputs.NUGET_API_KEY }}"
+          --api-key "$NUGET_KEY"
           --source https://api.nuget.org/v3/index.json
           --skip-duplicate
 
