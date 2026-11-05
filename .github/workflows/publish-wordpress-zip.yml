@@ -11,11 +11,11 @@ on:
 jobs:
   zip:
     name: Build and upload WordPress zip
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -36,7 +36,7 @@ jobs:
             examples/wordpress/dist/kenya-locations-wordpress-*.zip \
             --clobber
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: kenya-locations-wordpress
           path: examples/wordpress/dist/kenya-locations-wordpress*.zip

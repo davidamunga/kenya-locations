@@ -23,7 +23,7 @@ permissions:
 jobs:
   plan:
     name: Plan release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       any: ${{ steps.plan.outputs.any }}
       plan: ${{ steps.plan.outputs.plan }}
@@ -38,11 +38,11 @@ jobs:
       dotnet: ${{ steps.plan.outputs.dotnet }}
       dotnet_tag: ${{ steps.plan.outputs.dotnet_tag }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: "22"
 
@@ -69,15 +69,15 @@ jobs:
     name: Tag and draft releases
     needs: plan
     if: needs.plan.outputs.any == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: "22"
 
@@ -123,7 +123,7 @@ jobs:
   publish:
     name: Publish (needs approval)
     needs: [plan, tag]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     # Add required reviewers to this environment (Settings → Environments →
     # release) so nothing is published until someone approves.
     environment: release

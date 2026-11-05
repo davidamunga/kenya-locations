@@ -7,7 +7,7 @@ on:
 jobs:
   publish:
     name: Build & Publish to pub.dev
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
       id-token: write
@@ -74,11 +74,11 @@ jobs:
   github-release:
     name: Publish GitHub draft release
     needs: publish
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Publish the dart-v* release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
