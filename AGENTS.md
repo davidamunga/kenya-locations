@@ -40,6 +40,8 @@ dart run packages/dart/scripts/generate_data.dart  # from repo root, after data 
 
 Data shape, codes and validation rules: [`data/README.md`](data/README.md).
 
+Cross-language behaviour (lookups, search) is pinned by [`tests/parity/cases.json`](tests/parity/README.md); every package runs it, with JS as the reference. Add a case there when changing matching or search rules.
+
 ## Branches
 
 `<type>/<short-slug>` using the same types as commits. No `cursor/` prefix.
