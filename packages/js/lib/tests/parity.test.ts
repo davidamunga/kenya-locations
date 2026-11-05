@@ -1,6 +1,3 @@
-import { readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import {
   getAreasInLocality,
@@ -17,18 +14,35 @@ import {
   searchByType,
 } from "../index";
 import type { SearchType } from "../types";
+import parityCases from "../../../../tests/parity/cases.json";
 
 // Shared with every other language package: tests/parity/cases.json.
 // JS is the reference implementation, so these must always pass here first.
-const cases = JSON.parse(
-  readFileSync(
-    resolve(
-      dirname(fileURLToPath(import.meta.url)),
-      "../../../../tests/parity/cases.json"
-    ),
-    "utf8"
-  )
-);
+interface ParityCases {
+  lookups: Array<{ call: string; arg: string; expect: string | null }>;
+  counts: Array<{ call: string; arg: string; expect: number }>;
+  areasInLocality: Array<{
+    locality: string;
+    county?: string;
+    expectCount?: number;
+    includes?: string[];
+  }>;
+  localitiesInCounty: Array<{ county: string; includes: string[] }>;
+  search: Array<{
+    query: string;
+    limit: number;
+    empty?: boolean;
+    includes?: Array<{ type: string; name: string }>;
+  }>;
+  searchByType: Array<{
+    query: string;
+    type: string;
+    limit: number;
+    nonEmpty?: boolean;
+    includes?: string[];
+  }>;
+}
+const cases = parityCases as ParityCases;
 
 const lookups: Record<string, (arg: string) => string | null | undefined> = {
   countyByCode: (arg) => getCountyByCode(arg)?.name,
