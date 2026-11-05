@@ -42,6 +42,6 @@ export const placeSeo = (
       ? `${place.title} · ${place.kindLabel} · kenya-locations`
       : `${kindLabel} not found · kenya-locations`,
     description: place
-      ? `${place.summary}. Codes, parent places, and how to look it up in JavaScript, Kotlin, Swift, Dart and PHP.`
+      ? `${place.summary}. Codes, parent places, and how to look it up in JavaScript, Kotlin, Swift, Dart, PHP and C#.`
       : undefined,
   });

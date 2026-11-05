@@ -17,10 +17,10 @@ export const Route = createRootRoute({
       ...seo({
         title: "🇰🇪 kenya-locations",
         description:
-          "Kenya's counties, constituencies, wards and sub-counties, with the localities and areas inside them. Look up any place, see its codes, and use the same data in JavaScript, React, Kotlin, Swift, Dart, PHP and WordPress.",
+          "Kenya's counties, constituencies, wards and sub-counties, with the localities and areas inside them. Look up any place, see its codes, and use the same data in JavaScript, React, Kotlin, Swift, Dart, PHP, .NET and WordPress.",
         image: "https://kenya-locations.web.app/ogimage.jpg",
         keywords:
-          "kenya, locations, counties, constituencies, wards, sub-counties, localities, areas, estates, neighbourhoods, addresses, iebc, knbs, kotlin, swift, dart, flutter, react, php, wordpress, woocommerce, composer",
+          "kenya, locations, counties, constituencies, wards, sub-counties, localities, areas, estates, neighbourhoods, addresses, iebc, knbs, kotlin, swift, dart, flutter, react, php, dotnet, csharp, nuget, wordpress, woocommerce, composer",
       }),
     ],
     links: [

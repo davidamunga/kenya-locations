@@ -1,7 +1,7 @@
 import type { SnippetTarget } from "@/lib/places";
 
 export interface Snippet {
-  id: "js" | "kotlin" | "swift" | "dart" | "php";
+  id: "js" | "kotlin" | "swift" | "dart" | "php" | "dotnet";
   label: string;
   filename: string;
   code: string;
@@ -15,7 +15,7 @@ const dartQ = (value: string) => (value.includes("'") ? dq(value) : sq(value));
 
 /**
  * The calls that look up `target` in every library, using only functions
- * each library actually has (Kotlin, Swift and Dart have no ward-by-code
+ * each library actually has (Kotlin, Swift, Dart and C# have no ward-by-code
  * lookup, so they find the ward within its constituency).
  */
 export function snippetsFor(target: SnippetTarget): Snippet[] {
@@ -43,6 +43,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
           `$county = KenyaLocations::getCountyByCode(${sq(c)});`,
           `$constituencies = KenyaLocations::getConstituenciesInCounty(${sq(c)});`,
         ]),
+        dotnet([
+          `var county = Locations.GetCountyByCode(${dq(c)});`,
+          `var constituencies = Locations.GetConstituenciesInCounty(${dq(c)});`,
+        ]),
       ];
     }
     case "constituency": {
@@ -66,6 +70,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
         php([
           `$constituency = KenyaLocations::getConstituencyByCode(${sq(c)});`,
           `$wards = KenyaLocations::getWardsInConstituency(${sq(c)});`,
+        ]),
+        dotnet([
+          `var constituency = Locations.GetConstituencyByCode(${dq(c)});`,
+          `var wards = Locations.GetWardsInConstituency(${dq(c)});`,
         ]),
       ];
     }
@@ -93,6 +101,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
           `$ward = KenyaLocations::getWardByCode(${sq(w)});`,
           `$county = KenyaLocations::getCountyOfWard(${sq(w)});`,
         ]),
+        dotnet([
+          `var ward = Locations.GetWardsInConstituency(${dq(k)})`,
+          `    .First(w => w.Code == ${dq(w)});`,
+        ]),
       ];
     }
     case "sub-county": {
@@ -119,6 +131,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
           `$subCounty = KenyaLocations::getSubCountyByCode(${sq(s)});`,
           `$wards = KenyaLocations::getWardsInSubCounty(${sq(s)});`,
         ]),
+        dotnet([
+          `var subCounty = Locations.GetSubCountiesInCounty(${dq(c)})`,
+          `    .First(s => s.Code == ${dq(s)});`,
+        ]),
       ];
     }
     case "locality": {
@@ -133,6 +149,7 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
         swift([`let areas = KenyaLocations.shared.getAreasInLocality(${dq(n)}, county: ${dq(c)})`]),
         dart([`final areas = KenyaLocations.getAreasInLocality(${dartQ(n)}, county: ${dartQ(c)});`]),
         php([`$areas = KenyaLocations::getAreasInLocality(${sq(n)}, ${sq(c)});`]),
+        dotnet([`var areas = Locations.GetAreasInLocality(${dq(n)}, county: ${dq(c)});`]),
       ];
     }
   }
@@ -171,6 +188,15 @@ function dart(lines: string[]): Snippet {
     label: "Dart",
     filename: "example.dart",
     code: `import 'package:kenya_locations/kenya_locations.dart';\n\n${lines.join("\n")}\n`,
+  };
+}
+
+function dotnet(lines: string[]): Snippet {
+  return {
+    id: "dotnet",
+    label: "C#",
+    filename: "Example.cs",
+    code: `using System.Linq;\nusing KenyaLocations;\n\n${lines.join("\n")}\n`,
   };
 }
 

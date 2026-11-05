@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import dartSource from "../../../../packages/dart/lib/src/kenya_locations.dart?raw";
 import jsSource from "../../../../packages/js/lib/index.ts?raw";
 import kotlinSource from "../../../../packages/kotlin/src/main/kotlin/ke/locations/KenyaLocations.kt?raw";
+import dotnetSource from "../../../../packages/dotnet/src/KenyaLocations/Locations.cs?raw";
 import phpSource from "../../../../packages/php/src/KenyaLocations.php?raw";
 import swiftSource from "../../../../packages/swift/Sources/KenyaLocations/KenyaLocations.swift?raw";
 import type { SnippetTarget } from "./places";
@@ -14,6 +15,7 @@ const SOURCES = {
   swift: swiftSource,
   dart: dartSource,
   php: phpSource,
+  dotnet: dotnetSource,
 };
 
 const DECLARES: Record<keyof typeof SOURCES, (name: string) => RegExp> = {
@@ -22,11 +24,13 @@ const DECLARES: Record<keyof typeof SOURCES, (name: string) => RegExp> = {
   swift: (name) => new RegExp(`public func ${name}\\(`),
   dart: (name) => new RegExp(`\\b${name}\\(`),
   php: (name) => new RegExp(`public static function ${name}\\(`),
+  // C# methods are PascalCase: GetCountyByCode, not getCountyByCode.
+  dotnet: (name) => new RegExp(`public static [^(]+ ${name}\\(`),
 };
 
 /** Library calls in a snippet: getX( after KenyaLocations., .shared., :: or an import. */
 function calledFunctions(code: string): string[] {
-  return [...code.matchAll(/\b(get[A-Za-z]+)\(/g)].map((m) => m[1]);
+  return [...code.matchAll(/\b([Gg]et[A-Za-z]+)\(/g)].map((m) => m[1]);
 }
 
 const TARGETS: SnippetTarget[] = [
@@ -38,8 +42,8 @@ const TARGETS: SnippetTarget[] = [
 ];
 
 describe("snippetsFor", () => {
-  it.each(TARGETS)("covers all five languages for a $kind", (target) => {
-    expect(snippetsFor(target).map((s) => s.id)).toEqual(["js", "kotlin", "swift", "dart", "php"]);
+  it.each(TARGETS)("covers all six languages for a $kind", (target) => {
+    expect(snippetsFor(target).map((s) => s.id)).toEqual(["js", "kotlin", "swift", "dart", "php", "dotnet"]);
   });
 
   it.each(TARGETS)("only calls functions each library declares ($kind)", (target) => {
@@ -62,6 +66,7 @@ describe("snippetsFor", () => {
     expect(byId.swift).toContain(`getAreasInLocality("East Sang'Alo", county: "039")`);
     expect(byId.dart).toContain(`getAreasInLocality("East Sang'Alo", county: '039')`);
     expect(byId.php).toContain(`getAreasInLocality('East Sang\\'Alo', '039')`);
+    expect(byId.dotnet).toContain(`GetAreasInLocality("East Sang'Alo", county: "039")`);
   });
 
   it("finds a ward within its constituency where there's no ward-by-code lookup", () => {

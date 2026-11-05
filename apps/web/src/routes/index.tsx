@@ -97,7 +97,7 @@ function HomePage() {
         <p className="max-w-2xl text-lg text-muted-foreground">
           Counties, constituencies, wards and sub-counties from IEBC and KNBS, with the localities
           and areas inside them. Look up any place, see its codes and where it sits, and use the
-          same data in JavaScript, React, Kotlin, Swift, Dart, PHP or WordPress.
+          same data in JavaScript, React, Kotlin, Swift, Dart, PHP, .NET or WordPress.
         </p>
 
         <button

@@ -21,6 +21,7 @@ const PLATFORM_LINKS = [
   { href: "#dart", id: "dart", label: "Dart / Flutter" },
   { href: "#php", id: "php", label: "PHP" },
   { href: "#wordpress", id: "wordpress", label: "WordPress" },
+  { href: "#dotnet", id: "dotnet", label: ".NET" },
 ] as const;
 
 const SECTION_IDS = [
@@ -35,6 +36,7 @@ const SECTION_IDS = [
   "dart",
   "php",
   "wordpress",
+  "dotnet",
   "contribute",
 ] as const;
 
