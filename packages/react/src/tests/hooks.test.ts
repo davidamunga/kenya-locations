@@ -168,9 +168,9 @@ describe("useLocality", () => {
 });
 
 describe("useAreas", () => {
-  it("returns all 1827 areas", () => {
+  it("returns all 1828 areas", () => {
     const { result } = renderHook(() => useAreas());
-    expect(result.current).toHaveLength(1827);
+    expect(result.current).toHaveLength(1828);
   });
 });
 

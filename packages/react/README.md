@@ -7,7 +7,7 @@ React hooks for Kenyan administrative divisions: counties, sub-counties, constit
 
 Built on [`kenya-locations`](https://www.npmjs.com/package/kenya-locations). All data ships with the package, so there are no network requests, no API keys and no loading states.
 
-**47** counties · **307** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,827** areas
+**47** counties · **307** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,828** areas
 
 [Live demo](https://kenya-locations.web.app) · [Full documentation](https://github.com/DavidAmunga/kenya-locations#react-api-kenya-locations-react) · [Report an issue](https://github.com/DavidAmunga/kenya-locations/issues)
 
@@ -101,7 +101,7 @@ export function LocationSearch() {
 | `useLocalities()` | `Locality[]` | All 917 localities |
 | `useLocalitiesInCounty(countyName)` | `Locality[]` | Localities in a county |
 | `useLocality(name, countyName?)` | `LocalityWrapper \| undefined` | A single locality; pass the county to disambiguate duplicate names |
-| `useAreas()` | `Area[]` | All 1,827 areas |
+| `useAreas()` | `Area[]` | All 1,828 areas |
 | `useAreasInLocality(localityName, county?)` | `Area[]` | Areas in a locality; pass the county for names used in more than one county |
 | `useAreasInCounty(countyName)` | `Area[]` | Areas in a county |
 | `useSearch(query, options?)` | `{ results, isPending }` | Debounced fuzzy search |
