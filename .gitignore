@@ -70,5 +70,8 @@ packages/dotnet/**/bin/
 packages/dotnet/**/obj/
 packages/dotnet/artifacts/
 
+# React
+packages/js/coverage/
+
 # The .NET package needs its solution file
 !packages/dotnet/*.sln

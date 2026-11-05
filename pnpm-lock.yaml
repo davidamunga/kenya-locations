@@ -159,6 +159,8 @@ importers:
 
   packages/dart: {}
 
+  packages/dotnet: {}
+
   packages/js:
     dependencies:
       fuse.js:
@@ -209,6 +211,8 @@ importers:
         version: 1.6.1(@types/node@12.20.55)(jsdom@26.1.0)(lightningcss@1.32.0)
 
   packages/kotlin: {}
+
+  packages/php: {}
 
   packages/react:
     dependencies:
