@@ -127,9 +127,9 @@ describe("useSubCountyOfWard", () => {
 });
 
 describe("useSubCounties", () => {
-  it("returns all 307 sub-counties", () => {
+  it("returns all 302 sub-counties", () => {
     const { result } = renderHook(() => useSubCounties());
-    expect(result.current).toHaveLength(307);
+    expect(result.current).toHaveLength(302);
   });
 });
 

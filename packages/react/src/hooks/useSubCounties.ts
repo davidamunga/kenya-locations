@@ -6,7 +6,7 @@ import {
 } from "kenya-locations";
 
 /**
- * Returns all 307 sub-counties. Stable reference.
+ * Returns all 302 sub-counties. Stable reference.
  */
 export function useSubCounties(): SubCounty[] {
   return useMemo(() => getSubCounties(), []);

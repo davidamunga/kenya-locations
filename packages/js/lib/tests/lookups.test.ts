@@ -94,7 +94,7 @@ describe.each(apis)("lookups (%s)", (_label, api) => {
     it("constituency, ward and sub-county codes", () => {
       expect(api.getConstituencyByCode("1")?.code).toBe("001");
       expect(api.getWardByCode("1")?.code).toBe("0001");
-      expect(api.getSubCountyByCode("1")?.code).toBe("001");
+      expect(api.getSubCountyByCode("101")?.code).toBe("00101");
     });
   });
 

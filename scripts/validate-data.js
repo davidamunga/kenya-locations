@@ -327,6 +327,41 @@ function validateCodeSequence(data, type, expected, width) {
  * Each record's parent code must exist and agree with its parent name, e.g.
  * a ward's constituency_code is the code of the constituency it names.
  */
+/** Sub-county codes are five digits: the county's code, then two digits in KNBS order. */
+function validateSubCountyCodes(subCounties) {
+  const bad = subCounties.filter(
+    (s) => !/^\d{5}$/.test(s.code) || !s.code.startsWith(s.county_code)
+  );
+  if (bad.length > 0) {
+    log(`❌ sub-counties: ${bad.length} codes are not county_code + 2 digits`, "red");
+    bad.slice(0, 5).forEach((s) => log(`   - ${s.code} (${s.name}, county ${s.county_code})`, "red"));
+    return false;
+  }
+  log("✅ All sub-county codes are county code + 2 digits", "green");
+  return true;
+}
+
+/** Every ward belongs to a sub-county in its own county. */
+function validateWardSubCounties(wards, subCounties) {
+  const byCode = new Map(subCounties.map((s) => [s.code, s]));
+  const problems = [];
+  for (const w of wards) {
+    const sc = byCode.get(w.sub_county_code);
+    if (!w.sub_county_code) problems.push(`ward ${w.code} (${w.name}) has no sub_county_code`);
+    else if (!sc) problems.push(`ward ${w.code} (${w.name}): sub_county_code ${w.sub_county_code} does not exist`);
+    else if (sc.county_code !== w.county_code) problems.push(`ward ${w.code} (${w.name}): sub-county ${sc.name} is in another county`);
+  }
+  const used = new Set(wards.map((w) => w.sub_county_code));
+  for (const sc of subCounties) if (!used.has(sc.code)) problems.push(`sub-county ${sc.code} (${sc.name}) has no wards`);
+  if (problems.length) {
+    log(`❌ ward sub-county links: ${problems.length} problems`, "red");
+    problems.slice(0, 8).forEach((p) => log(`   - ${p}`, "red"));
+    return false;
+  }
+  log("✅ Every ward has a sub-county in its county, and every sub-county has wards", "green");
+  return true;
+}
+
 function validateParentCodes(records, type, { codeField, nameField, parents, resolveName }) {
   const byCode = new Map(parents.map((p) => [p.code, p]));
   const problems = [];
@@ -507,6 +542,8 @@ function validateDataIntegrity() {
   const countyOf = { parents: data.counties, codeField: "county_code", nameField: "county" };
   allValid &= validateParentCodes(data.constituencies, "constituencies", countyOf);
   allValid &= validateParentCodes(data.subCounties, "sub-counties", countyOf);
+  allValid &= validateSubCountyCodes(data.subCounties);
+  allValid &= validateWardSubCounties(data.wards, data.subCounties);
   allValid &= validateParentCodes(data.localities, "localities", countyOf);
   allValid &= validateParentCodes(data.areas, "areas", countyOf);
   allValid &= validateParentCodes(data.wards, "wards", {

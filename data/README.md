@@ -36,11 +36,16 @@ All codes are zero-padded strings. Field names are `snake_case`.
 
 ### `wards.json` — 1,450 records, key `code`
 
-`code` (`0001`–`1450`), `name`, `constituency`, `constituency_code`, `county_code`. 31 ward names repeat across constituencies (e.g. 9 × "Township"), so always identify wards by code.
+`code` (`0001`–`1450`), `name`, `constituency`, `constituency_code`, `county_code`, `sub_county_code`. 31 ward names repeat across constituencies (e.g. 9 × "Township"), so always identify wards by code. `sub_county_code` links the ward to its sub-county. It comes from the HDX ward layer, not IEBC (see `meta.json`): 1,346 wards match by exact name and 104 are matched by similar name or inferred from their constituency, all listed in `sources/hdx-kenya-wards/matches.json`.
 
-### `sub-counties.json` — 307 records, key `code`
+### `sub-counties.json` — 302 records, key `code`
 
-`code`, `name`, `county`, `county_code`. Many records are constituency names rather than KNBS sub-counties; this file is being rebuilt from the KNBS list for 1.0.
+`code` (5 digits), `name`, `county`, `county_code`. The sub-counties of the Humanitarian Data Exchange's "Kenya Sub Counties" layer (American Red Cross, CC BY), which are DHIS2's sub-counties and match the wards in `wards.json`. Built by `node scripts/sub-counties/build-hdx.js` from `sources/hdx-kenya-wards/`.
+
+- **Codes** are the county's code plus two digits (`00903`), assigned by this project and following the source layer's order.
+- **They are not an official list.** They're third-party data from 2016 to 2020, and close to constituencies (297 of 302 sit inside one constituency). Earlier versions of this file were mostly constituency names; `history.json` maps the old codes to the new ones.
+- **Two entries are left out:** Tiaty (Baringo) and Kalama (Machakos) are in the source layer but no ward points to them.
+- **Don't hand-edit it.** Rebuild with the script; `--check` fails if the files are out of date.
 
 ### `locality.json` — 917 records, key `county_code` + `name`
 

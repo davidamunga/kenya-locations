@@ -47,7 +47,7 @@ const HIERARCHIES = [
       { label: "counties", value: DATASET.counties },
       { label: "sub-counties", value: DATASET.subCounties },
     ],
-    example: { label: "Changamwe, Mombasa", href: subCountyHref("001") },
+    example: { label: "Changamwe, Mombasa", href: subCountyHref("00101") },
   },
   {
     title: "Everyday places",

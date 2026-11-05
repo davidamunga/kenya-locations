@@ -525,1207 +525,1532 @@ const List<Map<String, dynamic>> rawCounties = [
 /// Raw data for sub-counties.
 const List<Map<String, dynamic>> rawSubCounties = [
   {
-    'code': '154',
-    'name': 'Ainabkoi',
-    'county': 'Uasin Gishu',
-    'county_code': '027',
-  },
-  {'code': '203', 'name': 'Ainamoi', 'county': 'Kericho', 'county_code': '035'},
-  {'code': '164', 'name': 'Aldai', 'county': 'Nandi', 'county_code': '029'},
-  {
-    'code': '247',
-    'name': 'Alego Usonga',
-    'county': 'Siaya',
-    'county_code': '041',
-  },
-  {'code': '268', 'name': 'Awendo', 'county': 'Migori', 'county_code': '044'},
-  {'code': '181', 'name': 'Bahati', 'county': 'Nakuru', 'county_code': '032'},
-  {'code': '039', 'name': 'Banissa', 'county': 'Mandera', 'county_code': '009'},
-  {
-    'code': '170',
-    'name': 'Baringo Central',
-    'county': 'Baringo',
-    'county_code': '030',
-  },
-  {
-    'code': '171',
-    'name': 'Baringo North',
-    'county': 'Baringo',
-    'county_code': '030',
-  },
-  {
-    'code': '172',
-    'name': 'Baringo South',
-    'county': 'Baringo',
-    'county_code': '030',
-  },
-  {'code': '204', 'name': 'Belgut', 'county': 'Kericho', 'county_code': '035'},
-  {'code': '277', 'name': 'Bobasi', 'county': 'Kisii', 'county_code': '045'},
-  {
-    'code': '278',
-    'name': 'Bomachoge Borabu',
-    'county': 'Kisii',
-    'county_code': '045',
-  },
-  {
-    'code': '279',
-    'name': 'Bomachoge Chache',
-    'county': 'Kisii',
-    'county_code': '045',
-  },
-  {
-    'code': '209',
-    'name': 'Bomet Central',
-    'county': 'Bomet',
-    'county_code': '036',
-  },
-  {
-    'code': '210',
-    'name': 'Bomet East',
-    'county': 'Bomet',
-    'county_code': '036',
-  },
-  {'code': '280', 'name': 'Bonchari', 'county': 'Kisii', 'county_code': '045'},
-  {'code': '248', 'name': 'Bondo', 'county': 'Siaya', 'county_code': '041'},
-  {'code': '286', 'name': 'Borabu', 'county': 'Nyamira', 'county_code': '046'},
-  {'code': '241', 'name': 'Budalangi', 'county': 'Busia', 'county_code': '040'},
-  {'code': '232', 'name': 'Bumula', 'county': 'Bungoma', 'county_code': '039'},
-  {'code': '018', 'name': 'Bura', 'county': 'Tana River', 'county_code': '004'},
-  {'code': '205', 'name': 'Bureti', 'county': 'Kericho', 'county_code': '035'},
-  {'code': '214', 'name': 'Butere', 'county': 'Kakamega', 'county_code': '037'},
-  {'code': '242', 'name': 'Butula', 'county': 'Busia', 'county_code': '040'},
-  {'code': '052', 'name': 'Buuri', 'county': 'Meru', 'county_code': '012'},
-  {
-    'code': '142',
-    'name': 'Central Pokot',
-    'county': 'West Pokot',
-    'county_code': '024',
-  },
-  {
-    'code': '001',
+    'code': '00101',
     'name': 'Changamwe',
     'county': 'Mombasa',
     'county_code': '001',
   },
+  {'code': '00102', 'name': 'Jomvu', 'county': 'Mombasa', 'county_code': '001'},
   {
-    'code': '211',
-    'name': 'Chepalungu',
-    'county': 'Bomet',
-    'county_code': '036',
+    'code': '00103',
+    'name': 'Kisauni',
+    'county': 'Mombasa',
+    'county_code': '001',
+  },
+  {'code': '00104', 'name': 'Nyali', 'county': 'Mombasa', 'county_code': '001'},
+  {
+    'code': '00105',
+    'name': 'Likoni',
+    'county': 'Mombasa',
+    'county_code': '001',
+  },
+  {'code': '00106', 'name': 'Mvita', 'county': 'Mombasa', 'county_code': '001'},
+  {
+    'code': '00201',
+    'name': 'Msambweni',
+    'county': 'Kwale',
+    'county_code': '002',
   },
   {
-    'code': '149',
-    'name': 'Cherangany',
-    'county': 'Trans Nzoia',
-    'county_code': '026',
+    'code': '00202',
+    'name': 'Lunga Lunga',
+    'county': 'Kwale',
+    'county_code': '002',
   },
-  {'code': '165', 'name': 'Chesumei', 'county': 'Nandi', 'county_code': '029'},
+  {'code': '00203', 'name': 'Matuga', 'county': 'Kwale', 'county_code': '002'},
+  {'code': '00204', 'name': 'Kinango', 'county': 'Kwale', 'county_code': '002'},
   {
-    'code': '061',
-    'name': 'Chuka',
-    'county': 'Tharaka-Nithi',
-    'county_code': '013',
-  },
-  {'code': '027', 'name': 'Daadab', 'county': 'Garissa', 'county_code': '007'},
-  {
-    'code': '291',
-    'name': 'Dagoretti North',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {
-    'code': '292',
-    'name': 'Dagoretti South',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {
-    'code': '173',
-    'name': 'Eldama Ravine',
-    'county': 'Baringo',
-    'county_code': '030',
-  },
-  {'code': '033', 'name': 'Eldas', 'county': 'Wajir', 'county_code': '008'},
-  {
-    'code': '293',
-    'name': 'Embakasi Central',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {
-    'code': '294',
-    'name': 'Embakasi East',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {
-    'code': '295',
-    'name': 'Embakasi North',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {
-    'code': '296',
-    'name': 'Embakasi South',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {
-    'code': '297',
-    'name': 'Embakasi West',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {'code': '166', 'name': 'Emgwen', 'county': 'Nandi', 'county_code': '029'},
-  {'code': '227', 'name': 'Emuhaya', 'county': 'Vihiga', 'county_code': '038'},
-  {
-    'code': '150',
-    'name': 'Endebess',
-    'county': 'Trans Nzoia',
-    'county_code': '026',
-  },
-  {'code': '028', 'name': 'Fafi', 'county': 'Garissa', 'county_code': '007'},
-  {'code': '243', 'name': 'Funyula', 'county': 'Busia', 'county_code': '040'},
-  {
-    'code': '019',
-    'name': 'Galole',
-    'county': 'Tana River',
-    'county_code': '004',
-  },
-  {
-    'code': '050',
-    'name': 'Garba Tula',
-    'county': 'Isiolo',
-    'county_code': '011',
-  },
-  {'code': '029', 'name': 'Garissa', 'county': 'Garissa', 'county_code': '007'},
-  {
-    'code': '020',
-    'name': 'Garsen',
-    'county': 'Tana River',
-    'county_code': '004',
-  },
-  {
-    'code': '117',
-    'name': 'Gatanga',
-    'county': "Murang'a",
-    'county_code': '021',
-  },
-  {
-    'code': '125',
-    'name': 'Gatundu North',
-    'county': 'Kiambu',
-    'county_code': '022',
-  },
-  {
-    'code': '126',
-    'name': 'Gatundu South',
-    'county': 'Kiambu',
-    'county_code': '022',
-  },
-  {'code': '249', 'name': 'Gem', 'county': 'Siaya', 'county_code': '041'},
-  {'code': '011', 'name': 'Genzw', 'county': 'Kilifi', 'county_code': '003'},
-  {'code': '182', 'name': 'Gilgil', 'county': 'Nakuru', 'county_code': '032'},
-  {
-    'code': '127',
-    'name': 'Githunguri',
-    'county': 'Kiambu',
-    'county_code': '022',
-  },
-  {'code': '228', 'name': 'Hamisi', 'county': 'Vihiga', 'county_code': '038'},
-  {
-    'code': '260',
-    'name': 'Homabay Town',
-    'county': 'Homa Bay',
-    'county_code': '043',
-  },
-  {'code': '030', 'name': 'Hulugho', 'county': 'Garissa', 'county_code': '007'},
-  {
-    'code': '062',
-    'name': 'Igambangobe',
-    'county': 'Tharaka-Nithi',
-    'county_code': '013',
-  },
-  {
-    'code': '053',
-    'name': 'Igembe Central',
-    'county': 'Meru',
-    'county_code': '012',
-  },
-  {
-    'code': '054',
-    'name': 'Igembe North',
-    'county': 'Meru',
-    'county_code': '012',
-  },
-  {
-    'code': '055',
-    'name': 'Igembe South',
-    'county': 'Meru',
-    'county_code': '012',
-  },
-  {'code': '031', 'name': 'Ijara', 'county': 'Garissa', 'county_code': '007'},
-  {'code': '071', 'name': 'Ikutha', 'county': 'Kitui', 'county_code': '015'},
-  {
-    'code': '056',
-    'name': 'Imenti Central',
-    'county': 'Meru',
-    'county_code': '012',
-  },
-  {
-    'code': '057',
-    'name': 'Imenti North',
-    'county': 'Meru',
-    'county_code': '012',
-  },
-  {
-    'code': '058',
-    'name': 'Imenti South',
-    'county': 'Meru',
-    'county_code': '012',
-  },
-  {'code': '198', 'name': 'Isinya', 'county': 'Kajiado', 'county_code': '034'},
-  {'code': '049', 'name': 'Isiolo', 'county': 'Isiolo', 'county_code': '011'},
-  {'code': '002', 'name': 'Jomvu', 'county': 'Mombasa', 'county_code': '001'},
-  {'code': '128', 'name': 'Juja', 'county': 'Kiambu', 'county_code': '022'},
-  {'code': '129', 'name': 'Kabete', 'county': 'Kiambu', 'county_code': '022'},
-  {
-    'code': '261',
-    'name': 'Kabondo',
-    'county': 'Homa Bay',
-    'county_code': '043',
-  },
-  {
-    'code': '233',
-    'name': 'Kabuchai',
-    'county': 'Bungoma',
-    'county_code': '039',
-  },
-  {'code': '118', 'name': 'Kahuro', 'county': "Murang'a", 'county_code': '021'},
-  {'code': '093', 'name': 'Kaiti', 'county': 'Makueni', 'county_code': '017'},
-  {
-    'code': '199',
-    'name': 'Kajiado Central',
-    'county': 'Kajiado',
-    'county_code': '034',
-  },
-  {
-    'code': '200',
-    'name': 'Kajiado North',
-    'county': 'Kajiado',
-    'county_code': '034',
-  },
-  {
-    'code': '215',
-    'name': 'Kakamega Central',
-    'county': 'Kakamega',
-    'county_code': '037',
-  },
-  {
-    'code': '216',
-    'name': 'Kakamega East',
-    'county': 'Kakamega',
-    'county_code': '037',
-  },
-  {
-    'code': '217',
-    'name': 'Kakamega North',
-    'county': 'Kakamega',
-    'county_code': '037',
-  },
-  {
-    'code': '218',
-    'name': 'Kakamega South',
-    'county': 'Kakamega',
-    'county_code': '037',
-  },
-  {'code': '012', 'name': 'Kaloleni', 'county': 'Kilifi', 'county_code': '003'},
-  {
-    'code': '298',
-    'name': 'Kamukunji',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {
-    'code': '119',
-    'name': 'Kandara',
-    'county': "Murang'a",
-    'county_code': '021',
-  },
-  {'code': '234', 'name': 'Kanduyi', 'county': 'Bungoma', 'county_code': '039'},
-  {
-    'code': '120',
-    'name': 'Kangema',
-    'county': "Murang'a",
-    'county_code': '021',
-  },
-  {
-    'code': '155',
-    'name': 'Kapseret',
-    'county': 'Uasin Gishu',
-    'county_code': '027',
-  },
-  {
-    'code': '262',
-    'name': 'Karachwonyo',
-    'county': 'Homa Bay',
-    'county_code': '043',
-  },
-  {
-    'code': '299',
-    'name': 'Kasarani',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {
-    'code': '263',
-    'name': 'Kasipul',
-    'county': 'Homa Bay',
-    'county_code': '043',
-  },
-  {
-    'code': '086',
-    'name': 'Kathiani',
-    'county': 'Machakos',
-    'county_code': '016',
-  },
-  {'code': '072', 'name': 'Katulani', 'county': 'Kitui', 'county_code': '015'},
-  {
-    'code': '160',
-    'name': 'Keiyo North',
-    'county': 'Elgeyo-Marakwet',
-    'county_code': '028',
-  },
-  {
-    'code': '161',
-    'name': 'Keiyo South',
-    'county': 'Elgeyo-Marakwet',
-    'county_code': '028',
-  },
-  {
-    'code': '156',
-    'name': 'Kesses',
-    'county': 'Uasin Gishu',
-    'county_code': '027',
-  },
-  {
-    'code': '219',
-    'name': 'Khwisero',
-    'county': 'Kakamega',
-    'county_code': '037',
-  },
-  {'code': '130', 'name': 'Kiambaa', 'county': 'Kiambu', 'county_code': '022'},
-  {'code': '131', 'name': 'Kiambu', 'county': 'Kiambu', 'county_code': '022'},
-  {'code': '300', 'name': 'Kibra', 'county': 'Nairobi', 'county_code': '047'},
-  {
-    'code': '095',
-    'name': 'Kibwezi East',
-    'county': 'Makueni',
-    'county_code': '017',
-  },
-  {
-    'code': '094',
-    'name': 'Kibwezi West',
-    'county': 'Makueni',
-    'county_code': '017',
-  },
-  {
-    'code': '104',
-    'name': 'Kieni East',
-    'county': 'Nyeri',
-    'county_code': '019',
-  },
-  {
-    'code': '105',
-    'name': 'Kieni West',
-    'county': 'Nyeri',
-    'county_code': '019',
-  },
-  {'code': '121', 'name': 'Kigumo', 'county': "Murang'a", 'county_code': '021'},
-  {'code': '122', 'name': 'Kiharu', 'county': "Murang'a", 'county_code': '021'},
-  {'code': '132', 'name': 'Kikuyu', 'county': 'Kiambu', 'county_code': '022'},
-  {
-    'code': '013',
+    'code': '00301',
     'name': 'Kilifi North',
     'county': 'Kilifi',
     'county_code': '003',
   },
   {
-    'code': '014',
+    'code': '00302',
     'name': 'Kilifi South',
     'county': 'Kilifi',
     'county_code': '003',
   },
-  {'code': '096', 'name': 'Kilome', 'county': 'Makueni', 'county_code': '017'},
-  {'code': '235', 'name': 'Kimilil', 'county': 'Bungoma', 'county_code': '039'},
   {
-    'code': '151',
-    'name': 'Kiminini',
-    'county': 'Trans Nzoia',
-    'county_code': '026',
+    'code': '00303',
+    'name': 'Kaloleni',
+    'county': 'Kilifi',
+    'county_code': '003',
   },
-  {'code': '007', 'name': 'Kinango', 'county': 'Kwale', 'county_code': '002'},
+  {'code': '00304', 'name': 'Rabai', 'county': 'Kilifi', 'county_code': '003'},
+  {'code': '00305', 'name': 'Ganze', 'county': 'Kilifi', 'county_code': '003'},
   {
-    'code': '099',
-    'name': 'Kinangop',
-    'county': 'Nyandarua',
-    'county_code': '018',
+    'code': '00306',
+    'name': 'Malindi',
+    'county': 'Kilifi',
+    'county_code': '003',
   },
   {
-    'code': '100',
-    'name': 'Kipipiri',
-    'county': 'Nyandarua',
-    'county_code': '018',
+    'code': '00307',
+    'name': 'Magarini',
+    'county': 'Kilifi',
+    'county_code': '003',
   },
   {
-    'code': '206',
-    'name': 'Kipkelion East',
-    'county': 'Kericho',
-    'county_code': '035',
+    'code': '00401',
+    'name': 'Garsen',
+    'county': 'Tana River',
+    'county_code': '004',
   },
   {
-    'code': '207',
-    'name': 'Kipkelion West',
-    'county': 'Kericho',
-    'county_code': '035',
+    'code': '00402',
+    'name': 'Galole',
+    'county': 'Tana River',
+    'county_code': '004',
   },
   {
-    'code': '112',
-    'name': 'Kirinyaga Central',
-    'county': 'Kirinyaga',
-    'county_code': '020',
+    'code': '00403',
+    'name': 'Bura',
+    'county': 'Tana River',
+    'county_code': '004',
   },
   {
-    'code': '113',
-    'name': 'Kirinyaga East',
-    'county': 'Kirinyaga',
-    'county_code': '020',
+    'code': '00501',
+    'name': 'Lamu East',
+    'county': 'Lamu',
+    'county_code': '005',
   },
   {
-    'code': '114',
-    'name': 'Kirinyaga West',
-    'county': 'Kirinyaga',
-    'county_code': '020',
+    'code': '00502',
+    'name': 'Lamu West',
+    'county': 'Lamu',
+    'county_code': '005',
   },
-  {'code': '073', 'name': 'Kisasi', 'county': 'Kitui', 'county_code': '015'},
-  {'code': '003', 'name': 'Kisauni', 'county': 'Mombasa', 'county_code': '001'},
   {
-    'code': '253',
-    'name': 'Kisumu Central',
-    'county': 'Kisumu',
-    'county_code': '042',
-  },
-  {
-    'code': '254',
-    'name': 'Kisumu East',
-    'county': 'Kisumu',
-    'county_code': '042',
-  },
-  {
-    'code': '255',
-    'name': 'Kisumu West',
-    'county': 'Kisumu',
-    'county_code': '042',
-  },
-  {
-    'code': '074',
-    'name': 'Kitui Central',
-    'county': 'Kitui',
-    'county_code': '015',
-  },
-  {
-    'code': '075',
-    'name': 'Kitui West',
-    'county': 'Kitui',
-    'county_code': '015',
-  },
-  {
-    'code': '281',
-    'name': 'Kitutu Chache North',
-    'county': 'Kisii',
-    'county_code': '045',
-  },
-  {
-    'code': '282',
-    'name': 'Kitutu Chache South',
-    'county': 'Kisii',
-    'county_code': '045',
-  },
-  {'code': '212', 'name': 'Konoin', 'county': 'Bomet', 'county_code': '036'},
-  {
-    'code': '183',
-    'name': 'Kuresoi North',
-    'county': 'Nakuru',
-    'county_code': '032',
-  },
-  {
-    'code': '184',
-    'name': 'Kuresoi South',
-    'county': 'Nakuru',
-    'county_code': '032',
-  },
-  {
-    'code': '269',
-    'name': 'Kuria East',
-    'county': 'Migori',
-    'county_code': '044',
-  },
-  {
-    'code': '270',
-    'name': 'Kuria West',
-    'county': 'Migori',
-    'county_code': '044',
-  },
-  {
-    'code': '152',
-    'name': 'Kwanza',
-    'county': 'Trans Nzoia',
-    'county_code': '026',
-  },
-  {'code': '040', 'name': 'Lafey', 'county': 'Mandera', 'county_code': '009'},
-  {
-    'code': '032',
-    'name': 'Lagdera Balambala',
-    'county': 'Garissa',
-    'county_code': '007',
-  },
-  {
-    'code': '176',
-    'name': 'Laikipia Central',
-    'county': 'Laikipia',
-    'county_code': '031',
-  },
-  {
-    'code': '177',
-    'name': 'Laikipia East',
-    'county': 'Laikipia',
-    'county_code': '031',
-  },
-  {
-    'code': '178',
-    'name': 'Laikipia North',
-    'county': 'Laikipia',
-    'county_code': '031',
-  },
-  {
-    'code': '179',
-    'name': 'Laikipia West',
-    'county': 'Laikipia',
-    'county_code': '031',
-  },
-  {
-    'code': '045',
-    'name': 'Laisamis',
-    'county': 'Marsabit',
-    'county_code': '010',
-  },
-  {'code': '021', 'name': 'Lamu East', 'county': 'Lamu', 'county_code': '005'},
-  {'code': '022', 'name': 'Lamu West', 'county': 'Lamu', 'county_code': '005'},
-  {'code': '301', 'name': 'Lang', 'county': 'Nairobi', 'county_code': '047'},
-  {'code': '136', 'name': 'Lari', 'county': 'Kiambu', 'county_code': '022'},
-  {'code': '004', 'name': 'Likoni', 'county': 'Mombasa', 'county_code': '001'},
-  {'code': '133', 'name': 'Limuru', 'county': 'Kiambu', 'county_code': '022'},
-  {'code': '137', 'name': 'Loima', 'county': 'Turkana', 'county_code': '023'},
-  {
-    'code': '201',
-    'name': 'Loitokitok',
-    'county': 'Kajiado',
-    'county_code': '034',
-  },
-  {
-    'code': '076',
-    'name': 'Lower Yatta',
-    'county': 'Kitui',
-    'county_code': '015',
-  },
-  {'code': '229', 'name': 'Luanda', 'county': 'Vihiga', 'county_code': '038'},
-  {'code': '220', 'name': 'Lugari', 'county': 'Kakamega', 'county_code': '037'},
-  {
-    'code': '221',
-    'name': 'Lukuyani',
-    'county': 'Kakamega',
-    'county_code': '037',
-  },
-  {
-    'code': '008',
-    'name': 'Lungalunga',
-    'county': 'Kwale',
-    'county_code': '002',
-  },
-  {
-    'code': '222',
-    'name': 'Lurambi',
-    'county': 'Kakamega',
-    'county_code': '037',
-  },
-  {
-    'code': '063',
-    'name': 'Maara',
-    'county': 'Tharaka-Nithi',
-    'county_code': '013',
-  },
-  {'code': '271', 'name': 'Mabera', 'county': 'Migori', 'county_code': '044'},
-  {
-    'code': '087',
-    'name': 'Machakos Town',
-    'county': 'Machakos',
-    'county_code': '016',
-  },
-  {'code': '015', 'name': 'Magarini', 'county': 'Kilifi', 'county_code': '003'},
-  {
-    'code': '302',
-    'name': 'Makadara',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {'code': '097', 'name': 'Makueni', 'county': 'Makueni', 'county_code': '017'},
-  {'code': '016', 'name': 'Malindi', 'county': 'Kilifi', 'county_code': '003'},
-  {
-    'code': '041',
-    'name': 'Mandera East',
-    'county': 'Mandera',
-    'county_code': '009',
-  },
-  {
-    'code': '042',
-    'name': 'Mandera North',
-    'county': 'Mandera',
-    'county_code': '009',
-  },
-  {
-    'code': '043',
-    'name': 'Mandera South',
-    'county': 'Mandera',
-    'county_code': '009',
-  },
-  {
-    'code': '044',
-    'name': 'Mandera West',
-    'county': 'Mandera',
-    'county_code': '009',
-  },
-  {'code': '287', 'name': 'Manga', 'county': 'Nyamira', 'county_code': '046'},
-  {'code': '067', 'name': 'Manyatta', 'county': 'Embu', 'county_code': '014'},
-  {
-    'code': '162',
-    'name': 'Marakwet East',
-    'county': 'Elgeyo-Marakwet',
-    'county_code': '028',
-  },
-  {
-    'code': '163',
-    'name': 'Marakwet West',
-    'county': 'Elgeyo-Marakwet',
-    'county_code': '028',
-  },
-  {
-    'code': '288',
-    'name': 'Masaba North',
-    'county': 'Nyamira',
-    'county_code': '046',
-  },
-  {
-    'code': '202',
-    'name': 'Mashuuru',
-    'county': 'Kajiado',
-    'county_code': '034',
-  },
-  {
-    'code': '088',
-    'name': 'Masinga',
-    'county': 'Machakos',
-    'county_code': '016',
-  },
-  {'code': '223', 'name': 'Matete', 'county': 'Kakamega', 'county_code': '037'},
-  {'code': '303', 'name': 'Mathare', 'county': 'Nairobi', 'county_code': '047'},
-  {
-    'code': '123',
-    'name': 'Mathioya',
-    'county': "Murang'a",
-    'county_code': '021',
-  },
-  {
-    'code': '106',
-    'name': 'Mathira East',
-    'county': 'Nyeri',
-    'county_code': '019',
-  },
-  {
-    'code': '107',
-    'name': 'Mathira West',
-    'county': 'Nyeri',
-    'county_code': '019',
-  },
-  {'code': '077', 'name': 'Matiyani', 'county': 'Kitui', 'county_code': '015'},
-  {
-    'code': '089',
-    'name': 'Matungulu',
-    'county': 'Machakos',
-    'county_code': '016',
-  },
-  {'code': '090', 'name': 'Mavoko', 'county': 'Machakos', 'county_code': '016'},
-  {
-    'code': '068',
-    'name': 'Mbeere North',
-    'county': 'Embu',
-    'county_code': '014',
-  },
-  {
-    'code': '069',
-    'name': 'Mbeere South',
-    'county': 'Embu',
-    'county_code': '014',
-  },
-  {'code': '264', 'name': 'Mbita', 'county': 'Homa Bay', 'county_code': '043'},
-  {'code': '098', 'name': 'Mbooni', 'county': 'Makueni', 'county_code': '017'},
-  {'code': '051', 'name': 'Merit', 'county': 'Isiolo', 'county_code': '011'},
-  {'code': '078', 'name': 'Migwani', 'county': 'Kitui', 'county_code': '015'},
-  {'code': '108', 'name': 'Mkurweni', 'county': 'Nyeri', 'county_code': '019'},
-  {'code': '174', 'name': 'Mogotio', 'county': 'Baringo', 'county_code': '030'},
-  {'code': '256', 'name': 'Mohoroni', 'county': 'Kisumu', 'county_code': '042'},
-  {
-    'code': '157',
-    'name': 'Moiben',
-    'county': 'Uasin Gishu',
-    'county_code': '027',
-  },
-  {'code': '185', 'name': 'Molo', 'county': 'Nakuru', 'county_code': '032'},
-  {'code': '167', 'name': 'Mosop', 'county': 'Nandi', 'county_code': '029'},
-  {'code': '046', 'name': 'Moyale', 'county': 'Marsabit', 'county_code': '010'},
-  {'code': '009', 'name': 'Msambweni', 'county': 'Kwale', 'county_code': '002'},
-  {
-    'code': '236',
-    'name': 'Mt Elgon',
-    'county': 'Bungoma',
-    'county_code': '039',
-  },
-  {'code': '224', 'name': 'Mumias', 'county': 'Kakamega', 'county_code': '037'},
-  {
-    'code': '124',
-    'name': "Murang'a",
-    'county': "Murang'a",
-    'county_code': '021',
-  },
-  {
-    'code': '064',
-    'name': 'Muthambi',
-    'county': 'Tharaka-Nithi',
-    'county_code': '013',
-  },
-  {'code': '079', 'name': 'Mutitu', 'county': 'Kitui', 'county_code': '015'},
-  {'code': '080', 'name': 'Mutomo', 'county': 'Kitui', 'county_code': '015'},
-  {'code': '010', 'name': 'Mutuga', 'county': 'Kwale', 'county_code': '002'},
-  {
-    'code': '225',
-    'name': 'Mutungu',
-    'county': 'Kakamega',
-    'county_code': '037',
-  },
-  {
-    'code': '081',
-    'name': 'Muumonikyusu',
-    'county': 'Kitui',
-    'county_code': '015',
-  },
-  {'code': '005', 'name': 'Mvita', 'county': 'Mombasa', 'county_code': '001'},
-  {'code': '091', 'name': 'Mwala', 'county': 'Machakos', 'county_code': '016'},
-  {
-    'code': '023',
-    'name': 'Mwatate',
-    'county': 'Taita-Taveta',
-    'county_code': '006',
-  },
-  {
-    'code': '115',
-    'name': 'Mwea East',
-    'county': 'Kirinyaga',
-    'county_code': '020',
-  },
-  {
-    'code': '116',
-    'name': 'Mwea West',
-    'county': 'Kirinyaga',
-    'county_code': '020',
-  },
-  {
-    'code': '082',
-    'name': 'Mwingi Central',
-    'county': 'Kitui',
-    'county_code': '015',
-  },
-  {
-    'code': '083',
-    'name': 'Mwingi East',
-    'county': 'Kitui',
-    'county_code': '015',
-  },
-  {'code': '186', 'name': 'Naivasha', 'county': 'Nakuru', 'county_code': '032'},
-  {
-    'code': '187',
-    'name': 'Nakuru Town East',
-    'county': 'Nakuru',
-    'county_code': '032',
-  },
-  {
-    'code': '188',
-    'name': 'Nakuru Town West',
-    'county': 'Nakuru',
-    'county_code': '032',
-  },
-  {'code': '244', 'name': 'Nambele', 'county': 'Busia', 'county_code': '040'},
-  {
-    'code': '168',
-    'name': 'Nandi Hills',
-    'county': 'Nandi',
-    'county_code': '029',
-  },
-  {
-    'code': '192',
-    'name': 'Narok East',
-    'county': 'Narok',
-    'county_code': '033',
-  },
-  {
-    'code': '193',
-    'name': 'Narok North',
-    'county': 'Narok',
-    'county_code': '033',
-  },
-  {
-    'code': '194',
-    'name': 'Narok South',
-    'county': 'Narok',
-    'county_code': '033',
-  },
-  {
-    'code': '195',
-    'name': 'Narok West',
-    'county': 'Narok',
-    'county_code': '033',
-  },
-  {
-    'code': '226',
-    'name': 'Navakholo',
-    'county': 'Kakamega',
-    'county_code': '037',
-  },
-  {
-    'code': '101',
-    'name': 'Ndaragwa',
-    'county': 'Nyandarua',
-    'county_code': '018',
-  },
-  {'code': '265', 'name': 'Ndhiwa', 'county': 'Homa Bay', 'county_code': '043'},
-  {'code': '189', 'name': 'Njoro', 'county': 'Nakuru', 'county_code': '032'},
-  {
-    'code': '047',
-    'name': 'North Hor',
-    'county': 'Marsabit',
-    'county_code': '010',
-  },
-  {
-    'code': '143',
-    'name': 'North Pokot',
-    'county': 'West Pokot',
-    'county_code': '024',
-  },
-  {'code': '272', 'name': 'Ntimaru', 'county': 'Migori', 'county_code': '044'},
-  {
-    'code': '180',
-    'name': 'Nyahururu',
-    'county': 'Laikipia',
-    'county_code': '031',
-  },
-  {'code': '257', 'name': 'Nyakach', 'county': 'Kisumu', 'county_code': '042'},
-  {'code': '006', 'name': 'Nyali', 'county': 'Mombasa', 'county_code': '001'},
-  {
-    'code': '289',
-    'name': 'Nyamira North',
-    'county': 'Nyamira',
-    'county_code': '046',
-  },
-  {
-    'code': '290',
-    'name': 'Nyamira South',
-    'county': 'Nyamira',
-    'county_code': '046',
-  },
-  {'code': '258', 'name': 'Nyando', 'county': 'Kisumu', 'county_code': '042'},
-  {
-    'code': '283',
-    'name': 'Nyaribari Chache',
-    'county': 'Kisii',
-    'county_code': '045',
-  },
-  {
-    'code': '284',
-    'name': 'Nyaribari Masaba',
-    'county': 'Kisii',
-    'county_code': '045',
-  },
-  {
-    'code': '109',
-    'name': 'Nyeri Town',
-    'county': 'Nyeri',
-    'county_code': '019',
-  },
-  {'code': '084', 'name': 'Nzambani', 'county': 'Kitui', 'county_code': '015'},
-  {
-    'code': '103',
-    'name': 'Ol Joro Orok',
-    'county': 'Nyandarua',
-    'county_code': '018',
-  },
-  {
-    'code': '102',
-    'name': 'Ol Kalou',
-    'county': 'Nyandarua',
-    'county_code': '018',
-  },
-  {'code': '110', 'name': 'Othaya', 'county': 'Nyeri', 'county_code': '019'},
-  {
-    'code': '144',
-    'name': 'Pokot South',
-    'county': 'West Pokot',
-    'county_code': '024',
-  },
-  {'code': '017', 'name': 'Rabai', 'county': 'Kilifi', 'county_code': '003'},
-  {'code': '266', 'name': 'Rangwe', 'county': 'Homa Bay', 'county_code': '043'},
-  {'code': '250', 'name': 'Rarieda', 'county': 'Siaya', 'county_code': '041'},
-  {'code': '190', 'name': 'Rongai', 'county': 'Nakuru', 'county_code': '032'},
-  {'code': '273', 'name': 'Rongo', 'county': 'Migori', 'county_code': '044'},
-  {
-    'code': '304',
-    'name': 'Roysambu',
-    'county': 'Nairobi',
-    'county_code': '047',
-  },
-  {'code': '305', 'name': 'Ruaraka', 'county': 'Nairobi', 'county_code': '047'},
-  {'code': '134', 'name': 'Ruiru', 'county': 'Kiambu', 'county_code': '022'},
-  {'code': '070', 'name': 'Runyenjes', 'county': 'Embu', 'county_code': '014'},
-  {'code': '230', 'name': 'Sabatia', 'county': 'Vihiga', 'county_code': '038'},
-  {
-    'code': '153',
-    'name': 'Saboti',
-    'county': 'Trans Nzoia',
-    'county_code': '026',
-  },
-  {'code': '048', 'name': 'Saku', 'county': 'Marsabit', 'county_code': '010'},
-  {
-    'code': '146',
-    'name': 'Samburu East',
-    'county': 'Samburu',
-    'county_code': '025',
-  },
-  {
-    'code': '147',
-    'name': 'Samburu North',
-    'county': 'Samburu',
-    'county_code': '025',
-  },
-  {
-    'code': '148',
-    'name': 'Samburu West',
-    'county': 'Samburu',
-    'county_code': '025',
-  },
-  {'code': '259', 'name': 'Seme', 'county': 'Kisumu', 'county_code': '042'},
-  {'code': '237', 'name': 'Sirisia', 'county': 'Bungoma', 'county_code': '039'},
-  {
-    'code': '208',
-    'name': 'Soin Sigowet',
-    'county': 'Kericho',
-    'county_code': '035',
-  },
-  {'code': '213', 'name': 'Sotik', 'county': 'Bomet', 'county_code': '036'},
-  {
-    'code': '285',
-    'name': 'South Mugirango',
-    'county': 'Kisii',
-    'county_code': '045',
-  },
-  {'code': '158', 'name': 'Soy', 'county': 'Uasin Gishu', 'county_code': '027'},
-  {'code': '306', 'name': 'Starehe', 'county': 'Nairobi', 'county_code': '047'},
-  {'code': '267', 'name': 'Suba', 'county': 'Homa Bay', 'county_code': '043'},
-  {'code': '191', 'name': 'Subukia', 'county': 'Nakuru', 'county_code': '032'},
-  {
-    'code': '274',
-    'name': 'Suna East',
-    'county': 'Migori',
-    'county_code': '044',
-  },
-  {
-    'code': '275',
-    'name': 'Suna West',
-    'county': 'Migori',
-    'county_code': '044',
-  },
-  {'code': '034', 'name': 'Tarbaj', 'county': 'Wajir', 'county_code': '008'},
-  {
-    'code': '024',
+    'code': '00601',
     'name': 'Taveta',
     'county': 'Taita-Taveta',
     'county_code': '006',
   },
   {
-    'code': '245',
-    'name': 'Teso North',
-    'county': 'Busia',
-    'county_code': '040',
+    'code': '00602',
+    'name': 'Wundanyi',
+    'county': 'Taita-Taveta',
+    'county_code': '006',
   },
   {
-    'code': '246',
-    'name': 'Teso South',
-    'county': 'Busia',
-    'county_code': '040',
-  },
-  {'code': '111', 'name': 'Tetu', 'county': 'Nyeri', 'county_code': '019'},
-  {
-    'code': '065',
-    'name': 'Tharaka North',
-    'county': 'Tharaka-Nithi',
-    'county_code': '013',
+    'code': '00603',
+    'name': 'Mwatate',
+    'county': 'Taita-Taveta',
+    'county_code': '006',
   },
   {
-    'code': '066',
-    'name': 'Tharaka South',
-    'county': 'Tharaka-Nithi',
-    'county_code': '013',
-  },
-  {
-    'code': '135',
-    'name': 'Thika Town',
-    'county': 'Kiambu',
-    'county_code': '022',
-  },
-  {'code': '175', 'name': 'Tiaty', 'county': 'Baringo', 'county_code': '030'},
-  {
-    'code': '059',
-    'name': 'Tigania East',
-    'county': 'Meru',
-    'county_code': '012',
-  },
-  {
-    'code': '060',
-    'name': 'Tigania West',
-    'county': 'Meru',
-    'county_code': '012',
-  },
-  {'code': '169', 'name': 'Tindiret', 'county': 'Nandi', 'county_code': '029'},
-  {
-    'code': '238',
-    'name': 'Tongaren',
-    'county': 'Bungoma',
-    'county_code': '039',
-  },
-  {
-    'code': '196',
-    'name': 'Transmara East',
-    'county': 'Narok',
-    'county_code': '033',
-  },
-  {
-    'code': '197',
-    'name': 'Transmara West',
-    'county': 'Narok',
-    'county_code': '033',
-  },
-  {'code': '085', 'name': 'Tseikuru', 'county': 'Kitui', 'county_code': '015'},
-  {
-    'code': '159',
-    'name': 'Turbo',
-    'county': 'Uasin Gishu',
-    'county_code': '027',
-  },
-  {
-    'code': '138',
-    'name': 'Turkana Central',
-    'county': 'Turkana',
-    'county_code': '023',
-  },
-  {
-    'code': '139',
-    'name': 'Turkana East',
-    'county': 'Turkana',
-    'county_code': '023',
-  },
-  {
-    'code': '140',
-    'name': 'Turkana North',
-    'county': 'Turkana',
-    'county_code': '023',
-  },
-  {
-    'code': '141',
-    'name': 'Turkana South',
-    'county': 'Turkana',
-    'county_code': '023',
-  },
-  {'code': '251', 'name': 'Ugenya', 'county': 'Siaya', 'county_code': '041'},
-  {'code': '252', 'name': 'Unguja', 'county': 'Siaya', 'county_code': '041'},
-  {'code': '276', 'name': 'Uriri', 'county': 'Migori', 'county_code': '044'},
-  {'code': '231', 'name': 'Vihiga', 'county': 'Vihiga', 'county_code': '038'},
-  {
-    'code': '025',
+    'code': '00604',
     'name': 'Voi',
     'county': 'Taita-Taveta',
     'county_code': '006',
   },
   {
-    'code': '035',
-    'name': 'Wajir East',
-    'county': 'Wajir',
-    'county_code': '008',
+    'code': '00701',
+    'name': 'Hulugho',
+    'county': 'Garissa',
+    'county_code': '007',
   },
   {
-    'code': '036',
+    'code': '00702',
+    'name': 'Garissa',
+    'county': 'Garissa',
+    'county_code': '007',
+  },
+  {
+    'code': '00703',
+    'name': 'Balambala',
+    'county': 'Garissa',
+    'county_code': '007',
+  },
+  {
+    'code': '00704',
+    'name': 'Lagdera',
+    'county': 'Garissa',
+    'county_code': '007',
+  },
+  {
+    'code': '00705',
+    'name': 'Dadaab',
+    'county': 'Garissa',
+    'county_code': '007',
+  },
+  {'code': '00706', 'name': 'Fafi', 'county': 'Garissa', 'county_code': '007'},
+  {'code': '00707', 'name': 'Ijara', 'county': 'Garissa', 'county_code': '007'},
+  {
+    'code': '00801',
     'name': 'Wajir North',
     'county': 'Wajir',
     'county_code': '008',
   },
   {
-    'code': '037',
+    'code': '00802',
+    'name': 'Wajir East',
+    'county': 'Wajir',
+    'county_code': '008',
+  },
+  {'code': '00803', 'name': 'Tarbaj', 'county': 'Wajir', 'county_code': '008'},
+  {
+    'code': '00804',
+    'name': 'Wajir West',
+    'county': 'Wajir',
+    'county_code': '008',
+  },
+  {'code': '00805', 'name': 'Eldas', 'county': 'Wajir', 'county_code': '008'},
+  {
+    'code': '00806',
     'name': 'Wajir South',
     'county': 'Wajir',
     'county_code': '008',
   },
   {
-    'code': '038',
-    'name': 'Wajir West',
-    'county': 'Wajir',
-    'county_code': '008',
+    'code': '00901',
+    'name': 'Kutulo',
+    'county': 'Mandera',
+    'county_code': '009',
   },
   {
-    'code': '239',
-    'name': 'Webuye East',
-    'county': 'Bungoma',
-    'county_code': '039',
+    'code': '00902',
+    'name': 'Mandera West',
+    'county': 'Mandera',
+    'county_code': '009',
   },
   {
-    'code': '240',
-    'name': 'Webuye West',
-    'county': 'Bungoma',
-    'county_code': '039',
+    'code': '00903',
+    'name': 'Banissa',
+    'county': 'Mandera',
+    'county_code': '009',
   },
   {
-    'code': '145',
+    'code': '00904',
+    'name': 'Mandera North',
+    'county': 'Mandera',
+    'county_code': '009',
+  },
+  {
+    'code': '00905',
+    'name': 'Mandera South',
+    'county': 'Mandera',
+    'county_code': '009',
+  },
+  {
+    'code': '00906',
+    'name': 'Mandera East',
+    'county': 'Mandera',
+    'county_code': '009',
+  },
+  {'code': '00907', 'name': 'Lafey', 'county': 'Mandera', 'county_code': '009'},
+  {
+    'code': '01001',
+    'name': 'Moyale',
+    'county': 'Marsabit',
+    'county_code': '010',
+  },
+  {
+    'code': '01002',
+    'name': 'North Horr',
+    'county': 'Marsabit',
+    'county_code': '010',
+  },
+  {'code': '01003', 'name': 'Saku', 'county': 'Marsabit', 'county_code': '010'},
+  {
+    'code': '01004',
+    'name': 'Laisamis',
+    'county': 'Marsabit',
+    'county_code': '010',
+  },
+  {'code': '01101', 'name': 'Merti', 'county': 'Isiolo', 'county_code': '011'},
+  {'code': '01102', 'name': 'Isiolo', 'county': 'Isiolo', 'county_code': '011'},
+  {
+    'code': '01103',
+    'name': 'Garbatulla',
+    'county': 'Isiolo',
+    'county_code': '011',
+  },
+  {
+    'code': '01201',
+    'name': 'Igembe South',
+    'county': 'Meru',
+    'county_code': '012',
+  },
+  {
+    'code': '01202',
+    'name': 'Igembe Central',
+    'county': 'Meru',
+    'county_code': '012',
+  },
+  {
+    'code': '01203',
+    'name': 'Igembe North',
+    'county': 'Meru',
+    'county_code': '012',
+  },
+  {
+    'code': '01204',
+    'name': 'Tigania West',
+    'county': 'Meru',
+    'county_code': '012',
+  },
+  {
+    'code': '01205',
+    'name': 'Tigania East',
+    'county': 'Meru',
+    'county_code': '012',
+  },
+  {
+    'code': '01206',
+    'name': 'Imenti North',
+    'county': 'Meru',
+    'county_code': '012',
+  },
+  {'code': '01207', 'name': 'Buuri', 'county': 'Meru', 'county_code': '012'},
+  {
+    'code': '01208',
+    'name': 'Imenti Central',
+    'county': 'Meru',
+    'county_code': '012',
+  },
+  {
+    'code': '01209',
+    'name': 'Imenti South',
+    'county': 'Meru',
+    'county_code': '012',
+  },
+  {
+    'code': '01301',
+    'name': 'Tharaka South',
+    'county': 'Tharaka-Nithi',
+    'county_code': '013',
+  },
+  {
+    'code': '01302',
+    'name': "Igambang'ombe",
+    'county': 'Tharaka-Nithi',
+    'county_code': '013',
+  },
+  {
+    'code': '01303',
+    'name': 'Muthambi',
+    'county': 'Tharaka-Nithi',
+    'county_code': '013',
+  },
+  {
+    'code': '01304',
+    'name': 'Mwimbi',
+    'county': 'Tharaka-Nithi',
+    'county_code': '013',
+  },
+  {
+    'code': '01305',
+    'name': 'Chuka',
+    'county': 'Tharaka-Nithi',
+    'county_code': '013',
+  },
+  {
+    'code': '01306',
+    'name': 'Tharaka North',
+    'county': 'Tharaka-Nithi',
+    'county_code': '013',
+  },
+  {'code': '01401', 'name': 'Manyatta', 'county': 'Embu', 'county_code': '014'},
+  {
+    'code': '01402',
+    'name': 'Runyenjes',
+    'county': 'Embu',
+    'county_code': '014',
+  },
+  {
+    'code': '01403',
+    'name': 'Mbeere South',
+    'county': 'Embu',
+    'county_code': '014',
+  },
+  {
+    'code': '01404',
+    'name': 'Mbeere North',
+    'county': 'Embu',
+    'county_code': '014',
+  },
+  {
+    'code': '01501',
+    'name': 'Mwingi North',
+    'county': 'Kitui',
+    'county_code': '015',
+  },
+  {
+    'code': '01502',
+    'name': 'Mwingi West',
+    'county': 'Kitui',
+    'county_code': '015',
+  },
+  {
+    'code': '01503',
+    'name': 'Mwingi Central',
+    'county': 'Kitui',
+    'county_code': '015',
+  },
+  {
+    'code': '01504',
+    'name': 'Kitui West',
+    'county': 'Kitui',
+    'county_code': '015',
+  },
+  {
+    'code': '01505',
+    'name': 'Kitui Rural',
+    'county': 'Kitui',
+    'county_code': '015',
+  },
+  {
+    'code': '01506',
+    'name': 'Kitui Central',
+    'county': 'Kitui',
+    'county_code': '015',
+  },
+  {
+    'code': '01507',
+    'name': 'Kitui East',
+    'county': 'Kitui',
+    'county_code': '015',
+  },
+  {
+    'code': '01508',
+    'name': 'Kitui South',
+    'county': 'Kitui',
+    'county_code': '015',
+  },
+  {
+    'code': '01601',
+    'name': 'Masinga',
+    'county': 'Machakos',
+    'county_code': '016',
+  },
+  {
+    'code': '01602',
+    'name': 'Yatta',
+    'county': 'Machakos',
+    'county_code': '016',
+  },
+  {
+    'code': '01603',
+    'name': 'Kangundo',
+    'county': 'Machakos',
+    'county_code': '016',
+  },
+  {
+    'code': '01604',
+    'name': 'Matungulu',
+    'county': 'Machakos',
+    'county_code': '016',
+  },
+  {
+    'code': '01605',
+    'name': 'Kathiani',
+    'county': 'Machakos',
+    'county_code': '016',
+  },
+  {
+    'code': '01606',
+    'name': 'Athi River',
+    'county': 'Machakos',
+    'county_code': '016',
+  },
+  {
+    'code': '01607',
+    'name': 'Machakos',
+    'county': 'Machakos',
+    'county_code': '016',
+  },
+  {
+    'code': '01608',
+    'name': 'Mwala',
+    'county': 'Machakos',
+    'county_code': '016',
+  },
+  {
+    'code': '01701',
+    'name': 'Mbooni',
+    'county': 'Makueni',
+    'county_code': '017',
+  },
+  {
+    'code': '01702',
+    'name': 'Kilome',
+    'county': 'Makueni',
+    'county_code': '017',
+  },
+  {'code': '01703', 'name': 'Kaiti', 'county': 'Makueni', 'county_code': '017'},
+  {
+    'code': '01704',
+    'name': 'Makueni',
+    'county': 'Makueni',
+    'county_code': '017',
+  },
+  {
+    'code': '01705',
+    'name': 'Kibwezi West',
+    'county': 'Makueni',
+    'county_code': '017',
+  },
+  {
+    'code': '01706',
+    'name': 'Kibwezi East',
+    'county': 'Makueni',
+    'county_code': '017',
+  },
+  {
+    'code': '01801',
+    'name': 'Kinangop',
+    'county': 'Nyandarua',
+    'county_code': '018',
+  },
+  {
+    'code': '01802',
+    'name': 'Kipipiri',
+    'county': 'Nyandarua',
+    'county_code': '018',
+  },
+  {
+    'code': '01803',
+    'name': 'Olkalou',
+    'county': 'Nyandarua',
+    'county_code': '018',
+  },
+  {
+    'code': '01804',
+    'name': 'Oljoroorok',
+    'county': 'Nyandarua',
+    'county_code': '018',
+  },
+  {
+    'code': '01805',
+    'name': 'Ndaragwa',
+    'county': 'Nyandarua',
+    'county_code': '018',
+  },
+  {
+    'code': '01901',
+    'name': 'Kieni West',
+    'county': 'Nyeri',
+    'county_code': '019',
+  },
+  {
+    'code': '01902',
+    'name': 'Mathira West',
+    'county': 'Nyeri',
+    'county_code': '019',
+  },
+  {'code': '01903', 'name': 'Tetu', 'county': 'Nyeri', 'county_code': '019'},
+  {
+    'code': '01904',
+    'name': 'Kieni East',
+    'county': 'Nyeri',
+    'county_code': '019',
+  },
+  {
+    'code': '01905',
+    'name': 'Mathira East',
+    'county': 'Nyeri',
+    'county_code': '019',
+  },
+  {
+    'code': '01906',
+    'name': 'Nyeri South',
+    'county': 'Nyeri',
+    'county_code': '019',
+  },
+  {
+    'code': '01907',
+    'name': 'Mukurweini',
+    'county': 'Nyeri',
+    'county_code': '019',
+  },
+  {
+    'code': '01908',
+    'name': 'Nyeri Central',
+    'county': 'Nyeri',
+    'county_code': '019',
+  },
+  {
+    'code': '02001',
+    'name': 'Kirinyaga South',
+    'county': 'Kirinyaga',
+    'county_code': '020',
+  },
+  {
+    'code': '02002',
+    'name': 'Kirinyaga North/Mwea West',
+    'county': 'Kirinyaga',
+    'county_code': '020',
+  },
+  {
+    'code': '02003',
+    'name': 'Kirinyaga East',
+    'county': 'Kirinyaga',
+    'county_code': '020',
+  },
+  {
+    'code': '02004',
+    'name': 'Kirinyaga West',
+    'county': 'Kirinyaga',
+    'county_code': '020',
+  },
+  {
+    'code': '02005',
+    'name': 'Kirinyaga Central',
+    'county': 'Kirinyaga',
+    'county_code': '020',
+  },
+  {
+    'code': '02101',
+    'name': 'Kangema',
+    'county': "Murang'a",
+    'county_code': '021',
+  },
+  {
+    'code': '02102',
+    'name': 'Mathioya',
+    'county': "Murang'a",
+    'county_code': '021',
+  },
+  {
+    'code': '02103',
+    'name': 'Kiharu',
+    'county': "Murang'a",
+    'county_code': '021',
+  },
+  {
+    'code': '02104',
+    'name': 'Kigumo',
+    'county': "Murang'a",
+    'county_code': '021',
+  },
+  {
+    'code': '02105',
+    'name': 'Muranga South',
+    'county': "Murang'a",
+    'county_code': '021',
+  },
+  {
+    'code': '02106',
+    'name': 'Kandara',
+    'county': "Murang'a",
+    'county_code': '021',
+  },
+  {
+    'code': '02107',
+    'name': 'Gatanga',
+    'county': "Murang'a",
+    'county_code': '021',
+  },
+  {
+    'code': '02201',
+    'name': 'Gatundu South',
+    'county': 'Kiambu',
+    'county_code': '022',
+  },
+  {
+    'code': '02202',
+    'name': 'Gatundu North',
+    'county': 'Kiambu',
+    'county_code': '022',
+  },
+  {'code': '02203', 'name': 'Juja', 'county': 'Kiambu', 'county_code': '022'},
+  {
+    'code': '02204',
+    'name': 'Thika Town',
+    'county': 'Kiambu',
+    'county_code': '022',
+  },
+  {'code': '02205', 'name': 'Ruiru', 'county': 'Kiambu', 'county_code': '022'},
+  {
+    'code': '02206',
+    'name': 'Githunguri',
+    'county': 'Kiambu',
+    'county_code': '022',
+  },
+  {
+    'code': '02207',
+    'name': 'Kiambu Town',
+    'county': 'Kiambu',
+    'county_code': '022',
+  },
+  {
+    'code': '02208',
+    'name': 'Kiambaa',
+    'county': 'Kiambu',
+    'county_code': '022',
+  },
+  {'code': '02209', 'name': 'Kabete', 'county': 'Kiambu', 'county_code': '022'},
+  {'code': '02210', 'name': 'Kikuyu', 'county': 'Kiambu', 'county_code': '022'},
+  {'code': '02211', 'name': 'Limuru', 'county': 'Kiambu', 'county_code': '022'},
+  {'code': '02212', 'name': 'Lari', 'county': 'Kiambu', 'county_code': '022'},
+  {
+    'code': '02301',
+    'name': 'Kibish',
+    'county': 'Turkana',
+    'county_code': '023',
+  },
+  {
+    'code': '02302',
+    'name': 'Turkana North',
+    'county': 'Turkana',
+    'county_code': '023',
+  },
+  {
+    'code': '02303',
+    'name': 'Turkana West',
+    'county': 'Turkana',
+    'county_code': '023',
+  },
+  {
+    'code': '02304',
+    'name': 'Turkana Central',
+    'county': 'Turkana',
+    'county_code': '023',
+  },
+  {'code': '02305', 'name': 'Loima', 'county': 'Turkana', 'county_code': '023'},
+  {
+    'code': '02306',
+    'name': 'Turkana South',
+    'county': 'Turkana',
+    'county_code': '023',
+  },
+  {
+    'code': '02307',
+    'name': 'Turkana East',
+    'county': 'Turkana',
+    'county_code': '023',
+  },
+  {
+    'code': '02401',
     'name': 'West Pokot',
     'county': 'West Pokot',
     'county_code': '024',
   },
   {
-    'code': '307',
+    'code': '02402',
+    'name': 'Pokot Central',
+    'county': 'West Pokot',
+    'county_code': '024',
+  },
+  {
+    'code': '02403',
+    'name': 'Pokot North',
+    'county': 'West Pokot',
+    'county_code': '024',
+  },
+  {
+    'code': '02404',
+    'name': 'Pokot South',
+    'county': 'West Pokot',
+    'county_code': '024',
+  },
+  {
+    'code': '02501',
+    'name': 'Samburu Central',
+    'county': 'Samburu',
+    'county_code': '025',
+  },
+  {
+    'code': '02502',
+    'name': 'Samburu North',
+    'county': 'Samburu',
+    'county_code': '025',
+  },
+  {
+    'code': '02503',
+    'name': 'Samburu East',
+    'county': 'Samburu',
+    'county_code': '025',
+  },
+  {
+    'code': '02601',
+    'name': 'Kwanza',
+    'county': 'Trans Nzoia',
+    'county_code': '026',
+  },
+  {
+    'code': '02602',
+    'name': 'Endebess',
+    'county': 'Trans Nzoia',
+    'county_code': '026',
+  },
+  {
+    'code': '02603',
+    'name': 'Saboti',
+    'county': 'Trans Nzoia',
+    'county_code': '026',
+  },
+  {
+    'code': '02604',
+    'name': 'Kiminini',
+    'county': 'Trans Nzoia',
+    'county_code': '026',
+  },
+  {
+    'code': '02605',
+    'name': 'Cherangany',
+    'county': 'Trans Nzoia',
+    'county_code': '026',
+  },
+  {
+    'code': '02701',
+    'name': 'Soy',
+    'county': 'Uasin Gishu',
+    'county_code': '027',
+  },
+  {
+    'code': '02702',
+    'name': 'Turbo',
+    'county': 'Uasin Gishu',
+    'county_code': '027',
+  },
+  {
+    'code': '02703',
+    'name': 'Moiben',
+    'county': 'Uasin Gishu',
+    'county_code': '027',
+  },
+  {
+    'code': '02704',
+    'name': 'Ainabkoi',
+    'county': 'Uasin Gishu',
+    'county_code': '027',
+  },
+  {
+    'code': '02705',
+    'name': 'Kapseret',
+    'county': 'Uasin Gishu',
+    'county_code': '027',
+  },
+  {
+    'code': '02706',
+    'name': 'Kesses',
+    'county': 'Uasin Gishu',
+    'county_code': '027',
+  },
+  {
+    'code': '02801',
+    'name': 'Marakwet East',
+    'county': 'Elgeyo-Marakwet',
+    'county_code': '028',
+  },
+  {
+    'code': '02802',
+    'name': 'Marakwet West',
+    'county': 'Elgeyo-Marakwet',
+    'county_code': '028',
+  },
+  {
+    'code': '02803',
+    'name': 'Keiyo North',
+    'county': 'Elgeyo-Marakwet',
+    'county_code': '028',
+  },
+  {
+    'code': '02804',
+    'name': 'Keiyo South',
+    'county': 'Elgeyo-Marakwet',
+    'county_code': '028',
+  },
+  {
+    'code': '02901',
+    'name': 'Tinderet',
+    'county': 'Nandi',
+    'county_code': '029',
+  },
+  {'code': '02902', 'name': 'Aldai', 'county': 'Nandi', 'county_code': '029'},
+  {
+    'code': '02903',
+    'name': 'Nandi East',
+    'county': 'Nandi',
+    'county_code': '029',
+  },
+  {
+    'code': '02904',
+    'name': 'Chesumei',
+    'county': 'Nandi',
+    'county_code': '029',
+  },
+  {'code': '02905', 'name': 'Emgwen', 'county': 'Nandi', 'county_code': '029'},
+  {'code': '02906', 'name': 'Mosop', 'county': 'Nandi', 'county_code': '029'},
+  {
+    'code': '03001',
+    'name': 'East Pokot',
+    'county': 'Baringo',
+    'county_code': '030',
+  },
+  {
+    'code': '03002',
+    'name': 'Baringo North',
+    'county': 'Baringo',
+    'county_code': '030',
+  },
+  {
+    'code': '03003',
+    'name': 'Baringo Central',
+    'county': 'Baringo',
+    'county_code': '030',
+  },
+  {
+    'code': '03004',
+    'name': 'Marigat',
+    'county': 'Baringo',
+    'county_code': '030',
+  },
+  {
+    'code': '03005',
+    'name': 'Mogotio',
+    'county': 'Baringo',
+    'county_code': '030',
+  },
+  {
+    'code': '03006',
+    'name': 'Koibatek',
+    'county': 'Baringo',
+    'county_code': '030',
+  },
+  {
+    'code': '03101',
+    'name': 'Laikipia West',
+    'county': 'Laikipia',
+    'county_code': '031',
+  },
+  {
+    'code': '03102',
+    'name': 'Laikipia East',
+    'county': 'Laikipia',
+    'county_code': '031',
+  },
+  {
+    'code': '03103',
+    'name': 'Laikipia North',
+    'county': 'Laikipia',
+    'county_code': '031',
+  },
+  {'code': '03201', 'name': 'Molo', 'county': 'Nakuru', 'county_code': '032'},
+  {'code': '03202', 'name': 'Njoro', 'county': 'Nakuru', 'county_code': '032'},
+  {
+    'code': '03203',
+    'name': 'Naivasha',
+    'county': 'Nakuru',
+    'county_code': '032',
+  },
+  {'code': '03204', 'name': 'Gilgil', 'county': 'Nakuru', 'county_code': '032'},
+  {
+    'code': '03205',
+    'name': 'Kuresoi South',
+    'county': 'Nakuru',
+    'county_code': '032',
+  },
+  {
+    'code': '03206',
+    'name': 'Kuresoi North',
+    'county': 'Nakuru',
+    'county_code': '032',
+  },
+  {
+    'code': '03207',
+    'name': 'Subukia',
+    'county': 'Nakuru',
+    'county_code': '032',
+  },
+  {'code': '03208', 'name': 'Rongai', 'county': 'Nakuru', 'county_code': '032'},
+  {
+    'code': '03209',
+    'name': 'Nakuru North',
+    'county': 'Nakuru',
+    'county_code': '032',
+  },
+  {
+    'code': '03210',
+    'name': 'Nakuru West',
+    'county': 'Nakuru',
+    'county_code': '032',
+  },
+  {
+    'code': '03211',
+    'name': 'Nakuru East',
+    'county': 'Nakuru',
+    'county_code': '032',
+  },
+  {
+    'code': '03301',
+    'name': 'Transmara West',
+    'county': 'Narok',
+    'county_code': '033',
+  },
+  {
+    'code': '03302',
+    'name': 'Transmara East',
+    'county': 'Narok',
+    'county_code': '033',
+  },
+  {
+    'code': '03303',
+    'name': 'Narok North',
+    'county': 'Narok',
+    'county_code': '033',
+  },
+  {
+    'code': '03304',
+    'name': 'Narok East',
+    'county': 'Narok',
+    'county_code': '033',
+  },
+  {
+    'code': '03305',
+    'name': 'Narok South',
+    'county': 'Narok',
+    'county_code': '033',
+  },
+  {
+    'code': '03306',
+    'name': 'Narok West',
+    'county': 'Narok',
+    'county_code': '033',
+  },
+  {
+    'code': '03401',
+    'name': 'Kajiado North',
+    'county': 'Kajiado',
+    'county_code': '034',
+  },
+  {
+    'code': '03402',
+    'name': 'Kajiado Central',
+    'county': 'Kajiado',
+    'county_code': '034',
+  },
+  {
+    'code': '03403',
+    'name': 'Kajiado East',
+    'county': 'Kajiado',
+    'county_code': '034',
+  },
+  {
+    'code': '03404',
+    'name': 'Kajiado West',
+    'county': 'Kajiado',
+    'county_code': '034',
+  },
+  {
+    'code': '03405',
+    'name': 'Loitokitok',
+    'county': 'Kajiado',
+    'county_code': '034',
+  },
+  {
+    'code': '03501',
+    'name': 'Kipkelion East',
+    'county': 'Kericho',
+    'county_code': '035',
+  },
+  {
+    'code': '03502',
+    'name': 'Kipkelion West',
+    'county': 'Kericho',
+    'county_code': '035',
+  },
+  {
+    'code': '03503',
+    'name': 'Ainamoi',
+    'county': 'Kericho',
+    'county_code': '035',
+  },
+  {
+    'code': '03504',
+    'name': 'Bureti',
+    'county': 'Kericho',
+    'county_code': '035',
+  },
+  {
+    'code': '03505',
+    'name': 'Belgut',
+    'county': 'Kericho',
+    'county_code': '035',
+  },
+  {
+    'code': '03506',
+    'name': 'Sigowet/Soin',
+    'county': 'Kericho',
+    'county_code': '035',
+  },
+  {'code': '03601', 'name': 'Sotik', 'county': 'Bomet', 'county_code': '036'},
+  {
+    'code': '03602',
+    'name': 'Chepalungu',
+    'county': 'Bomet',
+    'county_code': '036',
+  },
+  {
+    'code': '03603',
+    'name': 'Bomet East',
+    'county': 'Bomet',
+    'county_code': '036',
+  },
+  {
+    'code': '03604',
+    'name': 'Bomet Central',
+    'county': 'Bomet',
+    'county_code': '036',
+  },
+  {'code': '03605', 'name': 'Konoin', 'county': 'Bomet', 'county_code': '036'},
+  {
+    'code': '03701',
+    'name': 'Lugari',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03702',
+    'name': 'Likuyani',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03703',
+    'name': 'Malava',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03704',
+    'name': 'Lurambi',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03705',
+    'name': 'Navakholo',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03706',
+    'name': 'Mumias West',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03707',
+    'name': 'Mumias East',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03708',
+    'name': 'Matungu',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03709',
+    'name': 'Butere',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03710',
+    'name': 'Khwisero',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03711',
+    'name': 'Shinyalu',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {
+    'code': '03712',
+    'name': 'Ikolomani',
+    'county': 'Kakamega',
+    'county_code': '037',
+  },
+  {'code': '03801', 'name': 'Vihiga', 'county': 'Vihiga', 'county_code': '038'},
+  {
+    'code': '03802',
+    'name': 'Sabatia',
+    'county': 'Vihiga',
+    'county_code': '038',
+  },
+  {'code': '03803', 'name': 'Hamisi', 'county': 'Vihiga', 'county_code': '038'},
+  {'code': '03804', 'name': 'Luanda', 'county': 'Vihiga', 'county_code': '038'},
+  {
+    'code': '03805',
+    'name': 'Emuhaya',
+    'county': 'Vihiga',
+    'county_code': '038',
+  },
+  {
+    'code': '03901',
+    'name': 'Cheptais',
+    'county': 'Bungoma',
+    'county_code': '039',
+  },
+  {
+    'code': '03902',
+    'name': 'Mt Elgon',
+    'county': 'Bungoma',
+    'county_code': '039',
+  },
+  {
+    'code': '03903',
+    'name': 'Sirisia',
+    'county': 'Bungoma',
+    'county_code': '039',
+  },
+  {
+    'code': '03904',
+    'name': 'Kabuchai',
+    'county': 'Bungoma',
+    'county_code': '039',
+  },
+  {
+    'code': '03905',
+    'name': 'Bumula',
+    'county': 'Bungoma',
+    'county_code': '039',
+  },
+  {
+    'code': '03906',
+    'name': 'Kanduyi',
+    'county': 'Bungoma',
+    'county_code': '039',
+  },
+  {
+    'code': '03907',
+    'name': 'Webuye East',
+    'county': 'Bungoma',
+    'county_code': '039',
+  },
+  {
+    'code': '03908',
+    'name': 'Webuye West',
+    'county': 'Bungoma',
+    'county_code': '039',
+  },
+  {
+    'code': '03909',
+    'name': 'Kimilili',
+    'county': 'Bungoma',
+    'county_code': '039',
+  },
+  {
+    'code': '03910',
+    'name': 'Tongaren',
+    'county': 'Bungoma',
+    'county_code': '039',
+  },
+  {
+    'code': '04001',
+    'name': 'Teso North',
+    'county': 'Busia',
+    'county_code': '040',
+  },
+  {
+    'code': '04002',
+    'name': 'Teso South',
+    'county': 'Busia',
+    'county_code': '040',
+  },
+  {'code': '04003', 'name': 'Nambale', 'county': 'Busia', 'county_code': '040'},
+  {'code': '04004', 'name': 'Matayos', 'county': 'Busia', 'county_code': '040'},
+  {'code': '04005', 'name': 'Butula', 'county': 'Busia', 'county_code': '040'},
+  {'code': '04006', 'name': 'Samia', 'county': 'Busia', 'county_code': '040'},
+  {'code': '04007', 'name': 'Bunyala', 'county': 'Busia', 'county_code': '040'},
+  {'code': '04101', 'name': 'Ugenya', 'county': 'Siaya', 'county_code': '041'},
+  {'code': '04102', 'name': 'Ugunja', 'county': 'Siaya', 'county_code': '041'},
+  {
+    'code': '04103',
+    'name': 'Alego Usonga',
+    'county': 'Siaya',
+    'county_code': '041',
+  },
+  {'code': '04104', 'name': 'Gem', 'county': 'Siaya', 'county_code': '041'},
+  {'code': '04105', 'name': 'Bondo', 'county': 'Siaya', 'county_code': '041'},
+  {'code': '04106', 'name': 'Rarieda', 'county': 'Siaya', 'county_code': '041'},
+  {
+    'code': '04201',
+    'name': 'Kisumu East',
+    'county': 'Kisumu',
+    'county_code': '042',
+  },
+  {
+    'code': '04202',
+    'name': 'Kisumu West',
+    'county': 'Kisumu',
+    'county_code': '042',
+  },
+  {
+    'code': '04203',
+    'name': 'Kisumu Central',
+    'county': 'Kisumu',
+    'county_code': '042',
+  },
+  {'code': '04204', 'name': 'Seme', 'county': 'Kisumu', 'county_code': '042'},
+  {'code': '04205', 'name': 'Nyando', 'county': 'Kisumu', 'county_code': '042'},
+  {
+    'code': '04206',
+    'name': 'Muhoroni',
+    'county': 'Kisumu',
+    'county_code': '042',
+  },
+  {
+    'code': '04207',
+    'name': 'Nyakach',
+    'county': 'Kisumu',
+    'county_code': '042',
+  },
+  {
+    'code': '04301',
+    'name': 'Kasipul',
+    'county': 'Homa Bay',
+    'county_code': '043',
+  },
+  {
+    'code': '04302',
+    'name': 'Kabondo Kasipul',
+    'county': 'Homa Bay',
+    'county_code': '043',
+  },
+  {
+    'code': '04303',
+    'name': 'Karachuonyo',
+    'county': 'Homa Bay',
+    'county_code': '043',
+  },
+  {
+    'code': '04304',
+    'name': 'Rangwe',
+    'county': 'Homa Bay',
+    'county_code': '043',
+  },
+  {
+    'code': '04305',
+    'name': 'Homa Bay Town',
+    'county': 'Homa Bay',
+    'county_code': '043',
+  },
+  {
+    'code': '04306',
+    'name': 'Ndhiwa',
+    'county': 'Homa Bay',
+    'county_code': '043',
+  },
+  {
+    'code': '04307',
+    'name': 'Mbita',
+    'county': 'Homa Bay',
+    'county_code': '043',
+  },
+  {'code': '04308', 'name': 'Suba', 'county': 'Homa Bay', 'county_code': '043'},
+  {'code': '04401', 'name': 'Rongo', 'county': 'Migori', 'county_code': '044'},
+  {'code': '04402', 'name': 'Awendo', 'county': 'Migori', 'county_code': '044'},
+  {
+    'code': '04403',
+    'name': 'Suna East',
+    'county': 'Migori',
+    'county_code': '044',
+  },
+  {
+    'code': '04404',
+    'name': 'Suna West',
+    'county': 'Migori',
+    'county_code': '044',
+  },
+  {'code': '04405', 'name': 'Uriri', 'county': 'Migori', 'county_code': '044'},
+  {
+    'code': '04406',
+    'name': 'Nyatike',
+    'county': 'Migori',
+    'county_code': '044',
+  },
+  {
+    'code': '04407',
+    'name': 'Kuria West',
+    'county': 'Migori',
+    'county_code': '044',
+  },
+  {
+    'code': '04408',
+    'name': 'Kuria East',
+    'county': 'Migori',
+    'county_code': '044',
+  },
+  {
+    'code': '04501',
+    'name': 'Bonchari',
+    'county': 'Kisii',
+    'county_code': '045',
+  },
+  {
+    'code': '04502',
+    'name': 'South Mugirango',
+    'county': 'Kisii',
+    'county_code': '045',
+  },
+  {
+    'code': '04503',
+    'name': 'Bomachoge Borabu',
+    'county': 'Kisii',
+    'county_code': '045',
+  },
+  {'code': '04504', 'name': 'Bobasi', 'county': 'Kisii', 'county_code': '045'},
+  {
+    'code': '04505',
+    'name': 'Bomachoge Chache',
+    'county': 'Kisii',
+    'county_code': '045',
+  },
+  {
+    'code': '04506',
+    'name': 'Nyaribari Masaba',
+    'county': 'Kisii',
+    'county_code': '045',
+  },
+  {
+    'code': '04507',
+    'name': 'Nyaribari Chache',
+    'county': 'Kisii',
+    'county_code': '045',
+  },
+  {
+    'code': '04508',
+    'name': 'Kitutu Chache North',
+    'county': 'Kisii',
+    'county_code': '045',
+  },
+  {
+    'code': '04509',
+    'name': 'Kitutu Chache South',
+    'county': 'Kisii',
+    'county_code': '045',
+  },
+  {'code': '04601', 'name': 'Manga', 'county': 'Nyamira', 'county_code': '046'},
+  {
+    'code': '04602',
+    'name': 'Masaba North',
+    'county': 'Nyamira',
+    'county_code': '046',
+  },
+  {
+    'code': '04603',
+    'name': 'Nyamira',
+    'county': 'Nyamira',
+    'county_code': '046',
+  },
+  {
+    'code': '04604',
+    'name': 'Nyamira North',
+    'county': 'Nyamira',
+    'county_code': '046',
+  },
+  {
+    'code': '04605',
+    'name': 'Borabu',
+    'county': 'Nyamira',
+    'county_code': '046',
+  },
+  {
+    'code': '04701',
     'name': 'Westlands',
     'county': 'Nairobi',
     'county_code': '047',
   },
   {
-    'code': '026',
-    'name': 'Wundanyi',
-    'county': 'Taita-Taveta',
-    'county_code': '006',
+    'code': '04702',
+    'name': 'Dagoretti North',
+    'county': 'Nairobi',
+    'county_code': '047',
   },
-  {'code': '092', 'name': 'Yatta', 'county': 'Machakos', 'county_code': '016'},
+  {
+    'code': '04703',
+    'name': 'Dagoretti South',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04704',
+    'name': 'Langata',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {'code': '04705', 'name': 'Kibra', 'county': 'Nairobi', 'county_code': '047'},
+  {
+    'code': '04706',
+    'name': 'Roysambu',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04707',
+    'name': 'Kasarani',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04708',
+    'name': 'Ruaraka',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04709',
+    'name': 'Embakasi South',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04710',
+    'name': 'Embakasi North',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04711',
+    'name': 'Embakasi Central',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04712',
+    'name': 'Embakasi East',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04713',
+    'name': 'Embakasi West',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04714',
+    'name': 'Makadara',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04715',
+    'name': 'Kamukunji',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04716',
+    'name': 'Starehe',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
+  {
+    'code': '04717',
+    'name': 'Mathare',
+    'county': 'Nairobi',
+    'county_code': '047',
+  },
 ];
 
 /// Raw data for constituencies.
@@ -2905,6 +3230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ainabkoi',
     'constituency_code': '144',
     'county_code': '027',
+    'sub_county_code': '02704',
   },
   {
     'code': '0719',
@@ -2912,6 +3238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ainabkoi',
     'constituency_code': '144',
     'county_code': '027',
+    'sub_county_code': '02704',
   },
   {
     'code': '0720',
@@ -2919,6 +3246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ainabkoi',
     'constituency_code': '144',
     'county_code': '027',
+    'sub_county_code': '02704',
   },
   {
     'code': '0945',
@@ -2926,6 +3254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ainamoi',
     'constituency_code': '190',
     'county_code': '035',
+    'sub_county_code': '03503',
   },
   {
     'code': '0946',
@@ -2933,6 +3262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ainamoi',
     'constituency_code': '190',
     'county_code': '035',
+    'sub_county_code': '03503',
   },
   {
     'code': '0949',
@@ -2940,6 +3270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ainamoi',
     'constituency_code': '190',
     'county_code': '035',
+    'sub_county_code': '03503',
   },
   {
     'code': '0944',
@@ -2947,6 +3278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ainamoi',
     'constituency_code': '190',
     'county_code': '035',
+    'sub_county_code': '03503',
   },
   {
     'code': '0947',
@@ -2954,6 +3286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ainamoi',
     'constituency_code': '190',
     'county_code': '035',
+    'sub_county_code': '03503',
   },
   {
     'code': '0948',
@@ -2961,6 +3294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ainamoi',
     'constituency_code': '190',
     'county_code': '035',
+    'sub_county_code': '03503',
   },
   {
     'code': '0755',
@@ -2968,6 +3302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Aldai',
     'constituency_code': '152',
     'county_code': '029',
+    'sub_county_code': '02902',
   },
   {
     'code': '0759',
@@ -2975,6 +3310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Aldai',
     'constituency_code': '152',
     'county_code': '029',
+    'sub_county_code': '02902',
   },
   {
     'code': '0757',
@@ -2982,6 +3318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Aldai',
     'constituency_code': '152',
     'county_code': '029',
+    'sub_county_code': '02902',
   },
   {
     'code': '0758',
@@ -2989,6 +3326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Aldai',
     'constituency_code': '152',
     'county_code': '029',
+    'sub_county_code': '02902',
   },
   {
     'code': '0760',
@@ -2996,6 +3334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Aldai',
     'constituency_code': '152',
     'county_code': '029',
+    'sub_county_code': '02902',
   },
   {
     'code': '0756',
@@ -3003,6 +3342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Aldai',
     'constituency_code': '152',
     'county_code': '029',
+    'sub_county_code': '02902',
   },
   {
     'code': '1165',
@@ -3010,6 +3350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Alego Usonga',
     'constituency_code': '234',
     'county_code': '041',
+    'sub_county_code': '04103',
   },
   {
     'code': '1167',
@@ -3017,6 +3358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Alego Usonga',
     'constituency_code': '234',
     'county_code': '041',
+    'sub_county_code': '04103',
   },
   {
     'code': '1166',
@@ -3024,6 +3366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Alego Usonga',
     'constituency_code': '234',
     'county_code': '041',
+    'sub_county_code': '04103',
   },
   {
     'code': '1168',
@@ -3031,6 +3374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Alego Usonga',
     'constituency_code': '234',
     'county_code': '041',
+    'sub_county_code': '04103',
   },
   {
     'code': '1163',
@@ -3038,6 +3382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Alego Usonga',
     'constituency_code': '234',
     'county_code': '041',
+    'sub_county_code': '04103',
   },
   {
     'code': '1164',
@@ -3045,6 +3390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Alego Usonga',
     'constituency_code': '234',
     'county_code': '041',
+    'sub_county_code': '04103',
   },
   {
     'code': '1268',
@@ -3052,6 +3398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Awendo',
     'constituency_code': '254',
     'county_code': '044',
+    'sub_county_code': '04402',
   },
   {
     'code': '1265',
@@ -3059,6 +3406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Awendo',
     'constituency_code': '254',
     'county_code': '044',
+    'sub_county_code': '04402',
   },
   {
     'code': '1266',
@@ -3066,6 +3414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Awendo',
     'constituency_code': '254',
     'county_code': '044',
+    'sub_county_code': '04402',
   },
   {
     'code': '1267',
@@ -3073,6 +3422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Awendo',
     'constituency_code': '254',
     'county_code': '044',
+    'sub_county_code': '04402',
   },
   {
     'code': '0869',
@@ -3080,6 +3430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bahati',
     'constituency_code': '174',
     'county_code': '032',
+    'sub_county_code': '03209',
   },
   {
     'code': '0865',
@@ -3087,6 +3438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bahati',
     'constituency_code': '174',
     'county_code': '032',
+    'sub_county_code': '03209',
   },
   {
     'code': '0866',
@@ -3094,6 +3446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bahati',
     'constituency_code': '174',
     'county_code': '032',
+    'sub_county_code': '03209',
   },
   {
     'code': '0867',
@@ -3101,6 +3454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bahati',
     'constituency_code': '174',
     'county_code': '032',
+    'sub_county_code': '03209',
   },
   {
     'code': '0868',
@@ -3108,6 +3462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bahati',
     'constituency_code': '174',
     'county_code': '032',
+    'sub_county_code': '03209',
   },
   {
     'code': '0135',
@@ -3115,6 +3470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Balambala',
     'constituency_code': '028',
     'county_code': '007',
+    'sub_county_code': '00703',
   },
   {
     'code': '0136',
@@ -3122,6 +3478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Balambala',
     'constituency_code': '028',
     'county_code': '007',
+    'sub_county_code': '00703',
   },
   {
     'code': '0137',
@@ -3129,6 +3486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Balambala',
     'constituency_code': '028',
     'county_code': '007',
+    'sub_county_code': '00703',
   },
   {
     'code': '0138',
@@ -3136,6 +3494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Balambala',
     'constituency_code': '028',
     'county_code': '007',
+    'sub_county_code': '00703',
   },
   {
     'code': '0139',
@@ -3143,6 +3502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Balambala',
     'constituency_code': '028',
     'county_code': '007',
+    'sub_county_code': '00702',
   },
   {
     'code': '0196',
@@ -3150,6 +3510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Banissa',
     'constituency_code': '040',
     'county_code': '009',
+    'sub_county_code': '00903',
   },
   {
     'code': '0197',
@@ -3157,6 +3518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Banissa',
     'constituency_code': '040',
     'county_code': '009',
+    'sub_county_code': '00903',
   },
   {
     'code': '0198',
@@ -3164,6 +3526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Banissa',
     'constituency_code': '040',
     'county_code': '009',
+    'sub_county_code': '00903',
   },
   {
     'code': '0200',
@@ -3171,6 +3534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Banissa',
     'constituency_code': '040',
     'county_code': '009',
+    'sub_county_code': '00903',
   },
   {
     'code': '0199',
@@ -3178,6 +3542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Banissa',
     'constituency_code': '040',
     'county_code': '009',
+    'sub_county_code': '00903',
   },
   {
     'code': '0792',
@@ -3185,6 +3550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo North',
     'constituency_code': '158',
     'county_code': '030',
+    'sub_county_code': '03002',
   },
   {
     'code': '0788',
@@ -3192,6 +3558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo North',
     'constituency_code': '158',
     'county_code': '030',
+    'sub_county_code': '03002',
   },
   {
     'code': '0789',
@@ -3199,6 +3566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo North',
     'constituency_code': '158',
     'county_code': '030',
+    'sub_county_code': '03002',
   },
   {
     'code': '0790',
@@ -3206,6 +3574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo North',
     'constituency_code': '158',
     'county_code': '030',
+    'sub_county_code': '03002',
   },
   {
     'code': '0791',
@@ -3213,6 +3582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo North',
     'constituency_code': '158',
     'county_code': '030',
+    'sub_county_code': '03002',
   },
   {
     'code': '0796',
@@ -3220,6 +3590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo Central',
     'constituency_code': '159',
     'county_code': '030',
+    'sub_county_code': '03003',
   },
   {
     'code': '0793',
@@ -3227,6 +3598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo Central',
     'constituency_code': '159',
     'county_code': '030',
+    'sub_county_code': '03003',
   },
   {
     'code': '0797',
@@ -3234,6 +3606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo Central',
     'constituency_code': '159',
     'county_code': '030',
+    'sub_county_code': '03003',
   },
   {
     'code': '0794',
@@ -3241,6 +3614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo Central',
     'constituency_code': '159',
     'county_code': '030',
+    'sub_county_code': '03003',
   },
   {
     'code': '0795',
@@ -3248,6 +3622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo Central',
     'constituency_code': '159',
     'county_code': '030',
+    'sub_county_code': '03003',
   },
   {
     'code': '0799',
@@ -3255,6 +3630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo South',
     'constituency_code': '160',
     'county_code': '030',
+    'sub_county_code': '03004',
   },
   {
     'code': '0798',
@@ -3262,6 +3638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo South',
     'constituency_code': '160',
     'county_code': '030',
+    'sub_county_code': '03004',
   },
   {
     'code': '0800',
@@ -3269,6 +3646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo South',
     'constituency_code': '160',
     'county_code': '030',
+    'sub_county_code': '03004',
   },
   {
     'code': '0801',
@@ -3276,6 +3654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Baringo South',
     'constituency_code': '160',
     'county_code': '030',
+    'sub_county_code': '03004',
   },
   {
     'code': '0960',
@@ -3283,6 +3662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Belgut',
     'constituency_code': '192',
     'county_code': '035',
+    'sub_county_code': '03505',
   },
   {
     'code': '0959',
@@ -3290,6 +3670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Belgut',
     'constituency_code': '192',
     'county_code': '035',
+    'sub_county_code': '03505',
   },
   {
     'code': '0958',
@@ -3297,6 +3678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Belgut',
     'constituency_code': '192',
     'county_code': '035',
+    'sub_county_code': '03505',
   },
   {
     'code': '0961',
@@ -3304,6 +3686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Belgut',
     'constituency_code': '192',
     'county_code': '035',
+    'sub_county_code': '03505',
   },
   {
     'code': '0957',
@@ -3311,6 +3694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Belgut',
     'constituency_code': '192',
     'county_code': '035',
+    'sub_county_code': '03505',
   },
   {
     'code': '1319',
@@ -3318,6 +3702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bobasi',
     'constituency_code': '264',
     'county_code': '045',
+    'sub_county_code': '04504',
   },
   {
     'code': '1322',
@@ -3325,6 +3710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bobasi',
     'constituency_code': '264',
     'county_code': '045',
+    'sub_county_code': '04504',
   },
   {
     'code': '1317',
@@ -3332,6 +3718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bobasi',
     'constituency_code': '264',
     'county_code': '045',
+    'sub_county_code': '04504',
   },
   {
     'code': '1320',
@@ -3339,6 +3726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bobasi',
     'constituency_code': '264',
     'county_code': '045',
+    'sub_county_code': '04504',
   },
   {
     'code': '1316',
@@ -3346,6 +3734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bobasi',
     'constituency_code': '264',
     'county_code': '045',
+    'sub_county_code': '04504',
   },
   {
     'code': '1315',
@@ -3353,6 +3742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bobasi',
     'constituency_code': '264',
     'county_code': '045',
+    'sub_county_code': '04504',
   },
   {
     'code': '1318',
@@ -3360,6 +3750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bobasi',
     'constituency_code': '264',
     'county_code': '045',
+    'sub_county_code': '04504',
   },
   {
     'code': '1321',
@@ -3367,6 +3758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bobasi',
     'constituency_code': '264',
     'county_code': '045',
+    'sub_county_code': '04504',
   },
   {
     'code': '1313',
@@ -3374,6 +3766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomachoge Borabu',
     'constituency_code': '263',
     'county_code': '045',
+    'sub_county_code': '04503',
   },
   {
     'code': '1311',
@@ -3381,6 +3774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomachoge Borabu',
     'constituency_code': '263',
     'county_code': '045',
+    'sub_county_code': '04503',
   },
   {
     'code': '1312',
@@ -3388,6 +3782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomachoge Borabu',
     'constituency_code': '263',
     'county_code': '045',
+    'sub_county_code': '04503',
   },
   {
     'code': '1314',
@@ -3395,6 +3790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomachoge Borabu',
     'constituency_code': '263',
     'county_code': '045',
+    'sub_county_code': '04503',
   },
   {
     'code': '1324',
@@ -3402,6 +3798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomachoge Chache',
     'constituency_code': '265',
     'county_code': '045',
+    'sub_county_code': '04505',
   },
   {
     'code': '1325',
@@ -3409,6 +3806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomachoge Chache',
     'constituency_code': '265',
     'county_code': '045',
+    'sub_county_code': '04505',
   },
   {
     'code': '1323',
@@ -3416,6 +3814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomachoge Chache',
     'constituency_code': '265',
     'county_code': '045',
+    'sub_county_code': '04505',
   },
   {
     'code': '0984',
@@ -3423,6 +3822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomet Central',
     'constituency_code': '197',
     'county_code': '036',
+    'sub_county_code': '03604',
   },
   {
     'code': '0985',
@@ -3430,6 +3830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomet Central',
     'constituency_code': '197',
     'county_code': '036',
+    'sub_county_code': '03604',
   },
   {
     'code': '0982',
@@ -3437,6 +3838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomet Central',
     'constituency_code': '197',
     'county_code': '036',
+    'sub_county_code': '03604',
   },
   {
     'code': '0981',
@@ -3444,6 +3846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomet Central',
     'constituency_code': '197',
     'county_code': '036',
+    'sub_county_code': '03604',
   },
   {
     'code': '0983',
@@ -3451,6 +3854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomet Central',
     'constituency_code': '197',
     'county_code': '036',
+    'sub_county_code': '03604',
   },
   {
     'code': '0980',
@@ -3458,6 +3862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomet East',
     'constituency_code': '196',
     'county_code': '036',
+    'sub_county_code': '03603',
   },
   {
     'code': '0977',
@@ -3465,6 +3870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomet East',
     'constituency_code': '196',
     'county_code': '036',
+    'sub_county_code': '03603',
   },
   {
     'code': '0979',
@@ -3472,6 +3878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomet East',
     'constituency_code': '196',
     'county_code': '036',
+    'sub_county_code': '03603',
   },
   {
     'code': '0978',
@@ -3479,6 +3886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomet East',
     'constituency_code': '196',
     'county_code': '036',
+    'sub_county_code': '03603',
   },
   {
     'code': '0976',
@@ -3486,6 +3894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bomet East',
     'constituency_code': '196',
     'county_code': '036',
+    'sub_county_code': '03603',
   },
   {
     'code': '1302',
@@ -3493,6 +3902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bonchari',
     'constituency_code': '261',
     'county_code': '045',
+    'sub_county_code': '04501',
   },
   {
     'code': '1301',
@@ -3500,6 +3910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bonchari',
     'constituency_code': '261',
     'county_code': '045',
+    'sub_county_code': '04501',
   },
   {
     'code': '1303',
@@ -3507,6 +3918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bonchari',
     'constituency_code': '261',
     'county_code': '045',
+    'sub_county_code': '04501',
   },
   {
     'code': '1304',
@@ -3514,6 +3926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bonchari',
     'constituency_code': '261',
     'county_code': '045',
+    'sub_county_code': '04501',
   },
   {
     'code': '1176',
@@ -3521,6 +3934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bondo',
     'constituency_code': '236',
     'county_code': '041',
+    'sub_county_code': '04105',
   },
   {
     'code': '1180',
@@ -3528,6 +3942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bondo',
     'constituency_code': '236',
     'county_code': '041',
+    'sub_county_code': '04105',
   },
   {
     'code': '1177',
@@ -3535,6 +3950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bondo',
     'constituency_code': '236',
     'county_code': '041',
+    'sub_county_code': '04105',
   },
   {
     'code': '1179',
@@ -3542,6 +3958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bondo',
     'constituency_code': '236',
     'county_code': '041',
+    'sub_county_code': '04105',
   },
   {
     'code': '1175',
@@ -3549,6 +3966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bondo',
     'constituency_code': '236',
     'county_code': '041',
+    'sub_county_code': '04105',
   },
   {
     'code': '1178',
@@ -3556,6 +3974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bondo',
     'constituency_code': '236',
     'county_code': '041',
+    'sub_county_code': '04105',
   },
   {
     'code': '1365',
@@ -3563,6 +3982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Borabu',
     'constituency_code': '273',
     'county_code': '046',
+    'sub_county_code': '04605',
   },
   {
     'code': '1363',
@@ -3570,6 +3990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Borabu',
     'constituency_code': '273',
     'county_code': '046',
+    'sub_county_code': '04605',
   },
   {
     'code': '1362',
@@ -3577,6 +3998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Borabu',
     'constituency_code': '273',
     'county_code': '046',
+    'sub_county_code': '04605',
   },
   {
     'code': '1364',
@@ -3584,6 +4006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Borabu',
     'constituency_code': '273',
     'county_code': '046',
+    'sub_county_code': '04605',
   },
   {
     'code': '1152',
@@ -3591,6 +4014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Budalangi',
     'constituency_code': '231',
     'county_code': '040',
+    'sub_county_code': '04007',
   },
   {
     'code': '1153',
@@ -3598,6 +4022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Budalangi',
     'constituency_code': '231',
     'county_code': '040',
+    'sub_county_code': '04007',
   },
   {
     'code': '1155',
@@ -3605,6 +4030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Budalangi',
     'constituency_code': '231',
     'county_code': '040',
+    'sub_county_code': '04007',
   },
   {
     'code': '1154',
@@ -3612,6 +4038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Budalangi',
     'constituency_code': '231',
     'county_code': '040',
+    'sub_county_code': '04007',
   },
   {
     'code': '1090',
@@ -3619,6 +4046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bumula',
     'constituency_code': '219',
     'county_code': '039',
+    'sub_county_code': '03905',
   },
   {
     'code': '1092',
@@ -3626,6 +4054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bumula',
     'constituency_code': '219',
     'county_code': '039',
+    'sub_county_code': '03905',
   },
   {
     'code': '1091',
@@ -3633,6 +4062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bumula',
     'constituency_code': '219',
     'county_code': '039',
+    'sub_county_code': '03905',
   },
   {
     'code': '1093',
@@ -3640,6 +4070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bumula',
     'constituency_code': '219',
     'county_code': '039',
+    'sub_county_code': '03905',
   },
   {
     'code': '1095',
@@ -3647,6 +4078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bumula',
     'constituency_code': '219',
     'county_code': '039',
+    'sub_county_code': '03905',
   },
   {
     'code': '1089',
@@ -3654,6 +4086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bumula',
     'constituency_code': '219',
     'county_code': '039',
+    'sub_county_code': '03905',
   },
   {
     'code': '1094',
@@ -3661,6 +4094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bumula',
     'constituency_code': '219',
     'county_code': '039',
+    'sub_county_code': '03905',
   },
   {
     'code': '0098',
@@ -3668,6 +4102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bura',
     'constituency_code': '020',
     'county_code': '004',
+    'sub_county_code': '00403',
   },
   {
     'code': '0097',
@@ -3675,6 +4110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bura',
     'constituency_code': '020',
     'county_code': '004',
+    'sub_county_code': '00403',
   },
   {
     'code': '0096',
@@ -3682,6 +4118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bura',
     'constituency_code': '020',
     'county_code': '004',
+    'sub_county_code': '00403',
   },
   {
     'code': '0100',
@@ -3689,6 +4126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bura',
     'constituency_code': '020',
     'county_code': '004',
+    'sub_county_code': '00403',
   },
   {
     'code': '0099',
@@ -3696,6 +4134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bura',
     'constituency_code': '020',
     'county_code': '004',
+    'sub_county_code': '00403',
   },
   {
     'code': '0952',
@@ -3703,6 +4142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bureti',
     'constituency_code': '191',
     'county_code': '035',
+    'sub_county_code': '03504',
   },
   {
     'code': '0953',
@@ -3710,6 +4150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bureti',
     'constituency_code': '191',
     'county_code': '035',
+    'sub_county_code': '03504',
   },
   {
     'code': '0955',
@@ -3717,6 +4158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bureti',
     'constituency_code': '191',
     'county_code': '035',
+    'sub_county_code': '03504',
   },
   {
     'code': '0956',
@@ -3724,6 +4166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bureti',
     'constituency_code': '191',
     'county_code': '035',
+    'sub_county_code': '03504',
   },
   {
     'code': '0950',
@@ -3731,6 +4174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bureti',
     'constituency_code': '191',
     'county_code': '035',
+    'sub_county_code': '03504',
   },
   {
     'code': '0954',
@@ -3738,6 +4182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bureti',
     'constituency_code': '191',
     'county_code': '035',
+    'sub_county_code': '03504',
   },
   {
     'code': '0951',
@@ -3745,6 +4190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Bureti',
     'constituency_code': '191',
     'county_code': '035',
+    'sub_county_code': '03504',
   },
   {
     'code': '1033',
@@ -3752,6 +4198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butere',
     'constituency_code': '207',
     'county_code': '037',
+    'sub_county_code': '03709',
   },
   {
     'code': '1035',
@@ -3759,6 +4206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butere',
     'constituency_code': '207',
     'county_code': '037',
+    'sub_county_code': '03709',
   },
   {
     'code': '1036',
@@ -3766,6 +4214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butere',
     'constituency_code': '207',
     'county_code': '037',
+    'sub_county_code': '03709',
   },
   {
     'code': '1032',
@@ -3773,6 +4222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butere',
     'constituency_code': '207',
     'county_code': '037',
+    'sub_county_code': '03709',
   },
   {
     'code': '1034',
@@ -3780,6 +4230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butere',
     'constituency_code': '207',
     'county_code': '037',
+    'sub_county_code': '03709',
   },
   {
     'code': '1147',
@@ -3787,6 +4238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butula',
     'constituency_code': '229',
     'county_code': '040',
+    'sub_county_code': '04005',
   },
   {
     'code': '1143',
@@ -3794,6 +4246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butula',
     'constituency_code': '229',
     'county_code': '040',
+    'sub_county_code': '04005',
   },
   {
     'code': '1144',
@@ -3801,6 +4254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butula',
     'constituency_code': '229',
     'county_code': '040',
+    'sub_county_code': '04005',
   },
   {
     'code': '1145',
@@ -3808,6 +4262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butula',
     'constituency_code': '229',
     'county_code': '040',
+    'sub_county_code': '04005',
   },
   {
     'code': '1146',
@@ -3815,6 +4270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butula',
     'constituency_code': '229',
     'county_code': '040',
+    'sub_county_code': '04005',
   },
   {
     'code': '1142',
@@ -3822,6 +4278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Butula',
     'constituency_code': '229',
     'county_code': '040',
+    'sub_county_code': '04005',
   },
   {
     'code': '0285',
@@ -3829,6 +4286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Buuri',
     'constituency_code': '057',
     'county_code': '012',
+    'sub_county_code': '01207',
   },
   {
     'code': '0283',
@@ -3836,6 +4294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Buuri',
     'constituency_code': '057',
     'county_code': '012',
+    'sub_county_code': '01207',
   },
   {
     'code': '0282',
@@ -3843,6 +4302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Buuri',
     'constituency_code': '057',
     'county_code': '012',
+    'sub_county_code': '01207',
   },
   {
     'code': '0284',
@@ -3850,6 +4310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Buuri',
     'constituency_code': '057',
     'county_code': '012',
+    'sub_county_code': '01207',
   },
   {
     'code': '0281',
@@ -3857,6 +4318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Buuri',
     'constituency_code': '057',
     'county_code': '012',
+    'sub_county_code': '01207',
   },
   {
     'code': '0287',
@@ -3864,6 +4326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Central Imenti',
     'constituency_code': '058',
     'county_code': '012',
+    'sub_county_code': '01208',
   },
   {
     'code': '0288',
@@ -3871,6 +4334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Central Imenti',
     'constituency_code': '058',
     'county_code': '012',
+    'sub_county_code': '01208',
   },
   {
     'code': '0289',
@@ -3878,6 +4342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Central Imenti',
     'constituency_code': '058',
     'county_code': '012',
+    'sub_county_code': '01208',
   },
   {
     'code': '0286',
@@ -3885,6 +4350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Central Imenti',
     'constituency_code': '058',
     'county_code': '012',
+    'sub_county_code': '01208',
   },
   {
     'code': '0003',
@@ -3892,6 +4358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Changamwe',
     'constituency_code': '001',
     'county_code': '001',
+    'sub_county_code': '00101',
   },
   {
     'code': '0005',
@@ -3899,6 +4366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Changamwe',
     'constituency_code': '001',
     'county_code': '001',
+    'sub_county_code': '00101',
   },
   {
     'code': '0004',
@@ -3906,6 +4374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Changamwe',
     'constituency_code': '001',
     'county_code': '001',
+    'sub_county_code': '00101',
   },
   {
     'code': '0002',
@@ -3913,6 +4382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Changamwe',
     'constituency_code': '001',
     'county_code': '001',
+    'sub_county_code': '00101',
   },
   {
     'code': '0001',
@@ -3920,6 +4390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Changamwe',
     'constituency_code': '001',
     'county_code': '001',
+    'sub_county_code': '00101',
   },
   {
     'code': '0974',
@@ -3927,6 +4398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Chepalungu',
     'constituency_code': '195',
     'county_code': '036',
+    'sub_county_code': '03602',
   },
   {
     'code': '0971',
@@ -3934,6 +4406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Chepalungu',
     'constituency_code': '195',
     'county_code': '036',
+    'sub_county_code': '03602',
   },
   {
     'code': '0972',
@@ -3941,6 +4414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Chepalungu',
     'constituency_code': '195',
     'county_code': '036',
+    'sub_county_code': '03602',
   },
   {
     'code': '0973',
@@ -3948,6 +4422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Chepalungu',
     'constituency_code': '195',
     'county_code': '036',
+    'sub_county_code': '03602',
   },
   {
     'code': '0975',
@@ -3955,6 +4430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Chepalungu',
     'constituency_code': '195',
     'county_code': '036',
+    'sub_county_code': '03602',
   },
   {
     'code': '0699',
@@ -3962,6 +4438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Cherangany',
     'constituency_code': '140',
     'county_code': '026',
+    'sub_county_code': '02605',
   },
   {
     'code': '0698',
@@ -3969,6 +4446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Cherangany',
     'constituency_code': '140',
     'county_code': '026',
+    'sub_county_code': '02605',
   },
   {
     'code': '0696',
@@ -3976,6 +4454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Cherangany',
     'constituency_code': '140',
     'county_code': '026',
+    'sub_county_code': '02605',
   },
   {
     'code': '0695',
@@ -3983,6 +4462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Cherangany',
     'constituency_code': '140',
     'county_code': '026',
+    'sub_county_code': '02605',
   },
   {
     'code': '0697',
@@ -3990,6 +4470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Cherangany',
     'constituency_code': '140',
     'county_code': '026',
+    'sub_county_code': '02605',
   },
   {
     'code': '0694',
@@ -3997,6 +4478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Cherangany',
     'constituency_code': '140',
     'county_code': '026',
+    'sub_county_code': '02605',
   },
   {
     'code': '0700',
@@ -4004,6 +4486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Cherangany',
     'constituency_code': '140',
     'county_code': '026',
+    'sub_county_code': '02605',
   },
   {
     'code': '0765',
@@ -4011,6 +4494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Chesumei',
     'constituency_code': '154',
     'county_code': '029',
+    'sub_county_code': '02904',
   },
   {
     'code': '0768',
@@ -4018,6 +4502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Chesumei',
     'constituency_code': '154',
     'county_code': '029',
+    'sub_county_code': '02904',
   },
   {
     'code': '0769',
@@ -4025,6 +4510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Chesumei',
     'constituency_code': '154',
     'county_code': '029',
+    'sub_county_code': '02904',
   },
   {
     'code': '0766',
@@ -4032,6 +4518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Chesumei',
     'constituency_code': '154',
     'county_code': '029',
+    'sub_county_code': '02904',
   },
   {
     'code': '0767',
@@ -4039,6 +4526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Chesumei',
     'constituency_code': '154',
     'county_code': '029',
+    'sub_county_code': '02904',
   },
   {
     'code': '0305',
@@ -4046,6 +4534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': "Chuka/Igambang'ombe",
     'constituency_code': '061',
     'county_code': '013',
+    'sub_county_code': '01302',
   },
   {
     'code': '0302',
@@ -4053,6 +4542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': "Chuka/Igambang'ombe",
     'constituency_code': '061',
     'county_code': '013',
+    'sub_county_code': '01305',
   },
   {
     'code': '0303',
@@ -4060,6 +4550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': "Chuka/Igambang'ombe",
     'constituency_code': '061',
     'county_code': '013',
+    'sub_county_code': '01305',
   },
   {
     'code': '0301',
@@ -4067,6 +4558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': "Chuka/Igambang'ombe",
     'constituency_code': '061',
     'county_code': '013',
+    'sub_county_code': '01302',
   },
   {
     'code': '0304',
@@ -4074,6 +4566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': "Chuka/Igambang'ombe",
     'constituency_code': '061',
     'county_code': '013',
+    'sub_county_code': '01305',
   },
   {
     'code': '0151',
@@ -4081,6 +4574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dadaab',
     'constituency_code': '030',
     'county_code': '007',
+    'sub_county_code': '00705',
   },
   {
     'code': '0147',
@@ -4088,6 +4582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dadaab',
     'constituency_code': '030',
     'county_code': '007',
+    'sub_county_code': '00705',
   },
   {
     'code': '0149',
@@ -4095,6 +4590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dadaab',
     'constituency_code': '030',
     'county_code': '007',
+    'sub_county_code': '00705',
   },
   {
     'code': '0146',
@@ -4102,6 +4598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dadaab',
     'constituency_code': '030',
     'county_code': '007',
+    'sub_county_code': '00705',
   },
   {
     'code': '0148',
@@ -4109,6 +4606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dadaab',
     'constituency_code': '030',
     'county_code': '007',
+    'sub_county_code': '00705',
   },
   {
     'code': '0150',
@@ -4116,6 +4614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dadaab',
     'constituency_code': '030',
     'county_code': '007',
+    'sub_county_code': '00705',
   },
   {
     'code': '1373',
@@ -4123,6 +4622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dagoretti North',
     'constituency_code': '275',
     'county_code': '047',
+    'sub_county_code': '04702',
   },
   {
     'code': '1375',
@@ -4130,6 +4630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dagoretti North',
     'constituency_code': '275',
     'county_code': '047',
+    'sub_county_code': '04702',
   },
   {
     'code': '1372',
@@ -4137,6 +4638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dagoretti North',
     'constituency_code': '275',
     'county_code': '047',
+    'sub_county_code': '04702',
   },
   {
     'code': '1374',
@@ -4144,6 +4646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dagoretti North',
     'constituency_code': '275',
     'county_code': '047',
+    'sub_county_code': '04702',
   },
   {
     'code': '1371',
@@ -4151,6 +4654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dagoretti North',
     'constituency_code': '275',
     'county_code': '047',
+    'sub_county_code': '04702',
   },
   {
     'code': '1376',
@@ -4158,6 +4662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dagoretti South',
     'constituency_code': '276',
     'county_code': '047',
+    'sub_county_code': '04703',
   },
   {
     'code': '1377',
@@ -4165,6 +4670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dagoretti South',
     'constituency_code': '276',
     'county_code': '047',
+    'sub_county_code': '04703',
   },
   {
     'code': '1378',
@@ -4172,6 +4678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dagoretti South',
     'constituency_code': '276',
     'county_code': '047',
+    'sub_county_code': '04703',
   },
   {
     'code': '1379',
@@ -4179,6 +4686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dagoretti South',
     'constituency_code': '276',
     'county_code': '047',
+    'sub_county_code': '04703',
   },
   {
     'code': '1380',
@@ -4186,6 +4694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Dagoretti South',
     'constituency_code': '276',
     'county_code': '047',
+    'sub_county_code': '04703',
   },
   {
     'code': '0810',
@@ -4193,6 +4702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Eldama Ravine',
     'constituency_code': '162',
     'county_code': '030',
+    'sub_county_code': '03006',
   },
   {
     'code': '0805',
@@ -4200,6 +4710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Eldama Ravine',
     'constituency_code': '162',
     'county_code': '030',
+    'sub_county_code': '03006',
   },
   {
     'code': '0806',
@@ -4207,6 +4718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Eldama Ravine',
     'constituency_code': '162',
     'county_code': '030',
+    'sub_county_code': '03006',
   },
   {
     'code': '0809',
@@ -4214,6 +4726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Eldama Ravine',
     'constituency_code': '162',
     'county_code': '030',
+    'sub_county_code': '03006',
   },
   {
     'code': '0808',
@@ -4221,6 +4734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Eldama Ravine',
     'constituency_code': '162',
     'county_code': '030',
+    'sub_county_code': '03006',
   },
   {
     'code': '0807',
@@ -4228,6 +4742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Eldama Ravine',
     'constituency_code': '162',
     'county_code': '030',
+    'sub_county_code': '03006',
   },
   {
     'code': '0181',
@@ -4235,6 +4750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Eldas',
     'constituency_code': '037',
     'county_code': '008',
+    'sub_county_code': '00805',
   },
   {
     'code': '0180',
@@ -4242,6 +4758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Eldas',
     'constituency_code': '037',
     'county_code': '008',
+    'sub_county_code': '00805',
   },
   {
     'code': '0183',
@@ -4249,6 +4766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Eldas',
     'constituency_code': '037',
     'county_code': '008',
+    'sub_county_code': '00805',
   },
   {
     'code': '0182',
@@ -4256,6 +4774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Eldas',
     'constituency_code': '037',
     'county_code': '008',
+    'sub_county_code': '00805',
   },
   {
     'code': '1417',
@@ -4263,6 +4782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi Central',
     'constituency_code': '284',
     'county_code': '047',
+    'sub_county_code': '04711',
   },
   {
     'code': '1416',
@@ -4270,6 +4790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi Central',
     'constituency_code': '284',
     'county_code': '047',
+    'sub_county_code': '04711',
   },
   {
     'code': '1418',
@@ -4277,6 +4798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi Central',
     'constituency_code': '284',
     'county_code': '047',
+    'sub_county_code': '04711',
   },
   {
     'code': '1419',
@@ -4284,6 +4806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi Central',
     'constituency_code': '284',
     'county_code': '047',
+    'sub_county_code': '04711',
   },
   {
     'code': '1420',
@@ -4291,6 +4814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi Central',
     'constituency_code': '284',
     'county_code': '047',
+    'sub_county_code': '04711',
   },
   {
     'code': '1423',
@@ -4298,6 +4822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi East',
     'constituency_code': '285',
     'county_code': '047',
+    'sub_county_code': '04712',
   },
   {
     'code': '1422',
@@ -4305,6 +4830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi East',
     'constituency_code': '285',
     'county_code': '047',
+    'sub_county_code': '04712',
   },
   {
     'code': '1425',
@@ -4312,6 +4838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi East',
     'constituency_code': '285',
     'county_code': '047',
+    'sub_county_code': '04712',
   },
   {
     'code': '1421',
@@ -4319,6 +4846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi East',
     'constituency_code': '285',
     'county_code': '047',
+    'sub_county_code': '04712',
   },
   {
     'code': '1424',
@@ -4326,6 +4854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi East',
     'constituency_code': '285',
     'county_code': '047',
+    'sub_county_code': '04712',
   },
   {
     'code': '1412',
@@ -4333,6 +4862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi North',
     'constituency_code': '283',
     'county_code': '047',
+    'sub_county_code': '04710',
   },
   {
     'code': '1413',
@@ -4340,6 +4870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi North',
     'constituency_code': '283',
     'county_code': '047',
+    'sub_county_code': '04710',
   },
   {
     'code': '1414',
@@ -4347,6 +4878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi North',
     'constituency_code': '283',
     'county_code': '047',
+    'sub_county_code': '04710',
   },
   {
     'code': '1415',
@@ -4354,6 +4886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi North',
     'constituency_code': '283',
     'county_code': '047',
+    'sub_county_code': '04710',
   },
   {
     'code': '1411',
@@ -4361,6 +4894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi North',
     'constituency_code': '283',
     'county_code': '047',
+    'sub_county_code': '04710',
   },
   {
     'code': '1406',
@@ -4368,6 +4902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi South',
     'constituency_code': '282',
     'county_code': '047',
+    'sub_county_code': '04709',
   },
   {
     'code': '1407',
@@ -4375,6 +4910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi South',
     'constituency_code': '282',
     'county_code': '047',
+    'sub_county_code': '04709',
   },
   {
     'code': '1408',
@@ -4382,6 +4918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi South',
     'constituency_code': '282',
     'county_code': '047',
+    'sub_county_code': '04709',
   },
   {
     'code': '1410',
@@ -4389,6 +4926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi South',
     'constituency_code': '282',
     'county_code': '047',
+    'sub_county_code': '04709',
   },
   {
     'code': '1409',
@@ -4396,6 +4934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi South',
     'constituency_code': '282',
     'county_code': '047',
+    'sub_county_code': '04709',
   },
   {
     'code': '1429',
@@ -4403,6 +4942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi West',
     'constituency_code': '286',
     'county_code': '047',
+    'sub_county_code': '04713',
   },
   {
     'code': '1428',
@@ -4410,6 +4950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi West',
     'constituency_code': '286',
     'county_code': '047',
+    'sub_county_code': '04713',
   },
   {
     'code': '1426',
@@ -4417,6 +4958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi West',
     'constituency_code': '286',
     'county_code': '047',
+    'sub_county_code': '04713',
   },
   {
     'code': '1427',
@@ -4424,6 +4966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Embakasi West',
     'constituency_code': '286',
     'county_code': '047',
+    'sub_county_code': '04713',
   },
   {
     'code': '0770',
@@ -4431,6 +4974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emgwen',
     'constituency_code': '155',
     'county_code': '029',
+    'sub_county_code': '02905',
   },
   {
     'code': '0771',
@@ -4438,6 +4982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emgwen',
     'constituency_code': '155',
     'county_code': '029',
+    'sub_county_code': '02905',
   },
   {
     'code': '0772',
@@ -4445,6 +4990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emgwen',
     'constituency_code': '155',
     'county_code': '029',
+    'sub_county_code': '02905',
   },
   {
     'code': '0773',
@@ -4452,6 +4998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emgwen',
     'constituency_code': '155',
     'county_code': '029',
+    'sub_county_code': '02905',
   },
   {
     'code': '1074',
@@ -4459,6 +5006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emuhaya',
     'constituency_code': '215',
     'county_code': '038',
+    'sub_county_code': '03805',
   },
   {
     'code': '1073',
@@ -4466,6 +5014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emuhaya',
     'constituency_code': '215',
     'county_code': '038',
+    'sub_county_code': '03805',
   },
   {
     'code': '1075',
@@ -4473,6 +5022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emuhaya',
     'constituency_code': '215',
     'county_code': '038',
+    'sub_county_code': '03805',
   },
   {
     'code': '0887',
@@ -4480,6 +5030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emurua Dikirr',
     'constituency_code': '178',
     'county_code': '033',
+    'sub_county_code': '03302',
   },
   {
     'code': '0890',
@@ -4487,6 +5038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emurua Dikirr',
     'constituency_code': '178',
     'county_code': '033',
+    'sub_county_code': '03302',
   },
   {
     'code': '0889',
@@ -4494,6 +5046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emurua Dikirr',
     'constituency_code': '178',
     'county_code': '033',
+    'sub_county_code': '03302',
   },
   {
     'code': '0888',
@@ -4501,6 +5054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Emurua Dikirr',
     'constituency_code': '178',
     'county_code': '033',
+    'sub_county_code': '03302',
   },
   {
     'code': '0680',
@@ -4508,6 +5062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Endebess',
     'constituency_code': '137',
     'county_code': '026',
+    'sub_county_code': '02602',
   },
   {
     'code': '0681',
@@ -4515,6 +5070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Endebess',
     'constituency_code': '137',
     'county_code': '026',
+    'sub_county_code': '02602',
   },
   {
     'code': '0682',
@@ -4522,6 +5078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Endebess',
     'constituency_code': '137',
     'county_code': '026',
+    'sub_county_code': '02602',
   },
   {
     'code': '0152',
@@ -4529,6 +5086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Fafi',
     'constituency_code': '031',
     'county_code': '007',
+    'sub_county_code': '00706',
   },
   {
     'code': '0153',
@@ -4536,6 +5094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Fafi',
     'constituency_code': '031',
     'county_code': '007',
+    'sub_county_code': '00706',
   },
   {
     'code': '0155',
@@ -4543,6 +5102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Fafi',
     'constituency_code': '031',
     'county_code': '007',
+    'sub_county_code': '00706',
   },
   {
     'code': '0154',
@@ -4550,6 +5110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Fafi',
     'constituency_code': '031',
     'county_code': '007',
+    'sub_county_code': '00706',
   },
   {
     'code': '0156',
@@ -4557,6 +5118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Fafi',
     'constituency_code': '031',
     'county_code': '007',
+    'sub_county_code': '00706',
   },
   {
     'code': '1150',
@@ -4564,6 +5126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Funyula',
     'constituency_code': '230',
     'county_code': '040',
+    'sub_county_code': '04006',
   },
   {
     'code': '1151',
@@ -4571,6 +5134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Funyula',
     'constituency_code': '230',
     'county_code': '040',
+    'sub_county_code': '04006',
   },
   {
     'code': '1148',
@@ -4578,6 +5142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Funyula',
     'constituency_code': '230',
     'county_code': '040',
+    'sub_county_code': '04006',
   },
   {
     'code': '1149',
@@ -4585,6 +5150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Funyula',
     'constituency_code': '230',
     'county_code': '040',
+    'sub_county_code': '04006',
   },
   {
     'code': '0094',
@@ -4592,6 +5158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Galole',
     'constituency_code': '019',
     'county_code': '004',
+    'sub_county_code': '00402',
   },
   {
     'code': '0092',
@@ -4599,6 +5166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Galole',
     'constituency_code': '019',
     'county_code': '004',
+    'sub_county_code': '00402',
   },
   {
     'code': '0093',
@@ -4606,6 +5174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Galole',
     'constituency_code': '019',
     'county_code': '004',
+    'sub_county_code': '00402',
   },
   {
     'code': '0095',
@@ -4613,6 +5182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Galole',
     'constituency_code': '019',
     'county_code': '004',
+    'sub_county_code': '00402',
   },
   {
     'code': '0072',
@@ -4620,6 +5190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ganze',
     'constituency_code': '015',
     'county_code': '003',
+    'sub_county_code': '00305',
   },
   {
     'code': '0071',
@@ -4627,6 +5198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ganze',
     'constituency_code': '015',
     'county_code': '003',
+    'sub_county_code': '00305',
   },
   {
     'code': '0073',
@@ -4634,6 +5206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ganze',
     'constituency_code': '015',
     'county_code': '003',
+    'sub_county_code': '00305',
   },
   {
     'code': '0074',
@@ -4641,6 +5214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ganze',
     'constituency_code': '015',
     'county_code': '003',
+    'sub_county_code': '00305',
   },
   {
     'code': '0132',
@@ -4648,6 +5222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Garissa Township',
     'constituency_code': '027',
     'county_code': '007',
+    'sub_county_code': '00702',
   },
   {
     'code': '0134',
@@ -4655,6 +5230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Garissa Township',
     'constituency_code': '027',
     'county_code': '007',
+    'sub_county_code': '00702',
   },
   {
     'code': '0133',
@@ -4662,6 +5238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Garissa Township',
     'constituency_code': '027',
     'county_code': '007',
+    'sub_county_code': '00702',
   },
   {
     'code': '0131',
@@ -4669,6 +5246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Garissa Township',
     'constituency_code': '027',
     'county_code': '007',
+    'sub_county_code': '00702',
   },
   {
     'code': '0089',
@@ -4676,6 +5254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Garsen',
     'constituency_code': '018',
     'county_code': '004',
+    'sub_county_code': '00401',
   },
   {
     'code': '0091',
@@ -4683,6 +5262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Garsen',
     'constituency_code': '018',
     'county_code': '004',
+    'sub_county_code': '00401',
   },
   {
     'code': '0087',
@@ -4690,6 +5270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Garsen',
     'constituency_code': '018',
     'county_code': '004',
+    'sub_county_code': '00401',
   },
   {
     'code': '0090',
@@ -4697,6 +5278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Garsen',
     'constituency_code': '018',
     'county_code': '004',
+    'sub_county_code': '00401',
   },
   {
     'code': '0086',
@@ -4704,6 +5286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Garsen',
     'constituency_code': '018',
     'county_code': '004',
+    'sub_county_code': '00401',
   },
   {
     'code': '0088',
@@ -4711,6 +5294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Garsen',
     'constituency_code': '018',
     'county_code': '004',
+    'sub_county_code': '00401',
   },
   {
     'code': '0549',
@@ -4718,6 +5302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatanga',
     'constituency_code': '110',
     'county_code': '021',
+    'sub_county_code': '02107',
   },
   {
     'code': '0545',
@@ -4725,6 +5310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatanga',
     'constituency_code': '110',
     'county_code': '021',
+    'sub_county_code': '02107',
   },
   {
     'code': '0546',
@@ -4732,6 +5318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatanga',
     'constituency_code': '110',
     'county_code': '021',
+    'sub_county_code': '02107',
   },
   {
     'code': '0550',
@@ -4739,6 +5326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatanga',
     'constituency_code': '110',
     'county_code': '021',
+    'sub_county_code': '02107',
   },
   {
     'code': '0548',
@@ -4746,6 +5334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatanga',
     'constituency_code': '110',
     'county_code': '021',
+    'sub_county_code': '02107',
   },
   {
     'code': '0547',
@@ -4753,6 +5342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatanga',
     'constituency_code': '110',
     'county_code': '021',
+    'sub_county_code': '02107',
   },
   {
     'code': '0557',
@@ -4760,6 +5350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatundu North',
     'constituency_code': '112',
     'county_code': '022',
+    'sub_county_code': '02202',
   },
   {
     'code': '0556',
@@ -4767,6 +5358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatundu North',
     'constituency_code': '112',
     'county_code': '022',
+    'sub_county_code': '02202',
   },
   {
     'code': '0555',
@@ -4774,6 +5366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatundu North',
     'constituency_code': '112',
     'county_code': '022',
+    'sub_county_code': '02202',
   },
   {
     'code': '0558',
@@ -4781,6 +5374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatundu North',
     'constituency_code': '112',
     'county_code': '022',
+    'sub_county_code': '02202',
   },
   {
     'code': '0551',
@@ -4788,6 +5382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatundu South',
     'constituency_code': '111',
     'county_code': '022',
+    'sub_county_code': '02201',
   },
   {
     'code': '0552',
@@ -4795,6 +5390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatundu South',
     'constituency_code': '111',
     'county_code': '022',
+    'sub_county_code': '02201',
   },
   {
     'code': '0553',
@@ -4802,6 +5398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatundu South',
     'constituency_code': '111',
     'county_code': '022',
+    'sub_county_code': '02201',
   },
   {
     'code': '0554',
@@ -4809,6 +5406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gatundu South',
     'constituency_code': '111',
     'county_code': '022',
+    'sub_county_code': '02201',
   },
   {
     'code': '1171',
@@ -4816,6 +5414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gem',
     'constituency_code': '235',
     'county_code': '041',
+    'sub_county_code': '04104',
   },
   {
     'code': '1173',
@@ -4823,6 +5422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gem',
     'constituency_code': '235',
     'county_code': '041',
+    'sub_county_code': '04104',
   },
   {
     'code': '1169',
@@ -4830,6 +5430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gem',
     'constituency_code': '235',
     'county_code': '041',
+    'sub_county_code': '04104',
   },
   {
     'code': '1174',
@@ -4837,6 +5438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gem',
     'constituency_code': '235',
     'county_code': '041',
+    'sub_county_code': '04104',
   },
   {
     'code': '1170',
@@ -4844,6 +5446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gem',
     'constituency_code': '235',
     'county_code': '041',
+    'sub_county_code': '04104',
   },
   {
     'code': '1172',
@@ -4851,6 +5454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gem',
     'constituency_code': '235',
     'county_code': '041',
+    'sub_county_code': '04104',
   },
   {
     'code': '0505',
@@ -4858,6 +5462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gichugu',
     'constituency_code': '101',
     'county_code': '020',
+    'sub_county_code': '02003',
   },
   {
     'code': '0504',
@@ -4865,6 +5470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gichugu',
     'constituency_code': '101',
     'county_code': '020',
+    'sub_county_code': '02003',
   },
   {
     'code': '0508',
@@ -4872,6 +5478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gichugu',
     'constituency_code': '101',
     'county_code': '020',
+    'sub_county_code': '02003',
   },
   {
     'code': '0507',
@@ -4879,6 +5486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gichugu',
     'constituency_code': '101',
     'county_code': '020',
+    'sub_county_code': '02003',
   },
   {
     'code': '0506',
@@ -4886,6 +5494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gichugu',
     'constituency_code': '101',
     'county_code': '020',
+    'sub_county_code': '02003',
   },
   {
     'code': '0845',
@@ -4893,6 +5502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gilgil',
     'constituency_code': '169',
     'county_code': '032',
+    'sub_county_code': '03204',
   },
   {
     'code': '0844',
@@ -4900,6 +5510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gilgil',
     'constituency_code': '169',
     'county_code': '032',
+    'sub_county_code': '03204',
   },
   {
     'code': '0847',
@@ -4907,6 +5518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gilgil',
     'constituency_code': '169',
     'county_code': '032',
+    'sub_county_code': '03204',
   },
   {
     'code': '0846',
@@ -4914,6 +5526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gilgil',
     'constituency_code': '169',
     'county_code': '032',
+    'sub_county_code': '03204',
   },
   {
     'code': '0848',
@@ -4921,6 +5534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Gilgil',
     'constituency_code': '169',
     'county_code': '032',
+    'sub_county_code': '03204',
   },
   {
     'code': '0578',
@@ -4928,6 +5542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Githunguri',
     'constituency_code': '116',
     'county_code': '022',
+    'sub_county_code': '02206',
   },
   {
     'code': '0577',
@@ -4935,6 +5550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Githunguri',
     'constituency_code': '116',
     'county_code': '022',
+    'sub_county_code': '02206',
   },
   {
     'code': '0579',
@@ -4942,6 +5558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Githunguri',
     'constituency_code': '116',
     'county_code': '022',
+    'sub_county_code': '02206',
   },
   {
     'code': '0581',
@@ -4949,6 +5566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Githunguri',
     'constituency_code': '116',
     'county_code': '022',
+    'sub_county_code': '02206',
   },
   {
     'code': '0580',
@@ -4956,6 +5574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Githunguri',
     'constituency_code': '116',
     'county_code': '022',
+    'sub_county_code': '02206',
   },
   {
     'code': '1065',
@@ -4963,6 +5582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Hamisi',
     'constituency_code': '213',
     'county_code': '038',
+    'sub_county_code': '03803',
   },
   {
     'code': '1064',
@@ -4970,6 +5590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Hamisi',
     'constituency_code': '213',
     'county_code': '038',
+    'sub_county_code': '03803',
   },
   {
     'code': '1067',
@@ -4977,6 +5598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Hamisi',
     'constituency_code': '213',
     'county_code': '038',
+    'sub_county_code': '03803',
   },
   {
     'code': '1062',
@@ -4984,6 +5606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Hamisi',
     'constituency_code': '213',
     'county_code': '038',
+    'sub_county_code': '03803',
   },
   {
     'code': '1063',
@@ -4991,6 +5614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Hamisi',
     'constituency_code': '213',
     'county_code': '038',
+    'sub_county_code': '03803',
   },
   {
     'code': '1061',
@@ -4998,6 +5622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Hamisi',
     'constituency_code': '213',
     'county_code': '038',
+    'sub_county_code': '03803',
   },
   {
     'code': '1066',
@@ -5005,6 +5630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Hamisi',
     'constituency_code': '213',
     'county_code': '038',
+    'sub_county_code': '03803',
   },
   {
     'code': '1242',
@@ -5012,6 +5638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Homa Bay Town',
     'constituency_code': '249',
     'county_code': '043',
+    'sub_county_code': '04305',
   },
   {
     'code': '1241',
@@ -5019,6 +5646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Homa Bay Town',
     'constituency_code': '249',
     'county_code': '043',
+    'sub_county_code': '04305',
   },
   {
     'code': '1244',
@@ -5026,6 +5654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Homa Bay Town',
     'constituency_code': '249',
     'county_code': '043',
+    'sub_county_code': '04305',
   },
   {
     'code': '1243',
@@ -5033,6 +5662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Homa Bay Town',
     'constituency_code': '249',
     'county_code': '043',
+    'sub_county_code': '04305',
   },
   {
     'code': '0256',
@@ -5040,6 +5670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe Central',
     'constituency_code': '052',
     'county_code': '012',
+    'sub_county_code': '01202',
   },
   {
     'code': '0257',
@@ -5047,6 +5678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe Central',
     'constituency_code': '052',
     'county_code': '012',
+    'sub_county_code': '01202',
   },
   {
     'code': '0258',
@@ -5054,6 +5686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe Central',
     'constituency_code': '052',
     'county_code': '012',
+    'sub_county_code': '01202',
   },
   {
     'code': '0260',
@@ -5061,6 +5694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe Central',
     'constituency_code': '052',
     'county_code': '012',
+    'sub_county_code': '01202',
   },
   {
     'code': '0259',
@@ -5068,6 +5702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe Central',
     'constituency_code': '052',
     'county_code': '012',
+    'sub_county_code': '01202',
   },
   {
     'code': '0265',
@@ -5075,6 +5710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe North',
     'constituency_code': '053',
     'county_code': '012',
+    'sub_county_code': '01203',
   },
   {
     'code': '0261',
@@ -5082,6 +5718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe North',
     'constituency_code': '053',
     'county_code': '012',
+    'sub_county_code': '01203',
   },
   {
     'code': '0263',
@@ -5089,6 +5726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe North',
     'constituency_code': '053',
     'county_code': '012',
+    'sub_county_code': '01203',
   },
   {
     'code': '0264',
@@ -5096,6 +5734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe North',
     'constituency_code': '053',
     'county_code': '012',
+    'sub_county_code': '01203',
   },
   {
     'code': '0262',
@@ -5103,6 +5742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe North',
     'constituency_code': '053',
     'county_code': '012',
+    'sub_county_code': '01203',
   },
   {
     'code': '0254',
@@ -5110,6 +5750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe South',
     'constituency_code': '051',
     'county_code': '012',
+    'sub_county_code': '01201',
   },
   {
     'code': '0253',
@@ -5117,6 +5758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe South',
     'constituency_code': '051',
     'county_code': '012',
+    'sub_county_code': '01201',
   },
   {
     'code': '0255',
@@ -5124,6 +5766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe South',
     'constituency_code': '051',
     'county_code': '012',
+    'sub_county_code': '01201',
   },
   {
     'code': '0252',
@@ -5131,6 +5774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe South',
     'constituency_code': '051',
     'county_code': '012',
+    'sub_county_code': '01201',
   },
   {
     'code': '0251',
@@ -5138,6 +5782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Igembe South',
     'constituency_code': '051',
     'county_code': '012',
+    'sub_county_code': '01201',
   },
   {
     'code': '0157',
@@ -5145,6 +5790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ijara',
     'constituency_code': '032',
     'county_code': '007',
+    'sub_county_code': '00701',
   },
   {
     'code': '0159',
@@ -5152,6 +5798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ijara',
     'constituency_code': '032',
     'county_code': '007',
+    'sub_county_code': '00707',
   },
   {
     'code': '0160',
@@ -5159,6 +5806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ijara',
     'constituency_code': '032',
     'county_code': '007',
+    'sub_county_code': '00707',
   },
   {
     'code': '0158',
@@ -5166,6 +5814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ijara',
     'constituency_code': '032',
     'county_code': '007',
+    'sub_county_code': '00701',
   },
   {
     'code': '1050',
@@ -5173,6 +5822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ikolomani',
     'constituency_code': '210',
     'county_code': '037',
+    'sub_county_code': '03712',
   },
   {
     'code': '1048',
@@ -5180,6 +5830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ikolomani',
     'constituency_code': '210',
     'county_code': '037',
+    'sub_county_code': '03712',
   },
   {
     'code': '1049',
@@ -5187,6 +5838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ikolomani',
     'constituency_code': '210',
     'county_code': '037',
+    'sub_county_code': '03712',
   },
   {
     'code': '1047',
@@ -5194,6 +5846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ikolomani',
     'constituency_code': '210',
     'county_code': '037',
+    'sub_county_code': '03712',
   },
   {
     'code': '0242',
@@ -5201,6 +5854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Isiolo North',
     'constituency_code': '049',
     'county_code': '011',
+    'sub_county_code': '01102',
   },
   {
     'code': '0246',
@@ -5208,6 +5862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Isiolo North',
     'constituency_code': '049',
     'county_code': '011',
+    'sub_county_code': '01102',
   },
   {
     'code': '0243',
@@ -5215,6 +5870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Isiolo North',
     'constituency_code': '049',
     'county_code': '011',
+    'sub_county_code': '01101',
   },
   {
     'code': '0244',
@@ -5222,6 +5878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Isiolo North',
     'constituency_code': '049',
     'county_code': '011',
+    'sub_county_code': '01101',
   },
   {
     'code': '0245',
@@ -5229,6 +5886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Isiolo North',
     'constituency_code': '049',
     'county_code': '011',
+    'sub_county_code': '01102',
   },
   {
     'code': '0247',
@@ -5236,6 +5894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Isiolo North',
     'constituency_code': '049',
     'county_code': '011',
+    'sub_county_code': '01102',
   },
   {
     'code': '0241',
@@ -5243,6 +5902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Isiolo North',
     'constituency_code': '049',
     'county_code': '011',
+    'sub_county_code': '01102',
   },
   {
     'code': '0248',
@@ -5250,6 +5910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Isiolo South',
     'constituency_code': '050',
     'county_code': '011',
+    'sub_county_code': '01103',
   },
   {
     'code': '0249',
@@ -5257,6 +5918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Isiolo South',
     'constituency_code': '050',
     'county_code': '011',
+    'sub_county_code': '01103',
   },
   {
     'code': '0250',
@@ -5264,6 +5926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Isiolo South',
     'constituency_code': '050',
     'county_code': '011',
+    'sub_county_code': '01103',
   },
   {
     'code': '0006',
@@ -5271,6 +5934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Jomvu',
     'constituency_code': '002',
     'county_code': '001',
+    'sub_county_code': '00102',
   },
   {
     'code': '0008',
@@ -5278,6 +5942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Jomvu',
     'constituency_code': '002',
     'county_code': '001',
+    'sub_county_code': '00102',
   },
   {
     'code': '0007',
@@ -5285,6 +5950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Jomvu',
     'constituency_code': '002',
     'county_code': '001',
+    'sub_county_code': '00102',
   },
   {
     'code': '0561',
@@ -5292,6 +5958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Juja',
     'constituency_code': '113',
     'county_code': '022',
+    'sub_county_code': '02203',
   },
   {
     'code': '0563',
@@ -5299,6 +5966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Juja',
     'constituency_code': '113',
     'county_code': '022',
+    'sub_county_code': '02203',
   },
   {
     'code': '0559',
@@ -5306,6 +5974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Juja',
     'constituency_code': '113',
     'county_code': '022',
+    'sub_county_code': '02203',
   },
   {
     'code': '0560',
@@ -5313,6 +5982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Juja',
     'constituency_code': '113',
     'county_code': '022',
+    'sub_county_code': '02203',
   },
   {
     'code': '0562',
@@ -5320,6 +5990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Juja',
     'constituency_code': '113',
     'county_code': '022',
+    'sub_county_code': '02203',
   },
   {
     'code': '0591',
@@ -5327,6 +5998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabete',
     'constituency_code': '119',
     'county_code': '022',
+    'sub_county_code': '02209',
   },
   {
     'code': '0594',
@@ -5334,6 +6006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabete',
     'constituency_code': '119',
     'county_code': '022',
+    'sub_county_code': '02209',
   },
   {
     'code': '0592',
@@ -5341,6 +6014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabete',
     'constituency_code': '119',
     'county_code': '022',
+    'sub_county_code': '02209',
   },
   {
     'code': '0593',
@@ -5348,6 +6022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabete',
     'constituency_code': '119',
     'county_code': '022',
+    'sub_county_code': '02209',
   },
   {
     'code': '0595',
@@ -5355,6 +6030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabete',
     'constituency_code': '119',
     'county_code': '022',
+    'sub_county_code': '02209',
   },
   {
     'code': '1226',
@@ -5362,6 +6038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabondo Kasipul',
     'constituency_code': '246',
     'county_code': '043',
+    'sub_county_code': '04302',
   },
   {
     'code': '1227',
@@ -5369,6 +6046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabondo Kasipul',
     'constituency_code': '246',
     'county_code': '043',
+    'sub_county_code': '04302',
   },
   {
     'code': '1229',
@@ -5376,6 +6054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabondo Kasipul',
     'constituency_code': '246',
     'county_code': '043',
+    'sub_county_code': '04302',
   },
   {
     'code': '1228',
@@ -5383,6 +6062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabondo Kasipul',
     'constituency_code': '246',
     'county_code': '043',
+    'sub_county_code': '04302',
   },
   {
     'code': '1087',
@@ -5390,6 +6070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabuchai',
     'constituency_code': '218',
     'county_code': '039',
+    'sub_county_code': '03904',
   },
   {
     'code': '1085',
@@ -5397,6 +6078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabuchai',
     'constituency_code': '218',
     'county_code': '039',
+    'sub_county_code': '03904',
   },
   {
     'code': '1088',
@@ -5404,6 +6086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabuchai',
     'constituency_code': '218',
     'county_code': '039',
+    'sub_county_code': '03904',
   },
   {
     'code': '1086',
@@ -5411,6 +6094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kabuchai',
     'constituency_code': '218',
     'county_code': '039',
+    'sub_county_code': '03904',
   },
   {
     'code': '0656',
@@ -5418,6 +6102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kacheliba',
     'constituency_code': '131',
     'county_code': '024',
+    'sub_county_code': '02403',
   },
   {
     'code': '0653',
@@ -5425,6 +6110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kacheliba',
     'constituency_code': '131',
     'county_code': '024',
+    'sub_county_code': '02403',
   },
   {
     'code': '0654',
@@ -5432,6 +6118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kacheliba',
     'constituency_code': '131',
     'county_code': '024',
+    'sub_county_code': '02403',
   },
   {
     'code': '0655',
@@ -5439,6 +6126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kacheliba',
     'constituency_code': '131',
     'county_code': '024',
+    'sub_county_code': '02403',
   },
   {
     'code': '0652',
@@ -5446,6 +6134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kacheliba',
     'constituency_code': '131',
     'county_code': '024',
+    'sub_county_code': '02403',
   },
   {
     'code': '0651',
@@ -5453,6 +6142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kacheliba',
     'constituency_code': '131',
     'county_code': '024',
+    'sub_county_code': '02403',
   },
   {
     'code': '0423',
@@ -5460,6 +6150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kaiti',
     'constituency_code': '085',
     'county_code': '017',
+    'sub_county_code': '01703',
   },
   {
     'code': '0421',
@@ -5467,6 +6158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kaiti',
     'constituency_code': '085',
     'county_code': '017',
+    'sub_county_code': '01703',
   },
   {
     'code': '0422',
@@ -5474,6 +6166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kaiti',
     'constituency_code': '085',
     'county_code': '017',
+    'sub_county_code': '01703',
   },
   {
     'code': '0420',
@@ -5481,6 +6174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kaiti',
     'constituency_code': '085',
     'county_code': '017',
+    'sub_county_code': '01703',
   },
   {
     'code': '0918',
@@ -5488,6 +6182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado Central',
     'constituency_code': '184',
     'county_code': '034',
+    'sub_county_code': '03402',
   },
   {
     'code': '0917',
@@ -5495,6 +6190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado Central',
     'constituency_code': '184',
     'county_code': '034',
+    'sub_county_code': '03402',
   },
   {
     'code': '0919',
@@ -5502,6 +6198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado Central',
     'constituency_code': '184',
     'county_code': '034',
+    'sub_county_code': '03402',
   },
   {
     'code': '0920',
@@ -5509,6 +6206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado Central',
     'constituency_code': '184',
     'county_code': '034',
+    'sub_county_code': '03402',
   },
   {
     'code': '0916',
@@ -5516,6 +6214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado Central',
     'constituency_code': '184',
     'county_code': '034',
+    'sub_county_code': '03402',
   },
   {
     'code': '0925',
@@ -5523,6 +6222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado East',
     'constituency_code': '185',
     'county_code': '034',
+    'sub_county_code': '03403',
   },
   {
     'code': '0921',
@@ -5530,6 +6230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado East',
     'constituency_code': '185',
     'county_code': '034',
+    'sub_county_code': '03403',
   },
   {
     'code': '0924',
@@ -5537,6 +6238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado East',
     'constituency_code': '185',
     'county_code': '034',
+    'sub_county_code': '03403',
   },
   {
     'code': '0922',
@@ -5544,6 +6246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado East',
     'constituency_code': '185',
     'county_code': '034',
+    'sub_county_code': '03403',
   },
   {
     'code': '0923',
@@ -5551,6 +6254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado East',
     'constituency_code': '185',
     'county_code': '034',
+    'sub_county_code': '03403',
   },
   {
     'code': '0915',
@@ -5558,6 +6262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado North',
     'constituency_code': '183',
     'county_code': '034',
+    'sub_county_code': '03401',
   },
   {
     'code': '0913',
@@ -5565,6 +6270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado North',
     'constituency_code': '183',
     'county_code': '034',
+    'sub_county_code': '03401',
   },
   {
     'code': '0911',
@@ -5572,6 +6278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado North',
     'constituency_code': '183',
     'county_code': '034',
+    'sub_county_code': '03401',
   },
   {
     'code': '0914',
@@ -5579,6 +6286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado North',
     'constituency_code': '183',
     'county_code': '034',
+    'sub_county_code': '03401',
   },
   {
     'code': '0912',
@@ -5586,6 +6294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado North',
     'constituency_code': '183',
     'county_code': '034',
+    'sub_county_code': '03401',
   },
   {
     'code': '0931',
@@ -5593,6 +6302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado South',
     'constituency_code': '187',
     'county_code': '034',
+    'sub_county_code': '03405',
   },
   {
     'code': '0935',
@@ -5600,6 +6310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado South',
     'constituency_code': '187',
     'county_code': '034',
+    'sub_county_code': '03405',
   },
   {
     'code': '0933',
@@ -5607,6 +6318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado South',
     'constituency_code': '187',
     'county_code': '034',
+    'sub_county_code': '03405',
   },
   {
     'code': '0932',
@@ -5614,6 +6326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado South',
     'constituency_code': '187',
     'county_code': '034',
+    'sub_county_code': '03405',
   },
   {
     'code': '0934',
@@ -5621,6 +6334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado South',
     'constituency_code': '187',
     'county_code': '034',
+    'sub_county_code': '03405',
   },
   {
     'code': '0929',
@@ -5628,6 +6342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado West',
     'constituency_code': '186',
     'county_code': '034',
+    'sub_county_code': '03404',
   },
   {
     'code': '0927',
@@ -5635,6 +6350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado West',
     'constituency_code': '186',
     'county_code': '034',
+    'sub_county_code': '03404',
   },
   {
     'code': '0926',
@@ -5642,6 +6358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado West',
     'constituency_code': '186',
     'county_code': '034',
+    'sub_county_code': '03404',
   },
   {
     'code': '0928',
@@ -5649,6 +6366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado West',
     'constituency_code': '186',
     'county_code': '034',
+    'sub_county_code': '03404',
   },
   {
     'code': '0930',
@@ -5656,6 +6374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kajiado West',
     'constituency_code': '186',
     'county_code': '034',
+    'sub_county_code': '03404',
   },
   {
     'code': '0065',
@@ -5663,6 +6382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kaloleni',
     'constituency_code': '013',
     'county_code': '003',
+    'sub_county_code': '00303',
   },
   {
     'code': '0064',
@@ -5670,6 +6390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kaloleni',
     'constituency_code': '013',
     'county_code': '003',
+    'sub_county_code': '00303',
   },
   {
     'code': '0063',
@@ -5677,6 +6398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kaloleni',
     'constituency_code': '013',
     'county_code': '003',
+    'sub_county_code': '00303',
   },
   {
     'code': '0066',
@@ -5684,6 +6406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kaloleni',
     'constituency_code': '013',
     'county_code': '003',
+    'sub_county_code': '00303',
   },
   {
     'code': '1437',
@@ -5691,6 +6414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kamukunji',
     'constituency_code': '288',
     'county_code': '047',
+    'sub_county_code': '04715',
   },
   {
     'code': '1438',
@@ -5698,6 +6422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kamukunji',
     'constituency_code': '288',
     'county_code': '047',
+    'sub_county_code': '04715',
   },
   {
     'code': '1435',
@@ -5705,6 +6430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kamukunji',
     'constituency_code': '288',
     'county_code': '047',
+    'sub_county_code': '04715',
   },
   {
     'code': '1436',
@@ -5712,6 +6438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kamukunji',
     'constituency_code': '288',
     'county_code': '047',
+    'sub_county_code': '04715',
   },
   {
     'code': '1434',
@@ -5719,6 +6446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kamukunji',
     'constituency_code': '288',
     'county_code': '047',
+    'sub_county_code': '04715',
   },
   {
     'code': '0542',
@@ -5726,6 +6454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kandara',
     'constituency_code': '109',
     'county_code': '021',
+    'sub_county_code': '02106',
   },
   {
     'code': '0543',
@@ -5733,6 +6462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kandara',
     'constituency_code': '109',
     'county_code': '021',
+    'sub_county_code': '02106',
   },
   {
     'code': '0541',
@@ -5740,6 +6470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kandara',
     'constituency_code': '109',
     'county_code': '021',
+    'sub_county_code': '02106',
   },
   {
     'code': '0540',
@@ -5747,6 +6478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kandara',
     'constituency_code': '109',
     'county_code': '021',
+    'sub_county_code': '02106',
   },
   {
     'code': '0539',
@@ -5754,6 +6486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kandara',
     'constituency_code': '109',
     'county_code': '021',
+    'sub_county_code': '02106',
   },
   {
     'code': '0544',
@@ -5761,6 +6494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kandara',
     'constituency_code': '109',
     'county_code': '021',
+    'sub_county_code': '02106',
   },
   {
     'code': '1097',
@@ -5768,6 +6502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kanduyi',
     'constituency_code': '220',
     'county_code': '039',
+    'sub_county_code': '03906',
   },
   {
     'code': '1096',
@@ -5775,6 +6510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kanduyi',
     'constituency_code': '220',
     'county_code': '039',
+    'sub_county_code': '03906',
   },
   {
     'code': '1101',
@@ -5782,6 +6518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kanduyi',
     'constituency_code': '220',
     'county_code': '039',
+    'sub_county_code': '03906',
   },
   {
     'code': '1099',
@@ -5789,6 +6526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kanduyi',
     'constituency_code': '220',
     'county_code': '039',
+    'sub_county_code': '03906',
   },
   {
     'code': '1102',
@@ -5796,6 +6534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kanduyi',
     'constituency_code': '220',
     'county_code': '039',
+    'sub_county_code': '03906',
   },
   {
     'code': '1100',
@@ -5803,6 +6542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kanduyi',
     'constituency_code': '220',
     'county_code': '039',
+    'sub_county_code': '03906',
   },
   {
     'code': '1103',
@@ -5810,6 +6550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kanduyi',
     'constituency_code': '220',
     'county_code': '039',
+    'sub_county_code': '03906',
   },
   {
     'code': '1098',
@@ -5817,6 +6558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kanduyi',
     'constituency_code': '220',
     'county_code': '039',
+    'sub_county_code': '03906',
   },
   {
     'code': '0516',
@@ -5824,6 +6566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kangema',
     'constituency_code': '104',
     'county_code': '021',
+    'sub_county_code': '02101',
   },
   {
     'code': '0517',
@@ -5831,6 +6574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kangema',
     'constituency_code': '104',
     'county_code': '021',
+    'sub_county_code': '02101',
   },
   {
     'code': '0518',
@@ -5838,6 +6582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kangema',
     'constituency_code': '104',
     'county_code': '021',
+    'sub_county_code': '02101',
   },
   {
     'code': '0382',
@@ -5845,6 +6590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kangundo',
     'constituency_code': '077',
     'county_code': '016',
+    'sub_county_code': '01603',
   },
   {
     'code': '0383',
@@ -5852,6 +6598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kangundo',
     'constituency_code': '077',
     'county_code': '016',
+    'sub_county_code': '01603',
   },
   {
     'code': '0381',
@@ -5859,6 +6606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kangundo',
     'constituency_code': '077',
     'county_code': '016',
+    'sub_county_code': '01603',
   },
   {
     'code': '0384',
@@ -5866,6 +6614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kangundo',
     'constituency_code': '077',
     'county_code': '016',
+    'sub_county_code': '01603',
   },
   {
     'code': '0645',
@@ -5873,6 +6622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapenguria',
     'constituency_code': '129',
     'county_code': '024',
+    'sub_county_code': '02401',
   },
   {
     'code': '0642',
@@ -5880,6 +6630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapenguria',
     'constituency_code': '129',
     'county_code': '024',
+    'sub_county_code': '02401',
   },
   {
     'code': '0643',
@@ -5887,6 +6638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapenguria',
     'constituency_code': '129',
     'county_code': '024',
+    'sub_county_code': '02401',
   },
   {
     'code': '0641',
@@ -5894,6 +6646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapenguria',
     'constituency_code': '129',
     'county_code': '024',
+    'sub_county_code': '02401',
   },
   {
     'code': '0644',
@@ -5901,6 +6654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapenguria',
     'constituency_code': '129',
     'county_code': '024',
+    'sub_county_code': '02401',
   },
   {
     'code': '0646',
@@ -5908,6 +6662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapenguria',
     'constituency_code': '129',
     'county_code': '024',
+    'sub_county_code': '02401',
   },
   {
     'code': '0723',
@@ -5915,6 +6670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapseret',
     'constituency_code': '145',
     'county_code': '027',
+    'sub_county_code': '02705',
   },
   {
     'code': '0726',
@@ -5922,6 +6678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapseret',
     'constituency_code': '145',
     'county_code': '027',
+    'sub_county_code': '02705',
   },
   {
     'code': '0725',
@@ -5929,6 +6686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapseret',
     'constituency_code': '145',
     'county_code': '027',
+    'sub_county_code': '02705',
   },
   {
     'code': '0724',
@@ -5936,6 +6694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapseret',
     'constituency_code': '145',
     'county_code': '027',
+    'sub_county_code': '02705',
   },
   {
     'code': '0722',
@@ -5943,6 +6702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kapseret',
     'constituency_code': '145',
     'county_code': '027',
+    'sub_county_code': '02705',
   },
   {
     'code': '1232',
@@ -5950,6 +6710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Karachuonyo',
     'constituency_code': '247',
     'county_code': '043',
+    'sub_county_code': '04303',
   },
   {
     'code': '1233',
@@ -5957,6 +6718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Karachuonyo',
     'constituency_code': '247',
     'county_code': '043',
+    'sub_county_code': '04303',
   },
   {
     'code': '1236',
@@ -5964,6 +6726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Karachuonyo',
     'constituency_code': '247',
     'county_code': '043',
+    'sub_county_code': '04303',
   },
   {
     'code': '1234',
@@ -5971,6 +6734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Karachuonyo',
     'constituency_code': '247',
     'county_code': '043',
+    'sub_county_code': '04303',
   },
   {
     'code': '1231',
@@ -5978,6 +6742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Karachuonyo',
     'constituency_code': '247',
     'county_code': '043',
+    'sub_county_code': '04303',
   },
   {
     'code': '1235',
@@ -5985,6 +6750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Karachuonyo',
     'constituency_code': '247',
     'county_code': '043',
+    'sub_county_code': '04303',
   },
   {
     'code': '1230',
@@ -5992,6 +6758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Karachuonyo',
     'constituency_code': '247',
     'county_code': '043',
+    'sub_county_code': '04303',
   },
   {
     'code': '1396',
@@ -5999,6 +6766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kasarani',
     'constituency_code': '280',
     'county_code': '047',
+    'sub_county_code': '04707',
   },
   {
     'code': '1398',
@@ -6006,6 +6774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kasarani',
     'constituency_code': '280',
     'county_code': '047',
+    'sub_county_code': '04707',
   },
   {
     'code': '1397',
@@ -6013,6 +6782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kasarani',
     'constituency_code': '280',
     'county_code': '047',
+    'sub_county_code': '04707',
   },
   {
     'code': '1399',
@@ -6020,6 +6790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kasarani',
     'constituency_code': '280',
     'county_code': '047',
+    'sub_county_code': '04707',
   },
   {
     'code': '1400',
@@ -6027,6 +6798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kasarani',
     'constituency_code': '280',
     'county_code': '047',
+    'sub_county_code': '04707',
   },
   {
     'code': '1223',
@@ -6034,6 +6806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kasipul',
     'constituency_code': '245',
     'county_code': '043',
+    'sub_county_code': '04301',
   },
   {
     'code': '1224',
@@ -6041,6 +6814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kasipul',
     'constituency_code': '245',
     'county_code': '043',
+    'sub_county_code': '04301',
   },
   {
     'code': '1222',
@@ -6048,6 +6822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kasipul',
     'constituency_code': '245',
     'county_code': '043',
+    'sub_county_code': '04301',
   },
   {
     'code': '1225',
@@ -6055,6 +6830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kasipul',
     'constituency_code': '245',
     'county_code': '043',
+    'sub_county_code': '04301',
   },
   {
     'code': '1221',
@@ -6062,6 +6838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kasipul',
     'constituency_code': '245',
     'county_code': '043',
+    'sub_county_code': '04301',
   },
   {
     'code': '0391',
@@ -6069,6 +6846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kathiani',
     'constituency_code': '079',
     'county_code': '016',
+    'sub_county_code': '01605',
   },
   {
     'code': '0393',
@@ -6076,6 +6854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kathiani',
     'constituency_code': '079',
     'county_code': '016',
+    'sub_county_code': '01605',
   },
   {
     'code': '0390',
@@ -6083,6 +6862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kathiani',
     'constituency_code': '079',
     'county_code': '016',
+    'sub_county_code': '01605',
   },
   {
     'code': '0392',
@@ -6090,6 +6870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kathiani',
     'constituency_code': '079',
     'county_code': '016',
+    'sub_county_code': '01605',
   },
   {
     'code': '0741',
@@ -6097,6 +6878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Keiyo North',
     'constituency_code': '149',
     'county_code': '028',
+    'sub_county_code': '02803',
   },
   {
     'code': '0742',
@@ -6104,6 +6886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Keiyo North',
     'constituency_code': '149',
     'county_code': '028',
+    'sub_county_code': '02803',
   },
   {
     'code': '0743',
@@ -6111,6 +6894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Keiyo North',
     'constituency_code': '149',
     'county_code': '028',
+    'sub_county_code': '02803',
   },
   {
     'code': '0744',
@@ -6118,6 +6902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Keiyo North',
     'constituency_code': '149',
     'county_code': '028',
+    'sub_county_code': '02803',
   },
   {
     'code': '0746',
@@ -6125,6 +6910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Keiyo South',
     'constituency_code': '150',
     'county_code': '028',
+    'sub_county_code': '02804',
   },
   {
     'code': '0749',
@@ -6132,6 +6918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Keiyo South',
     'constituency_code': '150',
     'county_code': '028',
+    'sub_county_code': '02804',
   },
   {
     'code': '0745',
@@ -6139,6 +6926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Keiyo South',
     'constituency_code': '150',
     'county_code': '028',
+    'sub_county_code': '02804',
   },
   {
     'code': '0750',
@@ -6146,6 +6934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Keiyo South',
     'constituency_code': '150',
     'county_code': '028',
+    'sub_county_code': '02804',
   },
   {
     'code': '0747',
@@ -6153,6 +6942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Keiyo South',
     'constituency_code': '150',
     'county_code': '028',
+    'sub_county_code': '02804',
   },
   {
     'code': '0748',
@@ -6160,6 +6950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Keiyo South',
     'constituency_code': '150',
     'county_code': '028',
+    'sub_county_code': '02804',
   },
   {
     'code': '0728',
@@ -6167,6 +6958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kesses',
     'constituency_code': '146',
     'county_code': '027',
+    'sub_county_code': '02706',
   },
   {
     'code': '0727',
@@ -6174,6 +6966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kesses',
     'constituency_code': '146',
     'county_code': '027',
+    'sub_county_code': '02706',
   },
   {
     'code': '0730',
@@ -6181,6 +6974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kesses',
     'constituency_code': '146',
     'county_code': '027',
+    'sub_county_code': '02706',
   },
   {
     'code': '0729',
@@ -6188,6 +6982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kesses',
     'constituency_code': '146',
     'county_code': '027',
+    'sub_county_code': '02706',
   },
   {
     'code': '1040',
@@ -6195,6 +6990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Khwisero',
     'constituency_code': '208',
     'county_code': '037',
+    'sub_county_code': '03710',
   },
   {
     'code': '1038',
@@ -6202,6 +6998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Khwisero',
     'constituency_code': '208',
     'county_code': '037',
+    'sub_county_code': '03710',
   },
   {
     'code': '1037',
@@ -6209,6 +7006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Khwisero',
     'constituency_code': '208',
     'county_code': '037',
+    'sub_county_code': '03710',
   },
   {
     'code': '1039',
@@ -6216,6 +7014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Khwisero',
     'constituency_code': '208',
     'county_code': '037',
+    'sub_county_code': '03710',
   },
   {
     'code': '0586',
@@ -6223,6 +7022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiambaa',
     'constituency_code': '118',
     'county_code': '022',
+    'sub_county_code': '02208',
   },
   {
     'code': '0587',
@@ -6230,6 +7030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiambaa',
     'constituency_code': '118',
     'county_code': '022',
+    'sub_county_code': '02208',
   },
   {
     'code': '0590',
@@ -6237,6 +7038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiambaa',
     'constituency_code': '118',
     'county_code': '022',
+    'sub_county_code': '02208',
   },
   {
     'code': '0589',
@@ -6244,6 +7046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiambaa',
     'constituency_code': '118',
     'county_code': '022',
+    'sub_county_code': '02208',
   },
   {
     'code': '0588',
@@ -6251,6 +7054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiambaa',
     'constituency_code': '118',
     'county_code': '022',
+    'sub_county_code': '02208',
   },
   {
     'code': '0583',
@@ -6258,6 +7062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiambu',
     'constituency_code': '117',
     'county_code': '022',
+    'sub_county_code': '02207',
   },
   {
     'code': '0584',
@@ -6265,6 +7070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiambu',
     'constituency_code': '117',
     'county_code': '022',
+    'sub_county_code': '02207',
   },
   {
     'code': '0582',
@@ -6272,6 +7078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiambu',
     'constituency_code': '117',
     'county_code': '022',
+    'sub_county_code': '02207',
   },
   {
     'code': '0585',
@@ -6279,6 +7086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiambu',
     'constituency_code': '117',
     'county_code': '022',
+    'sub_county_code': '02207',
   },
   {
     'code': '1386',
@@ -6286,6 +7094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibra',
     'constituency_code': '278',
     'county_code': '047',
+    'sub_county_code': '04705',
   },
   {
     'code': '1387',
@@ -6293,6 +7102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibra',
     'constituency_code': '278',
     'county_code': '047',
+    'sub_county_code': '04705',
   },
   {
     'code': '1388',
@@ -6300,6 +7110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibra',
     'constituency_code': '278',
     'county_code': '047',
+    'sub_county_code': '04705',
   },
   {
     'code': '1390',
@@ -6307,6 +7118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibra',
     'constituency_code': '278',
     'county_code': '047',
+    'sub_county_code': '04705',
   },
   {
     'code': '1389',
@@ -6314,6 +7126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibra',
     'constituency_code': '278',
     'county_code': '047',
+    'sub_county_code': '04705',
   },
   {
     'code': '0440',
@@ -6321,6 +7134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibwezi East',
     'constituency_code': '088',
     'county_code': '017',
+    'sub_county_code': '01706',
   },
   {
     'code': '0437',
@@ -6328,6 +7142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibwezi East',
     'constituency_code': '088',
     'county_code': '017',
+    'sub_county_code': '01706',
   },
   {
     'code': '0438',
@@ -6335,6 +7150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibwezi East',
     'constituency_code': '088',
     'county_code': '017',
+    'sub_county_code': '01706',
   },
   {
     'code': '0439',
@@ -6342,6 +7158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibwezi East',
     'constituency_code': '088',
     'county_code': '017',
+    'sub_county_code': '01706',
   },
   {
     'code': '0436',
@@ -6349,6 +7166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibwezi West',
     'constituency_code': '087',
     'county_code': '017',
+    'sub_county_code': '01705',
   },
   {
     'code': '0433',
@@ -6356,6 +7174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibwezi West',
     'constituency_code': '087',
     'county_code': '017',
+    'sub_county_code': '01705',
   },
   {
     'code': '0434',
@@ -6363,6 +7182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibwezi West',
     'constituency_code': '087',
     'county_code': '017',
+    'sub_county_code': '01705',
   },
   {
     'code': '0431',
@@ -6370,6 +7190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibwezi West',
     'constituency_code': '087',
     'county_code': '017',
+    'sub_county_code': '01705',
   },
   {
     'code': '0435',
@@ -6377,6 +7198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibwezi West',
     'constituency_code': '087',
     'county_code': '017',
+    'sub_county_code': '01705',
   },
   {
     'code': '0432',
@@ -6384,6 +7206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kibwezi West',
     'constituency_code': '087',
     'county_code': '017',
+    'sub_county_code': '01705',
   },
   {
     'code': '0476',
@@ -6391,6 +7214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kieni',
     'constituency_code': '095',
     'county_code': '019',
+    'sub_county_code': '01904',
   },
   {
     'code': '0473',
@@ -6398,6 +7222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kieni',
     'constituency_code': '095',
     'county_code': '019',
+    'sub_county_code': '01901',
   },
   {
     'code': '0475',
@@ -6405,6 +7230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kieni',
     'constituency_code': '095',
     'county_code': '019',
+    'sub_county_code': '01904',
   },
   {
     'code': '0472',
@@ -6412,6 +7238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kieni',
     'constituency_code': '095',
     'county_code': '019',
+    'sub_county_code': '01901',
   },
   {
     'code': '0469',
@@ -6419,6 +7246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kieni',
     'constituency_code': '095',
     'county_code': '019',
+    'sub_county_code': '01901',
   },
   {
     'code': '0471',
@@ -6426,6 +7254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kieni',
     'constituency_code': '095',
     'county_code': '019',
+    'sub_county_code': '01901',
   },
   {
     'code': '0470',
@@ -6433,6 +7262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kieni',
     'constituency_code': '095',
     'county_code': '019',
+    'sub_county_code': '01904',
   },
   {
     'code': '0474',
@@ -6440,6 +7270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kieni',
     'constituency_code': '095',
     'county_code': '019',
+    'sub_county_code': '01904',
   },
   {
     'code': '0528',
@@ -6447,6 +7278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kigumo',
     'constituency_code': '107',
     'county_code': '021',
+    'sub_county_code': '02104',
   },
   {
     'code': '0531',
@@ -6454,6 +7286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kigumo',
     'constituency_code': '107',
     'county_code': '021',
+    'sub_county_code': '02104',
   },
   {
     'code': '0530',
@@ -6461,6 +7294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kigumo',
     'constituency_code': '107',
     'county_code': '021',
+    'sub_county_code': '02104',
   },
   {
     'code': '0532',
@@ -6468,6 +7302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kigumo',
     'constituency_code': '107',
     'county_code': '021',
+    'sub_county_code': '02104',
   },
   {
     'code': '0529',
@@ -6475,6 +7310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kigumo',
     'constituency_code': '107',
     'county_code': '021',
+    'sub_county_code': '02104',
   },
   {
     'code': '0527',
@@ -6482,6 +7318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiharu',
     'constituency_code': '106',
     'county_code': '021',
+    'sub_county_code': '02103',
   },
   {
     'code': '0524',
@@ -6489,6 +7326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiharu',
     'constituency_code': '106',
     'county_code': '021',
+    'sub_county_code': '02103',
   },
   {
     'code': '0523',
@@ -6496,6 +7334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiharu',
     'constituency_code': '106',
     'county_code': '021',
+    'sub_county_code': '02103',
   },
   {
     'code': '0526',
@@ -6503,6 +7342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiharu',
     'constituency_code': '106',
     'county_code': '021',
+    'sub_county_code': '02103',
   },
   {
     'code': '0525',
@@ -6510,6 +7350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiharu',
     'constituency_code': '106',
     'county_code': '021',
+    'sub_county_code': '02103',
   },
   {
     'code': '0522',
@@ -6517,6 +7358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiharu',
     'constituency_code': '106',
     'county_code': '021',
+    'sub_county_code': '02103',
   },
   {
     'code': '0596',
@@ -6524,6 +7366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kikuyu',
     'constituency_code': '120',
     'county_code': '022',
+    'sub_county_code': '02210',
   },
   {
     'code': '0599',
@@ -6531,6 +7374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kikuyu',
     'constituency_code': '120',
     'county_code': '022',
+    'sub_county_code': '02210',
   },
   {
     'code': '0600',
@@ -6538,6 +7382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kikuyu',
     'constituency_code': '120',
     'county_code': '022',
+    'sub_county_code': '02210',
   },
   {
     'code': '0597',
@@ -6545,6 +7390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kikuyu',
     'constituency_code': '120',
     'county_code': '022',
+    'sub_county_code': '02210',
   },
   {
     'code': '0598',
@@ -6552,6 +7398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kikuyu',
     'constituency_code': '120',
     'county_code': '022',
+    'sub_county_code': '02210',
   },
   {
     'code': '0883',
@@ -6559,6 +7406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilgoris',
     'constituency_code': '177',
     'county_code': '033',
+    'sub_county_code': '03301',
   },
   {
     'code': '0882',
@@ -6566,6 +7414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilgoris',
     'constituency_code': '177',
     'county_code': '033',
+    'sub_county_code': '03301',
   },
   {
     'code': '0881',
@@ -6573,6 +7422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilgoris',
     'constituency_code': '177',
     'county_code': '033',
+    'sub_county_code': '03301',
   },
   {
     'code': '0885',
@@ -6580,6 +7430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilgoris',
     'constituency_code': '177',
     'county_code': '033',
+    'sub_county_code': '03301',
   },
   {
     'code': '0886',
@@ -6587,6 +7438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilgoris',
     'constituency_code': '177',
     'county_code': '033',
+    'sub_county_code': '03301',
   },
   {
     'code': '0884',
@@ -6594,6 +7446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilgoris',
     'constituency_code': '177',
     'county_code': '033',
+    'sub_county_code': '03301',
   },
   {
     'code': '0054',
@@ -6601,6 +7454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi North',
     'constituency_code': '011',
     'county_code': '003',
+    'sub_county_code': '00301',
   },
   {
     'code': '0053',
@@ -6608,6 +7462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi North',
     'constituency_code': '011',
     'county_code': '003',
+    'sub_county_code': '00301',
   },
   {
     'code': '0055',
@@ -6615,6 +7470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi North',
     'constituency_code': '011',
     'county_code': '003',
+    'sub_county_code': '00301',
   },
   {
     'code': '0057',
@@ -6622,6 +7478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi North',
     'constituency_code': '011',
     'county_code': '003',
+    'sub_county_code': '00301',
   },
   {
     'code': '0052',
@@ -6629,6 +7486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi North',
     'constituency_code': '011',
     'county_code': '003',
+    'sub_county_code': '00301',
   },
   {
     'code': '0051',
@@ -6636,6 +7494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi North',
     'constituency_code': '011',
     'county_code': '003',
+    'sub_county_code': '00301',
   },
   {
     'code': '0056',
@@ -6643,6 +7502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi North',
     'constituency_code': '011',
     'county_code': '003',
+    'sub_county_code': '00301',
   },
   {
     'code': '0061',
@@ -6650,6 +7510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi South',
     'constituency_code': '012',
     'county_code': '003',
+    'sub_county_code': '00302',
   },
   {
     'code': '0058',
@@ -6657,6 +7518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi South',
     'constituency_code': '012',
     'county_code': '003',
+    'sub_county_code': '00302',
   },
   {
     'code': '0062',
@@ -6664,6 +7526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi South',
     'constituency_code': '012',
     'county_code': '003',
+    'sub_county_code': '00302',
   },
   {
     'code': '0059',
@@ -6671,6 +7534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi South',
     'constituency_code': '012',
     'county_code': '003',
+    'sub_county_code': '00302',
   },
   {
     'code': '0060',
@@ -6678,6 +7542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilifi South',
     'constituency_code': '012',
     'county_code': '003',
+    'sub_county_code': '00302',
   },
   {
     'code': '0417',
@@ -6685,6 +7550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilome',
     'constituency_code': '084',
     'county_code': '017',
+    'sub_county_code': '01702',
   },
   {
     'code': '0419',
@@ -6692,6 +7558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilome',
     'constituency_code': '084',
     'county_code': '017',
+    'sub_county_code': '01702',
   },
   {
     'code': '0418',
@@ -6699,6 +7566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kilome',
     'constituency_code': '084',
     'county_code': '017',
+    'sub_county_code': '01702',
   },
   {
     'code': '1114',
@@ -6706,6 +7574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kimilili',
     'constituency_code': '223',
     'county_code': '039',
+    'sub_county_code': '03909',
   },
   {
     'code': '1112',
@@ -6713,6 +7582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kimilili',
     'constituency_code': '223',
     'county_code': '039',
+    'sub_county_code': '03909',
   },
   {
     'code': '1111',
@@ -6720,6 +7590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kimilili',
     'constituency_code': '223',
     'county_code': '039',
+    'sub_county_code': '03909',
   },
   {
     'code': '1113',
@@ -6727,6 +7598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kimilili',
     'constituency_code': '223',
     'county_code': '039',
+    'sub_county_code': '03909',
   },
   {
     'code': '0691',
@@ -6734,6 +7606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiminini',
     'constituency_code': '139',
     'county_code': '026',
+    'sub_county_code': '02604',
   },
   {
     'code': '0688',
@@ -6741,6 +7614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiminini',
     'constituency_code': '139',
     'county_code': '026',
+    'sub_county_code': '02604',
   },
   {
     'code': '0693',
@@ -6748,6 +7622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiminini',
     'constituency_code': '139',
     'county_code': '026',
+    'sub_county_code': '02604',
   },
   {
     'code': '0692',
@@ -6755,6 +7630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiminini',
     'constituency_code': '139',
     'county_code': '026',
+    'sub_county_code': '02604',
   },
   {
     'code': '0690',
@@ -6762,6 +7638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiminini',
     'constituency_code': '139',
     'county_code': '026',
+    'sub_county_code': '02604',
   },
   {
     'code': '0689',
@@ -6769,6 +7646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kiminini',
     'constituency_code': '139',
     'county_code': '026',
+    'sub_county_code': '02604',
   },
   {
     'code': '0048',
@@ -6776,6 +7654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinango',
     'constituency_code': '010',
     'county_code': '002',
+    'sub_county_code': '00204',
   },
   {
     'code': '0050',
@@ -6783,6 +7662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinango',
     'constituency_code': '010',
     'county_code': '002',
+    'sub_county_code': '00204',
   },
   {
     'code': '0046',
@@ -6790,6 +7670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinango',
     'constituency_code': '010',
     'county_code': '002',
+    'sub_county_code': '00204',
   },
   {
     'code': '0047',
@@ -6797,6 +7678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinango',
     'constituency_code': '010',
     'county_code': '002',
+    'sub_county_code': '00204',
   },
   {
     'code': '0049',
@@ -6804,6 +7686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinango',
     'constituency_code': '010',
     'county_code': '002',
+    'sub_county_code': '00204',
   },
   {
     'code': '0044',
@@ -6811,6 +7694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinango',
     'constituency_code': '010',
     'county_code': '002',
+    'sub_county_code': '00204',
   },
   {
     'code': '0045',
@@ -6818,6 +7702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinango',
     'constituency_code': '010',
     'county_code': '002',
+    'sub_county_code': '00204',
   },
   {
     'code': '0441',
@@ -6825,6 +7710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinangop',
     'constituency_code': '089',
     'county_code': '018',
+    'sub_county_code': '01801',
   },
   {
     'code': '0442',
@@ -6832,6 +7718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinangop',
     'constituency_code': '089',
     'county_code': '018',
+    'sub_county_code': '01801',
   },
   {
     'code': '0447',
@@ -6839,6 +7726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinangop',
     'constituency_code': '089',
     'county_code': '018',
+    'sub_county_code': '01801',
   },
   {
     'code': '0448',
@@ -6846,6 +7734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinangop',
     'constituency_code': '089',
     'county_code': '018',
+    'sub_county_code': '01801',
   },
   {
     'code': '0444',
@@ -6853,6 +7742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinangop',
     'constituency_code': '089',
     'county_code': '018',
+    'sub_county_code': '01801',
   },
   {
     'code': '0445',
@@ -6860,6 +7750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinangop',
     'constituency_code': '089',
     'county_code': '018',
+    'sub_county_code': '01801',
   },
   {
     'code': '0443',
@@ -6867,6 +7758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinangop',
     'constituency_code': '089',
     'county_code': '018',
+    'sub_county_code': '01801',
   },
   {
     'code': '0446',
@@ -6874,6 +7766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kinangop',
     'constituency_code': '089',
     'county_code': '018',
+    'sub_county_code': '01801',
   },
   {
     'code': '0451',
@@ -6881,6 +7774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipipiri',
     'constituency_code': '090',
     'county_code': '018',
+    'sub_county_code': '01802',
   },
   {
     'code': '0452',
@@ -6888,6 +7782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipipiri',
     'constituency_code': '090',
     'county_code': '018',
+    'sub_county_code': '01802',
   },
   {
     'code': '0450',
@@ -6895,6 +7790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipipiri',
     'constituency_code': '090',
     'county_code': '018',
+    'sub_county_code': '01802',
   },
   {
     'code': '0449',
@@ -6902,6 +7798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipipiri',
     'constituency_code': '090',
     'county_code': '018',
+    'sub_county_code': '01802',
   },
   {
     'code': '0938',
@@ -6909,6 +7806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipkelion East',
     'constituency_code': '188',
     'county_code': '035',
+    'sub_county_code': '03501',
   },
   {
     'code': '0937',
@@ -6916,6 +7814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipkelion East',
     'constituency_code': '188',
     'county_code': '035',
+    'sub_county_code': '03501',
   },
   {
     'code': '0936',
@@ -6923,6 +7822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipkelion East',
     'constituency_code': '188',
     'county_code': '035',
+    'sub_county_code': '03501',
   },
   {
     'code': '0939',
@@ -6930,6 +7830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipkelion East',
     'constituency_code': '188',
     'county_code': '035',
+    'sub_county_code': '03501',
   },
   {
     'code': '0943',
@@ -6937,6 +7838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipkelion West',
     'constituency_code': '189',
     'county_code': '035',
+    'sub_county_code': '03502',
   },
   {
     'code': '0941',
@@ -6944,6 +7846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipkelion West',
     'constituency_code': '189',
     'county_code': '035',
+    'sub_county_code': '03502',
   },
   {
     'code': '0942',
@@ -6951,6 +7854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipkelion West',
     'constituency_code': '189',
     'county_code': '035',
+    'sub_county_code': '03502',
   },
   {
     'code': '0940',
@@ -6958,6 +7862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kipkelion West',
     'constituency_code': '189',
     'county_code': '035',
+    'sub_county_code': '03502',
   },
   {
     'code': '0515',
@@ -6965,6 +7870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kirinyaga Central',
     'constituency_code': '103',
     'county_code': '020',
+    'sub_county_code': '02005',
   },
   {
     'code': '0513',
@@ -6972,6 +7878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kirinyaga Central',
     'constituency_code': '103',
     'county_code': '020',
+    'sub_county_code': '02005',
   },
   {
     'code': '0514',
@@ -6979,6 +7886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kirinyaga Central',
     'constituency_code': '103',
     'county_code': '020',
+    'sub_county_code': '02005',
   },
   {
     'code': '0512',
@@ -6986,6 +7894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kirinyaga Central',
     'constituency_code': '103',
     'county_code': '020',
+    'sub_county_code': '02005',
   },
   {
     'code': '0011',
@@ -6993,6 +7902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisauni',
     'constituency_code': '003',
     'county_code': '001',
+    'sub_county_code': '00103',
   },
   {
     'code': '0010',
@@ -7000,6 +7910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisauni',
     'constituency_code': '003',
     'county_code': '001',
+    'sub_county_code': '00103',
   },
   {
     'code': '0014',
@@ -7007,6 +7918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisauni',
     'constituency_code': '003',
     'county_code': '001',
+    'sub_county_code': '00103',
   },
   {
     'code': '0009',
@@ -7014,6 +7926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisauni',
     'constituency_code': '003',
     'county_code': '001',
+    'sub_county_code': '00103',
   },
   {
     'code': '0013',
@@ -7021,6 +7934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisauni',
     'constituency_code': '003',
     'county_code': '001',
+    'sub_county_code': '00103',
   },
   {
     'code': '0012',
@@ -7028,6 +7942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisauni',
     'constituency_code': '003',
     'county_code': '001',
+    'sub_county_code': '00103',
   },
   {
     'code': '0015',
@@ -7035,6 +7950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisauni',
     'constituency_code': '003',
     'county_code': '001',
+    'sub_county_code': '00103',
   },
   {
     'code': '1200',
@@ -7042,6 +7958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu Central',
     'constituency_code': '240',
     'county_code': '042',
+    'sub_county_code': '04203',
   },
   {
     'code': '1199',
@@ -7049,6 +7966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu Central',
     'constituency_code': '240',
     'county_code': '042',
+    'sub_county_code': '04203',
   },
   {
     'code': '1197',
@@ -7056,6 +7974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu Central',
     'constituency_code': '240',
     'county_code': '042',
+    'sub_county_code': '04203',
   },
   {
     'code': '1201',
@@ -7063,6 +7982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu Central',
     'constituency_code': '240',
     'county_code': '042',
+    'sub_county_code': '04203',
   },
   {
     'code': '1196',
@@ -7070,6 +7990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu Central',
     'constituency_code': '240',
     'county_code': '042',
+    'sub_county_code': '04203',
   },
   {
     'code': '1198',
@@ -7077,6 +7998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu Central',
     'constituency_code': '240',
     'county_code': '042',
+    'sub_county_code': '04203',
   },
   {
     'code': '1186',
@@ -7084,6 +8006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu East',
     'constituency_code': '238',
     'county_code': '042',
+    'sub_county_code': '04201',
   },
   {
     'code': '1190',
@@ -7091,6 +8014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu East',
     'constituency_code': '238',
     'county_code': '042',
+    'sub_county_code': '04201',
   },
   {
     'code': '1187',
@@ -7098,6 +8022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu East',
     'constituency_code': '238',
     'county_code': '042',
+    'sub_county_code': '04201',
   },
   {
     'code': '1188',
@@ -7105,6 +8030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu East',
     'constituency_code': '238',
     'county_code': '042',
+    'sub_county_code': '04201',
   },
   {
     'code': '1189',
@@ -7112,6 +8038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu East',
     'constituency_code': '238',
     'county_code': '042',
+    'sub_county_code': '04201',
   },
   {
     'code': '1192',
@@ -7119,6 +8046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu West',
     'constituency_code': '239',
     'county_code': '042',
+    'sub_county_code': '04202',
   },
   {
     'code': '1193',
@@ -7126,6 +8054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu West',
     'constituency_code': '239',
     'county_code': '042',
+    'sub_county_code': '04202',
   },
   {
     'code': '1195',
@@ -7133,6 +8062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu West',
     'constituency_code': '239',
     'county_code': '042',
+    'sub_county_code': '04202',
   },
   {
     'code': '1191',
@@ -7140,6 +8070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu West',
     'constituency_code': '239',
     'county_code': '042',
+    'sub_county_code': '04202',
   },
   {
     'code': '1194',
@@ -7147,6 +8078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kisumu West',
     'constituency_code': '239',
     'county_code': '042',
+    'sub_county_code': '04202',
   },
   {
     'code': '0358',
@@ -7154,6 +8086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui Central',
     'constituency_code': '072',
     'county_code': '015',
+    'sub_county_code': '01506',
   },
   {
     'code': '0356',
@@ -7161,6 +8094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui Central',
     'constituency_code': '072',
     'county_code': '015',
+    'sub_county_code': '01506',
   },
   {
     'code': '0354',
@@ -7168,6 +8102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui Central',
     'constituency_code': '072',
     'county_code': '015',
+    'sub_county_code': '01506',
   },
   {
     'code': '0357',
@@ -7175,6 +8110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui Central',
     'constituency_code': '072',
     'county_code': '015',
+    'sub_county_code': '01506',
   },
   {
     'code': '0355',
@@ -7182,6 +8118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui Central',
     'constituency_code': '072',
     'county_code': '015',
+    'sub_county_code': '01506',
   },
   {
     'code': '0360',
@@ -7189,6 +8126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui East',
     'constituency_code': '073',
     'county_code': '015',
+    'sub_county_code': '01507',
   },
   {
     'code': '0363',
@@ -7196,6 +8134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui East',
     'constituency_code': '073',
     'county_code': '015',
+    'sub_county_code': '01507',
   },
   {
     'code': '0364',
@@ -7203,6 +8142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui East',
     'constituency_code': '073',
     'county_code': '015',
+    'sub_county_code': '01507',
   },
   {
     'code': '0361',
@@ -7210,6 +8150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui East',
     'constituency_code': '073',
     'county_code': '015',
+    'sub_county_code': '01507',
   },
   {
     'code': '0362',
@@ -7217,6 +8158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui East',
     'constituency_code': '073',
     'county_code': '015',
+    'sub_county_code': '01507',
   },
   {
     'code': '0359',
@@ -7224,6 +8166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui East',
     'constituency_code': '073',
     'county_code': '015',
+    'sub_county_code': '01507',
   },
   {
     'code': '0353',
@@ -7231,6 +8174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui Rural',
     'constituency_code': '071',
     'county_code': '015',
+    'sub_county_code': '01505',
   },
   {
     'code': '0350',
@@ -7238,6 +8182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui Rural',
     'constituency_code': '071',
     'county_code': '015',
+    'sub_county_code': '01505',
   },
   {
     'code': '0352',
@@ -7245,6 +8190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui Rural',
     'constituency_code': '071',
     'county_code': '015',
+    'sub_county_code': '01505',
   },
   {
     'code': '0351',
@@ -7252,6 +8198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui Rural',
     'constituency_code': '071',
     'county_code': '015',
+    'sub_county_code': '01505',
   },
   {
     'code': '0370',
@@ -7259,6 +8206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui South',
     'constituency_code': '074',
     'county_code': '015',
+    'sub_county_code': '01508',
   },
   {
     'code': '0365',
@@ -7266,6 +8214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui South',
     'constituency_code': '074',
     'county_code': '015',
+    'sub_county_code': '01508',
   },
   {
     'code': '0368',
@@ -7273,6 +8222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui South',
     'constituency_code': '074',
     'county_code': '015',
+    'sub_county_code': '01508',
   },
   {
     'code': '0369',
@@ -7280,6 +8230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui South',
     'constituency_code': '074',
     'county_code': '015',
+    'sub_county_code': '01508',
   },
   {
     'code': '0367',
@@ -7287,6 +8238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui South',
     'constituency_code': '074',
     'county_code': '015',
+    'sub_county_code': '01508',
   },
   {
     'code': '0366',
@@ -7294,6 +8246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui South',
     'constituency_code': '074',
     'county_code': '015',
+    'sub_county_code': '01508',
   },
   {
     'code': '0347',
@@ -7301,6 +8254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui West',
     'constituency_code': '070',
     'county_code': '015',
+    'sub_county_code': '01504',
   },
   {
     'code': '0349',
@@ -7308,6 +8262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui West',
     'constituency_code': '070',
     'county_code': '015',
+    'sub_county_code': '01504',
   },
   {
     'code': '0348',
@@ -7315,6 +8270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui West',
     'constituency_code': '070',
     'county_code': '015',
+    'sub_county_code': '01504',
   },
   {
     'code': '0346',
@@ -7322,6 +8278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitui West',
     'constituency_code': '070',
     'county_code': '015',
+    'sub_county_code': '01504',
   },
   {
     'code': '1340',
@@ -7329,6 +8286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Chache North',
     'constituency_code': '268',
     'county_code': '045',
+    'sub_county_code': '04508',
   },
   {
     'code': '1339',
@@ -7336,6 +8294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Chache North',
     'constituency_code': '268',
     'county_code': '045',
+    'sub_county_code': '04508',
   },
   {
     'code': '1337',
@@ -7343,6 +8302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Chache North',
     'constituency_code': '268',
     'county_code': '045',
+    'sub_county_code': '04508',
   },
   {
     'code': '1338',
@@ -7350,6 +8310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Chache North',
     'constituency_code': '268',
     'county_code': '045',
+    'sub_county_code': '04508',
   },
   {
     'code': '1342',
@@ -7357,6 +8318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Chache South',
     'constituency_code': '269',
     'county_code': '045',
+    'sub_county_code': '04509',
   },
   {
     'code': '1341',
@@ -7364,6 +8326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Chache South',
     'constituency_code': '269',
     'county_code': '045',
+    'sub_county_code': '04509',
   },
   {
     'code': '1344',
@@ -7371,6 +8334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Chache South',
     'constituency_code': '269',
     'county_code': '045',
+    'sub_county_code': '04509',
   },
   {
     'code': '1343',
@@ -7378,6 +8342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Chache South',
     'constituency_code': '269',
     'county_code': '045',
+    'sub_county_code': '04509',
   },
   {
     'code': '1345',
@@ -7385,6 +8350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Chache South',
     'constituency_code': '269',
     'county_code': '045',
+    'sub_county_code': '04509',
   },
   {
     'code': '1347',
@@ -7392,6 +8358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Masaba',
     'constituency_code': '270',
     'county_code': '046',
+    'sub_county_code': '04602',
   },
   {
     'code': '1351',
@@ -7399,6 +8366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Masaba',
     'constituency_code': '270',
     'county_code': '046',
+    'sub_county_code': '04602',
   },
   {
     'code': '1348',
@@ -7406,6 +8374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Masaba',
     'constituency_code': '270',
     'county_code': '046',
+    'sub_county_code': '04601',
   },
   {
     'code': '1349',
@@ -7413,6 +8382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Masaba',
     'constituency_code': '270',
     'county_code': '046',
+    'sub_county_code': '04601',
   },
   {
     'code': '1350',
@@ -7420,6 +8390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Masaba',
     'constituency_code': '270',
     'county_code': '046',
+    'sub_county_code': '04601',
   },
   {
     'code': '1346',
@@ -7427,6 +8398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kitutu Masaba',
     'constituency_code': '270',
     'county_code': '046',
+    'sub_county_code': '04602',
   },
   {
     'code': '0989',
@@ -7434,6 +8406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Konoin',
     'constituency_code': '198',
     'county_code': '036',
+    'sub_county_code': '03605',
   },
   {
     'code': '0986',
@@ -7441,6 +8414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Konoin',
     'constituency_code': '198',
     'county_code': '036',
+    'sub_county_code': '03605',
   },
   {
     'code': '0990',
@@ -7448,6 +8422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Konoin',
     'constituency_code': '198',
     'county_code': '036',
+    'sub_county_code': '03605',
   },
   {
     'code': '0987',
@@ -7455,6 +8430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Konoin',
     'constituency_code': '198',
     'county_code': '036',
+    'sub_county_code': '03605',
   },
   {
     'code': '0988',
@@ -7462,6 +8438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Konoin',
     'constituency_code': '198',
     'county_code': '036',
+    'sub_county_code': '03605',
   },
   {
     'code': '0856',
@@ -7469,6 +8446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuresoi North',
     'constituency_code': '171',
     'county_code': '032',
+    'sub_county_code': '03206',
   },
   {
     'code': '0853',
@@ -7476,6 +8454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuresoi North',
     'constituency_code': '171',
     'county_code': '032',
+    'sub_county_code': '03206',
   },
   {
     'code': '0854',
@@ -7483,6 +8462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuresoi North',
     'constituency_code': '171',
     'county_code': '032',
+    'sub_county_code': '03206',
   },
   {
     'code': '0855',
@@ -7490,6 +8470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuresoi North',
     'constituency_code': '171',
     'county_code': '032',
+    'sub_county_code': '03206',
   },
   {
     'code': '0849',
@@ -7497,6 +8478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuresoi South',
     'constituency_code': '170',
     'county_code': '032',
+    'sub_county_code': '03205',
   },
   {
     'code': '0850',
@@ -7504,6 +8486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuresoi South',
     'constituency_code': '170',
     'county_code': '032',
+    'sub_county_code': '03205',
   },
   {
     'code': '0851',
@@ -7511,6 +8494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuresoi South',
     'constituency_code': '170',
     'county_code': '032',
+    'sub_county_code': '03205',
   },
   {
     'code': '0852',
@@ -7518,6 +8502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuresoi South',
     'constituency_code': '170',
     'county_code': '032',
+    'sub_county_code': '03205',
   },
   {
     'code': '1296',
@@ -7525,6 +8510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria East',
     'constituency_code': '260',
     'county_code': '044',
+    'sub_county_code': '04408',
   },
   {
     'code': '1298',
@@ -7532,6 +8518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria East',
     'constituency_code': '260',
     'county_code': '044',
+    'sub_county_code': '04408',
   },
   {
     'code': '1297',
@@ -7539,6 +8526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria East',
     'constituency_code': '260',
     'county_code': '044',
+    'sub_county_code': '04408',
   },
   {
     'code': '1299',
@@ -7546,6 +8534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria East',
     'constituency_code': '260',
     'county_code': '044',
+    'sub_county_code': '04408',
   },
   {
     'code': '1300',
@@ -7553,6 +8542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria East',
     'constituency_code': '260',
     'county_code': '044',
+    'sub_county_code': '04408',
   },
   {
     'code': '1290',
@@ -7560,6 +8550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria West',
     'constituency_code': '259',
     'county_code': '044',
+    'sub_county_code': '04407',
   },
   {
     'code': '1289',
@@ -7567,6 +8558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria West',
     'constituency_code': '259',
     'county_code': '044',
+    'sub_county_code': '04407',
   },
   {
     'code': '1291',
@@ -7574,6 +8566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria West',
     'constituency_code': '259',
     'county_code': '044',
+    'sub_county_code': '04407',
   },
   {
     'code': '1292',
@@ -7581,6 +8574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria West',
     'constituency_code': '259',
     'county_code': '044',
+    'sub_county_code': '04407',
   },
   {
     'code': '1293',
@@ -7588,6 +8582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria West',
     'constituency_code': '259',
     'county_code': '044',
+    'sub_county_code': '04407',
   },
   {
     'code': '1295',
@@ -7595,6 +8590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria West',
     'constituency_code': '259',
     'county_code': '044',
+    'sub_county_code': '04407',
   },
   {
     'code': '1294',
@@ -7602,6 +8598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kuria West',
     'constituency_code': '259',
     'county_code': '044',
+    'sub_county_code': '04407',
   },
   {
     'code': '0679',
@@ -7609,6 +8606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kwanza',
     'constituency_code': '136',
     'county_code': '026',
+    'sub_county_code': '02601',
   },
   {
     'code': '0676',
@@ -7616,6 +8614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kwanza',
     'constituency_code': '136',
     'county_code': '026',
+    'sub_county_code': '02601',
   },
   {
     'code': '0678',
@@ -7623,6 +8622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kwanza',
     'constituency_code': '136',
     'county_code': '026',
+    'sub_county_code': '02601',
   },
   {
     'code': '0677',
@@ -7630,6 +8630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Kwanza',
     'constituency_code': '136',
     'county_code': '026',
+    'sub_county_code': '02601',
   },
   {
     'code': '0220',
@@ -7637,6 +8638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lafey',
     'constituency_code': '044',
     'county_code': '009',
+    'sub_county_code': '00907',
   },
   {
     'code': '0217',
@@ -7644,6 +8646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lafey',
     'constituency_code': '044',
     'county_code': '009',
+    'sub_county_code': '00907',
   },
   {
     'code': '0218',
@@ -7651,6 +8654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lafey',
     'constituency_code': '044',
     'county_code': '009',
+    'sub_county_code': '00907',
   },
   {
     'code': '0216',
@@ -7658,6 +8662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lafey',
     'constituency_code': '044',
     'county_code': '009',
+    'sub_county_code': '00907',
   },
   {
     'code': '0219',
@@ -7665,6 +8670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lafey',
     'constituency_code': '044',
     'county_code': '009',
+    'sub_county_code': '00907',
   },
   {
     'code': '0145',
@@ -7672,6 +8678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lagdera',
     'constituency_code': '029',
     'county_code': '007',
+    'sub_county_code': '00704',
   },
   {
     'code': '0141',
@@ -7679,6 +8686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lagdera',
     'constituency_code': '029',
     'county_code': '007',
+    'sub_county_code': '00704',
   },
   {
     'code': '0142',
@@ -7686,6 +8694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lagdera',
     'constituency_code': '029',
     'county_code': '007',
+    'sub_county_code': '00704',
   },
   {
     'code': '0143',
@@ -7693,6 +8702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lagdera',
     'constituency_code': '029',
     'county_code': '007',
+    'sub_county_code': '00704',
   },
   {
     'code': '0140',
@@ -7700,6 +8710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lagdera',
     'constituency_code': '029',
     'county_code': '007',
+    'sub_county_code': '00704',
   },
   {
     'code': '0144',
@@ -7707,6 +8718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lagdera',
     'constituency_code': '029',
     'county_code': '007',
+    'sub_county_code': '00704',
   },
   {
     'code': '0820',
@@ -7714,6 +8726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia East',
     'constituency_code': '164',
     'county_code': '031',
+    'sub_county_code': '03102',
   },
   {
     'code': '0817',
@@ -7721,6 +8734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia East',
     'constituency_code': '164',
     'county_code': '031',
+    'sub_county_code': '03102',
   },
   {
     'code': '0819',
@@ -7728,6 +8742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia East',
     'constituency_code': '164',
     'county_code': '031',
+    'sub_county_code': '03102',
   },
   {
     'code': '0818',
@@ -7735,6 +8750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia East',
     'constituency_code': '164',
     'county_code': '031',
+    'sub_county_code': '03102',
   },
   {
     'code': '0821',
@@ -7742,6 +8758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia East',
     'constituency_code': '164',
     'county_code': '031',
+    'sub_county_code': '03102',
   },
   {
     'code': '0825',
@@ -7749,6 +8766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia North',
     'constituency_code': '165',
     'county_code': '031',
+    'sub_county_code': '03103',
   },
   {
     'code': '0824',
@@ -7756,6 +8774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia North',
     'constituency_code': '165',
     'county_code': '031',
+    'sub_county_code': '03103',
   },
   {
     'code': '0823',
@@ -7763,6 +8782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia North',
     'constituency_code': '165',
     'county_code': '031',
+    'sub_county_code': '03103',
   },
   {
     'code': '0822',
@@ -7770,6 +8790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia North',
     'constituency_code': '165',
     'county_code': '031',
+    'sub_county_code': '03103',
   },
   {
     'code': '0815',
@@ -7777,6 +8798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia West',
     'constituency_code': '163',
     'county_code': '031',
+    'sub_county_code': '03101',
   },
   {
     'code': '0813',
@@ -7784,6 +8806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia West',
     'constituency_code': '163',
     'county_code': '031',
+    'sub_county_code': '03101',
   },
   {
     'code': '0814',
@@ -7791,6 +8814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia West',
     'constituency_code': '163',
     'county_code': '031',
+    'sub_county_code': '03101',
   },
   {
     'code': '0811',
@@ -7798,6 +8822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia West',
     'constituency_code': '163',
     'county_code': '031',
+    'sub_county_code': '03101',
   },
   {
     'code': '0812',
@@ -7805,6 +8830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia West',
     'constituency_code': '163',
     'county_code': '031',
+    'sub_county_code': '03101',
   },
   {
     'code': '0816',
@@ -7812,6 +8838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laikipia West',
     'constituency_code': '163',
     'county_code': '031',
+    'sub_county_code': '03101',
   },
   {
     'code': '0237',
@@ -7819,6 +8846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laisamis',
     'constituency_code': '048',
     'county_code': '010',
+    'sub_county_code': '01004',
   },
   {
     'code': '0238',
@@ -7826,6 +8854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laisamis',
     'constituency_code': '048',
     'county_code': '010',
+    'sub_county_code': '01004',
   },
   {
     'code': '0240',
@@ -7833,6 +8862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laisamis',
     'constituency_code': '048',
     'county_code': '010',
+    'sub_county_code': '01004',
   },
   {
     'code': '0239',
@@ -7840,6 +8870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laisamis',
     'constituency_code': '048',
     'county_code': '010',
+    'sub_county_code': '01004',
   },
   {
     'code': '0236',
@@ -7847,6 +8878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Laisamis',
     'constituency_code': '048',
     'county_code': '010',
+    'sub_county_code': '01004',
   },
   {
     'code': '0103',
@@ -7854,6 +8886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lamu East',
     'constituency_code': '021',
     'county_code': '005',
+    'sub_county_code': '00501',
   },
   {
     'code': '0101',
@@ -7861,6 +8894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lamu East',
     'constituency_code': '021',
     'county_code': '005',
+    'sub_county_code': '00501',
   },
   {
     'code': '0102',
@@ -7868,6 +8902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lamu East',
     'constituency_code': '021',
     'county_code': '005',
+    'sub_county_code': '00501',
   },
   {
     'code': '0110',
@@ -7875,6 +8910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lamu West',
     'constituency_code': '022',
     'county_code': '005',
+    'sub_county_code': '00502',
   },
   {
     'code': '0106',
@@ -7882,6 +8918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lamu West',
     'constituency_code': '022',
     'county_code': '005',
+    'sub_county_code': '00502',
   },
   {
     'code': '0108',
@@ -7889,6 +8926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lamu West',
     'constituency_code': '022',
     'county_code': '005',
+    'sub_county_code': '00502',
   },
   {
     'code': '0105',
@@ -7896,6 +8934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lamu West',
     'constituency_code': '022',
     'county_code': '005',
+    'sub_county_code': '00502',
   },
   {
     'code': '0107',
@@ -7903,6 +8942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lamu West',
     'constituency_code': '022',
     'county_code': '005',
+    'sub_county_code': '00502',
   },
   {
     'code': '0104',
@@ -7910,6 +8950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lamu West',
     'constituency_code': '022',
     'county_code': '005',
+    'sub_county_code': '00502',
   },
   {
     'code': '0109',
@@ -7917,6 +8958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lamu West',
     'constituency_code': '022',
     'county_code': '005',
+    'sub_county_code': '00502',
   },
   {
     'code': '1381',
@@ -7924,6 +8966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Langata',
     'constituency_code': '277',
     'county_code': '047',
+    'sub_county_code': '04704',
   },
   {
     'code': '1383',
@@ -7931,6 +8974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Langata',
     'constituency_code': '277',
     'county_code': '047',
+    'sub_county_code': '04704',
   },
   {
     'code': '1382',
@@ -7938,6 +8982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Langata',
     'constituency_code': '277',
     'county_code': '047',
+    'sub_county_code': '04704',
   },
   {
     'code': '1385',
@@ -7945,6 +8990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Langata',
     'constituency_code': '277',
     'county_code': '047',
+    'sub_county_code': '04704',
   },
   {
     'code': '1384',
@@ -7952,6 +8998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Langata',
     'constituency_code': '277',
     'county_code': '047',
+    'sub_county_code': '04704',
   },
   {
     'code': '0609',
@@ -7959,6 +9006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lari',
     'constituency_code': '122',
     'county_code': '022',
+    'sub_county_code': '02212',
   },
   {
     'code': '0607',
@@ -7966,6 +9014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lari',
     'constituency_code': '122',
     'county_code': '022',
+    'sub_county_code': '02212',
   },
   {
     'code': '0606',
@@ -7973,6 +9022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lari',
     'constituency_code': '122',
     'county_code': '022',
+    'sub_county_code': '02212',
   },
   {
     'code': '0610',
@@ -7980,6 +9030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lari',
     'constituency_code': '122',
     'county_code': '022',
+    'sub_county_code': '02212',
   },
   {
     'code': '0608',
@@ -7987,6 +9038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lari',
     'constituency_code': '122',
     'county_code': '022',
+    'sub_county_code': '02212',
   },
   {
     'code': '0023',
@@ -7994,6 +9046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Likoni',
     'constituency_code': '005',
     'county_code': '001',
+    'sub_county_code': '00105',
   },
   {
     'code': '0024',
@@ -8001,6 +9054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Likoni',
     'constituency_code': '005',
     'county_code': '001',
+    'sub_county_code': '00105',
   },
   {
     'code': '0021',
@@ -8008,6 +9062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Likoni',
     'constituency_code': '005',
     'county_code': '001',
+    'sub_county_code': '00105',
   },
   {
     'code': '0022',
@@ -8015,6 +9070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Likoni',
     'constituency_code': '005',
     'county_code': '001',
+    'sub_county_code': '00105',
   },
   {
     'code': '0025',
@@ -8022,6 +9078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Likoni',
     'constituency_code': '005',
     'county_code': '001',
+    'sub_county_code': '00105',
   },
   {
     'code': '0999',
@@ -8029,6 +9086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Likuyani',
     'constituency_code': '200',
     'county_code': '037',
+    'sub_county_code': '03702',
   },
   {
     'code': '0997',
@@ -8036,6 +9094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Likuyani',
     'constituency_code': '200',
     'county_code': '037',
+    'sub_county_code': '03702',
   },
   {
     'code': '1000',
@@ -8043,6 +9102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Likuyani',
     'constituency_code': '200',
     'county_code': '037',
+    'sub_county_code': '03702',
   },
   {
     'code': '0998',
@@ -8050,6 +9110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Likuyani',
     'constituency_code': '200',
     'county_code': '037',
+    'sub_county_code': '03702',
   },
   {
     'code': '1001',
@@ -8057,6 +9118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Likuyani',
     'constituency_code': '200',
     'county_code': '037',
+    'sub_county_code': '03702',
   },
   {
     'code': '0601',
@@ -8064,6 +9126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Limuru',
     'constituency_code': '121',
     'county_code': '022',
+    'sub_county_code': '02211',
   },
   {
     'code': '0602',
@@ -8071,6 +9134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Limuru',
     'constituency_code': '121',
     'county_code': '022',
+    'sub_county_code': '02211',
   },
   {
     'code': '0604',
@@ -8078,6 +9142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Limuru',
     'constituency_code': '121',
     'county_code': '022',
+    'sub_county_code': '02211',
   },
   {
     'code': '0603',
@@ -8085,6 +9150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Limuru',
     'constituency_code': '121',
     'county_code': '022',
+    'sub_county_code': '02211',
   },
   {
     'code': '0605',
@@ -8092,6 +9158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Limuru',
     'constituency_code': '121',
     'county_code': '022',
+    'sub_county_code': '02211',
   },
   {
     'code': '0629',
@@ -8099,6 +9166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Loima',
     'constituency_code': '126',
     'county_code': '023',
+    'sub_county_code': '02305',
   },
   {
     'code': '0631',
@@ -8106,6 +9174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Loima',
     'constituency_code': '126',
     'county_code': '023',
+    'sub_county_code': '02305',
   },
   {
     'code': '0632',
@@ -8113,6 +9182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Loima',
     'constituency_code': '126',
     'county_code': '023',
+    'sub_county_code': '02305',
   },
   {
     'code': '0630',
@@ -8120,6 +9190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Loima',
     'constituency_code': '126',
     'county_code': '023',
+    'sub_county_code': '02305',
   },
   {
     'code': '1072',
@@ -8127,6 +9198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Luanda',
     'constituency_code': '214',
     'county_code': '038',
+    'sub_county_code': '03804',
   },
   {
     'code': '1071',
@@ -8134,6 +9206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Luanda',
     'constituency_code': '214',
     'county_code': '038',
+    'sub_county_code': '03804',
   },
   {
     'code': '1068',
@@ -8141,6 +9214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Luanda',
     'constituency_code': '214',
     'county_code': '038',
+    'sub_county_code': '03804',
   },
   {
     'code': '1070',
@@ -8148,6 +9222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Luanda',
     'constituency_code': '214',
     'county_code': '038',
+    'sub_county_code': '03804',
   },
   {
     'code': '1069',
@@ -8155,6 +9230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Luanda',
     'constituency_code': '214',
     'county_code': '038',
+    'sub_county_code': '03804',
   },
   {
     'code': '0994',
@@ -8162,6 +9238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lugari',
     'constituency_code': '199',
     'county_code': '037',
+    'sub_county_code': '03701',
   },
   {
     'code': '0995',
@@ -8169,6 +9246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lugari',
     'constituency_code': '199',
     'county_code': '037',
+    'sub_county_code': '03701',
   },
   {
     'code': '0992',
@@ -8176,6 +9254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lugari',
     'constituency_code': '199',
     'county_code': '037',
+    'sub_county_code': '03701',
   },
   {
     'code': '0993',
@@ -8183,6 +9262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lugari',
     'constituency_code': '199',
     'county_code': '037',
+    'sub_county_code': '03701',
   },
   {
     'code': '0996',
@@ -8190,6 +9270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lugari',
     'constituency_code': '199',
     'county_code': '037',
+    'sub_county_code': '03701',
   },
   {
     'code': '0991',
@@ -8197,6 +9278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lugari',
     'constituency_code': '199',
     'county_code': '037',
+    'sub_county_code': '03701',
   },
   {
     'code': '0036',
@@ -8204,6 +9286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lungalunga',
     'constituency_code': '008',
     'county_code': '002',
+    'sub_county_code': '00202',
   },
   {
     'code': '0037',
@@ -8211,6 +9294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lungalunga',
     'constituency_code': '008',
     'county_code': '002',
+    'sub_county_code': '00202',
   },
   {
     'code': '0035',
@@ -8218,6 +9302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lungalunga',
     'constituency_code': '008',
     'county_code': '002',
+    'sub_county_code': '00202',
   },
   {
     'code': '0038',
@@ -8225,6 +9310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lungalunga',
     'constituency_code': '008',
     'county_code': '002',
+    'sub_county_code': '00202',
   },
   {
     'code': '1011',
@@ -8232,6 +9318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lurambi',
     'constituency_code': '202',
     'county_code': '037',
+    'sub_county_code': '03704',
   },
   {
     'code': '1009',
@@ -8239,6 +9326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lurambi',
     'constituency_code': '202',
     'county_code': '037',
+    'sub_county_code': '03704',
   },
   {
     'code': '1010',
@@ -8246,6 +9334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lurambi',
     'constituency_code': '202',
     'county_code': '037',
+    'sub_county_code': '03704',
   },
   {
     'code': '1013',
@@ -8253,6 +9342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lurambi',
     'constituency_code': '202',
     'county_code': '037',
+    'sub_county_code': '03704',
   },
   {
     'code': '1012',
@@ -8260,6 +9350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lurambi',
     'constituency_code': '202',
     'county_code': '037',
+    'sub_county_code': '03704',
   },
   {
     'code': '1014',
@@ -8267,6 +9358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Lurambi',
     'constituency_code': '202',
     'county_code': '037',
+    'sub_county_code': '03704',
   },
   {
     'code': '0300',
@@ -8274,6 +9366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maara',
     'constituency_code': '060',
     'county_code': '013',
+    'sub_county_code': '01304',
   },
   {
     'code': '0299',
@@ -8281,6 +9374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maara',
     'constituency_code': '060',
     'county_code': '013',
+    'sub_county_code': '01304',
   },
   {
     'code': '0296',
@@ -8288,6 +9382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maara',
     'constituency_code': '060',
     'county_code': '013',
+    'sub_county_code': '01303',
   },
   {
     'code': '0297',
@@ -8295,6 +9390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maara',
     'constituency_code': '060',
     'county_code': '013',
+    'sub_county_code': '01303',
   },
   {
     'code': '0298',
@@ -8302,6 +9398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maara',
     'constituency_code': '060',
     'county_code': '013',
+    'sub_county_code': '01304',
   },
   {
     'code': '0398',
@@ -8309,6 +9406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Machakos Town',
     'constituency_code': '081',
     'county_code': '016',
+    'sub_county_code': '01607',
   },
   {
     'code': '0404',
@@ -8316,6 +9414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Machakos Town',
     'constituency_code': '081',
     'county_code': '016',
+    'sub_county_code': '01607',
   },
   {
     'code': '0401',
@@ -8323,6 +9422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Machakos Town',
     'constituency_code': '081',
     'county_code': '016',
+    'sub_county_code': '01607',
   },
   {
     'code': '0399',
@@ -8330,6 +9430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Machakos Town',
     'constituency_code': '081',
     'county_code': '016',
+    'sub_county_code': '01607',
   },
   {
     'code': '0402',
@@ -8337,6 +9438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Machakos Town',
     'constituency_code': '081',
     'county_code': '016',
+    'sub_county_code': '01607',
   },
   {
     'code': '0400',
@@ -8344,6 +9446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Machakos Town',
     'constituency_code': '081',
     'county_code': '016',
+    'sub_county_code': '01607',
   },
   {
     'code': '0403',
@@ -8351,6 +9454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Machakos Town',
     'constituency_code': '081',
     'county_code': '016',
+    'sub_county_code': '01607',
   },
   {
     'code': '0083',
@@ -8358,6 +9462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Magarini',
     'constituency_code': '017',
     'county_code': '003',
+    'sub_county_code': '00307',
   },
   {
     'code': '0084',
@@ -8365,6 +9470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Magarini',
     'constituency_code': '017',
     'county_code': '003',
+    'sub_county_code': '00307',
   },
   {
     'code': '0082',
@@ -8372,6 +9478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Magarini',
     'constituency_code': '017',
     'county_code': '003',
+    'sub_county_code': '00307',
   },
   {
     'code': '0081',
@@ -8379,6 +9486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Magarini',
     'constituency_code': '017',
     'county_code': '003',
+    'sub_county_code': '00307',
   },
   {
     'code': '0080',
@@ -8386,6 +9494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Magarini',
     'constituency_code': '017',
     'county_code': '003',
+    'sub_county_code': '00307',
   },
   {
     'code': '0085',
@@ -8393,6 +9502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Magarini',
     'constituency_code': '017',
     'county_code': '003',
+    'sub_county_code': '00307',
   },
   {
     'code': '1432',
@@ -8400,6 +9510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makadara',
     'constituency_code': '287',
     'county_code': '047',
+    'sub_county_code': '04714',
   },
   {
     'code': '1430',
@@ -8407,6 +9518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makadara',
     'constituency_code': '287',
     'county_code': '047',
+    'sub_county_code': '04714',
   },
   {
     'code': '1431',
@@ -8414,6 +9526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makadara',
     'constituency_code': '287',
     'county_code': '047',
+    'sub_county_code': '04714',
   },
   {
     'code': '1433',
@@ -8421,6 +9534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makadara',
     'constituency_code': '287',
     'county_code': '047',
+    'sub_county_code': '04714',
   },
   {
     'code': '0428',
@@ -8428,6 +9542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makueni',
     'constituency_code': '086',
     'county_code': '017',
+    'sub_county_code': '01704',
   },
   {
     'code': '0427',
@@ -8435,6 +9550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makueni',
     'constituency_code': '086',
     'county_code': '017',
+    'sub_county_code': '01704',
   },
   {
     'code': '0426',
@@ -8442,6 +9558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makueni',
     'constituency_code': '086',
     'county_code': '017',
+    'sub_county_code': '01704',
   },
   {
     'code': '0430',
@@ -8449,6 +9566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makueni',
     'constituency_code': '086',
     'county_code': '017',
+    'sub_county_code': '01704',
   },
   {
     'code': '0425',
@@ -8456,6 +9574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makueni',
     'constituency_code': '086',
     'county_code': '017',
+    'sub_county_code': '01704',
   },
   {
     'code': '0429',
@@ -8463,6 +9582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makueni',
     'constituency_code': '086',
     'county_code': '017',
+    'sub_county_code': '01704',
   },
   {
     'code': '0424',
@@ -8470,6 +9590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Makueni',
     'constituency_code': '086',
     'county_code': '017',
+    'sub_county_code': '01704',
   },
   {
     'code': '1005',
@@ -8477,6 +9598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malava',
     'constituency_code': '201',
     'county_code': '037',
+    'sub_county_code': '03703',
   },
   {
     'code': '1003',
@@ -8484,6 +9606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malava',
     'constituency_code': '201',
     'county_code': '037',
+    'sub_county_code': '03703',
   },
   {
     'code': '1004',
@@ -8491,6 +9614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malava',
     'constituency_code': '201',
     'county_code': '037',
+    'sub_county_code': '03703',
   },
   {
     'code': '1006',
@@ -8498,6 +9622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malava',
     'constituency_code': '201',
     'county_code': '037',
+    'sub_county_code': '03703',
   },
   {
     'code': '1007',
@@ -8505,6 +9630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malava',
     'constituency_code': '201',
     'county_code': '037',
+    'sub_county_code': '03703',
   },
   {
     'code': '1008',
@@ -8512,6 +9638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malava',
     'constituency_code': '201',
     'county_code': '037',
+    'sub_county_code': '03703',
   },
   {
     'code': '1002',
@@ -8519,6 +9646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malava',
     'constituency_code': '201',
     'county_code': '037',
+    'sub_county_code': '03703',
   },
   {
     'code': '0077',
@@ -8526,6 +9654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malindi',
     'constituency_code': '016',
     'county_code': '003',
+    'sub_county_code': '00306',
   },
   {
     'code': '0075',
@@ -8533,6 +9662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malindi',
     'constituency_code': '016',
     'county_code': '003',
+    'sub_county_code': '00306',
   },
   {
     'code': '0076',
@@ -8540,6 +9670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malindi',
     'constituency_code': '016',
     'county_code': '003',
+    'sub_county_code': '00306',
   },
   {
     'code': '0078',
@@ -8547,6 +9678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malindi',
     'constituency_code': '016',
     'county_code': '003',
+    'sub_county_code': '00306',
   },
   {
     'code': '0079',
@@ -8554,6 +9686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Malindi',
     'constituency_code': '016',
     'county_code': '003',
+    'sub_county_code': '00306',
   },
   {
     'code': '0211',
@@ -8561,6 +9694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera East',
     'constituency_code': '043',
     'county_code': '009',
+    'sub_county_code': '00906',
   },
   {
     'code': '0212',
@@ -8568,6 +9702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera East',
     'constituency_code': '043',
     'county_code': '009',
+    'sub_county_code': '00906',
   },
   {
     'code': '0213',
@@ -8575,6 +9710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera East',
     'constituency_code': '043',
     'county_code': '009',
+    'sub_county_code': '00906',
   },
   {
     'code': '0214',
@@ -8582,6 +9718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera East',
     'constituency_code': '043',
     'county_code': '009',
+    'sub_county_code': '00906',
   },
   {
     'code': '0215',
@@ -8589,6 +9726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera East',
     'constituency_code': '043',
     'county_code': '009',
+    'sub_county_code': '00906',
   },
   {
     'code': '0201',
@@ -8596,6 +9734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera North',
     'constituency_code': '041',
     'county_code': '009',
+    'sub_county_code': '00904',
   },
   {
     'code': '0202',
@@ -8603,6 +9742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera North',
     'constituency_code': '041',
     'county_code': '009',
+    'sub_county_code': '00904',
   },
   {
     'code': '0203',
@@ -8610,6 +9750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera North',
     'constituency_code': '041',
     'county_code': '009',
+    'sub_county_code': '00904',
   },
   {
     'code': '0204',
@@ -8617,6 +9758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera North',
     'constituency_code': '041',
     'county_code': '009',
+    'sub_county_code': '00904',
   },
   {
     'code': '0205',
@@ -8624,6 +9766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera North',
     'constituency_code': '041',
     'county_code': '009',
+    'sub_county_code': '00904',
   },
   {
     'code': '0209',
@@ -8631,6 +9774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera South',
     'constituency_code': '042',
     'county_code': '009',
+    'sub_county_code': '00905',
   },
   {
     'code': '0208',
@@ -8638,6 +9782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera South',
     'constituency_code': '042',
     'county_code': '009',
+    'sub_county_code': '00905',
   },
   {
     'code': '0207',
@@ -8645,6 +9790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera South',
     'constituency_code': '042',
     'county_code': '009',
+    'sub_county_code': '00901',
   },
   {
     'code': '0210',
@@ -8652,6 +9798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera South',
     'constituency_code': '042',
     'county_code': '009',
+    'sub_county_code': '00905',
   },
   {
     'code': '0206',
@@ -8659,6 +9806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera South',
     'constituency_code': '042',
     'county_code': '009',
+    'sub_county_code': '00905',
   },
   {
     'code': '0194',
@@ -8666,6 +9814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera West',
     'constituency_code': '039',
     'county_code': '009',
+    'sub_county_code': '00902',
   },
   {
     'code': '0195',
@@ -8673,6 +9822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera West',
     'constituency_code': '039',
     'county_code': '009',
+    'sub_county_code': '00902',
   },
   {
     'code': '0193',
@@ -8680,6 +9830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera West',
     'constituency_code': '039',
     'county_code': '009',
+    'sub_county_code': '00902',
   },
   {
     'code': '0192',
@@ -8687,6 +9838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera West',
     'constituency_code': '039',
     'county_code': '009',
+    'sub_county_code': '00902',
   },
   {
     'code': '0191',
@@ -8694,6 +9846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mandera West',
     'constituency_code': '039',
     'county_code': '009',
+    'sub_county_code': '00902',
   },
   {
     'code': '0316',
@@ -8701,6 +9854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Manyatta',
     'constituency_code': '063',
     'county_code': '014',
+    'sub_county_code': '01401',
   },
   {
     'code': '0315',
@@ -8708,6 +9862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Manyatta',
     'constituency_code': '063',
     'county_code': '014',
+    'sub_county_code': '01401',
   },
   {
     'code': '0312',
@@ -8715,6 +9870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Manyatta',
     'constituency_code': '063',
     'county_code': '014',
+    'sub_county_code': '01401',
   },
   {
     'code': '0314',
@@ -8722,6 +9878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Manyatta',
     'constituency_code': '063',
     'county_code': '014',
+    'sub_county_code': '01401',
   },
   {
     'code': '0313',
@@ -8729,6 +9886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Manyatta',
     'constituency_code': '063',
     'county_code': '014',
+    'sub_county_code': '01401',
   },
   {
     'code': '0311',
@@ -8736,6 +9894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Manyatta',
     'constituency_code': '063',
     'county_code': '014',
+    'sub_county_code': '01401',
   },
   {
     'code': '0537',
@@ -8743,6 +9902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maragwa',
     'constituency_code': '108',
     'county_code': '021',
+    'sub_county_code': '02105',
   },
   {
     'code': '0536',
@@ -8750,6 +9910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maragwa',
     'constituency_code': '108',
     'county_code': '021',
+    'sub_county_code': '02105',
   },
   {
     'code': '0535',
@@ -8757,6 +9918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maragwa',
     'constituency_code': '108',
     'county_code': '021',
+    'sub_county_code': '02105',
   },
   {
     'code': '0533',
@@ -8764,6 +9926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maragwa',
     'constituency_code': '108',
     'county_code': '021',
+    'sub_county_code': '02105',
   },
   {
     'code': '0534',
@@ -8771,6 +9934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maragwa',
     'constituency_code': '108',
     'county_code': '021',
+    'sub_county_code': '02105',
   },
   {
     'code': '0538',
@@ -8778,6 +9942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Maragwa',
     'constituency_code': '108',
     'county_code': '021',
+    'sub_county_code': '02105',
   },
   {
     'code': '0734',
@@ -8785,6 +9950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Marakwet East',
     'constituency_code': '147',
     'county_code': '028',
+    'sub_county_code': '02801',
   },
   {
     'code': '0733',
@@ -8792,6 +9958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Marakwet East',
     'constituency_code': '147',
     'county_code': '028',
+    'sub_county_code': '02801',
   },
   {
     'code': '0731',
@@ -8799,6 +9966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Marakwet East',
     'constituency_code': '147',
     'county_code': '028',
+    'sub_county_code': '02801',
   },
   {
     'code': '0732',
@@ -8806,6 +9974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Marakwet East',
     'constituency_code': '147',
     'county_code': '028',
+    'sub_county_code': '02801',
   },
   {
     'code': '0740',
@@ -8813,6 +9982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Marakwet West',
     'constituency_code': '148',
     'county_code': '028',
+    'sub_county_code': '02802',
   },
   {
     'code': '0737',
@@ -8820,6 +9990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Marakwet West',
     'constituency_code': '148',
     'county_code': '028',
+    'sub_county_code': '02802',
   },
   {
     'code': '0739',
@@ -8827,6 +9998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Marakwet West',
     'constituency_code': '148',
     'county_code': '028',
+    'sub_county_code': '02802',
   },
   {
     'code': '0735',
@@ -8834,6 +10006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Marakwet West',
     'constituency_code': '148',
     'county_code': '028',
+    'sub_county_code': '02802',
   },
   {
     'code': '0738',
@@ -8841,6 +10014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Marakwet West',
     'constituency_code': '148',
     'county_code': '028',
+    'sub_county_code': '02802',
   },
   {
     'code': '0736',
@@ -8848,6 +10022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Marakwet West',
     'constituency_code': '148',
     'county_code': '028',
+    'sub_county_code': '02802',
   },
   {
     'code': '0373',
@@ -8855,6 +10030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Masinga',
     'constituency_code': '075',
     'county_code': '016',
+    'sub_county_code': '01601',
   },
   {
     'code': '0371',
@@ -8862,6 +10038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Masinga',
     'constituency_code': '075',
     'county_code': '016',
+    'sub_county_code': '01601',
   },
   {
     'code': '0372',
@@ -8869,6 +10046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Masinga',
     'constituency_code': '075',
     'county_code': '016',
+    'sub_county_code': '01601',
   },
   {
     'code': '0374',
@@ -8876,6 +10054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Masinga',
     'constituency_code': '075',
     'county_code': '016',
+    'sub_county_code': '01601',
   },
   {
     'code': '0375',
@@ -8883,6 +10062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Masinga',
     'constituency_code': '075',
     'county_code': '016',
+    'sub_county_code': '01601',
   },
   {
     'code': '1137',
@@ -8890,6 +10070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matayos',
     'constituency_code': '228',
     'county_code': '040',
+    'sub_county_code': '04004',
   },
   {
     'code': '1141',
@@ -8897,6 +10078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matayos',
     'constituency_code': '228',
     'county_code': '040',
+    'sub_county_code': '04004',
   },
   {
     'code': '1140',
@@ -8904,6 +10086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matayos',
     'constituency_code': '228',
     'county_code': '040',
+    'sub_county_code': '04004',
   },
   {
     'code': '1139',
@@ -8911,6 +10094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matayos',
     'constituency_code': '228',
     'county_code': '040',
+    'sub_county_code': '04004',
   },
   {
     'code': '1138',
@@ -8918,6 +10102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matayos',
     'constituency_code': '228',
     'county_code': '040',
+    'sub_county_code': '04004',
   },
   {
     'code': '1445',
@@ -8925,6 +10110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathare',
     'constituency_code': '290',
     'county_code': '047',
+    'sub_county_code': '04717',
   },
   {
     'code': '1447',
@@ -8932,6 +10118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathare',
     'constituency_code': '290',
     'county_code': '047',
+    'sub_county_code': '04717',
   },
   {
     'code': '1450',
@@ -8939,6 +10126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathare',
     'constituency_code': '290',
     'county_code': '047',
+    'sub_county_code': '04717',
   },
   {
     'code': '1446',
@@ -8946,6 +10134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathare',
     'constituency_code': '290',
     'county_code': '047',
+    'sub_county_code': '04717',
   },
   {
     'code': '1449',
@@ -8953,6 +10142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathare',
     'constituency_code': '290',
     'county_code': '047',
+    'sub_county_code': '04717',
   },
   {
     'code': '1448',
@@ -8960,6 +10150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathare',
     'constituency_code': '290',
     'county_code': '047',
+    'sub_county_code': '04717',
   },
   {
     'code': '0519',
@@ -8967,6 +10158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathioya',
     'constituency_code': '105',
     'county_code': '021',
+    'sub_county_code': '02102',
   },
   {
     'code': '0521',
@@ -8974,6 +10166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathioya',
     'constituency_code': '105',
     'county_code': '021',
+    'sub_county_code': '02102',
   },
   {
     'code': '0520',
@@ -8981,6 +10174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathioya',
     'constituency_code': '105',
     'county_code': '021',
+    'sub_county_code': '02102',
   },
   {
     'code': '0479',
@@ -8988,6 +10182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathira',
     'constituency_code': '096',
     'county_code': '019',
+    'sub_county_code': '01905',
   },
   {
     'code': '0482',
@@ -8995,6 +10190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathira',
     'constituency_code': '096',
     'county_code': '019',
+    'sub_county_code': '01905',
   },
   {
     'code': '0481',
@@ -9002,6 +10198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathira',
     'constituency_code': '096',
     'county_code': '019',
+    'sub_county_code': '01902',
   },
   {
     'code': '0480',
@@ -9009,6 +10206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathira',
     'constituency_code': '096',
     'county_code': '019',
+    'sub_county_code': '01905',
   },
   {
     'code': '0478',
@@ -9016,6 +10214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathira',
     'constituency_code': '096',
     'county_code': '019',
+    'sub_county_code': '01905',
   },
   {
     'code': '0477',
@@ -9023,6 +10222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mathira',
     'constituency_code': '096',
     'county_code': '019',
+    'sub_county_code': '01902',
   },
   {
     'code': '0042',
@@ -9030,6 +10230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matuga',
     'constituency_code': '009',
     'county_code': '002',
+    'sub_county_code': '00203',
   },
   {
     'code': '0043',
@@ -9037,6 +10238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matuga',
     'constituency_code': '009',
     'county_code': '002',
+    'sub_county_code': '00203',
   },
   {
     'code': '0041',
@@ -9044,6 +10246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matuga',
     'constituency_code': '009',
     'county_code': '002',
+    'sub_county_code': '00203',
   },
   {
     'code': '0039',
@@ -9051,6 +10254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matuga',
     'constituency_code': '009',
     'county_code': '002',
+    'sub_county_code': '00203',
   },
   {
     'code': '0040',
@@ -9058,6 +10262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matuga',
     'constituency_code': '009',
     'county_code': '002',
+    'sub_county_code': '00203',
   },
   {
     'code': '1029',
@@ -9065,6 +10270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matungu',
     'constituency_code': '206',
     'county_code': '037',
+    'sub_county_code': '03708',
   },
   {
     'code': '1028',
@@ -9072,6 +10278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matungu',
     'constituency_code': '206',
     'county_code': '037',
+    'sub_county_code': '03708',
   },
   {
     'code': '1027',
@@ -9079,6 +10286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matungu',
     'constituency_code': '206',
     'county_code': '037',
+    'sub_county_code': '03708',
   },
   {
     'code': '1030',
@@ -9086,6 +10294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matungu',
     'constituency_code': '206',
     'county_code': '037',
+    'sub_county_code': '03708',
   },
   {
     'code': '1031',
@@ -9093,6 +10302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matungu',
     'constituency_code': '206',
     'county_code': '037',
+    'sub_county_code': '03708',
   },
   {
     'code': '0389',
@@ -9100,6 +10310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matungulu',
     'constituency_code': '078',
     'county_code': '016',
+    'sub_county_code': '01604',
   },
   {
     'code': '0387',
@@ -9107,6 +10318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matungulu',
     'constituency_code': '078',
     'county_code': '016',
+    'sub_county_code': '01604',
   },
   {
     'code': '0386',
@@ -9114,6 +10326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matungulu',
     'constituency_code': '078',
     'county_code': '016',
+    'sub_county_code': '01604',
   },
   {
     'code': '0388',
@@ -9121,6 +10334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matungulu',
     'constituency_code': '078',
     'county_code': '016',
+    'sub_county_code': '01604',
   },
   {
     'code': '0385',
@@ -9128,6 +10342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Matungulu',
     'constituency_code': '078',
     'county_code': '016',
+    'sub_county_code': '01604',
   },
   {
     'code': '0394',
@@ -9135,6 +10350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mavoko',
     'constituency_code': '080',
     'county_code': '016',
+    'sub_county_code': '01606',
   },
   {
     'code': '0395',
@@ -9142,6 +10358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mavoko',
     'constituency_code': '080',
     'county_code': '016',
+    'sub_county_code': '01606',
   },
   {
     'code': '0396',
@@ -9149,6 +10366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mavoko',
     'constituency_code': '080',
     'county_code': '016',
+    'sub_county_code': '01606',
   },
   {
     'code': '0397',
@@ -9156,6 +10374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mavoko',
     'constituency_code': '080',
     'county_code': '016',
+    'sub_county_code': '01606',
   },
   {
     'code': '0330',
@@ -9163,6 +10382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbeere North',
     'constituency_code': '066',
     'county_code': '014',
+    'sub_county_code': '01404',
   },
   {
     'code': '0329',
@@ -9170,6 +10390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbeere North',
     'constituency_code': '066',
     'county_code': '014',
+    'sub_county_code': '01404',
   },
   {
     'code': '0328',
@@ -9177,6 +10398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbeere North',
     'constituency_code': '066',
     'county_code': '014',
+    'sub_county_code': '01404',
   },
   {
     'code': '0327',
@@ -9184,6 +10406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbeere South',
     'constituency_code': '065',
     'county_code': '014',
+    'sub_county_code': '01403',
   },
   {
     'code': '0324',
@@ -9191,6 +10414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbeere South',
     'constituency_code': '065',
     'county_code': '014',
+    'sub_county_code': '01403',
   },
   {
     'code': '0326',
@@ -9198,6 +10422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbeere South',
     'constituency_code': '065',
     'county_code': '014',
+    'sub_county_code': '01403',
   },
   {
     'code': '0325',
@@ -9205,6 +10430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbeere South',
     'constituency_code': '065',
     'county_code': '014',
+    'sub_county_code': '01403',
   },
   {
     'code': '0323',
@@ -9212,6 +10438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbeere South',
     'constituency_code': '065',
     'county_code': '014',
+    'sub_county_code': '01403',
   },
   {
     'code': '1255',
@@ -9219,6 +10446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbita',
     'constituency_code': '251',
     'county_code': '043',
+    'sub_county_code': '04307',
   },
   {
     'code': '1254',
@@ -9226,6 +10454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbita',
     'constituency_code': '251',
     'county_code': '043',
+    'sub_county_code': '04307',
   },
   {
     'code': '1256',
@@ -9233,6 +10462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbita',
     'constituency_code': '251',
     'county_code': '043',
+    'sub_county_code': '04307',
   },
   {
     'code': '1252',
@@ -9240,6 +10470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbita',
     'constituency_code': '251',
     'county_code': '043',
+    'sub_county_code': '04307',
   },
   {
     'code': '1253',
@@ -9247,6 +10478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbita',
     'constituency_code': '251',
     'county_code': '043',
+    'sub_county_code': '04307',
   },
   {
     'code': '0416',
@@ -9254,6 +10486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbooni',
     'constituency_code': '083',
     'county_code': '017',
+    'sub_county_code': '01701',
   },
   {
     'code': '0414',
@@ -9261,6 +10494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbooni',
     'constituency_code': '083',
     'county_code': '017',
+    'sub_county_code': '01701',
   },
   {
     'code': '0413',
@@ -9268,6 +10502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbooni',
     'constituency_code': '083',
     'county_code': '017',
+    'sub_county_code': '01701',
   },
   {
     'code': '0412',
@@ -9275,6 +10510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbooni',
     'constituency_code': '083',
     'county_code': '017',
+    'sub_county_code': '01701',
   },
   {
     'code': '0411',
@@ -9282,6 +10518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbooni',
     'constituency_code': '083',
     'county_code': '017',
+    'sub_county_code': '01701',
   },
   {
     'code': '0415',
@@ -9289,6 +10526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mbooni',
     'constituency_code': '083',
     'county_code': '017',
+    'sub_county_code': '01701',
   },
   {
     'code': '0803',
@@ -9296,6 +10534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mogotio',
     'constituency_code': '161',
     'county_code': '030',
+    'sub_county_code': '03005',
   },
   {
     'code': '0804',
@@ -9303,6 +10542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mogotio',
     'constituency_code': '161',
     'county_code': '030',
+    'sub_county_code': '03005',
   },
   {
     'code': '0802',
@@ -9310,6 +10550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mogotio',
     'constituency_code': '161',
     'county_code': '030',
+    'sub_county_code': '03005',
   },
   {
     'code': '0716',
@@ -9317,6 +10558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moiben',
     'constituency_code': '143',
     'county_code': '027',
+    'sub_county_code': '02703',
   },
   {
     'code': '0718',
@@ -9324,6 +10566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moiben',
     'constituency_code': '143',
     'county_code': '027',
+    'sub_county_code': '02703',
   },
   {
     'code': '0717',
@@ -9331,6 +10574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moiben',
     'constituency_code': '143',
     'county_code': '027',
+    'sub_county_code': '02703',
   },
   {
     'code': '0715',
@@ -9338,6 +10582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moiben',
     'constituency_code': '143',
     'county_code': '027',
+    'sub_county_code': '02703',
   },
   {
     'code': '0714',
@@ -9345,6 +10590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moiben',
     'constituency_code': '143',
     'county_code': '027',
+    'sub_county_code': '02703',
   },
   {
     'code': '0827',
@@ -9352,6 +10598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Molo',
     'constituency_code': '166',
     'county_code': '032',
+    'sub_county_code': '03201',
   },
   {
     'code': '0826',
@@ -9359,6 +10606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Molo',
     'constituency_code': '166',
     'county_code': '032',
+    'sub_county_code': '03201',
   },
   {
     'code': '0829',
@@ -9366,6 +10614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Molo',
     'constituency_code': '166',
     'county_code': '032',
+    'sub_county_code': '03201',
   },
   {
     'code': '0828',
@@ -9373,6 +10622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Molo',
     'constituency_code': '166',
     'county_code': '032',
+    'sub_county_code': '03201',
   },
   {
     'code': '0774',
@@ -9380,6 +10630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mosop',
     'constituency_code': '156',
     'county_code': '029',
+    'sub_county_code': '02906',
   },
   {
     'code': '0779',
@@ -9387,6 +10638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mosop',
     'constituency_code': '156',
     'county_code': '029',
+    'sub_county_code': '02906',
   },
   {
     'code': '0777',
@@ -9394,6 +10646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mosop',
     'constituency_code': '156',
     'county_code': '029',
+    'sub_county_code': '02906',
   },
   {
     'code': '0775',
@@ -9401,6 +10654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mosop',
     'constituency_code': '156',
     'county_code': '029',
+    'sub_county_code': '02906',
   },
   {
     'code': '0776',
@@ -9408,6 +10662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mosop',
     'constituency_code': '156',
     'county_code': '029',
+    'sub_county_code': '02906',
   },
   {
     'code': '0778',
@@ -9415,6 +10670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mosop',
     'constituency_code': '156',
     'county_code': '029',
+    'sub_county_code': '02906',
   },
   {
     'code': '0780',
@@ -9422,6 +10678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mosop',
     'constituency_code': '156',
     'county_code': '029',
+    'sub_county_code': '02906',
   },
   {
     'code': '0221',
@@ -9429,6 +10686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moyale',
     'constituency_code': '045',
     'county_code': '010',
+    'sub_county_code': '01001',
   },
   {
     'code': '0224',
@@ -9436,6 +10694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moyale',
     'constituency_code': '045',
     'county_code': '010',
+    'sub_county_code': '01001',
   },
   {
     'code': '0223',
@@ -9443,6 +10702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moyale',
     'constituency_code': '045',
     'county_code': '010',
+    'sub_county_code': '01001',
   },
   {
     'code': '0225',
@@ -9450,6 +10710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moyale',
     'constituency_code': '045',
     'county_code': '010',
+    'sub_county_code': '01001',
   },
   {
     'code': '0227',
@@ -9457,6 +10718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moyale',
     'constituency_code': '045',
     'county_code': '010',
+    'sub_county_code': '01001',
   },
   {
     'code': '0222',
@@ -9464,6 +10726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moyale',
     'constituency_code': '045',
     'county_code': '010',
+    'sub_county_code': '01001',
   },
   {
     'code': '0226',
@@ -9471,6 +10734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Moyale',
     'constituency_code': '045',
     'county_code': '010',
+    'sub_county_code': '01001',
   },
   {
     'code': '0031',
@@ -9478,6 +10742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Msambweni',
     'constituency_code': '007',
     'county_code': '002',
+    'sub_county_code': '00201',
   },
   {
     'code': '0033',
@@ -9485,6 +10750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Msambweni',
     'constituency_code': '007',
     'county_code': '002',
+    'sub_county_code': '00201',
   },
   {
     'code': '0034',
@@ -9492,6 +10758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Msambweni',
     'constituency_code': '007',
     'county_code': '002',
+    'sub_county_code': '00201',
   },
   {
     'code': '0032',
@@ -9499,6 +10766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Msambweni',
     'constituency_code': '007',
     'county_code': '002',
+    'sub_county_code': '00201',
   },
   {
     'code': '1076',
@@ -9506,6 +10774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mt. Elgon',
     'constituency_code': '216',
     'county_code': '039',
+    'sub_county_code': '03901',
   },
   {
     'code': '1078',
@@ -9513,6 +10782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mt. Elgon',
     'constituency_code': '216',
     'county_code': '039',
+    'sub_county_code': '03901',
   },
   {
     'code': '1077',
@@ -9520,6 +10790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mt. Elgon',
     'constituency_code': '216',
     'county_code': '039',
+    'sub_county_code': '03901',
   },
   {
     'code': '1081',
@@ -9527,6 +10798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mt. Elgon',
     'constituency_code': '216',
     'county_code': '039',
+    'sub_county_code': '03902',
   },
   {
     'code': '1079',
@@ -9534,6 +10806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mt. Elgon',
     'constituency_code': '216',
     'county_code': '039',
+    'sub_county_code': '03901',
   },
   {
     'code': '1080',
@@ -9541,6 +10814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mt. Elgon',
     'constituency_code': '216',
     'county_code': '039',
+    'sub_county_code': '03902',
   },
   {
     'code': '1214',
@@ -9548,6 +10822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Muhoroni',
     'constituency_code': '243',
     'county_code': '042',
+    'sub_county_code': '04206',
   },
   {
     'code': '1213',
@@ -9555,6 +10830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Muhoroni',
     'constituency_code': '243',
     'county_code': '042',
+    'sub_county_code': '04206',
   },
   {
     'code': '1211',
@@ -9562,6 +10838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Muhoroni',
     'constituency_code': '243',
     'county_code': '042',
+    'sub_county_code': '04206',
   },
   {
     'code': '1215',
@@ -9569,6 +10846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Muhoroni',
     'constituency_code': '243',
     'county_code': '042',
+    'sub_county_code': '04206',
   },
   {
     'code': '1212',
@@ -9576,6 +10854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Muhoroni',
     'constituency_code': '243',
     'county_code': '042',
+    'sub_county_code': '04206',
   },
   {
     'code': '0487',
@@ -9583,6 +10862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mukurweini',
     'constituency_code': '098',
     'county_code': '019',
+    'sub_county_code': '01907',
   },
   {
     'code': '0490',
@@ -9590,6 +10870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mukurweini',
     'constituency_code': '098',
     'county_code': '019',
+    'sub_county_code': '01907',
   },
   {
     'code': '0489',
@@ -9597,6 +10878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mukurweini',
     'constituency_code': '098',
     'county_code': '019',
+    'sub_county_code': '01907',
   },
   {
     'code': '0488',
@@ -9604,6 +10886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mukurweini',
     'constituency_code': '098',
     'county_code': '019',
+    'sub_county_code': '01907',
   },
   {
     'code': '1026',
@@ -9611,6 +10894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mumias East',
     'constituency_code': '205',
     'county_code': '037',
+    'sub_county_code': '03707',
   },
   {
     'code': '1025',
@@ -9618,6 +10902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mumias East',
     'constituency_code': '205',
     'county_code': '037',
+    'sub_county_code': '03707',
   },
   {
     'code': '1024',
@@ -9625,6 +10910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mumias East',
     'constituency_code': '205',
     'county_code': '037',
+    'sub_county_code': '03707',
   },
   {
     'code': '1022',
@@ -9632,6 +10918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mumias West',
     'constituency_code': '204',
     'county_code': '037',
+    'sub_county_code': '03706',
   },
   {
     'code': '1020',
@@ -9639,6 +10926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mumias West',
     'constituency_code': '204',
     'county_code': '037',
+    'sub_county_code': '03706',
   },
   {
     'code': '1021',
@@ -9646,6 +10934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mumias West',
     'constituency_code': '204',
     'county_code': '037',
+    'sub_county_code': '03706',
   },
   {
     'code': '1023',
@@ -9653,6 +10942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mumias West',
     'constituency_code': '204',
     'county_code': '037',
+    'sub_county_code': '03706',
   },
   {
     'code': '0030',
@@ -9660,6 +10950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mvita',
     'constituency_code': '006',
     'county_code': '001',
+    'sub_county_code': '00106',
   },
   {
     'code': '0026',
@@ -9667,6 +10958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mvita',
     'constituency_code': '006',
     'county_code': '001',
+    'sub_county_code': '00106',
   },
   {
     'code': '0029',
@@ -9674,6 +10966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mvita',
     'constituency_code': '006',
     'county_code': '001',
+    'sub_county_code': '00106',
   },
   {
     'code': '0028',
@@ -9681,6 +10974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mvita',
     'constituency_code': '006',
     'county_code': '001',
+    'sub_county_code': '00106',
   },
   {
     'code': '0027',
@@ -9688,6 +10982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mvita',
     'constituency_code': '006',
     'county_code': '001',
+    'sub_county_code': '00106',
   },
   {
     'code': '0410',
@@ -9695,6 +10990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwala',
     'constituency_code': '082',
     'county_code': '016',
+    'sub_county_code': '01608',
   },
   {
     'code': '0406',
@@ -9702,6 +10998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwala',
     'constituency_code': '082',
     'county_code': '016',
+    'sub_county_code': '01608',
   },
   {
     'code': '0407',
@@ -9709,6 +11006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwala',
     'constituency_code': '082',
     'county_code': '016',
+    'sub_county_code': '01608',
   },
   {
     'code': '0405',
@@ -9716,6 +11014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwala',
     'constituency_code': '082',
     'county_code': '016',
+    'sub_county_code': '01608',
   },
   {
     'code': '0408',
@@ -9723,6 +11022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwala',
     'constituency_code': '082',
     'county_code': '016',
+    'sub_county_code': '01608',
   },
   {
     'code': '0409',
@@ -9730,6 +11030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwala',
     'constituency_code': '082',
     'county_code': '016',
+    'sub_county_code': '01608',
   },
   {
     'code': '0122',
@@ -9737,6 +11038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwatate',
     'constituency_code': '025',
     'county_code': '006',
+    'sub_county_code': '00603',
   },
   {
     'code': '0123',
@@ -9744,6 +11046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwatate',
     'constituency_code': '025',
     'county_code': '006',
+    'sub_county_code': '00603',
   },
   {
     'code': '0121',
@@ -9751,6 +11054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwatate',
     'constituency_code': '025',
     'county_code': '006',
+    'sub_county_code': '00603',
   },
   {
     'code': '0120',
@@ -9758,6 +11062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwatate',
     'constituency_code': '025',
     'county_code': '006',
+    'sub_county_code': '00603',
   },
   {
     'code': '0124',
@@ -9765,6 +11070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwatate',
     'constituency_code': '025',
     'county_code': '006',
+    'sub_county_code': '00603',
   },
   {
     'code': '0502',
@@ -9772,6 +11078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwea',
     'constituency_code': '100',
     'county_code': '020',
+    'sub_county_code': '02001',
   },
   {
     'code': '0497',
@@ -9779,6 +11086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwea',
     'constituency_code': '100',
     'county_code': '020',
+    'sub_county_code': '02002',
   },
   {
     'code': '0501',
@@ -9786,6 +11094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwea',
     'constituency_code': '100',
     'county_code': '020',
+    'sub_county_code': '02001',
   },
   {
     'code': '0496',
@@ -9793,6 +11102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwea',
     'constituency_code': '100',
     'county_code': '020',
+    'sub_county_code': '02002',
   },
   {
     'code': '0500',
@@ -9800,6 +11110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwea',
     'constituency_code': '100',
     'county_code': '020',
+    'sub_county_code': '02001',
   },
   {
     'code': '0503',
@@ -9807,6 +11118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwea',
     'constituency_code': '100',
     'county_code': '020',
+    'sub_county_code': '02001',
   },
   {
     'code': '0498',
@@ -9814,6 +11126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwea',
     'constituency_code': '100',
     'county_code': '020',
+    'sub_county_code': '02002',
   },
   {
     'code': '0499',
@@ -9821,6 +11134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwea',
     'constituency_code': '100',
     'county_code': '020',
+    'sub_county_code': '02002',
   },
   {
     'code': '0340',
@@ -9828,6 +11142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi Central',
     'constituency_code': '069',
     'county_code': '015',
+    'sub_county_code': '01503',
   },
   {
     'code': '0341',
@@ -9835,6 +11150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi Central',
     'constituency_code': '069',
     'county_code': '015',
+    'sub_county_code': '01503',
   },
   {
     'code': '0344',
@@ -9842,6 +11158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi Central',
     'constituency_code': '069',
     'county_code': '015',
+    'sub_county_code': '01503',
   },
   {
     'code': '0342',
@@ -9849,6 +11166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi Central',
     'constituency_code': '069',
     'county_code': '015',
+    'sub_county_code': '01503',
   },
   {
     'code': '0343',
@@ -9856,6 +11174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi Central',
     'constituency_code': '069',
     'county_code': '015',
+    'sub_county_code': '01503',
   },
   {
     'code': '0345',
@@ -9863,6 +11182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi Central',
     'constituency_code': '069',
     'county_code': '015',
+    'sub_county_code': '01503',
   },
   {
     'code': '0332',
@@ -9870,6 +11190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi North',
     'constituency_code': '067',
     'county_code': '015',
+    'sub_county_code': '01501',
   },
   {
     'code': '0333',
@@ -9877,6 +11198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi North',
     'constituency_code': '067',
     'county_code': '015',
+    'sub_county_code': '01501',
   },
   {
     'code': '0331',
@@ -9884,6 +11206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi North',
     'constituency_code': '067',
     'county_code': '015',
+    'sub_county_code': '01501',
   },
   {
     'code': '0335',
@@ -9891,6 +11214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi North',
     'constituency_code': '067',
     'county_code': '015',
+    'sub_county_code': '01501',
   },
   {
     'code': '0334',
@@ -9898,6 +11222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi North',
     'constituency_code': '067',
     'county_code': '015',
+    'sub_county_code': '01501',
   },
   {
     'code': '0339',
@@ -9905,6 +11230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi West',
     'constituency_code': '068',
     'county_code': '015',
+    'sub_county_code': '01502',
   },
   {
     'code': '0336',
@@ -9912,6 +11238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi West',
     'constituency_code': '068',
     'county_code': '015',
+    'sub_county_code': '01502',
   },
   {
     'code': '0338',
@@ -9919,6 +11246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi West',
     'constituency_code': '068',
     'county_code': '015',
+    'sub_county_code': '01502',
   },
   {
     'code': '0337',
@@ -9926,6 +11254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Mwingi West',
     'constituency_code': '068',
     'county_code': '015',
+    'sub_county_code': '01502',
   },
   {
     'code': '0836',
@@ -9933,6 +11262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Naivasha',
     'constituency_code': '168',
     'county_code': '032',
+    'sub_county_code': '03203',
   },
   {
     'code': '0837',
@@ -9940,6 +11270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Naivasha',
     'constituency_code': '168',
     'county_code': '032',
+    'sub_county_code': '03203',
   },
   {
     'code': '0838',
@@ -9947,6 +11278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Naivasha',
     'constituency_code': '168',
     'county_code': '032',
+    'sub_county_code': '03203',
   },
   {
     'code': '0839',
@@ -9954,6 +11286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Naivasha',
     'constituency_code': '168',
     'county_code': '032',
+    'sub_county_code': '03203',
   },
   {
     'code': '0840',
@@ -9961,6 +11294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Naivasha',
     'constituency_code': '168',
     'county_code': '032',
+    'sub_county_code': '03203',
   },
   {
     'code': '0842',
@@ -9968,6 +11302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Naivasha',
     'constituency_code': '168',
     'county_code': '032',
+    'sub_county_code': '03203',
   },
   {
     'code': '0841',
@@ -9975,6 +11310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Naivasha',
     'constituency_code': '168',
     'county_code': '032',
+    'sub_county_code': '03203',
   },
   {
     'code': '0843',
@@ -9982,6 +11318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Naivasha',
     'constituency_code': '168',
     'county_code': '032',
+    'sub_county_code': '03203',
   },
   {
     'code': '0876',
@@ -9989,6 +11326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town East',
     'constituency_code': '176',
     'county_code': '032',
+    'sub_county_code': '03211',
   },
   {
     'code': '0878',
@@ -9996,6 +11334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town East',
     'constituency_code': '176',
     'county_code': '032',
+    'sub_county_code': '03211',
   },
   {
     'code': '0877',
@@ -10003,6 +11342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town East',
     'constituency_code': '176',
     'county_code': '032',
+    'sub_county_code': '03211',
   },
   {
     'code': '0879',
@@ -10010,6 +11350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town East',
     'constituency_code': '176',
     'county_code': '032',
+    'sub_county_code': '03211',
   },
   {
     'code': '0880',
@@ -10017,6 +11358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town East',
     'constituency_code': '176',
     'county_code': '032',
+    'sub_county_code': '03211',
   },
   {
     'code': '0870',
@@ -10024,6 +11366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town West',
     'constituency_code': '175',
     'county_code': '032',
+    'sub_county_code': '03210',
   },
   {
     'code': '0873',
@@ -10031,6 +11374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town West',
     'constituency_code': '175',
     'county_code': '032',
+    'sub_county_code': '03210',
   },
   {
     'code': '0872',
@@ -10038,6 +11382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town West',
     'constituency_code': '175',
     'county_code': '032',
+    'sub_county_code': '03210',
   },
   {
     'code': '0871',
@@ -10045,6 +11390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town West',
     'constituency_code': '175',
     'county_code': '032',
+    'sub_county_code': '03210',
   },
   {
     'code': '0874',
@@ -10052,6 +11398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town West',
     'constituency_code': '175',
     'county_code': '032',
+    'sub_county_code': '03210',
   },
   {
     'code': '0875',
@@ -10059,6 +11406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nakuru Town West',
     'constituency_code': '175',
     'county_code': '032',
+    'sub_county_code': '03210',
   },
   {
     'code': '1136',
@@ -10066,6 +11414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nambale',
     'constituency_code': '227',
     'county_code': '040',
+    'sub_county_code': '04003',
   },
   {
     'code': '1135',
@@ -10073,6 +11422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nambale',
     'constituency_code': '227',
     'county_code': '040',
+    'sub_county_code': '04003',
   },
   {
     'code': '1134',
@@ -10080,6 +11430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nambale',
     'constituency_code': '227',
     'county_code': '040',
+    'sub_county_code': '04003',
   },
   {
     'code': '1133',
@@ -10087,6 +11438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nambale',
     'constituency_code': '227',
     'county_code': '040',
+    'sub_county_code': '04003',
   },
   {
     'code': '0762',
@@ -10094,6 +11446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nandi Hills',
     'constituency_code': '153',
     'county_code': '029',
+    'sub_county_code': '02903',
   },
   {
     'code': '0764',
@@ -10101,6 +11454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nandi Hills',
     'constituency_code': '153',
     'county_code': '029',
+    'sub_county_code': '02903',
   },
   {
     'code': '0761',
@@ -10108,6 +11462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nandi Hills',
     'constituency_code': '153',
     'county_code': '029',
+    'sub_county_code': '02903',
   },
   {
     'code': '0763',
@@ -10115,6 +11470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nandi Hills',
     'constituency_code': '153',
     'county_code': '029',
+    'sub_county_code': '02903',
   },
   {
     'code': '0898',
@@ -10122,6 +11478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok East',
     'constituency_code': '180',
     'county_code': '033',
+    'sub_county_code': '03304',
   },
   {
     'code': '0899',
@@ -10129,6 +11486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok East',
     'constituency_code': '180',
     'county_code': '033',
+    'sub_county_code': '03304',
   },
   {
     'code': '0897',
@@ -10136,6 +11494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok East',
     'constituency_code': '180',
     'county_code': '033',
+    'sub_county_code': '03304',
   },
   {
     'code': '0900',
@@ -10143,6 +11502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok East',
     'constituency_code': '180',
     'county_code': '033',
+    'sub_county_code': '03304',
   },
   {
     'code': '0896',
@@ -10150,6 +11510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok North',
     'constituency_code': '179',
     'county_code': '033',
+    'sub_county_code': '03303',
   },
   {
     'code': '0893',
@@ -10157,6 +11518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok North',
     'constituency_code': '179',
     'county_code': '033',
+    'sub_county_code': '03303',
   },
   {
     'code': '0894',
@@ -10164,6 +11526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok North',
     'constituency_code': '179',
     'county_code': '033',
+    'sub_county_code': '03303',
   },
   {
     'code': '0892',
@@ -10171,6 +11534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok North',
     'constituency_code': '179',
     'county_code': '033',
+    'sub_county_code': '03303',
   },
   {
     'code': '0895',
@@ -10178,6 +11542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok North',
     'constituency_code': '179',
     'county_code': '033',
+    'sub_county_code': '03303',
   },
   {
     'code': '0891',
@@ -10185,6 +11550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok North',
     'constituency_code': '179',
     'county_code': '033',
+    'sub_county_code': '03303',
   },
   {
     'code': '0904',
@@ -10192,6 +11558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok South',
     'constituency_code': '181',
     'county_code': '033',
+    'sub_county_code': '03305',
   },
   {
     'code': '0901',
@@ -10199,6 +11566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok South',
     'constituency_code': '181',
     'county_code': '033',
+    'sub_county_code': '03305',
   },
   {
     'code': '0903',
@@ -10206,6 +11574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok South',
     'constituency_code': '181',
     'county_code': '033',
+    'sub_county_code': '03305',
   },
   {
     'code': '0902',
@@ -10213,6 +11582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok South',
     'constituency_code': '181',
     'county_code': '033',
+    'sub_county_code': '03305',
   },
   {
     'code': '0906',
@@ -10220,6 +11590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok South',
     'constituency_code': '181',
     'county_code': '033',
+    'sub_county_code': '03305',
   },
   {
     'code': '0905',
@@ -10227,6 +11598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok South',
     'constituency_code': '181',
     'county_code': '033',
+    'sub_county_code': '03305',
   },
   {
     'code': '0907',
@@ -10234,6 +11606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok West',
     'constituency_code': '182',
     'county_code': '033',
+    'sub_county_code': '03306',
   },
   {
     'code': '0908',
@@ -10241,6 +11614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok West',
     'constituency_code': '182',
     'county_code': '033',
+    'sub_county_code': '03306',
   },
   {
     'code': '0910',
@@ -10248,6 +11622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok West',
     'constituency_code': '182',
     'county_code': '033',
+    'sub_county_code': '03306',
   },
   {
     'code': '0909',
@@ -10255,6 +11630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Narok West',
     'constituency_code': '182',
     'county_code': '033',
+    'sub_county_code': '03306',
   },
   {
     'code': '1019',
@@ -10262,6 +11638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Navakholo',
     'constituency_code': '203',
     'county_code': '037',
+    'sub_county_code': '03705',
   },
   {
     'code': '1018',
@@ -10269,6 +11646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Navakholo',
     'constituency_code': '203',
     'county_code': '037',
+    'sub_county_code': '03705',
   },
   {
     'code': '1017',
@@ -10276,6 +11654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Navakholo',
     'constituency_code': '203',
     'county_code': '037',
+    'sub_county_code': '03705',
   },
   {
     'code': '1015',
@@ -10283,6 +11662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Navakholo',
     'constituency_code': '203',
     'county_code': '037',
+    'sub_county_code': '03705',
   },
   {
     'code': '1016',
@@ -10290,6 +11670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Navakholo',
     'constituency_code': '203',
     'county_code': '037',
+    'sub_county_code': '03705',
   },
   {
     'code': '0464',
@@ -10297,6 +11678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndaragwa',
     'constituency_code': '093',
     'county_code': '018',
+    'sub_county_code': '01805',
   },
   {
     'code': '0463',
@@ -10304,6 +11686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndaragwa',
     'constituency_code': '093',
     'county_code': '018',
+    'sub_county_code': '01805',
   },
   {
     'code': '0462',
@@ -10311,6 +11694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndaragwa',
     'constituency_code': '093',
     'county_code': '018',
+    'sub_county_code': '01805',
   },
   {
     'code': '0465',
@@ -10318,6 +11702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndaragwa',
     'constituency_code': '093',
     'county_code': '018',
+    'sub_county_code': '01805',
   },
   {
     'code': '1249',
@@ -10325,6 +11710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndhiwa',
     'constituency_code': '250',
     'county_code': '043',
+    'sub_county_code': '04306',
   },
   {
     'code': '1246',
@@ -10332,6 +11718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndhiwa',
     'constituency_code': '250',
     'county_code': '043',
+    'sub_county_code': '04306',
   },
   {
     'code': '1250',
@@ -10339,6 +11726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndhiwa',
     'constituency_code': '250',
     'county_code': '043',
+    'sub_county_code': '04306',
   },
   {
     'code': '1251',
@@ -10346,6 +11734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndhiwa',
     'constituency_code': '250',
     'county_code': '043',
+    'sub_county_code': '04306',
   },
   {
     'code': '1247',
@@ -10353,6 +11742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndhiwa',
     'constituency_code': '250',
     'county_code': '043',
+    'sub_county_code': '04306',
   },
   {
     'code': '1245',
@@ -10360,6 +11750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndhiwa',
     'constituency_code': '250',
     'county_code': '043',
+    'sub_county_code': '04306',
   },
   {
     'code': '1248',
@@ -10367,6 +11758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndhiwa',
     'constituency_code': '250',
     'county_code': '043',
+    'sub_county_code': '04306',
   },
   {
     'code': '0511',
@@ -10374,6 +11766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndia',
     'constituency_code': '102',
     'county_code': '020',
+    'sub_county_code': '02004',
   },
   {
     'code': '0510',
@@ -10381,6 +11774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndia',
     'constituency_code': '102',
     'county_code': '020',
+    'sub_county_code': '02004',
   },
   {
     'code': '0509',
@@ -10388,6 +11782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ndia',
     'constituency_code': '102',
     'county_code': '020',
+    'sub_county_code': '02004',
   },
   {
     'code': '0832',
@@ -10395,6 +11790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Njoro',
     'constituency_code': '167',
     'county_code': '032',
+    'sub_county_code': '03202',
   },
   {
     'code': '0834',
@@ -10402,6 +11798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Njoro',
     'constituency_code': '167',
     'county_code': '032',
+    'sub_county_code': '03202',
   },
   {
     'code': '0831',
@@ -10409,6 +11806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Njoro',
     'constituency_code': '167',
     'county_code': '032',
+    'sub_county_code': '03202',
   },
   {
     'code': '0830',
@@ -10416,6 +11814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Njoro',
     'constituency_code': '167',
     'county_code': '032',
+    'sub_county_code': '03202',
   },
   {
     'code': '0833',
@@ -10423,6 +11822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Njoro',
     'constituency_code': '167',
     'county_code': '032',
+    'sub_county_code': '03202',
   },
   {
     'code': '0835',
@@ -10430,6 +11830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Njoro',
     'constituency_code': '167',
     'county_code': '032',
+    'sub_county_code': '03202',
   },
   {
     'code': '0230',
@@ -10437,6 +11838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Horr',
     'constituency_code': '046',
     'county_code': '010',
+    'sub_county_code': '01002',
   },
   {
     'code': '0228',
@@ -10444,6 +11846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Horr',
     'constituency_code': '046',
     'county_code': '010',
+    'sub_county_code': '01002',
   },
   {
     'code': '0231',
@@ -10451,6 +11854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Horr',
     'constituency_code': '046',
     'county_code': '010',
+    'sub_county_code': '01002',
   },
   {
     'code': '0229',
@@ -10458,6 +11862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Horr',
     'constituency_code': '046',
     'county_code': '010',
+    'sub_county_code': '01002',
   },
   {
     'code': '0232',
@@ -10465,6 +11870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Horr',
     'constituency_code': '046',
     'county_code': '010',
+    'sub_county_code': '01002',
   },
   {
     'code': '0276',
@@ -10472,6 +11878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Imenti',
     'constituency_code': '056',
     'county_code': '012',
+    'sub_county_code': '01206',
   },
   {
     'code': '0277',
@@ -10479,6 +11886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Imenti',
     'constituency_code': '056',
     'county_code': '012',
+    'sub_county_code': '01206',
   },
   {
     'code': '0278',
@@ -10486,6 +11894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Imenti',
     'constituency_code': '056',
     'county_code': '012',
+    'sub_county_code': '01206',
   },
   {
     'code': '0280',
@@ -10493,6 +11902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Imenti',
     'constituency_code': '056',
     'county_code': '012',
+    'sub_county_code': '01206',
   },
   {
     'code': '0279',
@@ -10500,6 +11910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Imenti',
     'constituency_code': '056',
     'county_code': '012',
+    'sub_county_code': '01206',
   },
   {
     'code': '1359',
@@ -10507,6 +11918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Mugirango',
     'constituency_code': '272',
     'county_code': '046',
+    'sub_county_code': '04604',
   },
   {
     'code': '1358',
@@ -10514,6 +11926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Mugirango',
     'constituency_code': '272',
     'county_code': '046',
+    'sub_county_code': '04604',
   },
   {
     'code': '1361',
@@ -10521,6 +11934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Mugirango',
     'constituency_code': '272',
     'county_code': '046',
+    'sub_county_code': '04604',
   },
   {
     'code': '1357',
@@ -10528,6 +11942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Mugirango',
     'constituency_code': '272',
     'county_code': '046',
+    'sub_county_code': '04604',
   },
   {
     'code': '1360',
@@ -10535,6 +11950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'North Mugirango',
     'constituency_code': '272',
     'county_code': '046',
+    'sub_county_code': '04604',
   },
   {
     'code': '1218',
@@ -10542,6 +11958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyakach',
     'constituency_code': '244',
     'county_code': '042',
+    'sub_county_code': '04207',
   },
   {
     'code': '1217',
@@ -10549,6 +11966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyakach',
     'constituency_code': '244',
     'county_code': '042',
+    'sub_county_code': '04207',
   },
   {
     'code': '1220',
@@ -10556,6 +11974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyakach',
     'constituency_code': '244',
     'county_code': '042',
+    'sub_county_code': '04207',
   },
   {
     'code': '1216',
@@ -10563,6 +11982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyakach',
     'constituency_code': '244',
     'county_code': '042',
+    'sub_county_code': '04207',
   },
   {
     'code': '1219',
@@ -10570,6 +11990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyakach',
     'constituency_code': '244',
     'county_code': '042',
+    'sub_county_code': '04207',
   },
   {
     'code': '0016',
@@ -10577,6 +11998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyali',
     'constituency_code': '004',
     'county_code': '001',
+    'sub_county_code': '00104',
   },
   {
     'code': '0020',
@@ -10584,6 +12006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyali',
     'constituency_code': '004',
     'county_code': '001',
+    'sub_county_code': '00104',
   },
   {
     'code': '0019',
@@ -10591,6 +12014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyali',
     'constituency_code': '004',
     'county_code': '001',
+    'sub_county_code': '00104',
   },
   {
     'code': '0018',
@@ -10598,6 +12022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyali',
     'constituency_code': '004',
     'county_code': '001',
+    'sub_county_code': '00104',
   },
   {
     'code': '0017',
@@ -10605,6 +12030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyali',
     'constituency_code': '004',
     'county_code': '001',
+    'sub_county_code': '00104',
   },
   {
     'code': '1208',
@@ -10612,6 +12038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyando',
     'constituency_code': '242',
     'county_code': '042',
+    'sub_county_code': '04205',
   },
   {
     'code': '1207',
@@ -10619,6 +12046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyando',
     'constituency_code': '242',
     'county_code': '042',
+    'sub_county_code': '04205',
   },
   {
     'code': '1206',
@@ -10626,6 +12054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyando',
     'constituency_code': '242',
     'county_code': '042',
+    'sub_county_code': '04205',
   },
   {
     'code': '1209',
@@ -10633,6 +12062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyando',
     'constituency_code': '242',
     'county_code': '042',
+    'sub_county_code': '04205',
   },
   {
     'code': '1210',
@@ -10640,6 +12070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyando',
     'constituency_code': '242',
     'county_code': '042',
+    'sub_county_code': '04205',
   },
   {
     'code': '1335',
@@ -10647,6 +12078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Chache',
     'constituency_code': '267',
     'county_code': '045',
+    'sub_county_code': '04507',
   },
   {
     'code': '1331',
@@ -10654,6 +12086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Chache',
     'constituency_code': '267',
     'county_code': '045',
+    'sub_county_code': '04507',
   },
   {
     'code': '1336',
@@ -10661,6 +12094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Chache',
     'constituency_code': '267',
     'county_code': '045',
+    'sub_county_code': '04507',
   },
   {
     'code': '1333',
@@ -10668,6 +12102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Chache',
     'constituency_code': '267',
     'county_code': '045',
+    'sub_county_code': '04507',
   },
   {
     'code': '1334',
@@ -10675,6 +12110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Chache',
     'constituency_code': '267',
     'county_code': '045',
+    'sub_county_code': '04507',
   },
   {
     'code': '1332',
@@ -10682,6 +12118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Chache',
     'constituency_code': '267',
     'county_code': '045',
+    'sub_county_code': '04507',
   },
   {
     'code': '1329',
@@ -10689,6 +12126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Masaba',
     'constituency_code': '266',
     'county_code': '045',
+    'sub_county_code': '04506',
   },
   {
     'code': '1326',
@@ -10696,6 +12134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Masaba',
     'constituency_code': '266',
     'county_code': '045',
+    'sub_county_code': '04506',
   },
   {
     'code': '1330',
@@ -10703,6 +12142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Masaba',
     'constituency_code': '266',
     'county_code': '045',
+    'sub_county_code': '04506',
   },
   {
     'code': '1328',
@@ -10710,6 +12150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Masaba',
     'constituency_code': '266',
     'county_code': '045',
+    'sub_county_code': '04506',
   },
   {
     'code': '1327',
@@ -10717,6 +12158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyaribari Masaba',
     'constituency_code': '266',
     'county_code': '045',
+    'sub_county_code': '04506',
   },
   {
     'code': '1287',
@@ -10724,6 +12166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyatike',
     'constituency_code': '258',
     'county_code': '044',
+    'sub_county_code': '04406',
   },
   {
     'code': '1282',
@@ -10731,6 +12174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyatike',
     'constituency_code': '258',
     'county_code': '044',
+    'sub_county_code': '04406',
   },
   {
     'code': '1286',
@@ -10738,6 +12182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyatike',
     'constituency_code': '258',
     'county_code': '044',
+    'sub_county_code': '04406',
   },
   {
     'code': '1283',
@@ -10745,6 +12190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyatike',
     'constituency_code': '258',
     'county_code': '044',
+    'sub_county_code': '04406',
   },
   {
     'code': '1285',
@@ -10752,6 +12198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyatike',
     'constituency_code': '258',
     'county_code': '044',
+    'sub_county_code': '04406',
   },
   {
     'code': '1288',
@@ -10759,6 +12206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyatike',
     'constituency_code': '258',
     'county_code': '044',
+    'sub_county_code': '04406',
   },
   {
     'code': '1284',
@@ -10766,6 +12214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyatike',
     'constituency_code': '258',
     'county_code': '044',
+    'sub_county_code': '04406',
   },
   {
     'code': '0493',
@@ -10773,6 +12222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyeri Town',
     'constituency_code': '099',
     'county_code': '019',
+    'sub_county_code': '01908',
   },
   {
     'code': '0495',
@@ -10780,6 +12230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyeri Town',
     'constituency_code': '099',
     'county_code': '019',
+    'sub_county_code': '01908',
   },
   {
     'code': '0491',
@@ -10787,6 +12238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyeri Town',
     'constituency_code': '099',
     'county_code': '019',
+    'sub_county_code': '01908',
   },
   {
     'code': '0494',
@@ -10794,6 +12246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyeri Town',
     'constituency_code': '099',
     'county_code': '019',
+    'sub_county_code': '01908',
   },
   {
     'code': '0492',
@@ -10801,6 +12254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Nyeri Town',
     'constituency_code': '099',
     'county_code': '019',
+    'sub_county_code': '01908',
   },
   {
     'code': '0461',
@@ -10808,6 +12262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ol Jorok',
     'constituency_code': '092',
     'county_code': '018',
+    'sub_county_code': '01804',
   },
   {
     'code': '0458',
@@ -10815,6 +12270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ol Jorok',
     'constituency_code': '092',
     'county_code': '018',
+    'sub_county_code': '01804',
   },
   {
     'code': '0459',
@@ -10822,6 +12278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ol Jorok',
     'constituency_code': '092',
     'county_code': '018',
+    'sub_county_code': '01804',
   },
   {
     'code': '0460',
@@ -10829,6 +12286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ol Jorok',
     'constituency_code': '092',
     'county_code': '018',
+    'sub_county_code': '01804',
   },
   {
     'code': '0456',
@@ -10836,6 +12294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ol Kalou',
     'constituency_code': '091',
     'county_code': '018',
+    'sub_county_code': '01803',
   },
   {
     'code': '0454',
@@ -10843,6 +12302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ol Kalou',
     'constituency_code': '091',
     'county_code': '018',
+    'sub_county_code': '01803',
   },
   {
     'code': '0453',
@@ -10850,6 +12310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ol Kalou',
     'constituency_code': '091',
     'county_code': '018',
+    'sub_county_code': '01803',
   },
   {
     'code': '0455',
@@ -10857,6 +12318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ol Kalou',
     'constituency_code': '091',
     'county_code': '018',
+    'sub_county_code': '01803',
   },
   {
     'code': '0457',
@@ -10864,6 +12326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ol Kalou',
     'constituency_code': '091',
     'county_code': '018',
+    'sub_county_code': '01803',
   },
   {
     'code': '0485',
@@ -10871,6 +12334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Othaya',
     'constituency_code': '097',
     'county_code': '019',
+    'sub_county_code': '01906',
   },
   {
     'code': '0484',
@@ -10878,6 +12342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Othaya',
     'constituency_code': '097',
     'county_code': '019',
+    'sub_county_code': '01906',
   },
   {
     'code': '0486',
@@ -10885,6 +12350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Othaya',
     'constituency_code': '097',
     'county_code': '019',
+    'sub_county_code': '01906',
   },
   {
     'code': '0483',
@@ -10892,6 +12358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Othaya',
     'constituency_code': '097',
     'county_code': '019',
+    'sub_county_code': '01906',
   },
   {
     'code': '0658',
@@ -10899,6 +12366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Pokot South',
     'constituency_code': '132',
     'county_code': '024',
+    'sub_county_code': '02404',
   },
   {
     'code': '0657',
@@ -10906,6 +12374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Pokot South',
     'constituency_code': '132',
     'county_code': '024',
+    'sub_county_code': '02404',
   },
   {
     'code': '0659',
@@ -10913,6 +12382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Pokot South',
     'constituency_code': '132',
     'county_code': '024',
+    'sub_county_code': '02404',
   },
   {
     'code': '0660',
@@ -10920,6 +12390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Pokot South',
     'constituency_code': '132',
     'county_code': '024',
+    'sub_county_code': '02404',
   },
   {
     'code': '0069',
@@ -10927,6 +12398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rabai',
     'constituency_code': '014',
     'county_code': '003',
+    'sub_county_code': '00304',
   },
   {
     'code': '0067',
@@ -10934,6 +12406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rabai',
     'constituency_code': '014',
     'county_code': '003',
+    'sub_county_code': '00304',
   },
   {
     'code': '0070',
@@ -10941,6 +12414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rabai',
     'constituency_code': '014',
     'county_code': '003',
+    'sub_county_code': '00304',
   },
   {
     'code': '0068',
@@ -10948,6 +12422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rabai',
     'constituency_code': '014',
     'county_code': '003',
+    'sub_county_code': '00304',
   },
   {
     'code': '1238',
@@ -10955,6 +12430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rangwe',
     'constituency_code': '248',
     'county_code': '043',
+    'sub_county_code': '04304',
   },
   {
     'code': '1239',
@@ -10962,6 +12438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rangwe',
     'constituency_code': '248',
     'county_code': '043',
+    'sub_county_code': '04304',
   },
   {
     'code': '1240',
@@ -10969,6 +12446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rangwe',
     'constituency_code': '248',
     'county_code': '043',
+    'sub_county_code': '04304',
   },
   {
     'code': '1237',
@@ -10976,6 +12454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rangwe',
     'constituency_code': '248',
     'county_code': '043',
+    'sub_county_code': '04304',
   },
   {
     'code': '1181',
@@ -10983,6 +12462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rarieda',
     'constituency_code': '237',
     'county_code': '041',
+    'sub_county_code': '04106',
   },
   {
     'code': '1183',
@@ -10990,6 +12470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rarieda',
     'constituency_code': '237',
     'county_code': '041',
+    'sub_county_code': '04106',
   },
   {
     'code': '1184',
@@ -10997,6 +12478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rarieda',
     'constituency_code': '237',
     'county_code': '041',
+    'sub_county_code': '04106',
   },
   {
     'code': '1182',
@@ -11004,6 +12486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rarieda',
     'constituency_code': '237',
     'county_code': '041',
+    'sub_county_code': '04106',
   },
   {
     'code': '1185',
@@ -11011,6 +12494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rarieda',
     'constituency_code': '237',
     'county_code': '041',
+    'sub_county_code': '04106',
   },
   {
     'code': '0860',
@@ -11018,6 +12502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rongai',
     'constituency_code': '173',
     'county_code': '032',
+    'sub_county_code': '03208',
   },
   {
     'code': '0863',
@@ -11025,6 +12510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rongai',
     'constituency_code': '173',
     'county_code': '032',
+    'sub_county_code': '03208',
   },
   {
     'code': '0861',
@@ -11032,6 +12518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rongai',
     'constituency_code': '173',
     'county_code': '032',
+    'sub_county_code': '03208',
   },
   {
     'code': '0864',
@@ -11039,6 +12526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rongai',
     'constituency_code': '173',
     'county_code': '032',
+    'sub_county_code': '03208',
   },
   {
     'code': '0862',
@@ -11046,6 +12534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rongai',
     'constituency_code': '173',
     'county_code': '032',
+    'sub_county_code': '03208',
   },
   {
     'code': '1262',
@@ -11053,6 +12542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rongo',
     'constituency_code': '253',
     'county_code': '044',
+    'sub_county_code': '04401',
   },
   {
     'code': '1263',
@@ -11060,6 +12550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rongo',
     'constituency_code': '253',
     'county_code': '044',
+    'sub_county_code': '04401',
   },
   {
     'code': '1261',
@@ -11067,6 +12558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rongo',
     'constituency_code': '253',
     'county_code': '044',
+    'sub_county_code': '04401',
   },
   {
     'code': '1264',
@@ -11074,6 +12566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Rongo',
     'constituency_code': '253',
     'county_code': '044',
+    'sub_county_code': '04401',
   },
   {
     'code': '1391',
@@ -11081,6 +12574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Roysambu',
     'constituency_code': '279',
     'county_code': '047',
+    'sub_county_code': '04706',
   },
   {
     'code': '1395',
@@ -11088,6 +12582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Roysambu',
     'constituency_code': '279',
     'county_code': '047',
+    'sub_county_code': '04706',
   },
   {
     'code': '1392',
@@ -11095,6 +12590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Roysambu',
     'constituency_code': '279',
     'county_code': '047',
+    'sub_county_code': '04706',
   },
   {
     'code': '1394',
@@ -11102,6 +12598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Roysambu',
     'constituency_code': '279',
     'county_code': '047',
+    'sub_county_code': '04706',
   },
   {
     'code': '1393',
@@ -11109,6 +12606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Roysambu',
     'constituency_code': '279',
     'county_code': '047',
+    'sub_county_code': '04706',
   },
   {
     'code': '1401',
@@ -11116,6 +12614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruaraka',
     'constituency_code': '281',
     'county_code': '047',
+    'sub_county_code': '04708',
   },
   {
     'code': '1405',
@@ -11123,6 +12622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruaraka',
     'constituency_code': '281',
     'county_code': '047',
+    'sub_county_code': '04708',
   },
   {
     'code': '1404',
@@ -11130,6 +12630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruaraka',
     'constituency_code': '281',
     'county_code': '047',
+    'sub_county_code': '04708',
   },
   {
     'code': '1403',
@@ -11137,6 +12638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruaraka',
     'constituency_code': '281',
     'county_code': '047',
+    'sub_county_code': '04708',
   },
   {
     'code': '1402',
@@ -11144,6 +12646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruaraka',
     'constituency_code': '281',
     'county_code': '047',
+    'sub_county_code': '04708',
   },
   {
     'code': '0570',
@@ -11151,6 +12654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruiru',
     'constituency_code': '115',
     'county_code': '022',
+    'sub_county_code': '02205',
   },
   {
     'code': '0571',
@@ -11158,6 +12662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruiru',
     'constituency_code': '115',
     'county_code': '022',
+    'sub_county_code': '02205',
   },
   {
     'code': '0569',
@@ -11165,6 +12670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruiru',
     'constituency_code': '115',
     'county_code': '022',
+    'sub_county_code': '02205',
   },
   {
     'code': '0572',
@@ -11172,6 +12678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruiru',
     'constituency_code': '115',
     'county_code': '022',
+    'sub_county_code': '02205',
   },
   {
     'code': '0573',
@@ -11179,6 +12686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruiru',
     'constituency_code': '115',
     'county_code': '022',
+    'sub_county_code': '02205',
   },
   {
     'code': '0574',
@@ -11186,6 +12694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruiru',
     'constituency_code': '115',
     'county_code': '022',
+    'sub_county_code': '02205',
   },
   {
     'code': '0576',
@@ -11193,6 +12702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruiru',
     'constituency_code': '115',
     'county_code': '022',
+    'sub_county_code': '02205',
   },
   {
     'code': '0575',
@@ -11200,6 +12710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ruiru',
     'constituency_code': '115',
     'county_code': '022',
+    'sub_county_code': '02205',
   },
   {
     'code': '0319',
@@ -11207,6 +12718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Runyenjes',
     'constituency_code': '064',
     'county_code': '014',
+    'sub_county_code': '01402',
   },
   {
     'code': '0317',
@@ -11214,6 +12726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Runyenjes',
     'constituency_code': '064',
     'county_code': '014',
+    'sub_county_code': '01401',
   },
   {
     'code': '0320',
@@ -11221,6 +12734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Runyenjes',
     'constituency_code': '064',
     'county_code': '014',
+    'sub_county_code': '01402',
   },
   {
     'code': '0318',
@@ -11228,6 +12742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Runyenjes',
     'constituency_code': '064',
     'county_code': '014',
+    'sub_county_code': '01402',
   },
   {
     'code': '0321',
@@ -11235,6 +12750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Runyenjes',
     'constituency_code': '064',
     'county_code': '014',
+    'sub_county_code': '01402',
   },
   {
     'code': '0322',
@@ -11242,6 +12758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Runyenjes',
     'constituency_code': '064',
     'county_code': '014',
+    'sub_county_code': '01402',
   },
   {
     'code': '1060',
@@ -11249,6 +12766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sabatia',
     'constituency_code': '212',
     'county_code': '038',
+    'sub_county_code': '03802',
   },
   {
     'code': '1057',
@@ -11256,6 +12774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sabatia',
     'constituency_code': '212',
     'county_code': '038',
+    'sub_county_code': '03802',
   },
   {
     'code': '1055',
@@ -11263,6 +12782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sabatia',
     'constituency_code': '212',
     'county_code': '038',
+    'sub_county_code': '03802',
   },
   {
     'code': '1058',
@@ -11270,6 +12790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sabatia',
     'constituency_code': '212',
     'county_code': '038',
+    'sub_county_code': '03802',
   },
   {
     'code': '1056',
@@ -11277,6 +12798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sabatia',
     'constituency_code': '212',
     'county_code': '038',
+    'sub_county_code': '03802',
   },
   {
     'code': '1059',
@@ -11284,6 +12806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sabatia',
     'constituency_code': '212',
     'county_code': '038',
+    'sub_county_code': '03802',
   },
   {
     'code': '0683',
@@ -11291,6 +12814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Saboti',
     'constituency_code': '138',
     'county_code': '026',
+    'sub_county_code': '02603',
   },
   {
     'code': '0687',
@@ -11298,6 +12822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Saboti',
     'constituency_code': '138',
     'county_code': '026',
+    'sub_county_code': '02603',
   },
   {
     'code': '0684',
@@ -11305,6 +12830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Saboti',
     'constituency_code': '138',
     'county_code': '026',
+    'sub_county_code': '02603',
   },
   {
     'code': '0686',
@@ -11312,6 +12838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Saboti',
     'constituency_code': '138',
     'county_code': '026',
+    'sub_county_code': '02603',
   },
   {
     'code': '0685',
@@ -11319,6 +12846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Saboti',
     'constituency_code': '138',
     'county_code': '026',
+    'sub_county_code': '02603',
   },
   {
     'code': '0234',
@@ -11326,6 +12854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Saku',
     'constituency_code': '047',
     'county_code': '010',
+    'sub_county_code': '01003',
   },
   {
     'code': '0235',
@@ -11333,6 +12862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Saku',
     'constituency_code': '047',
     'county_code': '010',
+    'sub_county_code': '01003',
   },
   {
     'code': '0233',
@@ -11340,6 +12870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Saku',
     'constituency_code': '047',
     'county_code': '010',
+    'sub_county_code': '01003',
   },
   {
     'code': '0674',
@@ -11347,6 +12878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu East',
     'constituency_code': '135',
     'county_code': '025',
+    'sub_county_code': '02503',
   },
   {
     'code': '0675',
@@ -11354,6 +12886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu East',
     'constituency_code': '135',
     'county_code': '025',
+    'sub_county_code': '02503',
   },
   {
     'code': '0673',
@@ -11361,6 +12894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu East',
     'constituency_code': '135',
     'county_code': '025',
+    'sub_county_code': '02503',
   },
   {
     'code': '0672',
@@ -11368,6 +12902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu East',
     'constituency_code': '135',
     'county_code': '025',
+    'sub_county_code': '02503',
   },
   {
     'code': '0670',
@@ -11375,6 +12910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu North',
     'constituency_code': '134',
     'county_code': '025',
+    'sub_county_code': '02501',
   },
   {
     'code': '0671',
@@ -11382,6 +12918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu North',
     'constituency_code': '134',
     'county_code': '025',
+    'sub_county_code': '02501',
   },
   {
     'code': '0666',
@@ -11389,6 +12926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu North',
     'constituency_code': '134',
     'county_code': '025',
+    'sub_county_code': '02502',
   },
   {
     'code': '0667',
@@ -11396,6 +12934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu North',
     'constituency_code': '134',
     'county_code': '025',
+    'sub_county_code': '02502',
   },
   {
     'code': '0668',
@@ -11403,6 +12942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu North',
     'constituency_code': '134',
     'county_code': '025',
+    'sub_county_code': '02502',
   },
   {
     'code': '0669',
@@ -11410,6 +12950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu North',
     'constituency_code': '134',
     'county_code': '025',
+    'sub_county_code': '02502',
   },
   {
     'code': '0661',
@@ -11417,6 +12958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu West',
     'constituency_code': '133',
     'county_code': '025',
+    'sub_county_code': '02501',
   },
   {
     'code': '0664',
@@ -11424,6 +12966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu West',
     'constituency_code': '133',
     'county_code': '025',
+    'sub_county_code': '02501',
   },
   {
     'code': '0663',
@@ -11431,6 +12974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu West',
     'constituency_code': '133',
     'county_code': '025',
+    'sub_county_code': '02501',
   },
   {
     'code': '0665',
@@ -11438,6 +12982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu West',
     'constituency_code': '133',
     'county_code': '025',
+    'sub_county_code': '02501',
   },
   {
     'code': '0662',
@@ -11445,6 +12990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Samburu West',
     'constituency_code': '133',
     'county_code': '025',
+    'sub_county_code': '02501',
   },
   {
     'code': '1203',
@@ -11452,6 +12998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Seme',
     'constituency_code': '241',
     'county_code': '042',
+    'sub_county_code': '04204',
   },
   {
     'code': '1204',
@@ -11459,6 +13006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Seme',
     'constituency_code': '241',
     'county_code': '042',
+    'sub_county_code': '04204',
   },
   {
     'code': '1205',
@@ -11466,6 +13014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Seme',
     'constituency_code': '241',
     'county_code': '042',
+    'sub_county_code': '04204',
   },
   {
     'code': '1202',
@@ -11473,6 +13022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Seme',
     'constituency_code': '241',
     'county_code': '042',
+    'sub_county_code': '04204',
   },
   {
     'code': '1043',
@@ -11480,6 +13030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Shinyalu',
     'constituency_code': '209',
     'county_code': '037',
+    'sub_county_code': '03711',
   },
   {
     'code': '1045',
@@ -11487,6 +13038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Shinyalu',
     'constituency_code': '209',
     'county_code': '037',
+    'sub_county_code': '03711',
   },
   {
     'code': '1041',
@@ -11494,6 +13046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Shinyalu',
     'constituency_code': '209',
     'county_code': '037',
+    'sub_county_code': '03711',
   },
   {
     'code': '1044',
@@ -11501,6 +13054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Shinyalu',
     'constituency_code': '209',
     'county_code': '037',
+    'sub_county_code': '03711',
   },
   {
     'code': '1046',
@@ -11508,6 +13062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Shinyalu',
     'constituency_code': '209',
     'county_code': '037',
+    'sub_county_code': '03711',
   },
   {
     'code': '1042',
@@ -11515,6 +13070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Shinyalu',
     'constituency_code': '209',
     'county_code': '037',
+    'sub_county_code': '03711',
   },
   {
     'code': '0649',
@@ -11522,6 +13078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sigor',
     'constituency_code': '130',
     'county_code': '024',
+    'sub_county_code': '02402',
   },
   {
     'code': '0648',
@@ -11529,6 +13086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sigor',
     'constituency_code': '130',
     'county_code': '024',
+    'sub_county_code': '02402',
   },
   {
     'code': '0647',
@@ -11536,6 +13094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sigor',
     'constituency_code': '130',
     'county_code': '024',
+    'sub_county_code': '02402',
   },
   {
     'code': '0650',
@@ -11543,6 +13102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sigor',
     'constituency_code': '130',
     'county_code': '024',
+    'sub_county_code': '02402',
   },
   {
     'code': '0963',
@@ -11550,6 +13110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sigowet/Soin',
     'constituency_code': '193',
     'county_code': '035',
+    'sub_county_code': '03506',
   },
   {
     'code': '0962',
@@ -11557,6 +13118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sigowet/Soin',
     'constituency_code': '193',
     'county_code': '035',
+    'sub_county_code': '03506',
   },
   {
     'code': '0965',
@@ -11564,6 +13126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sigowet/Soin',
     'constituency_code': '193',
     'county_code': '035',
+    'sub_county_code': '03506',
   },
   {
     'code': '0964',
@@ -11571,6 +13134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sigowet/Soin',
     'constituency_code': '193',
     'county_code': '035',
+    'sub_county_code': '03506',
   },
   {
     'code': '1084',
@@ -11578,6 +13142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sirisia',
     'constituency_code': '217',
     'county_code': '039',
+    'sub_county_code': '03903',
   },
   {
     'code': '1083',
@@ -11585,6 +13150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sirisia',
     'constituency_code': '217',
     'county_code': '039',
+    'sub_county_code': '03903',
   },
   {
     'code': '1082',
@@ -11592,6 +13158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sirisia',
     'constituency_code': '217',
     'county_code': '039',
+    'sub_county_code': '03903',
   },
   {
     'code': '0967',
@@ -11599,6 +13166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sotik',
     'constituency_code': '194',
     'county_code': '036',
+    'sub_county_code': '03601',
   },
   {
     'code': '0969',
@@ -11606,6 +13174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sotik',
     'constituency_code': '194',
     'county_code': '036',
+    'sub_county_code': '03601',
   },
   {
     'code': '0968',
@@ -11613,6 +13182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sotik',
     'constituency_code': '194',
     'county_code': '036',
+    'sub_county_code': '03601',
   },
   {
     'code': '0966',
@@ -11620,6 +13190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sotik',
     'constituency_code': '194',
     'county_code': '036',
+    'sub_county_code': '03601',
   },
   {
     'code': '0970',
@@ -11627,6 +13198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Sotik',
     'constituency_code': '194',
     'county_code': '036',
+    'sub_county_code': '03601',
   },
   {
     'code': '0293',
@@ -11634,6 +13206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Imenti',
     'constituency_code': '059',
     'county_code': '012',
+    'sub_county_code': '01209',
   },
   {
     'code': '0294',
@@ -11641,6 +13214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Imenti',
     'constituency_code': '059',
     'county_code': '012',
+    'sub_county_code': '01209',
   },
   {
     'code': '0291',
@@ -11648,6 +13222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Imenti',
     'constituency_code': '059',
     'county_code': '012',
+    'sub_county_code': '01209',
   },
   {
     'code': '0292',
@@ -11655,6 +13230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Imenti',
     'constituency_code': '059',
     'county_code': '012',
+    'sub_county_code': '01209',
   },
   {
     'code': '0290',
@@ -11662,6 +13238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Imenti',
     'constituency_code': '059',
     'county_code': '012',
+    'sub_county_code': '01209',
   },
   {
     'code': '0295',
@@ -11669,6 +13246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Imenti',
     'constituency_code': '059',
     'county_code': '012',
+    'sub_county_code': '01209',
   },
   {
     'code': '1307',
@@ -11676,6 +13254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Mugirango',
     'constituency_code': '262',
     'county_code': '045',
+    'sub_county_code': '04502',
   },
   {
     'code': '1306',
@@ -11683,6 +13262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Mugirango',
     'constituency_code': '262',
     'county_code': '045',
+    'sub_county_code': '04502',
   },
   {
     'code': '1308',
@@ -11690,6 +13270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Mugirango',
     'constituency_code': '262',
     'county_code': '045',
+    'sub_county_code': '04502',
   },
   {
     'code': '1310',
@@ -11697,6 +13278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Mugirango',
     'constituency_code': '262',
     'county_code': '045',
+    'sub_county_code': '04502',
   },
   {
     'code': '1309',
@@ -11704,6 +13286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Mugirango',
     'constituency_code': '262',
     'county_code': '045',
+    'sub_county_code': '04502',
   },
   {
     'code': '1305',
@@ -11711,6 +13294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'South Mugirango',
     'constituency_code': '262',
     'county_code': '045',
+    'sub_county_code': '04502',
   },
   {
     'code': '0702',
@@ -11718,6 +13302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Soy',
     'constituency_code': '141',
     'county_code': '027',
+    'sub_county_code': '02701',
   },
   {
     'code': '0705',
@@ -11725,6 +13310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Soy',
     'constituency_code': '141',
     'county_code': '027',
+    'sub_county_code': '02701',
   },
   {
     'code': '0707',
@@ -11732,6 +13318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Soy',
     'constituency_code': '141',
     'county_code': '027',
+    'sub_county_code': '02701',
   },
   {
     'code': '0701',
@@ -11739,6 +13326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Soy',
     'constituency_code': '141',
     'county_code': '027',
+    'sub_county_code': '02701',
   },
   {
     'code': '0704',
@@ -11746,6 +13334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Soy',
     'constituency_code': '141',
     'county_code': '027',
+    'sub_county_code': '02701',
   },
   {
     'code': '0706',
@@ -11753,6 +13342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Soy',
     'constituency_code': '141',
     'county_code': '027',
+    'sub_county_code': '02701',
   },
   {
     'code': '0703',
@@ -11760,6 +13350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Soy',
     'constituency_code': '141',
     'county_code': '027',
+    'sub_county_code': '02701',
   },
   {
     'code': '1443',
@@ -11767,6 +13358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Starehe',
     'constituency_code': '289',
     'county_code': '047',
+    'sub_county_code': '04716',
   },
   {
     'code': '1439',
@@ -11774,6 +13366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Starehe',
     'constituency_code': '289',
     'county_code': '047',
+    'sub_county_code': '04716',
   },
   {
     'code': '1444',
@@ -11781,6 +13374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Starehe',
     'constituency_code': '289',
     'county_code': '047',
+    'sub_county_code': '04716',
   },
   {
     'code': '1440',
@@ -11788,6 +13382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Starehe',
     'constituency_code': '289',
     'county_code': '047',
+    'sub_county_code': '04716',
   },
   {
     'code': '1442',
@@ -11795,6 +13390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Starehe',
     'constituency_code': '289',
     'county_code': '047',
+    'sub_county_code': '04716',
   },
   {
     'code': '1441',
@@ -11802,6 +13398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Starehe',
     'constituency_code': '289',
     'county_code': '047',
+    'sub_county_code': '04716',
   },
   {
     'code': '1258',
@@ -11809,6 +13406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suba',
     'constituency_code': '252',
     'county_code': '043',
+    'sub_county_code': '04308',
   },
   {
     'code': '1257',
@@ -11816,6 +13414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suba',
     'constituency_code': '252',
     'county_code': '043',
+    'sub_county_code': '04308',
   },
   {
     'code': '1259',
@@ -11823,6 +13422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suba',
     'constituency_code': '252',
     'county_code': '043',
+    'sub_county_code': '04308',
   },
   {
     'code': '1260',
@@ -11830,6 +13430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suba',
     'constituency_code': '252',
     'county_code': '043',
+    'sub_county_code': '04308',
   },
   {
     'code': '0859',
@@ -11837,6 +13438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Subukia',
     'constituency_code': '172',
     'county_code': '032',
+    'sub_county_code': '03207',
   },
   {
     'code': '0857',
@@ -11844,6 +13446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Subukia',
     'constituency_code': '172',
     'county_code': '032',
+    'sub_county_code': '03207',
   },
   {
     'code': '0858',
@@ -11851,6 +13454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Subukia',
     'constituency_code': '172',
     'county_code': '032',
+    'sub_county_code': '03207',
   },
   {
     'code': '1269',
@@ -11858,6 +13462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suna East',
     'constituency_code': '255',
     'county_code': '044',
+    'sub_county_code': '04403',
   },
   {
     'code': '1271',
@@ -11865,6 +13470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suna East',
     'constituency_code': '255',
     'county_code': '044',
+    'sub_county_code': '04403',
   },
   {
     'code': '1272',
@@ -11872,6 +13478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suna East',
     'constituency_code': '255',
     'county_code': '044',
+    'sub_county_code': '04403',
   },
   {
     'code': '1270',
@@ -11879,6 +13486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suna East',
     'constituency_code': '255',
     'county_code': '044',
+    'sub_county_code': '04403',
   },
   {
     'code': '1275',
@@ -11886,6 +13494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suna West',
     'constituency_code': '256',
     'county_code': '044',
+    'sub_county_code': '04404',
   },
   {
     'code': '1276',
@@ -11893,6 +13502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suna West',
     'constituency_code': '256',
     'county_code': '044',
+    'sub_county_code': '04404',
   },
   {
     'code': '1274',
@@ -11900,6 +13510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suna West',
     'constituency_code': '256',
     'county_code': '044',
+    'sub_county_code': '04404',
   },
   {
     'code': '1273',
@@ -11907,6 +13518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Suna West',
     'constituency_code': '256',
     'county_code': '044',
+    'sub_county_code': '04404',
   },
   {
     'code': '0172',
@@ -11914,6 +13526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tarbaj',
     'constituency_code': '035',
     'county_code': '008',
+    'sub_county_code': '00803',
   },
   {
     'code': '0173',
@@ -11921,6 +13534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tarbaj',
     'constituency_code': '035',
     'county_code': '008',
+    'sub_county_code': '00803',
   },
   {
     'code': '0174',
@@ -11928,6 +13542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tarbaj',
     'constituency_code': '035',
     'county_code': '008',
+    'sub_county_code': '00803',
   },
   {
     'code': '0175',
@@ -11935,6 +13550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tarbaj',
     'constituency_code': '035',
     'county_code': '008',
+    'sub_county_code': '00803',
   },
   {
     'code': '0113',
@@ -11942,6 +13558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Taveta',
     'constituency_code': '023',
     'county_code': '006',
+    'sub_county_code': '00601',
   },
   {
     'code': '0111',
@@ -11949,6 +13566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Taveta',
     'constituency_code': '023',
     'county_code': '006',
+    'sub_county_code': '00601',
   },
   {
     'code': '0112',
@@ -11956,6 +13574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Taveta',
     'constituency_code': '023',
     'county_code': '006',
+    'sub_county_code': '00601',
   },
   {
     'code': '0115',
@@ -11963,6 +13582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Taveta',
     'constituency_code': '023',
     'county_code': '006',
+    'sub_county_code': '00601',
   },
   {
     'code': '0114',
@@ -11970,6 +13590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Taveta',
     'constituency_code': '023',
     'county_code': '006',
+    'sub_county_code': '00601',
   },
   {
     'code': '1125',
@@ -11977,6 +13598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso North',
     'constituency_code': '225',
     'county_code': '040',
+    'sub_county_code': '04001',
   },
   {
     'code': '1124',
@@ -11984,6 +13606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso North',
     'constituency_code': '225',
     'county_code': '040',
+    'sub_county_code': '04001',
   },
   {
     'code': '1123',
@@ -11991,6 +13614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso North',
     'constituency_code': '225',
     'county_code': '040',
+    'sub_county_code': '04001',
   },
   {
     'code': '1121',
@@ -11998,6 +13622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso North',
     'constituency_code': '225',
     'county_code': '040',
+    'sub_county_code': '04001',
   },
   {
     'code': '1122',
@@ -12005,6 +13630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso North',
     'constituency_code': '225',
     'county_code': '040',
+    'sub_county_code': '04001',
   },
   {
     'code': '1126',
@@ -12012,6 +13638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso North',
     'constituency_code': '225',
     'county_code': '040',
+    'sub_county_code': '04001',
   },
   {
     'code': '1132',
@@ -12019,6 +13646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso South',
     'constituency_code': '226',
     'county_code': '040',
+    'sub_county_code': '04002',
   },
   {
     'code': '1131',
@@ -12026,6 +13654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso South',
     'constituency_code': '226',
     'county_code': '040',
+    'sub_county_code': '04002',
   },
   {
     'code': '1130',
@@ -12033,6 +13662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso South',
     'constituency_code': '226',
     'county_code': '040',
+    'sub_county_code': '04002',
   },
   {
     'code': '1127',
@@ -12040,6 +13670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso South',
     'constituency_code': '226',
     'county_code': '040',
+    'sub_county_code': '04002',
   },
   {
     'code': '1129',
@@ -12047,6 +13678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso South',
     'constituency_code': '226',
     'county_code': '040',
+    'sub_county_code': '04002',
   },
   {
     'code': '1128',
@@ -12054,6 +13686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Teso South',
     'constituency_code': '226',
     'county_code': '040',
+    'sub_county_code': '04002',
   },
   {
     'code': '0468',
@@ -12061,6 +13694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tetu',
     'constituency_code': '094',
     'county_code': '019',
+    'sub_county_code': '01903',
   },
   {
     'code': '0466',
@@ -12068,6 +13702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tetu',
     'constituency_code': '094',
     'county_code': '019',
+    'sub_county_code': '01903',
   },
   {
     'code': '0467',
@@ -12075,6 +13710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tetu',
     'constituency_code': '094',
     'county_code': '019',
+    'sub_county_code': '01903',
   },
   {
     'code': '0309',
@@ -12082,6 +13718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tharaka',
     'constituency_code': '062',
     'county_code': '013',
+    'sub_county_code': '01301',
   },
   {
     'code': '0306',
@@ -12089,6 +13726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tharaka',
     'constituency_code': '062',
     'county_code': '013',
+    'sub_county_code': '01306',
   },
   {
     'code': '0310',
@@ -12096,6 +13734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tharaka',
     'constituency_code': '062',
     'county_code': '013',
+    'sub_county_code': '01301',
   },
   {
     'code': '0307',
@@ -12103,6 +13742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tharaka',
     'constituency_code': '062',
     'county_code': '013',
+    'sub_county_code': '01306',
   },
   {
     'code': '0308',
@@ -12110,6 +13750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tharaka',
     'constituency_code': '062',
     'county_code': '013',
+    'sub_county_code': '01301',
   },
   {
     'code': '0567',
@@ -12117,6 +13758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Thika Town',
     'constituency_code': '114',
     'county_code': '022',
+    'sub_county_code': '02204',
   },
   {
     'code': '0566',
@@ -12124,6 +13766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Thika Town',
     'constituency_code': '114',
     'county_code': '022',
+    'sub_county_code': '02204',
   },
   {
     'code': '0565',
@@ -12131,6 +13774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Thika Town',
     'constituency_code': '114',
     'county_code': '022',
+    'sub_county_code': '02204',
   },
   {
     'code': '0568',
@@ -12138,6 +13782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Thika Town',
     'constituency_code': '114',
     'county_code': '022',
+    'sub_county_code': '02204',
   },
   {
     'code': '0564',
@@ -12145,6 +13790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Thika Town',
     'constituency_code': '114',
     'county_code': '022',
+    'sub_county_code': '02204',
   },
   {
     'code': '0787',
@@ -12152,6 +13798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tiaty',
     'constituency_code': '157',
     'county_code': '030',
+    'sub_county_code': '03001',
   },
   {
     'code': '0782',
@@ -12159,6 +13806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tiaty',
     'constituency_code': '157',
     'county_code': '030',
+    'sub_county_code': '03001',
   },
   {
     'code': '0785',
@@ -12166,6 +13814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tiaty',
     'constituency_code': '157',
     'county_code': '030',
+    'sub_county_code': '03001',
   },
   {
     'code': '0783',
@@ -12173,6 +13822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tiaty',
     'constituency_code': '157',
     'county_code': '030',
+    'sub_county_code': '03001',
   },
   {
     'code': '0784',
@@ -12180,6 +13830,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tiaty',
     'constituency_code': '157',
     'county_code': '030',
+    'sub_county_code': '03001',
   },
   {
     'code': '0786',
@@ -12187,6 +13838,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tiaty',
     'constituency_code': '157',
     'county_code': '030',
+    'sub_county_code': '03001',
   },
   {
     'code': '0781',
@@ -12194,6 +13846,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tiaty',
     'constituency_code': '157',
     'county_code': '030',
+    'sub_county_code': '03001',
   },
   {
     'code': '0275',
@@ -12201,6 +13854,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tigania East',
     'constituency_code': '055',
     'county_code': '012',
+    'sub_county_code': '01205',
   },
   {
     'code': '0273',
@@ -12208,6 +13862,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tigania East',
     'constituency_code': '055',
     'county_code': '012',
+    'sub_county_code': '01205',
   },
   {
     'code': '0272',
@@ -12215,6 +13870,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tigania East',
     'constituency_code': '055',
     'county_code': '012',
+    'sub_county_code': '01205',
   },
   {
     'code': '0274',
@@ -12222,6 +13878,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tigania East',
     'constituency_code': '055',
     'county_code': '012',
+    'sub_county_code': '01205',
   },
   {
     'code': '0271',
@@ -12229,6 +13886,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tigania East',
     'constituency_code': '055',
     'county_code': '012',
+    'sub_county_code': '01205',
   },
   {
     'code': '0267',
@@ -12236,6 +13894,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tigania West',
     'constituency_code': '054',
     'county_code': '012',
+    'sub_county_code': '01204',
   },
   {
     'code': '0266',
@@ -12243,6 +13902,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tigania West',
     'constituency_code': '054',
     'county_code': '012',
+    'sub_county_code': '01204',
   },
   {
     'code': '0268',
@@ -12250,6 +13910,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tigania West',
     'constituency_code': '054',
     'county_code': '012',
+    'sub_county_code': '01204',
   },
   {
     'code': '0270',
@@ -12257,6 +13918,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tigania West',
     'constituency_code': '054',
     'county_code': '012',
+    'sub_county_code': '01204',
   },
   {
     'code': '0269',
@@ -12264,6 +13926,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tigania West',
     'constituency_code': '054',
     'county_code': '012',
+    'sub_county_code': '01204',
   },
   {
     'code': '0753',
@@ -12271,6 +13934,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tinderet',
     'constituency_code': '151',
     'county_code': '029',
+    'sub_county_code': '02901',
   },
   {
     'code': '0754',
@@ -12278,6 +13942,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tinderet',
     'constituency_code': '151',
     'county_code': '029',
+    'sub_county_code': '02903',
   },
   {
     'code': '0751',
@@ -12285,6 +13950,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tinderet',
     'constituency_code': '151',
     'county_code': '029',
+    'sub_county_code': '02901',
   },
   {
     'code': '0752',
@@ -12292,6 +13958,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tinderet',
     'constituency_code': '151',
     'county_code': '029',
+    'sub_county_code': '02901',
   },
   {
     'code': '1115',
@@ -12299,6 +13966,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tongaren',
     'constituency_code': '224',
     'county_code': '039',
+    'sub_county_code': '03910',
   },
   {
     'code': '1117',
@@ -12306,6 +13974,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tongaren',
     'constituency_code': '224',
     'county_code': '039',
+    'sub_county_code': '03910',
   },
   {
     'code': '1116',
@@ -12313,6 +13982,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tongaren',
     'constituency_code': '224',
     'county_code': '039',
+    'sub_county_code': '03910',
   },
   {
     'code': '1118',
@@ -12320,6 +13990,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tongaren',
     'constituency_code': '224',
     'county_code': '039',
+    'sub_county_code': '03910',
   },
   {
     'code': '1120',
@@ -12327,6 +13998,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tongaren',
     'constituency_code': '224',
     'county_code': '039',
+    'sub_county_code': '03910',
   },
   {
     'code': '1119',
@@ -12334,6 +14006,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Tongaren',
     'constituency_code': '224',
     'county_code': '039',
+    'sub_county_code': '03910',
   },
   {
     'code': '0713',
@@ -12341,6 +14014,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turbo',
     'constituency_code': '142',
     'county_code': '027',
+    'sub_county_code': '02702',
   },
   {
     'code': '0710',
@@ -12348,6 +14022,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turbo',
     'constituency_code': '142',
     'county_code': '027',
+    'sub_county_code': '02702',
   },
   {
     'code': '0712',
@@ -12355,6 +14030,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turbo',
     'constituency_code': '142',
     'county_code': '027',
+    'sub_county_code': '02702',
   },
   {
     'code': '0711',
@@ -12362,6 +14038,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turbo',
     'constituency_code': '142',
     'county_code': '027',
+    'sub_county_code': '02702',
   },
   {
     'code': '0708',
@@ -12369,6 +14046,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turbo',
     'constituency_code': '142',
     'county_code': '027',
+    'sub_county_code': '02702',
   },
   {
     'code': '0709',
@@ -12376,6 +14054,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turbo',
     'constituency_code': '142',
     'county_code': '027',
+    'sub_county_code': '02702',
   },
   {
     'code': '0626',
@@ -12383,6 +14062,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana Central',
     'constituency_code': '125',
     'county_code': '023',
+    'sub_county_code': '02304',
   },
   {
     'code': '0628',
@@ -12390,6 +14070,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana Central',
     'constituency_code': '125',
     'county_code': '023',
+    'sub_county_code': '02304',
   },
   {
     'code': '0625',
@@ -12397,6 +14078,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana Central',
     'constituency_code': '125',
     'county_code': '023',
+    'sub_county_code': '02304',
   },
   {
     'code': '0624',
@@ -12404,6 +14086,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana Central',
     'constituency_code': '125',
     'county_code': '023',
+    'sub_county_code': '02304',
   },
   {
     'code': '0627',
@@ -12411,6 +14094,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana Central',
     'constituency_code': '125',
     'county_code': '023',
+    'sub_county_code': '02304',
   },
   {
     'code': '0638',
@@ -12418,6 +14102,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana East',
     'constituency_code': '128',
     'county_code': '023',
+    'sub_county_code': '02307',
   },
   {
     'code': '0639',
@@ -12425,6 +14110,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana East',
     'constituency_code': '128',
     'county_code': '023',
+    'sub_county_code': '02307',
   },
   {
     'code': '0640',
@@ -12432,6 +14118,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana East',
     'constituency_code': '128',
     'county_code': '023',
+    'sub_county_code': '02307',
   },
   {
     'code': '0614',
@@ -12439,6 +14126,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana North',
     'constituency_code': '123',
     'county_code': '023',
+    'sub_county_code': '02301',
   },
   {
     'code': '0611',
@@ -12446,6 +14134,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana North',
     'constituency_code': '123',
     'county_code': '023',
+    'sub_county_code': '02302',
   },
   {
     'code': '0615',
@@ -12453,6 +14142,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana North',
     'constituency_code': '123',
     'county_code': '023',
+    'sub_county_code': '02301',
   },
   {
     'code': '0612',
@@ -12460,6 +14150,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana North',
     'constituency_code': '123',
     'county_code': '023',
+    'sub_county_code': '02302',
   },
   {
     'code': '0613',
@@ -12467,6 +14158,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana North',
     'constituency_code': '123',
     'county_code': '023',
+    'sub_county_code': '02302',
   },
   {
     'code': '0616',
@@ -12474,6 +14166,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana North',
     'constituency_code': '123',
     'county_code': '023',
+    'sub_county_code': '02303',
   },
   {
     'code': '0636',
@@ -12481,6 +14174,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana South',
     'constituency_code': '127',
     'county_code': '023',
+    'sub_county_code': '02306',
   },
   {
     'code': '0633',
@@ -12488,6 +14182,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana South',
     'constituency_code': '127',
     'county_code': '023',
+    'sub_county_code': '02306',
   },
   {
     'code': '0634',
@@ -12495,6 +14190,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana South',
     'constituency_code': '127',
     'county_code': '023',
+    'sub_county_code': '02306',
   },
   {
     'code': '0635',
@@ -12502,6 +14198,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana South',
     'constituency_code': '127',
     'county_code': '023',
+    'sub_county_code': '02306',
   },
   {
     'code': '0637',
@@ -12509,6 +14206,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana South',
     'constituency_code': '127',
     'county_code': '023',
+    'sub_county_code': '02306',
   },
   {
     'code': '0617',
@@ -12516,6 +14214,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana West',
     'constituency_code': '124',
     'county_code': '023',
+    'sub_county_code': '02303',
   },
   {
     'code': '0621',
@@ -12523,6 +14222,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana West',
     'constituency_code': '124',
     'county_code': '023',
+    'sub_county_code': '02303',
   },
   {
     'code': '0619',
@@ -12530,6 +14230,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana West',
     'constituency_code': '124',
     'county_code': '023',
+    'sub_county_code': '02303',
   },
   {
     'code': '0622',
@@ -12537,6 +14238,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana West',
     'constituency_code': '124',
     'county_code': '023',
+    'sub_county_code': '02303',
   },
   {
     'code': '0618',
@@ -12544,6 +14246,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana West',
     'constituency_code': '124',
     'county_code': '023',
+    'sub_county_code': '02303',
   },
   {
     'code': '0623',
@@ -12551,6 +14254,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana West',
     'constituency_code': '124',
     'county_code': '023',
+    'sub_county_code': '02303',
   },
   {
     'code': '0620',
@@ -12558,6 +14262,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Turkana West',
     'constituency_code': '124',
     'county_code': '023',
+    'sub_county_code': '02303',
   },
   {
     'code': '1159',
@@ -12565,6 +14270,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ugenya',
     'constituency_code': '232',
     'county_code': '041',
+    'sub_county_code': '04101',
   },
   {
     'code': '1158',
@@ -12572,6 +14278,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ugenya',
     'constituency_code': '232',
     'county_code': '041',
+    'sub_county_code': '04101',
   },
   {
     'code': '1157',
@@ -12579,6 +14286,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ugenya',
     'constituency_code': '232',
     'county_code': '041',
+    'sub_county_code': '04101',
   },
   {
     'code': '1156',
@@ -12586,6 +14294,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ugenya',
     'constituency_code': '232',
     'county_code': '041',
+    'sub_county_code': '04101',
   },
   {
     'code': '1160',
@@ -12593,6 +14302,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ugunja',
     'constituency_code': '233',
     'county_code': '041',
+    'sub_county_code': '04102',
   },
   {
     'code': '1161',
@@ -12600,6 +14310,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ugunja',
     'constituency_code': '233',
     'county_code': '041',
+    'sub_county_code': '04102',
   },
   {
     'code': '1162',
@@ -12607,6 +14318,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Ugunja',
     'constituency_code': '233',
     'county_code': '041',
+    'sub_county_code': '04102',
   },
   {
     'code': '1279',
@@ -12614,6 +14326,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Uriri',
     'constituency_code': '257',
     'county_code': '044',
+    'sub_county_code': '04405',
   },
   {
     'code': '1281',
@@ -12621,6 +14334,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Uriri',
     'constituency_code': '257',
     'county_code': '044',
+    'sub_county_code': '04405',
   },
   {
     'code': '1278',
@@ -12628,6 +14342,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Uriri',
     'constituency_code': '257',
     'county_code': '044',
+    'sub_county_code': '04405',
   },
   {
     'code': '1280',
@@ -12635,6 +14350,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Uriri',
     'constituency_code': '257',
     'county_code': '044',
+    'sub_county_code': '04405',
   },
   {
     'code': '1277',
@@ -12642,6 +14358,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Uriri',
     'constituency_code': '257',
     'county_code': '044',
+    'sub_county_code': '04405',
   },
   {
     'code': '1053',
@@ -12649,6 +14366,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Vihiga',
     'constituency_code': '211',
     'county_code': '038',
+    'sub_county_code': '03801',
   },
   {
     'code': '1051',
@@ -12656,6 +14374,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Vihiga',
     'constituency_code': '211',
     'county_code': '038',
+    'sub_county_code': '03801',
   },
   {
     'code': '1054',
@@ -12663,6 +14382,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Vihiga',
     'constituency_code': '211',
     'county_code': '038',
+    'sub_county_code': '03801',
   },
   {
     'code': '1052',
@@ -12670,6 +14390,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Vihiga',
     'constituency_code': '211',
     'county_code': '038',
+    'sub_county_code': '03801',
   },
   {
     'code': '0127',
@@ -12677,6 +14398,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Voi',
     'constituency_code': '026',
     'county_code': '006',
+    'sub_county_code': '00604',
   },
   {
     'code': '0129',
@@ -12684,6 +14406,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Voi',
     'constituency_code': '026',
     'county_code': '006',
+    'sub_county_code': '00604',
   },
   {
     'code': '0128',
@@ -12691,6 +14414,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Voi',
     'constituency_code': '026',
     'county_code': '006',
+    'sub_county_code': '00604',
   },
   {
     'code': '0125',
@@ -12698,6 +14422,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Voi',
     'constituency_code': '026',
     'county_code': '006',
+    'sub_county_code': '00604',
   },
   {
     'code': '0130',
@@ -12705,6 +14430,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Voi',
     'constituency_code': '026',
     'county_code': '006',
+    'sub_county_code': '00604',
   },
   {
     'code': '0126',
@@ -12712,6 +14438,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Voi',
     'constituency_code': '026',
     'county_code': '006',
+    'sub_county_code': '00604',
   },
   {
     'code': '0170',
@@ -12719,6 +14446,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir East',
     'constituency_code': '034',
     'county_code': '008',
+    'sub_county_code': '00802',
   },
   {
     'code': '0171',
@@ -12726,6 +14454,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir East',
     'constituency_code': '034',
     'county_code': '008',
+    'sub_county_code': '00802',
   },
   {
     'code': '0169',
@@ -12733,6 +14462,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir East',
     'constituency_code': '034',
     'county_code': '008',
+    'sub_county_code': '00802',
   },
   {
     'code': '0168',
@@ -12740,6 +14470,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir East',
     'constituency_code': '034',
     'county_code': '008',
+    'sub_county_code': '00802',
   },
   {
     'code': '0165',
@@ -12747,6 +14478,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir North',
     'constituency_code': '033',
     'county_code': '008',
+    'sub_county_code': '00801',
   },
   {
     'code': '0162',
@@ -12754,6 +14486,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir North',
     'constituency_code': '033',
     'county_code': '008',
+    'sub_county_code': '00801',
   },
   {
     'code': '0166',
@@ -12761,6 +14494,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir North',
     'constituency_code': '033',
     'county_code': '008',
+    'sub_county_code': '00801',
   },
   {
     'code': '0167',
@@ -12768,6 +14502,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir North',
     'constituency_code': '033',
     'county_code': '008',
+    'sub_county_code': '00801',
   },
   {
     'code': '0161',
@@ -12775,6 +14510,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir North',
     'constituency_code': '033',
     'county_code': '008',
+    'sub_county_code': '00801',
   },
   {
     'code': '0163',
@@ -12782,6 +14518,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir North',
     'constituency_code': '033',
     'county_code': '008',
+    'sub_county_code': '00801',
   },
   {
     'code': '0164',
@@ -12789,6 +14526,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir North',
     'constituency_code': '033',
     'county_code': '008',
+    'sub_county_code': '00801',
   },
   {
     'code': '0184',
@@ -12796,6 +14534,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir South',
     'constituency_code': '038',
     'county_code': '008',
+    'sub_county_code': '00806',
   },
   {
     'code': '0185',
@@ -12803,6 +14542,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir South',
     'constituency_code': '038',
     'county_code': '008',
+    'sub_county_code': '00806',
   },
   {
     'code': '0186',
@@ -12810,6 +14550,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir South',
     'constituency_code': '038',
     'county_code': '008',
+    'sub_county_code': '00806',
   },
   {
     'code': '0190',
@@ -12817,6 +14558,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir South',
     'constituency_code': '038',
     'county_code': '008',
+    'sub_county_code': '00806',
   },
   {
     'code': '0187',
@@ -12824,6 +14566,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir South',
     'constituency_code': '038',
     'county_code': '008',
+    'sub_county_code': '00806',
   },
   {
     'code': '0189',
@@ -12831,6 +14574,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir South',
     'constituency_code': '038',
     'county_code': '008',
+    'sub_county_code': '00806',
   },
   {
     'code': '0188',
@@ -12838,6 +14582,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir South',
     'constituency_code': '038',
     'county_code': '008',
+    'sub_county_code': '00806',
   },
   {
     'code': '0178',
@@ -12845,6 +14590,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir West',
     'constituency_code': '036',
     'county_code': '008',
+    'sub_county_code': '00804',
   },
   {
     'code': '0176',
@@ -12852,6 +14598,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir West',
     'constituency_code': '036',
     'county_code': '008',
+    'sub_county_code': '00804',
   },
   {
     'code': '0177',
@@ -12859,6 +14606,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir West',
     'constituency_code': '036',
     'county_code': '008',
+    'sub_county_code': '00804',
   },
   {
     'code': '0179',
@@ -12866,6 +14614,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wajir West',
     'constituency_code': '036',
     'county_code': '008',
+    'sub_county_code': '00804',
   },
   {
     'code': '1106',
@@ -12873,6 +14622,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Webuye East',
     'constituency_code': '221',
     'county_code': '039',
+    'sub_county_code': '03907',
   },
   {
     'code': '1104',
@@ -12880,6 +14630,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Webuye East',
     'constituency_code': '221',
     'county_code': '039',
+    'sub_county_code': '03907',
   },
   {
     'code': '1105',
@@ -12887,6 +14638,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Webuye East',
     'constituency_code': '221',
     'county_code': '039',
+    'sub_county_code': '03907',
   },
   {
     'code': '1110',
@@ -12894,6 +14646,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Webuye West',
     'constituency_code': '222',
     'county_code': '039',
+    'sub_county_code': '03908',
   },
   {
     'code': '1109',
@@ -12901,6 +14654,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Webuye West',
     'constituency_code': '222',
     'county_code': '039',
+    'sub_county_code': '03908',
   },
   {
     'code': '1107',
@@ -12908,6 +14662,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Webuye West',
     'constituency_code': '222',
     'county_code': '039',
+    'sub_county_code': '03908',
   },
   {
     'code': '1108',
@@ -12915,6 +14670,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Webuye West',
     'constituency_code': '222',
     'county_code': '039',
+    'sub_county_code': '03908',
   },
   {
     'code': '1353',
@@ -12922,6 +14678,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'West Mugirango',
     'constituency_code': '271',
     'county_code': '046',
+    'sub_county_code': '04603',
   },
   {
     'code': '1355',
@@ -12929,6 +14686,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'West Mugirango',
     'constituency_code': '271',
     'county_code': '046',
+    'sub_county_code': '04603',
   },
   {
     'code': '1354',
@@ -12936,6 +14694,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'West Mugirango',
     'constituency_code': '271',
     'county_code': '046',
+    'sub_county_code': '04603',
   },
   {
     'code': '1352',
@@ -12943,6 +14702,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'West Mugirango',
     'constituency_code': '271',
     'county_code': '046',
+    'sub_county_code': '04603',
   },
   {
     'code': '1356',
@@ -12950,6 +14710,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'West Mugirango',
     'constituency_code': '271',
     'county_code': '046',
+    'sub_county_code': '04603',
   },
   {
     'code': '1369',
@@ -12957,6 +14718,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Westlands',
     'constituency_code': '274',
     'county_code': '047',
+    'sub_county_code': '04701',
   },
   {
     'code': '1368',
@@ -12964,6 +14726,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Westlands',
     'constituency_code': '274',
     'county_code': '047',
+    'sub_county_code': '04701',
   },
   {
     'code': '1366',
@@ -12971,6 +14734,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Westlands',
     'constituency_code': '274',
     'county_code': '047',
+    'sub_county_code': '04701',
   },
   {
     'code': '1370',
@@ -12978,6 +14742,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Westlands',
     'constituency_code': '274',
     'county_code': '047',
+    'sub_county_code': '04701',
   },
   {
     'code': '1367',
@@ -12985,6 +14750,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Westlands',
     'constituency_code': '274',
     'county_code': '047',
+    'sub_county_code': '04701',
   },
   {
     'code': '0119',
@@ -12992,6 +14758,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wundanyi',
     'constituency_code': '024',
     'county_code': '006',
+    'sub_county_code': '00602',
   },
   {
     'code': '0117',
@@ -12999,6 +14766,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wundanyi',
     'constituency_code': '024',
     'county_code': '006',
+    'sub_county_code': '00602',
   },
   {
     'code': '0118',
@@ -13006,6 +14774,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wundanyi',
     'constituency_code': '024',
     'county_code': '006',
+    'sub_county_code': '00602',
   },
   {
     'code': '0116',
@@ -13013,6 +14782,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Wundanyi',
     'constituency_code': '024',
     'county_code': '006',
+    'sub_county_code': '00602',
   },
   {
     'code': '0379',
@@ -13020,6 +14790,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Yatta',
     'constituency_code': '076',
     'county_code': '016',
+    'sub_county_code': '01602',
   },
   {
     'code': '0380',
@@ -13027,6 +14798,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Yatta',
     'constituency_code': '076',
     'county_code': '016',
+    'sub_county_code': '01602',
   },
   {
     'code': '0378',
@@ -13034,6 +14806,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Yatta',
     'constituency_code': '076',
     'county_code': '016',
+    'sub_county_code': '01602',
   },
   {
     'code': '0377',
@@ -13041,6 +14814,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Yatta',
     'constituency_code': '076',
     'county_code': '016',
+    'sub_county_code': '01602',
   },
   {
     'code': '0376',
@@ -13048,6 +14822,7 @@ const List<Map<String, dynamic>> rawWards = [
     'constituency': 'Yatta',
     'constituency_code': '076',
     'county_code': '016',
+    'sub_county_code': '01602',
   },
 ];
 

@@ -26,5 +26,3008 @@
     "from": "Central  ward",
     "to": "Central ward",
     "note": "Removed a double space"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "154",
+    "change": "replaced",
+    "name": "Ainabkoi",
+    "replaced_by": "02704",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "203",
+    "change": "replaced",
+    "name": "Ainamoi",
+    "replaced_by": "03503",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "164",
+    "change": "replaced",
+    "name": "Aldai",
+    "replaced_by": "02902",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "247",
+    "change": "replaced",
+    "name": "Alego Usonga",
+    "replaced_by": "04103",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "268",
+    "change": "replaced",
+    "name": "Awendo",
+    "replaced_by": "04402",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "181",
+    "change": "removed",
+    "name": "Bahati",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "039",
+    "change": "replaced",
+    "name": "Banissa",
+    "replaced_by": "00903",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "170",
+    "change": "replaced",
+    "name": "Baringo Central",
+    "replaced_by": "03003",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "171",
+    "change": "replaced",
+    "name": "Baringo North",
+    "replaced_by": "03002",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "172",
+    "change": "removed",
+    "name": "Baringo South",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "204",
+    "change": "replaced",
+    "name": "Belgut",
+    "replaced_by": "03505",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "277",
+    "change": "replaced",
+    "name": "Bobasi",
+    "replaced_by": "04504",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "278",
+    "change": "replaced",
+    "name": "Bomachoge Borabu",
+    "replaced_by": "04503",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "279",
+    "change": "replaced",
+    "name": "Bomachoge Chache",
+    "replaced_by": "04505",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "209",
+    "change": "replaced",
+    "name": "Bomet Central",
+    "replaced_by": "03604",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "210",
+    "change": "replaced",
+    "name": "Bomet East",
+    "replaced_by": "03603",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "280",
+    "change": "replaced",
+    "name": "Bonchari",
+    "replaced_by": "04501",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "248",
+    "change": "replaced",
+    "name": "Bondo",
+    "replaced_by": "04105",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "286",
+    "change": "replaced",
+    "name": "Borabu",
+    "replaced_by": "04605",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "241",
+    "change": "removed",
+    "name": "Budalangi",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "232",
+    "change": "replaced",
+    "name": "Bumula",
+    "replaced_by": "03905",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "018",
+    "change": "replaced",
+    "name": "Bura",
+    "replaced_by": "00403",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "205",
+    "change": "replaced",
+    "name": "Bureti",
+    "replaced_by": "03504",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "214",
+    "change": "replaced",
+    "name": "Butere",
+    "replaced_by": "03709",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "242",
+    "change": "replaced",
+    "name": "Butula",
+    "replaced_by": "04005",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "052",
+    "change": "replaced",
+    "name": "Buuri",
+    "replaced_by": "01207",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "142",
+    "change": "removed",
+    "name": "Central Pokot",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "001",
+    "change": "replaced",
+    "name": "Changamwe",
+    "replaced_by": "00101",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "211",
+    "change": "replaced",
+    "name": "Chepalungu",
+    "replaced_by": "03602",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "149",
+    "change": "replaced",
+    "name": "Cherangany",
+    "replaced_by": "02605",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "165",
+    "change": "replaced",
+    "name": "Chesumei",
+    "replaced_by": "02904",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "061",
+    "change": "replaced",
+    "name": "Chuka",
+    "replaced_by": "01305",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "027",
+    "change": "removed",
+    "name": "Daadab",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "291",
+    "change": "replaced",
+    "name": "Dagoretti North",
+    "replaced_by": "04702",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "292",
+    "change": "replaced",
+    "name": "Dagoretti South",
+    "replaced_by": "04703",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "173",
+    "change": "removed",
+    "name": "Eldama Ravine",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "033",
+    "change": "replaced",
+    "name": "Eldas",
+    "replaced_by": "00805",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "293",
+    "change": "replaced",
+    "name": "Embakasi Central",
+    "replaced_by": "04711",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "294",
+    "change": "replaced",
+    "name": "Embakasi East",
+    "replaced_by": "04712",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "295",
+    "change": "replaced",
+    "name": "Embakasi North",
+    "replaced_by": "04710",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "296",
+    "change": "replaced",
+    "name": "Embakasi South",
+    "replaced_by": "04709",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "297",
+    "change": "replaced",
+    "name": "Embakasi West",
+    "replaced_by": "04713",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "166",
+    "change": "replaced",
+    "name": "Emgwen",
+    "replaced_by": "02905",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "227",
+    "change": "replaced",
+    "name": "Emuhaya",
+    "replaced_by": "03805",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "150",
+    "change": "replaced",
+    "name": "Endebess",
+    "replaced_by": "02602",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "028",
+    "change": "replaced",
+    "name": "Fafi",
+    "replaced_by": "00706",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "243",
+    "change": "removed",
+    "name": "Funyula",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "019",
+    "change": "replaced",
+    "name": "Galole",
+    "replaced_by": "00402",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "050",
+    "change": "removed",
+    "name": "Garba Tula",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "029",
+    "change": "replaced",
+    "name": "Garissa",
+    "replaced_by": "00702",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "020",
+    "change": "replaced",
+    "name": "Garsen",
+    "replaced_by": "00401",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "117",
+    "change": "replaced",
+    "name": "Gatanga",
+    "replaced_by": "02107",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "125",
+    "change": "replaced",
+    "name": "Gatundu North",
+    "replaced_by": "02202",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "126",
+    "change": "replaced",
+    "name": "Gatundu South",
+    "replaced_by": "02201",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "249",
+    "change": "replaced",
+    "name": "Gem",
+    "replaced_by": "04104",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "011",
+    "change": "removed",
+    "name": "Genzw",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "182",
+    "change": "replaced",
+    "name": "Gilgil",
+    "replaced_by": "03204",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "127",
+    "change": "replaced",
+    "name": "Githunguri",
+    "replaced_by": "02206",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "228",
+    "change": "replaced",
+    "name": "Hamisi",
+    "replaced_by": "03803",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "260",
+    "change": "replaced",
+    "name": "Homabay Town",
+    "replaced_by": "04305",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "030",
+    "change": "replaced",
+    "name": "Hulugho",
+    "replaced_by": "00701",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "062",
+    "change": "removed",
+    "name": "Igambangobe",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "053",
+    "change": "replaced",
+    "name": "Igembe Central",
+    "replaced_by": "01202",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "054",
+    "change": "replaced",
+    "name": "Igembe North",
+    "replaced_by": "01203",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "055",
+    "change": "replaced",
+    "name": "Igembe South",
+    "replaced_by": "01201",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "031",
+    "change": "replaced",
+    "name": "Ijara",
+    "replaced_by": "00707",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "071",
+    "change": "removed",
+    "name": "Ikutha",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "056",
+    "change": "replaced",
+    "name": "Imenti Central",
+    "replaced_by": "01208",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "057",
+    "change": "replaced",
+    "name": "Imenti North",
+    "replaced_by": "01206",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "058",
+    "change": "replaced",
+    "name": "Imenti South",
+    "replaced_by": "01209",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "198",
+    "change": "removed",
+    "name": "Isinya",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "049",
+    "change": "replaced",
+    "name": "Isiolo",
+    "replaced_by": "01102",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "002",
+    "change": "replaced",
+    "name": "Jomvu",
+    "replaced_by": "00102",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "128",
+    "change": "replaced",
+    "name": "Juja",
+    "replaced_by": "02203",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "129",
+    "change": "replaced",
+    "name": "Kabete",
+    "replaced_by": "02209",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "261",
+    "change": "removed",
+    "name": "Kabondo",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "233",
+    "change": "replaced",
+    "name": "Kabuchai",
+    "replaced_by": "03904",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "118",
+    "change": "removed",
+    "name": "Kahuro",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "093",
+    "change": "replaced",
+    "name": "Kaiti",
+    "replaced_by": "01703",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "199",
+    "change": "replaced",
+    "name": "Kajiado Central",
+    "replaced_by": "03402",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "200",
+    "change": "replaced",
+    "name": "Kajiado North",
+    "replaced_by": "03401",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "215",
+    "change": "removed",
+    "name": "Kakamega Central",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "216",
+    "change": "removed",
+    "name": "Kakamega East",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "217",
+    "change": "removed",
+    "name": "Kakamega North",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "218",
+    "change": "removed",
+    "name": "Kakamega South",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "012",
+    "change": "replaced",
+    "name": "Kaloleni",
+    "replaced_by": "00303",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "298",
+    "change": "replaced",
+    "name": "Kamukunji",
+    "replaced_by": "04715",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "119",
+    "change": "replaced",
+    "name": "Kandara",
+    "replaced_by": "02106",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "234",
+    "change": "replaced",
+    "name": "Kanduyi",
+    "replaced_by": "03906",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "120",
+    "change": "replaced",
+    "name": "Kangema",
+    "replaced_by": "02101",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "155",
+    "change": "replaced",
+    "name": "Kapseret",
+    "replaced_by": "02705",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "262",
+    "change": "removed",
+    "name": "Karachwonyo",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "299",
+    "change": "replaced",
+    "name": "Kasarani",
+    "replaced_by": "04707",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "263",
+    "change": "replaced",
+    "name": "Kasipul",
+    "replaced_by": "04301",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "086",
+    "change": "replaced",
+    "name": "Kathiani",
+    "replaced_by": "01605",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "072",
+    "change": "removed",
+    "name": "Katulani",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "160",
+    "change": "replaced",
+    "name": "Keiyo North",
+    "replaced_by": "02803",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "161",
+    "change": "replaced",
+    "name": "Keiyo South",
+    "replaced_by": "02804",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "156",
+    "change": "replaced",
+    "name": "Kesses",
+    "replaced_by": "02706",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "219",
+    "change": "replaced",
+    "name": "Khwisero",
+    "replaced_by": "03710",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "130",
+    "change": "replaced",
+    "name": "Kiambaa",
+    "replaced_by": "02208",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "131",
+    "change": "removed",
+    "name": "Kiambu",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "300",
+    "change": "replaced",
+    "name": "Kibra",
+    "replaced_by": "04705",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "095",
+    "change": "replaced",
+    "name": "Kibwezi East",
+    "replaced_by": "01706",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "094",
+    "change": "replaced",
+    "name": "Kibwezi West",
+    "replaced_by": "01705",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "104",
+    "change": "replaced",
+    "name": "Kieni East",
+    "replaced_by": "01904",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "105",
+    "change": "replaced",
+    "name": "Kieni West",
+    "replaced_by": "01901",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "121",
+    "change": "replaced",
+    "name": "Kigumo",
+    "replaced_by": "02104",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "122",
+    "change": "replaced",
+    "name": "Kiharu",
+    "replaced_by": "02103",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "132",
+    "change": "replaced",
+    "name": "Kikuyu",
+    "replaced_by": "02210",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "013",
+    "change": "replaced",
+    "name": "Kilifi North",
+    "replaced_by": "00301",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "014",
+    "change": "replaced",
+    "name": "Kilifi South",
+    "replaced_by": "00302",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "096",
+    "change": "replaced",
+    "name": "Kilome",
+    "replaced_by": "01702",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "235",
+    "change": "removed",
+    "name": "Kimilil",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "151",
+    "change": "replaced",
+    "name": "Kiminini",
+    "replaced_by": "02604",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "007",
+    "change": "replaced",
+    "name": "Kinango",
+    "replaced_by": "00204",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "099",
+    "change": "replaced",
+    "name": "Kinangop",
+    "replaced_by": "01801",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "100",
+    "change": "replaced",
+    "name": "Kipipiri",
+    "replaced_by": "01802",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "206",
+    "change": "replaced",
+    "name": "Kipkelion East",
+    "replaced_by": "03501",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "207",
+    "change": "replaced",
+    "name": "Kipkelion West",
+    "replaced_by": "03502",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "112",
+    "change": "replaced",
+    "name": "Kirinyaga Central",
+    "replaced_by": "02005",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "113",
+    "change": "replaced",
+    "name": "Kirinyaga East",
+    "replaced_by": "02003",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "114",
+    "change": "replaced",
+    "name": "Kirinyaga West",
+    "replaced_by": "02004",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "073",
+    "change": "removed",
+    "name": "Kisasi",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "003",
+    "change": "replaced",
+    "name": "Kisauni",
+    "replaced_by": "00103",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "253",
+    "change": "replaced",
+    "name": "Kisumu Central",
+    "replaced_by": "04203",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "254",
+    "change": "replaced",
+    "name": "Kisumu East",
+    "replaced_by": "04201",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "255",
+    "change": "replaced",
+    "name": "Kisumu West",
+    "replaced_by": "04202",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "074",
+    "change": "replaced",
+    "name": "Kitui Central",
+    "replaced_by": "01506",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "075",
+    "change": "replaced",
+    "name": "Kitui West",
+    "replaced_by": "01504",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "281",
+    "change": "replaced",
+    "name": "Kitutu Chache North",
+    "replaced_by": "04508",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "282",
+    "change": "replaced",
+    "name": "Kitutu Chache South",
+    "replaced_by": "04509",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "212",
+    "change": "replaced",
+    "name": "Konoin",
+    "replaced_by": "03605",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "183",
+    "change": "replaced",
+    "name": "Kuresoi North",
+    "replaced_by": "03206",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "184",
+    "change": "replaced",
+    "name": "Kuresoi South",
+    "replaced_by": "03205",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "269",
+    "change": "replaced",
+    "name": "Kuria East",
+    "replaced_by": "04408",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "270",
+    "change": "replaced",
+    "name": "Kuria West",
+    "replaced_by": "04407",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "152",
+    "change": "replaced",
+    "name": "Kwanza",
+    "replaced_by": "02601",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "040",
+    "change": "replaced",
+    "name": "Lafey",
+    "replaced_by": "00907",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "032",
+    "change": "removed",
+    "name": "Lagdera Balambala",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "176",
+    "change": "removed",
+    "name": "Laikipia Central",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "177",
+    "change": "replaced",
+    "name": "Laikipia East",
+    "replaced_by": "03102",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "178",
+    "change": "replaced",
+    "name": "Laikipia North",
+    "replaced_by": "03103",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "179",
+    "change": "replaced",
+    "name": "Laikipia West",
+    "replaced_by": "03101",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "045",
+    "change": "replaced",
+    "name": "Laisamis",
+    "replaced_by": "01004",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "021",
+    "change": "replaced",
+    "name": "Lamu East",
+    "replaced_by": "00501",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "022",
+    "change": "replaced",
+    "name": "Lamu West",
+    "replaced_by": "00502",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "301",
+    "change": "removed",
+    "name": "Lang",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "136",
+    "change": "replaced",
+    "name": "Lari",
+    "replaced_by": "02212",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "004",
+    "change": "replaced",
+    "name": "Likoni",
+    "replaced_by": "00105",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "133",
+    "change": "replaced",
+    "name": "Limuru",
+    "replaced_by": "02211",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "137",
+    "change": "replaced",
+    "name": "Loima",
+    "replaced_by": "02305",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "201",
+    "change": "replaced",
+    "name": "Loitokitok",
+    "replaced_by": "03405",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "076",
+    "change": "removed",
+    "name": "Lower Yatta",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "229",
+    "change": "replaced",
+    "name": "Luanda",
+    "replaced_by": "03804",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "220",
+    "change": "replaced",
+    "name": "Lugari",
+    "replaced_by": "03701",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "221",
+    "change": "removed",
+    "name": "Lukuyani",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "008",
+    "change": "replaced",
+    "name": "Lungalunga",
+    "replaced_by": "00202",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "222",
+    "change": "replaced",
+    "name": "Lurambi",
+    "replaced_by": "03704",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "063",
+    "change": "removed",
+    "name": "Maara",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "271",
+    "change": "removed",
+    "name": "Mabera",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "087",
+    "change": "removed",
+    "name": "Machakos Town",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "015",
+    "change": "replaced",
+    "name": "Magarini",
+    "replaced_by": "00307",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "302",
+    "change": "replaced",
+    "name": "Makadara",
+    "replaced_by": "04714",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "097",
+    "change": "replaced",
+    "name": "Makueni",
+    "replaced_by": "01704",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "016",
+    "change": "replaced",
+    "name": "Malindi",
+    "replaced_by": "00306",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "041",
+    "change": "replaced",
+    "name": "Mandera East",
+    "replaced_by": "00906",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "042",
+    "change": "replaced",
+    "name": "Mandera North",
+    "replaced_by": "00904",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "043",
+    "change": "replaced",
+    "name": "Mandera South",
+    "replaced_by": "00905",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "044",
+    "change": "replaced",
+    "name": "Mandera West",
+    "replaced_by": "00902",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "287",
+    "change": "replaced",
+    "name": "Manga",
+    "replaced_by": "04601",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "067",
+    "change": "replaced",
+    "name": "Manyatta",
+    "replaced_by": "01401",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "162",
+    "change": "replaced",
+    "name": "Marakwet East",
+    "replaced_by": "02801",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "163",
+    "change": "replaced",
+    "name": "Marakwet West",
+    "replaced_by": "02802",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "288",
+    "change": "replaced",
+    "name": "Masaba North",
+    "replaced_by": "04602",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "202",
+    "change": "removed",
+    "name": "Mashuuru",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "088",
+    "change": "replaced",
+    "name": "Masinga",
+    "replaced_by": "01601",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "223",
+    "change": "removed",
+    "name": "Matete",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "303",
+    "change": "replaced",
+    "name": "Mathare",
+    "replaced_by": "04717",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "123",
+    "change": "replaced",
+    "name": "Mathioya",
+    "replaced_by": "02102",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "106",
+    "change": "replaced",
+    "name": "Mathira East",
+    "replaced_by": "01905",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "107",
+    "change": "replaced",
+    "name": "Mathira West",
+    "replaced_by": "01902",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "077",
+    "change": "removed",
+    "name": "Matiyani",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "089",
+    "change": "replaced",
+    "name": "Matungulu",
+    "replaced_by": "01604",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "090",
+    "change": "removed",
+    "name": "Mavoko",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "068",
+    "change": "replaced",
+    "name": "Mbeere North",
+    "replaced_by": "01404",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "069",
+    "change": "replaced",
+    "name": "Mbeere South",
+    "replaced_by": "01403",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "264",
+    "change": "replaced",
+    "name": "Mbita",
+    "replaced_by": "04307",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "098",
+    "change": "replaced",
+    "name": "Mbooni",
+    "replaced_by": "01701",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "051",
+    "change": "removed",
+    "name": "Merit",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "078",
+    "change": "removed",
+    "name": "Migwani",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "108",
+    "change": "removed",
+    "name": "Mkurweni",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "174",
+    "change": "replaced",
+    "name": "Mogotio",
+    "replaced_by": "03005",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "256",
+    "change": "removed",
+    "name": "Mohoroni",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "157",
+    "change": "replaced",
+    "name": "Moiben",
+    "replaced_by": "02703",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "185",
+    "change": "replaced",
+    "name": "Molo",
+    "replaced_by": "03201",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "167",
+    "change": "replaced",
+    "name": "Mosop",
+    "replaced_by": "02906",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "046",
+    "change": "replaced",
+    "name": "Moyale",
+    "replaced_by": "01001",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "009",
+    "change": "replaced",
+    "name": "Msambweni",
+    "replaced_by": "00201",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "236",
+    "change": "replaced",
+    "name": "Mt Elgon",
+    "replaced_by": "03902",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "224",
+    "change": "removed",
+    "name": "Mumias",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "124",
+    "change": "removed",
+    "name": "Murang'a",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "064",
+    "change": "replaced",
+    "name": "Muthambi",
+    "replaced_by": "01303",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "079",
+    "change": "removed",
+    "name": "Mutitu",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "080",
+    "change": "removed",
+    "name": "Mutomo",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "010",
+    "change": "removed",
+    "name": "Mutuga",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "225",
+    "change": "removed",
+    "name": "Mutungu",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "081",
+    "change": "removed",
+    "name": "Muumonikyusu",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "005",
+    "change": "replaced",
+    "name": "Mvita",
+    "replaced_by": "00106",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "091",
+    "change": "replaced",
+    "name": "Mwala",
+    "replaced_by": "01608",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "023",
+    "change": "replaced",
+    "name": "Mwatate",
+    "replaced_by": "00603",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "115",
+    "change": "removed",
+    "name": "Mwea East",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "116",
+    "change": "removed",
+    "name": "Mwea West",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "082",
+    "change": "replaced",
+    "name": "Mwingi Central",
+    "replaced_by": "01503",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "083",
+    "change": "removed",
+    "name": "Mwingi East",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "186",
+    "change": "replaced",
+    "name": "Naivasha",
+    "replaced_by": "03203",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "187",
+    "change": "removed",
+    "name": "Nakuru Town East",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "188",
+    "change": "removed",
+    "name": "Nakuru Town West",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "244",
+    "change": "removed",
+    "name": "Nambele",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "168",
+    "change": "removed",
+    "name": "Nandi Hills",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "192",
+    "change": "replaced",
+    "name": "Narok East",
+    "replaced_by": "03304",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "193",
+    "change": "replaced",
+    "name": "Narok North",
+    "replaced_by": "03303",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "194",
+    "change": "replaced",
+    "name": "Narok South",
+    "replaced_by": "03305",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "195",
+    "change": "replaced",
+    "name": "Narok West",
+    "replaced_by": "03306",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "226",
+    "change": "replaced",
+    "name": "Navakholo",
+    "replaced_by": "03705",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "101",
+    "change": "replaced",
+    "name": "Ndaragwa",
+    "replaced_by": "01805",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "265",
+    "change": "replaced",
+    "name": "Ndhiwa",
+    "replaced_by": "04306",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "189",
+    "change": "replaced",
+    "name": "Njoro",
+    "replaced_by": "03202",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "047",
+    "change": "removed",
+    "name": "North Hor",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "143",
+    "change": "removed",
+    "name": "North Pokot",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "272",
+    "change": "removed",
+    "name": "Ntimaru",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "180",
+    "change": "removed",
+    "name": "Nyahururu",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "257",
+    "change": "replaced",
+    "name": "Nyakach",
+    "replaced_by": "04207",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "006",
+    "change": "replaced",
+    "name": "Nyali",
+    "replaced_by": "00104",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "289",
+    "change": "replaced",
+    "name": "Nyamira North",
+    "replaced_by": "04604",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "290",
+    "change": "removed",
+    "name": "Nyamira South",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "258",
+    "change": "replaced",
+    "name": "Nyando",
+    "replaced_by": "04205",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "283",
+    "change": "replaced",
+    "name": "Nyaribari Chache",
+    "replaced_by": "04507",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "284",
+    "change": "replaced",
+    "name": "Nyaribari Masaba",
+    "replaced_by": "04506",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "109",
+    "change": "removed",
+    "name": "Nyeri Town",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "084",
+    "change": "removed",
+    "name": "Nzambani",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "103",
+    "change": "replaced",
+    "name": "Ol Joro Orok",
+    "replaced_by": "01804",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "102",
+    "change": "replaced",
+    "name": "Ol Kalou",
+    "replaced_by": "01803",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "110",
+    "change": "removed",
+    "name": "Othaya",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "144",
+    "change": "replaced",
+    "name": "Pokot South",
+    "replaced_by": "02404",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "017",
+    "change": "replaced",
+    "name": "Rabai",
+    "replaced_by": "00304",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "266",
+    "change": "replaced",
+    "name": "Rangwe",
+    "replaced_by": "04304",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "250",
+    "change": "replaced",
+    "name": "Rarieda",
+    "replaced_by": "04106",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "190",
+    "change": "replaced",
+    "name": "Rongai",
+    "replaced_by": "03208",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "273",
+    "change": "replaced",
+    "name": "Rongo",
+    "replaced_by": "04401",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "304",
+    "change": "replaced",
+    "name": "Roysambu",
+    "replaced_by": "04706",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "305",
+    "change": "replaced",
+    "name": "Ruaraka",
+    "replaced_by": "04708",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "134",
+    "change": "replaced",
+    "name": "Ruiru",
+    "replaced_by": "02205",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "070",
+    "change": "replaced",
+    "name": "Runyenjes",
+    "replaced_by": "01402",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "230",
+    "change": "replaced",
+    "name": "Sabatia",
+    "replaced_by": "03802",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "153",
+    "change": "replaced",
+    "name": "Saboti",
+    "replaced_by": "02603",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "048",
+    "change": "replaced",
+    "name": "Saku",
+    "replaced_by": "01003",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "146",
+    "change": "replaced",
+    "name": "Samburu East",
+    "replaced_by": "02503",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "147",
+    "change": "replaced",
+    "name": "Samburu North",
+    "replaced_by": "02502",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "148",
+    "change": "removed",
+    "name": "Samburu West",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "259",
+    "change": "replaced",
+    "name": "Seme",
+    "replaced_by": "04204",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "237",
+    "change": "replaced",
+    "name": "Sirisia",
+    "replaced_by": "03903",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "208",
+    "change": "removed",
+    "name": "Soin Sigowet",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "213",
+    "change": "replaced",
+    "name": "Sotik",
+    "replaced_by": "03601",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "285",
+    "change": "replaced",
+    "name": "South Mugirango",
+    "replaced_by": "04502",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "158",
+    "change": "replaced",
+    "name": "Soy",
+    "replaced_by": "02701",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "306",
+    "change": "replaced",
+    "name": "Starehe",
+    "replaced_by": "04716",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "267",
+    "change": "replaced",
+    "name": "Suba",
+    "replaced_by": "04308",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "191",
+    "change": "replaced",
+    "name": "Subukia",
+    "replaced_by": "03207",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "274",
+    "change": "replaced",
+    "name": "Suna East",
+    "replaced_by": "04403",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "275",
+    "change": "replaced",
+    "name": "Suna West",
+    "replaced_by": "04404",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "034",
+    "change": "replaced",
+    "name": "Tarbaj",
+    "replaced_by": "00803",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "024",
+    "change": "replaced",
+    "name": "Taveta",
+    "replaced_by": "00601",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "245",
+    "change": "replaced",
+    "name": "Teso North",
+    "replaced_by": "04001",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "246",
+    "change": "replaced",
+    "name": "Teso South",
+    "replaced_by": "04002",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "111",
+    "change": "replaced",
+    "name": "Tetu",
+    "replaced_by": "01903",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "065",
+    "change": "replaced",
+    "name": "Tharaka North",
+    "replaced_by": "01306",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "066",
+    "change": "replaced",
+    "name": "Tharaka South",
+    "replaced_by": "01301",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "135",
+    "change": "replaced",
+    "name": "Thika Town",
+    "replaced_by": "02204",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "175",
+    "change": "removed",
+    "name": "Tiaty",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "059",
+    "change": "replaced",
+    "name": "Tigania East",
+    "replaced_by": "01205",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "060",
+    "change": "replaced",
+    "name": "Tigania West",
+    "replaced_by": "01204",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "169",
+    "change": "removed",
+    "name": "Tindiret",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "238",
+    "change": "replaced",
+    "name": "Tongaren",
+    "replaced_by": "03910",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "196",
+    "change": "replaced",
+    "name": "Transmara East",
+    "replaced_by": "03302",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "197",
+    "change": "replaced",
+    "name": "Transmara West",
+    "replaced_by": "03301",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "085",
+    "change": "removed",
+    "name": "Tseikuru",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "159",
+    "change": "replaced",
+    "name": "Turbo",
+    "replaced_by": "02702",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "138",
+    "change": "replaced",
+    "name": "Turkana Central",
+    "replaced_by": "02304",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "139",
+    "change": "replaced",
+    "name": "Turkana East",
+    "replaced_by": "02307",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "140",
+    "change": "replaced",
+    "name": "Turkana North",
+    "replaced_by": "02302",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "141",
+    "change": "replaced",
+    "name": "Turkana South",
+    "replaced_by": "02306",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "251",
+    "change": "replaced",
+    "name": "Ugenya",
+    "replaced_by": "04101",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "252",
+    "change": "removed",
+    "name": "Unguja",
+    "note": "Not in the HDX sub-county layer (most old records were constituency names); see the rebuilt list"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "276",
+    "change": "replaced",
+    "name": "Uriri",
+    "replaced_by": "04405",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "231",
+    "change": "replaced",
+    "name": "Vihiga",
+    "replaced_by": "03801",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "025",
+    "change": "replaced",
+    "name": "Voi",
+    "replaced_by": "00604",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "035",
+    "change": "replaced",
+    "name": "Wajir East",
+    "replaced_by": "00802",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "036",
+    "change": "replaced",
+    "name": "Wajir North",
+    "replaced_by": "00801",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "037",
+    "change": "replaced",
+    "name": "Wajir South",
+    "replaced_by": "00806",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "038",
+    "change": "replaced",
+    "name": "Wajir West",
+    "replaced_by": "00804",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "239",
+    "change": "replaced",
+    "name": "Webuye East",
+    "replaced_by": "03907",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "240",
+    "change": "replaced",
+    "name": "Webuye West",
+    "replaced_by": "03908",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "145",
+    "change": "replaced",
+    "name": "West Pokot",
+    "replaced_by": "02401",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "307",
+    "change": "replaced",
+    "name": "Westlands",
+    "replaced_by": "04701",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "026",
+    "change": "replaced",
+    "name": "Wundanyi",
+    "replaced_by": "00602",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
+  },
+  {
+    "date": "2026-11-05",
+    "release": "0.12.0",
+    "type": "sub-county",
+    "code": "092",
+    "change": "replaced",
+    "name": "Yatta",
+    "replaced_by": "01602",
+    "note": "Rebuilt from the HDX sub-county layer; same unit, new code"
   }
 ]

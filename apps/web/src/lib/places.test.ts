@@ -56,7 +56,7 @@ describe("place pages", () => {
   });
 
   it("sub-county page exists", () => {
-    expect(subCountyPlace("001")?.title).toBe("Changamwe");
+    expect(subCountyPlace("00101")?.title).toBe("Changamwe");
   });
 
   it("unknown codes return undefined", () => {

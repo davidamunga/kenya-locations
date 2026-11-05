@@ -11,10 +11,10 @@ import {
   getWardByCode,
   getWardByName,
   getWardsInCounty,
-  getWardsInSubCounty,
   getCountyOfWard,
   getConstituencyOfWard,
   getSubCountyOfWard,
+  getWardsInSubCounty,
   search,
   getSubCounties,
   getSubCountyByCode,
@@ -126,7 +126,7 @@ describe("KenyaLocations - Main API", () => {
 
   describe("getSubCounties", () => {
     it("should return all sub-counties", () => {
-      expect(getSubCounties()).toHaveLength(307);
+      expect(getSubCounties()).toHaveLength(302);
     });
   });
 
@@ -150,24 +150,6 @@ describe("KenyaLocations - Main API", () => {
 
     it("should return undefined for non-existent sub-county", () => {
       expect(getCountyOfSubCounty("NonExistent")).toBeUndefined();
-    });
-  });
-
-  describe("getWardsInSubCounty", () => {
-    it("should return wards for a sub-county by code", () => {
-      const result = getWardsInSubCounty("154"); // Ainabkoi
-      expect(result.length).toBeGreaterThan(0);
-      result.forEach((w) =>
-        expect(w.constituency.toLowerCase()).toBe("ainabkoi")
-      );
-    });
-
-    it("should return wards for a sub-county by name", () => {
-      expect(getWardsInSubCounty("Ainabkoi").length).toBeGreaterThan(0);
-    });
-
-    it("should return empty array for unknown sub-county", () => {
-      expect(getWardsInSubCounty("NonExistent")).toEqual([]);
     });
   });
 
@@ -457,18 +439,6 @@ describe("KenyaLocations - Main API", () => {
     });
   });
 
-  describe("getSubCountyOfWard", () => {
-    it("returns the sub-county a ward belongs to", () => {
-      const ward = getWards()[0];
-      const sc = getSubCountyOfWard(ward.code);
-      expect(sc).toBeDefined();
-    });
-
-    it("returns undefined for unknown ward", () => {
-      expect(getSubCountyOfWard("NonExistent")).toBeUndefined();
-    });
-  });
-
   describe("getSubCountyByCode", () => {
     it("returns sub-county by code", () => {
       const first = getSubCounties()[0];
@@ -512,6 +482,24 @@ describe("KenyaLocations - Main API", () => {
 
     it("returns empty array for unknown name", () => {
       expect(getAreasByName("NonExistentArea12345")).toEqual([]);
+    });
+  });
+  describe("getWardsInSubCounty and getSubCountyOfWard", () => {
+    it("the two lookups agree", () => {
+      const ward = getWards()[0];
+      const sc = getSubCountyOfWard(ward.code)!;
+      expect(getWardsInSubCounty(sc.code).map((w) => w.code)).toContain(
+        ward.code
+      );
+    });
+
+    it("getWardsInSubCounty accepts a name in any case and returns [] for unknown", () => {
+      expect(getWardsInSubCounty("westlands").length).toBeGreaterThan(0);
+      expect(getWardsInSubCounty("NonExistent")).toEqual([]);
+    });
+
+    it("getSubCountyOfWard returns undefined for an unknown ward", () => {
+      expect(getSubCountyOfWard("NonExistent")).toBeUndefined();
     });
   });
 });

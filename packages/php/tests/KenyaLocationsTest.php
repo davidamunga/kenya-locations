@@ -50,6 +50,45 @@ final class KenyaLocationsTest extends TestCase
         $this->assertNull(KenyaLocations::getCountyByCode('999'));
     }
 
+    public function testSubCountiesAreTheHdxSubCounties(): void
+    {
+        $nairobi = array_map(static fn ($s) => $s->name, KenyaLocations::getSubCountiesInCounty('Nairobi'));
+
+        $this->assertCount(17, $nairobi);
+        $this->assertContains('Westlands', $nairobi);
+        $this->assertSame('04701', KenyaLocations::getSubCountyByName('Westlands')?->code);
+    }
+
+    public function testFindsWardsInASubCountyByNameOrCode(): void
+    {
+        $byName = KenyaLocations::getWardsInSubCounty('Westlands');
+        $byCode = KenyaLocations::getWardsInSubCounty('04701');
+
+        $this->assertNotEmpty($byName);
+        $this->assertEquals($byName, $byCode);
+        foreach ($byName as $ward) {
+            $this->assertSame('04701', $ward->subCountyCode);
+        }
+        $this->assertSame([], KenyaLocations::getWardsInSubCounty('Nowhere'));
+    }
+
+    public function testResolvesTheSubCountyOfAUniqueWard(): void
+    {
+        $this->assertSame('Westlands', KenyaLocations::getSubCountyOfWard('Mountain view')?->name);
+        $this->assertSame('Westlands', KenyaLocations::getSubCountyOfWard('1370')?->name);
+        $this->assertNull(KenyaLocations::getSubCountyOfWard('Township'));
+        $this->assertNull(KenyaLocations::getSubCountyOfWard('Unknown Ward'));
+    }
+
+    public function testEveryWardBelongsToASubCountyInItsCounty(): void
+    {
+        foreach (KenyaLocations::getWards() as $ward) {
+            $subCounty = KenyaLocations::getSubCountyOfWard($ward->code);
+            $this->assertNotNull($subCounty, $ward->code);
+            $this->assertSame($ward->countyCode, $subCounty->countyCode, $ward->code);
+        }
+    }
+
     public function testLoadsSubCounties(): void
     {
         $this->assertNotEmpty(KenyaLocations::getSubCounties());
@@ -316,22 +355,9 @@ final class KenyaLocationsTest extends TestCase
 
     public function testResolvesTheCountyOfASubCounty(): void
     {
-        $this->assertSame('Uasin Gishu', KenyaLocations::getCountyOfSubCounty('Ainabkoi')?->name);
-        $this->assertSame('Uasin Gishu', KenyaLocations::getCountyOfSubCounty('154')?->name);
+        $this->assertSame('Mombasa', KenyaLocations::getCountyOfSubCounty('Changamwe')?->name);
+        $this->assertSame('Mombasa', KenyaLocations::getCountyOfSubCounty('00101')?->name);
         $this->assertNull(KenyaLocations::getCountyOfSubCounty('Nowhere'));
-    }
-
-    public function testFindsWardsInASubCountyByNameOrCode(): void
-    {
-        $byName = KenyaLocations::getWardsInSubCounty('Ainabkoi');
-        $byCode = KenyaLocations::getWardsInSubCounty('154');
-
-        $this->assertNotEmpty($byName);
-        $this->assertCount(count($byName), $byCode);
-        foreach ($byName as $ward) {
-            $this->assertSame('Ainabkoi', $ward->constituency);
-        }
-        $this->assertSame([], KenyaLocations::getWardsInSubCounty('Nowhere'));
     }
 
     public function testResolvesTheCountyOfAUniqueWard(): void
@@ -341,14 +367,6 @@ final class KenyaLocationsTest extends TestCase
         $this->assertNull(KenyaLocations::getCountyOfWard('Township'));
         $this->assertSame('Garissa', KenyaLocations::getCountyOfWard('0133')?->name);
         $this->assertNull(KenyaLocations::getCountyOfWard('Unknown Ward'));
-    }
-
-    public function testResolvesTheSubCountyOfAUniqueWard(): void
-    {
-        $this->assertSame('Westlands', KenyaLocations::getSubCountyOfWard('Mountain view')?->name);
-        $this->assertSame('Westlands', KenyaLocations::getSubCountyOfWard('1370')?->name);
-        $this->assertNull(KenyaLocations::getSubCountyOfWard('Township'));
-        $this->assertNull(KenyaLocations::getSubCountyOfWard('Unknown Ward'));
     }
 
     public function testResolvesTheCountyAndLocalityOfAnArea(): void
@@ -400,7 +418,7 @@ final class KenyaLocationsTest extends TestCase
         $this->assertSame('Nairobi', KenyaLocations::getCountyByCode('47')?->name);
         $this->assertSame('Nairobi', KenyaLocations::getCountyByCode(' 047 ')?->name);
         $this->assertSame('Changamwe', KenyaLocations::getConstituencyByCode('1')?->name);
-        $this->assertSame('Changamwe', KenyaLocations::getSubCountyByCode('1')?->name);
+        $this->assertSame('Changamwe', KenyaLocations::getSubCountyByCode('101')?->name);
         $this->assertSame('0133', KenyaLocations::getWardByCode('133')?->code);
         $this->assertSame('Garissa Township', KenyaLocations::getConstituencyOfWard('133')?->name);
         $this->assertSame('Nairobi', KenyaLocations::getCountyOfConstituency('274')?->name);
@@ -502,7 +520,6 @@ final class KenyaLocationsTest extends TestCase
     {
         $this->assertSame('Nyeri', KenyaLocations::getCountyOfWard('Iria-ini')?->name);
         $this->assertSame('Nyeri', KenyaLocations::getCountyOfWard('Iriaini')?->name);
-        $this->assertSame('Othaya', KenyaLocations::getSubCountyOfWard('Iria-ini')?->name);
     }
 
     public function testWardsCarryTheirParentCodes(): void

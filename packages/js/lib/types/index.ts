@@ -67,6 +67,8 @@ export interface Ward {
   constituency_code: string;
   /** Code of the county it belongs to */
   county_code: string;
+  /** Code of the sub-county it belongs to (HDX/DHIS2, see data/README.md) */
+  sub_county_code: string;
 }
 
 /**

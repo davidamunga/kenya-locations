@@ -45,8 +45,10 @@ import {
   resolveSubCounty,
   resolveWard,
   subCountiesInCounty,
+  subCountyOfWard,
   wardsInConstituency,
   wardsInCounty,
+  wardsInSubCounty,
 } from "./utils/lookups";
 import { LocationError, LocationNotFoundError } from "./errors/LocationErrors";
 
@@ -439,15 +441,11 @@ export function getSubCountiesInCounty(nameOrCode: string): SubCounty[] {
 
 /**
  * Get wards in a sub-county.
- * The ward data links wards to constituencies, so this matches the
- * sub-county name against constituency names.
  * @param nameOrCode Sub-county name or code
  */
 export function getWardsInSubCounty(nameOrCode: string): Ward[] {
   const sc = resolveSubCounty(nameOrCode);
-  if (!sc) return [];
-  const constituency = getConstituencyByNameValue(sc.name);
-  return constituency ? wardsInConstituency(constituency) : [];
+  return sc ? wardsInSubCounty(sc) : [];
 }
 
 /**
@@ -638,6 +636,17 @@ export function getConstituenciesInCounty(
 }
 
 /**
+ * Get the sub-county of a ward.
+ * @param wardNameOrCode Ward code, or a ward name that is unique in Kenya
+ */
+export function getSubCountyOfWard(
+  wardNameOrCode: string
+): SubCounty | undefined {
+  const ward = resolveWard(wardNameOrCode);
+  return ward ? subCountyOfWard(ward) : undefined;
+}
+
+/**
  * Get the constituency of a ward
  * @param wardNameOrCode Ward code, or a ward name that is unique in Kenya
  */
@@ -647,18 +656,6 @@ export function getConstituencyOfWard(
   const ward = resolveWard(wardNameOrCode);
   const found = ward ? constituencyOfWard(ward) : undefined;
   return found ? new ConstituencyWrapper(found) : undefined;
-}
-
-/**
- * Get the sub-county of a ward.
- * Sub-county names correspond to constituency names in the ward dataset.
- * @param wardNameOrCode Ward code, or a ward name that is unique in Kenya
- */
-export function getSubCountyOfWard(
-  wardNameOrCode: string
-): SubCounty | undefined {
-  const ward = resolveWard(wardNameOrCode);
-  return ward ? getSubCountyByNameValue(ward.constituency) : undefined;
 }
 
 /**
@@ -710,6 +707,7 @@ export class KenyaLocations {
   public static getWardsInSubCounty = getWardsInSubCounty;
   public static getCountyOfSubCounty = getCountyOfSubCounty;
   public static getCountyOfWard = getCountyOfWard;
+  public static getSubCountyOfWard = getSubCountyOfWard;
   public static county = county;
   public static locality = locality;
   public static getConstituencies = getConstituencies;
@@ -717,7 +715,6 @@ export class KenyaLocations {
   public static getConstituencyByName = getConstituencyByName;
   public static getConstituenciesInCounty = getConstituenciesInCounty;
   public static getConstituencyOfWard = getConstituencyOfWard;
-  public static getSubCountyOfWard = getSubCountyOfWard;
   public static getWardsInCounty = getWardsInCounty;
   public static getWardByCode = getWardByCode;
   public static getWardByName = getWardByName;

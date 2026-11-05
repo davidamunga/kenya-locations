@@ -28,7 +28,7 @@ final class KenyaLocations
 {
     private const COUNTY_CODE_WIDTH = 3;
     private const CONSTITUENCY_CODE_WIDTH = 3;
-    private const SUB_COUNTY_CODE_WIDTH = 3;
+    private const SUB_COUNTY_CODE_WIDTH = 5;
     private const WARD_CODE_WIDTH = 4;
 
     /** @var NameIndex<County>|null */
@@ -218,10 +218,17 @@ final class KenyaLocations
         ));
     }
 
+    public static function getCountyOfWard(string $wardNameOrCode): ?County
+    {
+        $ward = self::resolveWard($wardNameOrCode);
+
+        return $ward === null ? null : self::countyOfWardRecord($ward);
+    }
+
     /**
-     * Wards whose constituency name matches the sub-county.
+     * Wards in a sub-county.
      *
-     * `$nameOrCode` may be a sub-county administrative code or name.
+     * `$nameOrCode` may be a sub-county code or name.
      *
      * @return list<Ward>
      */
@@ -232,23 +239,22 @@ final class KenyaLocations
             return [];
         }
 
-        $constituency = self::constituencyNames()->unique($subCounty->name);
-
-        return $constituency === null ? [] : self::wardsInConstituency($constituency);
+        return array_values(array_filter(
+            Dataset::wards(),
+            static fn (Ward $ward): bool => $ward->subCountyCode === $subCounty->code,
+        ));
     }
 
-    public static function getCountyOfWard(string $wardNameOrCode): ?County
-    {
-        $ward = self::resolveWard($wardNameOrCode);
-
-        return $ward === null ? null : self::countyOfWardRecord($ward);
-    }
-
+    /**
+     * Sub-county of a ward.
+     *
+     * `$wardNameOrCode` may be a ward code or a ward name that is unique in Kenya.
+     */
     public static function getSubCountyOfWard(string $wardNameOrCode): ?SubCounty
     {
         $ward = self::resolveWard($wardNameOrCode);
 
-        return $ward === null ? null : self::subCountyNames()->unique($ward->constituency);
+        return $ward === null ? null : self::getSubCountyByCode($ward->subCountyCode);
     }
 
     /**
