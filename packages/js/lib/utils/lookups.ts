@@ -97,7 +97,7 @@ class NameIndex<T extends { name: string; aliases?: string[] }> {
 
 const COUNTY_CODE_WIDTH = 3;
 const CONSTITUENCY_CODE_WIDTH = 3;
-const SUB_COUNTY_CODE_WIDTH = 3;
+const SUB_COUNTY_CODE_WIDTH = 5;
 const WARD_CODE_WIDTH = 4;
 
 // --- Counties ---
@@ -186,6 +186,7 @@ const wardsByConstituencyCode = buildGroupMap(
   (w) => w.constituency_code
 );
 const wardsByCountyCode = buildGroupMap(wards, (w) => w.county_code);
+const wardsBySubCountyCode = buildGroupMap(wards, (w) => w.sub_county_code);
 
 export function getWardByCodeValue(code: string): Ward | undefined {
   return wardByCode.get(normalizeCode(code, WARD_CODE_WIDTH));
@@ -206,6 +207,14 @@ export function resolveWard(nameOrCode: string): Ward | undefined {
 
 export function wardsInConstituency(constituency: Constituency): Ward[] {
   return wardsByConstituencyCode.get(constituency.code) ?? [];
+}
+
+export function wardsInSubCounty(subCounty: SubCounty): Ward[] {
+  return wardsBySubCountyCode.get(subCounty.code) ?? [];
+}
+
+export function subCountyOfWard(ward: Ward): SubCounty | undefined {
+  return subCountyByCode.get(ward.sub_county_code);
 }
 
 export function wardsInCounty(county: County): Ward[] {

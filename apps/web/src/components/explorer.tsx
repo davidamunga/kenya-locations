@@ -301,8 +301,8 @@ export function Explorer() {
 
             <TabsPanel className="space-y-5 p-5" value="subcounty">
               <p className="max-w-prose text-sm text-muted-foreground">
-                County → sub-county → wards. Administrative, not the same as
-                constituencies.
+                County → sub-county → wards. These are DHIS2 sub-counties from the
+                Humanitarian Data Exchange, not an official list.
               </p>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                 <LocationCombobox

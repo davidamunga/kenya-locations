@@ -10,7 +10,7 @@
 
 Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, Swift, Dart/Flutter, PHP, and .NET.
 
-**47** counties · **307** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,829** areas
+**47** counties · **302** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,829** areas
 
 ---
 
@@ -264,8 +264,10 @@ County (47)
 │   917 localities · 1,829 areas
 └── Constituency → Ward      (electoral / administrative)
     290 constituencies · 1,450 wards
-    └── Sub-County (307)
+    └── Sub-County (302)
 ```
+
+Sub-counties are the DHIS2 sub-counties from the Humanitarian Data Exchange (American Red Cross, CC BY, 2019 to 2020), and every ward is linked to one. They are third-party data and close to constituencies, not an official KNBS or IEBC list. See [`data/README.md`](data/README.md).
 
 ---
 
@@ -474,7 +476,7 @@ npm install kenya-locations-react
 | `useWardsInConstituency(nameOrCode)` | `Ward[]` | Wards in a constituency |
 | `useConstituencyOfWard(nameOrCode)` | `ConstituencyWrapper \| undefined` | Parent constituency of a ward |
 | `useSubCountyOfWard(nameOrCode)` | `SubCounty \| undefined` | Parent sub-county of a ward |
-| `useSubCounties()` | `SubCounty[]` | All 307 sub-counties |
+| `useSubCounties()` | `SubCounty[]` | All 302 sub-counties |
 | `useSubCountiesInCounty(nameOrCode)` | `SubCounty[]` | Sub-counties in a county |
 | `useLocalities()` | `Locality[]` | All 917 localities |
 | `useLocalitiesInCounty(countyName)` | `Locality[]` | Localities in a county |

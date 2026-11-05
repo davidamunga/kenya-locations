@@ -88,16 +88,25 @@ describe("Wards Module", () => {
       expect(getConstituencyOfWard("NonExistent")).toBeUndefined();
     });
   });
-
   describe("getSubCountyOfWard", () => {
-    it("returns sub-county for a ward code", () => {
+    it("returns the sub-county a ward belongs to", () => {
       const ward = getWards()[0];
       const sc = getSubCountyOfWard(ward.code);
-      expect(sc).toBeDefined();
+      expect(sc?.code).toBe(ward.sub_county_code);
+      expect(sc?.county_code).toBe(ward.county_code);
     });
 
-    it("returns undefined for unknown ward", () => {
+    it("finds a ward by its unique name", () => {
+      expect(getSubCountyOfWard("Mountain view")?.name).toBe("Westlands");
+    });
+
+    it("returns undefined for an unknown ward", () => {
       expect(getSubCountyOfWard("NonExistent")).toBeUndefined();
+    });
+
+    it("every ward resolves to a sub-county", () => {
+      for (const w of getWards())
+        expect(getSubCountyOfWard(w.code), w.code).toBeDefined();
     });
   });
 });

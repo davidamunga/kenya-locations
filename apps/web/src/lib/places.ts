@@ -229,6 +229,7 @@ export function subCountyPlace(code: string): Place | undefined {
     facts: [
       { label: "Code", value: subCounty.code, code: true },
       { label: "County", value: `${subCounty.county} (${subCounty.county_code})` },
+      { label: "Source", value: "HDX / DHIS2" },
     ],
     aliases: [],
     groups: [
@@ -237,10 +238,7 @@ export function subCountyPlace(code: string): Place | undefined {
         csvName: `sub-county-${subCounty.code}-wards`,
         items: wards.map((w) => ({ label: w.name, href: wardHref(w.code), meta: w.code })),
         rows: wards,
-        note:
-          wards.length === 0
-            ? "No wards are linked to this sub-county yet. Ward to sub-county links arrive with the KNBS rebuild."
-            : "Matched through the constituency of the same name until ward to sub-county links arrive.",
+        note: "Ward to sub-county links come from the Humanitarian Data Exchange ward layer (DHIS2 sub-counties), not from IEBC.",
       },
     ],
     record: subCounty,

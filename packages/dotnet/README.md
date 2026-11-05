@@ -7,7 +7,7 @@ Kenyan administrative divisions for .NET: counties, sub-counties, constituencies
 
 All the data is embedded in the package. There are no network calls, no API keys and nothing to configure.
 
-**47** counties · **307** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,800+** areas
+**47** counties · **302** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,800+** areas
 
 [Live demo](https://kenya-locations.web.app) · [Full documentation](https://kenya-locations.web.app/docs#dotnet) · [Report an issue](https://github.com/DavidAmunga/kenya-locations/issues)
 

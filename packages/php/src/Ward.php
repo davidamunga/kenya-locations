@@ -17,6 +17,7 @@ final readonly class Ward
             constituency: (string) $data['constituency'],
             constituencyCode: (string) $data['constituency_code'],
             countyCode: (string) $data['county_code'],
+            subCountyCode: (string) $data['sub_county_code'],
         );
     }
 
@@ -28,6 +29,8 @@ final readonly class Ward
         public string $constituencyCode,
         /** Code of the parent county, e.g. "047". */
         public string $countyCode,
+        /** Code of the sub-county it belongs to (HDX/DHIS2, see data/README.md). */
+        public string $subCountyCode = '',
     ) {
     }
 }

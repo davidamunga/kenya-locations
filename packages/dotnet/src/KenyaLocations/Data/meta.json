@@ -21,14 +21,21 @@
     },
     "wards.json": {
       "key": "code",
-      "parents": { "constituency_code": "constituencies.json", "county_code": "counties.json" },
-      "sources": ["IEBC county assembly ward codes 0001–1450 (2012 delimitation)"]
+      "parents": { "constituency_code": "constituencies.json", "county_code": "counties.json", "sub_county_code": "sub-counties.json" },
+      "sources": [
+        "IEBC county assembly ward codes 0001–1450 (2012 delimitation)",
+        "sub_county_code: Administrative Wards in Kenya 1450, American Red Cross via the Humanitarian Data Exchange (CC BY), DHIS2 ids, dataset dated 2016-03-31, last modified 2019-04-12 (attribute table in sources/hdx-kenya-wards/kenya_wards.dbf)"
+      ],
+      "build": "node scripts/sub-counties/build-hdx.js (sub_county_code only)",
+      "notes": "sub_county_code links each ward to a DHIS2 sub-county. 1,346 wards match the HDX ward layer by exact name; the other 104 are matched by similar name or inferred from their constituency, and are listed in sources/hdx-kenya-wards/matches.json for review."
     },
     "sub-counties.json": {
       "key": "code",
+      "digits": 5,
       "parents": { "county_code": "counties.json" },
-      "sources": [],
-      "notes": "Many records are constituency names, not KNBS sub-counties. Scheduled to be rebuilt from the KNBS list in 1.0, with new 5-digit codes."
+      "sources": ["Kenya Sub Counties, American Red Cross via the Humanitarian Data Exchange (CC BY), DHIS2 sub-counties, dataset dated 2019-12-12, last modified 2020-09-01 (attribute table in sources/hdx-kenya-wards/ke_subcounty.dbf)"],
+      "build": "node scripts/sub-counties/build-hdx.js",
+      "notes": "Third-party DHIS2 sub-counties (the health information system's), not an official KNBS or IEBC list. They are close to constituencies: 297 of 302 sit inside one constituency. Two layer entries with no wards (Tiaty in Baringo, Kalama in Machakos) are left out. Codes are assigned by this project: the IEBC county code plus two digits in the source layer's order. See history.json for the old codes."
     },
     "locality.json": {
       "key": ["county_code", "name"],

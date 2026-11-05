@@ -7,12 +7,12 @@ import { wards } from "./data/wards";
 import {
   constituencyOfWard,
   countyOfWard,
-  getSubCountyByNameValue,
   getWardByCodeValue,
   getWardByNameValue,
   getWardsByNameValue,
   resolveCounty,
   resolveWard,
+  subCountyOfWard,
   wardsInCounty,
 } from "./utils/lookups";
 import { ConstituencyWrapper } from "./constituencies";
@@ -124,7 +124,6 @@ export function getConstituencyOfWard(
 
 /**
  * Get the sub-county a ward belongs to.
- * Sub-county names correspond to constituency names in the ward dataset.
  * @param wardNameOrCode Ward code, or a ward name that is unique in Kenya
  * @returns SubCounty or undefined if not found
  * @example
@@ -137,7 +136,7 @@ export function getSubCountyOfWard(
   wardNameOrCode: string
 ): SubCounty | undefined {
   const ward = resolveWard(wardNameOrCode);
-  return ward ? getSubCountyByNameValue(ward.constituency) : undefined;
+  return ward ? subCountyOfWard(ward) : undefined;
 }
 
 // Export types

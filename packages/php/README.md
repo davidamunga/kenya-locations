@@ -3,7 +3,7 @@
 Kenyan administrative divisions — counties, sub-counties, constituencies,
 wards, localities, and areas — as a typed PHP 8.2+ Composer library.
 
-**47** counties · **307** sub-counties · **290** constituencies ·
+**47** counties · **302** sub-counties · **290** constituencies ·
 **1,450** wards · **917** localities · **1,829** areas
 
 JSON is loaded lazily from the shared `data/` files and cached for the
@@ -112,7 +112,7 @@ County (47)
 │   917 localities · 1,829 areas
 └── Constituency → Ward      (electoral / administrative)
     290 constituencies · 1,450 wards
-    └── SubCounty (307)
+    └── SubCounty (302)
 ```
 
 | Type           | Fields                                                                                             |

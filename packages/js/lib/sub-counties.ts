@@ -6,13 +6,12 @@ import type { SubCounty, County, Ward } from "./types";
 import { subCounties } from "./data/sub-counties";
 import {
   countyOfNamed,
-  getConstituencyByNameValue,
   getSubCountyByCodeValue,
   getSubCountyByNameValue,
   resolveCounty,
   resolveSubCounty,
   subCountiesInCounty,
-  wardsInConstituency,
+  wardsInSubCounty,
 } from "./utils/lookups";
 
 /**
@@ -90,22 +89,18 @@ export function getCountyOfSubCounty(
 
 /**
  * Get all wards in a sub-county by name or code.
- * Sub-county names correspond to constituency names in the ward dataset,
- * so this matches wards whose constituency field equals the sub-county name.
  * @param nameOrCode Sub-county name or code
  * @returns Array of wards in the sub-county
  * @example
  * ```ts
  * import { getWardsInSubCounty } from 'kenya-locations/sub-counties';
- * const wards = getWardsInSubCounty('154');       // by code
- * const wards2 = getWardsInSubCounty('Ainabkoi'); // by name
+ * const wards = getWardsInSubCounty('04701');      // by code
+ * const wards2 = getWardsInSubCounty('Westlands'); // by name
  * ```
  */
 export function getWardsInSubCounty(nameOrCode: string): Ward[] {
   const sc = resolveSubCounty(nameOrCode);
-  if (!sc) return [];
-  const constituency = getConstituencyByNameValue(sc.name);
-  return constituency ? wardsInConstituency(constituency) : [];
+  return sc ? wardsInSubCounty(sc) : [];
 }
 
 // Export types

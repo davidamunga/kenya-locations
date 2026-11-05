@@ -10,8 +10,8 @@ import {
 
 describe("Sub-Counties Module", () => {
   describe("getSubCounties", () => {
-    it("returns all 307 sub-counties", () => {
-      expect(getSubCounties()).toHaveLength(307);
+    it("returns all 302 sub-counties", () => {
+      expect(getSubCounties()).toHaveLength(302);
     });
   });
 
@@ -66,28 +66,33 @@ describe("Sub-Counties Module", () => {
       expect(getCountyOfSubCounty("Nowhere")).toBeUndefined();
     });
   });
-
   describe("getWardsInSubCounty", () => {
-    it("returns wards for a sub-county by code", () => {
-      const ainabkoi = getSubCountyByName("Ainabkoi")!;
-      const result = getWardsInSubCounty(ainabkoi.code);
-      expect(result.length).toBeGreaterThan(0);
-      result.forEach((w) =>
-        expect(w.constituency.toLowerCase()).toBe(ainabkoi.name.toLowerCase())
-      );
-    });
-
-    it("returns wards for a sub-county by name", () => {
-      const result = getWardsInSubCounty("Ainabkoi");
-      expect(result.length).toBeGreaterThan(0);
+    it("returns the wards of a sub-county by code and by name", () => {
+      const westlands = getSubCountyByName("Westlands")!;
+      const byCode = getWardsInSubCounty(westlands.code);
+      expect(byCode.length).toBeGreaterThan(0);
+      expect(getWardsInSubCounty("Westlands")).toEqual(byCode);
+      byCode.forEach((w) => expect(w.sub_county_code).toBe(westlands.code));
     });
 
     it("is case-insensitive for name lookup", () => {
-      expect(getWardsInSubCounty("ainabkoi").length).toBeGreaterThan(0);
+      expect(getWardsInSubCounty("westlands")).toEqual(
+        getWardsInSubCounty("Westlands")
+      );
     });
 
-    it("returns empty array for unknown sub-county", () => {
+    it("returns an empty array for an unknown sub-county", () => {
       expect(getWardsInSubCounty("Nowhere")).toEqual([]);
+    });
+
+    it("every sub-county has at least one ward, all in its own county", () => {
+      for (const sc of getSubCounties()) {
+        const wards = getWardsInSubCounty(sc.code);
+        expect(wards.length, sc.name).toBeGreaterThan(0);
+        wards.forEach((w) =>
+          expect(w.county_code, `${sc.name}/${w.name}`).toBe(sc.county_code)
+        );
+      }
     });
   });
 });
