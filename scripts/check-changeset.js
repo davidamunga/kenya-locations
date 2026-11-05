@@ -61,7 +61,7 @@ export function changesetCheck(changedFiles, readChangeset = () => "") {
   if (changesets.length === 0) {
     return { ok: false, productFiles, changesets, reason: "product files changed without a changeset" };
   }
-  if (changedFiles.some((file) => file.startsWith("data/"))) {
+  if (changedFiles.some((file) => file.startsWith("data/") && file.endsWith(".json"))) {
     const listed = new Set(changesets.flatMap((file) => changesetPackages(readChangeset(file))));
     const missingDataPackages = dataPackages().filter((name) => !listed.has(name));
     if (missingDataPackages.length > 0) {
