@@ -1,6 +1,6 @@
 {
   "name": "kenya-locations-swift",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "private": true,
   "description": "Version tracking stub for the Swift package — actual publish is via Swift Package Index / GitHub release"
 }
