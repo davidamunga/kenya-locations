@@ -64,3 +64,11 @@ examples/wordpress/.phpunit.cache/
 *.njsproj
 *.sln
 *.sw?
+
+# .NET build artefacts
+packages/dotnet/**/bin/
+packages/dotnet/**/obj/
+packages/dotnet/artifacts/
+
+# The .NET package needs its solution file
+!packages/dotnet/*.sln

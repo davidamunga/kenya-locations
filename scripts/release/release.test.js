@@ -101,7 +101,7 @@ test("verify catches a fixed group with mixed versions", () => {
 });
 
 test("data changesets bump one package per product that ships data", () => {
-  assert.deepEqual(dataPackages(), ["kenya-locations", "kenya-locations-dart", "kenya-locations-php"]);
+  assert.deepEqual(dataPackages(), ["kenya-locations", "kenya-locations-dart", "kenya-locations-php", "kenya-locations-dotnet"]);
 });
 
 const wards = ENTITIES.find((e) => e.file === "wards.json");
@@ -144,6 +144,7 @@ test("renders a changeset with every data package and the counts", () => {
 "kenya-locations": patch
 "kenya-locations-dart": patch
 "kenya-locations-php": patch
+"kenya-locations-dotnet": patch
 ---
 
 Data update:

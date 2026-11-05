@@ -8,7 +8,7 @@
 [![CI](https://github.com/DavidAmunga/kenya-locations/actions/workflows/ci.yml/badge.svg)](https://github.com/DavidAmunga/kenya-locations/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, Swift, Dart/Flutter, and PHP.
+Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, Swift, Dart/Flutter, PHP, and .NET.
 
 **47** counties · **307** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,829** areas
 
@@ -24,8 +24,9 @@ Kenyan administrative divisions — counties, sub-counties, constituencies, ward
 | **Swift** (iOS, macOS, tvOS, watchOS) | [`KenyaLocations`](https://swiftpackageindex.com/davidamunga/kenya-locations) | See below |
 | **Dart / Flutter** | [`kenya_locations`](https://pub.dev/packages/kenya_locations) | See below |
 | **PHP** | [`davidamunga/kenya-locations`](https://packagist.org/packages/davidamunga/kenya-locations) | See below |
+| **.NET** (C#, F#, VB) | [`KenyaLocations`](https://www.nuget.org/packages/KenyaLocations) | `dotnet add package KenyaLocations` |
 
-All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, `kenya_locations`, and `davidamunga/kenya-locations`, which version independently).
+All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, `kenya_locations`, `davidamunga/kenya-locations`, and the .NET `KenyaLocations`, which version independently).
 
 ---
 
@@ -98,6 +99,23 @@ composer require davidamunga/kenya-locations
 ```
 
 Works in any PHP 8.2+ project, including WordPress themes and plugins. No initialisation required — JSON loads lazily from the package on first access. A drop-in example plugin is in [`examples/wordpress`](examples/wordpress).
+
+### .NET
+
+```bash
+dotnet add package KenyaLocations
+```
+
+Targets `net8.0` and `netstandard2.0` (.NET Framework 4.6.1+, Unity, Xamarin). The data is embedded in the assembly and parsed lazily on first access; no initialisation or network calls. The entry point is the static `Locations` class:
+
+```csharp
+using KenyaLocations;
+
+var counties = Locations.GetCounties();
+var nairobi = Locations.GetCountyByName("nairobi");
+var wards = Locations.GetWardsInConstituency("Westlands");
+var results = Locations.Search("karen");
+```
 
 ### Example apps
 

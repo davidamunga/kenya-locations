@@ -10,6 +10,7 @@ Changesets versions packages; the **Release** workflow tags them and, after one 
 | React | `kenya-locations-react` | Own number. Add a changeset only when hooks need a release. |
 | Dart | `kenya_locations` | Own number. Add a changeset only when the Dart package should ship. |
 | PHP | `davidamunga/kenya-locations` | Own number. Add a changeset only when the PHP package should ship. |
+| .NET | `KenyaLocations` (NuGet) | Own number. Add a changeset only when the .NET package should ship. |
 
 `apps/web` is ignored. Do not bump versions by hand except in an emergency.
 
@@ -32,6 +33,7 @@ pnpm changeset                 # pick packages + bump type
 | Swift | — (git tag) | `Sources/KenyaLocations/Resources/` |
 | Dart | `pubspec.yaml` | `lib/src/generated/data.dart` (generated) |
 | PHP | `composer.json` + `composer.lock` content-hash | `data/` |
+| .NET | `src/KenyaLocations/KenyaLocations.csproj` (`<Version>`) | `src/KenyaLocations/Data/` |
 
 | Command | What it does |
 |---|---|
@@ -56,10 +58,11 @@ Merging `chore: version packages` runs the **Release** workflow (`.github/workfl
    | React | `react-v{version}` |
    | Dart | `dart-v{version}` |
    | PHP | `php-v{version}` |
+   | .NET | `dotnet-v{version}` |
 
    The WordPress plugin zip is attached to the core `v*` release.
 3. **Approve.** The publish job waits on the `release` environment. Approve it once in the Actions run.
-4. **Publish.** It dispatches each product's workflow on its tag: **Publish Core Packages** (JS → npm, Kotlin → Maven Central, Swift tag check), **Publish React to npm**, **Publish Dart to pub.dev**, **Publish PHP to Packagist**. Each one publishes its draft GitHub release only after its registry publish succeeds. A failure fails that run; nothing is hidden with `|| true`.
+4. **Publish.** It dispatches each product's workflow on its tag: **Publish Core Packages** (JS → npm, Kotlin → Maven Central, Swift tag check), **Publish React to npm**, **Publish Dart to pub.dev**, **Publish PHP to Packagist**, **Publish .NET to NuGet**. Each one publishes its draft GitHub release only after its registry publish succeeds. A failure fails that run; nothing is hidden with `|| true`.
 
 You can still run any publish workflow by hand (Actions → Run workflow) to retry one product.
 
@@ -68,6 +71,8 @@ You can still run any publish workflow by hand (Actions → Run workflow) to ret
 - **`release` environment:** Settings → Environments → `release` → add yourself under **Required reviewers**. Do this before the first release that uses this workflow: without reviewers, GitHub creates the environment unprotected and publishing starts without asking.
 - **pub.dev:** in the package's admin page → Automated publishing, allow GitHub Actions for this repository with tag pattern `dart-v{{version}}`, and allow `workflow_dispatch` events. The Release workflow dispatches **Publish Dart to pub.dev** on the `dart-v*` tag.
 - **`PHP_SPLIT_DEPLOY_KEY`:** the private half of a write-enabled deploy key on [`davidamunga/kenya-locations-php`](https://github.com/davidamunga/kenya-locations-php) (that repo → Settings → Deploy keys). It can push only to that repo and doesn't expire. **Publish PHP to Packagist** fails if it is missing. To rotate it: `ssh-keygen -t ed25519 -N "" -f key`, add `key.pub` as a deploy key with write access, `gh secret set PHP_SPLIT_DEPLOY_KEY < key`, then delete the old deploy key and both local files.
+
+- **NuGet:** create the `KenyaLocations` package once on nuget.org, then add a **Trusted Publishing** policy (nuget.org → your profile → Trusted Publishing) for repository `DavidAmunga/kenya-locations`, workflow file `publish-dotnet.yml`. Set the repository variable `NUGET_USER` to your nuget.org profile name (Settings → Secrets and variables → Actions → Variables). No API key secret is needed. If a `NUGET_API_KEY` secret is set the workflow uses it instead (needed for the first push of a new package ID); delete the secret afterwards and trusted publishing takes over.
 
 ### PHP and WordPress
 
@@ -101,7 +106,7 @@ Don't write data changesets by hand:
 ```bash
 # edit data/*.json
 pnpm validate
-pnpm data:sync            # refresh the Kotlin, Swift and PHP copies (and Dart, if installed)
+pnpm data:sync            # refresh the Kotlin, Swift, PHP and .NET copies (and Dart, if installed)
 pnpm changeset:data       # write .changeset/data-*.md from the diff against origin/main
 ```
 

@@ -35,6 +35,17 @@ function yamlVersion(path) {
   };
 }
 
+/** The `<Version>` element of an MSBuild project file. */
+function msbuildVersion(path) {
+  const pattern = /<Version>(.*?)<\/Version>/;
+  return {
+    path,
+    describe: `<Version> in ${path}`,
+    read: (text) => text.match(pattern)?.[1]?.trim(),
+    write: (text, version) => text.replace(pattern, `<Version>${version}</Version>`),
+  };
+}
+
 /** composer.json "version"; composer.lock's content-hash must follow it. */
 function composerVersion(path, lockPath) {
   return {
@@ -125,6 +136,19 @@ export const PRODUCTS = [
       },
     ],
     data: [dataCopy("packages/php/data")],
+  },
+  {
+    id: "dotnet",
+    description: ".NET / NuGet",
+    tag: (version) => `dotnet-v${version}`,
+    packages: [
+      {
+        name: "kenya-locations-dotnet",
+        dir: "packages/dotnet",
+        versionFiles: [msbuildVersion("packages/dotnet/src/KenyaLocations/KenyaLocations.csproj")],
+      },
+    ],
+    data: [dataCopy("packages/dotnet/src/KenyaLocations/Data")],
   },
 ];
 

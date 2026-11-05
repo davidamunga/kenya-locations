@@ -42,6 +42,7 @@ const dataChangeset = `---
 "kenya-locations": patch
 "kenya-locations-dart": patch
 "kenya-locations-php": patch
+"kenya-locations-dotnet": patch
 ---
 
 Data update:
@@ -56,7 +57,7 @@ test("fails when a data change skips a package that ships the data", () => {
   const coreOnly = `---\n"kenya-locations": patch\n---\n\nAdd areas.\n`;
   const result = changesetCheck(["data/area.json", ".changeset/add-areas.md"], () => coreOnly);
   assert.equal(result.ok, false);
-  assert.deepEqual(result.missingDataPackages, ["kenya-locations-dart", "kenya-locations-php"]);
+  assert.deepEqual(result.missingDataPackages, ["kenya-locations-dart", "kenya-locations-php", "kenya-locations-dotnet"]);
 });
 
 test("a data README edit with a package changeset does not require the data packages", () => {
@@ -69,7 +70,7 @@ test("a data README edit with a package changeset does not require the data pack
 });
 
 test("data packages can be spread across several changesets", () => {
-  const files = { ".changeset/a.md": `---\n"kenya-locations": patch\n---\n\nA\n`, ".changeset/b.md": `---\nkenya-locations-dart: patch\n'kenya-locations-php': minor\n---\n\nB\n` };
+  const files = { ".changeset/a.md": `---\n"kenya-locations": patch\n---\n\nA\n`, ".changeset/b.md": `---\nkenya-locations-dart: patch\n'kenya-locations-php': minor\nkenya-locations-dotnet: patch\n---\n\nB\n` };
   const result = changesetCheck(["data/wards.json", ".changeset/a.md", ".changeset/b.md"], (f) => files[f]);
   assert.equal(result.ok, true);
 });
@@ -79,6 +80,7 @@ test("reads package names from changeset frontmatter", () => {
     "kenya-locations",
     "kenya-locations-dart",
     "kenya-locations-php",
+    "kenya-locations-dotnet",
   ]);
   assert.deepEqual(changesetPackages("no frontmatter"), []);
 });

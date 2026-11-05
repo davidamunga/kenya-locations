@@ -39,6 +39,7 @@ jobs:
       swift: ${{ steps.filter.outputs.swift }}
       dart: ${{ steps.filter.outputs.dart }}
       php: ${{ steps.filter.outputs.php }}
+      dotnet: ${{ steps.filter.outputs.dotnet }}
       wordpress: ${{ steps.filter.outputs.wordpress }}
       web: ${{ steps.filter.outputs.web }}
     steps:
@@ -68,6 +69,9 @@ jobs:
               - 'data/**'
             php:
               - 'packages/php/**'
+              - 'data/**'
+            dotnet:
+              - 'packages/dotnet/**'
               - 'data/**'
             wordpress:
               - 'examples/wordpress/**'
@@ -187,6 +191,34 @@ jobs:
         run: ./gradlew build
       - name: Test
         run: ./gradlew test
+
+  # ── .NET package ──────────────────────────────────────────────────────────
+  ci-dotnet:
+    name: .NET — Build, Test & Pack
+    needs: changes
+    if: needs.changes.outputs.dotnet == 'true'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/dotnet
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Fail if copied data is stale
+        run: |
+          node scripts/release/data-sync.js
+          git diff --exit-code -- packages/dotnet/src/KenyaLocations/Data
+        working-directory: ${{ github.workspace }}
+      - run: dotnet restore
+      - run: dotnet build -c Release --no-restore
+      - run: dotnet test -c Release --no-build
+      - name: Pack
+        run: dotnet pack src/KenyaLocations -c Release --no-build -o artifacts
 
   # ── Dart package ──────────────────────────────────────────────────────────
   ci-dart:

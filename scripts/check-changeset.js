@@ -19,6 +19,7 @@ const SKIP_PREFIXES = [
   "packages/dart/lib/src/generated/",
   "packages/kotlin/src/main/resources/",
   "packages/php/data/",
+  "packages/dotnet/src/KenyaLocations/Data/",
 ];
 
 const PRODUCT_PREFIXES = [
@@ -29,6 +30,7 @@ const PRODUCT_PREFIXES = [
   "packages/swift/Sources/",
   "packages/dart/lib/",
   "packages/php/src/",
+  "packages/dotnet/src/",
 ];
 
 export function isChangesetFile(file) {
