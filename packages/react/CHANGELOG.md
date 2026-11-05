@@ -1,5 +1,14 @@
 # kenya-locations-react
 
+## 0.10.2
+
+### Patch Changes
+
+- Update the `useAreas` doc comment and README to the current area count (1,829).
+  ([#71](https://github.com/DavidAmunga/kenya-locations/pull/71))
+
+- Uses `kenya-locations` 0.11.1.
+
 ## 0.10.1
 
 ### Patch Changes
