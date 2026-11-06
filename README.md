@@ -30,7 +30,7 @@ Kenyan administrative divisions — counties, sub-counties, constituencies, ward
 | **Python** (Django, FastAPI) | [`kenya-locations`](https://pypi.org/project/kenya-locations/) | `uv add kenya-locations` or `pip install kenya-locations` |
 
 
-All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, `kenya_locations`, `davidamunga/kenya-locations`, the .NET `KenyaLocations`, and the Python `kenya-locations`, which version independently).
+All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, `kenya_locations`, `davidamunga/kenya-locations`, the .NET `KenyaLocations`, the Python `kenya-locations` and the Go module, which version independently).
 
 ---
 
@@ -121,7 +121,6 @@ var wards = Locations.GetWardsInConstituency("Westlands");
 var results = Locations.Search("karen");
 ```
 
-
 ### Go
 
 ```bash
@@ -134,11 +133,11 @@ Requires Go 1.21+ and has no third-party dependencies. The data is embedded in t
 import kl "github.com/davidamunga/kenya-locations/packages/go"
 
 counties := kl.GetCounties()
-nairobi := kl.GetCountyByName("migori") 
-wards := kl.GetWardsInConstituency("rongo")
+nairobi := kl.GetCountyByName("Nairobi")
+wards := kl.GetWardsInConstituency("Westlands")
 results := kl.Search("karen")
+```
 
-=======
 ### Python
 
 ```bash
@@ -311,7 +310,6 @@ Django and FastAPI usage is in [`packages/python/README.md`](packages/python/REA
 
 ---
 
-
 ### Go
 
 ```go
@@ -331,7 +329,6 @@ results := kl.Search("Nairob", kl.WithLimit(20)) // matches "Nairobi"
 ```
 
 ---
-
 
 ## Data Hierarchy
 
@@ -872,8 +869,6 @@ final readonly class SearchResult { public SearchType $type; public object $item
 
 ---
 
-
-
 ## Go API
 
 Full reference: [`packages/go/README.md`](packages/go/README.md).
@@ -960,8 +955,6 @@ type SearchResult struct {
 
 ---
 
-
-=======
 ## Python API
 
 Function names are the snake_case versions of the JS and PHP API, and record fields match the shared JSON (`county_code`, `population_2019`). Codes may be strings or integers. The full reference, including Django and FastAPI, is in [`packages/python/README.md`](packages/python/README.md).
