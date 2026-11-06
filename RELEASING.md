@@ -118,4 +118,8 @@ pnpm changeset:data       # write .changeset/data-*.md from the diff against ori
 
 ### Changelog format
 
-`.changeset/changelog.cjs` writes each entry as the change followed by its PR link. There are no author credits or commit hashes.
+`.changeset/changelog.cjs` writes each entry as the change, its PR link, and the PR author: `… ([#79](…/pull/79)) by [@achingachris](https://github.com/achingachris)`. There are no commit hashes.
+
+- The PR and author come from the GitHub API for the commit that added the changeset, so the Changesets workflow needs `GITHUB_TOKEN` (it has it). If the lookup fails, the entry has the PR link and no credit; the release is not blocked.
+- To credit someone else, or several people, add a line to the changeset: `Credit: @alice, @bob`. It replaces the PR author and is removed from the entry. Bots and Claude are never credited.
+- GitHub release notes are the changelog section plus a `**Contributors:** @alice, @bob` line built from those credits.
