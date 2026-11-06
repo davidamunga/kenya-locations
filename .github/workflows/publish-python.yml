@@ -1,0 +1,116 @@
+# Publishes kenya-locations to PyPI with Trusted Publishing (no API token).
+# The Release workflow dispatches this on the python-v* tag after approval.
+#
+# One-time setup on pypi.org: add a trusted publisher for this repository with
+# workflow "publish-python.yml" and environment "pypi".
+name: Publish Python to PyPI
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  build:
+    name: Build & test
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: packages/python
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Read version from pyproject.toml
+        id: version
+        run: |
+          VERSION=$(sed -n 's/^version = "\(.*\)"$/\1/p' pyproject.toml)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Publishing version: $VERSION"
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Validate shared data
+        run: node scripts/validate-data.js
+        working-directory: ${{ github.workspace }}
+
+      - name: Fail if the bundled data is stale
+        run: |
+          cp data/*.json packages/python/src/kenya_locations/data/
+          git diff --exit-code -- packages/python/src/kenya_locations/data
+        working-directory: ${{ github.workspace }}
+
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: "3.12"
+
+      - run: uv sync --locked
+      - run: uv run --no-sync ruff check
+      - run: uv run --no-sync mypy
+      - run: uv run --no-sync pytest
+      - run: uv build
+
+      - name: Smoke-test the wheel and sdist before upload
+        env:
+          EXPECTED_VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          uv run --isolated --no-project --with dist/*.whl scripts/smoke_test.py
+          uv run --isolated --no-project --with dist/*.tar.gz scripts/smoke_test.py
+
+      - uses: actions/upload-artifact@v6
+        with:
+          name: python-dist
+          path: packages/python/dist/
+
+  publish:
+    name: Publish to PyPI
+    needs: build
+    runs-on: ubuntu-24.04
+    environment:
+      name: pypi
+      url: https://pypi.org/project/kenya-locations/${{ needs.build.outputs.version }}/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v7
+        with:
+          name: python-dist
+          path: dist/
+
+      - uses: pypa/gh-action-pypi-publish@release/v1
+
+      - name: Summary
+        run: |
+          {
+            echo "## Published kenya-locations ${{ needs.build.outputs.version }}"
+            echo ""
+            echo "\`\`\`bash"
+            echo "pip install kenya-locations"
+            echo "pip install 'kenya-locations[django]'"
+            echo "pip install 'kenya-locations[fastapi]'"
+            echo "\`\`\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  github-release:
+    name: Publish GitHub draft release
+    needs: [build, publish]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Publish the python-v* release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="python-v${{ needs.build.outputs.version }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --draft=false
+            echo "Published the $TAG GitHub release"
+          else
+            echo "No GitHub release for $TAG (not created by the Release workflow); nothing to publish."
+          fi

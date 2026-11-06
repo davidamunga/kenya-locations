@@ -2,6 +2,7 @@ import { DATA_VERSION } from "kenya-locations";
 import dartPackage from "../../../../packages/dart/package.json";
 import dotnetPackage from "../../../../packages/dotnet/package.json";
 import phpPackage from "../../../../packages/php/package.json";
+import pythonPackage from "../../../../packages/python/package.json";
 import { AreaSubmissionForm } from "@/components/AreaSubmissionForm";
 import { CodeBlock } from "@/components/ui/code-block";
 import { Separator } from "@/components/ui/separator";
@@ -30,10 +31,11 @@ export function Docs() {
           Install
         </h2>
         <p className="mt-3 max-w-prose text-muted-foreground text-sm">
-          JavaScript, React, Kotlin, Swift, Dart, PHP, .NET, and WordPress read
-          the same JSON in <code>data/</code>. JavaScript, Kotlin and Swift
-          share version {DATA_VERSION}; Dart is {dartPackage.version}, PHP{" "}
-          {phpPackage.version} and .NET {dotnetPackage.version}.
+          JavaScript, React, Kotlin, Swift, Dart, PHP, .NET, WordPress, and
+          Python read the same JSON in <code>data/</code>. JavaScript, Kotlin
+          and Swift share version {DATA_VERSION}; Dart is {dartPackage.version},
+          PHP {phpPackage.version}, .NET {dotnetPackage.version} and Python{" "}
+          {pythonPackage.version}.
         </p>
         <InstallTabs className="mt-6" />
       </section>
@@ -81,6 +83,24 @@ export function Docs() {
                 </TableCell>
                 <TableCell className="text-muted-foreground text-xs">
                   PHP library — zip on each <code>v*</code> GitHub release
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Django</TableCell>
+                <TableCell>
+                  <RepoLink path="examples/django" />
+                </TableCell>
+                <TableCell className="text-muted-foreground text-xs">
+                  Python library — chained county, constituency and ward selects
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>FastAPI</TableCell>
+                <TableCell>
+                  <RepoLink path="examples/fastapi" />
+                </TableCell>
+                <TableCell className="text-muted-foreground text-xs">
+                  Python library — mounted router and validated codes
                 </TableCell>
               </TableRow>
               <TableRow>
@@ -544,6 +564,79 @@ app.Run();`}
 
       <Separator />
 
+      <section className="scroll-mt-24" id="python">
+        <h2 className="font-heading font-semibold text-2xl tracking-tight">
+          Python
+        </h2>
+        <p className="mt-3 max-w-prose text-muted-foreground text-sm">
+          Python 3.11+. No dependencies and no init. Django and FastAPI support
+          ship as extras. Published on PyPI as{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://pypi.org/project/kenya-locations/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            kenya-locations
+          </a>
+          . Source: <RepoLink path="packages/python" />.
+        </p>
+        <div className="mt-6 space-y-8">
+          <Example
+            filename="county_picker.py"
+            language="python"
+            title="County picker"
+            body="Same drill-down: county, constituency, wards. Name-or-code on scoped queries."
+            code={`import kenya_locations as kl
+
+counties = kl.get_counties()
+nairobi = kl.get_county_by_name("Nairobi")
+constituencies = kl.get_constituencies_in_county("Nairobi")
+wards = kl.get_wards_in_constituency("Westlands")
+
+print(nairobi.capital, nairobi.population_2019)
+
+results = kl.search("Nairob", limit=20)  # typo-tolerant`}
+          />
+          <Example
+            filename="models.py"
+            language="python"
+            title="Django"
+            body="Fields store codes and add chained selects to forms and the admin. Data releases never create migrations."
+            code={`from django.db import models
+from kenya_locations.contrib.django.fields import (
+    ConstituencyField, CountyField, WardField,
+)
+
+class Address(models.Model):
+    county = CountyField()
+    constituency = ConstituencyField(chained_to="county")
+    ward = WardField(chained_to="constituency")
+
+# urls.py
+path("locations/", include("kenya_locations.contrib.django.urls"))`}
+          />
+          <Example
+            filename="main.py"
+            language="python"
+            title="FastAPI"
+            body="Mount a read-only router, or validate codes in your own request bodies."
+            code={`from fastapi import FastAPI
+from pydantic import BaseModel
+from kenya_locations.contrib.fastapi import CountyCode, WardCode, create_router
+
+app = FastAPI()
+app.include_router(create_router(), prefix="/locations")
+
+class Delivery(BaseModel):
+    county: CountyCode  # 47 or "47" becomes "047"
+    ward: WardCode`}
+          />
+        </div>
+      </section>
+
+      <Separator />
+
       <section className="scroll-mt-24" id="contribute">
         <h2 className="font-heading font-semibold text-2xl tracking-tight">
           Contribute
@@ -613,6 +706,7 @@ export function InstallTabs({ className }: { className?: string }) {
         <TabsTab value="php">PHP</TabsTab>
         <TabsTab value="dotnet">.NET</TabsTab>
         <TabsTab value="wordpress">WordPress</TabsTab>
+        <TabsTab value="python">Python</TabsTab>
       </TabsList>
       <TabsPanel className="mt-3 space-y-3" value="js">
         <CodeBlock filename="terminal">npm install kenya-locations</CodeBlock>
@@ -701,6 +795,26 @@ implementation("io.github.davidamunga:kenya-locations:${DATA_VERSION}")
             target="_blank"
           >
             github.com/DavidAmunga/kenya-locations/releases
+          </a>
+        </p>
+      </TabsPanel>
+      <TabsPanel className="mt-3 space-y-3" value="python">
+        <CodeBlock filename="terminal">
+          {`uv add kenya-locations
+# Django: uv add "kenya-locations[django]"
+# FastAPI: uv add "kenya-locations[fastapi]"
+# pip works too: pip install kenya-locations`}
+        </CodeBlock>
+        <p className="text-muted-foreground text-xs">
+          Python 3.11+. Versions independently of the JS / Kotlin / Swift trio.
+          PyPI:{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://pypi.org/project/kenya-locations/"
+            rel="noreferrer"
+            target="_blank"
+          >
+            kenya-locations
           </a>
         </p>
       </TabsPanel>

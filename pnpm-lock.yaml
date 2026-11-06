@@ -214,6 +214,8 @@ importers:
 
   packages/php: {}
 
+  packages/python: {}
+
   packages/react:
     dependencies:
       kenya-locations:

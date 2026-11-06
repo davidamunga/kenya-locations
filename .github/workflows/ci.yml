@@ -40,6 +40,7 @@ jobs:
       dart: ${{ steps.filter.outputs.dart }}
       php: ${{ steps.filter.outputs.php }}
       dotnet: ${{ steps.filter.outputs.dotnet }}
+      python: ${{ steps.filter.outputs.python }}
       wordpress: ${{ steps.filter.outputs.wordpress }}
       web: ${{ steps.filter.outputs.web }}
     steps:
@@ -76,6 +77,12 @@ jobs:
               - 'tests/parity/**'
             dotnet:
               - 'packages/dotnet/**'
+              - 'data/**'
+              - 'tests/parity/**'
+            python:
+              - 'packages/python/**'
+              - 'examples/django/**'
+              - 'examples/fastapi/**'
               - 'data/**'
               - 'tests/parity/**'
             wordpress:
@@ -283,6 +290,59 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-interaction
       - name: Run tests
         run: composer test
+
+  # ── Python package ────────────────────────────────────────────────────────
+  ci-python:
+    name: Python ${{ matrix.python }} / Django ${{ matrix.django }} — Lint, Type-check & Test
+    needs: changes
+    if: needs.changes.outputs.python == 'true'
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { python: "3.11", django: "5.2" }
+          - { python: "3.12", django: "5.2" }
+          - { python: "3.13", django: "6.0" }
+          - { python: "3.14", django: "6.1" }
+    defaults:
+      run:
+        working-directory: packages/python
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
+        with:
+          python-version: ${{ matrix.python }}
+          enable-cache: true
+      - name: Fail if the bundled data is stale
+        run: |
+          cp data/*.json packages/python/src/kenya_locations/data/
+          git add -N packages/python/src/kenya_locations/data
+          git diff --exit-code -- packages/python/src/kenya_locations/data || { echo "::error::Python data is out of date. Run: pnpm data:sync"; exit 1; }
+        working-directory: ${{ github.workspace }}
+      - name: Install dependencies
+        run: uv sync --locked
+      - name: Pin Django ${{ matrix.django }}
+        run: uv pip install "django~=${{ matrix.django }}.0"
+      - name: Lint
+        run: uv run --no-sync ruff check
+      - name: Check formatting
+        run: uv run --no-sync ruff format --check
+      - name: Type-check
+        run: uv run --no-sync mypy
+      - name: Test
+        run: uv run --no-sync pytest
+      - name: Test the examples
+        run: |
+          uv run --no-sync python ../../examples/django/manage.py check
+          uv run --no-sync python ../../examples/django/manage.py makemigrations --check --dry-run
+          uv run --no-sync python ../../examples/django/manage.py test --noinput kenya_demo
+          uv run --no-sync pytest ../../examples/fastapi
+      - name: Build and inspect the wheel
+        run: |
+          uv build
+          unzip -l dist/*.whl | grep -q 'kenya_locations/data/wards.json'
+          unzip -l dist/*.whl | grep -q 'kenya_locations/py.typed'
 
   # ── WordPress example ─────────────────────────────────────────────────────
   ci-wordpress:

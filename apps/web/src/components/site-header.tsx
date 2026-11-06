@@ -22,6 +22,7 @@ const PLATFORM_LINKS = [
   { href: "#php", id: "php", label: "PHP" },
   { href: "#wordpress", id: "wordpress", label: "WordPress" },
   { href: "#dotnet", id: "dotnet", label: ".NET" },
+  { href: "#python", id: "python", label: "Python" },
 ] as const;
 
 const SECTION_IDS = [
@@ -37,6 +38,7 @@ const SECTION_IDS = [
   "php",
   "wordpress",
   "dotnet",
+  "python",
   "contribute",
 ] as const;
 

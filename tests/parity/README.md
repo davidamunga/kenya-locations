@@ -11,6 +11,7 @@ JS (`packages/js`) is the reference: write and verify a case there first, then t
 | Swift | `packages/swift/Tests/KenyaLocationsTests/ParityTests.swift` | `cd packages/swift && swift test` |
 | PHP | `packages/php/tests/ParityTest.php` | `composer --working-dir=packages/php test` |
 | .NET | `packages/dotnet/tests/KenyaLocations.Tests/ParityTests.cs` | `dotnet test packages/dotnet` |
+| Python | `packages/python/tests/test_parity.py` | `uv run --directory packages/python pytest tests/test_parity.py` |
 | Dart | not yet | |
 
 ## What is compared

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Delivery address · kenya-locations demo</title>
+    {{ form.media }}
+  </head>
+  <body>
+    <main>
+      <h1>Delivery address</h1>
+      <p>Pick a county, then a constituency, then a ward. Each list narrows to the one above it.</p>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button type="submit">Save</button>
+      </form>
+
+      <h2>Saved addresses</h2>
+      <ul>
+        {% for address in addresses %}
+          <li>{{ address }} (ward code {{ address.ward }})</li>
+        {% empty %}
+          <li>None yet.</li>
+        {% endfor %}
+      </ul>
+    </main>
+  </body>
+</html>

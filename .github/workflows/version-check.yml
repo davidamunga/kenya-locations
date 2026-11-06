@@ -11,6 +11,7 @@ on:
       - "packages/swift/Sources/**"
       - "packages/dart/lib/**"
       - "packages/dotnet/src/**"
+      - "packages/python/src/**"
       - ".changeset/**"
       - "scripts/check-changeset.js"
       - ".github/workflows/version-check.yml"

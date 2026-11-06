@@ -28,7 +28,7 @@ County (47 counties)
 ```
 
 All data is stored in the shared `data/*.json` files at the repository root and is used by every
-package (JS, React, Kotlin, Swift, Dart, PHP).
+package (JS, React, Kotlin, Swift, Dart, PHP, Python).
 
 ## 📊 Data Structure
 
@@ -144,7 +144,37 @@ git commit -m "feat(search): improve search performance"
 git commit -m "fix(validation): handle duplicate names correctly"
 ```
 
-### 5. Test Search Functionality
+### 5. Python, Django and FastAPI
+
+The Python package lives in `packages/python` and uses [uv](https://docs.astral.sh/uv/). The
+pre-commit hook only runs the JS tests, so run the Python checks yourself; CI runs them on every
+pull request that touches Python or data.
+
+```bash
+cd packages/python
+uv sync                                  # creates .venv with Django, FastAPI and the dev tools
+uv run pytest                            # core, Django and FastAPI tests
+uv run ruff check && uv run ruff format --check
+uv run mypy                              # strict
+```
+
+If you change what goes into the package, build it and smoke-test the installed wheel. The **Publish
+Python to PyPI** workflow runs the same check on the wheel and the sdist before it uploads them.
+
+```bash
+uv build
+uv run --isolated --no-project --with dist/*.whl scripts/smoke_test.py
+```
+
+To check your change by hand, open a Python shell with `uv run --directory packages/python python`
+from the repository root and look up the records you touched; the
+[package README](../python/README.md#try-it-in-a-python-shell) has a sample session.
+
+After a data change, `pnpm data:sync` refreshes the package's copy of `data/*.json`. The example
+apps in `examples/django` and `examples/fastapi` run against the same environment; see their
+READMEs.
+
+### 6. Test Search Functionality
 
 Create a simple test file to verify your data works with the search:
 
@@ -164,7 +194,7 @@ const results = search("YourNewLocation");
 console.log(results);
 ```
 
-### 6. Verify Relationships
+### 7. Verify Relationships
 
 Ensure all relationships work correctly:
 

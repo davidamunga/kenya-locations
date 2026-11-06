@@ -1,0 +1,90 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kenya-locations"
+version = "0.0.0"
+description = "Kenyan administrative divisions (counties, sub-counties, constituencies, wards, localities and areas) with Django and FastAPI integrations."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "David Amunga" }]
+keywords = ["kenya", "counties", "constituencies", "wards", "locations", "django", "fastapi"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Framework :: Django",
+  "Framework :: Django :: 5.2",
+  "Framework :: Django :: 6.0",
+  "Framework :: Django :: 6.1",
+  "Framework :: FastAPI",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+django = ["django>=5.2"]
+fastapi = ["fastapi>=0.115", "pydantic>=2.7"]
+
+[project.urls]
+Homepage = "https://kenya-locations.web.app"
+Source = "https://github.com/DavidAmunga/kenya-locations/tree/main/packages/python"
+Issues = "https://github.com/DavidAmunga/kenya-locations/issues"
+Changelog = "https://github.com/DavidAmunga/kenya-locations/blob/main/packages/python/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
+  "django>=5.2",
+  "django-stubs>=5.2",
+  "fastapi>=0.115",
+  "httpx2>=2.16.0",
+  "mypy>=1.15",
+  "pytest>=8.3",
+  "pytest-django>=4.10",
+  "ruff>=0.11",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kenya_locations"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "README.md", "LICENSE", "CHANGELOG.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+DJANGO_SETTINGS_MODULE = "tests.django_settings"
+django_find_project = false
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+# README code blocks keep their aligned comments.
+extend-exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "N", "C4", "PT", "D"]
+ignore = ["D100", "D104", "D105", "D107", "D203", "D213", "D401"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D"]
+
+[tool.mypy]
+strict = true
+python_version = "3.11"
+files = ["src", "tests", "scripts"]
+plugins = ["mypy_django_plugin.main"]
+
+[tool.django-stubs]
+django_settings_module = "tests.django_settings"

@@ -5,10 +5,11 @@
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.davidamunga/kenya-locations.svg)](https://central.sonatype.com/artifact/io.github.davidamunga/kenya-locations)
 [![pub.dev](https://img.shields.io/pub/v/kenya_locations.svg)](https://pub.dev/packages/kenya_locations)
 [![Packagist](https://img.shields.io/packagist/v/davidamunga/kenya-locations.svg)](https://packagist.org/packages/davidamunga/kenya-locations)
+[![PyPI](https://img.shields.io/pypi/v/kenya-locations.svg)](https://pypi.org/project/kenya-locations/)
 [![CI](https://github.com/DavidAmunga/kenya-locations/actions/workflows/ci.yml/badge.svg)](https://github.com/DavidAmunga/kenya-locations/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, Swift, Dart/Flutter, PHP, and .NET.
+Kenyan administrative divisions — counties, sub-counties, constituencies, wards, localities, and areas — packaged as a fast, well-typed library for JavaScript/TypeScript, React, Kotlin/JVM, Swift, Dart/Flutter, PHP, .NET, and Python (with Django and FastAPI integrations).
 
 **47** counties · **302** sub-counties · **290** constituencies · **1,450** wards · **917** localities · **1,829** areas
 
@@ -25,8 +26,9 @@ Kenyan administrative divisions — counties, sub-counties, constituencies, ward
 | **Dart / Flutter** | [`kenya_locations`](https://pub.dev/packages/kenya_locations) | See below |
 | **PHP** | [`davidamunga/kenya-locations`](https://packagist.org/packages/davidamunga/kenya-locations) | See below |
 | **.NET** (C#, F#, VB) | [`KenyaLocations`](https://www.nuget.org/packages/KenyaLocations) | `dotnet add package KenyaLocations` |
+| **Python** (Django, FastAPI) | [`kenya-locations`](https://pypi.org/project/kenya-locations/) | `uv add kenya-locations` or `pip install kenya-locations` |
 
-All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, `kenya_locations`, `davidamunga/kenya-locations`, and the .NET `KenyaLocations`, which version independently).
+All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, `kenya_locations`, `davidamunga/kenya-locations`, the .NET `KenyaLocations`, and the Python `kenya-locations`, which version independently).
 
 ---
 
@@ -117,6 +119,18 @@ var wards = Locations.GetWardsInConstituency("Westlands");
 var results = Locations.Search("karen");
 ```
 
+### Python
+
+```bash
+uv add kenya-locations
+uv add "kenya-locations[django]"    # model fields, chained selects, JSON views
+uv add "kenya-locations[fastapi]"   # ready-made router, path dependencies, Pydantic code types
+```
+
+With pip, use `pip install` and the same package names.
+
+Works with Python 3.11+. The core library has no dependencies and no initialisation; JSON loads lazily from the package on first access. Django 5.2+ and FastAPI with Pydantic v2 are supported through the extras. Full guide: [`packages/python/README.md`](packages/python/README.md).
+
 ### Example apps
 
 | App | Path | Uses |
@@ -124,6 +138,8 @@ var results = Locations.Search("karen");
 | Android (Compose) | [`examples/android`](examples/android) | Kotlin library (`packages/kotlin`) |
 | Flutter | [`examples/flutter`](examples/flutter) | Dart library (`packages/dart`) |
 | WordPress | [`examples/wordpress`](examples/wordpress) | PHP library (`packages/php`); zip on each `v*` GitHub release |
+| Django | [`examples/django`](examples/django) | Python library (`packages/python`) with chained selects |
+| FastAPI | [`examples/fastapi`](examples/fastapi) | Python library (`packages/python`) with the ready-made router |
 
 ---
 
@@ -253,6 +269,26 @@ $localities = KenyaLocations::getLocalitiesInCounty('Nairobi');
 $results = KenyaLocations::search('Nairob', limit: 20); // matches "Nairobi"
 ```
 
+### Python
+
+```python
+import kenya_locations as kl
+
+counties = kl.get_counties()
+nairobi = kl.get_county_by_name("Nairobi")
+
+print(nairobi.capital)           # Nairobi
+print(nairobi.population_2019)   # 4397073
+
+wards = kl.get_wards_in_constituency("Westlands")
+localities = kl.get_localities_in_county("Nairobi")
+
+# Fuzzy search — tolerates typos, sorted by relevance
+results = kl.search("Nairob", limit=20)  # matches "Nairobi"
+```
+
+Django and FastAPI usage is in [`packages/python/README.md`](packages/python/README.md).
+
 ---
 
 ## Data Hierarchy
@@ -373,7 +409,7 @@ const county = getCountyOfWard("Mountain View");
 
 ### Search
 
-Search is fuzzy and typo-tolerant on all platforms. The JS package uses **Fuse.js** (Bitap algorithm, `threshold: 0.4`); Kotlin and Swift use the same effective behaviour via a Levenshtein sliding-window implementation.
+Search is fuzzy and typo-tolerant on all platforms. The JS package uses **Fuse.js** (Bitap algorithm, `threshold: 0.4`); Kotlin, Swift, Dart, PHP, and Python use the same effective behaviour via a Levenshtein sliding-window implementation.
 
 ```typescript
 import { search, searchByType } from "kenya-locations/search";
@@ -794,6 +830,49 @@ final readonly class SearchResult { public SearchType $type; public object $item
 
 ---
 
+## Python API
+
+Function names are the snake_case versions of the JS and PHP API, and record fields match the shared JSON (`county_code`, `population_2019`). Codes may be strings or integers. The full reference, including Django and FastAPI, is in [`packages/python/README.md`](packages/python/README.md).
+
+### Getters and relational queries
+
+```python
+import kenya_locations as kl
+
+kl.get_counties()                          # list[County]
+kl.get_county_by_code(47)                  # County | None, zero-padded to "047"
+kl.get_constituencies_in_county("Nairobi") # name or code
+kl.get_wards_in_constituency("274")
+kl.get_constituency_of_ward("1370")        # Westlands
+kl.get_locality("Makadara", "Nairobi")     # scope a reused name to a county
+kl.get_areas_in_locality("Bura", "Garissa")
+
+kl.require_ward("Township")                # raises AmbiguousLocationError listing the 9 wards
+```
+
+`get_...` functions return `None` when nothing matches; `require_...` functions raise `LocationNotFoundError` or `AmbiguousLocationError` with a message that says what to pass instead.
+
+### Search
+
+```python
+from kenya_locations import SearchType
+
+kl.search("Nairob", limit=20)              # list[SearchResult], best match first
+kl.search_by_type("West", SearchType.WARD)
+```
+
+### Django and FastAPI
+
+```python
+# Django: codes in the database, chained selects in forms and the admin
+from kenya_locations.contrib.django.fields import CountyField, ConstituencyField, WardField
+
+# FastAPI: a read-only router, path dependencies and Pydantic code types
+from kenya_locations.contrib.fastapi import create_router, CountyFromPath, CountyCode, WardCode
+```
+
+---
+
 ## Contributing
 
 Contributions are very welcome — especially data additions (new localities, areas, corrections).
@@ -812,7 +891,7 @@ data/
 
 See [packages/js/CONTRIBUTING.md](packages/js/CONTRIBUTING.md) for data structure, validation rules, and submission guidelines. Submit new areas via the [web app](https://kenya-locations.web.app/) (opens a GitHub issue) or a pull request.
 
-After editing `data/*.json`, regenerate the Dart constants from the repo root with `dart run packages/dart/scripts/generate_data.dart`, and refresh the PHP copy with `php packages/php/scripts/copy-data.php`.
+After editing `data/*.json`, regenerate the Dart constants from the repo root with `dart run packages/dart/scripts/generate_data.dart`, and refresh the PHP copy with `php packages/php/scripts/copy-data.php`. `pnpm data:sync` refreshes every copy, including Python's.
 
 Commits and PR titles use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) (plus a `data` type for JSON updates). See [AGENTS.md](AGENTS.md).
 
@@ -844,13 +923,16 @@ kenya-locations/
 │   ├── kotlin/               ← Kotlin/JVM library → Maven: io.github.davidamunga:kenya-locations
 │   ├── swift/                ← Swift library → Swift Package Index: KenyaLocations
 │   ├── dart/                 ← Dart/Flutter library → pub.dev: kenya_locations
-│   └── php/                  ← PHP library → Packagist: davidamunga/kenya-locations
+│   ├── php/                  ← PHP library → Packagist: davidamunga/kenya-locations
+│   └── python/               ← Python library + Django/FastAPI → PyPI: kenya-locations
 ├── apps/
 │   └── web/                  ← interactive demo (kenya-locations.web.app)
 ├── examples/
 │   ├── android/               ← Compose app using the Kotlin library
 │   ├── flutter/                ← Flutter app using the Dart library (packages/dart)
-│   └── wordpress/              ← WordPress plugin using the PHP library (packages/php)
+│   ├── wordpress/              ← WordPress plugin using the PHP library (packages/php)
+│   ├── django/                 ← Django project using the Python library (packages/python)
+│   └── fastapi/                ← FastAPI app using the Python library (packages/python)
 └── scripts/
     └── validate-data.js      ← data integrity checks (runs on commit + CI)
 ```
