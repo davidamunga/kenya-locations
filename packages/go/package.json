@@ -1,0 +1,6 @@
+{
+  "name": "kenya-locations-go",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Version tracking stub for the Go package — actual publish is via the packages/go/v* git tag"
+}

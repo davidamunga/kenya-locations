@@ -41,6 +41,7 @@ jobs:
       php: ${{ steps.filter.outputs.php }}
       dotnet: ${{ steps.filter.outputs.dotnet }}
       python: ${{ steps.filter.outputs.python }}
+      go: ${{ steps.filter.outputs.go }}
       wordpress: ${{ steps.filter.outputs.wordpress }}
       web: ${{ steps.filter.outputs.web }}
     steps:
@@ -77,6 +78,10 @@ jobs:
               - 'tests/parity/**'
             dotnet:
               - 'packages/dotnet/**'
+              - 'data/**'
+              - 'tests/parity/**'
+            go:
+              - 'packages/go/**'
               - 'data/**'
               - 'tests/parity/**'
             python:
@@ -290,6 +295,33 @@ jobs:
         run: composer install --prefer-dist --no-progress --no-interaction
       - name: Run tests
         run: composer test
+
+  # ── Go package ────────────────────────────────────────────────────────────
+  ci-go:
+    name: Go — Vet, Format & Test
+    needs: changes
+    if: needs.changes.outputs.go == 'true'
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: packages/go
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: packages/go/go.mod
+      - name: Fail if the embedded data is stale
+        run: |
+          cp data/*.json packages/go/data/
+          git add -N packages/go/data
+          git diff --exit-code -- packages/go/data || { echo "::error::Go data is out of date. Run: pnpm data:sync"; exit 1; }
+        working-directory: ${{ github.workspace }}
+      - name: Vet
+        run: go vet ./...
+      - name: Check formatting
+        run: test -z "$(gofmt -l .)"
+      - name: Test
+        run: go test ./... -race -count=1
 
   # ── Python package ────────────────────────────────────────────────────────
   ci-python:

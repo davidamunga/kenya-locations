@@ -21,7 +21,7 @@ We welcome contributions from everyone! Here's how you can help:
    - Fix bugs
    - Improve performance
    - Improve the libraries for JavaScript/TypeScript, React, Kotlin, Swift, Dart, PHP, and
-     Python, including the Django and FastAPI integrations
+     Python, including the Django and FastAPI integrations, and Go
 
 2. **Data Contributions**
 
@@ -67,6 +67,7 @@ All contributors are recognized in:
 
 - **[@achingachris](https://github.com/achingachris)** - Python package with Django and FastAPI
   integrations
+- **[@geoffowuor](https://github.com/geoffowuor)** - Go module
 
 Want to see your name here? [Make your first contribution today!](CONTRIBUTING.md)
 

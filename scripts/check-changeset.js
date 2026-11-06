@@ -2,7 +2,7 @@
 
 /**
  * Fail when product source or shared data changed without a new changeset.
- * Docs, tests, generated Dart, and copied Kotlin/Swift/PHP/Python JSON do not require one.
+ * Docs, tests, generated Dart, and copied Kotlin/Swift/PHP/Python/Go JSON do not require one.
  *
  * A change to data/*.json must also bump every product that ships the data
  * (see scripts/release/manifest.js); `pnpm changeset:data` writes one.
@@ -21,6 +21,7 @@ const SKIP_PREFIXES = [
   "packages/php/data/",
   "packages/dotnet/src/KenyaLocations/Data/",
   "packages/python/src/kenya_locations/data/",
+  "packages/go/data/",
 ];
 
 const PRODUCT_PREFIXES = [
@@ -35,6 +36,9 @@ const PRODUCT_PREFIXES = [
   "packages/python/src/",
 ];
 
+/** Go sources sit at the module root: packages/go/*.go, tests excluded below. */
+const GO_SOURCE = /^packages\/go\/[^/]+\.go$/;
+
 export function isChangesetFile(file) {
   return file.startsWith(".changeset/") && file.endsWith(".md") && !file.endsWith("README.md");
 }
@@ -45,6 +49,7 @@ export function isProductPath(file) {
   if (/\.(test|spec)\./.test(file)) return false;
   if (SKIP_PREFIXES.some((prefix) => file.startsWith(prefix))) return false;
   if (file.includes("/Resources/") && file.endsWith(".json")) return false;
+  if (GO_SOURCE.test(file)) return !file.endsWith("_test.go");
   return PRODUCT_PREFIXES.some((prefix) => file.startsWith(prefix));
 }
 

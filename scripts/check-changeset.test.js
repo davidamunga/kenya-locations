@@ -23,6 +23,11 @@ test("skips docs, tests, generated Dart, and copied native JSON", () => {
   assert.equal(isProductPath("packages/php/tests/KenyaLocationsTest.php"), false);
   assert.equal(isProductPath("packages/python/src/kenya_locations/data/wards.json"), false);
   assert.equal(isProductPath("packages/python/tests/test_lookups.py"), false);
+  assert.equal(isProductPath("packages/go/kenyalocations.go"), true);
+  assert.equal(isProductPath("packages/go/search.go"), true);
+  assert.equal(isProductPath("packages/go/search_test.go"), false);
+  assert.equal(isProductPath("packages/go/data/wards.json"), false);
+  assert.equal(isProductPath("packages/go/README.md"), false);
   assert.equal(isProductPath(".github/workflows/ci.yml"), false);
 });
 
@@ -47,6 +52,7 @@ const dataChangeset = `---
 "kenya-locations-php": patch
 "kenya-locations-dotnet": patch
 "kenya-locations-python": patch
+"kenya-locations-go": patch
 ---
 
 Data update:
@@ -66,6 +72,7 @@ test("fails when a data change skips a package that ships the data", () => {
     "kenya-locations-php",
     "kenya-locations-dotnet",
     "kenya-locations-python",
+    "kenya-locations-go",
   ]);
 });
 
@@ -79,7 +86,7 @@ test("a data README edit with a package changeset does not require the data pack
 });
 
 test("data packages can be spread across several changesets", () => {
-  const files = { ".changeset/a.md": `---\n"kenya-locations": patch\n---\n\nA\n`, ".changeset/b.md": `---\nkenya-locations-dart: patch\n'kenya-locations-php': minor\nkenya-locations-dotnet: patch\nkenya-locations-python: patch\n---\n\nB\n` };
+  const files = { ".changeset/a.md": `---\n"kenya-locations": patch\n---\n\nA\n`, ".changeset/b.md": `---\nkenya-locations-dart: patch\n'kenya-locations-php': minor\nkenya-locations-dotnet: patch\nkenya-locations-python: patch\nkenya-locations-go: patch\n---\n\nB\n` };
   const result = changesetCheck(["data/wards.json", ".changeset/a.md", ".changeset/b.md"], (f) => files[f]);
   assert.equal(result.ok, true);
 });
@@ -91,6 +98,7 @@ test("reads package names from changeset frontmatter", () => {
     "kenya-locations-php",
     "kenya-locations-dotnet",
     "kenya-locations-python",
+    "kenya-locations-go",
   ]);
   assert.deepEqual(changesetPackages("no frontmatter"), []);
 });

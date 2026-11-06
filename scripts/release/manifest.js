@@ -193,6 +193,15 @@ export const PRODUCTS = [
     ],
     data: [dataCopy("packages/python/src/kenya_locations/data")],
   },
+  {
+    id: "go",
+    description: "Go module (versioned by the packages/go/v* git tag)",
+    // A Go module in a subdirectory is versioned by a tag prefixed with that directory.
+    tag: (version) => `packages/go/v${version}`,
+    // The tag is the release: package.json is the only version record.
+    packages: [{ name: "kenya-locations-go", dir: "packages/go" }],
+    data: [dataCopy("packages/go/data")],
+  },
 ];
 
 /**

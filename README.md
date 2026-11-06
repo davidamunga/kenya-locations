@@ -26,9 +26,11 @@ Kenyan administrative divisions — counties, sub-counties, constituencies, ward
 | **Dart / Flutter** | [`kenya_locations`](https://pub.dev/packages/kenya_locations) | See below |
 | **PHP** | [`davidamunga/kenya-locations`](https://packagist.org/packages/davidamunga/kenya-locations) | See below |
 | **.NET** (C#, F#, VB) | [`KenyaLocations`](https://www.nuget.org/packages/KenyaLocations) | `dotnet add package KenyaLocations` |
+| **Go** | [`github.com/davidamunga/kenya-locations/packages/go`](https://pkg.go.dev/github.com/davidamunga/kenya-locations/packages/go) | `go get github.com/davidamunga/kenya-locations/packages/go` |
 | **Python** (Django, FastAPI) | [`kenya-locations`](https://pypi.org/project/kenya-locations/) | `uv add kenya-locations` or `pip install kenya-locations` |
 
-All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, `kenya_locations`, `davidamunga/kenya-locations`, the .NET `KenyaLocations`, and the Python `kenya-locations`, which version independently).
+
+All packages are built from the same JSON source data and share identical version numbers (except `kenya-locations-react`, `kenya_locations`, `davidamunga/kenya-locations`, the .NET `KenyaLocations`, the Python `kenya-locations` and the Go module, which version independently).
 
 ---
 
@@ -117,6 +119,23 @@ var counties = Locations.GetCounties();
 var nairobi = Locations.GetCountyByName("nairobi");
 var wards = Locations.GetWardsInConstituency("Westlands");
 var results = Locations.Search("karen");
+```
+
+### Go
+
+```bash
+go get github.com/davidamunga/kenya-locations/packages/go
+```
+
+Requires Go 1.21+ and has no third-party dependencies. The data is embedded in the module and parsed lazily on first use; no initialisation or network calls. The package name is `kenyalocations`:
+
+```go
+import kl "github.com/davidamunga/kenya-locations/packages/go"
+
+counties := kl.GetCounties()
+nairobi := kl.GetCountyByName("Nairobi")
+wards := kl.GetWardsInConstituency("Westlands")
+results := kl.Search("karen")
 ```
 
 ### Python
@@ -288,6 +307,26 @@ results = kl.search("Nairob", limit=20)  # matches "Nairobi"
 ```
 
 Django and FastAPI usage is in [`packages/python/README.md`](packages/python/README.md).
+
+---
+
+### Go
+
+```go
+import kl "github.com/davidamunga/kenya-locations/packages/go"
+
+counties := kl.GetCounties()
+nairobi := kl.GetCountyByName("Nairobi") // *kl.County; nil when there is no match
+
+fmt.Println(nairobi.Capital)        // Nairobi
+fmt.Println(nairobi.Population2019) // 4397073
+
+wards := kl.GetWardsInConstituency("Westlands")
+localities := kl.GetLocalitiesInCounty("Nairobi")
+
+// Fuzzy search — tolerates typos, sorted by relevance
+results := kl.Search("Nairob", kl.WithLimit(20)) // matches "Nairobi"
+```
 
 ---
 
@@ -826,6 +865,92 @@ final readonly class Area         { public string $name, $locality, $county; }
 
 enum SearchType: string { case County; case SubCounty; case Constituency; case Ward; case Locality; case Area; }
 final readonly class SearchResult { public SearchType $type; public object $item; public function name(): string; }
+```
+
+---
+
+## Go API
+
+Full reference: [`packages/go/README.md`](packages/go/README.md).
+
+### Getters
+
+```go
+kl.GetCounties()                       // []County
+kl.GetCountyByCode("047")              // *County
+kl.GetCountyByName("Nairobi")          // *County
+kl.GetSubCounties()                    // []SubCounty
+kl.GetConstituencies()                 // []Constituency
+kl.GetConstituencyByCode("290")        // *Constituency
+kl.GetConstituencyByName("Westlands")  // *Constituency
+kl.GetWards()                          // []Ward
+kl.GetWardByCode("1370")               // *Ward
+kl.GetLocalities()                     // []Locality
+kl.GetAreas()                          // []Area
+```
+
+### Relational queries
+
+```go
+kl.GetSubCountiesInCounty("Nairobi")
+kl.GetConstituenciesInCounty("047")       // name or code
+kl.GetWardsInConstituency("Westlands")
+kl.GetWardsInCounty("Nairobi")
+kl.GetWardsInSubCounty("Ainabkoi")
+kl.GetLocalitiesInCounty("Nairobi")
+kl.GetAreasInLocality("Karen")
+kl.GetAreasInLocality("Bura", "Tana River") // optional county for reused names
+kl.GetAreasInCounty("Nairobi")
+kl.GetConstituencyOfWard("Mountain view")   // *Constituency
+kl.GetCountyOfWard("1370")
+kl.GetLocalityOfArea("Gigiri")
+```
+
+Single-record lookups return a pointer that is `nil` when nothing matches or the name is ambiguous. Functions that return several records return an empty, non-nil slice.
+
+### Search
+
+Search is **fuzzy and typo-tolerant** — a query like `"Nairob"` matches `"Nairobi"`, using the same Levenshtein sliding-window approach as the Kotlin, Swift, Dart, and PHP libraries. Results are sorted by relevance (best match first).
+
+```go
+results := kl.Search("karen", kl.WithLimit(20), kl.WithTypes(kl.SearchTypeLocality, kl.SearchTypeArea))
+wardsOnly := kl.SearchByType("West", kl.SearchTypeWard, 10)
+
+for _, result := range results {
+    switch item := result.Item.(type) {
+    case kl.County:
+        fmt.Println(item.Capital)
+    case kl.Ward:
+        fmt.Println(item.Constituency)
+    case kl.Area:
+        fmt.Println(item.Locality)
+    }
+}
+```
+
+### Types
+
+```go
+type County struct {
+    Code, ISOCode, Name, Capital string
+    AreaKm2        float64
+    Population2019 int64
+    Region         string
+    PostalCode     string
+    Aliases        []string
+}
+
+type SubCounty    struct{ Code, Name, County, CountyCode string }
+type Constituency struct{ Code, Name, County, CountyCode string }
+type Ward         struct{ Code, Name, Constituency, ConstituencyCode, CountyCode, SubCountyCode string }
+type Locality     struct{ Name, County, CountyCode string }
+type Area         struct{ Name, Locality, County, CountyCode string }
+
+type SearchType string // SearchTypeCounty, SearchTypeSubCounty, SearchTypeConstituency, SearchTypeWard, SearchTypeLocality, SearchTypeArea
+type SearchResult struct {
+    Type SearchType
+    Item any // County, SubCounty, Constituency, Ward, Locality or Area
+}
 ```
 
 ---

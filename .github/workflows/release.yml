@@ -39,6 +39,8 @@ jobs:
       dotnet_tag: ${{ steps.plan.outputs.dotnet_tag }}
       python: ${{ steps.plan.outputs.python }}
       python_tag: ${{ steps.plan.outputs.python_tag }}
+      go: ${{ steps.plan.outputs.go }}
+      go_tag: ${{ steps.plan.outputs.go_tag }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -149,5 +151,6 @@ jobs:
           if [ "${{ needs.plan.outputs.php }}" = true ]; then dispatch publish-php.yml "${{ needs.plan.outputs.php_tag }}"; fi
           if [ "${{ needs.plan.outputs.dotnet }}" = true ]; then dispatch publish-dotnet.yml "${{ needs.plan.outputs.dotnet_tag }}"; fi
           if [ "${{ needs.plan.outputs.python }}" = true ]; then dispatch publish-python.yml "${{ needs.plan.outputs.python_tag }}"; fi
+          if [ "${{ needs.plan.outputs.go }}" = true ]; then dispatch publish-go.yml "${{ needs.plan.outputs.go_tag }}"; fi
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo "Each publish workflow turns its draft release into a published one when it succeeds." >> "$GITHUB_STEP_SUMMARY"

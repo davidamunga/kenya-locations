@@ -14,10 +14,11 @@ Shared Kenyan administrative divisions (counties → wards / localities → area
 | `packages/php` | Packagist `davidamunga/kenya-locations` | Versions independently; split to `kenya-locations-php` |
 | `packages/dotnet` | NuGet `KenyaLocations` | Versions independently; embeds a copy of `data/*.json` (`pnpm data:sync`) |
 | `packages/python` | PyPI `kenya-locations` | Versions independently; `django` and `fastapi` extras; commits a copy of `data/*.json` |
+| `packages/go` | Go module `github.com/davidamunga/kenya-locations/packages/go` | Versions independently; released by the `packages/go/v{x}` git tag; embeds a copy of `data/*.json` (`go:embed`) |
 | `apps/web` | kenya-locations.web.app | Demo |
 | `examples/android`, `examples/flutter`, `examples/wordpress`, `examples/django`, `examples/fastapi` | — | Consume Kotlin / Dart / PHP / Python packages |
 
-JS, Kotlin, and Swift share one version number (`fixed` in `.changeset/config.json`). React, Dart, PHP, .NET, and Python do not.
+JS, Kotlin, and Swift share one version number (`fixed` in `.changeset/config.json`). React, Dart, PHP, .NET, Python, and Go do not.
 
 Release process: [RELEASING.md](RELEASING.md).
 
@@ -33,6 +34,7 @@ composer --working-dir=examples/wordpress test     # WordPress example tests
 composer --working-dir=examples/wordpress zip      # WordPress release zip (vendor copied in)
 uv run --directory packages/python pytest          # Python, Django and FastAPI tests
 uv run --directory packages/python ruff check      # Python lint (also: ruff format --check, mypy)
+(cd packages/go && go vet ./... && go test ./... -race)  # Go
 pnpm changeset                                     # describe a releasable change
 pnpm changeset:data                                # write the changeset for a data/*.json change
 pnpm changeset:check                               # fail if product files lack a changeset
@@ -71,7 +73,7 @@ Types: `feat` · `fix` · `docs` · `style` · `refactor` · `perf` · `test` ·
 
 Description: imperative, lowercase, no trailing period, ≤ 100 chars.
 
-Scopes are optional. Prefer a package or concern: `js` · `react` · `kotlin` · `swift` · `dart` · `php` · `dotnet` · `python` · `web` · `examples` · `ci` · `search` · `validation` · a county name for data (`nairobi`).
+Scopes are optional. Prefer a package or concern: `js` · `react` · `kotlin` · `swift` · `dart` · `php` · `dotnet` · `python` · `go` · `web` · `examples` · `ci` · `search` · `validation` · a county name for data (`nairobi`).
 
 ```
 data(nairobi): add localities in Westlands
@@ -89,13 +91,14 @@ Breaking API changes: `feat(js)!:` or a `BREAKING CHANGE:` footer. One logical c
 
 Do not bump package versions on feature PRs. Add a changeset instead.
 
-- Data: `pnpm changeset:data` (bumps core, Dart, PHP, .NET and Python; Version Check enforces it).
+- Data: `pnpm changeset:data` (bumps core, Dart, PHP, .NET, Python and Go; Version Check enforces it).
 - JS / Kotlin / Swift API: one changeset; the core trio bumps together.
 - React-only: changeset that lists `kenya-locations-react`.
 - Dart-only: changeset that lists `kenya-locations-dart`.
 - PHP-only: changeset that lists `kenya-locations-php`.
 - .NET-only: changeset that lists `kenya-locations-dotnet`.
 - Python-only (including Django and FastAPI): changeset that lists `kenya-locations-python`.
+- Go-only: changeset that lists `kenya-locations-go`.
 - Docs / CI / examples (including the WordPress zip): no changeset.
 
-After merge, Changesets opens `chore: version packages`. Merging it runs the **Release** workflow: it tags each product whose version moved (`v{core}`, `react-v{x}`, `dart-v{x}`, `php-v{x}`, `dotnet-v{x}`, `python-v{x}`), drafts the GitHub releases, and after one approval on the `release` environment dispatches each publish workflow on its tag. Details in [RELEASING.md](RELEASING.md).
+After merge, Changesets opens `chore: version packages`. Merging it runs the **Release** workflow: it tags each product whose version moved (`v{core}`, `react-v{x}`, `dart-v{x}`, `php-v{x}`, `dotnet-v{x}`, `python-v{x}`, `packages/go/v{x}`), drafts the GitHub releases, and after one approval on the `release` environment dispatches each publish workflow on its tag. Details in [RELEASING.md](RELEASING.md).
