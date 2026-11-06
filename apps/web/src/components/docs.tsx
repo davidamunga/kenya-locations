@@ -579,7 +579,9 @@ app.Run();`}
           >
             kenya-locations
           </a>
-          . Source: <RepoLink path="packages/python" />.
+          . Full Django and FastAPI reference:{" "}
+          <RepoLink path="packages/python/README.md" />. Source:{" "}
+          <RepoLink path="packages/python" />.
         </p>
         <div className="mt-6 space-y-8">
           <Example
@@ -597,6 +599,27 @@ wards = kl.get_wards_in_constituency("Westlands")
 print(nairobi.capital, nairobi.population_2019)
 
 results = kl.search("Nairob", limit=20)  # typo-tolerant`}
+          />
+          <Example
+            filename="strict.py"
+            language="python"
+            title="Strict lookups and sub-counties"
+            body="Lookups return None when nothing matches. Use require_ functions to fail loudly; a name shared by several wards lists the candidates."
+            code={`import kenya_locations as kl
+from kenya_locations import AmbiguousLocationError, LocationNotFoundError
+
+kl.get_ward_by_name("Township")  # None: nine wards share the name
+
+try:
+    kl.require_ward("Township")
+except AmbiguousLocationError as error:
+    print(error)  # lists the candidates
+except LocationNotFoundError:
+    ...
+
+# Wards join to sub-counties by code
+kl.get_wards_in_sub_county("Ainabkoi")
+kl.get_sub_county_of_ward("Mountain view")`}
           />
           <Example
             filename="models.py"
@@ -653,7 +676,7 @@ class Delivery(BaseModel):
 }
 
 function RepoLink({ path }: { path: string }) {
-  const kind = path.endsWith(".html") || path.endsWith(".ts") ? "blob" : "tree";
+  const kind = path.endsWith(".html") || path.endsWith(".ts") || path.endsWith(".md") ? "blob" : "tree";
   return (
     <a
       className="font-mono text-xs text-foreground underline-offset-4 hover:underline"

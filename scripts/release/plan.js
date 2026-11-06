@@ -94,6 +94,16 @@ export function changelogSection(changelog, version) {
     .trim();
 }
 
+/**
+ * "**Contributors:** @a, @b" from the "by [@x](https://github.com/x)" credits
+ * in changelog text, in order of first appearance. Empty when there are none.
+ */
+export function contributorsLine(text) {
+  const logins = [...text.matchAll(/ by \[@([A-Za-z0-9-]+)\]\(https:\/\/github\.com\/\1\)/g)].map((m) => m[1]);
+  const unique = [...new Set(logins)];
+  return unique.length ? `**Contributors:** ${unique.map((login) => `@${login}`).join(", ")}` : "";
+}
+
 function notes(productId) {
   const product = PRODUCTS.find((p) => p.id === productId);
   if (!product) throw new Error(`unknown product "${productId}"`);
@@ -110,7 +120,10 @@ function notes(productId) {
     if (product.packages.length > 1) lines.push(`## ${name}\n`);
     lines.push(section, "");
   }
-  return lines.join("\n").trim() || `Release ${product.tag(currentVersion(product.packages[0].dir))}`;
+  const body = lines.join("\n").trim();
+  const contributors = contributorsLine(body);
+  if (body && contributors) return `${body}\n\n${contributors}`;
+  return body || `Release ${product.tag(currentVersion(product.packages[0].dir))}`;
 }
 
 function main(argv = process.argv.slice(2)) {

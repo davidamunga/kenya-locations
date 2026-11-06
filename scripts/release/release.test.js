@@ -236,3 +236,14 @@ test("a field added to every record is one line, not one per record", () => {
     'Renamed ward `0002` from "B" to "B renamed"',
   ]);
 });
+
+test("lists each credited contributor once in the release notes", async () => {
+  const { contributorsLine } = await import("./plan.js");
+  const text = [
+    "- New thing ([#1](https://github.com/o/r/pull/1)) by [@alice](https://github.com/alice)",
+    "- Other ([#2](https://github.com/o/r/pull/2)) by [@bob](https://github.com/bob), [@alice](https://github.com/alice)",
+    "- Uncredited ([#3](https://github.com/o/r/pull/3))",
+  ].join("\n");
+  assert.equal(contributorsLine(text), "**Contributors:** @alice, @bob");
+  assert.equal(contributorsLine("- Uncredited (#3)"), "");
+});
