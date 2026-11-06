@@ -164,6 +164,8 @@ importers:
 
   packages/dotnet: {}
 
+  packages/go: {}
+
   packages/js:
     dependencies:
       fuse.js:

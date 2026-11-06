@@ -128,6 +128,7 @@ test("data changesets bump one package per product that ships data", () => {
     "kenya-locations-php",
     "kenya-locations-dotnet",
     "kenya-locations-python",
+    "kenya-locations-go",
   ]);
 });
 
@@ -173,6 +174,7 @@ test("renders a changeset with every data package and the counts", () => {
 "kenya-locations-php": patch
 "kenya-locations-dotnet": patch
 "kenya-locations-python": patch
+"kenya-locations-go": patch
 ---
 
 Data update:

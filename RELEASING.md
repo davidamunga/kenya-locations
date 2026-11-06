@@ -12,6 +12,7 @@ Changesets versions packages; the **Release** workflow tags them and, after one 
 | PHP | `davidamunga/kenya-locations` | Own number. Add a changeset only when the PHP package should ship. |
 | .NET | `KenyaLocations` (NuGet) | Own number. Add a changeset only when the .NET package should ship. |
 | Python | `kenya-locations` on PyPI | Own number. Add a changeset for `kenya-locations-python` only when the Python package should ship. |
+| Go | `github.com/davidamunga/kenya-locations/packages/go` | Own number. Add a changeset for `kenya-locations-go` only when the Go module should ship. |
 
 `apps/web` is ignored. Do not bump versions by hand except in an emergency.
 
@@ -36,6 +37,7 @@ pnpm changeset                 # pick packages + bump type
 | PHP | `composer.json` + `composer.lock` content-hash | `data/` |
 | .NET | `src/KenyaLocations/KenyaLocations.csproj` (`<Version>`) | `src/KenyaLocations/Data/` |
 | Python | `pyproject.toml` + the package's own entry in `uv.lock` | `src/kenya_locations/data/` |
+| Go | — (git tag `packages/go/v{version}`) | `data/` (`go:embed`) |
 
 | Command | What it does |
 |---|---|
@@ -62,10 +64,11 @@ Merging `chore: version packages` runs the **Release** workflow (`.github/workfl
    | PHP | `php-v{version}` |
    | .NET | `dotnet-v{version}` |
    | Python | `python-v{version}` |
+   | Go | `packages/go/v{version}` |
 
    The WordPress plugin zip is attached to the core `v*` release.
 3. **Approve.** The publish job waits on the `release` environment. Approve it once in the Actions run.
-4. **Publish.** It dispatches each product's workflow on its tag: **Publish Core Packages** (JS → npm, Kotlin → Maven Central, Swift tag check), **Publish React to npm**, **Publish Dart to pub.dev**, **Publish PHP to Packagist**, **Publish .NET to NuGet**, **Publish Python to PyPI**. Each one publishes its draft GitHub release only after its registry publish succeeds. A failure fails that run; nothing is hidden with `|| true`.
+4. **Publish.** It dispatches each product's workflow on its tag: **Publish Core Packages** (JS → npm, Kotlin → Maven Central, Swift tag check), **Publish React to npm**, **Publish Dart to pub.dev**, **Publish PHP to Packagist**, **Publish .NET to NuGet**, **Publish Python to PyPI**, **Publish Go module**. Each one publishes its draft GitHub release only after its registry publish succeeds. A failure fails that run; nothing is hidden with `|| true`.
 
 You can still run any publish workflow by hand (Actions → Run workflow) to retry one product.
 
@@ -74,6 +77,7 @@ You can still run any publish workflow by hand (Actions → Run workflow) to ret
 - **`release` environment:** Settings → Environments → `release` → add yourself under **Required reviewers**. Do this before the first release that uses this workflow: without reviewers, GitHub creates the environment unprotected and publishing starts without asking.
 - **pub.dev:** in the package's admin page → Automated publishing, allow GitHub Actions for this repository with tag pattern `dart-v{{version}}`, and allow `workflow_dispatch` events. The Release workflow dispatches **Publish Dart to pub.dev** on the `dart-v*` tag.
 - **PyPI:** publishing uses [Trusted Publishing](https://docs.pypi.org/trusted-publishers/), so no token is stored. On pypi.org, add a trusted publisher for `DavidAmunga/kenya-locations` with workflow `publish-python.yml` and environment `pypi` (a pending publisher works before the first release). Then create the `pypi` environment in GitHub (Settings → Environments). **Publish Python to PyPI** builds the wheel and sdist from `packages/python`, runs the tests, smoke-tests each installed artifact with `scripts/smoke_test.py`, then uploads them.
+- **Go:** there is no registry. A module in `packages/go` is published by the `packages/go/v{version}` tag, which the Release workflow pushes. **Publish Go module** then vets and tests the tagged code, asks the Go proxy (`proxy.golang.org`) to fetch the tag so pkg.go.dev lists it, and publishes the draft GitHub release. The tag must be that exact prefix; `go get ...@v0.1.0` does not resolve a plain `v0.1.0` tag for a subdirectory module.
 - **`PHP_SPLIT_DEPLOY_KEY`:** the private half of a write-enabled deploy key on [`davidamunga/kenya-locations-php`](https://github.com/davidamunga/kenya-locations-php) (that repo → Settings → Deploy keys). It can push only to that repo and doesn't expire. **Publish PHP to Packagist** fails if it is missing. To rotate it: `ssh-keygen -t ed25519 -N "" -f key`, add `key.pub` as a deploy key with write access, `gh secret set PHP_SPLIT_DEPLOY_KEY < key`, then delete the old deploy key and both local files.
 
 - **NuGet:** create the `KenyaLocations` package once on nuget.org, then add a **Trusted Publishing** policy (nuget.org → your profile → Trusted Publishing) for repository `DavidAmunga/kenya-locations`, workflow file `publish-dotnet.yml`. Set the repository variable `NUGET_USER` to your nuget.org profile name (Settings → Secrets and variables → Actions → Variables). No API key secret is needed. If a `NUGET_API_KEY` secret is set the workflow uses it instead (needed for the first push of a new package ID); delete the secret afterwards and trusted publishing takes over.
@@ -110,11 +114,11 @@ Don't write data changesets by hand:
 ```bash
 # edit data/*.json
 pnpm validate
-pnpm data:sync            # refresh the Kotlin, Swift, PHP, .NET and Python copies (and Dart, if installed)
+pnpm data:sync            # refresh the Kotlin, Swift, PHP, .NET, Python and Go copies (and Dart, if installed)
 pnpm changeset:data       # write .changeset/data-*.md from the diff against origin/main
 ```
 
-`changeset:data` lists every added, removed, renamed and changed record by code, and bumps every product that ships the data (core, Dart, PHP and Python). Version Check fails a data PR whose changesets skip one of them. Edit the generated summary if a change needs more context.
+`changeset:data` lists every added, removed, renamed and changed record by code, and bumps every product that ships the data (core, Dart, PHP, .NET, Python and Go). Version Check fails a data PR whose changesets skip one of them. Edit the generated summary if a change needs more context.
 
 ### Changelog format
 

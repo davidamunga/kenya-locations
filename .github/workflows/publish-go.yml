@@ -1,0 +1,95 @@
+# Publishes the Go module. A Go module in a subdirectory is published by its
+# git tag (packages/go/v{version}), which the Release workflow has already
+# pushed. There is no registry upload: this job tests the tagged code, asks the
+# Go module proxy to fetch it so pkg.go.dev lists it, and publishes the draft
+# GitHub release.
+name: Publish Go module
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  publish:
+    name: Test, index & publish release
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: packages/go
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Read version from package.json
+        id: version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Publishing version: $VERSION"
+
+      - name: Check this is the matching tag
+        run: |
+          EXPECTED="packages/go/v${{ steps.version.outputs.version }}"
+          if [ "${{ github.ref_name }}" != "$EXPECTED" ]; then
+            echo "::error::Run this on the $EXPECTED tag (got ${{ github.ref_name }})"
+            exit 1
+          fi
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Validate shared data
+        run: node scripts/validate-data.js
+        working-directory: ${{ github.workspace }}
+
+      - name: Fail if the embedded data is stale
+        run: |
+          cp data/*.json packages/go/data/
+          git diff --exit-code -- packages/go/data
+        working-directory: ${{ github.workspace }}
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: packages/go/go.mod
+
+      - run: go vet ./...
+      - run: test -z "$(gofmt -l .)"
+      - run: go test ./... -race -count=1
+
+      - name: Ask the Go module proxy to index the tag
+        env:
+          GOFLAGS: -mod=mod
+          GOPROXY: https://proxy.golang.org
+        run: |
+          cd "$(mktemp -d)"
+          go mod init example.invalid/probe
+          for attempt in 1 2 3 4 5; do
+            if go list -m "github.com/davidamunga/kenya-locations/packages/go@v${{ steps.version.outputs.version }}"; then
+              exit 0
+            fi
+            echo "Proxy has not seen the tag yet (attempt $attempt); retrying"
+            sleep 20
+          done
+          echo "::error::The Go proxy could not fetch the tag"
+          exit 1
+
+      - name: Publish the GitHub release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="packages/go/v${{ steps.version.outputs.version }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --draft=false
+            echo "Published the $TAG GitHub release"
+          else
+            echo "No GitHub release for $TAG (not created by the Release workflow); nothing to publish."
+          fi
+          {
+            echo "## Published kenya-locations (Go) ${{ steps.version.outputs.version }}"
+            echo ""
+            echo "\`\`\`bash"
+            echo "go get github.com/davidamunga/kenya-locations/packages/go@v${{ steps.version.outputs.version }}"
+            echo "\`\`\`"
+          } >> "$GITHUB_STEP_SUMMARY"

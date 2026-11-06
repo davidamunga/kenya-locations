@@ -12,6 +12,7 @@ on:
       - "packages/dart/lib/**"
       - "packages/dotnet/src/**"
       - "packages/python/src/**"
+      - "packages/go/*.go"
       - ".changeset/**"
       - "scripts/check-changeset.js"
       - ".github/workflows/version-check.yml"
