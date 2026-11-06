@@ -43,3 +43,23 @@ test("keeps multi-line summaries indented, with credit on the last line", async 
   const line = await changelog.getReleaseLine({ summary: "Lead:\nmore\nCredit: @alice", commit: undefined }, "patch", options);
   assert.equal(line, "\n- Lead:\n  more by [@alice](https://github.com/alice)");
 });
+
+test("credits plain display names without a link, and cleans them", () => {
+  assert.equal(changelog.creditText([], ["Jane Doe"]), " by Jane Doe");
+  assert.equal(
+    changelog.creditText(["alice"], ["Jane Doe", "jane doe"]),
+    " by [@alice](https://github.com/alice), Jane Doe, jane doe",
+  );
+  assert.equal(changelog.cleanName("[click](https://evil.example) **Jane** <b>Doe</b>"), "click Jane b Doe /b");
+  assert.equal(changelog.cleanName("   "), "");
+  assert.equal(changelog.cleanName("x".repeat(80)).length, 40);
+});
+
+test("a Credit line can mix handles and display names", async () => {
+  const { logins, names, summary } = changelog.parseCredit("Adds areas.\nCredit: @alice, Jane Doe, Wanjiru");
+  assert.deepEqual(logins, ["alice"]);
+  assert.deepEqual(names, ["Jane Doe", "Wanjiru"]);
+  assert.equal(summary, "Adds areas.");
+  const line = await changelog.getReleaseLine({ summary: "Adds areas.\nCredit: Jane Doe", commit: undefined }, "patch", options);
+  assert.equal(line, "\n- Adds areas. by Jane Doe");
+});

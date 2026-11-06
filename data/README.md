@@ -71,6 +71,8 @@ Renames, merges, additions and removals, by code, so apps that store codes can m
 
 ## Changing the data
 
+Areas can also arrive without a PR: the web app sends them to a public Google Sheet, and a weekly workflow imports the new rows into one pull request. See [`scripts/submissions/README.md`](../scripts/submissions/README.md).
+
 ```bash
 # edit data/*.json
 pnpm validate          # schema, codes, parent links, duplicates, whitespace

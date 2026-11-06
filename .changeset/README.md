@@ -15,6 +15,6 @@ Each `.md` file here describes one releasable change. Changesets turns them into
 - Codes are zero-padded: `getCountyByCode("47")` finds Nairobi. ([#49](https://github.com/DavidAmunga/kenya-locations/pull/49)) by [@octocat](https://github.com/octocat)
 ```
 
-The PR number and author come from the GitHub API for the squash-merge commit (the workflow supplies `GITHUB_TOKEN`); there are no commit hashes. To credit other people, add a line to the changeset: `Credit: @alice, @bob`.
+The PR number and author come from the GitHub API for the squash-merge commit (the workflow supplies `GITHUB_TOKEN`); there are no commit hashes. To credit other people, add a line to the changeset: `Credit: @alice, Jane Doe` (`@name` links to GitHub; other text is a plain display name).
 
 See [RELEASING.md](../RELEASING.md) for the release flow and the release manifest.

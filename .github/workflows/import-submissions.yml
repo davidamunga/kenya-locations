@@ -1,0 +1,83 @@
+# Pulls areas contributed through the web form (a public Google Sheet) into
+# data/*.json and opens one pull request for review. Setup: scripts/submissions/README.md.
+name: Import submissions
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays, 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Print what would be imported, change nothing"
+        required: false
+        default: false
+        type: boolean
+
+concurrency: import-submissions
+
+jobs:
+  import:
+    name: Import and open PR
+    # Quietly does nothing until the sheet is configured (Settings → Variables → SUBMISSIONS_SHEET_ID).
+    if: ${{ vars.SUBMISSIONS_SHEET_ID != '' }}
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      SUBMISSIONS_SHEET_ID: ${{ vars.SUBMISSIONS_SHEET_ID }}
+      SUBMISSIONS_SHEET_NAME: ${{ vars.SUBMISSIONS_SHEET_NAME }}
+      HUSKY: "0"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          # A token that can trigger CI on the PR (see the setup guide). Falls back to GITHUB_TOKEN,
+          # which opens the PR but does not start its checks.
+          token: ${{ secrets.SUBMISSIONS_PR_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - uses: pnpm/action-setup@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: "pnpm"
+      - run: pnpm install --frozen-lockfile
+
+      - name: Dry run
+        if: ${{ inputs.dry_run }}
+        run: node scripts/submissions/import.js --dry-run
+
+      - name: Import new submissions
+        if: ${{ !inputs.dry_run }}
+        id: import
+        run: node scripts/submissions/import.js --pr-body "$RUNNER_TEMP/pr-body.md"
+
+      - name: Validate and sync the package copies
+        if: ${{ steps.import.outputs.changed == 'true' }}
+        run: |
+          node scripts/validate-data.js
+          pnpm data:sync
+          pnpm release:verify
+
+      - name: Open or update the pull request
+        if: ${{ steps.import.outputs.changed == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.SUBMISSIONS_PR_TOKEN || secrets.GITHUB_TOKEN }}
+          COUNT: ${{ steps.import.outputs.count }}
+        run: |
+          set -euo pipefail
+          BRANCH=data/submissions
+          TITLE="data(submissions): add ${COUNT} area(s) from the web form"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Start from main every run: rows not yet merged are imported again, so the PR always holds all pending rows.
+          git checkout -B "$BRANCH"
+          git add -A
+          git commit -m "$TITLE" -m "Imported from the submissions sheet by scripts/submissions/import.js."
+          git push --force origin "$BRANCH"
+          if gh pr view "$BRANCH" --json state -q .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit "$BRANCH" --title "$TITLE" --body-file "$RUNNER_TEMP/pr-body.md"
+            echo "Updated the open submissions PR"
+          else
+            gh pr create --base main --head "$BRANCH" --title "$TITLE" --body-file "$RUNNER_TEMP/pr-body.md"
+          fi
