@@ -249,3 +249,14 @@ test("lists each credited contributor once in the release notes", async () => {
   assert.equal(contributorsLine(text), "**Contributors:** @alice, @bob");
   assert.equal(contributorsLine("- Uncredited (#3)"), "");
 });
+
+test("finds credits that prettier wrapped onto the next line, and lists every name", async () => {
+  const { contributorsLine } = await import("./plan.js");
+  const text = [
+    "- Adds Go. ([#82](https://github.com/o/r/pull/82)) by",
+    "  [@geoffowuor](https://github.com/geoffowuor)",
+    "- Other ([#2](https://github.com/o/r/pull/2)) by [@alice](https://github.com/alice),",
+    "  [@bob](https://github.com/bob)",
+  ].join("\n");
+  assert.equal(contributorsLine(text), "**Contributors:** @geoffowuor, @alice, @bob");
+});
