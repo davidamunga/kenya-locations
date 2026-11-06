@@ -120,6 +120,12 @@
     "county_code": "039"
   },
   {
+    "name": "Khwilroro",
+    "locality": "Kimilili",
+    "county": "Bungoma",
+    "county_code": "039"
+  },
+  {
     "name": "Maeni Market",
     "locality": "Maeni",
     "county": "Bungoma",
@@ -242,6 +248,12 @@
   {
     "name": "Sang'alo West",
     "locality": "West Sang'Alo",
+    "county": "Bungoma",
+    "county_code": "039"
+  },
+  {
+    "name": "Gogo",
+    "locality": "Westy",
     "county": "Bungoma",
     "county_code": "039"
   },
