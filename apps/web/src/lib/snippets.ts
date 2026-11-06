@@ -1,7 +1,7 @@
 import type { SnippetTarget } from "@/lib/places";
 
 export interface Snippet {
-  id: "js" | "kotlin" | "swift" | "dart" | "php" | "dotnet" | "python";
+  id: "js" | "kotlin" | "swift" | "dart" | "php" | "dotnet" | "python" | "go";
   label: string;
   filename: string;
   code: string;
@@ -14,6 +14,8 @@ const sq = (value: string) => `'${value.replace(/\\/g, "\\\\").replace(/'/g, "\\
 const dartQ = (value: string) => (value.includes("'") ? dq(value) : sq(value));
 /** Python: double quotes, as ruff and black format them. */
 const pyQ = dq;
+/** Go: interpreted string literals use double quotes, like the others. */
+const goQ = dq;
 
 /**
  * The calls that look up `target` in every library, using only functions
@@ -53,6 +55,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
           `county = kl.get_county_by_code(${pyQ(c)})`,
           `constituencies = kl.get_constituencies_in_county(${pyQ(c)})`,
         ]),
+        go([
+          `county := kl.GetCountyByCode(${goQ(c)})`,
+          `constituencies := kl.GetConstituenciesInCounty(${goQ(c)})`,
+        ]),
       ];
     }
     case "constituency": {
@@ -84,6 +90,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
         python([
           `constituency = kl.get_constituency_by_code(${pyQ(c)})`,
           `wards = kl.get_wards_in_constituency(${pyQ(c)})`,
+        ]),
+        go([
+          `constituency := kl.GetConstituencyByCode(${goQ(c)})`,
+          `wards := kl.GetWardsInConstituency(${goQ(c)})`,
         ]),
       ];
     }
@@ -119,6 +129,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
           `ward = kl.get_ward_by_code(${pyQ(w)})`,
           `county = kl.get_county_of_ward(${pyQ(w)})`,
         ]),
+        go([
+          `ward := kl.GetWardByCode(${goQ(w)})`,
+          `county := kl.GetCountyOfWard(${goQ(w)})`,
+        ]),
       ];
     }
     case "sub-county": {
@@ -153,6 +167,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
           `sub_county = kl.get_sub_county_by_code(${pyQ(s)})`,
           `wards = kl.get_wards_in_sub_county(${pyQ(s)})`,
         ]),
+        go([
+          `subCounty := kl.GetSubCountyByCode(${goQ(s)})`,
+          `wards := kl.GetWardsInSubCounty(${goQ(s)})`,
+        ]),
       ];
     }
     case "locality": {
@@ -171,6 +189,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
         python([
           `# Locality names repeat across counties, so pass the county too.`,
           `areas = kl.get_areas_in_locality(${pyQ(n)}, ${pyQ(c)})`,
+        ]),
+        go([
+          `// Locality names repeat across counties, so pass the county too.`,
+          `areas := kl.GetAreasInLocality(${goQ(n)}, ${goQ(c)})`,
         ]),
       ];
     }
@@ -237,5 +259,14 @@ function python(lines: string[]): Snippet {
     label: "Python",
     filename: "example.py",
     code: `import kenya_locations as kl\n\n${lines.join("\n")}\n`,
+  };
+}
+
+function go(lines: string[]): Snippet {
+  return {
+    id: "go",
+    label: "Go",
+    filename: "example.go",
+    code: `import kl "github.com/davidamunga/kenya-locations/packages/go"\n\n${lines.join("\n")}\n`,
   };
 }
