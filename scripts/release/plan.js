@@ -95,11 +95,13 @@ export function changelogSection(changelog, version) {
 }
 
 /**
- * "**Contributors:** @a, @b" from the "by [@x](https://github.com/x)" credits
+ * "**Contributors:** @a, @b" from the credit links ("[@x](https://github.com/x)")
  * in changelog text, in order of first appearance. Empty when there are none.
+ * Matches the link alone: the changelog is wrapped by prettier, which can put
+ * a newline between "by" and the first link, and a credit can list several.
  */
 export function contributorsLine(text) {
-  const logins = [...text.matchAll(/ by \[@([A-Za-z0-9-]+)\]\(https:\/\/github\.com\/\1\)/g)].map((m) => m[1]);
+  const logins = [...text.matchAll(/\[@([A-Za-z0-9-]+)\]\(https:\/\/github\.com\/\1\)/g)].map((m) => m[1]);
   const unique = [...new Set(logins)];
   return unique.length ? `**Contributors:** ${unique.map((login) => `@${login}`).join(", ")}` : "";
 }
