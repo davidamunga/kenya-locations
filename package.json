@@ -19,6 +19,7 @@
     "changeset": "changeset",
     "changeset:version": "changeset version && node scripts/release/sync.js",
     "changeset:data": "node scripts/release/changeset-data.js",
+    "submissions:import": "node scripts/submissions/import.js",
     "changeset:check": "node scripts/check-changeset.js",
     "changeset:check:test": "node --test \"scripts/**/*.test.js\"",
     "release:sync": "node scripts/release/sync.js",

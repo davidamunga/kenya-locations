@@ -37,6 +37,7 @@ uv run --directory packages/python ruff check      # Python lint (also: ruff for
 (cd packages/go && go vet ./... && go test ./... -race)  # Go
 pnpm changeset                                     # describe a releasable change
 pnpm changeset:data                                # write the changeset for a data/*.json change
+pnpm submissions:import                            # pull web-form submissions from the sheet into data/ (see scripts/submissions/README.md)
 pnpm changeset:check                               # fail if product files lack a changeset
 pnpm data:sync                                     # copy data/*.json into every package (after data edits)
 pnpm release:verify                                # versions, composer.lock and data copies are consistent
