@@ -25,6 +25,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm --filter kenya-locations build
       - run: pnpm --filter kenya-locations-web build
+        env:
+          # The Apps Script endpoint behind "Submit an area" (scripts/submissions/apps-script).
+          # Unset, the form opens a prefilled GitHub issue instead.
+          VITE_SUBMISSIONS_URL: ${{ vars.VITE_SUBMISSIONS_URL }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}

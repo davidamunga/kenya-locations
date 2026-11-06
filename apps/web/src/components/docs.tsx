@@ -7,6 +7,7 @@ import pythonPackage from "../../../../packages/python/package.json";
 import { AreaSubmissionForm } from "@/components/AreaSubmissionForm";
 import { CodeBlock } from "@/components/ui/code-block";
 import { Separator } from "@/components/ui/separator";
+import { getSubmissionsUrl } from "@/lib/submissions";
 import {
   Table,
   TableBody,
@@ -739,9 +740,12 @@ for _, result := range results {
           Contribute
         </h2>
         <p className="mt-3 mb-6 max-w-prose text-muted-foreground text-sm">
-          Missing an estate? Submit it here to open a GitHub issue, or add it
-          in <code>data/</code> and open a pull request. The pre-commit hook
-          validates JSON on every commit.
+          Missing an estate?{" "}
+          {getSubmissionsUrl()
+            ? "Suggest it here, no GitHub account needed. We review new suggestions in a batch before they go into the data."
+            : "Submit it here to open a GitHub issue."}{" "}
+          Or add it in <code>data/</code> and open a pull request. The
+          pre-commit hook validates JSON on every commit.
         </p>
         <AreaSubmissionForm />
       </section>
