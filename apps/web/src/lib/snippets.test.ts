@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import dartSource from "../../../../packages/dart/lib/src/kenya_locations.dart?raw";
+import goSource from "../../../../packages/go/kenyalocations.go?raw";
 import jsSource from "../../../../packages/js/lib/index.ts?raw";
 import kotlinSource from "../../../../packages/kotlin/src/main/kotlin/ke/locations/KenyaLocations.kt?raw";
 import dotnetSource from "../../../../packages/dotnet/src/KenyaLocations/Locations.cs?raw";
@@ -18,6 +19,7 @@ const SOURCES = {
   php: phpSource,
   dotnet: dotnetSource,
   python: pythonSource,
+  go: goSource,
 };
 
 const DECLARES: Record<keyof typeof SOURCES, (name: string) => RegExp> = {
@@ -29,6 +31,8 @@ const DECLARES: Record<keyof typeof SOURCES, (name: string) => RegExp> = {
   // C# methods are PascalCase: GetCountyByCode, not getCountyByCode.
   dotnet: (name) => new RegExp(`public static [^(]+ ${name}\\(`),
   python: (name) => new RegExp(`^def ${name}\\(`, "m"),
+  // Go functions are exported (PascalCase) package functions.
+  go: (name) => new RegExp(`^func ${name}\\(`, "m"),
 };
 
 /** Library calls in a snippet: getX( or get_x( after KenyaLocations., .shared., ::, kl. or an import. */
@@ -45,7 +49,7 @@ const TARGETS: SnippetTarget[] = [
 ];
 
 describe("snippetsFor", () => {
-  it.each(TARGETS)("covers all six languages for a $kind", (target) => {
+  it.each(TARGETS)("covers every language for a $kind", (target) => {
     expect(snippetsFor(target).map((s) => s.id)).toEqual([
       "js",
       "kotlin",
@@ -54,6 +58,7 @@ describe("snippetsFor", () => {
       "php",
       "dotnet",
       "python",
+      "go",
     ]);
   });
 
@@ -79,6 +84,7 @@ describe("snippetsFor", () => {
     expect(byId.php).toContain(`getAreasInLocality('East Sang\\'Alo', '039')`);
     expect(byId.dotnet).toContain(`GetAreasInLocality("East Sang'Alo", county: "039")`);
     expect(byId.python).toContain(`get_areas_in_locality("East Sang'Alo", "039")`);
+    expect(byId.go).toContain(`GetAreasInLocality("East Sang'Alo", "039")`);
   });
 
   it("finds a ward within its constituency where there's no ward-by-code lookup", () => {

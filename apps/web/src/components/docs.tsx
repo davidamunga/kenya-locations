@@ -1,6 +1,7 @@
 import { DATA_VERSION } from "kenya-locations";
 import dartPackage from "../../../../packages/dart/package.json";
 import dotnetPackage from "../../../../packages/dotnet/package.json";
+import goPackage from "../../../../packages/go/package.json";
 import phpPackage from "../../../../packages/php/package.json";
 import pythonPackage from "../../../../packages/python/package.json";
 import { AreaSubmissionForm } from "@/components/AreaSubmissionForm";
@@ -31,11 +32,11 @@ export function Docs() {
           Install
         </h2>
         <p className="mt-3 max-w-prose text-muted-foreground text-sm">
-          JavaScript, React, Kotlin, Swift, Dart, PHP, .NET, WordPress, and
-          Python read the same JSON in <code>data/</code>. JavaScript, Kotlin
+          JavaScript, React, Kotlin, Swift, Dart, PHP, .NET, WordPress, Python
+          and Go read the same JSON in <code>data/</code>. JavaScript, Kotlin
           and Swift share version {DATA_VERSION}; Dart is {dartPackage.version},
-          PHP {phpPackage.version}, .NET {dotnetPackage.version} and Python{" "}
-          {pythonPackage.version}.
+          PHP {phpPackage.version}, .NET {dotnetPackage.version}, Python{" "}
+          {pythonPackage.version} and Go {goPackage.version}.
         </p>
         <InstallTabs className="mt-6" />
       </section>
@@ -660,6 +661,79 @@ class Delivery(BaseModel):
 
       <Separator />
 
+      <section className="scroll-mt-24" id="go">
+        <h2 className="font-heading font-semibold text-2xl tracking-tight">
+          Go
+        </h2>
+        <p className="mt-3 max-w-prose text-muted-foreground text-sm">
+          Go 1.21+. No dependencies and no init: the data is embedded in the
+          module and parsed on first use. Every function is safe for concurrent
+          use and returns copies. Module path{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://pkg.go.dev/github.com/davidamunga/kenya-locations/packages/go"
+            rel="noreferrer"
+            target="_blank"
+          >
+            github.com/davidamunga/kenya-locations/packages/go
+          </a>
+          . Full reference: <RepoLink path="packages/go/README.md" />. Source:{" "}
+          <RepoLink path="packages/go" />.
+        </p>
+        <div className="mt-6 space-y-8">
+          <Example
+            filename="main.go"
+            language="go"
+            title="County picker"
+            body="Same drill-down: county, constituency, wards. Name-or-code on scoped queries. Single lookups return nil when nothing matches."
+            code={`import kl "github.com/davidamunga/kenya-locations/packages/go"
+
+counties := kl.GetCounties()
+nairobi := kl.GetCountyByName("Nairobi") // *kl.County, or nil
+constituencies := kl.GetConstituenciesInCounty("Nairobi")
+wards := kl.GetWardsInConstituency("Westlands")
+
+fmt.Println(nairobi.Capital, nairobi.Population2019)
+
+results := kl.Search("Nairob", kl.WithLimit(20)) // typo-tolerant`}
+          />
+          <Example
+            filename="ambiguous.go"
+            language="go"
+            title="Ambiguous names"
+            body="31 ward names, including Township, appear in more than one county. The single lookup returns nil; use the plural form, a code, or pass the county."
+            code={`kl.GetWardByName("Township")                // nil
+kl.GetWardsByName("Township")               // all 9 wards
+kl.GetAreasInLocality("Bura", "Tana River") // only Tana River's Bura
+
+// Parents, by code or by a ward name that is unique in Kenya.
+kl.GetSubCountyOfWard("1370")
+kl.GetCountyOfWard("1370")`}
+          />
+          <Example
+            filename="search.go"
+            language="go"
+            title="Search"
+            body="Restrict the types and cap the results. Exact substrings rank first, then typo-tolerant matches."
+            code={`results := kl.Search("karen",
+    kl.WithLimit(10),
+    kl.WithTypes(kl.SearchTypeLocality, kl.SearchTypeArea),
+)
+
+for _, result := range results {
+    switch item := result.Item.(type) {
+    case kl.Locality:
+        fmt.Println(item.County)
+    case kl.Area:
+        fmt.Println(item.Locality)
+    }
+}`}
+          />
+        </div>
+      </section>
+
+      <Separator />
+
       <section className="scroll-mt-24" id="contribute">
         <h2 className="font-heading font-semibold text-2xl tracking-tight">
           Contribute
@@ -730,6 +804,7 @@ export function InstallTabs({ className }: { className?: string }) {
         <TabsTab value="dotnet">.NET</TabsTab>
         <TabsTab value="wordpress">WordPress</TabsTab>
         <TabsTab value="python">Python</TabsTab>
+        <TabsTab value="go">Go</TabsTab>
       </TabsList>
       <TabsPanel className="mt-3 space-y-3" value="js">
         <CodeBlock filename="terminal">npm install kenya-locations</CodeBlock>
@@ -838,6 +913,23 @@ implementation("io.github.davidamunga:kenya-locations:${DATA_VERSION}")
             target="_blank"
           >
             kenya-locations
+          </a>
+        </p>
+      </TabsPanel>
+      <TabsPanel className="mt-3 space-y-3" value="go">
+        <CodeBlock filename="terminal">
+          go get github.com/davidamunga/kenya-locations/packages/go
+        </CodeBlock>
+        <p className="text-muted-foreground text-xs">
+          Go 1.21+. Versions independently of the JS / Kotlin / Swift trio;
+          releases are tagged <code>packages/go/v*</code>. Docs:{" "}
+          <a
+            className="underline underline-offset-4"
+            href="https://pkg.go.dev/github.com/davidamunga/kenya-locations/packages/go"
+            rel="noreferrer"
+            target="_blank"
+          >
+            pkg.go.dev
           </a>
         </p>
       </TabsPanel>
