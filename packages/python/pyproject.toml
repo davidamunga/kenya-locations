@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "kenya-locations"
-version = "0.0.0"
+version = "0.1.0"
 description = "Kenyan administrative divisions (counties, sub-counties, constituencies, wards, localities and areas) with Django and FastAPI integrations."
 readme = "README.md"
 requires-python = ">=3.11"
