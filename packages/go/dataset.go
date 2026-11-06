@@ -7,6 +7,7 @@ import (
 	"sync"
 )
 
+//go:embed data/*.json
 var dataFS embed.FS
 
 const (
