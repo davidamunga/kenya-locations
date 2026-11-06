@@ -40,7 +40,7 @@ func TestSearchTypoTolerance(t *testing.T) {
 }
 
 func TestSearchRanksExactMatchesFirst(t *testing.T) {
-	
+
 	results := kl.Search("Westlands", kl.WithLimit(200))
 	if !hasResult(results, kl.SearchTypeConstituency, "Westlands") ||
 		!hasResult(results, kl.SearchTypeLocality, "Westlands") {
@@ -120,7 +120,7 @@ func TestSearchTypeFilter(t *testing.T) {
 			t.Errorf("unexpected type %s", r.Type)
 		}
 	}
-	
+
 	if got := kl.Search("Nairobi", kl.WithTypes()); !hasResult(got, kl.SearchTypeCounty, "Nairobi") {
 		t.Error("WithTypes() with no arguments should search everything")
 	}
@@ -213,7 +213,7 @@ func TestSearchTypeValid(t *testing.T) {
 }
 
 func BenchmarkSearch(b *testing.B) {
-	kl.Search("nairobi") 
+	kl.Search("nairobi")
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		kl.Search("kasarani")
