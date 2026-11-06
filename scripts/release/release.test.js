@@ -53,13 +53,20 @@ test("verify catches a version bump that was not synced, and sync fixes it", () 
   try {
     bump(dir, "packages/dart", "9.9.9");
     bump(dir, "packages/php", "9.9.9");
+    bump(dir, "packages/python", "9.9.9");
     const problems = verifyRelease(dir);
     assert.ok(problems.some((p) => p.includes("pubspec.yaml")));
     assert.ok(problems.some((p) => p.includes("composer.json")));
+    assert.ok(problems.some((p) => p.includes("pyproject.toml")));
 
     syncVersions(dir);
     assert.deepEqual(verifyRelease(dir), []);
     assert.match(readFileSync(join(dir, "packages/dart/pubspec.yaml"), "utf8"), /^version: 9\.9\.9$/m);
+    assert.match(readFileSync(join(dir, "packages/python/pyproject.toml"), "utf8"), /^version = "9\.9\.9"$/m);
+    assert.match(
+      readFileSync(join(dir, "packages/python/uv.lock"), "utf8"),
+      /^name = "kenya-locations"\nversion = "9\.9\.9"$/m
+    );
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
@@ -78,6 +85,19 @@ test("verify catches composer.json bumped without composer.lock", () => {
   }
 });
 
+test("verify catches pyproject.toml bumped without uv.lock", () => {
+  const dir = fixture();
+  try {
+    bump(dir, "packages/python", "9.9.9");
+    edit(dir, "packages/python/pyproject.toml", (text) => text.replace(/^version = ".*"$/m, 'version = "9.9.9"'));
+    assert.deepEqual(verifyRelease(dir), [
+      "kenya-locations version in packages/python/uv.lock is stale — run `pnpm release:sync`",
+    ]);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
 test("verify catches a stale data copy", () => {
   const dir = fixture();
   try {
@@ -85,6 +105,7 @@ test("verify catches a stale data copy", () => {
     const problems = verifyRelease(dir);
     assert.ok(problems.some((p) => p.includes("packages/swift/Sources/KenyaLocations/Resources/wards.json")));
     assert.ok(problems.some((p) => p.includes("packages/php/data/wards.json")));
+    assert.ok(problems.some((p) => p.includes("packages/python/src/kenya_locations/data/wards.json")));
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
@@ -101,7 +122,13 @@ test("verify catches a fixed group with mixed versions", () => {
 });
 
 test("data changesets bump one package per product that ships data", () => {
-  assert.deepEqual(dataPackages(), ["kenya-locations", "kenya-locations-dart", "kenya-locations-php", "kenya-locations-dotnet"]);
+  assert.deepEqual(dataPackages(), [
+    "kenya-locations",
+    "kenya-locations-dart",
+    "kenya-locations-php",
+    "kenya-locations-dotnet",
+    "kenya-locations-python",
+  ]);
 });
 
 const wards = ENTITIES.find((e) => e.file === "wards.json");
@@ -145,6 +172,7 @@ test("renders a changeset with every data package and the counts", () => {
 "kenya-locations-dart": patch
 "kenya-locations-php": patch
 "kenya-locations-dotnet": patch
+"kenya-locations-python": patch
 ---
 
 Data update:

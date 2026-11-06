@@ -10,6 +10,7 @@ test("treats shared JSON and package source as product files", () => {
   assert.equal(isProductPath("packages/swift/Sources/KenyaLocations/Search.swift"), true);
   assert.equal(isProductPath("packages/dart/lib/kenya_locations.dart"), true);
   assert.equal(isProductPath("packages/php/src/KenyaLocations.php"), true);
+  assert.equal(isProductPath("packages/python/src/kenya_locations/lookups.py"), true);
 });
 
 test("skips docs, tests, generated Dart, and copied native JSON", () => {
@@ -20,6 +21,8 @@ test("skips docs, tests, generated Dart, and copied native JSON", () => {
   assert.equal(isProductPath("packages/swift/Sources/KenyaLocations/Resources/wards.json"), false);
   assert.equal(isProductPath("packages/php/data/counties.json"), false);
   assert.equal(isProductPath("packages/php/tests/KenyaLocationsTest.php"), false);
+  assert.equal(isProductPath("packages/python/src/kenya_locations/data/wards.json"), false);
+  assert.equal(isProductPath("packages/python/tests/test_lookups.py"), false);
   assert.equal(isProductPath(".github/workflows/ci.yml"), false);
 });
 
@@ -43,6 +46,7 @@ const dataChangeset = `---
 "kenya-locations-dart": patch
 "kenya-locations-php": patch
 "kenya-locations-dotnet": patch
+"kenya-locations-python": patch
 ---
 
 Data update:
@@ -57,7 +61,12 @@ test("fails when a data change skips a package that ships the data", () => {
   const coreOnly = `---\n"kenya-locations": patch\n---\n\nAdd areas.\n`;
   const result = changesetCheck(["data/area.json", ".changeset/add-areas.md"], () => coreOnly);
   assert.equal(result.ok, false);
-  assert.deepEqual(result.missingDataPackages, ["kenya-locations-dart", "kenya-locations-php", "kenya-locations-dotnet"]);
+  assert.deepEqual(result.missingDataPackages, [
+    "kenya-locations-dart",
+    "kenya-locations-php",
+    "kenya-locations-dotnet",
+    "kenya-locations-python",
+  ]);
 });
 
 test("a data README edit with a package changeset does not require the data packages", () => {
@@ -70,7 +79,7 @@ test("a data README edit with a package changeset does not require the data pack
 });
 
 test("data packages can be spread across several changesets", () => {
-  const files = { ".changeset/a.md": `---\n"kenya-locations": patch\n---\n\nA\n`, ".changeset/b.md": `---\nkenya-locations-dart: patch\n'kenya-locations-php': minor\nkenya-locations-dotnet: patch\n---\n\nB\n` };
+  const files = { ".changeset/a.md": `---\n"kenya-locations": patch\n---\n\nA\n`, ".changeset/b.md": `---\nkenya-locations-dart: patch\n'kenya-locations-php': minor\nkenya-locations-dotnet: patch\nkenya-locations-python: patch\n---\n\nB\n` };
   const result = changesetCheck(["data/wards.json", ".changeset/a.md", ".changeset/b.md"], (f) => files[f]);
   assert.equal(result.ok, true);
 });
@@ -81,6 +90,7 @@ test("reads package names from changeset frontmatter", () => {
     "kenya-locations-dart",
     "kenya-locations-php",
     "kenya-locations-dotnet",
+    "kenya-locations-python",
   ]);
   assert.deepEqual(changesetPackages("no frontmatter"), []);
 });

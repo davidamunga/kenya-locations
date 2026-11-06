@@ -1,7 +1,7 @@
 import type { SnippetTarget } from "@/lib/places";
 
 export interface Snippet {
-  id: "js" | "kotlin" | "swift" | "dart" | "php" | "dotnet";
+  id: "js" | "kotlin" | "swift" | "dart" | "php" | "dotnet" | "python";
   label: string;
   filename: string;
   code: string;
@@ -12,6 +12,8 @@ const dq = (value: string) => `"${value.replace(/\\/g, "\\\\").replace(/"/g, '\\
 const sq = (value: string) => `'${value.replace(/\\/g, "\\\\").replace(/'/g, "\\'")}'`;
 /** Dart: single quotes unless the value has one, as `dart format` prefers. */
 const dartQ = (value: string) => (value.includes("'") ? dq(value) : sq(value));
+/** Python: double quotes, as ruff and black format them. */
+const pyQ = dq;
 
 /**
  * The calls that look up `target` in every library, using only functions
@@ -47,6 +49,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
           `var county = Locations.GetCountyByCode(${dq(c)});`,
           `var constituencies = Locations.GetConstituenciesInCounty(${dq(c)});`,
         ]),
+        python([
+          `county = kl.get_county_by_code(${pyQ(c)})`,
+          `constituencies = kl.get_constituencies_in_county(${pyQ(c)})`,
+        ]),
       ];
     }
     case "constituency": {
@@ -74,6 +80,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
         dotnet([
           `var constituency = Locations.GetConstituencyByCode(${dq(c)});`,
           `var wards = Locations.GetWardsInConstituency(${dq(c)});`,
+        ]),
+        python([
+          `constituency = kl.get_constituency_by_code(${pyQ(c)})`,
+          `wards = kl.get_wards_in_constituency(${pyQ(c)})`,
         ]),
       ];
     }
@@ -105,6 +115,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
           `var ward = Locations.GetWardsInConstituency(${dq(k)})`,
           `    .First(w => w.Code == ${dq(w)});`,
         ]),
+        python([
+          `ward = kl.get_ward_by_code(${pyQ(w)})`,
+          `county = kl.get_county_of_ward(${pyQ(w)})`,
+        ]),
       ];
     }
     case "sub-county": {
@@ -135,6 +149,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
           `var subCounty = Locations.GetSubCountiesInCounty(${dq(c)})`,
           `    .First(s => s.Code == ${dq(s)});`,
         ]),
+        python([
+          `sub_county = kl.get_sub_county_by_code(${pyQ(s)})`,
+          `wards = kl.get_wards_in_sub_county(${pyQ(s)})`,
+        ]),
       ];
     }
     case "locality": {
@@ -150,6 +168,10 @@ export function snippetsFor(target: SnippetTarget): Snippet[] {
         dart([`final areas = KenyaLocations.getAreasInLocality(${dartQ(n)}, county: ${dartQ(c)});`]),
         php([`$areas = KenyaLocations::getAreasInLocality(${sq(n)}, ${sq(c)});`]),
         dotnet([`var areas = Locations.GetAreasInLocality(${dq(n)}, county: ${dq(c)});`]),
+        python([
+          `# Locality names repeat across counties, so pass the county too.`,
+          `areas = kl.get_areas_in_locality(${pyQ(n)}, ${pyQ(c)})`,
+        ]),
       ];
     }
   }
@@ -206,5 +228,14 @@ function php(lines: string[]): Snippet {
     label: "PHP",
     filename: "example.php",
     code: `<?php\n\nuse KenyaLocations\\KenyaLocations;\n\n${lines.join("\n")}\n`,
+  };
+}
+
+function python(lines: string[]): Snippet {
+  return {
+    id: "python",
+    label: "Python",
+    filename: "example.py",
+    code: `import kenya_locations as kl\n\n${lines.join("\n")}\n`,
   };
 }

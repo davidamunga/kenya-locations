@@ -75,3 +75,13 @@ packages/js/coverage/
 
 # The .NET package needs its solution file
 !packages/dotnet/*.sln
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+packages/python/dist/
+examples/django/db.sqlite3

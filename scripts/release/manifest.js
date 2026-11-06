@@ -4,7 +4,7 @@
  *
  * Changesets owns the version in each package's package.json. Everything
  * else (gradle.properties, pubspec.yaml, composer.json + composer.lock,
- * bundled data copies) is derived from it by `pnpm release:sync` and
+ * pyproject.toml + uv.lock, bundled data copies) is derived from it by `pnpm release:sync` and
  * checked by `pnpm release:verify`.
  *
  * Adding a product or a new place a version/data copy lives? Add it here;
@@ -43,6 +43,31 @@ function msbuildVersion(path) {
     describe: `<Version> in ${path}`,
     read: (text) => text.match(pattern)?.[1]?.trim(),
     write: (text, version) => text.replace(pattern, `<Version>${version}</Version>`),
+  };
+}
+
+/**
+ * The `version = "…"` line of a pyproject.toml [project] table. uv.lock
+ * records the project's own version too, and `uv sync --locked` fails when
+ * the two differ, so it follows.
+ */
+function pyprojectVersion(path, { lockPath, lockPackage }) {
+  const pattern = /^version\s*=\s*"([^"]*)"\s*$/m;
+  const lockPattern = new RegExp(`(^name = "${lockPackage}"\\nversion = ")([^"]*)(")`, "m");
+  return {
+    path,
+    describe: `version in ${path}`,
+    read: (text) => text.match(pattern)?.[1],
+    write: (text, version) => text.replace(pattern, `version = "${version}"`),
+    dependents: [
+      {
+        path: lockPath,
+        describe: `${lockPackage} version in ${lockPath}`,
+        expected: (pyprojectText) => pyprojectText.match(pattern)?.[1],
+        read: (lockText) => lockText.match(lockPattern)?.[2],
+        write: (lockText, version) => lockText.replace(lockPattern, `$1${version}$3`),
+      },
+    ],
   };
 }
 
@@ -149,6 +174,24 @@ export const PRODUCTS = [
       },
     ],
     data: [dataCopy("packages/dotnet/src/KenyaLocations/Data")],
+  },
+  {
+    id: "python",
+    description: "Python / PyPI, with Django and FastAPI extras",
+    tag: (version) => `python-v${version}`,
+    packages: [
+      {
+        name: "kenya-locations-python",
+        dir: "packages/python",
+        versionFiles: [
+          pyprojectVersion("packages/python/pyproject.toml", {
+            lockPath: "packages/python/uv.lock",
+            lockPackage: "kenya-locations",
+          }),
+        ],
+      },
+    ],
+    data: [dataCopy("packages/python/src/kenya_locations/data")],
   },
 ];
 

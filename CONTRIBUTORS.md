@@ -20,7 +20,8 @@ We welcome contributions from everyone! Here's how you can help:
    - Add new features
    - Fix bugs
    - Improve performance
-   - Enhance TypeScript types
+   - Improve the libraries for JavaScript/TypeScript, React, Kotlin, Swift, Dart, PHP, and
+     Python, including the Django and FastAPI integrations
 
 2. **Data Contributions**
 
@@ -63,6 +64,9 @@ All contributors are recognized in:
 ## Contributors List
 
 <!-- This section will be automatically updated by changesets and GitHub -->
+
+- **[@achingachris](https://github.com/achingachris)** - Python package with Django and FastAPI
+  integrations
 
 Want to see your name here? [Make your first contribution today!](CONTRIBUTING.md)
 

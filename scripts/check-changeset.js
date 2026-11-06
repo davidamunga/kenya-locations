@@ -2,7 +2,7 @@
 
 /**
  * Fail when product source or shared data changed without a new changeset.
- * Docs, tests, generated Dart, and copied Kotlin/Swift JSON do not require one.
+ * Docs, tests, generated Dart, and copied Kotlin/Swift/PHP/Python JSON do not require one.
  *
  * A change to data/*.json must also bump every product that ships the data
  * (see scripts/release/manifest.js); `pnpm changeset:data` writes one.
@@ -20,6 +20,7 @@ const SKIP_PREFIXES = [
   "packages/kotlin/src/main/resources/",
   "packages/php/data/",
   "packages/dotnet/src/KenyaLocations/Data/",
+  "packages/python/src/kenya_locations/data/",
 ];
 
 const PRODUCT_PREFIXES = [
@@ -31,6 +32,7 @@ const PRODUCT_PREFIXES = [
   "packages/dart/lib/",
   "packages/php/src/",
   "packages/dotnet/src/",
+  "packages/python/src/",
 ];
 
 export function isChangesetFile(file) {
