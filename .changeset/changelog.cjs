@@ -15,10 +15,12 @@
  * To credit someone other than the PR author, or several people, put a line in
  * the changeset:
  *
- *   Credit: @octocat, @hubot
+ *   Credit: @octocat, Jane Doe
  *
- * It is removed from the entry and replaces the PR author. Bots are never
- * credited.
+ * It is removed from the entry and replaces the PR author. "@name" is a GitHub
+ * login and links to the profile; anything else is a plain display name, shown
+ * as written (submissions from the web form carry one). Names are cleaned of
+ * markdown, links and HTML and capped in length. Bots are never credited.
  *
  * Options (in .changeset/config.json):
  *   { "repo": "owner/name" }  — used to build PR links.
@@ -27,7 +29,8 @@
 const { execFileSync } = require("node:child_process");
 
 const CREDIT_LINE = /^credit:\s*(.+)$/im;
-const HANDLE = /@([A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)/g;
+const HANDLE = /^@([A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)$/;
+const MAX_NAME_LENGTH = 40;
 
 /** Logins that are not people: GitHub Apps ("x[bot]") and the Claude co-author. */
 function isBot(login) {
@@ -56,19 +59,47 @@ function prLink(number, options) {
     : ` (#${number})`;
 }
 
-/** " by [@a](…), [@b](…)", or "" when there is no one to credit. */
-function creditText(logins) {
-  const people = [...new Set(logins)].filter((login) => !isBot(login));
-  if (people.length === 0) return "";
-  return ` by ${people.map((login) => `[@${login}](https://github.com/${login})`).join(", ")}`;
+/**
+ * A display name that is safe to print in a changelog: no markdown, links,
+ * HTML or control characters, one line, capped. Empty when nothing is left.
+ */
+function cleanName(value) {
+  const text = String(value)
+    .normalize("NFC")
+    .replace(/[\p{Cc}\p{Cf}]/gu, " ")
+    .replace(/https?:\/\/\S*|www\.\S*/gi, " ")
+    .replace(/[<>\[\]()*_`#|\\~@]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return text.length > MAX_NAME_LENGTH ? `${text.slice(0, MAX_NAME_LENGTH - 1).trimEnd()}…` : text;
 }
 
-/** Split an explicit "Credit: @a, @b" line off a summary. */
+/**
+ * " by [@a](…), Jane Doe", or "" when there is no one to credit. `logins` are
+ * bare GitHub logins (no "@"); `names` are plain display names.
+ */
+function creditText(logins, names = []) {
+  const handles = [...new Set(logins)].filter((login) => !isBot(login));
+  const plain = [...new Set(names.map(cleanName))].filter((name) => name && !isBot(name));
+  const parts = [
+    ...handles.map((login) => `[@${login}](https://github.com/${login})`),
+    ...plain,
+  ];
+  return parts.length ? ` by ${parts.join(", ")}` : "";
+}
+
+/** Split an explicit "Credit: @a, Jane Doe" line off a summary. */
 function parseCredit(summary) {
   const match = summary.match(CREDIT_LINE);
-  if (!match) return { summary, logins: undefined };
-  const logins = [...match[1].matchAll(HANDLE)].map((m) => m[1]);
-  return { summary: summary.replace(CREDIT_LINE, "").trim(), logins };
+  if (!match) return { summary, logins: undefined, names: [] };
+  const logins = [];
+  const names = [];
+  for (const token of match[1].split(",").map((t) => t.trim()).filter(Boolean)) {
+    const handle = token.match(HANDLE);
+    if (handle) logins.push(handle[1]);
+    else names.push(token);
+  }
+  return { summary: summary.replace(CREDIT_LINE, "").trim(), logins, names };
 }
 
 /** PR number and author login for a commit, from the GitHub API. */
@@ -93,10 +124,11 @@ async function lookup(commit, options) {
  * reads cleanly.
  */
 async function getReleaseLine(changeset, _type, options) {
-  const { summary, logins } = parseCredit(changeset.summary);
+  const { summary, logins, names } = parseCredit(changeset.summary);
   const found = await lookup(changeset.commit, options);
   const pull = found.pull || prNumberFor(changeset.commit);
-  const credit = creditText(logins || (found.user ? [found.user] : []));
+  const explicit = logins !== undefined;
+  const credit = creditText(explicit ? logins : found.user ? [found.user] : [], names);
 
   const lines = summary.trim().split("\n");
   lines[lines.length - 1] += `${prLink(pull, options)}${credit}`;
@@ -119,5 +151,6 @@ module.exports = {
   getDependencyReleaseLine,
   creditText,
   parseCredit,
+  cleanName,
   isBot,
 };
