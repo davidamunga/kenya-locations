@@ -1,6 +1,5 @@
 import 'dart:math' as math;
 
-import 'package:kenya_locations/src/lookup.dart';
 import 'package:kenya_locations/src/src.dart';
 
 /// Provides access to Kenya's administrative and geographical location data.
