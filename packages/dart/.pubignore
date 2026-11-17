@@ -1,0 +1,9 @@
+coverage_badge.svg
+coverage/
+package.json
+scripts/
+
+.dart_tool/
+.packages
+build/
+pubspec.lock
