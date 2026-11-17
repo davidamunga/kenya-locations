@@ -1,4 +1,8 @@
-## 0.1.1
+## 0.4.1
+
+### Patch Changes
+
+- Add a package example (`example/main.dart`) so the package shows an example on pub.dev.
 
 ## 0.4.0
 
@@ -99,6 +103,8 @@
     `Shimo la Tewa` and `Boikang'a` remain.
   - Rename ward `0319` from `Central  ward` (double space) to `Central ward`.
     ([#46](https://github.com/DavidAmunga/kenya-locations/pull/46))
+
+## 0.1.0
 
 - Initial release.
 - Typed access to Kenya's counties, sub-counties, constituencies, wards, localities, and areas.
