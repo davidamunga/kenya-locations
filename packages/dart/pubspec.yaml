@@ -12,7 +12,7 @@ topics:
   - counties
 
 environment:
-  sdk: ^3.14.0
+  sdk: ^3.13.0
 
 dev_dependencies:
   mocktail: ^1.0.5

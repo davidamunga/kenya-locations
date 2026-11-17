@@ -21,6 +21,6 @@ void main() {
 
   final results = KenyaLocations.search('Nairob', limit: 3);
   for (final result in results) {
-    print('${result.type.name}: ${result.item}');
+    print('${result.type.name}: ${result.name}');
   }
 }

@@ -81,7 +81,7 @@ packages:
       path: "../../packages/dart"
       relative: true
     source: path
-    version: "0.4.1"
+    version: "0.4.0"
   leak_tracker:
     dependency: transitive
     description:
